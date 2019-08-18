@@ -19,8 +19,21 @@ if ( is_admin() ) {
 
 }
 
-// load_modules();
+function tb_load_modules() {
 
-require TB_PATH . 'cookie-banner/index.php';
+	$modules = array(
+		'cookie-banner',
+		'projects',
+		'cleanup',
+	);
 
-require TB_PATH . 'projects/index.php';
+	foreach ( $modules as $module ) {
+
+		// if module active then load it.
+		require TB_PATH . $module . '/index.php';
+
+	}
+
+}
+
+add_action( 'init', 'tb_load_modules' );
