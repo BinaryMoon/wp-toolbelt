@@ -1,6 +1,8 @@
 <?php
 /**
  * Cookie Banner
+ *
+ * @package toolbelt
  */
 
 // Don't display in the WordPress admin.
@@ -8,6 +10,9 @@ if ( is_admin() ) {
 	return;
 }
 
+/**
+ * Display the cookie data in the footer.
+ */
 function toolbelt_cookie_footer() {
 
 	$path = plugin_dir_path( __FILE__ );
