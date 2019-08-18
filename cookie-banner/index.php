@@ -25,7 +25,7 @@ function toolbelt_cookie_footer() {
 	// If there's a privacy policy page then link to it.
 	$privacy_policy_link = get_the_privacy_policy_link();
 	if ( ! empty( $privacy_policy_link ) ) {
-		$link = '<a href="' . $privacy_policy_link . '">' . $link . '</a>';
+		$link = $privacy_policy_link;
 	}
 
 	// Merge the message and the link.
@@ -37,7 +37,7 @@ function toolbelt_cookie_footer() {
 	echo '</style>';
 
 	// Generate the template html.
-	echo sprintf(
+	printf(
 		'<section class="tb_cookie_wrapper"><strong>%s</strong><button class="tp_cookie_close">&times;</button></section>',
 		$message
 	);
