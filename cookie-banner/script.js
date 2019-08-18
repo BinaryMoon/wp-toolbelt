@@ -34,16 +34,6 @@ var toolbelt_cookie_bar = ( function() {
 
 		init: function() {
 
-			if (
-				!navigator.userAgent ||
-				(
-					( navigator.userAgent.indexOf( "Speed Insights" ) == -1 ) &&
-					( navigator.userAgent.indexOf( "Googlebot" ) == -1 )
-				)
-			) {
-				return;
-			}
-
 			if ( !get_cookie( 'tb_accepted_cookies' ) ) {
 
 				var container = document.querySelector( '.tb_cookie_wrapper' );
