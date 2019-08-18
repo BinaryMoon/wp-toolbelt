@@ -1,9 +1,13 @@
 <?php
 /**
  * Projects
+ *
+ * @package toolbelt
  */
 
-
+/**
+ * Setup Portfolio custom post type.
+ */
 class Toolbelt_Portfolio {
 
 	const CUSTOM_POST_TYPE       = 'toolbelt-portfolio';
@@ -14,8 +18,8 @@ class Toolbelt_Portfolio {
 
 		$this->register_post_types();
 
-		add_filter( sprintf( 'manage_%s_posts_columns', self::CUSTOM_POST_TYPE ),       array( $this, 'edit_admin_columns' ) );
-		add_filter( sprintf( 'manage_%s_posts_custom_column', self::CUSTOM_POST_TYPE ), array( $this, 'image_column'       ), 10, 2 );
+		add_filter( sprintf( 'manage_%s_posts_columns', self::CUSTOM_POST_TYPE ), array( $this, 'edit_admin_columns' ) );
+		add_filter( sprintf( 'manage_%s_posts_custom_column', self::CUSTOM_POST_TYPE ), array( $this, 'image_column' ), 10, 2 );
 
 	}
 
@@ -24,7 +28,7 @@ class Toolbelt_Portfolio {
 		static $instance = false;
 
 		if ( ! $instance ) {
-			$instance = new Toolbelt_Portfolio;
+			$instance = new Toolbelt_Portfolio();
 		}
 
 		return $instance;
@@ -44,21 +48,21 @@ class Toolbelt_Portfolio {
 			self::CUSTOM_POST_TYPE,
 			array(
 				'labels' => array(
-					'name'                  => esc_html__( 'Projects',                   'toolbelt' ),
-					'singular_name'         => esc_html__( 'Project',                    'toolbelt' ),
-					'menu_name'             => esc_html__( 'Portfolio',                  'toolbelt' ),
-					'all_items'             => esc_html__( 'All Projects',               'toolbelt' ),
-					'add_new'               => esc_html__( 'Add New',                    'toolbelt' ),
-					'add_new_item'          => esc_html__( 'Add New Project',            'toolbelt' ),
-					'edit_item'             => esc_html__( 'Edit Project',               'toolbelt' ),
-					'new_item'              => esc_html__( 'New Project',                'toolbelt' ),
-					'view_item'             => esc_html__( 'View Project',               'toolbelt' ),
-					'search_items'          => esc_html__( 'Search Projects',            'toolbelt' ),
-					'not_found'             => esc_html__( 'No Projects found',          'toolbelt' ),
+					'name'                  => esc_html__( 'Projects', 'toolbelt' ),
+					'singular_name'         => esc_html__( 'Project', 'toolbelt' ),
+					'menu_name'             => esc_html__( 'Portfolio', 'toolbelt' ),
+					'all_items'             => esc_html__( 'All Projects', 'toolbelt' ),
+					'add_new'               => esc_html__( 'Add New', 'toolbelt' ),
+					'add_new_item'          => esc_html__( 'Add New Project', 'toolbelt' ),
+					'edit_item'             => esc_html__( 'Edit Project', 'toolbelt' ),
+					'new_item'              => esc_html__( 'New Project', 'toolbelt' ),
+					'view_item'             => esc_html__( 'View Project', 'toolbelt' ),
+					'search_items'          => esc_html__( 'Search Projects', 'toolbelt' ),
+					'not_found'             => esc_html__( 'No Projects found', 'toolbelt' ),
 					'not_found_in_trash'    => esc_html__( 'No Projects found in Trash', 'toolbelt' ),
-					'filter_items_list'     => esc_html__( 'Filter projects list',       'toolbelt' ),
-					'items_list_navigation' => esc_html__( 'Project list navigation',    'toolbelt' ),
-					'items_list'            => esc_html__( 'Projects list',              'toolbelt' ),
+					'filter_items_list'     => esc_html__( 'Filter projects list', 'toolbelt' ),
+					'items_list_navigation' => esc_html__( 'Project list navigation', 'toolbelt' ),
+					'items_list'            => esc_html__( 'Projects list', 'toolbelt' ),
 				),
 				'supports' => array(
 					'title',
@@ -79,8 +83,8 @@ class Toolbelt_Portfolio {
 				),
 				'public'          => true,
 				'show_ui'         => true,
-				'menu_position'   => 20,                    // below Pages
-				'menu_icon'       => 'dashicons-portfolio', // 3.8+ dashicon option
+				'menu_position'   => 20,                    // Below 'Pages'.
+				'menu_icon'       => 'dashicons-portfolio', // 3.8+ dashicon option.
 				'capability_type' => 'page',
 				'map_meta_cap'    => true,
 				'taxonomies'      => array( self::CUSTOM_TAXONOMY_TYPE, self::CUSTOM_TAXONOMY_TAG ),
@@ -96,20 +100,20 @@ class Toolbelt_Portfolio {
 			array(
 				'hierarchical'      => true,
 				'labels'            => array(
-					'name'                  => esc_html__( 'Project Types',                 'toolbelt' ),
-					'singular_name'         => esc_html__( 'Project Type',                  'toolbelt' ),
-					'menu_name'             => esc_html__( 'Project Types',                 'toolbelt' ),
-					'all_items'             => esc_html__( 'All Project Types',             'toolbelt' ),
-					'edit_item'             => esc_html__( 'Edit Project Type',             'toolbelt' ),
-					'view_item'             => esc_html__( 'View Project Type',             'toolbelt' ),
-					'update_item'           => esc_html__( 'Update Project Type',           'toolbelt' ),
-					'add_new_item'          => esc_html__( 'Add New Project Type',          'toolbelt' ),
-					'new_item_name'         => esc_html__( 'New Project Type Name',         'toolbelt' ),
-					'parent_item'           => esc_html__( 'Parent Project Type',           'toolbelt' ),
-					'parent_item_colon'     => esc_html__( 'Parent Project Type:',          'toolbelt' ),
-					'search_items'          => esc_html__( 'Search Project Types',          'toolbelt' ),
-					'items_list_navigation' => esc_html__( 'Project type list navigation',  'toolbelt' ),
-					'items_list'            => esc_html__( 'Project type list',             'toolbelt' ),
+					'name'                  => esc_html__( 'Project Types', 'toolbelt' ),
+					'singular_name'         => esc_html__( 'Project Type', 'toolbelt' ),
+					'menu_name'             => esc_html__( 'Project Types', 'toolbelt' ),
+					'all_items'             => esc_html__( 'All Project Types', 'toolbelt' ),
+					'edit_item'             => esc_html__( 'Edit Project Type', 'toolbelt' ),
+					'view_item'             => esc_html__( 'View Project Type', 'toolbelt' ),
+					'update_item'           => esc_html__( 'Update Project Type', 'toolbelt' ),
+					'add_new_item'          => esc_html__( 'Add New Project Type', 'toolbelt' ),
+					'new_item_name'         => esc_html__( 'New Project Type Name', 'toolbelt' ),
+					'parent_item'           => esc_html__( 'Parent Project Type', 'toolbelt' ),
+					'parent_item_colon'     => esc_html__( 'Parent Project Type:', 'toolbelt' ),
+					'search_items'          => esc_html__( 'Search Project Types', 'toolbelt' ),
+					'items_list_navigation' => esc_html__( 'Project type list navigation', 'toolbelt' ),
+					'items_list'            => esc_html__( 'Project type list', 'toolbelt' ),
 				),
 				'public'            => true,
 				'show_ui'           => true,
@@ -127,23 +131,23 @@ class Toolbelt_Portfolio {
 			array(
 				'hierarchical'      => false,
 				'labels'            => array(
-					'name'                       => esc_html__( 'Project Tags',                   'toolbelt' ),
-					'singular_name'              => esc_html__( 'Project Tag',                    'toolbelt' ),
-					'menu_name'                  => esc_html__( 'Project Tags',                   'toolbelt' ),
-					'all_items'                  => esc_html__( 'All Project Tags',               'toolbelt' ),
-					'edit_item'                  => esc_html__( 'Edit Project Tag',               'toolbelt' ),
-					'view_item'                  => esc_html__( 'View Project Tag',               'toolbelt' ),
-					'update_item'                => esc_html__( 'Update Project Tag',             'toolbelt' ),
-					'add_new_item'               => esc_html__( 'Add New Project Tag',            'toolbelt' ),
-					'new_item_name'              => esc_html__( 'New Project Tag Name',           'toolbelt' ),
-					'search_items'               => esc_html__( 'Search Project Tags',            'toolbelt' ),
-					'popular_items'              => esc_html__( 'Popular Project Tags',           'toolbelt' ),
-					'separate_items_with_commas' => esc_html__( 'Separate tags with commas',      'toolbelt' ),
-					'add_or_remove_items'        => esc_html__( 'Add or remove tags',             'toolbelt' ),
+					'name'                       => esc_html__( 'Project Tags', 'toolbelt' ),
+					'singular_name'              => esc_html__( 'Project Tag', 'toolbelt' ),
+					'menu_name'                  => esc_html__( 'Project Tags', 'toolbelt' ),
+					'all_items'                  => esc_html__( 'All Project Tags', 'toolbelt' ),
+					'edit_item'                  => esc_html__( 'Edit Project Tag', 'toolbelt' ),
+					'view_item'                  => esc_html__( 'View Project Tag', 'toolbelt' ),
+					'update_item'                => esc_html__( 'Update Project Tag', 'toolbelt' ),
+					'add_new_item'               => esc_html__( 'Add New Project Tag', 'toolbelt' ),
+					'new_item_name'              => esc_html__( 'New Project Tag Name', 'toolbelt' ),
+					'search_items'               => esc_html__( 'Search Project Tags', 'toolbelt' ),
+					'popular_items'              => esc_html__( 'Popular Project Tags', 'toolbelt' ),
+					'separate_items_with_commas' => esc_html__( 'Separate tags with commas', 'toolbelt' ),
+					'add_or_remove_items'        => esc_html__( 'Add or remove tags', 'toolbelt' ),
 					'choose_from_most_used'      => esc_html__( 'Choose from the most used tags', 'toolbelt' ),
-					'not_found'                  => esc_html__( 'No tags found.',                 'toolbelt' ),
-					'items_list_navigation'      => esc_html__( 'Project tag list navigation',    'toolbelt' ),
-					'items_list'                 => esc_html__( 'Project tag list',               'toolbelt' ),
+					'not_found'                  => esc_html__( 'No tags found.', 'toolbelt' ),
+					'items_list_navigation'      => esc_html__( 'Project tag list navigation', 'toolbelt' ),
+					'items_list'                 => esc_html__( 'Project tag list', 'toolbelt' ),
 				),
 				'public'            => true,
 				'show_ui'           => true,
@@ -170,7 +174,7 @@ class Toolbelt_Portfolio {
 		if ( current_theme_supports( 'post-thumbnails' ) ) {
 
 			// Add featured image before 'Project'.
-			$columns = array_slice( $columns, 0, 1, true ) + array( 'thumbnail' => '' ) + array_slice( $columns, 1, NULL, true );
+			$columns = array_slice( $columns, 0, 1, true ) + array( 'thumbnail' => '' ) + array_slice( $columns, 1, null, true );
 
 		}
 
@@ -198,7 +202,7 @@ class Toolbelt_Portfolio {
 
 		$screen = get_current_screen();
 
-		if ( 'edit.php' == $hook && self::CUSTOM_POST_TYPE == $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
+		if ( 'edit.php' === $hook && self::CUSTOM_POST_TYPE === $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
 			wp_add_inline_style( 'wp-admin', '.manage-column.column-thumbnail { width: 50px; } @media screen and (max-width: 360px) { .column-thumbnail{ display:none; } }' );
 		}
 
