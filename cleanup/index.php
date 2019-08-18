@@ -11,15 +11,15 @@ remove_action( 'wp_head', 'rsd_link' );
 // Remove wlwmanifest.xml (needed to support windows live writer).
 remove_action( 'wp_head', 'wlwmanifest_link' );
 
-// Remove generator tag from RSS feeds
+// Remove generator tag from RSS feeds.
 remove_action( 'atom_head', 'the_generator' );
 remove_action( 'comments_atom_head', 'the_generator' );
-remove_action( 'rss_head',  'the_generator' );
+remove_action( 'rss_head', 'the_generator' );
 remove_action( 'rss2_head', 'the_generator' );
 remove_action( 'commentsrss2_head', 'the_generator' );
 remove_action( 'rdf_header', 'the_generator' );
 remove_action( 'opml_head', 'the_generator' );
-remove_action( 'app_head',  'the_generator' );
+remove_action( 'app_head', 'the_generator' );
 
 // Remove the next and previous post links.
 remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
@@ -33,7 +33,7 @@ remove_action( 'template_redirect', 'wp_shortlink_header', 11, 0 );
 remove_action( 'wp_head', 'wp_generator' );
 
 // Remove the annoying:
-// <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+// <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>.
 add_filter( 'show_recent_comments_widget_style', '__return_false' );
 
 // Remove emoji styles and script from header.
@@ -63,11 +63,12 @@ if ( is_admin() ) {
 
 }
 
-// Slow default heartbeat.
+// Slow down the default heartbeat.
 add_filter(
 	'heartbeat_settings',
 	function ( $settings ) {
-		$settings['interval'] = 60;
+		// 30 seconds.
+		$settings['interval'] = 30;
 		return $settings;
 	}
 );
