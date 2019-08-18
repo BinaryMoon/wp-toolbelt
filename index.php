@@ -7,7 +7,7 @@
  * Version: 0.0.1
  * Author URI: https://prothemedesign.com
  *
- * @package tb
+ * @package toolbelt
  */
 
 define( 'TB_VERSION', '0.0.1' );
@@ -19,6 +19,9 @@ if ( is_admin() ) {
 
 }
 
+/**
+ * Load the valid modules.
+ */
 function tb_load_modules() {
 
 	$modules = array(
