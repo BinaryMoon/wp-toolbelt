@@ -24,19 +24,42 @@ if ( is_admin() ) {
  */
 function tb_load_modules() {
 
-	$modules = array(
-		'cookie-banner',
-		'projects',
-		'cleanup',
-	);
+	$modules = tb_get_modules();
+	$options = get_option( 'toolbelt_options' );
 
-	foreach ( $modules as $module ) {
+	foreach ( $modules as $slug => $module ) {
 
-		// if module active then load it.
-		require TB_PATH . $module . '/index.php';
+		// if module has been enabled then load it.
+		if ( ! empty( $options[ $slug ] ) && 'on' === $options[ $slug ] ) {
 
+			require TB_PATH . $slug . '/index.php';
+
+		}
 	}
 
 }
 
 add_action( 'init', 'tb_load_modules' );
+
+
+/**
+ * Get the list of available Toolbelt modules.
+ */
+function tb_get_modules() {
+
+	return array(
+		'cookie-banner' => array(
+			'name' => esc_html__( 'EU Cookie Banner', 'toolbelt' ),
+			'description' => esc_html( 'Display a simple banner with a link to your Privacy Policy.', 'toolbelt' ),
+		),
+		'projects' => array(
+			'name' => esc_html__( 'Portfolio', 'toolbelt' ),
+			'description' => esc_html( 'A portfolio custom post type.', 'toolbelt' ),
+		),
+		'cleanup' => array(
+			'name' => esc_html__( 'Header Cleanup', 'toolbelt' ),
+			'description' => esc_html( 'Remove unnesecary HTML from the site header.', 'toolbelt' ),
+		),
+	);
+
+}
