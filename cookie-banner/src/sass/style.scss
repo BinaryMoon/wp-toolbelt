@@ -1,0 +1,45 @@
+.tb_cookie_wrapper {
+
+	display: none;
+
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	justify-content: center;
+
+	padding: 0.5rem;
+	z-index: 999;
+
+	font-size: 1rem;
+
+	button,
+	strong {
+
+		padding: 0.5rem 1rem;
+		line-height: 1rem;
+
+	}
+
+	strong {
+
+		background: white;
+		color: black;
+
+	}
+
+	button {
+
+		background: black;
+		color: white;
+		font-size: 1.5rem;
+
+		&:hover {
+
+			text-decoration: none;
+
+		}
+
+	}
+
+}
