@@ -7,6 +7,12 @@
 
 /**
  * Add a "settings" link to Toolbelt in the plugin list.
+ *
+ * This function gets called for all plugins, so we need to check which plugin
+ * is being tested, and only add the settings for the relevant one.
+ *
+ * @param array  $plugin_actions The current links for the plugin being checked.
+ * @param string $plugin_file The filepath for the plugin being checked.
  */
 function tb_admin_settings_link( $plugin_actions, $plugin_file ) {
 
