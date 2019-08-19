@@ -4,13 +4,13 @@
  * Plugin URI: https://prothemedesign.com
  * Description: More features, fast.
  * Author: Ben Gillbanks
- * Version: 0.0.1
+ * Version: 1.0
  * Author URI: https://prothemedesign.com
  *
  * @package toolbelt
  */
 
-define( 'TB_VERSION', '0.0.1' );
+define( 'TB_VERSION', '1.0' );
 define( 'TB_PATH', plugin_dir_path( __FILE__ ) );
 
 if ( is_admin() ) {
