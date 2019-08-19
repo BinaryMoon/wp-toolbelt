@@ -17,11 +17,13 @@ Yep - it's super quick. To be fast it:
 
 To ensure the plugin is as private as possible it:
 
-* Does not phone out. No data is shared with third parties. This includes the sharing module.
+* Does not phone out. No data is shared with third parties.
+* Does not use standard social sharing javascripts (loaded from social networks servers).
+* Does not track your usage of the plugin.
+* Does not add generator comments, or secret comments to your site html.
 
 # Features
 
 * Portfolio post type
 * EU Cookie banner
 * Social share buttons
-
