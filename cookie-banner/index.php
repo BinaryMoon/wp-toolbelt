@@ -13,24 +13,11 @@ if ( is_admin() ) {
 /**
  * Display the cookie data in the footer.
  */
-function toolbelt_cookie_footer() {
+function tb_cookie_footer() {
 
 	$path = plugin_dir_path( __FILE__ );
 
-	// Privacy policy message.
-	/* Translators: %s = privacy policy link */
-	$message = esc_html__( 'By using this website, you agree to our %s', 'toolbelt' );
-	$link = esc_html__( 'cookie policy', 'toolbelt' );
-
-	// If there's a privacy policy page then link to it.
-	$privacy_policy_link = get_the_privacy_policy_link();
-	if ( ! empty( $privacy_policy_link ) ) {
-		$link = $privacy_policy_link;
-	}
-
-	// Merge the message and the link.
-	$message = sprintf( $message, $link );
-	$message = apply_filters( 'tb_cookie_message', $message );
+	$message = tb_cookie_message();
 
 	// Output bar styles. Do this first so that the bar has styles instantly.
 	echo '<style>';
@@ -50,4 +37,28 @@ function toolbelt_cookie_footer() {
 
 }
 
-add_filter( 'wp_footer', 'toolbelt_cookie_footer' );
+add_filter( 'wp_footer', 'tb_cookie_footer' );
+
+
+/**
+ * Get the cookie banner message.
+ */
+function tb_cookie_message() {
+
+	// Privacy policy message.
+	/* Translators: %s = privacy policy link */
+	$message = esc_html__( 'By using this website, you agree to our %s', 'toolbelt' );
+	$link = esc_html__( 'cookie policy', 'toolbelt' );
+
+	// If there's a privacy policy page then link to it.
+	$privacy_policy_link = get_the_privacy_policy_link();
+	if ( ! empty( $privacy_policy_link ) ) {
+		$link = $privacy_policy_link;
+	}
+
+	// Merge the message and the link.
+	$message = sprintf( $message, $link );
+
+	return apply_filters( 'tb_cookie_message', $message );
+
+}
