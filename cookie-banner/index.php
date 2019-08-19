@@ -30,6 +30,7 @@ function toolbelt_cookie_footer() {
 
 	// Merge the message and the link.
 	$message = sprintf( $message, $link );
+	$message = apply_filters( 'tb_cookie_message', $message );
 
 	// Output bar styles. Do this first so that the bar has styles instantly.
 	echo '<style>';
@@ -39,7 +40,7 @@ function toolbelt_cookie_footer() {
 	// Generate the template html.
 	printf(
 		'<section class="tb_cookie_wrapper"><strong>%s</strong><button class="tp_cookie_close">&times;</button></section>',
-		$message
+		wp_kses_data( $message )
 	);
 
 	// Output scripts.
