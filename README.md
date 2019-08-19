@@ -12,7 +12,7 @@ Yep - it's super quick. To be fast it:
 * Only loads things when they are needed. JS and CSS are only loaded for activated modules.
 * No options. There's only one database option, and that's an array that stores what modules are active.
 * Uses the minimum code possible. Minimum Javascript and PHP. Less code means more speed, and fewer bugs.
-* All options are disabled by default. You enable just the ones you need.
+* All modules are disabled by default. You only enable the ones you need.
 
 ## Privacy? GDPR?
 
