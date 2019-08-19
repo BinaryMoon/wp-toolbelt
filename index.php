@@ -19,6 +19,7 @@ if ( is_admin() ) {
 
 }
 
+
 /**
  * Load the valid modules.
  */
@@ -51,6 +52,10 @@ function tb_get_modules() {
 		'cookie-banner' => array(
 			'name' => esc_html__( 'EU Cookie Banner', 'toolbelt' ),
 			'description' => esc_html( 'Display a simple banner with a link to your Privacy Policy.', 'toolbelt' ),
+		),
+		'social' => array(
+			'name' => esc_html__( 'Static Social Sharing', 'toolbelt' ),
+			'description' => esc_html( 'Add social sharing links that use the platforms native sharing system.', 'toolbelt' ),
 		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'toolbelt' ),
