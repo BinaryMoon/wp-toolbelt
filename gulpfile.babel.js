@@ -6,11 +6,17 @@ import { series, parallel, watch } from 'gulp';
 
 import { styles_cookie, styles_social } from './gulp/sass';
 import scripts from './gulp/script';
+import compress from './gulp/zip';
 
-export const build = parallel(
-	styles_cookie,
-	styles_social,
-	scripts
+export const buildZip = compress;
+
+export const build = series(
+	parallel(
+		styles_cookie,
+		styles_social,
+		scripts
+	),
+	compress
 );
 
 export const watchFiles = function( done ) {
