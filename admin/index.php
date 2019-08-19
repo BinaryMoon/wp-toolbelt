@@ -47,9 +47,13 @@ function tb_admin_menu() {
 add_action( 'admin_menu', 'tb_admin_menu' );
 
 
-
-
-
+/**
+ * Display a module activation field.
+ *
+ * Displays a brief description and a link to the module docs.
+ *
+ * @param array $args List of parameters for the field.
+ */
 function tb_field( $args ) {
 
 	$key = $args['key'];
@@ -75,6 +79,9 @@ function tb_field( $args ) {
 		</td>
 		<td>
 			<?php echo esc_html( $args['description'] ); ?>
+		</td>
+		<td>
+			<a href="<?php echo esc_html( $args['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'toolbelt' ); ?></a>
 		</td>
 	</tr>
 

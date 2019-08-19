@@ -35,6 +35,7 @@
 				'key' => $slug,
 				'name' => $module['name'],
 				'description' => $module['description'],
+				'docs' => $module['docs'],
 			)
 		);
 	}
