@@ -4,7 +4,7 @@ A lightweight plugin inspired by Jetpack but designed for speed, simplicity, and
 
 ## Speed?
 
-Yep - it's super quick. To be fast it:
+I want it to be fast. I want to be able to enable any of the features and not have my Google Pagespeed score drop. To be fast it:
 
 * Doesn't use jQuery or any other javascript framework. All javascript is vanilla js, and minified.
 * Minifies all assets (JS and CSS)
@@ -16,7 +16,7 @@ Yep - it's super quick. To be fast it:
 
 ## Privacy? GDPR?
 
-To ensure the plugin is as private as possible it:
+To ensure the plugin is as privacy focused as possible it:
 
 * Does not phone out. No data is shared with third parties.
 * Does not use standard social sharing javascripts (loaded from social networks servers).
