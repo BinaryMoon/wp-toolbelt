@@ -5,6 +5,11 @@
  * @package toolbelt
  */
 
+// Don't display in the WordPress admin.
+if ( is_admin() ) {
+	return;
+}
+
 /**
  * Add social sharing buttons to the post content.
  */

@@ -5,6 +5,11 @@
  * @package toolbelt
  */
 
+// Don't display in the WordPress admin.
+if ( is_admin() ) {
+	return;
+}
+
 // Remove really simple discovery link.
 remove_action( 'wp_head', 'rsd_link' );
 
