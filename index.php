@@ -33,7 +33,7 @@ function tb_load_modules() {
 		// if module has been enabled then load it.
 		if ( ! empty( $options[ $slug ] ) && 'on' === $options[ $slug ] ) {
 
-			require TB_PATH . $slug . '/index.php';
+			require TB_PATH . 'modules/' . $slug . '/index.php';
 
 		}
 	}
