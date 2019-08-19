@@ -37,7 +37,13 @@ function tb_social_sharing( $content ) {
 	foreach ( $networks as $slug => $network ) {
 
 		$url = sprintf( $network['url'], rawurlencode( $canonical ) );
-		$html .= '<a href="' . esc_url( $url ) . '" title="' . esc_attr( $network['title'] ) . '" class="tb_' . esc_attr( $slug ) . '">' . esc_html( $network['label'] ) . '</a>' . "\n";
+		$html .= sprintf(
+			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank">%4$s</a>' . "\n",
+			esc_url( $url ),
+			esc_attr( $network['title'] ),
+			'tb_' . esc_attr( $slug ),
+			esc_html( $network['label'] )
+		);
 
 	}
 
