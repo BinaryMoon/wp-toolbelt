@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name: WP Toolbelt
- * Plugin URI: https://prothemedesign.com
  * Description: More features, fast.
  * Author: Ben Gillbanks
  * Version: 1.0
