@@ -206,3 +206,5 @@ function tb_portfolio_enqueue_admin_styles( $hook ) {
 	}
 
 }
+
+add_action( 'admin_enqueue_scripts', 'tb_portfolio_enqueue_admin_styles' );
