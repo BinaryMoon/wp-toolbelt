@@ -55,9 +55,15 @@ function process_styles( slug ) {
 
 }
 
-export default function styles() {
+export function styles_cookie() {
 
 	return process_styles( 'cookie-banner' );
+
+}
+
+export function styles_social() {
+
+	return process_styles( 'social' );
 
 }
 
