@@ -52,18 +52,22 @@ function tb_get_modules() {
 		'cookie-banner' => array(
 			'name' => esc_html__( 'EU Cookie Banner', 'toolbelt' ),
 			'description' => esc_html( 'Display a simple banner with a link to your Privacy Policy.', 'toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner',
 		),
 		'social' => array(
 			'name' => esc_html__( 'Static Social Sharing', 'toolbelt' ),
 			'description' => esc_html( 'Add social sharing links that use the platforms native sharing system.', 'toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing',
 		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'toolbelt' ),
 			'description' => esc_html( 'A portfolio custom post type.', 'toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio',
 		),
 		'cleanup' => array(
 			'name' => esc_html__( 'Header Cleanup', 'toolbelt' ),
-			'description' => esc_html( 'Remove unnesecary HTML from the site header.', 'toolbelt' ),
+			'description' => esc_html( 'Remove unnecessary HTML from the site header.', 'toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization',
 		),
 	);
 
