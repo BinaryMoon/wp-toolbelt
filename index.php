@@ -69,6 +69,11 @@ function tb_get_modules() {
 			'description' => esc_html( 'Remove unnecessary HTML from the site header.', 'toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization',
 		),
+		'breadcrumbs' => array(
+			'name' => esc_html__( 'Breadcrumbs', 'toolbelt' ),
+			'description' => esc_html( 'Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info.', 'toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs',
+		),
 	);
 
 }
