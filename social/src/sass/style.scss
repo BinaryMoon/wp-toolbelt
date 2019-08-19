@@ -1,0 +1,48 @@
+.tb_social_share {
+
+	font-size: 1rem;
+	margin: 2rem 0;
+
+	a {
+
+		display: block;
+		padding: 0.5rem 1rem;
+		font-weight: bold;
+		color: white;
+
+		@media (min-width: 500px) {
+
+			display: inline-block;
+
+		}
+
+	}
+
+	.tb_facebook {
+		background-color:#3b5998;
+	}
+
+	.tb_twitter {
+		background-color:#1da1f2;
+	}
+
+	.tb_linkedin {
+		background-color:#0077b5;
+	}
+
+	.tb_whatsapp {
+		background-color:#075e54;
+
+		@media (min-width: 500px) {
+
+			display: none;
+
+		}
+
+	}
+
+	.tb_pinterest {
+		background-color:#bd081c;
+	}
+
+}
