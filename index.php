@@ -21,7 +21,7 @@ if ( is_admin() ) {
 
 
 /**
- * Load the valid modules.
+ * Load the enabled modules.
  */
 function tb_load_modules() {
 
