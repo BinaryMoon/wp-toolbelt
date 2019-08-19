@@ -15,9 +15,9 @@
 <div class="wrap about-wrap full-width-layout">
 
 	<div class="wp-header-end"></div><!-- admin notices go after .wp-header-end or .wrap>h2:first-child -->
-	<h1><?php esc_html_e( 'Toolbelt settings', 'toolbelt' ); ?></h1>
+	<h1><?php esc_html_e( 'Toolbelt settings', 'wp-toolbelt' ); ?></h1>
 
-	<div class="about-text"><?php esc_html_e( 'Toolbelt is a lightweight, privacy focused, collection of things that add commonly needed features to your WordPress website.', 'toolbelt' ); ?></div>
+	<div class="about-text"><?php esc_html_e( 'Toolbelt is a lightweight, privacy focused, collection of things that add commonly needed features to your WordPress website.', 'wp-toolbelt' ); ?></div>
 
 	<form action="" method="POST">
 
@@ -44,7 +44,7 @@
 
 		</table>
 
-		<?php submit_button( esc_html__( 'Save Settings', 'toolbelt' ) ); ?>
+		<?php submit_button( esc_html__( 'Save Settings', 'wp-toolbelt' ) ); ?>
 
 	</form>
 

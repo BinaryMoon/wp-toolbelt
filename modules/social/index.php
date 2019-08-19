@@ -61,28 +61,28 @@ function tb_social_networks() {
 
 	$networks = array(
 		'facebook' => array(
-			'title' => esc_html__( 'Share on Facebook', 'toolbelt' ),
-			'label' => esc_html_x( 'Share this', 'Facebook button label', 'toolbelt' ),
+			'title' => esc_html__( 'Share on Facebook', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Facebook button label', 'wp-toolbelt' ),
 			'url' => 'https://facebook.com/sharer/sharer.php?u=%s',
 		),
 		'twitter' => array(
-			'title' => esc_html__( 'Tweet on Twitter', 'toolbelt' ),
-			'label' => esc_html_x( 'Tweet this', 'Twitter button label', 'toolbelt' ),
+			'title' => esc_html__( 'Tweet on Twitter', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Tweet this', 'Twitter button label', 'wp-toolbelt' ),
 			'url' => 'https://twitter.com/intent/tweet?url=%s',
 		),
 		'linkedin' => array(
-			'title' => esc_html__( 'Share on LinkedIn', 'toolbelt' ),
-			'label' => esc_html_x( 'Share this', 'LinkedIn button label', 'toolbelt' ),
+			'title' => esc_html__( 'Share on LinkedIn', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'LinkedIn button label', 'wp-toolbelt' ),
 			'url' => 'https://www.linkedin.com/shareArticle?mini=true&url=%s',
 		),
 		'whatsapp' => array(
-			'title' => esc_html__( 'Share on WhatsApp', 'toolbelt' ),
-			'label' => esc_html_x( 'Share this', 'WhatsApp button label', 'toolbelt' ),
+			'title' => esc_html__( 'Share on WhatsApp', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'WhatsApp button label', 'wp-toolbelt' ),
 			'url' => 'https://wa.me/?text=%s',
 		),
 		'pinterest' => array(
-			'title' => esc_html__( 'Pin on Pinterest', 'toolbelt' ),
-			'label' => esc_html_x( 'Pin this', 'Pinterest button label', 'toolbelt' ),
+			'title' => esc_html__( 'Pin on Pinterest', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Pin this', 'Pinterest button label', 'wp-toolbelt' ),
 			'url' => 'https://pinterest.com/pin/create/button/?url=%s',
 		),
 	);

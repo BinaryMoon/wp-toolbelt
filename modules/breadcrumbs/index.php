@@ -39,7 +39,7 @@ function tb_breadcrumbs() {
 	$home = sprintf(
 		'<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="%1$s" class="home-link" itemprop="item" rel="home"><span itemprop="name">%2$s</span></a></span>',
 		esc_url( home_url( '/' ) ),
-		esc_html__( 'Home', 'toolbelt' )
+		esc_html__( 'Home', 'wp-toolbelt' )
 	);
 
 	echo '<nav class="entry-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $home . $breadcrumb . '</nav>';

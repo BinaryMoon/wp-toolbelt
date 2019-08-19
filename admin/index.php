@@ -22,7 +22,7 @@ function tb_admin_settings_link( $plugin_actions, $plugin_file ) {
 
 		$new_actions['sc_settings'] = sprintf(
 			'<a href="%2$s">%1$s</a>',
-			esc_html__( 'Settings', 'toolbelt' ),
+			esc_html__( 'Settings', 'wp-toolbelt' ),
 			esc_url( add_query_arg( array( 'page' => 'toolbelt' ), admin_url( 'options-general.php' ) ) )
 		);
 
@@ -87,7 +87,7 @@ function tb_field( $args ) {
 			<?php echo esc_html( $args['description'] ); ?>
 		</td>
 		<td>
-			<a href="<?php echo esc_html( $args['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'toolbelt' ); ?></a>
+			<a href="<?php echo esc_html( $args['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a>
 		</td>
 	</tr>
 

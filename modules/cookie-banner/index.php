@@ -47,8 +47,8 @@ function tb_cookie_message() {
 
 	// Privacy policy message.
 	/* Translators: %s = privacy policy link */
-	$message = esc_html__( 'By using this website, you agree to our %s', 'toolbelt' );
-	$link = esc_html__( 'cookie policy', 'toolbelt' );
+	$message = esc_html__( 'By using this website, you agree to our %s', 'wp-toolbelt' );
+	$link = esc_html__( 'cookie policy', 'wp-toolbelt' );
 
 	// If there's a privacy policy page then link to it.
 	$privacy_policy_link = get_the_privacy_policy_link();
