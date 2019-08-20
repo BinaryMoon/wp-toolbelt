@@ -78,6 +78,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html( 'Speedy related posts.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts',
 		),
+		'lazy-load' => array(
+			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
+			'description' => esc_html( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading',
+		),
 	);
 
 }
