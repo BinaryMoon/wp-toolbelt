@@ -13,8 +13,8 @@ const change = require( 'gulp-change' );
  */
 function process_styles( slug ) {
 
-	const destination = './' + slug + '/';
-	const source = './' + slug + '/src/sass/style.scss';
+	const destination = './modules/' + slug + '/';
+	const source = './modules/' + slug + '/src/sass/style.scss';
 
 	/**
 	 * Uses node-sass options:
