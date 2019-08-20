@@ -1,9 +1,9 @@
-.tb_social_share {
+.toolbelt_social_share {
 	font-size: 1rem;
 	margin: 2rem 0;
 }
 
-.tb_social_share a {
+.toolbelt_social_share a {
 	display: block;
 	padding: 0.5rem 1rem;
 	font-weight: bold;
@@ -11,33 +11,33 @@
 }
 
 @media (min-width: 500px) {
-	.tb_social_share a {
+	.toolbelt_social_share a {
 		display: inline-block;
 	}
 }
 
-.tb_social_share .tb_facebook {
+.toolbelt_social_share .toolbelt_facebook {
 	background-color: #3b5998;
 }
 
-.tb_social_share .tb_twitter {
+.toolbelt_social_share .toolbelt_twitter {
 	background-color: #1da1f2;
 }
 
-.tb_social_share .tb_linkedin {
+.toolbelt_social_share .toolbelt_linkedin {
 	background-color: #0077b5;
 }
 
-.tb_social_share .tb_whatsapp {
+.toolbelt_social_share .toolbelt_whatsapp {
 	background-color: #075e54;
 }
 
 @media (min-width: 500px) {
-	.tb_social_share .tb_whatsapp {
+	.toolbelt_social_share .toolbelt_whatsapp {
 		display: none;
 	}
 }
 
-.tb_social_share .tb_pinterest {
+.toolbelt_social_share .toolbelt_pinterest {
 	background-color: #bd081c;
 }

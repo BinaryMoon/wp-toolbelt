@@ -1,4 +1,4 @@
-.tb_cookie_wrapper {
+.toolbelt_cookie_wrapper {
 	display: none;
 	position: fixed;
 	bottom: 0;
@@ -10,23 +10,23 @@
 	font-size: 1rem;
 }
 
-.tb_cookie_wrapper button,
-.tb_cookie_wrapper strong {
+.toolbelt_cookie_wrapper button,
+.toolbelt_cookie_wrapper strong {
 	padding: 0.5rem 1rem;
 	line-height: 1rem;
 }
 
-.tb_cookie_wrapper strong {
+.toolbelt_cookie_wrapper strong {
 	background: white;
 	color: black;
 }
 
-.tb_cookie_wrapper button {
+.toolbelt_cookie_wrapper button {
 	background: black;
 	color: white;
 	font-size: 1.5rem;
 }
 
-.tb_cookie_wrapper button:hover {
+.toolbelt_cookie_wrapper button:hover {
 	text-decoration: none;
 }
