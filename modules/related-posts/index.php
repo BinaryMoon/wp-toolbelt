@@ -93,7 +93,7 @@ function toolbelt_related_posts_get() {
 	}
 
 	/**
-	 * Select 5 times the related posts so that we can cache a collection and
+	 * Select 4 times the related posts so that we can cache a collection and
 	 * then display a handful from the collection.
 	 */
 	$cache_target = apply_filters( 'toolbelt_related_posts_count', 2 ) * 4;
@@ -159,7 +159,7 @@ function toolbelt_related_posts_get() {
 
 			while ( $related->have_posts() ) {
 				$related->the_post();
-				$related_posts[] = related_posts_add();
+				$related_posts[] = toolbelt_related_posts_add();
 			}
 		}
 
@@ -176,6 +176,8 @@ function toolbelt_related_posts_get() {
 
 /**
  * Return an array containing information about the current related post.
+ *
+ * @return array
  */
 function toolbelt_related_posts_add() {
 
@@ -188,8 +190,8 @@ function toolbelt_related_posts_add() {
 		'image' => '',
 	);
 
-	if ( has_post_thumbnail() ) {
-		$post_info['image'] = get_the_post_thumbnail( $thumbnail_size );
+	if ( has_post_thumbnail( get_the_ID() ) ) {
+		$post_info['image'] = get_the_post_thumbnail( get_the_ID(), $thumbnail_size );
 	}
 
 	return $post_info;
