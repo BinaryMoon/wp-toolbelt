@@ -3,7 +3,7 @@ Contributors: BinaryMoon
 Tags: speed, user experience, UX, optimization
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Utilities to make your website betterer.
 
