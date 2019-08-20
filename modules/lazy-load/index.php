@@ -19,12 +19,6 @@ function toolbelt_lazy_load( $content ) {
 		$content
 	);
 
-	return preg_replace(
-		'/(< [^>]*?)(\ssrc=)(.*?\/?>)/',
-		'\1 loading="lazy" src=\3',
-		$content
-	);
-
 }
 
 add_filter( 'the_content', 'toolbelt_lazy_load', 100 );
