@@ -8,8 +8,8 @@ const rename = require( 'gulp-rename' );
 
 function process_scripts( slug ) {
 
-	const destination = './' + slug + '/';
-	const source = './' + slug + '/src/js/**.js';
+	const destination = './modules/' + slug + '/';
+	const source = './modules/' + slug + '/src/js/**.js';
 
 	return src( source )
 		.pipe(
