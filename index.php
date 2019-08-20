@@ -73,6 +73,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html( 'Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs',
 		),
+		'related-posts' => array(
+			'name' => esc_html__( 'Related Posts', 'wp-toolbelt' ),
+			'description' => esc_html( 'Speedy related posts.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts',
+		),
 	);
 
 }

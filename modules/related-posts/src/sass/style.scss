@@ -1,0 +1,40 @@
+.toolbelt-related-posts {
+
+	display: flex;
+	margin: 1rem -1rem;
+	flex-wrap: wrap;
+
+	> * {
+
+		padding: 1rem;
+
+	}
+
+	h3 {
+
+		width: 100%;
+
+	}
+
+	a {
+
+		display: block;
+		flex-grow: 1;
+		flex-basis: 50%;
+
+	}
+
+	img {
+
+		display: block;
+		text-decoration: none;
+
+	}
+
+	.wp-caption {
+
+		display: block;
+
+	}
+
+}
