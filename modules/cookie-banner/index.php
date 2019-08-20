@@ -13,11 +13,11 @@ if ( is_admin() ) {
 /**
  * Display the cookie data in the footer.
  */
-function tb_cookie_footer() {
+function toolbelt_cookie_footer() {
 
 	$path = plugin_dir_path( __FILE__ );
 
-	$message = tb_cookie_message();
+	$message = toolbelt_cookie_message();
 
 	// Output bar styles. Do this first so that the bar has styles instantly.
 	echo '<style>';
@@ -26,7 +26,7 @@ function tb_cookie_footer() {
 
 	// Generate the template html.
 	printf(
-		'<section class="tb_cookie_wrapper"><strong>%s</strong><button class="tp_cookie_close">&times;</button></section>',
+		'<section class="toolbelt_cookie_wrapper"><strong>%s</strong><button class="tp_cookie_close">&times;</button></section>',
 		wp_kses_data( $message )
 	);
 
@@ -37,13 +37,13 @@ function tb_cookie_footer() {
 
 }
 
-add_filter( 'wp_footer', 'tb_cookie_footer' );
+add_filter( 'wp_footer', 'toolbelt_cookie_footer' );
 
 
 /**
  * Get the cookie banner message.
  */
-function tb_cookie_message() {
+function toolbelt_cookie_message() {
 
 	// Privacy policy message.
 	/* Translators: %s = privacy policy link */
@@ -59,6 +59,6 @@ function tb_cookie_message() {
 	// Merge the message and the link.
 	$message = sprintf( $message, $link );
 
-	return apply_filters( 'tb_cookie_message', $message );
+	return apply_filters( 'toolbelt_cookie_message', $message );
 
 }

@@ -27,10 +27,10 @@
 
 <?php
 
-	$modules = tb_get_modules();
+	$modules = toolbelt_get_modules();
 
 	foreach ( $modules as $slug => $module ) {
-		tb_field(
+		toolbelt_field(
 			array(
 				'key' => $slug,
 				'name' => $module['name'],

@@ -13,13 +13,13 @@ if ( is_admin() ) {
 /**
  * Add social sharing buttons to the post content.
  */
-function tb_social_sharing( $content ) {
+function toolbelt_social_sharing( $content ) {
 
 	if ( ! is_singular() ) {
 		return $content;
 	}
 
-	tb_social_styles();
+	toolbelt_social_styles();
 
 	$html = '';
 
@@ -32,7 +32,7 @@ function tb_social_sharing( $content ) {
 	}
 
 	// Display a list of social networks.
-	$networks = tb_social_networks();
+	$networks = toolbelt_social_networks();
 
 	foreach ( $networks as $slug => $network ) {
 
@@ -41,23 +41,23 @@ function tb_social_sharing( $content ) {
 			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank">%4$s</a>' . "\n",
 			esc_url( $url ),
 			esc_attr( $network['title'] ),
-			'tb_' . esc_attr( $slug ),
+			'toolbelt_' . esc_attr( $slug ),
 			esc_html( $network['label'] )
 		);
 
 	}
 
-	return $content . '<section class="tb_social_share">' . $html . '</section>';
+	return $content . '<section class="toolbelt_social_share">' . $html . '</section>';
 
 }
 
-add_filter( 'the_content', 'tb_social_sharing' );
+add_filter( 'the_content', 'toolbelt_social_sharing' );
 
 
 /**
  * Get a list of social networks and their sharing links.
  */
-function tb_social_networks() {
+function toolbelt_social_networks() {
 
 	$networks = array(
 		'facebook' => array(
@@ -87,7 +87,7 @@ function tb_social_networks() {
 		),
 	);
 
-	return apply_filters( 'tb_social_networks', $networks );
+	return apply_filters( 'toolbelt_social_networks', $networks );
 
 }
 
@@ -95,7 +95,7 @@ function tb_social_networks() {
 /**
  * Display the social styles.
  */
-function tb_social_styles() {
+function toolbelt_social_styles() {
 
 	$path = plugin_dir_path( __FILE__ );
 

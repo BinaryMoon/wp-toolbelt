@@ -34,12 +34,11 @@ var toolbelt_cookie_bar = ( function() {
 
 		init: function() {
 
-			if ( !get_cookie( 'tb_accepted_cookies' ) ) {
+			if ( !get_cookie( 'toolbelt_accepted_cookies' ) ) {
 
-				var container = document.querySelector( '.tb_cookie_wrapper' );
-				container.style.display = 'flex';
+				document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'flex';
 
-				document.querySelector( '.tb_cookie_wrapper button' ).addEventListener(
+				document.querySelector( '.toolbelt_cookie_wrapper button' ).addEventListener(
 					'click',
 					toolbelt_cookie_bar.accept,
 					false
@@ -51,8 +50,8 @@ var toolbelt_cookie_bar = ( function() {
 
 		accept: function() {
 
-			set_cookie( 'tb_accepted_cookies', 'yes', 365 );
-			document.querySelector( '.tb_cookie_wrapper' ).style.display = 'none';
+			set_cookie( 'toolbelt_accepted_cookies', 'yes', 365 );
+			document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'none';
 
 		}
 

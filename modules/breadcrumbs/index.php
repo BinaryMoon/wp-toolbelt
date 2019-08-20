@@ -14,14 +14,14 @@
  * b) have the function below added to the theme. It won't work without this
  * function.
  */
-function tb_breadcrumbs() {
+function toolbelt_breadcrumbs() {
 
 	// Quit on the homepage.
 	if ( is_front_page() ) {
 		return;
 	}
 
-	$breadcrumb_type = tb_breadcrumb_type();
+	$breadcrumb_type = toolbelt_breadcrumb_type();
 
 	// Quit if the content is a top level item.
 	if ( ! $breadcrumb_type ) {
@@ -29,11 +29,11 @@ function tb_breadcrumbs() {
 	}
 
 	if ( 'post' === $breadcrumb_type[0] ) {
-		$breadcrumb = tb_breadcrumb_post_hierarchical();
+		$breadcrumb = toolbelt_breadcrumb_post_hierarchical();
 	}
 
 	if ( 'taxonomy' === $breadcrumb_type[0] ) {
-		$breadcrumb = tb_breadcrumb_tax_hierarchical( $breadcrumb_type[1] );
+		$breadcrumb = toolbelt_breadcrumb_tax_hierarchical( $breadcrumb_type[1] );
 	}
 
 	$home = sprintf(
@@ -54,7 +54,7 @@ function tb_breadcrumbs() {
  *
  * @return false|array Item 0 = breadcrumb type (taxonomy or post), Item 1 = type of breadcrumb type. Eg, archive or tag.
  */
-function tb_breadcrumb_type() {
+function toolbelt_breadcrumb_type() {
 
 	// Single post/ page breadcrumbs.
 	$post_type = 'page';
@@ -94,7 +94,7 @@ function tb_breadcrumb_type() {
  * @param string $taxonomy The taxonomy type for the archive.
  * @return string
  */
-function tb_breadcrumb_tax_hierarchical( $taxonomy ) {
+function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 
 	$current = get_term( get_queried_object_id(), $taxonomy );
 	$breadcrumb = '';
@@ -104,7 +104,7 @@ function tb_breadcrumb_tax_hierarchical( $taxonomy ) {
 	}
 
 	if ( $current->parent ) {
-		$breadcrumb = tb_get_term_parents( $current->parent, $taxonomy );
+		$breadcrumb = toolbelt_get_term_parents( $current->parent, $taxonomy );
 	}
 
 	$breadcrumb .= sprintf(
@@ -126,7 +126,7 @@ function tb_breadcrumb_tax_hierarchical( $taxonomy ) {
  *
  * @return string
  */
-function tb_breadcrumb_post_hierarchical() {
+function toolbelt_breadcrumb_post_hierarchical() {
 
 	$post_id = get_queried_object_id();
 	$ancestors = array_reverse( get_post_ancestors( $post_id ) );
@@ -161,7 +161,7 @@ function tb_breadcrumb_post_hierarchical() {
  *
  * @return string A list of links to the term parents.
  */
-function tb_get_term_parents( $term, $taxonomy, $visited = array() ) {
+function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 
 	$parent = get_term( $term, $taxonomy );
 

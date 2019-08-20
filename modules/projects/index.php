@@ -8,22 +8,22 @@
 /**
  * Define the taxonomy names.
  */
-define( 'TB_CUSTOM_POST_TYPE', 'toolbelt-portfolio' );
-define( 'TB_CUSTOM_TAXONOMY_TYPE', 'toolbelt-portfolio-type' );
-define( 'TB_CUSTOM_TAXONOMY_TAG', 'toolbelt-portfolio-tag' );
+define( 'TOOLBELT_CUSTOM_POST_TYPE', 'toolbelt-portfolio' );
+define( 'TOOLBELT_CUSTOM_TAXONOMY_TYPE', 'toolbelt-portfolio-type' );
+define( 'TOOLBELT_CUSTOM_TAXONOMY_TAG', 'toolbelt-portfolio-tag' );
 
 /**
  * Register Portfolio post type and associated taxonomies.
  */
-function tb_portfolio_register_post_types() {
+function toolbelt_portfolio_register_post_types() {
 
-	if ( post_type_exists( TB_CUSTOM_POST_TYPE ) ) {
+	if ( post_type_exists( TOOLBELT_CUSTOM_POST_TYPE ) ) {
 		return;
 	}
 
 	// Portfolio post type.
 	register_post_type(
-		TB_CUSTOM_POST_TYPE,
+		TOOLBELT_CUSTOM_POST_TYPE,
 		array(
 			'labels' => array(
 				'name'                  => esc_html__( 'Projects', 'wp-toolbelt' ),
@@ -63,7 +63,7 @@ function tb_portfolio_register_post_types() {
 			'menu_icon'       => 'dashicons-portfolio', // 3.8+ dashicon option.
 			'capability_type' => 'page',
 			'map_meta_cap'    => true,
-			'taxonomies'      => array( TB_CUSTOM_TAXONOMY_TYPE, TB_CUSTOM_TAXONOMY_TAG ),
+			'taxonomies'      => array( TOOLBELT_CUSTOM_TAXONOMY_TYPE, TOOLBELT_CUSTOM_TAXONOMY_TAG ),
 			'has_archive'     => true,
 			'query_var'       => 'portfolio',
 			'show_in_rest'    => true,
@@ -72,8 +72,8 @@ function tb_portfolio_register_post_types() {
 
 	// Portfolio project types (categories).
 	register_taxonomy(
-		TB_CUSTOM_TAXONOMY_TYPE,
-		TB_CUSTOM_POST_TYPE,
+		TOOLBELT_CUSTOM_TAXONOMY_TYPE,
+		TOOLBELT_CUSTOM_POST_TYPE,
 		array(
 			'hierarchical'      => true,
 			'labels'            => array(
@@ -104,8 +104,8 @@ function tb_portfolio_register_post_types() {
 
 	// Portfolio tags.
 	register_taxonomy(
-		TB_CUSTOM_TAXONOMY_TAG,
-		TB_CUSTOM_POST_TYPE,
+		TOOLBELT_CUSTOM_TAXONOMY_TAG,
+		TOOLBELT_CUSTOM_POST_TYPE,
 		array(
 			'hierarchical'      => false,
 			'labels'            => array(
@@ -143,7 +143,7 @@ function tb_portfolio_register_post_types() {
  * Normally I'd hook these into an action but since this file is included in
  * the init action I'm calling it directly.
  */
-tb_portfolio_register_post_types();
+toolbelt_portfolio_register_post_types();
 
 
 
@@ -154,7 +154,7 @@ tb_portfolio_register_post_types();
  * @param array $columns A list of all the current columns.
  * @return array
  */
-function tb_portfolio_edit_admin_columns( $columns ) {
+function toolbelt_portfolio_edit_admin_columns( $columns ) {
 
 	// Change 'Title' to 'Project'.
 	$columns['title'] = esc_html__( 'Project', 'wp-toolbelt' );
@@ -170,7 +170,7 @@ function tb_portfolio_edit_admin_columns( $columns ) {
 
 }
 
-add_filter( sprintf( 'manage_%s_posts_columns', TB_CUSTOM_POST_TYPE ), 'tb_portfolio_edit_admin_columns' );
+add_filter( sprintf( 'manage_%s_posts_columns', TOOLBELT_CUSTOM_POST_TYPE ), 'toolbelt_portfolio_edit_admin_columns' );
 
 
 /**
@@ -179,7 +179,7 @@ add_filter( sprintf( 'manage_%s_posts_columns', TB_CUSTOM_POST_TYPE ), 'tb_portf
  * @param string $column The name of the coloumn being checked.
  * @param int    $post_id The id of the post for the current row.
  */
-function tb_portfolio_image_column( $column, $post_id ) {
+function toolbelt_portfolio_image_column( $column, $post_id ) {
 
 	global $post;
 
@@ -189,7 +189,7 @@ function tb_portfolio_image_column( $column, $post_id ) {
 
 }
 
-add_filter( sprintf( 'manage_%s_posts_custom_column', TB_CUSTOM_POST_TYPE ), 'tb_portfolio_image_column', 10, 2 );
+add_filter( sprintf( 'manage_%s_posts_custom_column', TOOLBELT_CUSTOM_POST_TYPE ), 'toolbelt_portfolio_image_column', 10, 2 );
 
 
 /**
@@ -197,14 +197,14 @@ add_filter( sprintf( 'manage_%s_posts_custom_column', TB_CUSTOM_POST_TYPE ), 'tb
  *
  * @param string $hook The id for the current page.
  */
-function tb_portfolio_enqueue_admin_styles( $hook ) {
+function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 
 	$screen = get_current_screen();
 
-	if ( 'edit.php' === $hook && TB_CUSTOM_POST_TYPE === $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
+	if ( 'edit.php' === $hook && TOOLBELT_CUSTOM_POST_TYPE === $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
 		wp_add_inline_style( 'wp-admin', '.manage-column.column-thumbnail { width: 50px; } @media screen and (max-width: 360px) { .column-thumbnail{ display:none; } }' );
 	}
 
 }
 
-add_action( 'admin_enqueue_scripts', 'tb_portfolio_enqueue_admin_styles' );
+add_action( 'admin_enqueue_scripts', 'toolbelt_portfolio_enqueue_admin_styles' );

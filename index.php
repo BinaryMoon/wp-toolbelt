@@ -9,12 +9,12 @@
  * @package toolbelt
  */
 
-define( 'TB_VERSION', '1.0' );
-define( 'TB_PATH', plugin_dir_path( __FILE__ ) );
+define( 'TOOLBELT_VERSION', '1.0' );
+define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 
 if ( is_admin() ) {
 
-	require TB_PATH . 'admin/index.php';
+	require TOOLBELT_PATH . 'admin/index.php';
 
 }
 
@@ -22,9 +22,9 @@ if ( is_admin() ) {
 /**
  * Load the enabled modules.
  */
-function tb_load_modules() {
+function toolbelt_load_modules() {
 
-	$modules = tb_get_modules();
+	$modules = toolbelt_get_modules();
 	$options = get_option( 'toolbelt_options' );
 
 	foreach ( $modules as $slug => $module ) {
@@ -32,20 +32,20 @@ function tb_load_modules() {
 		// if module has been enabled then load it.
 		if ( ! empty( $options[ $slug ] ) && 'on' === $options[ $slug ] ) {
 
-			require TB_PATH . 'modules/' . $slug . '/index.php';
+			require TOOLBELT_PATH . 'modules/' . $slug . '/index.php';
 
 		}
 	}
 
 }
 
-add_action( 'init', 'tb_load_modules' );
+add_action( 'init', 'toolbelt_load_modules' );
 
 
 /**
  * Get the list of available Toolbelt modules.
  */
-function tb_get_modules() {
+function toolbelt_get_modules() {
 
 	return array(
 		'cookie-banner' => array(
