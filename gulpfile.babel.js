@@ -4,7 +4,7 @@
 // External dependencies.
 import { series, parallel, watch } from 'gulp';
 
-import { styles_cookie, styles_social } from './gulp/sass';
+import { styles_cookie, styles_social, styles_related_posts } from './gulp/sass';
 import scripts from './gulp/script';
 import compress from './gulp/zip';
 
@@ -14,6 +14,7 @@ export const build = series(
 	parallel(
 		styles_cookie,
 		styles_social,
+		styles_related_posts,
 		scripts
 	),
 	compress
@@ -24,7 +25,8 @@ export const watchFiles = function( done ) {
 		'./**/*.scss',
 		parallel(
 			styles_cookie,
-			styles_social
+			styles_social,
+			styles_related_posts
 		)
 	);
 	watch(

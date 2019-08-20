@@ -67,6 +67,12 @@ export function styles_social() {
 
 }
 
+export function styles_related_posts() {
+
+	return process_styles( 'related-posts' );
+
+}
+
 /**
  * Remove comments from the source so that they can be minified away.
  */
