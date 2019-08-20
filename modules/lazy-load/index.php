@@ -13,13 +13,18 @@
  */
 function toolbelt_lazy_load( $content ) {
 
-	$content = preg_replace(
-		'/src="/',
-		'loading="lazy" src="'
+	return preg_replace(
+		'/<img /',
+		'<img loading="lazy" ',
+		$content
 	);
 
-	return $content;
+	return preg_replace(
+		'/(< [^>]*?)(\ssrc=)(.*?\/?>)/',
+		'\1 loading="lazy" src=\3',
+		$content
+	);
 
 }
 
-add_filter( 'the_content', 'toolbelt_lazy_load' );
+add_filter( 'the_content', 'toolbelt_lazy_load', 100 );
