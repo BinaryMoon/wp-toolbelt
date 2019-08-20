@@ -1,4 +1,4 @@
-=== Toolbelt by Ben  ===
+=== Toolbelt ===
 Contributors: BinaryMoon
 Tags: speed, user experience, UX, optimization
 Requires at least: 4.0
@@ -20,6 +20,8 @@ Taking inspiration from Jetpack I want to rebuild the features I use the most an
 * Simple Breadcrumbs (with microformats)
 * WordPress Optimization (remove useless features)
 * Portfolio custom post type
+* Related Posts
+* Native Lazy loading
 
 = Fast =
 

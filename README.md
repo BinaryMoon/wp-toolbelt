@@ -29,6 +29,8 @@ To ensure the plugin is as privacy focused as possible it:
 * EU Cookie banner
 * Social share buttons
 * Breadcrumbs
+* Related Posts
+* Native Lazy Loading
 
 # Thanks!
 
