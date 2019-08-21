@@ -88,7 +88,8 @@ function toolbelt_social_networks() {
 		),
 	);
 
-	return apply_filters( 'toolbelt_social_networks', $networks );
+	// return apply_filters( 'toolbelt_social_networks', $networks );
+	return $networks;
 
 }
 
