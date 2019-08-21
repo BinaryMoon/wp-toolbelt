@@ -15,9 +15,7 @@ function process_scripts( slug ) {
 		.pipe(
 			concat( 'script.js' )
 		)
-		.pipe(
-			dest( destination )
-		)
+		//.pipe( dest( destination ) )
 		.pipe(
 			uglify()
 		)

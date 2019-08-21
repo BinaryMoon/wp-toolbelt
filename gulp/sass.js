@@ -39,7 +39,7 @@ function process_styles( slug ) {
 				}
 			)
 		)
-		.pipe( dest( destination ) )
+		// .pipe( dest( destination ) )
 		.pipe( rename( 'style.min.css' ) )
 		.pipe(
 			change( removeComments )
