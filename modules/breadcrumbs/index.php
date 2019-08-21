@@ -9,7 +9,7 @@
  * A function to display breadcrumbs on a category or single post/ page.
  * Should work for all post types.
  *
- * This module must be
+ * This module must be:
  * a) enabled in the plugin settings
  * b) have the function below added to the theme. It won't work without this
  * function.
