@@ -77,8 +77,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 1.1 - 18th March 2019 =
+= 1.1 - 21st August 2019 =
 * Add filter for disabling related posts within a theme, and a function for echoing related posts wherever you like.
+* Add svg icons for social links.
 
-= 1.0 - 16th March 2019 =
+= 1.0 - 20th August 2019 =
 * Initial Release
