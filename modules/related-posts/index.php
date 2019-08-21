@@ -150,6 +150,7 @@ function toolbelt_related_posts_get_data() {
 			'post__not_in' => $post_not_in,
 			'order_by' => 'rand',
 			'meta_key' => '_thumbnail_id',
+			'ignore_sticky_posts' => 1,
 		)
 	);
 
@@ -178,6 +179,7 @@ function toolbelt_related_posts_get_data() {
 				'posts_per_page' => $cache_target - count( $related_posts ),
 				'post__not_in' => $post_not_in,
 				'order_by' => 'rand',
+				'ignore_sticky_posts' => 1,
 			)
 		);
 
