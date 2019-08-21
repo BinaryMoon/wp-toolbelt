@@ -5,6 +5,11 @@
  * @package toolbelt
  */
 
+/**
+ * A unique string to use for the transient.
+ * Cache gets invalidated when a new version of Toolbelt is published.
+ * %d = the post id.
+ */
 define( 'TOOLBELT_RELATED_POST_TRANSIENT', 'toolbelt_related_post_' . TOOLBELT_VERSION . '_%d' );
 
 
@@ -16,6 +21,9 @@ define( 'TOOLBELT_RELATED_POST_TRANSIENT', 'toolbelt_related_post_' . TOOLBELT_V
  */
 function toolbelt_related_posts( $content ) {
 
+	return $content . toolbelt_related_posts_get();
+
+}
 
 /**
  * An option to disable the automatic output of the related posts.
@@ -28,14 +36,22 @@ function toolbelt_related_posts( $content ) {
 if ( apply_filters( 'toolbelt_related_posts', true ) ) {
 	add_filter( 'the_content', 'toolbelt_related_posts' );
 }
+
+
+/**
+ * Get the related posts content.
+ * With html formatting.
+ */
+function toolbelt_related_posts_get() {
+
 	if ( ! is_singular() ) {
-		return $content;
+		return '';
 	}
 
-	$related_posts = toolbelt_related_posts_get();
+	$related_posts = toolbelt_related_posts_get_data();
 
 	if ( ! $related_posts ) {
-		return $content;
+		return '';
 	}
 
 	/**
@@ -51,11 +67,9 @@ if ( apply_filters( 'toolbelt_related_posts', true ) ) {
 	require $path . 'style.min.css';
 	echo '</style>';
 
-	return $content . toolbelt_related_posts_html( $related_posts );
+	return toolbelt_related_posts_html( $related_posts );
 
 }
-
-add_filter( 'the_content', 'toolbelt_related_posts' );
 
 
 /**
@@ -92,7 +106,7 @@ function toolbelt_related_posts_html( $related_posts ) {
  *
  * @return array
  */
-function toolbelt_related_posts_get() {
+function toolbelt_related_posts_get_data() {
 
 	$id = get_the_ID();
 	$transient = sprintf( TOOLBELT_RELATED_POST_TRANSIENT, $id );
