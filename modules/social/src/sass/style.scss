@@ -5,14 +5,30 @@
 
 	a {
 
-		display: block;
+		display: flex;
 		padding: 0.5rem 1rem;
-		font-weight: bold;
 		color: white;
+		align-items: center;
 
 		@media (min-width: 500px) {
 
-			display: inline-block;
+			display: inline-flex;
+
+		}
+
+	}
+
+	svg {
+
+		margin: 0 0.5rem 0 0;
+		height: 1.5rem;
+		width: 1.5rem;
+		vertical-align: middle;
+
+		* {
+
+			stroke: none;
+			fill: currentColor;
 
 		}
 
