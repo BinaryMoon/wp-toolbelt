@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, fast.
  * Author: Ben Gillbanks
- * Version: 1.0.1
+ * Version: 1.1
  * Author URI: https://prothemedesign.com
  *
  * @package toolbelt

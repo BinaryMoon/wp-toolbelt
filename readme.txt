@@ -3,7 +3,7 @@ Contributors: BinaryMoon
 Tags: speed, user experience, UX, optimization
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.0.1
+Stable tag: 1.1
 
 Utilities to make your website betterer.
 
@@ -47,6 +47,7 @@ To ensure the plugin is as privacy focused as possible it:
 = More... =
 
 * The code can be found on [Github](https://github.com/BinaryMoon/wp-toolbelt)
+* Documentation with code examples can be found on [the wiki](https://github.com/BinaryMoon/wp-toolbelt/wiki)
 * You can reach out to me with questions or problems on [Twitter](https://twitter.com/binarymoon)
 
 == FAQ ==
@@ -76,11 +77,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 1.1.1 - 25th July 2019 =
-* Add support for async attribute in script enqueue. Currently only works with the Jarvis theme, but may be coming to core (one day).
-
 = 1.1 - 18th March 2019 =
-* Minify the script for more speed.
+* Add filter for disabling related posts within a theme, and a function for echoing related posts wherever you like.
 
 = 1.0 - 16th March 2019 =
 * Initial Release
