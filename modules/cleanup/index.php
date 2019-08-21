@@ -72,8 +72,8 @@ if ( is_admin() ) {
 add_filter(
 	'heartbeat_settings',
 	function ( $settings ) {
-		// 30 seconds.
-		$settings['interval'] = 30;
+		// 60 seconds.
+		$settings['interval'] = 60;
 		return $settings;
 	}
 );
