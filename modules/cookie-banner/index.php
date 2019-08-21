@@ -10,6 +10,7 @@ if ( is_admin() ) {
 	return;
 }
 
+
 /**
  * Display the cookie data in the footer.
  */
