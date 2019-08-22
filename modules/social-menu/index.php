@@ -45,7 +45,7 @@ function toolbelt_social_menu() {
 			'fallback_cb' => false,
 			'depth' => 1,
 			'link_before' => '<span class="screen-reader-text">',
-			'link_after' => '</span>' . toolbelt_social_menu_svg( 'share', false ),
+			'link_after' => '</span>' . toolbelt_social_menu_svg( 'share' ),
 		)
 	);
 
@@ -68,22 +68,7 @@ function toolbelt_social_menu_svg( $key, $echo = true ) {
 
 	$file_path = TOOLBELT_PATH . 'svg/' . $key . '.svg';
 
-	/**
-	 * Grab the local file and store it to output or return.
-	 */
-	$file = file_get_contents( $file_path );
-
-	if ( ! $echo ) {
-
-		return $file;
-
-	}
-
-	/**
-	 * $file is loaded above from a static svg file so is safe to output
-	 * directly.
-	 */
-	echo $file; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	return file_get_contents( $file_path );
 
 }
 
