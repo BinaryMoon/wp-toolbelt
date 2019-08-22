@@ -30,7 +30,7 @@
 			<thead>
 				<tr>
 					<td class="manage-column column-cb check-column">
-						<input type="checkbox" name="check_all" />
+						<input type="checkbox" name="check_all" <?php checked( toolbelt_admin_all_modules_enabled() ); ?> />
 					</td>
 					<th class="column-title column-primary">
 						<?php esc_html_e( 'Module', 'wp-toolbelt' ); ?>

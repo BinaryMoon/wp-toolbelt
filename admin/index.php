@@ -116,6 +116,35 @@ function toolbelt_admin_page() {
 
 
 /**
+ * Check if all the modules are enabled.
+ *
+ * @return boolean
+ */
+function toolbelt_admin_all_modules_enabled() {
+
+	$options = get_option( 'toolbelt_options' );
+
+	$modules = toolbelt_get_modules();
+	$checked = 0;
+
+	foreach ( $modules as $slug => $module ) {
+
+		if ( ! empty( $options[ $slug ] ) ) {
+			$checked ++;
+		}
+
+	}
+
+	if ( $checked === count( $modules ) ) {
+		return true;
+	}
+
+	return false;
+
+}
+
+
+/**
  * Save Toolbelt settings.
  */
 function toolbelt_save_settings() {
