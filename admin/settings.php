@@ -10,6 +10,8 @@
 
 <style>
 	.column-title { width: 20%; }
+	.column-docs { width: 10%; }
+	.column-weight { font-style: italic; }
 </style>
 
 <div class="wrap about-wrap full-width-layout">
@@ -31,12 +33,8 @@
 
 	foreach ( $modules as $slug => $module ) {
 		toolbelt_field(
-			array(
-				'key' => $slug,
-				'name' => $module['name'],
-				'description' => $module['description'],
-				'docs' => $module['docs'],
-			)
+			$slug,
+			$module
 		);
 	}
 

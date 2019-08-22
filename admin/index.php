@@ -60,34 +60,38 @@ add_action( 'admin_menu', 'toolbelt_admin_menu' );
  *
  * @param array $args List of parameters for the field.
  */
-function toolbelt_field( $args ) {
+function toolbelt_field( $slug, $module ) {
 
-	$key = $args['key'];
 	$options = get_option( 'toolbelt_options' );
 
 	$checked = true;
-	if ( empty( $options[ $key ] ) ) {
+	if ( empty( $options[ $slug ] ) ) {
 		$checked = false;
 	}
+
+	$weight = ! empty( $module['weight'] ) ? $module['weight'] : '';
 
 ?>
 
 	<tr>
 		<th class="check-column" scope="row">
 			<input
-				id="<?php echo esc_attr( $key ); ?>"
-				name="toolbelt_options[<?php echo esc_attr( $key ); ?>]"
+				id="<?php echo esc_attr( $slug ); ?>"
+				name="toolbelt_options[<?php echo esc_attr( $slug ); ?>]"
 				<?php checked( $checked ); ?>
 				type="checkbox" />
 		</th>
 		<td class="column-title column-primary">
-			<strong><?php echo esc_html( $args['name'] ); ?></strong>
+			<strong><?php echo esc_html( $module['name'] ); ?></strong>
 		</td>
 		<td>
-			<?php echo esc_html( $args['description'] ); ?>
+			<?php echo esc_html( $module['description'] ); ?>
 		</td>
-		<td>
-			<a href="<?php echo esc_html( $args['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a>
+		<td class="column-weight">
+			<?php echo esc_html( $weight ); ?>
+		</td>
+		<td class="column-docs">
+			<a href="<?php echo esc_html( $module['docs'] ); ?>"><?php esc_html_e( 'Docs', 'wp-toolbelt' ); ?></a>
 		</td>
 	</tr>
 
