@@ -11,7 +11,7 @@
 <style>
 	.column-title { width: 20%; }
 	.column-docs { width: 10%; }
-	.column-weight { font-style: italic; }
+	td.column-weight { font-style: italic; }
 </style>
 
 <div class="wrap about-wrap full-width-layout">
@@ -26,6 +26,22 @@
 		<?php wp_nonce_field( 'toolbelt_settings' ); ?>
 
 		<table class="wp-list-table widefat fixed striped">
+			<thead>
+				<th class="manage-column column-cb check-column">
+					<input type="checkbox" name="check_all" />
+				</th>
+				<th class="column-title column-primary">
+					<?php esc_html_e( 'Module', 'wp-toolbelt' ); ?>
+				</th>
+				<th>
+					<?php esc_html_e( 'Description', 'wp-toolbelt' ); ?>
+				</th>
+				<th class="column-weight">
+					<?php esc_html_e( 'Page Impact', 'wp-toolbelt' ); ?>
+				</th>
+				<th class="column-docs">
+				</th>
+			</thead>
 
 <?php
 
