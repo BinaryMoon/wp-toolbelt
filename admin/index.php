@@ -85,13 +85,11 @@ function toolbelt_field( $slug, $module ) {
 			<strong><?php echo esc_html( $module['name'] ); ?></strong>
 		</td>
 		<td>
-			<?php echo esc_html( $module['description'] ); ?>
+			<p><?php echo esc_html( $module['description'] ); ?></p>
+			<p class="doc-link"><a href="<?php echo esc_html( $module['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a></p>
 		</td>
 		<td class="column-weight">
 			<?php echo esc_html( $weight ); ?>
-		</td>
-		<td class="column-docs">
-			<a href="<?php echo esc_html( $module['docs'] ); ?>"><?php esc_html_e( 'Docs &rsaquo;', 'wp-toolbelt' ); ?></a>
 		</td>
 	</tr>
 

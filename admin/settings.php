@@ -10,14 +10,15 @@
 
 <style>
 	.column-title { width: 20%; }
-	.column-docs { width: 10%; }
+	.column-weight { width: 25%; }
 	td.column-weight { font-style: italic; }
+	td p.doc-link { margin-bottom: 0; }
 </style>
 
 <div class="wrap about-wrap full-width-layout">
 
 	<div class="wp-header-end"></div><!-- admin notices go after .wp-header-end or .wrap>h2:first-child -->
-	<h1><?php esc_html_e( 'Toolbelt settings', 'wp-toolbelt' ); ?></h1>
+	<h1><?php esc_html_e( 'Toolbelt Settings', 'wp-toolbelt' ); ?></h1>
 
 	<div class="about-text"><?php esc_html_e( 'Toolbelt is a lightweight, privacy focused, collection of things that add commonly needed features to your WordPress website.', 'wp-toolbelt' ); ?></div>
 
@@ -38,8 +39,6 @@
 				</th>
 				<th class="column-weight">
 					<?php esc_html_e( 'Page Impact', 'wp-toolbelt' ); ?>
-				</th>
-				<th class="column-docs">
 				</th>
 			</thead>
 
