@@ -28,18 +28,20 @@
 
 		<table class="wp-list-table widefat fixed striped">
 			<thead>
-				<th class="manage-column column-cb check-column">
-					<input type="checkbox" name="check_all" />
-				</th>
-				<th class="column-title column-primary">
-					<?php esc_html_e( 'Module', 'wp-toolbelt' ); ?>
-				</th>
-				<th>
-					<?php esc_html_e( 'Description', 'wp-toolbelt' ); ?>
-				</th>
-				<th class="column-weight">
-					<?php esc_html_e( 'Page Impact', 'wp-toolbelt' ); ?>
-				</th>
+				<tr>
+					<td class="manage-column column-cb check-column">
+						<input type="checkbox" name="check_all" />
+					</td>
+					<th class="column-title column-primary">
+						<?php esc_html_e( 'Module', 'wp-toolbelt' ); ?>
+					</th>
+					<th>
+						<?php esc_html_e( 'Description', 'wp-toolbelt' ); ?>
+					</th>
+					<th class="column-weight">
+						<?php esc_html_e( 'Page Impact', 'wp-toolbelt' ); ?>
+					</th>
+				</tr>
 			</thead>
 
 <?php
