@@ -73,6 +73,12 @@ export function styles_related_posts() {
 
 }
 
+export function styles_social_menu() {
+
+	return process_styles( 'social-menu' );
+
+}
+
 /**
  * Remove comments from the source so that they can be minified away.
  */
