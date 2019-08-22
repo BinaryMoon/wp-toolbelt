@@ -1,0 +1,31 @@
+.toolbelt-menu-social {
+
+	ul {
+
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+	}
+
+	li {
+
+		display: inline;
+
+	}
+
+	.icon {
+
+		stroke: none;
+		display: inline-block;
+		vertical-align: text-bottom;
+
+		> * {
+
+			fill: currentColor;
+
+		}
+
+	}
+
+}

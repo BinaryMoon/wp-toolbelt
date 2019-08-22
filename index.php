@@ -39,7 +39,7 @@ function toolbelt_load_modules() {
 
 }
 
-add_action( 'init', 'toolbelt_load_modules' );
+add_action( 'after_setup_theme', 'toolbelt_load_modules' );
 
 
 /**
@@ -85,6 +85,11 @@ function toolbelt_get_modules() {
 		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
+			'description' => esc_html( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
+			'docs' => esc_html__( 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading', 'wp-toolbelt' ),
+		),
+		'social-menu' => array(
+			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
 			'description' => esc_html( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
 			'docs' => esc_html__( 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading', 'wp-toolbelt' ),
 		),

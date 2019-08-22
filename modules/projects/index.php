@@ -139,11 +139,7 @@ function toolbelt_portfolio_register_post_types() {
 
 }
 
-/**
- * Normally I'd hook these into an action but since this file is included in
- * the init action I'm calling it directly.
- */
-toolbelt_portfolio_register_post_types();
+add_action( 'init', 'toolbelt_portfolio_register_post_types' );
 
 
 
