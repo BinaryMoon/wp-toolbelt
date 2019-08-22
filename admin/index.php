@@ -58,7 +58,8 @@ add_action( 'admin_menu', 'toolbelt_admin_menu' );
  *
  * Displays a brief description and a link to the module docs.
  *
- * @param array $args List of parameters for the field.
+ * @param string $slug The module slug.
+ * @param array  $module The module parameters.
  */
 function toolbelt_field( $slug, $module ) {
 
