@@ -236,8 +236,8 @@ function toolbelt_tools_convert( $action ) {
 	// Convert post types.
 	$rows = $wpdb->update(
 		$wpdb->posts,
-		array( 'post_type' => $types[ $from ]['post'] ),
-		array( 'post_type' => $types[ $to ]['post'] )
+		array( 'post_type' => $types[ $to ]['post'] ),
+		array( 'post_type' => $types[ $from ]['post'] )
 	);
 
 	// translators: %d = numbers of posts.
@@ -246,8 +246,8 @@ function toolbelt_tools_convert( $action ) {
 	// Convert post categories.
 	$rows = $wpdb->update(
 		$wpdb->term_taxonomy,
-		array( 'taxonomy' => $types[ $from ]['category'] ),
-		array( 'taxonomy' => $types[ $to ]['category'] )
+		array( 'taxonomy' => $types[ $to ]['category'] ),
+		array( 'taxonomy' => $types[ $from ]['category'] )
 	);
 
 	// translators: %d = numbers of categories.
@@ -256,8 +256,8 @@ function toolbelt_tools_convert( $action ) {
 	// Convert post tags.
 	$rows = $wpdb->update(
 		$wpdb->term_taxonomy,
-		array( 'taxonomy' => $types[ $from ]['tag'] ),
-		array( 'taxonomy' => $types[ $to ]['tag'] )
+		array( 'taxonomy' => $types[ $to ]['tag'] ),
+		array( 'taxonomy' => $types[ $from ]['tag'] )
 	);
 
 	// translators: %d = numbers of tags.
@@ -287,5 +287,7 @@ function toolbelt_save_admin_settings() {
 	$options = filter_input( INPUT_POST, 'toolbelt_options', FILTER_DEFAULT, FILTER_FORCE_ARRAY );
 	// Save the options.
 	update_option( 'toolbelt_options', $options );
+
+	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
 
 }
