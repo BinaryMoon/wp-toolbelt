@@ -213,7 +213,12 @@ function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 	$screen = get_current_screen();
 
 	if ( 'edit.php' === $hook && TOOLBELT_CUSTOM_POST_TYPE === $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
-		wp_add_inline_style( 'wp-admin', '.manage-column.column-thumbnail { width: 50px; } @media screen and (max-width: 360px) { .column-thumbnail{ display:none; } }' );
+		$styles = array(
+			'.manage-column.column-thumbnail { width: 50px; }',
+			'.manage-column.column-thumbnail img { max-width: 50px; }',
+			'@media screen and (max-width: 360px) { .column-thumbnail{ display:none; } }',
+		);
+		wp_add_inline_style( 'wp-admin', implode( $styles, ' ' ) );
 	}
 
 }
