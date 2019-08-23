@@ -54,7 +54,7 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner',
 			'weight' => esc_html__( '1.2kb of inline JS and CSS.', 'wp-toolbelt' ),
 		),
-		'social' => array(
+		'social-sharing' => array(
 			'name' => esc_html__( 'Static Social Sharing', 'wp-toolbelt' ),
 			'description' => esc_html( 'Add social sharing links that use the platforms native sharing system.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing',

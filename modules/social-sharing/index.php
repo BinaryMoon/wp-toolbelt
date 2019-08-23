@@ -12,6 +12,9 @@ if ( is_admin() ) {
 
 /**
  * Add social sharing buttons to the post content.
+ *
+ * @param string $content The post content to append the sharing option to.
+ * @return string The post content with the sharing options appended.
  */
 function toolbelt_social_sharing( $content ) {
 

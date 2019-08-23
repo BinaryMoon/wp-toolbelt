@@ -63,7 +63,7 @@ export function styles_cookie() {
 
 export function styles_social() {
 
-	return process_styles( 'social' );
+	return process_styles( 'social-sharing' );
 
 }
 
