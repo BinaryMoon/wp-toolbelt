@@ -48,6 +48,14 @@ function toolbelt_admin_menu() {
 		'toolbelt_admin_page'
 	);
 
+	add_management_page(
+		'Toolbelt', // Page title.
+		'Toolbelt', // Menu title.
+		'manage_options', // Author capability.
+		'toolbelt', // Slug.
+		'toolbelt_tools_page'
+	);
+
 }
 
 add_action( 'admin_menu', 'toolbelt_admin_menu' );
@@ -111,6 +119,14 @@ function toolbelt_admin_page() {
 	toolbelt_save_settings();
 
 	require TOOLBELT_PATH . 'admin/settings.php';
+
+}
+
+
+
+function toolbelt_tools_page() {
+
+	require TOOLBELT_PATH . 'admin/tools.php';
 
 }
 

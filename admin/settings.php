@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Content of the Toolbelt settings page.
