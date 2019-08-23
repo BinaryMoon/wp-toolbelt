@@ -1,6 +1,6 @@
 === Toolbelt ===
 Contributors: BinaryMoon
-Tags: speed, user experience, UX, optimization
+Tags: speed, user experience, UX, optimization, related posts, social sharing, social menu
 Requires at least: 4.0
 Tested up to: 5.2
 Stable tag: 1.1
@@ -22,6 +22,7 @@ Taking inspiration from Jetpack I want to rebuild the features I use the most an
 * Portfolio custom post type
 * Related Posts
 * Native Lazy loading
+* Social Icon Menu
 
 = Fast =
 
