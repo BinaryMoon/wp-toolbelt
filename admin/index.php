@@ -241,7 +241,7 @@ function toolbelt_tools_convert( $action ) {
 	);
 
 	// translators: %d = numbers of posts.
-	$message .= '<p>' . sprintf( esc_html__( '%d posts converted', 'wp-toolbelt' ), (int) $rows ) . '</p>';
+	$message .= '<li>' . sprintf( esc_html__( '%d posts converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
 	// Convert post categories.
 	$rows = $wpdb->update(
@@ -251,7 +251,7 @@ function toolbelt_tools_convert( $action ) {
 	);
 
 	// translators: %d = numbers of categories.
-	$message .= '<p>' . sprintf( esc_html__( '%d categories converted', 'wp-toolbelt' ), (int) $rows ) . '</p>';
+	$message .= '<li>' . sprintf( esc_html__( '%d categories converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
 	// Convert post tags.
 	$rows = $wpdb->update(
@@ -261,9 +261,9 @@ function toolbelt_tools_convert( $action ) {
 	);
 
 	// translators: %d = numbers of tags.
-	$message .= '<p>' . sprintf( esc_html__( '%d tags converted', 'wp-toolbelt' ), (int) $rows ) . '</p>';
+	$message .= '<li>' . sprintf( esc_html__( '%d tags converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
-	echo '<div class="notice notice-success">' . $message . '</div>';
+	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Success', 'wp-toolbelt' ) . '</strong></p><ul>' . $message . '</ul></div>';
 
 }
 
