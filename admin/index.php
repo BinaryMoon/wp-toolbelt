@@ -132,10 +132,9 @@ function toolbelt_admin_all_modules_enabled() {
 		if ( ! empty( $options[ $slug ] ) ) {
 			$checked ++;
 		}
-
 	}
 
-	if ( $checked === count( $modules ) ) {
+	if ( count( $modules ) === $checked ) {
 		return true;
 	}
 
