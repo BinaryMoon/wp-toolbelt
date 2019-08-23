@@ -40,19 +40,21 @@ add_filter( 'plugin_action_links', 'toolbelt_admin_settings_link', 10, 2 );
  */
 function toolbelt_admin_menu() {
 
+	// Add settings page.
 	add_options_page(
 		'Toolbelt', // Page title.
 		'Toolbelt', // Menu title.
 		'manage_options', // Author capability.
-		'toolbelt', // Slug.
+		'toolbelt-settings', // Slug.
 		'toolbelt_admin_page'
 	);
 
+	// Add tools pagre.
 	add_management_page(
 		'Toolbelt', // Page title.
 		'Toolbelt', // Menu title.
 		'manage_options', // Author capability.
-		'toolbelt', // Slug.
+		'toolbelt-tools', // Slug.
 		'toolbelt_tools_page'
 	);
 
@@ -116,15 +118,23 @@ function toolbelt_admin_page() {
 		return;
 	}
 
-	toolbelt_save_settings();
+	toolbelt_save_admin_settings();
 
 	require TOOLBELT_PATH . 'admin/settings.php';
 
 }
 
 
-
+/**
+ * Display the tools page.
+ */
 function toolbelt_tools_page() {
+
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	toolbelt_tools_actions();
 
 	require TOOLBELT_PATH . 'admin/tools.php';
 
@@ -160,12 +170,110 @@ function toolbelt_admin_all_modules_enabled() {
 
 
 /**
+ * Do toolbelt form actions.
+ */
+function toolbelt_tools_actions() {
+
+	// Use the nonce value to check to see if the form has been submitted.
+	if ( null === filter_input( INPUT_POST, '_wpnonce' ) ) {
+		return;
+	}
+
+	$action = filter_input( INPUT_POST, 'action' );
+
+	toolbelt_tools_convert( $action );
+
+}
+
+
+/**
+ * Convert toolbelt and related post types.
+ *
+ * @param string $action The action to perform.
+ */
+function toolbelt_tools_convert( $action ) {
+
+	$nonce = 'toolbelt_' . $action;
+
+	/**
+	 * Check the admin referer.
+	 * Quit automatically if the nonce is missing/ wrong.
+	 */
+	check_admin_referer( $nonce );
+
+	$types = array(
+		'jetpack' => array(
+			'post' => 'jetpack-portfolio',
+			'category' => 'jetpack-portfolio-type',
+			'tag' => 'jetpack-portfolio-tag',
+		),
+		'toolbelt' => array(
+			'post' => TOOLBELT_CUSTOM_POST_TYPE,
+			'category' => TOOLBELT_CUSTOM_TAXONOMY_TYPE,
+			'tag' => TOOLBELT_CUSTOM_TAXONOMY_TAG,
+		),
+	);
+
+	switch ( $action ) {
+
+		case 'convert_jetpack_portfolio':
+			$from = 'jetpack';
+			$to = 'toolbelt';
+
+			break;
+
+		case 'convert_toolbelt_portfolio':
+			$from = 'toolbelt';
+			$to = 'jetpack';
+
+			break;
+
+	}
+
+	global $wpdb;
+	$message = '';
+
+	// Convert post types.
+	$rows = $wpdb->update(
+		$wpdb->posts,
+		array( 'post_type' => $types[ $from ]['post'] ),
+		array( 'post_type' => $types[ $to ]['post'] )
+	);
+
+	// translators: %d = numbers of posts.
+	$message .= '<p>' . sprintf( esc_html__( '%d posts converted', 'wp-toolbelt' ), (int) $rows ) . '</p>';
+
+	// Convert post categories.
+	$rows = $wpdb->update(
+		$wpdb->term_taxonomy,
+		array( 'taxonomy' => $types[ $from ]['category'] ),
+		array( 'taxonomy' => $types[ $to ]['category'] )
+	);
+
+	// translators: %d = numbers of categories.
+	$message .= '<p>' . sprintf( esc_html__( '%d categories converted', 'wp-toolbelt' ), (int) $rows ) . '</p>';
+
+	// Convert post tags.
+	$rows = $wpdb->update(
+		$wpdb->term_taxonomy,
+		array( 'taxonomy' => $types[ $from ]['tag'] ),
+		array( 'taxonomy' => $types[ $to ]['tag'] )
+	);
+
+	// translators: %d = numbers of tags.
+	$message .= '<p>' . sprintf( esc_html__( '%d tags converted', 'wp-toolbelt' ), (int) $rows ) . '</p>';
+
+	echo '<div class="notice notice-success">' . $message . '</div>';
+
+}
+
+/**
  * Save Toolbelt settings.
  */
-function toolbelt_save_settings() {
+function toolbelt_save_admin_settings() {
 
-	// Use the nonce to check to see if the form has been submitted.
-	if ( filter_input( INPUT_POST, '_wpnonce' ) === null ) {
+	// Use the nonce value to check to see if the form has been submitted.
+	if ( null === filter_input( INPUT_POST, '_wpnonce' ) ) {
 		return;
 	}
 
