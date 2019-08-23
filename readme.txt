@@ -84,7 +84,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add social links menu.
 * Ensure related posts exist.
 * Allow related posts to work with other post types.
-* Add related posts to portfolio post type (when it is enabled).
+* Add related posts to toolbelt portfolio post type (when it is enabled).
+* Add a tool for converting Jetpack portfolio items to Toolbelt portfolio items.
 
 = 1.0 - 20th August 2019 =
 * Initial Release
