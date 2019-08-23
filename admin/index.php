@@ -23,7 +23,7 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 		$new_actions['sc_settings'] = sprintf(
 			'<a href="%2$s">%1$s</a>',
 			esc_html__( 'Settings', 'wp-toolbelt' ),
-			esc_url( add_query_arg( array( 'page' => 'toolbelt' ), admin_url( 'options-general.php' ) ) )
+			esc_url( add_query_arg( array( 'page' => 'toolbelt-settings' ), admin_url( 'options-general.php' ) ) )
 		);
 
 	}
@@ -208,9 +208,9 @@ function toolbelt_tools_convert( $action ) {
 			'tag' => 'jetpack-portfolio-tag',
 		),
 		'toolbelt' => array(
-			'post' => TOOLBELT_CUSTOM_POST_TYPE,
-			'category' => TOOLBELT_CUSTOM_TAXONOMY_TYPE,
-			'tag' => TOOLBELT_CUSTOM_TAXONOMY_TAG,
+			'post' => 'toolbelt-portfolio',
+			'category' => 'toolbelt-portfolio-type',
+			'tag' => 'toolbelt-portfolio-tag',
 		),
 	);
 
