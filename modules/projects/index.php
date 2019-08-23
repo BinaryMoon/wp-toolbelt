@@ -142,6 +142,21 @@ function toolbelt_portfolio_register_post_types() {
 add_action( 'init', 'toolbelt_portfolio_register_post_types' );
 
 
+/**
+ * Add the portfolio post type to the related post types.
+ *
+ * @param array $types The current list of post types.
+ * @return array
+ */
+function toolbelt_portfolio_related_posts_type( $types ) {
+
+	$types[ TOOLBELT_CUSTOM_POST_TYPE ] = TOOLBELT_CUSTOM_TAXONOMY_TYPE;
+	return $types;
+
+}
+
+add_filter( 'toolbelt_related_post_types', 'toolbelt_portfolio_related_posts_type' );
+
 
 /**
  * Change ‘Title’ column label.
