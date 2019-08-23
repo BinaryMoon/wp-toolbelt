@@ -5,6 +5,12 @@
  * @package toolbelt
  */
 
+// Don't display in the WordPress admin.
+if ( is_admin() ) {
+	return;
+}
+
+
 /**
  * A unique string to use for the transient.
  * Cache gets invalidated when a new version of Toolbelt is published.

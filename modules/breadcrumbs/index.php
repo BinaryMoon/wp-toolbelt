@@ -5,6 +5,12 @@
  * @package toolbelt
  */
 
+// Don't display in the WordPress admin.
+if ( is_admin() ) {
+	return;
+}
+
+
 /**
  * A function to display breadcrumbs on a category or single post/ page.
  * Should work for all post types.
