@@ -44,11 +44,23 @@ if ( apply_filters( 'toolbelt_related_posts', true ) ) {
  */
 function toolbelt_related_posts_get() {
 
-	if ( ! is_singular() ) {
+	$available_post_types = apply_filters(
+		'toolbelt_related_post_types',
+		array( 'post' => 'category' )
+	);
+
+	if ( ! $available_post_types ) {
 		return '';
 	}
 
-	$related_posts = toolbelt_related_posts_get_data();
+	$current_post_type = get_post_type();
+
+	// The post is not in the available post types.
+	if ( ! in_array( $current_post_type, array_keys( $available_post_types ), true ) ) {
+		return '';
+	}
+
+	$related_posts = toolbelt_related_posts_get_data( $current_post_type, $available_post_types[ $current_post_type ] );
 
 	if ( ! $related_posts ) {
 		return '';
@@ -104,9 +116,11 @@ function toolbelt_related_posts_html( $related_posts ) {
 /**
  * Get a list of possible related posts.
  *
+ * @param string $post_type The post type.
+ * @param string $post_taxonomy The post taxonomy name.
  * @return array
  */
-function toolbelt_related_posts_get_data() {
+function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 
 	$id = get_the_ID();
 	$transient = sprintf( TOOLBELT_RELATED_POST_TRANSIENT, $id );
@@ -127,7 +141,7 @@ function toolbelt_related_posts_get_data() {
 	/**
 	 * Get the list of categories for the current post.
 	 */
-	$categories = get_the_terms( $id, 'category' );
+	$categories = get_the_terms( $id, $post_taxonomy );
 	$category_ids = array();
 
 	foreach ( $categories as $category ) {
@@ -145,6 +159,7 @@ function toolbelt_related_posts_get_data() {
 	 */
 	$related = new WP_Query(
 		array(
+			'post_type' => $post_type,
 			'category_in' => $category_ids,
 			'posts_per_page' => $cache_target,
 			'post__not_in' => $post_not_in,
@@ -175,6 +190,7 @@ function toolbelt_related_posts_get_data() {
 
 		$related = new WP_Query(
 			array(
+				'post_type' => $post_type,
 				'category_in' => $category_ids,
 				'posts_per_page' => $cache_target - count( $related_posts ),
 				'post__not_in' => $post_not_in,
