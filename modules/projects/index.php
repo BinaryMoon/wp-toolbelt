@@ -214,8 +214,8 @@ function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 
 	if ( 'edit.php' === $hook && TOOLBELT_CUSTOM_POST_TYPE === $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
 		$styles = array(
-			'.manage-column.column-thumbnail { width: 50px; }',
-			'.manage-column.column-thumbnail img { max-width: 50px; }',
+			'.column-thumbnail { width: 50px; }',
+			'.column-thumbnail img { max-width: 50px; height: auto; }',
 			'@media screen and (max-width: 360px) { .column-thumbnail{ display:none; } }',
 		);
 		wp_add_inline_style( 'wp-admin', implode( $styles, ' ' ) );
