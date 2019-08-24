@@ -78,6 +78,12 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.1.2 - 25th August 2019 =
+* Improve related posts. Previously the category restriction wasn't working properly. It is now! Results should be more accurate.
+* Don't create portfolio post type if jetpack portfolio exists.
+* Make sure related posts return the cache even if the posts are empty (ie if there's only 1 post in the category)
+* Allow the admin to be disabled with a constant 'TOOLBELT_DISABLE_ADMIN'
+
 = 1.1.1 - 24th August 2019 =
 * Ensure the related posts cache is cleared so that the portfolio related posts work properly.
 
