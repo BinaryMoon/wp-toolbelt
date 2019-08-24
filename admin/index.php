@@ -114,10 +114,6 @@ function toolbelt_field( $slug, $module ) {
  */
 function toolbelt_admin_page() {
 
-	if ( ! current_user_can( 'manage_options' ) ) {
-		return;
-	}
-
 	toolbelt_save_admin_settings();
 
 	require TOOLBELT_PATH . 'admin/settings.php';
@@ -129,10 +125,6 @@ function toolbelt_admin_page() {
  * Display the tools page.
  */
 function toolbelt_tools_page() {
-
-	if ( ! current_user_can( 'manage_options' ) ) {
-		return;
-	}
 
 	toolbelt_tools_actions();
 
