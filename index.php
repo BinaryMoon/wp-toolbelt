@@ -3,13 +3,13 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, fast.
  * Author: Ben Gillbanks
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author URI: https://prothemedesign.com
  *
  * @package toolbelt
  */
 
-define( 'TOOLBELT_VERSION', '1.1.1' );
+define( 'TOOLBELT_VERSION', '1.1.2' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 
 if ( is_admin() ) {
