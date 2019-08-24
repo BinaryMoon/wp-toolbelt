@@ -166,7 +166,7 @@ function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 	$related = new WP_Query(
 		array(
 			'post_type' => $post_type,
-			'category_in' => $category_ids,
+			'category__in' => $category_ids,
 			'posts_per_page' => $cache_target,
 			'post__not_in' => $post_not_in,
 			'order_by' => 'rand',
@@ -197,7 +197,7 @@ function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 		$related = new WP_Query(
 			array(
 				'post_type' => $post_type,
-				'category_in' => $category_ids,
+				'category__in' => $category_ids,
 				'posts_per_page' => $cache_target - count( $related_posts ),
 				'post__not_in' => $post_not_in,
 				'order_by' => 'rand',
