@@ -14,11 +14,8 @@ define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 
-	if ( current_user_can( 'manage_options' ) ) {
+	require TOOLBELT_PATH . 'admin/index.php';
 
-		require TOOLBELT_PATH . 'admin/index.php';
-
-	}
 }
 
 

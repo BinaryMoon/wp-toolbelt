@@ -40,6 +40,10 @@ add_filter( 'plugin_action_links', 'toolbelt_admin_settings_link', 10, 2 );
  */
 function toolbelt_admin_menu() {
 
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
 	// Add settings page.
 	add_options_page(
 		'Toolbelt', // Page title.
