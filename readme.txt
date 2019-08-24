@@ -78,6 +78,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.1.1 - 24th August 2019 =
+* Ensure the related posts cache is cleared so that the portfolio related posts work properly.
+
 = 1.1 - 23nd August 2019 =
 * Add filter for disabling related posts within a theme, and a function for echoing related posts wherever you like.
 * Add svg icons for social links.
