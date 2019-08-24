@@ -133,8 +133,8 @@ function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 
 	$cache = get_transient( $transient );
 
-	// We have some posts so lets quit.
-	if ( ! empty( $cache ) ) {
+	// We have some cache data so lets return it.
+	if ( false !== $cache ) {
 		return $cache;
 	}
 
