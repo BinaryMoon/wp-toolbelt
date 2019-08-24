@@ -17,6 +17,12 @@ define( 'TOOLBELT_CUSTOM_TAXONOMY_TAG', 'toolbelt-portfolio-tag' );
  */
 function toolbelt_portfolio_register_post_types() {
 
+	// Quit if the Jetpack portfolio post type exists so we don't duplicate
+	// functionality.
+	if ( post_type_exists( 'jetpack-portfolio' ) ) {
+		return;
+	}
+
 	if ( post_type_exists( TOOLBELT_CUSTOM_POST_TYPE ) ) {
 		return;
 	}
@@ -139,7 +145,7 @@ function toolbelt_portfolio_register_post_types() {
 
 }
 
-add_action( 'init', 'toolbelt_portfolio_register_post_types' );
+add_action( 'init', 'toolbelt_portfolio_register_post_types', 11 );
 
 
 /**
