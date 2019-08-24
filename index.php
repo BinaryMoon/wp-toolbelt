@@ -12,10 +12,13 @@
 define( 'TOOLBELT_VERSION', '1.1.2' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 
-if ( is_admin() ) {
+if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 
-	require TOOLBELT_PATH . 'admin/index.php';
+	if ( current_user_can( 'manage_options' ) ) {
 
+		require TOOLBELT_PATH . 'admin/index.php';
+
+	}
 }
 
 
