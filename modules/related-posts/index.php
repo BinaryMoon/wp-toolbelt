@@ -68,7 +68,7 @@ function toolbelt_related_posts_get() {
 
 	$related_posts = toolbelt_related_posts_get_data( $current_post_type, $available_post_types[ $current_post_type ] );
 
-	if ( ! $related_posts ) {
+	if ( empty( $related_posts ) ) {
 		return '';
 	}
 
