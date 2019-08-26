@@ -107,7 +107,7 @@ function toolbelt_get_modules() {
 function toolbelt_css_properties() {
 
 	$properties = array(
-		'--toolbelt-spacing: 1rem;',
+		'toolbelt-spacing' => '1rem',
 	);
 
 	$properties = apply_filters(
@@ -115,8 +115,14 @@ function toolbelt_css_properties() {
 		$properties
 	);
 
+	$css_properties = '';
+
+	foreach ( $properties as $key => $value ) {
+		$css_properties .= ' --' . $key . ':' . $value . ';';
+	}
+
 	echo '<style>:root {';
-	echo implode( ' ', $properties );
+	echo esc_attr( $css_properties );
 	echo '}</style>';
 
 }

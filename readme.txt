@@ -78,6 +78,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.2 - 26th August 2019 =
+* Add a css custom property for setting the spacing in the css. `--toolbelt-spacing`. Change the value in your css to tweak the margins and padding used.
+
 = 1.1.2 - 25th August 2019 =
 * Improve related posts. Previously the category restriction wasn't working properly. It is now! Results should be more accurate.
 * Don't create portfolio post type if jetpack portfolio exists.
