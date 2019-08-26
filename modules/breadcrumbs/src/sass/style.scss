@@ -1,0 +1,46 @@
+.toolbelt-breadcrumbs {
+
+	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
+
+	> a,
+	> span {
+
+		display: inline-block;
+
+	}
+
+	a {
+
+		font-weight: bold;
+		position: relative;
+		text-decoration: none;
+
+		span {
+
+			text-decoration: underline;
+
+		}
+
+		&:focus,
+		&:hover {
+
+			span {
+
+				text-decoration: none;
+
+			}
+
+		}
+
+		&:after {
+
+			content: '\25B6';
+			font-family: monospace;
+			margin: 0 calc( var( --toolbelt-spacing ) / 2 );
+			font-size: 10px;
+
+		}
+
+	}
+
+}

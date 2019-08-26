@@ -48,7 +48,8 @@ function toolbelt_breadcrumbs() {
 		esc_html__( 'Home', 'wp-toolbelt' )
 	);
 
-	echo '<nav class="entry-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $home . $breadcrumb . '</nav>';
+	toolbelt_styles( 'breadcrumbs' );
+	echo '<nav class="entry-breadcrumbs toolbelt-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $home . $breadcrumb . '</nav>';
 
 }
 

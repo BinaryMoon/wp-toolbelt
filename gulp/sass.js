@@ -79,6 +79,12 @@ export function styles_social_menu() {
 
 }
 
+export function styles_breadcrumbs() {
+
+	return process_styles( 'breadcrumbs' );
+
+}
+
 /**
  * Remove comments from the source so that they can be minified away.
  */
