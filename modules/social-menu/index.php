@@ -24,12 +24,7 @@ function toolbelt_social_menu() {
 		return;
 	}
 
-	$path = plugin_dir_path( __FILE__ );
-
-	// Output bar styles. Do this first so that the bar has styles instantly.
-	echo '<style>';
-	require_once $path . 'style.min.css';
-	echo '</style>';
+	toolbelt_styles( 'social-menu' );
 
 ?>
 

@@ -78,12 +78,7 @@ function toolbelt_related_posts_get() {
 	shuffle( $related_posts );
 	$related_posts = array_slice( $related_posts, 0, apply_filters( 'toolbelt_related_posts_count', 2 ) );
 
-	$path = plugin_dir_path( __FILE__ );
-
-	// Output bar styles. Do this first so that the bar has styles instantly.
-	echo '<style>';
-	require $path . 'style.min.css';
-	echo '</style>';
+	toolbelt_styles( 'related-posts' );
 
 	return toolbelt_related_posts_html( $related_posts );
 

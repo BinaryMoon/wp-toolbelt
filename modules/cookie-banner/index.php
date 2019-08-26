@@ -16,14 +16,9 @@ if ( is_admin() ) {
  */
 function toolbelt_cookie_footer() {
 
-	$path = plugin_dir_path( __FILE__ );
-
 	$message = toolbelt_cookie_message();
 
-	// Output bar styles. Do this first so that the bar has styles instantly.
-	echo '<style>';
-	require $path . 'style.min.css';
-	echo '</style>';
+	toolbelt_styles( 'cookie-banner' );
 
 	// Generate the template html.
 	printf(
@@ -32,6 +27,8 @@ function toolbelt_cookie_footer() {
 	);
 
 	// Output scripts.
+	$path = plugin_dir_path( __FILE__ );
+
 	echo '<script>';
 	require $path . 'script.min.js';
 	echo '</script>';

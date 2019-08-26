@@ -128,3 +128,29 @@ function toolbelt_css_properties() {
 }
 
 add_filter( 'wp_print_styles', 'toolbelt_css_properties' );
+
+
+/**
+ * Inline the module css.
+ *
+ * @param string $module The module slug.
+ */
+function toolbelt_styles( $module ) {
+
+	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
+		return;
+	}
+
+	$css_filter = sprintf( 'toolbelt_hide_%s_styles', $module );
+
+	if ( apply_filters( $css_filter, false ) ) {
+		return;
+	}
+
+	$path = TOOLBELT_PATH . 'modules/' . $module . '/style.min.css';
+
+	echo '<style name="toolbelt-' . esc_attr( $module ) . '">';
+	require_once $path;
+	echo '</style>';
+
+}

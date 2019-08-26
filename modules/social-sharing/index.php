@@ -23,7 +23,7 @@ function toolbelt_social_sharing( $content ) {
 		return $content;
 	}
 
-	toolbelt_social_styles();
+	toolbelt_styles( 'social-sharing' );
 
 	$html = '';
 
@@ -94,20 +94,5 @@ function toolbelt_social_networks() {
 
 	// return apply_filters( 'toolbelt_social_networks', $networks );
 	return $networks;
-
-}
-
-
-/**
- * Display the social styles.
- */
-function toolbelt_social_styles() {
-
-	$path = plugin_dir_path( __FILE__ );
-
-	// Output bar styles. Do this first so that the bar has styles instantly.
-	echo '<style>';
-	require $path . 'style.min.css';
-	echo '</style>';
 
 }
