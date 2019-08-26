@@ -81,6 +81,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 = 1.2 - 26th August 2019 =
 * Add a css custom property for setting the spacing in the css. `--toolbelt-spacing`. Change the value in your css to tweak the margins and padding used.
 * Include the module css using a single function. This allows the styles to be disabled per module, or globally, without littering the code with filters and conditions.
+* Add basic css for breadcrumb styles
 
 = 1.1.2 - 25th August 2019 =
 * Improve related posts. Previously the category restriction wasn't working properly. It is now! Results should be more accurate.
