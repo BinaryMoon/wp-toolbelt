@@ -1,12 +1,12 @@
 .toolbelt_social_share {
 
 	font-size: 1rem;
-	margin: 2rem 0;
+	margin: calc( var( --toolbelt-spacing ) * 2 ) 0;
 
 	a {
 
 		display: flex;
-		padding: 0.5rem 1rem;
+		padding: calc( var( --toolbelt-spacing ) / 2 ) var( --toolbelt-spacing );
 		color: white;
 		align-items: center;
 
@@ -20,9 +20,9 @@
 
 	svg {
 
-		margin: 0 0.5rem 0 0;
-		height: 1.5rem;
-		width: 1.5rem;
+		margin: 0 calc( var( --toolbelt-spacing ) / 2 ) 0 0;
+		height: calc( var( --toolbelt-spacing ) * 1.5 );
+		width: calc( var( --toolbelt-spacing ) * 1.5 );
 		vertical-align: middle;
 
 		* {
@@ -35,18 +35,25 @@
 	}
 
 	.toolbelt_facebook {
+
 		background-color:#3b5998;
+
 	}
 
 	.toolbelt_twitter {
+
 		background-color:#1da1f2;
+
 	}
 
 	.toolbelt_linkedin {
+
 		background-color:#0077b5;
+
 	}
 
 	.toolbelt_whatsapp {
+
 		background-color:#075e54;
 
 		@media (min-width: 500px) {
@@ -58,7 +65,9 @@
 	}
 
 	.toolbelt_pinterest {
+
 		background-color:#bd081c;
+
 	}
 
 }

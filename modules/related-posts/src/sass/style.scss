@@ -1,12 +1,12 @@
 .toolbelt-related-posts {
 
 	display: flex;
-	margin: 1rem -1rem;
+	margin: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) * -1 );
 	flex-wrap: wrap;
 
 	> * {
 
-		padding: 1rem;
+		padding: var( --toolbelt-spacing );
 
 	}
 
@@ -29,7 +29,7 @@
 
 		display: block;
 		text-decoration: none;
-		margin-bottom: 0.5rem;
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
 
 	}
 

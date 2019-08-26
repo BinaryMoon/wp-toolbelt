@@ -97,3 +97,28 @@ function toolbelt_get_modules() {
 	);
 
 }
+
+
+/**
+ * Output custom css properties that are used by the plugin css.
+ *
+ * This can be used by themes to make the spacings match those used.
+ */
+function toolbelt_css_properties() {
+
+	$properties = array(
+		'--toolbelt-spacing: 1rem;',
+	);
+
+	$properties = apply_filters(
+		'toolbelt_css_properties',
+		$properties
+	);
+
+	echo '<style>:root {';
+	echo implode( ' ', $properties );
+	echo '}</style>';
+
+}
+
+add_filter( 'wp_print_styles', 'toolbelt_css_properties' );
