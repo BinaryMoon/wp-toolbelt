@@ -9,7 +9,7 @@
  * @package toolbelt
  */
 
-define( 'TOOLBELT_VERSION', '1.1.2' );
+define( 'TOOLBELT_VERSION', '1.2' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
