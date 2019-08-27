@@ -86,12 +86,12 @@ function toolbelt_get_modules() {
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
 			'description' => esc_html( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
-			'docs' => esc_html__( 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading',
 		),
 		'social-menu' => array(
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
 			'description' => esc_html( 'Add a social icons menu. This must be integrated into the theme.', 'wp-toolbelt' ),
-			'docs' => esc_html__( 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu',
 			'weight' => esc_html__( '0.2kb of inline CSS, plus the SVGs needed for the icons' ),
 		),
 	);
