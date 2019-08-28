@@ -172,7 +172,7 @@ function toolbelt_get_options() {
 	 * If these options are set then they will be the only options used. The
 	 * database will be ignored entirely.
 	 */
-	$options = apply_filters( 'toolbelt-options', null );
+	$options = apply_filters( 'toolbelt_options', null );
 
 	if ( empty( $options ) ) {
 
