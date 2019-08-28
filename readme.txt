@@ -78,6 +78,10 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.2.1 - 27th August 2019 =
+* Add lazy loading to iframes and avatars as well as post content images.
+* Add featured image from attachment module. Reduces the liklihood of missing featured images.
+
 = 1.2 - 26th August 2019 =
 * Add a css custom property for setting the spacing in the css. `--toolbelt-spacing`. Change the value in your css to tweak the margins and padding used.
 * Include the module css using a single function. This allows the styles to be disabled per module, or globally, without littering the code with filters and conditions.

@@ -94,6 +94,11 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu',
 			'weight' => esc_html__( '0.2kb of inline CSS, plus the SVGs needed for the icons' ),
 		),
+		'featured-attachment' => array(
+			'name' => esc_html__( 'Featured Attachment', 'wp-toolbelt' ),
+			'description' => esc_html( 'If there is no featured image for a post then use the first image attachment instead.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment',
+		),
 	);
 
 }
