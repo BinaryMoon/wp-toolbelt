@@ -25,7 +25,7 @@ if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 function toolbelt_load_modules() {
 
 	$modules = toolbelt_get_modules();
-	$options = get_option( 'toolbelt_options' );
+	$options = toolbelt_get_options();
 
 	foreach ( $modules as $slug => $module ) {
 
@@ -157,5 +157,29 @@ function toolbelt_styles( $module ) {
 	echo '<style name="toolbelt-' . esc_attr( $module ) . '">';
 	require_once $path;
 	echo '</style>';
+
+}
+
+
+/**
+ * Load the toolbelt options.
+ */
+function toolbelt_get_options() {
+
+	/**
+	 * Add a filter that allows us to override the database options.
+	 *
+	 * If these options are set then they will be the only options used. The
+	 * database will be ignored entirely.
+	 */
+	$options = apply_filters( 'toolbelt-options', null );
+
+	if ( empty( $options ) ) {
+
+		$options = get_option( 'toolbelt_options' );
+
+	}
+
+	return $options;
 
 }
