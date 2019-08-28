@@ -171,6 +171,8 @@ function toolbelt_get_options() {
 	 *
 	 * If these options are set then they will be the only options used. The
 	 * database will be ignored entirely.
+	 *
+	 * @see https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Settings#toolbelt_options
 	 */
 	$options = apply_filters( 'toolbelt_options', null );
 
