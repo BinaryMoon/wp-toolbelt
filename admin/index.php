@@ -97,13 +97,17 @@ function toolbelt_field( $slug, $module ) {
 				type="checkbox" />
 		</th>
 		<td class="column-title column-primary">
-			<strong><?php echo esc_html( $module['name'] ); ?></strong>
+			<label for="<?php echo esc_attr( $slug ); ?>">
+				<strong><?php echo esc_html( $module['name'] ); ?></strong>
+			</label>
+
+			<button type="button" class="toggle-row"><span class="screen-reader-text"><?php esc_html_e( 'Show more details', 'wp-toolbelt' ); ?></span></button>
 		</td>
-		<td>
+		<td data-colname="<?php esc_attr_e( 'Description', 'wp-toolbelt' ); ?>">
 			<p><?php echo esc_html( $module['description'] ); ?></p>
 			<p class="doc-link"><a href="<?php echo esc_html( $module['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a></p>
 		</td>
-		<td class="column-weight">
+		<td class="column-weight" data-colname="<?php esc_attr_e( 'Page Impact', 'wp-toolbelt' ); ?>">
 			<?php echo esc_html( $weight ); ?>
 		</td>
 	</tr>

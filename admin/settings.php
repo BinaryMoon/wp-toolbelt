@@ -10,7 +10,6 @@
 <style>
 	.column-title { width: 20%; }
 	.column-weight { width: 25%; }
-	td.column-weight { font-style: italic; }
 	td p.doc-link { margin-bottom: 0; }
 </style>
 
