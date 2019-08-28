@@ -3,7 +3,7 @@ Contributors: BinaryMoon
 Tags: speed, user experience, UX, optimization, related posts, social sharing, social menu
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.2
+Stable tag: 1.3
 
 Utilities to make your website betterer.
 
@@ -78,9 +78,10 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 1.2.1 - 27th August 2019 =
+= 1.3 - 28th August 2019 =
 * Add lazy loading to iframes and avatars as well as post content images.
 * Add featured image from attachment module. Reduces the liklihood of missing featured images.
+* Improve the settings screen on small screens. You now have the option to see the description and page weight on mobile.
 
 = 1.2 - 26th August 2019 =
 * Add a css custom property for setting the spacing in the css. `--toolbelt-spacing`. Change the value in your css to tweak the margins and padding used.
