@@ -103,8 +103,11 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Responsive Videos', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
-			'description' => esc_html__( 'Ensure embedded videos scale responsively.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsove-Videos',
+		),
+		'random-redirect' => array(
+			'name' => esc_html__( 'Random Redirect', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Randomly Redirect to a blog post.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect',
 		),
 	);
 

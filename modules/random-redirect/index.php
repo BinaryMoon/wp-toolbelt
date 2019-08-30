@@ -5,6 +5,11 @@
  * @package toolbelt
  */
 
+/**
+ * Randomly redirect to a blog post.
+ *
+ * If the post url has ?random on it.
+ */
 function toolbelt_random_redirect() {
 
 	if ( ! isset( $_GET['random'] ) ) {
@@ -21,13 +26,12 @@ function toolbelt_random_redirect() {
 		return;
 	}
 
-	$random_id = toolbelt_random_get_post();
+	$permalink = toolbelt_random_get_post();
 
-	if ( ! $random_id ) {
+	if ( ! $permalink ) {
 		return;
 	}
 
-	$permalink = get_permalink( $random_id );
 	wp_safe_redirect( $permalink );
 
 	die();
@@ -37,6 +41,9 @@ function toolbelt_random_redirect() {
 add_action( 'template_redirect', 'toolbelt_random_redirect' );
 
 
+/**
+ * Get the id of a random post that we can redirect to.
+ */
 function toolbelt_random_get_post() {
 
 	$post_count = wp_count_posts()->publish;
@@ -44,21 +51,23 @@ function toolbelt_random_get_post() {
 
 	$the_post = new WP_Query(
 		array(
-			'p' => $random_post,
+			'post_type' => 'post',
+			'paged' => $random_post,
+			'posts_per_page' => 1,
 		)
 	);
 
-	$id = false;
+	$permalink = false;
 
 	if ( $the_post->have_posts() ) {
 		while ( $the_post->have_posts() ) {
 			$the_post->the_post();
-			$id = get_the_ID();
+			$permalink = get_permalink();
 		}
 	}
 
 	wp_reset_postdata();
 
-	return $id;
+	return $permalink;
 
 }
