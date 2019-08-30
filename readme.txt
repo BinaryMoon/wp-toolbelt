@@ -84,6 +84,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 = 1.4 - 29th August 2019 =
 * Fix cookie notification padding.
 * Call a function when cookies are accepted. We can use an action to output the code this is executed. This allows us to add tracking codes.
+* Add a random redirect module.
 
 = 1.3 - 28th August 2019 =
 * Add lazy loading to iframes and avatars as well as post content images.
