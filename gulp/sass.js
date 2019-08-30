@@ -85,6 +85,12 @@ export function styles_breadcrumbs() {
 
 }
 
+export function styles_videos() {
+
+	return process_styles( 'responsive-videos' );
+
+}
+
 /**
  * Remove comments from the source so that they can be minified away.
  */
