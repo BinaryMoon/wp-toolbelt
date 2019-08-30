@@ -3,13 +3,13 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, fast.
  * Author: Ben Gillbanks
- * Version: 1.3
+ * Version: 1.5
  * Author URI: https://prothemedesign.com
  *
  * @package toolbelt
  */
 
-define( 'TOOLBELT_VERSION', '1.3' );
+define( 'TOOLBELT_VERSION', '1.5' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
@@ -98,6 +98,11 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Featured Attachment', 'wp-toolbelt' ),
 			'description' => esc_html__( 'If there is no featured image for a post then use the first image attachment instead.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment',
+		),
+		'responsive-videos' => array(
+			'name' => esc_html__( 'Responsive Videos', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Ensure embedded videos scale responsively.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsove-Videos',
 		),
 	);
 

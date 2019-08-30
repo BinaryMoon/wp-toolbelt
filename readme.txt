@@ -3,7 +3,7 @@ Contributors: BinaryMoon
 Tags: speed, user experience, UX, optimization, related posts, social sharing, social menu
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.3
+Stable tag: 1.5
 
 Utilities to make your website betterer.
 
@@ -77,6 +77,13 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 1.5 - 30th August 2019 =
+* Add support for responsive videos.
+
+= 1.4 - 29th August 2019 =
+* Fix cookie notification padding.
+* Call a function when cookies are accepted. We can use an action to output the code this is executed. This allows us to add tracking codes.
 
 = 1.3 - 28th August 2019 =
 * Add lazy loading to iframes and avatars as well as post content images.
