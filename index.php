@@ -101,6 +101,8 @@ function toolbelt_get_modules() {
 		),
 		'responsive-videos' => array(
 			'name' => esc_html__( 'Responsive Videos', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
 			'description' => esc_html__( 'Ensure embedded videos scale responsively.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsove-Videos',
 		),
