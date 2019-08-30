@@ -10,6 +10,7 @@ if ( is_admin() ) {
 	return;
 }
 
+define( 'TOOLBELT_COOKIE_ACCEPTED', 'toolbelt_cookies_accepted' );
 
 /**
  * Display the cookie data in the footer.
@@ -17,19 +18,24 @@ if ( is_admin() ) {
 function toolbelt_cookie_footer() {
 
 	$message = toolbelt_cookie_message();
+	$buttons = toolbelt_cookie_buttons();
 
 	toolbelt_styles( 'cookie-banner' );
 
 	// Generate the template html.
 	printf(
-		'<section class="toolbelt_cookie_wrapper"><strong>%s</strong><button class="tp_cookie_close">&times;</button></section>',
-		wp_kses_data( $message )
+		'<section class="toolbelt_cookie_wrapper"><strong>%1$s</strong>%2$s</section>',
+		wp_kses_data( $message ),
+		$buttons
 	);
 
 	// Output scripts.
 	$path = plugin_dir_path( __FILE__ );
 
 	echo '<script>';
+	echo 'function toolbelt_cookies_accepted() {';
+	do_action( TOOLBELT_COOKIE_ACCEPTED );
+	echo '}';
 	require $path . 'script.min.js';
 	echo '</script>';
 
@@ -60,3 +66,30 @@ function toolbelt_cookie_message() {
 	return apply_filters( 'toolbelt_cookie_message', $message );
 
 }
+
+
+/**
+ * Work out what buttons to display in the cookie bar.
+ */
+function toolbelt_cookie_buttons() {
+
+	$buttons = '';
+
+	if ( has_action( TOOLBELT_COOKIE_ACCEPTED ) ) {
+
+		// If actions have been assigned to the cookie approved message then display
+		// accept and decline buttons.
+		$buttons .= '<button class="toolbelt_cookie_accept">' . esc_html__( 'Accept', 'wp-toolbelt' ) . '</button>';
+		$buttons .= '<button class="toolbelt_cookie_decline">' . esc_html__( 'Decline', 'wp-toolbelt' ) . '</button>';
+
+	} else {
+
+		// No actions so display the default close button.
+		$buttons .= '<button class="toolbelt_cookie_accept toolbelt_cookie_close">&times;</button>';
+
+	}
+
+	return $buttons;
+
+}
+

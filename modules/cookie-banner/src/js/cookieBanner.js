@@ -34,15 +34,38 @@ var toolbelt_cookie_bar = ( function() {
 
 		init: function() {
 
-			if ( !get_cookie( 'toolbelt_accepted_cookies' ) ) {
+			var cookie = get_cookie( 'toolbelt_accepted_cookies' );
+
+			console.log( 'cookie', cookie );
+
+			// Cookie not set so ask for acceptance.
+			if ( !cookie ) {
 
 				document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'flex';
 
-				document.querySelector( '.toolbelt_cookie_wrapper button' ).addEventListener(
+				document.querySelector( '.toolbelt_cookie_wrapper .toolbelt_cookie_accept' ).addEventListener(
 					'click',
 					toolbelt_cookie_bar.accept,
 					false
 				);
+
+				document.querySelector( '.toolbelt_cookie_wrapper .toolbelt_cookie_decline' ).addEventListener(
+					'click',
+					toolbelt_cookie_bar.decline,
+					false
+				);
+
+			}
+
+			// Cookie is accepted.
+			if ( 'accepted' === cookie ) {
+
+				toolbelt_cookies_accepted();
+
+			}
+
+			// Cookie is declined.
+			if ( 'declined' === cookie ) {
 
 			}
 
@@ -50,7 +73,18 @@ var toolbelt_cookie_bar = ( function() {
 
 		accept: function() {
 
-			set_cookie( 'toolbelt_accepted_cookies', 'yes', 365 );
+			set_cookie( 'toolbelt_accepted_cookies', 'accepted', 365 );
+
+			document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'none';
+
+			toolbelt_cookies_accepted();
+
+		},
+
+		decline: function() {
+
+			set_cookie( 'toolbelt_accepted_cookies', 'declined', 365 );
+
 			document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'none';
 
 		}
