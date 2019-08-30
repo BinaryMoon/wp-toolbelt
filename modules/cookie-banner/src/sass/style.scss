@@ -16,7 +16,7 @@
 	button,
 	strong {
 
-		padding: calc( var( --toolbelt-spacing ) / 2 ) --toolbelt-spacing;
+		padding: calc( var( --toolbelt-spacing ) / 2 ) var( --toolbelt-spacing );
 		line-height: 1rem;
 
 	}
@@ -32,13 +32,18 @@
 
 		background: black;
 		color: white;
-		font-size: 1.5rem;
 
 		&:hover {
 
 			text-decoration: none;
 
 		}
+
+	}
+
+	.toolbelt_cookie_close {
+
+		font-size: 1.5rem;
 
 	}
 
