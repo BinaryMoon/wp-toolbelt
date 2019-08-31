@@ -56,7 +56,7 @@ function toolbelt_social_sharing( $content ) {
 
 }
 
-add_filter( 'the_content', 'toolbelt_social_sharing' );
+add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
 
 
 /**
