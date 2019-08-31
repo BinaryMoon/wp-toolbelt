@@ -91,6 +91,12 @@ export function styles_videos() {
 
 }
 
+export function styles_heading_links() {
+
+	return process_styles( 'heading-anchors' );
+
+}
+
 /**
  * Remove comments from the source so that they can be minified away.
  */
