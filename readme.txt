@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: speed, user experience, UX, optimization, related posts, social sharing, social menu
 Requires at least: 4.0
-Tested up to: 5.2
+Tested up to: 5.3
 Stable tag: 1.5
 
 Utilities to make your website betterer.
@@ -80,12 +80,13 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 = 1.5 - 31st August 2019 =
 * Add support for responsive videos.
+* Add heading anchor module. This adds anchors to headings in the post/ page, for easy deep linking.
+* Add a random redirect module. It allows you to randomly link to a blog post.
+* Make the social sharing links load a little later so they stay at the end of the post.
 
 = 1.4 - 29th August 2019 =
 * Fix cookie notification padding.
 * Call a function when cookies are accepted. We can use an action to output the code this is executed. This allows us to add tracking codes.
-* Add a random redirect module. It allows you to randomly link to a blog post.
-* Add heading anchor module. This adds anchors to headings in the post/ page, for easy deep linking.
 
 = 1.3 - 28th August 2019 =
 * Add lazy loading to iframes and avatars as well as post content images.
