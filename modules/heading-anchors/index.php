@@ -6,10 +6,13 @@
  */
 
 /**
+ * Add heading anchors to the page/ post content.
  *
+ * @param string $content The post content to add the anchors to.
  */
 function toolbelt_heading_anchors( $content ) {
 
+	// Only do it for the main post.
 	if ( ! is_singular() || ! is_main_query() ) {
 
 		return $content;
@@ -17,7 +20,14 @@ function toolbelt_heading_anchors( $content ) {
 	}
 
 	$doc = new DOMDocument();
-	$dom_content = $doc->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES' ) );
+	/**
+	 * DOMDocument::loadHTML does not really support HTML5 so I am silencing the
+	 * errors it may generate based on content it doesn't understand.
+	 *
+	 * Not ideal but there doesn't seem to be a nice way to work around this
+	 * beside using a different library, and I would rather not do that.
+	 */
+	$dom_content = @$doc->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES' ) );
 
 	if ( false === $dom_content ) {
 
@@ -39,6 +49,13 @@ function toolbelt_heading_anchors( $content ) {
 add_filter( 'the_content', 'toolbelt_heading_anchors' );
 
 
+/**
+ * Add the anchors to the specified tag.
+ *
+ * @param object $doc The DOMDocument object for the current page.
+ * @param string $tag The tag to search and add the anchor to.
+ * @return object The modified DOMDocument object.
+ */
 function toolbelt_heading_ids( $doc, $tag ) {
 
 	$elements = $doc->getElementsByTagName( $tag );
