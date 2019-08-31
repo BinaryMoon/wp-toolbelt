@@ -109,6 +109,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Randomly Redirect to a blog post.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect',
 		),
+		'heading-anchors' => array(
+			'name' => esc_html__( 'Heading Anchors', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Allow site visitors to link to individual sections of the page. Adds unique ids to each heading.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor',
+		),
 	);
 
 }

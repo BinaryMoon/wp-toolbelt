@@ -1,0 +1,22 @@
+.toolbelt-anchor {
+
+	.toolbelt-link {
+
+		display: none;
+		text-decoration: none;
+		padding: 0.5em;
+
+	}
+
+	&:hover,
+	&:focus {
+
+		.toolbelt-link {
+
+			display: inline;
+
+		}
+
+	}
+
+}
