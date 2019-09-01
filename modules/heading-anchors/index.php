@@ -46,7 +46,7 @@ function toolbelt_heading_anchors( $content ) {
 
 }
 
-add_filter( 'the_content', 'toolbelt_heading_anchors' );
+add_filter( 'the_content', 'toolbelt_heading_anchors', 9 );
 
 
 /**
