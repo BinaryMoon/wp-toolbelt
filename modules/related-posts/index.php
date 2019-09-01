@@ -95,6 +95,7 @@ function toolbelt_related_posts_html( $related_posts ) {
 
 	$html = '<section class="toolbelt-related-posts">';
 	$html .= '<h3>' . esc_html__( 'Related Posts', 'wp-toolbelt' ) . '</h3>';
+	$html .= '<div>';
 
 	foreach ( $related_posts as $related ) {
 
@@ -107,7 +108,7 @@ function toolbelt_related_posts_html( $related_posts ) {
 
 	}
 
-	$html .= '</section>';
+	$html .= '</div></section>';
 
 	return $html;
 

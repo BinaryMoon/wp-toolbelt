@@ -1,7 +1,8 @@
 .toolbelt_social_share {
 
 	font-size: 1rem;
-	margin: calc( var( --toolbelt-spacing ) * 2 ) 0;
+	margin-top: calc( var( --toolbelt-spacing ) * 2 );
+	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
 
 	a {
 

@@ -78,6 +78,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.5.1 - 1st September 2019 =
+* Tweak module CSS to improve theme compatability.
+
 = 1.5 - 31st August 2019 =
 * Add support for responsive videos.
 * Add heading anchor module. This adds anchors to headings in the post/ page, for easy deep linking.

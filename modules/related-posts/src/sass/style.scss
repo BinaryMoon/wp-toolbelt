@@ -1,13 +1,17 @@
 .toolbelt-related-posts {
 
-	display: flex;
-	margin: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) * -1 );
-	flex-wrap: wrap;
+	div {
 
-	> * {
+		display: flex;
+		margin: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) * -1 );
+		flex-wrap: wrap;
 
-		padding: var( --toolbelt-spacing );
-		padding-top: 0;
+		a {
+
+			padding: var( --toolbelt-spacing );
+			padding-top: 0;
+
+		}
 
 	}
 
