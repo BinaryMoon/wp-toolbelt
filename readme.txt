@@ -15,14 +15,17 @@ Taking inspiration from Jetpack I want to rebuild the features I use the most an
 
 = Features =
 
-* EU Cookie Banner
-* Static Social Share Buttons (with no data leaking to Facebook/ Twitter etc)
-* Simple Breadcrumbs (with microformats)
-* WordPress Optimization (remove useless features)
-* Portfolio custom post type
-* Related Posts
-* Native Lazy loading
-* Social Icon Menu
+* [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
+* [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
+* [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
+* [Optimization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization)
+* [Portfolio](https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio)
+* [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
+* [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
+* [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
+* [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
+* [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
+* [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
 
 = Fast =
 

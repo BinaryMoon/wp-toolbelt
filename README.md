@@ -25,12 +25,17 @@ To ensure the plugin is as privacy focused as possible it:
 
 # Features
 
-* Portfolio post type
-* EU Cookie banner
-* Social share buttons
-* Breadcrumbs
-* Related Posts
-* Native Lazy Loading
+* [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
+* [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
+* [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
+* [Optimization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization)
+* [Portfolio](https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio)
+* [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
+* [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
+* [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
+* [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
+* [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
+* [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
 
 # Thanks!
 
