@@ -81,10 +81,11 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 1.6 - 1st September 2019 =
+= 1.6 - 2nd September 2019 =
 * Add new module that disables urls in comment forms.
 * Add new module that speeds up 404 pages for static files.
 * Add additional features to the cleanup module.
+* Change heading anchor priority so that heading anchors get added before other modules that may introduce heading elements.
 * Tweak module CSS to improve theme compatability.
 
 = 1.5 - 31st August 2019 =
