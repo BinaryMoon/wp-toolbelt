@@ -3,7 +3,7 @@ Contributors: BinaryMoon
 Tags: speed, user experience, UX, optimization, related posts, social sharing, social menu
 Requires at least: 4.0
 Tested up to: 5.3
-Stable tag: 1.5
+Stable tag: 1.6
 
 Utilities to make your website betterer.
 
@@ -84,6 +84,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 = 1.6 - 1st September 2019 =
 * Add new module that disables urls in comment forms.
 * Add new module that speeds up 404 pages for static files.
+* Add additional features to the cleanup module.
 * Tweak module CSS to improve theme compatability.
 
 = 1.5 - 31st August 2019 =
