@@ -82,6 +82,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 == Changelog ==
 
 = 1.5.1 - 1st September 2019 =
+* Add new module that speeds up 404 pages for static files.
 * Tweak module CSS to improve theme compatability.
 
 = 1.5 - 31st August 2019 =
