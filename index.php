@@ -49,7 +49,7 @@ function toolbelt_get_modules() {
 
 	return array(
 		'cookie-banner' => array(
-			'name' => esc_html__( 'EU Cookie Banner', 'wp-toolbelt' ),
+			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display a simple banner with a link to your Privacy Policy.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner',
 			'weight' => esc_html__( '1.2kb of inline JS and CSS.', 'wp-toolbelt' ),
