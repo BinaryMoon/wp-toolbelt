@@ -63,6 +63,16 @@ if ( is_admin() ) {
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
+	add_filter(
+		'xmlrpc_methods',
+		function( $methods ) {
+
+			unset( $methods['pingback.ping'] );
+			return $methods;
+
+		}
+	);
+
 }
 
 // Slow down the default heartbeat.
