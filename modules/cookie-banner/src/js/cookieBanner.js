@@ -36,7 +36,7 @@ var toolbelt_cookie_bar = ( function() {
 
 			var cookie = get_cookie( 'toolbelt_accepted_cookies' );
 
-			console.log( 'cookie', cookie );
+			// console.log( 'cookie', cookie );
 
 			// Cookie not set so ask for acceptance.
 			if ( !cookie ) {
@@ -58,7 +58,7 @@ var toolbelt_cookie_bar = ( function() {
 			}
 
 			// Cookie is accepted.
-			if ( 'accepted' === cookie ) {
+			if ( 'accepted' === cookie || 'yes' === cookie ) {
 
 				toolbelt_cookies_accepted();
 

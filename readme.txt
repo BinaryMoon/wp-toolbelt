@@ -3,7 +3,7 @@ Contributors: BinaryMoon
 Tags: speed, user experience, UX, optimization, related posts, social sharing, social menu
 Requires at least: 4.0
 Tested up to: 5.3
-Stable tag: 1.6
+Stable tag: 1.6.1
 
 Utilities to make your website betterer.
 
@@ -80,6 +80,10 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 1.6.1 - 3rd September 2019 =
+* Remove console.log
+* Make cookie js work better with older cookies.
 
 = 1.6 - 2nd September 2019 =
 * Add new module that disables urls in comment forms.
