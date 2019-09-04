@@ -135,8 +135,3 @@ function toolbelt_social_networks() {
 	return $networks;
 
 }
-
-function my_social_sharing_post_types() {
-	return '';
-}
-add_filter( 'toolbelt_social_sharing_post_types', 'my_social_sharing_post_types' );
