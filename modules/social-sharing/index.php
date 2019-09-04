@@ -54,6 +54,16 @@ function toolbelt_social_sharing( $content ) {
 		$canonical = get_permalink();
 	}
 
+	/**
+	 * There's no url so let's quit.
+	 *
+	 * This can happen in some places such as buddypress where some pages are
+	 * created virtually and don't have a linkable url.
+	 */
+	if ( empty( $canonical ) ) {
+		return $content;
+	}
+
 	// Display a list of social networks.
 	$networks = toolbelt_social_networks();
 
