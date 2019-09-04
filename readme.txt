@@ -91,6 +91,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add Text Domain
 * Make cookie banner text filterable.
 * Don't display social sharing buttons if no url can be found.
+* Generate social sharing url from $_SERVER properties if the permalink does not exist for some reason. Also escapes the social sharing url to be sure it's safe.
 
 = 1.6.2 - 3rd September 2019 =
 * Fix issue with heading anchors escaping output, which may break other html that has been inserted with filters.
