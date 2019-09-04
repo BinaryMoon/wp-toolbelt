@@ -84,6 +84,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 = 1.7 - 4th September 2019 =
 * Add extra filters for enabling and disabling social sharing on different post types, or with different conditions.
 * Change the social sharing options so they only display on blog posts and projects by default.
+* Make cookie banner text filterable.
 
 = 1.6.2 - 3rd September 2019 =
 * Fix issue with heading anchors escaping output, which may break other html that has been inserted with filters.

@@ -73,19 +73,28 @@ function toolbelt_cookie_message() {
  */
 function toolbelt_cookie_buttons() {
 
+	$button_text = apply_filters(
+		'toolbelt_cookie_button_text',
+		array(
+			'accept' => __( 'Accept', 'wp-toolbelt' ),
+			'decline' => __( 'Decline', 'wp-toolbelt' ),
+			'close' => __( '&times;', 'wp-toolbelt' ),
+		)
+	);
+
 	$buttons = '';
 
 	if ( has_action( TOOLBELT_COOKIE_ACCEPTED ) ) {
 
 		// If actions have been assigned to the cookie approved message then display
 		// accept and decline buttons.
-		$buttons .= '<button class="toolbelt_cookie_accept">' . esc_html__( 'Accept', 'wp-toolbelt' ) . '</button>';
-		$buttons .= '<button class="toolbelt_cookie_decline">' . esc_html__( 'Decline', 'wp-toolbelt' ) . '</button>';
+		$buttons .= '<button class="toolbelt_cookie_accept">' . esc_html( $button_text['accept'] ) . '</button>';
+		$buttons .= '<button class="toolbelt_cookie_decline">' . esc_html( $button_text['decline'] ) . '</button>';
 
 	} else {
 
 		// No actions so display the default close button.
-		$buttons .= '<button class="toolbelt_cookie_accept toolbelt_cookie_close">&times;</button>';
+		$buttons .= '<button class="toolbelt_cookie_accept toolbelt_cookie_close">' . esc_html( $button_text['close'] ) . '</button>';
 
 	}
 
