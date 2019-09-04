@@ -5,6 +5,7 @@
  * Author: Ben Gillbanks
  * Version: 1.7
  * Author URI: https://prothemedesign.com
+ * Text Domain: wp-toolbelt
  *
  * @package toolbelt
  */
