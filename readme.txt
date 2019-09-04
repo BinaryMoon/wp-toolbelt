@@ -85,6 +85,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.7.1 - 4th September 2019 =
+* Remove test function that makes social sharing buttons display on every page.
+
 = 1.7 - 4th September 2019 =
 * Add extra filters for enabling and disabling social sharing on different post types, or with different conditions.
 * Change the social sharing options so they only display on blog posts and projects by default.
