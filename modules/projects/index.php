@@ -8,9 +8,9 @@
 /**
  * Define the taxonomy names.
  */
-define( 'TOOLBELT_CUSTOM_POST_TYPE', 'toolbelt-portfolio' );
-define( 'TOOLBELT_CUSTOM_TAXONOMY_TYPE', 'toolbelt-portfolio-type' );
-define( 'TOOLBELT_CUSTOM_TAXONOMY_TAG', 'toolbelt-portfolio-tag' );
+define( 'TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE', 'toolbelt-portfolio' );
+define( 'TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TYPE', 'toolbelt-portfolio-type' );
+define( 'TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TAG', 'toolbelt-portfolio-tag' );
 
 /**
  * Register Portfolio post type and associated taxonomies.
@@ -23,13 +23,13 @@ function toolbelt_portfolio_register_post_types() {
 		return;
 	}
 
-	if ( post_type_exists( TOOLBELT_CUSTOM_POST_TYPE ) ) {
+	if ( post_type_exists( TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE ) ) {
 		return;
 	}
 
 	// Portfolio post type.
 	register_post_type(
-		TOOLBELT_CUSTOM_POST_TYPE,
+		TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE,
 		array(
 			'labels' => array(
 				'name'                  => esc_html__( 'Projects', 'wp-toolbelt' ),
@@ -69,7 +69,7 @@ function toolbelt_portfolio_register_post_types() {
 			'menu_icon'       => 'dashicons-portfolio', // 3.8+ dashicon option.
 			'capability_type' => 'page',
 			'map_meta_cap'    => true,
-			'taxonomies'      => array( TOOLBELT_CUSTOM_TAXONOMY_TYPE, TOOLBELT_CUSTOM_TAXONOMY_TAG ),
+			'taxonomies'      => array( TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TYPE, TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TAG ),
 			'has_archive'     => true,
 			'query_var'       => 'portfolio',
 			'show_in_rest'    => true,
@@ -78,8 +78,8 @@ function toolbelt_portfolio_register_post_types() {
 
 	// Portfolio project types (categories).
 	register_taxonomy(
-		TOOLBELT_CUSTOM_TAXONOMY_TYPE,
-		TOOLBELT_CUSTOM_POST_TYPE,
+		TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TYPE,
+		TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE,
 		array(
 			'hierarchical'      => true,
 			'labels'            => array(
@@ -110,8 +110,8 @@ function toolbelt_portfolio_register_post_types() {
 
 	// Portfolio tags.
 	register_taxonomy(
-		TOOLBELT_CUSTOM_TAXONOMY_TAG,
-		TOOLBELT_CUSTOM_POST_TYPE,
+		TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TAG,
+		TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE,
 		array(
 			'hierarchical'      => false,
 			'labels'            => array(
@@ -156,7 +156,7 @@ add_action( 'init', 'toolbelt_portfolio_register_post_types', 11 );
  */
 function toolbelt_portfolio_related_posts_type( $types ) {
 
-	$types[ TOOLBELT_CUSTOM_POST_TYPE ] = TOOLBELT_CUSTOM_TAXONOMY_TYPE;
+	$types[ TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE ] = TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TYPE;
 	return $types;
 
 }
@@ -187,7 +187,7 @@ function toolbelt_portfolio_edit_admin_columns( $columns ) {
 
 }
 
-add_filter( sprintf( 'manage_%s_posts_columns', TOOLBELT_CUSTOM_POST_TYPE ), 'toolbelt_portfolio_edit_admin_columns' );
+add_filter( sprintf( 'manage_%s_posts_columns', TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE ), 'toolbelt_portfolio_edit_admin_columns' );
 
 
 /**
@@ -206,7 +206,7 @@ function toolbelt_portfolio_image_column( $column, $post_id ) {
 
 }
 
-add_filter( sprintf( 'manage_%s_posts_custom_column', TOOLBELT_CUSTOM_POST_TYPE ), 'toolbelt_portfolio_image_column', 10, 2 );
+add_filter( sprintf( 'manage_%s_posts_custom_column', TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE ), 'toolbelt_portfolio_image_column', 10, 2 );
 
 
 /**
@@ -218,7 +218,7 @@ function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 
 	$screen = get_current_screen();
 
-	if ( 'edit.php' === $hook && TOOLBELT_CUSTOM_POST_TYPE === $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
+	if ( 'edit.php' === $hook && TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE === $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
 		$styles = array(
 			'.column-thumbnail { width: 50px; }',
 			'.column-thumbnail img { max-width: 50px; height: auto; }',
