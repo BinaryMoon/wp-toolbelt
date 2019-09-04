@@ -19,7 +19,26 @@ if ( is_admin() ) {
  */
 function toolbelt_social_sharing( $content ) {
 
-	if ( ! is_singular() ) {
+	$post_types = apply_filters(
+		'toolbelt_social_sharing_post_types',
+		array( 'post' )
+	);
+
+	/**
+	 * Not a singular post type of any sort so let's quit.
+	 */
+	if ( ! is_singular( $post_types ) ) {
+		return $content;
+	}
+
+	/**
+	 * Check a filter to see if we should quit.
+	 *
+	 * By default will return if it's not a blog post.
+	 * You can change this with the filter.
+	 * @see
+	 */
+	if ( ! apply_filters( 'toolbelt_display_social_sharing', true ) ) {
 		return $content;
 	}
 

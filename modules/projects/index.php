@@ -165,6 +165,22 @@ add_filter( 'toolbelt_related_post_types', 'toolbelt_portfolio_related_posts_typ
 
 
 /**
+ * Add the portfolio post type to the related post types.
+ *
+ * @param array $types The current list of post types.
+ * @return array
+ */
+function toolbelt_portfolio_social_sharing_post_types( $types ) {
+
+	$types[] = TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE;
+	return $types;
+
+}
+
+add_filter( 'toolbelt_social_sharing_post_types', 'toolbelt_portfolio_social_sharing_post_types', 5 );
+
+
+/**
  * Change ‘Title’ column label.
  * Add Featured Image column.
  *
