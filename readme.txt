@@ -81,6 +81,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.6.2 - 3rd September 2019 =
+* Fix issue with heading anchors escaping output, which may break other html that has been inserted with filters.
+
 = 1.6.1 - 3rd September 2019 =
 * Remove console.log
 * Make cookie js work better with older cookies.

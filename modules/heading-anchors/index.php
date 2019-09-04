@@ -42,7 +42,7 @@ function toolbelt_heading_anchors( $content ) {
 
 	toolbelt_styles( 'heading-anchors' );
 
-	return wp_kses_post( $doc->saveHTML() );;
+	return $doc->saveHTML();
 
 }
 
