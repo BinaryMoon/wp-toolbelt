@@ -55,6 +55,16 @@ function toolbelt_social_sharing( $content ) {
 	}
 
 	/**
+	 * Let's build it ourselves from the server information.
+	 */
+	if ( ! $canonical && isset( $_SERVER ) ) {
+		$https = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
+		$canonical = $https . ':// ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	}
+
+	$canonical = esc_url( $canonical );
+
+	/**
 	 * There's no url so let's quit.
 	 *
 	 * This can happen in some places such as buddypress where some pages are
@@ -125,3 +135,8 @@ function toolbelt_social_networks() {
 	return $networks;
 
 }
+
+function my_social_sharing_post_types() {
+	return '';
+}
+add_filter( 'toolbelt_social_sharing_post_types', 'my_social_sharing_post_types' );
