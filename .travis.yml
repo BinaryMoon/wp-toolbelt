@@ -1,0 +1,12 @@
+language: php
+php:
+- '7.2'
+- '7.3'
+
+install:
+- composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer phpstan/phpstan-shim szepeviktor/phpstan-wordpress
+
+script:
+- vendor/bin/parallel-lint modules/ admin/ index.php
+- vendor/bin/phpcs --standard=WordPress-Core modules/ admin/ index.php
+- vendor/bin/phpstan analyze -l 4
