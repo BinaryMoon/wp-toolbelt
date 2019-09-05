@@ -36,7 +36,7 @@ var toolbelt_cookie_bar = ( function() {
 
 			var cookie = get_cookie( 'toolbelt_accepted_cookies' );
 
-			// console.log( 'cookie', cookie );
+			document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'none';
 
 			// Cookie not set so ask for acceptance.
 			if ( !cookie ) {
