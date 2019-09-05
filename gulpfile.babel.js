@@ -12,6 +12,7 @@ import {
 } from './gulp/sass';
 import scripts from './gulp/script';
 import compress from './gulp/zip';
+import translate from './gulp/pot';
 
 export const buildZip = compress;
 
@@ -24,7 +25,8 @@ export const build = series(
 		styles_breadcrumbs,
 		styles_videos,
 		styles_heading_links,
-		scripts
+		scripts,
+		translate
 	),
 	compress
 );
