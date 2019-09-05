@@ -85,6 +85,13 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.8 - 5th September 2019 =
+* Lots of tidying up coding standards and functionality. Thanks to Viktor Szépe.
+* Add missing page weight values.
+* Fix incorrect text domains.
+* Add pot file for simpler translations.
+* Ensure cookie bar is hidden if cookies are accepted.
+
 = 1.7.1 - 4th September 2019 =
 * Remove test function that makes social sharing buttons display on every page.
 
