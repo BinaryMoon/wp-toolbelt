@@ -28,19 +28,26 @@ function toolbelt_breadcrumbs() {
 	}
 
 	$breadcrumb_type = toolbelt_breadcrumb_type();
-	$breadcrumb = '';
 
 	// Quit if the content is a top level item.
 	if ( ! $breadcrumb_type ) {
 		return;
 	}
 
-	if ( 'post' === $breadcrumb_type[0] ) {
-		$breadcrumb = toolbelt_breadcrumb_post_hierarchical();
-	}
+	switch ( $breadcrumb_type[0] ) {
 
-	if ( 'taxonomy' === $breadcrumb_type[0] ) {
-		$breadcrumb = toolbelt_breadcrumb_tax_hierarchical( $breadcrumb_type[1] );
+		case 'post':
+			$breadcrumb = toolbelt_breadcrumb_post_hierarchical();
+			break;
+
+		case 'taxonomy':
+			$breadcrumb = toolbelt_breadcrumb_tax_hierarchical( $breadcrumb_type[1] );
+			break;
+
+		default:
+			$breadcrumb = '';
+			break;
+
 	}
 
 	$home = sprintf(

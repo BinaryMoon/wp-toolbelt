@@ -214,21 +214,18 @@ function toolbelt_tools_convert( $action ) {
 		),
 	);
 
-	// Set defaults.
-	$from = 'jetpack';
-	$to = 'toolbelt';
-
 	switch ( $action ) {
-
-		case 'convert_jetpack_portfolio':
-			$from = 'jetpack';
-			$to = 'toolbelt';
-
-			break;
 
 		case 'convert_toolbelt_portfolio':
 			$from = 'toolbelt';
 			$to = 'jetpack';
+
+			break;
+
+		default:
+		case 'convert_jetpack_portfolio':
+			$from = 'jetpack';
+			$to = 'toolbelt';
 
 			break;
 
