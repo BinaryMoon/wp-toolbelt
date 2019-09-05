@@ -10,6 +10,10 @@
  * @package toolbelt
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 define( 'TOOLBELT_VERSION', '1.7.1' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 
