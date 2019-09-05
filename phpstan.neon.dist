@@ -1,0 +1,29 @@
+includes:
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+parameters:
+    level: max
+    paths:
+        - %currentWorkingDirectory%/modules/
+        - %currentWorkingDirectory%/admin/
+    autoload_files:
+        - %currentWorkingDirectory%/index.php
+        - %currentWorkingDirectory%/admin/index.php
+        # Modules
+        - %currentWorkingDirectory%/modules/breadcrumbs/index.php
+        - %currentWorkingDirectory%/modules/cleanup/index.php
+        - %currentWorkingDirectory%/modules/cookie-banner/index.php
+        - %currentWorkingDirectory%/modules/disable-comment-urls/index.php
+        - %currentWorkingDirectory%/modules/fast-404/index.php
+        - %currentWorkingDirectory%/modules/featured-attachment/index.php
+        - %currentWorkingDirectory%/modules/heading-anchors/index.php
+        - %currentWorkingDirectory%/modules/lazy-load/index.php
+        - %currentWorkingDirectory%/modules/projects/index.php
+        - %currentWorkingDirectory%/modules/random-redirect/index.php
+        - %currentWorkingDirectory%/modules/related-posts/index.php
+        - %currentWorkingDirectory%/modules/responsive-videos/index.php
+        - %currentWorkingDirectory%/modules/social-menu/index.php
+        - %currentWorkingDirectory%/modules/social-sharing/index.php
+    ignoreErrors:
+        # Uses func_get_args()
+        - '#^Function add_query_arg invoked with [123] parameters?, 0 required\.$#'
