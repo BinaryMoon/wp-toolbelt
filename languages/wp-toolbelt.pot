@@ -13,143 +13,143 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:53
+#: index.php:57
 msgid "Cookie Banner"
 msgstr ""
 
-#: index.php:54
+#: index.php:58
 msgid "Display a simple banner with a link to your Privacy Policy."
 msgstr ""
 
-#: index.php:56
+#: index.php:60
 msgid "1.2kb of inline JS and CSS."
 msgstr ""
 
-#: index.php:59
+#: index.php:63
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:60
+#: index.php:64
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:62
+#: index.php:66
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:65, modules/projects/index.php:37
+#: index.php:69, modules/projects/index.php:37
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:66
+#: index.php:70
 msgid "A portfolio custom post type."
 msgstr ""
 
-#: index.php:70
+#: index.php:74
 msgid "Header Cleanup"
 msgstr ""
 
-#: index.php:71
+#: index.php:75
 msgid "Remove unnecessary HTML from the site header."
 msgstr ""
 
-#: index.php:73
+#: index.php:77
 msgid "Minus 5kb of HTML from the page head."
 msgstr ""
 
-#: index.php:76
+#: index.php:80
 msgid "Breadcrumbs"
 msgstr ""
 
-#: index.php:77
+#: index.php:81
 msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
 msgstr ""
 
-#: index.php:79
+#: index.php:83
 msgid "1 or 2kb of HTML."
 msgstr ""
 
-#: index.php:82, modules/related-posts/index.php:97
+#: index.php:86, modules/related-posts/index.php:97
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:83
+#: index.php:87
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:85
+#: index.php:89
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:88
+#: index.php:92
 msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:89
+#: index.php:93
 msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
-#: index.php:93, modules/social-menu/index.php:14, modules/social-menu/index.php:31
+#: index.php:97, modules/social-menu/index.php:14, modules/social-menu/index.php:31
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:94
+#: index.php:98
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:96
+#: index.php:100
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons"
 msgstr ""
 
-#: index.php:99
+#: index.php:103
 msgid "Featured Attachment"
 msgstr ""
 
-#: index.php:100
+#: index.php:104
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:104
+#: index.php:108
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:105
+#: index.php:109
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:107
+#: index.php:111
 msgid "0.2kb of CSS"
 msgstr ""
 
-#: index.php:110
+#: index.php:114
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:111
+#: index.php:115
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:115
+#: index.php:119
 msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:116
+#: index.php:120
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:120
+#: index.php:124
 msgid "Fast 404s"
 msgstr ""
 
-#: index.php:121
+#: index.php:125
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:125
+#: index.php:129
 msgid "Disable Comment Urls"
 msgstr ""
 
-#: index.php:126
+#: index.php:130
 msgid "Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
@@ -174,25 +174,25 @@ msgid "Page Impact"
 msgstr ""
 
 #. translators: %d = numbers of posts.
-#: admin/index.php:244
+#: admin/index.php:245
 msgid "%d posts converted"
 msgstr ""
 
 #. translators: %d = numbers of categories.
-#: admin/index.php:254
+#: admin/index.php:255
 msgid "%d categories converted"
 msgstr ""
 
 #. translators: %d = numbers of tags.
-#: admin/index.php:264
+#: admin/index.php:265
 msgid "%d tags converted"
 msgstr ""
 
-#: admin/index.php:266
+#: admin/index.php:267
 msgid "Success"
 msgstr ""
 
-#: admin/index.php:291
+#: admin/index.php:292
 msgid "Settings Saved"
 msgstr ""
 
@@ -236,7 +236,7 @@ msgstr ""
 msgid "Convert Toolbelt portfolio items so they will work with Jetpack."
 msgstr ""
 
-#: modules/breadcrumbs/index.php:48
+#: modules/breadcrumbs/index.php:56
 msgid "Home"
 msgstr ""
 
