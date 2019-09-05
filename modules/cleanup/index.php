@@ -24,12 +24,12 @@ remove_action( 'opml_head', 'the_generator' );
 remove_action( 'app_head', 'the_generator' );
 
 // Remove the next and previous post links.
-remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+remove_action( 'wp_head', 'adjacent_posts_rel_link', 10 );
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
 
 // Remove the shortlink url from header.
-remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
-remove_action( 'template_redirect', 'wp_shortlink_header', 11, 0 );
+remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
+remove_action( 'template_redirect', 'wp_shortlink_header', 11 );
 
 // Remove WordPress generator version.
 remove_action( 'wp_head', 'wp_generator' );
