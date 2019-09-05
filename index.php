@@ -92,7 +92,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add a social icons menu. This must be integrated into the theme.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu',
-			'weight' => esc_html__( '0.2kb of inline CSS, plus the SVGs needed for the icons' ),
+			'weight' => esc_html__( '0.2kb of inline CSS, plus the SVGs needed for the icons', 'wp-toolbelt' ),
 		),
 		'featured-attachment' => array(
 			'name' => esc_html__( 'Featured Attachment', 'wp-toolbelt' ),
