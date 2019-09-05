@@ -28,6 +28,7 @@ function toolbelt_breadcrumbs() {
 	}
 
 	$breadcrumb_type = toolbelt_breadcrumb_type();
+	$breadcrumb = '';
 
 	// Quit if the content is a top level item.
 	if ( ! $breadcrumb_type ) {
@@ -107,7 +108,7 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 	$breadcrumb = '';
 
 	if ( is_wp_error( $current ) ) {
-		return;
+		return '';
 	}
 
 	if ( $current->parent ) {
@@ -173,14 +174,14 @@ function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 	$parent = get_term( $term, $taxonomy );
 
 	if ( is_wp_error( $parent ) ) {
-		return $parent;
+		return '';
 	}
 
 	$chain = '';
 
 	if ( $parent->parent && ( $parent->parent !== $parent->term_id ) && ! in_array( $parent->parent, $visited, true ) ) {
 		$visited[] = $parent->parent;
-		$chain .= jetpack_get_term_parents( $parent->parent, $taxonomy, $visited );
+		$chain .= toolbelt_get_term_parents( $parent->parent, $taxonomy, $visited );
 	}
 
 	$chain .= sprintf(

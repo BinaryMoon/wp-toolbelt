@@ -57,7 +57,7 @@ function toolbelt_social_menu() {
  * Embed an svg directly into the webpage.
  *
  * @param string $key The key for the svg file. This is the filename without the .svg.
- * @return null|string
+ * @return string
  */
 function toolbelt_social_menu_svg( $key, $echo = true ) {
 
@@ -121,7 +121,7 @@ function toolbelt_social_menu_icons() {
  * @param  string  $item_output The menu item output.
  * @param  WP_Post $item        Menu item object.
  * @param  int     $depth       Depth of the menu.
- * @param  array   $args        wp_nav_menu() arguments.
+ * @param  object  $args        wp_nav_menu() arguments.
  * @return string  $item_output The menu item output with social icon.
  */
 function toolbelt_social_menu_nav_menu_icons( $item_output, $item, $depth, $args ) {
