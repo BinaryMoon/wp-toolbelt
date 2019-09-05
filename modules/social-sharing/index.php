@@ -57,8 +57,8 @@ function toolbelt_social_sharing( $content ) {
 	/**
 	 * Let's build it ourselves from the server information.
 	 */
-	if ( ! $canonical && isset( $_SERVER ) ) {
-		$https = 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
+	if ( ! $canonical ) {
+		$https = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
 		$canonical = $https . ':// ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 	}
 
