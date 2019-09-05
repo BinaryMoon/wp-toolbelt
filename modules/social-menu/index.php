@@ -28,7 +28,7 @@ function toolbelt_social_menu() {
 
 ?>
 
-<nav class="toolbelt-menu-social" aria-label="<?php esc_attr_e( 'Social Menu', 'jarvis' ); ?>">
+<nav class="toolbelt-menu-social" aria-label="<?php esc_attr_e( 'Social Menu', 'wp-toolbelt' ); ?>">
 
 <?php
 
