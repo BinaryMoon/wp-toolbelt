@@ -1,7 +1,7 @@
 language: php
 php:
 - '7.2'
-- '7.3'
+#- '7.3'
 
 install:
 - composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer phpstan/phpstan-shim szepeviktor/phpstan-wordpress
