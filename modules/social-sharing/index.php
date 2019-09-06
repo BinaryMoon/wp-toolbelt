@@ -36,7 +36,6 @@ function toolbelt_social_sharing( $content ) {
 	 *
 	 * By default will return if it's not a blog post.
 	 * You can change this with the filter.
-	 * @see
 	 */
 	if ( ! apply_filters( 'toolbelt_display_social_sharing', true ) ) {
 		return $content;
@@ -58,10 +57,21 @@ function toolbelt_social_sharing( $content ) {
 	 * Let's build it ourselves from the server information.
 	 */
 	if ( ! $canonical ) {
+
 		$https = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
-		$canonical = $https . ':// ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		/**
+		 * Ignore input sanitization since the generated url will be escaped
+		 * immediately after.
+		 */
+		if ( isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) ) {
+			$canonical = $https . ':// ' . wp_unslash( $_SERVER['HTTP_HOST'] ) . wp_unslash( $_SERVER['REQUEST_URI'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		}
 	}
 
+	/**
+	 * Escape the url. Particularly important for urls that have been generated
+	 * from the $_SERVER properties.
+	 */
 	$canonical = esc_url( $canonical );
 
 	/**
@@ -131,7 +141,6 @@ function toolbelt_social_networks() {
 		),
 	);
 
-	// return apply_filters( 'toolbelt_social_networks', $networks );
 	return $networks;
 
 }

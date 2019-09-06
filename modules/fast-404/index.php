@@ -9,7 +9,9 @@
  */
 
 /**
- * Do a 404 response for the files that don't need to be accessed
+ * Do a 404 response for the files that don't need to be accessed.
+ *
+ * @return null
  */
 function toolbelt_404_response() {
 
@@ -17,9 +19,17 @@ function toolbelt_404_response() {
 		return;
 	}
 
-	$file_extension = '';
 	if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
-		$file_extension = strtolower( pathinfo( $_SERVER['REQUEST_URI'], PATHINFO_EXTENSION ) );
+		/**
+		 * Ignoring the $_SERVER sanitization since we're not outputting
+		 * anything, we just want to get the file extension.
+		 */
+		$request_uri = wp_unslash( $_SERVER['REQUEST_URI'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$file_extension = strtolower( pathinfo( $request_uri, PATHINFO_EXTENSION ) );
+	}
+
+	if ( ! isset( $file_extension ) ) {
+		return;
 	}
 
 	$bad_file_types = array(
@@ -42,10 +52,13 @@ function toolbelt_404_response() {
 		'webp',
 	);
 
+	// If it's a disallowed file extension then just quit.
 	if ( in_array( $file_extension, $bad_file_types, true ) ) {
+
 		header( 'HTTP/1.1 404 Not Found' );
 		esc_html_e( '404 error - file does not exist', 'wp-toolbelt' );
 		die();
+
 	}
 
 }

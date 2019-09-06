@@ -26,7 +26,8 @@ function toolbelt_cookie_footer() {
 	printf(
 		'<section class="toolbelt_cookie_wrapper"><strong>%1$s</strong>%2$s</section>',
 		wp_kses_data( $message ),
-		$buttons
+		// $buttons is generated in toolbelt_cookie_buttons and all of the content is escaped already.
+		$buttons // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	);
 
 	// Output scripts.

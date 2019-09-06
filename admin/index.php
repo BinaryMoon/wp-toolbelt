@@ -264,7 +264,12 @@ function toolbelt_tools_convert( $action ) {
 	// translators: %d = numbers of tags.
 	$message .= '<li>' . sprintf( esc_html__( '%d tags converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
-	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Success', 'wp-toolbelt' ) . '</strong></p><ul>' . $message . '</ul></div>';
+	/**
+	 * Output any messages.
+	 * Sanitization is ignored since the properties are sanitized when the
+	 * $message variable is set.
+	 */
+	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Success', 'wp-toolbelt' ) . '</strong></p><ul>' . $message . '</ul></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
 

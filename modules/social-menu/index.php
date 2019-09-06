@@ -59,7 +59,7 @@ function toolbelt_social_menu() {
  * @param string $key The key for the svg file. This is the filename without the .svg.
  * @return string
  */
-function toolbelt_social_menu_svg( $key, $echo = true ) {
+function toolbelt_social_menu_svg( $key ) {
 
 	$file_path = TOOLBELT_PATH . 'svg/' . $key . '.svg';
 
@@ -77,23 +77,19 @@ function toolbelt_social_menu_icons() {
 
 	$social_links_icons = array(
 		'behance.net'     => 'behance',
-		// 'codepen.io'      => 'codepen',
 		'deviantart.com'  => 'deviantart',
 		'dribbble.com'    => 'dribbble',
 		'facebook.com'    => 'facebook',
 		'flickr.com'      => 'flickr',
-		// 'foursquare.com'  => 'foursquare',
 		'github.com'      => 'github',
 		'instagram.com'   => 'instagram',
 		'linkedin.com'    => 'linkedin',
 		'mailto:'         => 'email',
 		'medium.com'      => 'medium',
 		'pinterest.com'   => 'pinterest',
-		// 'getpocket.com'   => 'get-pocket',
 		'reddit.com'      => 'reddit',
 		'skype.com'       => 'skype',
 		'skype:'          => 'skype',
-		// 'slideshare.net'  => 'slideshare',
 		'snapchat.com'    => 'snapchat',
 		'soundcloud.com'  => 'soundcloud',
 		'tumblr.com'      => 'tumblr',
@@ -101,10 +97,8 @@ function toolbelt_social_menu_icons() {
 		'twitter.com'     => 'twitter',
 		'vimeo.com'       => 'vimeo',
 		'vk.com'          => 'vk',
-		// 'weibo.com'       => 'weibo',
 		'wordpress.org'   => 'wordpress',
 		'wordpress.com'   => 'wordpress',
-		// 'yelp.com'        => 'yelp',
 		'youtube.com'     => 'youtube',
 	);
 
