@@ -8,23 +8,23 @@ parameters:
         - %currentWorkingDirectory%/admin/
     autoload_files:
         - %currentWorkingDirectory%/index.php
-        - %currentWorkingDirectory%/admin/index.php
+        - %currentWorkingDirectory%/admin/admin.php
         - %currentWorkingDirectory%/admin/tools-functions.php
         # Modules
-        - %currentWorkingDirectory%/modules/breadcrumbs/index.php
-        - %currentWorkingDirectory%/modules/cleanup/index.php
-        - %currentWorkingDirectory%/modules/cookie-banner/index.php
-        - %currentWorkingDirectory%/modules/disable-comment-urls/index.php
-        - %currentWorkingDirectory%/modules/fast-404/index.php
-        - %currentWorkingDirectory%/modules/featured-attachment/index.php
-        - %currentWorkingDirectory%/modules/heading-anchors/index.php
-        - %currentWorkingDirectory%/modules/lazy-load/index.php
-        - %currentWorkingDirectory%/modules/projects/index.php
-        - %currentWorkingDirectory%/modules/random-redirect/index.php
-        - %currentWorkingDirectory%/modules/related-posts/index.php
-        - %currentWorkingDirectory%/modules/responsive-videos/index.php
-        - %currentWorkingDirectory%/modules/social-menu/index.php
-        - %currentWorkingDirectory%/modules/social-sharing/index.php
+        - %currentWorkingDirectory%/modules/breadcrumbs/module.php
+        - %currentWorkingDirectory%/modules/cleanup/module.php
+        - %currentWorkingDirectory%/modules/cookie-banner/module.php
+        - %currentWorkingDirectory%/modules/disable-comment-urls/module.php
+        - %currentWorkingDirectory%/modules/fast-404/module.php
+        - %currentWorkingDirectory%/modules/featured-attachment/module.php
+        - %currentWorkingDirectory%/modules/heading-anchors/module.php
+        - %currentWorkingDirectory%/modules/lazy-load/module.php
+        - %currentWorkingDirectory%/modules/projects/module.php
+        - %currentWorkingDirectory%/modules/random-redirect/module.php
+        - %currentWorkingDirectory%/modules/related-posts/module.php
+        - %currentWorkingDirectory%/modules/responsive-videos/module.php
+        - %currentWorkingDirectory%/modules/social-menu/module.php
+        - %currentWorkingDirectory%/modules/social-sharing/module.php
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function add_query_arg invoked with [123] parameters?, 0 required\.$#'

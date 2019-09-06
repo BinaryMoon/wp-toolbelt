@@ -37,7 +37,7 @@ function toolbelt_load_modules() {
 		// if module has been enabled then load it.
 		if ( ! empty( $options[ $slug ] ) && 'on' === $options[ $slug ] ) {
 
-			require TOOLBELT_PATH . 'modules/' . $slug . '/index.php';
+			require TOOLBELT_PATH . 'modules/' . $slug . '/module.php';
 
 		}
 	}
