@@ -16,13 +16,24 @@ function toolbelt_random_redirect() {
 		return;
 	}
 
-	// Ignore POST requests.
-	if ( ! empty( $_POST ) ) {
+	/**
+	 * Ignore POST requests.
+	 *
+	 * We ignore the phpcs warning because it thinks we're processing form data.
+	 * However we are simply checking if there is any form data, we're not
+	 * actually doing anything with it. So we don't need to check for a nonce.
+	 */
+	if ( ! empty( $_POST ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		return;
 	}
 
-	// Persistent AppEngine abuse. ORDER BY RAND is expensive.
-	if ( strstr( $_SERVER['HTTP_USER_AGENT'], 'AppEngine-Google' ) ) {
+	/**
+	 * Persistent AppEngine abuse. ORDER BY RAND is expensive.
+	 *
+	 * We ignore the phpcs warning because we're not processing the server value.
+	 * Similar to the _POST value problem above.
+	 */
+	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && strstr( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ), 'AppEngine-Google' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		return;
 	}
 

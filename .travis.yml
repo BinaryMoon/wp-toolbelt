@@ -1,14 +1,19 @@
 language: php
+
 php:
-- '7.2'
-- '7.3'
+  - '7.2'
+  - '7.3'
 
 install:
-- composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer phpstan/phpstan-shim szepeviktor/phpstan-wordpress
-- |
-  if [ "$(phpenv version-name)" == 7.3 ]; then sed -e 's#^function is_countable(#// &#' -i vendor/giacocorsiglia/wordpress-stubs/wordpress-stubs.php; fi
+  - composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer phpstan/phpstan-shim szepeviktor/phpstan-wordpress
+  - |
+    if [ "$(phpenv version-name)" == 7.3 ]; then sed -e 's#^function is_countable(#// &#' -i vendor/giacocorsiglia/wordpress-stubs/wordpress-stubs.php; fi
 
 script:
-- vendor/bin/parallel-lint modules/ admin/ index.php
-- vendor/bin/phpcs modules/ admin/ index.php
-- vendor/bin/phpstan analyze -l 4
+  - vendor/bin/parallel-lint modules/ admin/ index.php
+  - vendor/bin/phpcs -n -s modules/ admin/ index.php
+  - vendor/bin/phpstan analyze -l 4
+
+notifications:
+  email:
+    on_success: change

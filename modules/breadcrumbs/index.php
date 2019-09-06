@@ -57,7 +57,12 @@ function toolbelt_breadcrumbs() {
 	);
 
 	toolbelt_styles( 'breadcrumbs' );
-	echo '<nav class="entry-breadcrumbs toolbelt-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $home . $breadcrumb . '</nav>';
+
+	/**
+	 * Output the breadcrumbs.
+	 * Sanitization is ignored since we are already sanitizing the values when the string is generated.
+	 */
+	echo '<nav class="entry-breadcrumbs toolbelt-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $home . $breadcrumb . '</nav>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
 

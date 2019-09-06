@@ -58,6 +58,7 @@ function toolbelt_responsive_video_styles() {
 /**
  * Adds a wrapper to videos.
  *
+ * @param string $html The video embed html to wrap.
  * @return string
  */
 function toolbelt_responsive_video_embed_html( $html ) {
@@ -90,7 +91,6 @@ function toolbelt_responsive_video_embed_html( $html ) {
  *
  * @param mixed  $html The cached HTML result, stored in post meta.
  * @param string $url  he attempted embed URL.
- *
  * @return string
  */
 function toolbelt_responsive_video_maybe_wrap_oembed( $html, $url = null ) {
