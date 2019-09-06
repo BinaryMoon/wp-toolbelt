@@ -1,6 +1,6 @@
 # WP Toolbelt
 
-A lightweight plugin inspired by Jetpack but designed for speed, simplicity, and privacy.
+A lightweight plugin inspired by Jetpack but designed for privacy, speed, and accessibility.
 
 ## Speed?
 
