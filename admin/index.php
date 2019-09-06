@@ -181,97 +181,30 @@ function toolbelt_tools_actions() {
 
 	$action = filter_input( INPUT_POST, 'action' );
 
-	toolbelt_tools_convert( $action );
-
-}
-
-
-/**
- * Convert toolbelt and related post types.
- *
- * @param string $action The action to perform.
- */
-function toolbelt_tools_convert( $action ) {
-
-	$nonce = 'toolbelt_' . $action;
-
 	/**
 	 * Check the admin referer.
 	 * Quit automatically if the nonce is missing/ wrong.
 	 */
-	check_admin_referer( $nonce );
+	check_admin_referer( 'toolbelt_' . esc_html( $action ) );
 
-	$types = array(
-		'jetpack' => array(
-			'post' => 'jetpack-portfolio',
-			'category' => 'jetpack-portfolio-type',
-			'tag' => 'jetpack-portfolio-tag',
-		),
-		'toolbelt' => array(
-			'post' => 'toolbelt-portfolio',
-			'category' => 'toolbelt-portfolio-type',
-			'tag' => 'toolbelt-portfolio-tag',
-		),
-	);
+	// Only load tools_functions if they are needed.
+	require_once 'tools-functions.php';
 
 	switch ( $action ) {
 
 		case 'convert_toolbelt_portfolio':
-			$from = 'toolbelt';
-			$to = 'jetpack';
-
+		case 'convert_toolbelt_jetpack':
+			toolbelt_tools_convert( $action );
 			break;
 
-		default:
-		case 'convert_jetpack_portfolio':
-			$from = 'jetpack';
-			$to = 'toolbelt';
-
+		case 'remove_comment_links':
+			toolbelt_tools_remove_comment_links();
 			break;
 
 	}
 
-	global $wpdb;
-	$message = '';
-
-	// Convert post types.
-	$rows = $wpdb->update(
-		$wpdb->posts,
-		array( 'post_type' => $types[ $to ]['post'] ),
-		array( 'post_type' => $types[ $from ]['post'] )
-	);
-
-	// translators: %d = numbers of posts.
-	$message .= '<li>' . sprintf( esc_html__( '%d posts converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
-
-	// Convert post categories.
-	$rows = $wpdb->update(
-		$wpdb->term_taxonomy,
-		array( 'taxonomy' => $types[ $to ]['category'] ),
-		array( 'taxonomy' => $types[ $from ]['category'] )
-	);
-
-	// translators: %d = numbers of categories.
-	$message .= '<li>' . sprintf( esc_html__( '%d categories converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
-
-	// Convert post tags.
-	$rows = $wpdb->update(
-		$wpdb->term_taxonomy,
-		array( 'taxonomy' => $types[ $to ]['tag'] ),
-		array( 'taxonomy' => $types[ $from ]['tag'] )
-	);
-
-	// translators: %d = numbers of tags.
-	$message .= '<li>' . sprintf( esc_html__( '%d tags converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
-
-	/**
-	 * Output any messages.
-	 * Sanitization is ignored since the properties are sanitized when the
-	 * $message variable is set.
-	 */
-	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Success', 'wp-toolbelt' ) . '</strong></p><ul>' . $message . '</ul></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 }
+
 
 /**
  * Save Toolbelt settings.
