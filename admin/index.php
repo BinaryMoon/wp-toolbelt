@@ -20,10 +20,16 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 
 	if ( basename( TOOLBELT_PATH ) . '/index.php' === $plugin_file ) {
 
-		$new_actions['sc_settings'] = sprintf(
+		$new_actions['toolbelt_settings'] = sprintf(
 			'<a href="%2$s">%1$s</a>',
 			esc_html__( 'Settings', 'wp-toolbelt' ),
 			esc_url( add_query_arg( array( 'page' => 'toolbelt-settings' ), admin_url( 'options-general.php' ) ) )
+		);
+
+		$new_actions['toolbelt_tools'] = sprintf(
+			'<a href="%2$s">%1$s</a>',
+			esc_html__( 'Tools', 'wp-toolbelt' ),
+			esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'tools.php' ) ) )
 		);
 
 	}
