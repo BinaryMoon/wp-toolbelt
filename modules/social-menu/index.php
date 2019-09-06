@@ -131,7 +131,7 @@ function toolbelt_social_menu_nav_menu_icons( $item_output, $item, $depth, $args
 	// Change SVG icon inside social links menu if there is supported URL.
 	foreach ( $social_icons as $attr => $value ) {
 		if ( false !== strpos( $item_output, $attr ) ) {
-			$item_output = str_replace( $args->link_after, '</span>' . toolbelt_social_menu_svg( $value, false ), $item_output );
+			$item_output = str_replace( $args->link_after, '</span>' . toolbelt_social_menu_svg( $value ), $item_output );
 		}
 	}
 

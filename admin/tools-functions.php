@@ -99,6 +99,8 @@ function toolbelt_tools_remove_comment_links() {
 
 	$message = '<li>' . esc_html__( 'Comment Author Urls Erased', 'wp-toolbelt' ) . '</li>';
 
+	toolbelt_tools_message( $message );
+
 }
 
 
