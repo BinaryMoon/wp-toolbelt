@@ -8,7 +8,7 @@ parameters:
         - %currentWorkingDirectory%/admin/
     autoload_files:
         - %currentWorkingDirectory%/index.php
-        - %currentWorkingDirectory%/admin/index.php
+        - %currentWorkingDirectory%/admin/admin.php
         - %currentWorkingDirectory%/admin/tools-functions.php
         # Modules
         - %currentWorkingDirectory%/modules/breadcrumbs/index.php
