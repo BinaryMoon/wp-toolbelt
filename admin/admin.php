@@ -199,7 +199,7 @@ function toolbelt_tools_actions() {
 	switch ( $action ) {
 
 		case 'convert_toolbelt_portfolio':
-		case 'convert_toolbelt_jetpack':
+		case 'convert_jetpack_portfolio':
 			toolbelt_tools_convert( $action );
 			break;
 
