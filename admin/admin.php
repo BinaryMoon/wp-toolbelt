@@ -5,9 +5,6 @@
  * @package toolbelt
  */
 
-
-require_once 'tools-functions.php';
-
 /**
  * Add a "settings" link to Toolbelt in the plugin list.
  *
@@ -236,3 +233,8 @@ function toolbelt_save_admin_settings() {
 	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
 
 }
+
+/**
+ * Include functions that perform actions used by the tools.
+ */
+require_once 'tools-functions.php';
