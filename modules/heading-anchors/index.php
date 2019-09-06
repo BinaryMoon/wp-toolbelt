@@ -27,7 +27,7 @@ function toolbelt_heading_anchors( $content ) {
 	 * Not ideal but there doesn't seem to be a nice way to work around this
 	 * beside using a different library, and I would rather not do that.
 	 */
-	$dom_content = @$doc->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES' ) );
+	$dom_content = @$doc->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES' ) ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
 
 	if ( false === $dom_content ) {
 
@@ -67,7 +67,7 @@ function toolbelt_heading_ids( $doc, $tag ) {
 	foreach ( $elements as $el ) {
 
 		// Add an id to use as the anchor.
-		$slug = sanitize_title( $el->nodeValue );
+		$slug = sanitize_title( $el->nodeValue ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		$el->setAttribute( 'id', $slug );
 
 		// Set class so we can style it nicely.
