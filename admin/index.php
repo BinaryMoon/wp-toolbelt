@@ -5,6 +5,9 @@
  * @package toolbelt
  */
 
+
+require_once 'tools-functions.php';
+
 /**
  * Add a "settings" link to Toolbelt in the plugin list.
  *
@@ -192,9 +195,6 @@ function toolbelt_tools_actions() {
 	 * Quit automatically if the nonce is missing/ wrong.
 	 */
 	check_admin_referer( 'toolbelt_' . esc_html( $action ) );
-
-	// Only load tools_functions if they are needed.
-	require_once 'tools-functions.php';
 
 	switch ( $action ) {
 
