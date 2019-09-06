@@ -8,5 +8,5 @@ install:
 
 script:
 - vendor/bin/parallel-lint modules/ admin/ index.php
-- vendor/bin/phpcs --standard=WordPress-Core modules/ admin/ index.php
+- vendor/bin/phpcs modules/ admin/ index.php
 - vendor/bin/phpstan analyze -l 4
