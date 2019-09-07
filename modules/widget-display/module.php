@@ -127,7 +127,7 @@ function toolbelt_widget_display_by_id( $widget_id ) {
 	$widget_number = null;
 
 	// If the id is in the form 'string-##' (eg string-number).
-	if ( preg_match( '/^(.+)-(\d+)$/', $widget_id, $m ) ) {
+	if ( preg_match( '/^(.+)-(\d+)$/', (string) $widget_id, $m ) ) {
 
 		$widget_base = $m[1];
 		$widget_number = $m[2];
