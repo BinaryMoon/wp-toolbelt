@@ -18,7 +18,7 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 
 	$new_actions = array();
 
-	if ( basename( TOOLBELT_PATH ) . '/index.php' === $plugin_file ) {
+	if ( TOOLBELT_DIR . '/index.php' === $plugin_file ) {
 
 		$new_actions['toolbelt_settings'] = sprintf(
 			'<a href="%2$s">%1$s</a>',

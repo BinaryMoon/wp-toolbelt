@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'TOOLBELT_VERSION', '1.8' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
+define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
 
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 
