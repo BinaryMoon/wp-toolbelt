@@ -11,7 +11,20 @@ parameters:
         - %currentWorkingDirectory%/admin/admin.php
         - %currentWorkingDirectory%/admin/tools-functions.php
         # Modules
-        - %currentWorkingDirectory%/modules/*/module.php
+        - %currentWorkingDirectory%/modules/cleanup/module.php
+        - %currentWorkingDirectory%/modules/cookie-banner/module.php
+        - %currentWorkingDirectory%/modules/disable-comment-urls/module.php
+        - %currentWorkingDirectory%/modules/fast-404/module.php
+        - %currentWorkingDirectory%/modules/featured-attachment/module.php
+        - %currentWorkingDirectory%/modules/heading-anchors/module.php
+        - %currentWorkingDirectory%/modules/lazy-load/module.php
+        - %currentWorkingDirectory%/modules/projects/module.php
+        - %currentWorkingDirectory%/modules/random-redirect/module.php
+        - %currentWorkingDirectory%/modules/related-posts/module.php
+        - %currentWorkingDirectory%/modules/responsive-videos/module.php
+        - %currentWorkingDirectory%/modules/social-menu/module.php
+        - %currentWorkingDirectory%/modules/social-sharing/module.php
+        - %currentWorkingDirectory%/modules/widget-display/module.php
         - %currentWorkingDirectory%/modules/widget-display/module-admin.php
         - %currentWorkingDirectory%/modules/widget-display/module-frontend.php
     ignoreErrors:
