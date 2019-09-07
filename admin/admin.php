@@ -193,6 +193,11 @@ function toolbelt_tools_actions() {
 	 */
 	check_admin_referer( 'toolbelt_' . esc_html( $action ) );
 
+	/**
+	 * Include functions that perform actions used by the tools.
+	 */
+	require_once 'tools-functions.php';
+
 	switch ( $action ) {
 
 		case 'convert_toolbelt_portfolio':
@@ -233,8 +238,3 @@ function toolbelt_save_admin_settings() {
 	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
 
 }
-
-/**
- * Include functions that perform actions used by the tools.
- */
-require_once 'tools-functions.php';
