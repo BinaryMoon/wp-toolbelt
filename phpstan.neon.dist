@@ -11,6 +11,7 @@ parameters:
         - %currentWorkingDirectory%/admin/admin.php
         - %currentWorkingDirectory%/admin/tools-functions.php
         # Modules
+        - %currentWorkingDirectory%/modules/breadcrumbs/module.php
         - %currentWorkingDirectory%/modules/cleanup/module.php
         - %currentWorkingDirectory%/modules/cookie-banner/module.php
         - %currentWorkingDirectory%/modules/disable-comment-urls/module.php
