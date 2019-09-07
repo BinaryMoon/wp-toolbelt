@@ -92,7 +92,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add pot file for simpler translations.
 * Ensure cookie bar is hidden if cookies are accepted.
 * Make use of travis build system to ensure good code.
-* ADd tools link to plugin page.
+* Add tools link to plugin page.
+* Add widget display module. This is an early version and subject to change.
 
 = 1.7.1 - 4th September 2019 =
 * Remove test function that makes social sharing buttons display on every page.
