@@ -100,7 +100,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 		case 'posttype':
 			if ( is_array( $properties ) ) {
 
-				if ( in_array( $properties, get_post_type() ) ) {
+				if ( in_array( get_post_type(), $properties, true ) ) {
 					return true;
 				}
 			}
