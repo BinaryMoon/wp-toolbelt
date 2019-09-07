@@ -34,7 +34,7 @@ function toolbelt_widget_display_form( $widget, $return, $instance ) {
 				id="<?php echo esc_attr( $widget->get_field_id( 'toolbelt_widget_display' ) ); ?>"
 				><?php echo esc_textarea( $rules ); ?></textarea>
 
-			<span class="description"><?php esc_html_e( '', 'wp-toolbelt' ); ?></span>
+			<span class="description"><a href="https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display#rules" target="_blank"><?php esc_html_e( 'How to write display rules.', 'wp-toolbelt' ); ?></a></span>
 
 		</p>
 
