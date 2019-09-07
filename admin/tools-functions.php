@@ -75,7 +75,7 @@ function toolbelt_tools_convert( $action ) {
 	// translators: %d = numbers of tags.
 	$message .= '<li>' . sprintf( esc_html__( '%d tags converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
-	toolbelt_tools_message( $message );
+	toolbelt_tools_message( '<ul>' . $message . '</ul>' );
 
 }
 
@@ -97,9 +97,7 @@ function toolbelt_tools_remove_comment_links() {
 		array( 'comment_author_url' => '' )
 	);
 
-	$message = '<li>' . esc_html__( 'Comment Author Urls Erased', 'wp-toolbelt' ) . '</li>';
-
-	toolbelt_tools_message( $message );
+	toolbelt_tools_message( '<p>' . esc_html__( 'Comment Author Urls Erased', 'wp-toolbelt' ) . '</p>' );
 
 }
 
@@ -116,6 +114,6 @@ function toolbelt_tools_message( $message ) {
 	 * Sanitization is ignored since the properties are sanitized when the
 	 * $message variable is set.
 	 */
-	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Success', 'wp-toolbelt' ) . '</strong></p><ul>' . $message . '</ul></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Success', 'wp-toolbelt' ) . '</strong></p>' . $message . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }

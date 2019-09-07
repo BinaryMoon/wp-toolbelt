@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'TOOLBELT_VERSION', '1.8' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
+define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
 
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 
@@ -129,6 +130,11 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Disable Comment Urls', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls',
+		),
+		'widget-display' => array(
+			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Control which pages widgets appear on.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display',
 		),
 	);
 

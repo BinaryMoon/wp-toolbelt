@@ -25,6 +25,9 @@ parameters:
         - %currentWorkingDirectory%/modules/responsive-videos/module.php
         - %currentWorkingDirectory%/modules/social-menu/module.php
         - %currentWorkingDirectory%/modules/social-sharing/module.php
+        - %currentWorkingDirectory%/modules/widget-display/module.php
+        - %currentWorkingDirectory%/modules/widget-display/module-admin.php
+        - %currentWorkingDirectory%/modules/widget-display/module-frontend.php
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function add_query_arg invoked with [123] parameters?, 0 required\.$#'

@@ -18,7 +18,7 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 
 	$new_actions = array();
 
-	if ( basename( TOOLBELT_PATH ) . '/index.php' === $plugin_file ) {
+	if ( TOOLBELT_DIR . '/index.php' === $plugin_file ) {
 
 		$new_actions['toolbelt_settings'] = sprintf(
 			'<a href="%2$s">%1$s</a>',
@@ -193,6 +193,11 @@ function toolbelt_tools_actions() {
 	 */
 	check_admin_referer( 'toolbelt_' . esc_html( $action ) );
 
+	/**
+	 * Include functions that perform actions used by the tools.
+	 */
+	require_once 'tools-functions.php';
+
 	switch ( $action ) {
 
 		case 'convert_toolbelt_portfolio':
@@ -233,8 +238,3 @@ function toolbelt_save_admin_settings() {
 	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
 
 }
-
-/**
- * Include functions that perform actions used by the tools.
- */
-require_once 'tools-functions.php';
