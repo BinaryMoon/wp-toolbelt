@@ -73,40 +73,88 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 		$properties = explode( ',', $properties );
 	}
 
-	switch ( $key ) {
+	/**
+	 * Check single posts.
+	 * This uses is_singular(), so we're checking all post types including pages.
+	 */
+	if ( 'single' === $key && is_singular() ) {
 
-		case 'single':
-			if ( empty( $properties ) && is_singular() ) {
+		if ( empty( $properties ) ) {
+			return true;
+		}
+
+		if ( is_array( $properties ) ) {
+
+			$test_id = (int) get_queried_object_id();
+			$properties = array_map( 'intval', $properties );
+
+			// Test for the id being included.
+			if ( in_array( $test_id, $properties, true ) ) {
 				return true;
 			}
 
-			break;
+			// Test for the id being excluded.
+			if ( in_array( $test_id * -1, $properties, true ) ) {
+				return false;
+			}
+		}
+	}
 
-		case 'archive':
-			if ( empty( $properties ) && is_archive() ) {
+	/**
+	 * Check archives.
+	 */
+	if ( 'archive' === $key && is_archive() ) {
+
+		if ( empty( $properties ) ) {
+			return true;
+		}
+
+		if ( is_array( $properties ) ) {
+
+			$test_id = (int) get_queried_object_id();
+			$properties = array_map( 'intval', $properties );
+
+			// Test for the id being included.
+			if ( in_array( $test_id, $properties, true ) ) {
 				return true;
 			}
 
-			break;
-
-		case 'home':
-		case 'frontpage':
-			if ( empty( $properties ) && is_front_page() ) {
-				return true;
+			// Test for the id being excluded.
+			if ( in_array( $test_id * -1, $properties, true ) ) {
+				return false;
 			}
+		}
+	}
 
-			break;
+	/**
+	 * Check homepage.
+	 * Uses is_front_page() so only supports the actual homepage and not the
+	 * blog page.
+	 */
+	if ( 'home' === $key && is_front_page() ) {
 
-		case 'posttype':
-			if ( is_array( $properties ) ) {
+		return true;
 
-				if ( in_array( get_post_type(), $properties, true ) ) {
-					return true;
-				}
-			}
+	}
 
-			break;
+	/**
+	 * Check for post types.
+	 * Will work for single posts and archives.
+	 * Requires an array of properties or it will be ignored.
+	 */
+	if ( 'posttype' === $key && is_array( $properties ) ) {
 
+		$type = get_post_type();
+
+		// Include this post type.
+		if ( in_array( $type, $properties, true ) ) {
+			return true;
+		}
+
+		// Exclude this post type.
+		if ( in_array( '-' . $type, $properties, true ) ) {
+			return false;
+		}
 	}
 
 	return false;

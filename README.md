@@ -1,5 +1,7 @@
 # WP Toolbelt
 
+![Travis build process](https://travis-ci.com/BinaryMoon/wp-toolbelt.svg?branch=master)
+
 A lightweight plugin inspired by Jetpack but designed for privacy, speed, and accessibility.
 
 ## Speed?

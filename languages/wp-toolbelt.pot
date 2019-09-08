@@ -13,186 +13,179 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:57
+#: index.php:58
 msgid "Cookie Banner"
 msgstr ""
 
-#: index.php:58
+#: index.php:59
 msgid "Display a simple banner with a link to your Privacy Policy."
 msgstr ""
 
-#: index.php:60
+#: index.php:61
 msgid "1.2kb of inline JS and CSS."
 msgstr ""
 
-#: index.php:63
+#: index.php:64
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:64
+#: index.php:65
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:66
+#: index.php:67
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:69, modules/projects/index.php:37
+#: index.php:70, modules/projects/module.php:37
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:70
+#: index.php:71
 msgid "A portfolio custom post type."
 msgstr ""
 
-#: index.php:74
+#: index.php:75
 msgid "Header Cleanup"
 msgstr ""
 
-#: index.php:75
+#: index.php:76
 msgid "Remove unnecessary HTML from the site header."
 msgstr ""
 
-#: index.php:77
+#: index.php:78
 msgid "Minus 5kb of HTML from the page head."
 msgstr ""
 
-#: index.php:80
+#: index.php:81
 msgid "Breadcrumbs"
 msgstr ""
 
-#: index.php:81
+#: index.php:82
 msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
 msgstr ""
 
-#: index.php:83
+#: index.php:84
 msgid "1 or 2kb of HTML."
 msgstr ""
 
-#: index.php:86, modules/related-posts/index.php:97
+#: index.php:87, modules/related-posts/module.php:97
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:87
+#: index.php:88
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:89
+#: index.php:90
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:92
+#: index.php:93
 msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:93
+#: index.php:94
 msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
-#: index.php:97, modules/social-menu/index.php:14, modules/social-menu/index.php:31
+#: index.php:98, modules/social-menu/module.php:14, modules/social-menu/module.php:31
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:98
+#: index.php:99
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:100
+#: index.php:101
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons"
 msgstr ""
 
-#: index.php:103
+#: index.php:104
 msgid "Featured Attachment"
 msgstr ""
 
-#: index.php:104
+#: index.php:105
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:108
+#: index.php:109
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:109
+#: index.php:110
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:111
+#: index.php:112
 msgid "0.2kb of CSS"
 msgstr ""
 
-#: index.php:114
+#: index.php:115
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:115
+#: index.php:116
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:119
+#: index.php:120
 msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:120
+#: index.php:121
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:124
+#: index.php:125
 msgid "Fast 404s"
 msgstr ""
 
-#: index.php:125
+#: index.php:126
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:129
+#: index.php:130
 msgid "Disable Comment Urls"
 msgstr ""
 
-#: index.php:130
+#: index.php:131
 msgid "Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
-#: admin/index.php:25
+#: index.php:135
+msgid "Widget Display"
+msgstr ""
+
+#: index.php:136
+msgid "Control which pages widgets appear on."
+msgstr ""
+
+#: admin/admin.php:25
 msgid "Settings"
 msgstr ""
 
-#: admin/index.php:104
+#: admin/admin.php:31
+msgid "Tools"
+msgstr ""
+
+#: admin/admin.php:110
 msgid "Show more details"
 msgstr ""
 
-#: admin/index.php:106, admin/settings.php:37
+#: admin/admin.php:112, admin/settings.php:37
 msgid "Description"
 msgstr ""
 
-#: admin/index.php:108
+#: admin/admin.php:114
 msgid "Documentation"
 msgstr ""
 
-#: admin/index.php:110, admin/settings.php:40
+#: admin/admin.php:116, admin/settings.php:40
 msgid "Page Impact"
 msgstr ""
 
-#. translators: %d = numbers of posts.
-#: admin/index.php:245
-msgid "%d posts converted"
-msgstr ""
-
-#. translators: %d = numbers of categories.
-#: admin/index.php:255
-msgid "%d categories converted"
-msgstr ""
-
-#. translators: %d = numbers of tags.
-#: admin/index.php:265
-msgid "%d tags converted"
-msgstr ""
-
-#: admin/index.php:267
-msgid "Success"
-msgstr ""
-
-#: admin/index.php:292
+#: admin/admin.php:238
 msgid "Settings Saved"
 msgstr ""
 
@@ -210,6 +203,29 @@ msgstr ""
 
 #: admin/settings.php:60
 msgid "Save Settings"
+msgstr ""
+
+#. translators: %d = numbers of posts.
+#: admin/tools-functions.php:56
+msgid "%d posts converted"
+msgstr ""
+
+#. translators: %d = numbers of categories.
+#: admin/tools-functions.php:66
+msgid "%d categories converted"
+msgstr ""
+
+#. translators: %d = numbers of tags.
+#: admin/tools-functions.php:76
+msgid "%d tags converted"
+msgstr ""
+
+#: admin/tools-functions.php:100
+msgid "Comment Author Urls Erased"
+msgstr ""
+
+#: admin/tools-functions.php:117
+msgid "Success"
 msgstr ""
 
 #: admin/tools.php:13
@@ -236,248 +252,256 @@ msgstr ""
 msgid "Convert Toolbelt portfolio items so they will work with Jetpack."
 msgstr ""
 
-#: modules/breadcrumbs/index.php:56
+#: modules/breadcrumbs/module.php:56
 msgid "Home"
 msgstr ""
 
 #. translators: %s = privacy policy link
-#: modules/cookie-banner/index.php:54
+#: modules/cookie-banner/module.php:55
 msgid "By using this website, you agree to our %s"
 msgstr ""
 
-#: modules/cookie-banner/index.php:55
+#: modules/cookie-banner/module.php:56
 msgid "cookie policy"
 msgstr ""
 
-#: modules/cookie-banner/index.php:79
+#: modules/cookie-banner/module.php:80
 msgid "Accept"
 msgstr ""
 
-#: modules/cookie-banner/index.php:80
+#: modules/cookie-banner/module.php:81
 msgid "Decline"
 msgstr ""
 
-#: modules/cookie-banner/index.php:81
+#: modules/cookie-banner/module.php:82
 msgid "&times;"
 msgstr ""
 
-#: modules/fast-404/index.php:47
+#: modules/fast-404/module.php:57
 msgid "404 error - file does not exist"
 msgstr ""
 
-#: modules/projects/index.php:35
+#: modules/projects/module.php:35
 msgid "Projects"
 msgstr ""
 
-#: modules/projects/index.php:36, modules/projects/index.php:193
+#: modules/projects/module.php:36, modules/projects/module.php:193
 msgid "Project"
 msgstr ""
 
-#: modules/projects/index.php:38
+#: modules/projects/module.php:38
 msgid "All Projects"
 msgstr ""
 
-#: modules/projects/index.php:39
+#: modules/projects/module.php:39
 msgid "Add New"
 msgstr ""
 
-#: modules/projects/index.php:40
+#: modules/projects/module.php:40
 msgid "Add New Project"
 msgstr ""
 
-#: modules/projects/index.php:41
+#: modules/projects/module.php:41
 msgid "Edit Project"
 msgstr ""
 
-#: modules/projects/index.php:42
+#: modules/projects/module.php:42
 msgid "New Project"
 msgstr ""
 
-#: modules/projects/index.php:43
+#: modules/projects/module.php:43
 msgid "View Project"
 msgstr ""
 
-#: modules/projects/index.php:44
+#: modules/projects/module.php:44
 msgid "Search Projects"
 msgstr ""
 
-#: modules/projects/index.php:45
+#: modules/projects/module.php:45
 msgid "No Projects found"
 msgstr ""
 
-#: modules/projects/index.php:46
+#: modules/projects/module.php:46
 msgid "No Projects found in Trash"
 msgstr ""
 
-#: modules/projects/index.php:47
+#: modules/projects/module.php:47
 msgid "Filter projects list"
 msgstr ""
 
-#: modules/projects/index.php:48
+#: modules/projects/module.php:48
 msgid "Project list navigation"
 msgstr ""
 
-#: modules/projects/index.php:49
+#: modules/projects/module.php:49
 msgid "Projects list"
 msgstr ""
 
-#: modules/projects/index.php:86, modules/projects/index.php:88
+#: modules/projects/module.php:86, modules/projects/module.php:88
 msgid "Project Types"
 msgstr ""
 
-#: modules/projects/index.php:87
+#: modules/projects/module.php:87
 msgid "Project Type"
 msgstr ""
 
-#: modules/projects/index.php:89
+#: modules/projects/module.php:89
 msgid "All Project Types"
 msgstr ""
 
-#: modules/projects/index.php:90
+#: modules/projects/module.php:90
 msgid "Edit Project Type"
 msgstr ""
 
-#: modules/projects/index.php:91
+#: modules/projects/module.php:91
 msgid "View Project Type"
 msgstr ""
 
-#: modules/projects/index.php:92
+#: modules/projects/module.php:92
 msgid "Update Project Type"
 msgstr ""
 
-#: modules/projects/index.php:93
+#: modules/projects/module.php:93
 msgid "Add New Project Type"
 msgstr ""
 
-#: modules/projects/index.php:94
+#: modules/projects/module.php:94
 msgid "New Project Type Name"
 msgstr ""
 
-#: modules/projects/index.php:95
+#: modules/projects/module.php:95
 msgid "Parent Project Type"
 msgstr ""
 
-#: modules/projects/index.php:96
+#: modules/projects/module.php:96
 msgid "Parent Project Type:"
 msgstr ""
 
-#: modules/projects/index.php:97
+#: modules/projects/module.php:97
 msgid "Search Project Types"
 msgstr ""
 
-#: modules/projects/index.php:98
+#: modules/projects/module.php:98
 msgid "Project type list navigation"
 msgstr ""
 
-#: modules/projects/index.php:99
+#: modules/projects/module.php:99
 msgid "Project type list"
 msgstr ""
 
-#: modules/projects/index.php:118, modules/projects/index.php:120
+#: modules/projects/module.php:118, modules/projects/module.php:120
 msgid "Project Tags"
 msgstr ""
 
-#: modules/projects/index.php:119
+#: modules/projects/module.php:119
 msgid "Project Tag"
 msgstr ""
 
-#: modules/projects/index.php:121
+#: modules/projects/module.php:121
 msgid "All Project Tags"
 msgstr ""
 
-#: modules/projects/index.php:122
+#: modules/projects/module.php:122
 msgid "Edit Project Tag"
 msgstr ""
 
-#: modules/projects/index.php:123
+#: modules/projects/module.php:123
 msgid "View Project Tag"
 msgstr ""
 
-#: modules/projects/index.php:124
+#: modules/projects/module.php:124
 msgid "Update Project Tag"
 msgstr ""
 
-#: modules/projects/index.php:125
+#: modules/projects/module.php:125
 msgid "Add New Project Tag"
 msgstr ""
 
-#: modules/projects/index.php:126
+#: modules/projects/module.php:126
 msgid "New Project Tag Name"
 msgstr ""
 
-#: modules/projects/index.php:127
+#: modules/projects/module.php:127
 msgid "Search Project Tags"
 msgstr ""
 
-#: modules/projects/index.php:128
+#: modules/projects/module.php:128
 msgid "Popular Project Tags"
 msgstr ""
 
-#: modules/projects/index.php:129
+#: modules/projects/module.php:129
 msgid "Separate tags with commas"
 msgstr ""
 
-#: modules/projects/index.php:130
+#: modules/projects/module.php:130
 msgid "Add or remove tags"
 msgstr ""
 
-#: modules/projects/index.php:131
+#: modules/projects/module.php:131
 msgid "Choose from the most used tags"
 msgstr ""
 
-#: modules/projects/index.php:132
+#: modules/projects/module.php:132
 msgid "No tags found."
 msgstr ""
 
-#: modules/projects/index.php:133
+#: modules/projects/module.php:133
 msgid "Project tag list navigation"
 msgstr ""
 
-#: modules/projects/index.php:134
+#: modules/projects/module.php:134
 msgid "Project tag list"
 msgstr ""
 
-#: modules/social-sharing/index.php:108
+#: modules/social-sharing/module.php:118
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/index.php:109
+#: modules/social-sharing/module.php:119
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/index.php:113
+#: modules/social-sharing/module.php:123
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/index.php:114
+#: modules/social-sharing/module.php:124
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/index.php:118
+#: modules/social-sharing/module.php:128
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/index.php:119
+#: modules/social-sharing/module.php:129
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/index.php:123
+#: modules/social-sharing/module.php:133
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/index.php:124
+#: modules/social-sharing/module.php:134
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/index.php:128
+#: modules/social-sharing/module.php:138
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/index.php:129
+#: modules/social-sharing/module.php:139
 msgctxt "Pinterest button label"
 msgid "Pin this"
+msgstr ""
+
+#: modules/widget-display/module-admin.php:28
+msgid "Widget display rules:"
+msgstr ""
+
+#: modules/widget-display/module-admin.php:37
+msgid "How to write display rules."
 msgstr ""
