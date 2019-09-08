@@ -70,7 +70,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	 */
 	list( $key, $properties ) = explode( ':', $token . ':' );
 	if ( ! empty( $properties ) ) {
-		$properties = array_map( 'intval', explode( ',', $properties ) );
+		$properties = explode( ',', $properties );
 	}
 
 	/**
@@ -86,6 +86,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 		if ( is_array( $properties ) ) {
 
 			$test_id = (int) get_queried_object_id();
+			$properties = array_map( 'intval', $properties );
 
 			// Test for the id being included.
 			if ( in_array( $test_id, $properties, true ) ) {
@@ -111,6 +112,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 		if ( is_array( $properties ) ) {
 
 			$test_id = (int) get_queried_object_id();
+			$properties = array_map( 'intval', $properties );
 
 			// Test for the id being included.
 			if ( in_array( $test_id, $properties, true ) ) {
