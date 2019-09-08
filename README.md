@@ -12,7 +12,7 @@ I want it to be fast. I want to be able to enable any of the features and not ha
 * Minifies all assets (JS and CSS)
 * Loads all assets inline. They are already small, and loading them directly on the page means there are no server requests.
 * Only loads things when they are needed. JS and CSS are only loaded for activated modules.
-* No options. There's only one database option, and that's an array that stores what modules are active.
+* Options? There's only one for the database; an array that stores what modules are active.
 * Uses the minimum code possible. Minimum Javascript and PHP. Less code means more speed, and fewer bugs.
 * All modules are disabled by default. You only enable the ones you need.
 
@@ -25,7 +25,7 @@ To ensure the plugin is as privacy focused as possible it:
 * Does not track your usage of the plugin.
 * Does not add generator comments, or secret comments to your site html.
 
-# Features
+## Features
 
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
@@ -39,6 +39,6 @@ To ensure the plugin is as privacy focused as possible it:
 * [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
 * [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
 
-# Thanks!
+## Thanks!
 
 This plugin is heavily inspired by the [Jetpack](https://github.com/automattic/jetpack) and [Machete](https://github.com/nilovelez/machete/) plugins. A lot of the modules use code from these plugins as starting points.
