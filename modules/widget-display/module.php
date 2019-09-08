@@ -70,7 +70,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	 */
 	list( $key, $properties ) = explode( ':', $token . ':' );
 	if ( ! empty( $properties ) ) {
-		$properties = explode( ',', $properties );
+		$properties = array_map( 'intval', explode( ',', $properties ) );
 	}
 
 	/**
