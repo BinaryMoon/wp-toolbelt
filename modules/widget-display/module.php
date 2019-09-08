@@ -88,12 +88,12 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 			$test_id = get_the_ID();
 
 			// Test for the id being included.
-			if ( in_array( $test_id, (array) $properties, true ) ) {
+			if ( in_array( $test_id, $properties, true ) ) {
 				return true;
 			}
 
 			// Test for the id being excluded.
-			if ( in_array( $test_id * -1, (array) $properties, true ) ) {
+			if ( in_array( $test_id * -1, $properties, true ) ) {
 				return false;
 			}
 		}
@@ -113,12 +113,12 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 			$test_id = get_queried_object_id();
 
 			// Test for the id being included.
-			if ( in_array( $test_id, (array) $properties, true ) ) {
+			if ( in_array( $test_id, $properties, true ) ) {
 				return true;
 			}
 
 			// Test for the id being excluded.
-			if ( in_array( $test_id * -1, (array) $properties, true ) ) {
+			if ( in_array( $test_id * -1, $properties, true ) ) {
 				return false;
 			}
 		}
