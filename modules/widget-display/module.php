@@ -85,7 +85,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 
 		if ( is_array( $properties ) ) {
 
-			$test_id = get_the_ID();
+			$test_id = (int) get_queried_object_id();
 
 			// Test for the id being included.
 			if ( in_array( $test_id, $properties, true ) ) {
@@ -110,7 +110,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 
 		if ( is_array( $properties ) ) {
 
-			$test_id = get_queried_object_id();
+			$test_id = (int) get_queried_object_id();
 
 			// Test for the id being included.
 			if ( in_array( $test_id, $properties, true ) ) {
