@@ -7,6 +7,7 @@
 
 define( 'DISABLE_NAG_NOTICES', true );
 
+
 // Remove really simple discovery link.
 remove_action( 'wp_head', 'rsd_link' );
 
@@ -22,10 +23,13 @@ remove_action( 'commentsrss2_head', 'the_generator' );
 remove_action( 'rdf_header', 'the_generator' );
 remove_action( 'opml_head', 'the_generator' );
 remove_action( 'app_head', 'the_generator' );
+add_filter( 'the_generator', '__return_false' );
 
 // Remove the next and previous post links.
 remove_action( 'wp_head', 'adjacent_posts_rel_link', 10 );
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
+remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
 
 // Remove the shortlink url from header.
 remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
@@ -82,5 +86,41 @@ add_filter(
 		// 60 seconds.
 		$settings['interval'] = 60;
 		return $settings;
+	}
+);
+
+
+// Remove self pings.
+add_action(
+	'pre_ping',
+	function( &$links ) {
+		$home = get_option( 'home' );
+		foreach ( $links as $l => $link ) {
+			if ( 0 === strpos( $link, $home ) ) {
+				unset( $links[$l] );
+			}
+		}
+	}
+);
+
+// Remove dashicons in customize preview and when the adminbar is hidden.
+add_action(
+	'wp_print_styles',
+	function() {
+		if ( ! is_admin_bar_showing() && ! is_customize_preview() ) {
+			wp_deregister_style( 'dashicons' );
+		}
+	},
+	100
+);
+
+// Remove jQuery Migrate.
+add_action(
+	'wp_default_scripts',
+	function() {
+		if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
+			$jquery_dependencies = $scripts->registered['jquery']->deps;
+			$scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
+		}
 	}
 );
