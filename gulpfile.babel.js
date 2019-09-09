@@ -10,7 +10,10 @@ import {
 	styles_breadcrumbs, styles_videos,
 	styles_heading_links
 } from './gulp/sass';
-import scripts from './gulp/script';
+import {
+	scripts_cookieBanner,
+	scripts_infiniteScroll
+} from './gulp/script';
 import compress from './gulp/zip';
 import translate from './gulp/pot';
 
@@ -25,7 +28,8 @@ export const build = series(
 		styles_breadcrumbs,
 		styles_videos,
 		styles_heading_links,
-		scripts,
+		scripts_cookieBanner,
+		scripts_infiniteScroll,
 		translate
 	),
 	compress
@@ -46,7 +50,10 @@ export const watchFiles = function( done ) {
 	);
 	watch(
 		[ './**/*.js', '!./**/script.js', '!./**/script.min.js' ],
-		scripts
+		parallel(
+			scripts_infiniteScroll,
+			scripts_cookieBanner
+		)
 	);
 
 	done();

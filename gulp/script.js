@@ -26,8 +26,14 @@ function process_scripts( slug ) {
 
 }
 
-export default function scripts() {
+export function scripts_cookieBanner() {
 
 	return process_scripts( 'cookie-banner' );
+
+}
+
+export function scripts_infiniteScroll() {
+
+	return process_scripts( 'infinite-scroll' );
 
 }
