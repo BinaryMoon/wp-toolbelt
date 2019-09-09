@@ -8,7 +8,7 @@ import {
 	styles_cookie, styles_social,
 	styles_related_posts, styles_social_menu,
 	styles_breadcrumbs, styles_videos,
-	styles_heading_links
+	styles_heading_links, styles_infinite_scroll,
 } from './gulp/sass';
 import {
 	scripts_cookieBanner,
@@ -28,6 +28,7 @@ export const build = series(
 		styles_breadcrumbs,
 		styles_videos,
 		styles_heading_links,
+		styles_infinite_scroll,
 		scripts_cookieBanner,
 		scripts_infiniteScroll,
 		translate
@@ -45,7 +46,8 @@ export const watchFiles = function( done ) {
 			styles_breadcrumbs,
 			styles_social_menu,
 			styles_heading_links,
-			styles_videos
+			styles_videos,
+			styles_infinite_scroll
 		)
 	);
 	watch(
