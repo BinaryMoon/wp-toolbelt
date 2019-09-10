@@ -6,10 +6,15 @@
 
 	}
 
+	.toolbelt-infinite-scroll-wrapper {
+
+		padding: calc( var( --toolbelt-spacing ) * 2 ) 0;
+
+	}
+
 	.toolbelt-spinner {
 
 		display: none;
-		padding: calc( var( --toolbelt-spacing ) * 2 ) 0;
 
 		&:after {
 
