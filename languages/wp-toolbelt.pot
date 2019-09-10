@@ -138,26 +138,34 @@ msgid "Allow site visitors to link to individual sections of the page. Adds uniq
 msgstr ""
 
 #: index.php:125
-msgid "Fast 404s"
+msgid "Infinite Scroll"
 msgstr ""
 
 #: index.php:126
-msgid "Disable 404 pages for static files like images."
+msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
 #: index.php:130
-msgid "Disable Comment Urls"
+msgid "Fast 404s"
 msgstr ""
 
 #: index.php:131
-msgid "Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes."
+msgid "Disable 404 pages for static files like images."
 msgstr ""
 
 #: index.php:135
-msgid "Widget Display"
+msgid "Disable Comment Urls"
 msgstr ""
 
 #: index.php:136
+msgid "Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes."
+msgstr ""
+
+#: index.php:140
+msgid "Widget Display"
+msgstr ""
+
+#: index.php:141
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -257,23 +265,23 @@ msgid "Home"
 msgstr ""
 
 #. translators: %s = privacy policy link
-#: modules/cookie-banner/module.php:55
+#: modules/cookie-banner/module.php:53
 msgid "By using this website, you agree to our %s"
 msgstr ""
 
-#: modules/cookie-banner/module.php:56
+#: modules/cookie-banner/module.php:54
 msgid "cookie policy"
 msgstr ""
 
-#: modules/cookie-banner/module.php:80
+#: modules/cookie-banner/module.php:78
 msgid "Accept"
 msgstr ""
 
-#: modules/cookie-banner/module.php:81
+#: modules/cookie-banner/module.php:79
 msgid "Decline"
 msgstr ""
 
-#: modules/cookie-banner/module.php:82
+#: modules/cookie-banner/module.php:80
 msgid "&times;"
 msgstr ""
 
@@ -281,8 +289,13 @@ msgstr ""
 msgid "404 error - file does not exist"
 msgstr ""
 
-#: modules/infinite-scroll/module.php:42
+#: modules/infinite-scroll/module.php:112
 msgid "Load More"
+msgstr ""
+
+#. translators: %d = page number.
+#: modules/infinite-scroll/module.php:234
+msgid "Page %d"
 msgstr ""
 
 #: modules/projects/module.php:35
