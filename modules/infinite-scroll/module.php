@@ -72,7 +72,7 @@ function toolbelt_is_init() {
 		return;
 	}
 
-	add_filter( 'navigation_markup_template', 'toolbelt_is_button', 10, 2 );
+	add_filter( 'navigation_markup_template', 'toolbelt_is_html', 10, 2 );
 	add_filter( 'body_class', 'toolbelt_is_class' );
 
 }
@@ -87,18 +87,28 @@ add_action( 'init', 'toolbelt_is_init' );
  * @param string $class The type of navigation being generated.
  * @return string
  */
-function toolbelt_is_button( $template, $class ) {
+function toolbelt_is_html( $template, $class ) {
 
 	if ( 'post-navigation' === $class ) {
 		return $template;
 	}
 
-	$template .= sprintf(
+	return $template . toolbelt_is_button();
+
+}
+
+
+/**
+ * Get the html for the 'load more' button.
+ *
+ * @return string The load more html.
+ */
+function toolbelt_is_button() {
+
+	return sprintf(
 		'<div class="toolbelt-infinite-scroll-wrapper"><div class="toolbelt-spinner"></div><button>%s</button></div>',
 		esc_html__( 'Load More', 'wp-toolbelt' )
 	);
-
-	return $template;
 
 }
 
