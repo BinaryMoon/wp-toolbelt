@@ -211,7 +211,7 @@ function toolbelt_is_rest_response( $data ) {
 	 *
 	 * Since this is done in the REST Endpoint it won't affect any other part of WordPress.
 	 */
-	$GLOBALS['wp_the_query'] = $GLOBALS['wp_query'] = new WP_Query(
+	$GLOBALS['wp_the_query'] = $GLOBALS['wp_query'] = new WP_Query( // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited Squiz.PHP.DisallowMultipleAssignments.Found
 		array(
 			'paged' => $page,
 		)
