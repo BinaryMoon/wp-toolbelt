@@ -1,6 +1,12 @@
 var toolbelt_is = ( function() {
 
-	var url = function( new_path ) {
+	/**
+	 * Set the url for the archive page.
+	 *
+	 * Uses push state to change the page so that if the user uses the back
+	 * button, or refreshes the page they will stay at the position they last loaded.
+	 */
+	var url = function() {
 
 		// Doesn't work in IE.
 		if ( !window.history.pushState ) {
@@ -12,7 +18,7 @@ var toolbelt_is = ( function() {
 
 		}
 
-		var slug = toolbelt_is.home + 'page/' + toolbelt_is.page + '/';
+		var slug = toolbelt_is.permalink.replace( '%d', toolbelt_is.page );
 
 		if ( window.location.href !== slug ) {
 			history.pushState( null, null, slug );
@@ -20,6 +26,11 @@ var toolbelt_is = ( function() {
 
 	};
 
+	/**
+	 * Get the new blog posts.
+	 *
+	 * Uses the rest api to grab the next page of posts to display.
+	 */
 	var get = function() {
 
 		var request = new XMLHttpRequest();
