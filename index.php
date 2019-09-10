@@ -121,6 +121,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Allow site visitors to link to individual sections of the page. Adds unique ids to each heading.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor',
 		),
+		'infinite-scroll' => array(
+			'name' => esc_html__( 'Infinite Scroll', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Load new post content indefinitely. This may require some changes to your theme for it to work properly.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll',
+		),
 		'fast-404' => array(
 			'name' => esc_html__( 'Fast 404s', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Disable 404 pages for static files like images.', 'wp-toolbelt' ),
