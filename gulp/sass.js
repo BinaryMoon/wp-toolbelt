@@ -79,6 +79,12 @@ export function styles_social_menu() {
 
 }
 
+export function styles_infinite_scroll() {
+
+	return process_styles( 'infinite-scroll' );
+
+}
+
 export function styles_breadcrumbs() {
 
 	return process_styles( 'breadcrumbs' );

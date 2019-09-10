@@ -10,6 +10,7 @@ const compress = function() {
 		'!package.json',
 		'!package-lock.json',
 		'!gulpfile.babel.js',
+		'!phpstan.neon.dist',
 		'!modules/**/src/',
 		'!modules/**/src/**',
 		'!gulp/',

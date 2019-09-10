@@ -281,6 +281,10 @@ msgstr ""
 msgid "404 error - file does not exist"
 msgstr ""
 
+#: modules/infinite-scroll/module.php:42
+msgid "Load More"
+msgstr ""
+
 #: modules/projects/module.php:35
 msgid "Projects"
 msgstr ""

@@ -2,9 +2,15 @@
 
 	.toolbelt-link {
 
-		display: none;
+		display: inline;
 		text-decoration: none;
 		padding: 0.5em;
+
+		.device-click & {
+
+			display: none;
+
+		}
 
 	}
 
@@ -20,3 +26,5 @@
 	}
 
 }
+
+

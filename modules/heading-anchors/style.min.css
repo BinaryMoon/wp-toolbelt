@@ -1,1 +1,1 @@
-.toolbelt-anchor .toolbelt-link{display:none;text-decoration:none;padding:.5em}.toolbelt-anchor:focus .toolbelt-link,.toolbelt-anchor:hover .toolbelt-link{display:inline}
+.toolbelt-anchor .toolbelt-link{display:inline;text-decoration:none;padding:.5em}.device-click .toolbelt-anchor .toolbelt-link{display:none}.toolbelt-anchor:focus .toolbelt-link,.toolbelt-anchor:hover .toolbelt-link{display:inline}

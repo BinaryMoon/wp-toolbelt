@@ -21,15 +21,19 @@ Taking inspiration from Jetpack I want to rebuild the features I use the most an
 
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
+* [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls)
+* [Fast 404](https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404)
+* [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
+* [Heading Anchors](https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor)
 * [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
 * [Optimization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization)
 * [Portfolio](https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio)
-* [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
-* [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
-* [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
-* [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
-* [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
 * [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
+* [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
+* [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
+* [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
+* [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
+* [Widget Display](https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display)
 
 = Fast =
 
@@ -86,6 +90,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 == Changelog ==
 
 = 1.8 - 6th September 2019 =
+* Add widget display module. This is an early version and subject to change.
+* Add infinite scroll module.
 * Lots of tidying up coding standards and functionality. Thanks to Viktor Szépe for help here!
 * Add missing page weight values.
 * Fix incorrect text domains.
@@ -93,7 +99,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Ensure cookie bar is hidden if cookies are accepted.
 * Make use of travis build system to ensure good code.
 * Add tools link to plugin page.
-* Add widget display module. This is an early version and subject to change.
+* Make heading anchors always show on touch devices.
 
 = 1.7.1 - 4th September 2019 =
 * Remove test function that makes social sharing buttons display on every page.
