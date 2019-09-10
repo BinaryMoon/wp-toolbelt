@@ -227,6 +227,9 @@ function toolbelt_is_rest_response( $data ) {
 		)
 	);
 
+	// Add page number before inserting posts.
+	$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
+
 	/**
 	 * Render the content.
 	 *
@@ -249,7 +252,7 @@ function toolbelt_is_rest_response( $data ) {
 		do_action( 'infinite_scroll_render' );
 		remove_action( 'infinite_scroll_render', $callback );
 
-		$results['html'] = ob_get_clean();
+		$results['html'] .= ob_get_clean();
 
 	}
 
