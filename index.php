@@ -191,7 +191,7 @@ function toolbelt_styles( $module ) {
 
 	$path = TOOLBELT_PATH . 'modules/' . $module . '/style.min.css';
 
-	echo '<style name="toolbelt-' . esc_attr( $module ) . '">';
+	echo '<style name="toolbelt-style-' . esc_attr( $module ) . '">';
 	require_once $path;
 	echo '</style>';
 
@@ -213,6 +213,7 @@ function toolbelt_scripts( $module ) {
 	echo '</script>';
 
 }
+
 
 /**
  * Load the toolbelt options.
