@@ -19,6 +19,7 @@ parameters:
         - %currentWorkingDirectory%/modules/fast-404/module.php
         - %currentWorkingDirectory%/modules/featured-attachment/module.php
         - %currentWorkingDirectory%/modules/heading-anchors/module.php
+        - %currentWorkingDirectory%/modules/infinite-scroll/module.php
         - %currentWorkingDirectory%/modules/lazy-load/module.php
         - %currentWorkingDirectory%/modules/projects/module.php
         - %currentWorkingDirectory%/modules/random-redirect/module.php
