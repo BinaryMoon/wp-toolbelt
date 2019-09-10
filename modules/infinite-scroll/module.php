@@ -5,13 +5,6 @@
  * @package toolbelt
  */
 
-/**
- * TODO
- *
- * Make sure push state works if we're not using pretty urls.
- * Add tracking for stats.
- */
-
 // No infinite scroll in the admin so leave.
 if ( is_admin() ) {
 	return;
@@ -31,9 +24,18 @@ function toolbelt_is_footer() {
 
 	$current_page = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
 
+	/**
+	 * Work out what the link structure should be.
+	 * Are we using permalinks or not?
+	 */
+	$permalink = '/page/%d/';
+	if ( ! get_option( 'permalink_structure' ) ) {
+		$permalink = '/?page=%d';
+	}
+
 ?>
 <script>
-toolbelt_is.home = '<?php echo esc_url( home_url( '/' ) ); ?>';
+toolbelt_is.permalink = '<?php echo esc_url( home_url( $permalink ) ); ?>';
 toolbelt_is.route = '<?php echo esc_url( home_url( '/wp-json/wp-toolbelt/v1/infinite-scroll/' ) ); ?>';
 toolbelt_is.page = <?php echo (int) $current_page; ?>;
 </script>
@@ -228,6 +230,7 @@ function toolbelt_is_rest_response( $data ) {
 	);
 
 	// Add page number before inserting posts.
+	// translators: %d = page number.
 	$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
 
 	/**
