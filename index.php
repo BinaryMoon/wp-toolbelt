@@ -199,6 +199,22 @@ function toolbelt_styles( $module ) {
 
 
 /**
+ * Inline the module script.
+ *
+ * @param string $module The module slug.
+ */
+function toolbelt_scripts( $module ) {
+
+	// Output scripts.
+	$path = TOOLBELT_PATH . 'modules/' . $module . '/script.min.js';
+
+	echo '<script name="toolbelt-script-' . esc_attr( $module ) . '">';
+	require_once $path;
+	echo '</script>';
+
+}
+
+/**
  * Load the toolbelt options.
  */
 function toolbelt_get_options() {

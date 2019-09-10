@@ -30,15 +30,13 @@ function toolbelt_cookie_footer() {
 		$buttons // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	);
 
-	// Output scripts.
-	$path = plugin_dir_path( __FILE__ );
-
 	echo '<script>';
 	echo 'function toolbelt_cookies_accepted() {';
 	do_action( TOOLBELT_COOKIE_ACCEPTED );
 	echo '}';
-	require $path . 'script.min.js';
 	echo '</script>';
+
+	toolbelt_scripts( 'cookie-banner' );
 
 }
 
