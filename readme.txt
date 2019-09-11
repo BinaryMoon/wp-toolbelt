@@ -89,7 +89,11 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 1.8 - 6th September 2019 =
+= 1.9 - 11th September 2019 =
+* Tweak the cookie banner font sizes so they can be changed from a single place.
+* Add filter for breadcrumbs that allows you to disable them.
+
+= 1.8 - 10th September 2019 =
 * Add widget display module. This is an early version and subject to change.
 * Add infinite scroll module.
 * Lots of tidying up coding standards and functionality. Thanks to Viktor Szépe for help here!
