@@ -50,6 +50,10 @@ function toolbelt_breadcrumbs() {
 
 	}
 
+	if ( ! apply_filters( 'toolbelt_display_breadcrumbs', true ) ) {
+		return;
+	}
+
 	$home = sprintf(
 		'<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="%1$s" class="home-link" itemprop="item" rel="home"><span itemprop="name">%2$s</span></a></span>',
 		esc_url( home_url( '/' ) ),
