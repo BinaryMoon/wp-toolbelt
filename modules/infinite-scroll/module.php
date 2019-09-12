@@ -1,6 +1,6 @@
 <?php
 /**
- * Infinite Scroll
+ * Infinite Scroll.
  *
  * @package toolbelt
  */
