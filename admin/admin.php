@@ -235,6 +235,12 @@ function toolbelt_save_admin_settings() {
 	// Save the options.
 	update_option( 'toolbelt_options', $options );
 
+	/**
+	 * Flush rewrite rules.
+	 * Mostly covers us when the Portfolio CPT is enabled/ disabled.
+	 */
+	flush_rewrite_rules();
+
 	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
 
 }
