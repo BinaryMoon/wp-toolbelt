@@ -89,6 +89,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.9 - 12th September 2019 =
+* Flush rewrite rules on settings change.
+
 = 1.8.1 - 12th September 2019 =
 * Tweak the cookie banner font sizes so they can be changed from a single place.
 * Add filter for breadcrumbs that allows you to easily disable them.

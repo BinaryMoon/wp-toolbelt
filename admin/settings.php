@@ -10,8 +10,42 @@
 <style>
 	.column-title { width: 20%; }
 	.column-weight { width: 25%; }
+	p.search-box { float: none; }
+	.search-box input[name="s"] { width: 100%; font-size: 18px; height: 40px; margin-bottom: 15px; }
 	td p.doc-link { margin-bottom: 0; }
 </style>
+
+<script>
+function toolbeltFilterModules() {
+	// Declare variables
+	var input = document.getElementById( 'toolbelt-search-input' );
+	var filter = input.value.toUpperCase();
+	var table = document.getElementById( 'toolbelt-modules-table' );
+	var tr = table.getElementsByTagName( 'tr' );
+	var txtValue = '';
+
+	// Loop through all table rows, and hide those who don't match the search query
+	for ( i = 0; i < tr.length; i++ ) {
+		td = tr[i].getElementsByTagName( 'td' )[0].;
+		if (td) {
+			txtValue += ' ' + (tr[i].getElementsByTagName( 'td' )[0] ? tr[i].getElementsByTagName( 'td' )[0] : '' );
+		}
+
+		td = tr[i].getElementsByTagName( 'td' )[1].;
+		if (td) {
+			txtValue += ' ' + (tr[i].getElementsByTagName( 'td' )[0] ? tr[i].getElementsByTagName( 'td' )[0] : '' );
+		}
+
+		if ( txtValue ) {
+			if ( txtValue.toUpperCase().indexOf( filter ) > -1 ) {
+				tr[i].style.display = '';
+			} else {
+				tr[i].style.display = 'none';
+			}
+		}
+	}
+}
+</script>
 
 <div class="wrap about-wrap full-width-layout">
 
@@ -22,9 +56,14 @@
 
 	<form action="" method="POST">
 
+		<p class="search-box">
+			<label class="screen-reader-text" for="toolbelt-search-input"><?php esc_html_e( 'Search for Modules', 'wp-toolbelt' ); ?></label>
+			<input type="search" id="toolbelt-search-input" onkeyup="toolbeltFilterModules()" class="wp-filter-search" name="s" value="" placeholder="<?php esc_attr_e( 'Search for Modules...', 'wp-toolbelt' ); ?>" />
+		</p>
+
 		<?php wp_nonce_field( 'toolbelt_settings' ); ?>
 
-		<table class="wp-list-table widefat fixed striped">
+		<table class="wp-list-table widefat fixed striped" id="toolbelt-modules-table">
 			<thead>
 				<tr>
 					<td class="manage-column column-cb check-column">
