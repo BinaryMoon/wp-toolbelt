@@ -157,6 +157,35 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 		}
 	}
 
+	/**
+	 * Check the post category.
+	 * This includes post categories.
+	 */
+	if ( 'postcategory' === $key && is_array( $properties ) ) {
+
+		if ( is_singular() && in_category( $properties ) ) {
+			return true;
+		}
+	}
+
+	/**
+	 * Check the post taxonomy.
+	 * This includes post categories, and tags, and whatever else there might
+	 * be.
+	 */
+	if ( 'posttaxonomy' === $key && is_array( $properties ) ) {
+
+		if ( is_singular() && count( $properties ) > 1 ) {
+
+			$taxonomy = $properties[0];
+			$terms = array_slice( $properties, 1 );
+
+			if ( has_term( $terms, $taxonomy, get_the_ID() ) ) {
+				return true;
+			}
+		}
+	}
+
 	return false;
 
 }

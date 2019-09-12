@@ -9,11 +9,15 @@
 	.toolbelt-infinite-scroll-wrapper {
 
 		padding: calc( var( --toolbelt-spacing ) * 2 ) 0;
+		display: block;
+		width: 100%;
 
 	}
 
 	.toolbelt-divider {
 
+		display: block;
+		width: 100%;
 		font-size: 1rem;
 
 	}
