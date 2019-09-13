@@ -5,7 +5,8 @@
 	"main": "index.php",
 	"scripts": {
 		"dev": "gulp",
-		"build": "gulp build"
+		"build": "gulp build",
+		"test": "./node_modules/jshint/bin/jshint ./modules/**/src/js/*.js"
 	},
 	"author": "",
 	"license": "GPL-2.0-or-later",
@@ -23,5 +24,8 @@
 		"gulp-uglify": "^3.0.2",
 		"gulp-zip": "^5.0.0",
 		"gulp-wp-pot": "^2.3.5"
+	},
+	"dependencies": {
+		"jshint": "^2.10.2"
 	}
 }
