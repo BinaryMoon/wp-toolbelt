@@ -69,12 +69,6 @@ function toolbelt_social_sharing( $content ) {
 	}
 
 	/**
-	 * Escape the url. Particularly important for urls that have been generated
-	 * from the $_SERVER properties.
-	 */
-	$canonical = esc_url( $canonical );
-
-	/**
 	 * There's no url so let's quit.
 	 *
 	 * This can happen in some places such as buddypress where some pages are
@@ -83,6 +77,12 @@ function toolbelt_social_sharing( $content ) {
 	if ( empty( $canonical ) ) {
 		return $content;
 	}
+
+	/**
+	 * Escape the url. Particularly important for urls that have been generated
+	 * from the $_SERVER properties.
+	 */
+	$canonical = esc_url( (string) $canonical );
 
 	// Display a list of social networks.
 	$networks = toolbelt_social_networks();

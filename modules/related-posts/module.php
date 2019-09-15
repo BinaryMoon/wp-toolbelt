@@ -125,6 +125,11 @@ function toolbelt_related_posts_html( $related_posts ) {
 function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 
 	$id = get_the_ID();
+
+	if ( ! $id ) {
+		return array();
+	}
+
 	$transient = sprintf( TOOLBELT_RELATED_POST_TRANSIENT, $id );
 
 	$cache = get_transient( $transient );
@@ -146,8 +151,11 @@ function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 	$categories = get_the_terms( $id, $post_taxonomy );
 	$category_ids = array();
 
-	foreach ( $categories as $category ) {
-		$category_ids[] = $category->term_id;
+	if ( $categories && ! is_wp_error( $categories ) && $categories instanceof WP_Term ) {
+
+		foreach ( $categories as $category ) {
+			$category_ids[] = $category->term_id;
+		}
 	}
 
 	/**
@@ -236,8 +244,14 @@ function toolbelt_related_posts_add() {
 		'image' => '',
 	);
 
-	if ( has_post_thumbnail( get_the_ID() ) ) {
-		$post_info['image'] = get_the_post_thumbnail( get_the_ID(), $thumbnail_size );
+	$post_id = (int) get_the_ID();
+
+	if ( ! $post_id ) {
+		return $post_info;
+	}
+
+	if ( has_post_thumbnail( $post_id ) ) {
+		$post_info['image'] = get_the_post_thumbnail( $post_id, $thumbnail_size );
 	}
 
 	return $post_info;

@@ -28,13 +28,17 @@ function toolbelt_random_redirect() {
 	}
 
 	/**
-	 * Persistent AppEngine abuse. ORDER BY RAND is expensive.
+	 * Persistent AppEngine abuse.
+	 * ORDER BY RAND is expensive.
 	 *
 	 * We ignore the phpcs warning because we're not processing the server value.
 	 * Similar to the _POST value problem above.
 	 */
-	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && strstr( (string) wp_unslash( $_SERVER['HTTP_USER_AGENT'] ), 'AppEngine-Google' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-		return;
+	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) ) {
+		$user_agent = wp_unslash( $_SERVER['HTTP_USER_AGENT'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		if ( is_string( $user_agent ) && strstr( $user_agent, 'AppEngine-Google' ) ) {
+			return;
+		}
 	}
 
 	$permalink = toolbelt_random_get_post();
