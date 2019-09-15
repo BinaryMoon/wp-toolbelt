@@ -127,9 +127,12 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 		return '';
 	}
 
-	$current_parent = wp_get_post_parent_id( $current );
-	if ( $current_parent ) {
-		$breadcrumb = toolbelt_get_term_parents( $current_parent, $taxonomy );
+	if ( ! $current instanceof WP_Term ) {
+		return '';
+	}
+
+	if ( isset( $current->parent ) ) {
+		$breadcrumb = toolbelt_get_term_parents( (int) $current->parent, $taxonomy );
 	}
 
 	$breadcrumb .= sprintf(
@@ -162,7 +165,7 @@ function toolbelt_breadcrumb_post_hierarchical() {
 
 			$post_title = get_the_title( $ancestor );
 			if ( ! $post_title ) {
-				next;
+				continue;
 			}
 
 			$breadcrumb .= sprintf(
@@ -196,6 +199,10 @@ function toolbelt_breadcrumb_post_hierarchical() {
 function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 
 	$parent = get_term( $term, $taxonomy );
+
+	if ( ! $parent instanceof WP_Term ) {
+		return '';
+	}
 
 	if ( is_wp_error( $parent ) ) {
 		return '';
