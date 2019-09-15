@@ -63,7 +63,7 @@ function toolbelt_social_menu_svg( $key ) {
 
 	$file_path = TOOLBELT_PATH . 'svg/' . $key . '.svg';
 
-	return file_get_contents( $file_path );
+	return (string) file_get_contents( $file_path );
 
 }
 

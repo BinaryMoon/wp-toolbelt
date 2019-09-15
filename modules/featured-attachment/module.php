@@ -28,7 +28,7 @@ function toolbelt_post_thumbnail_html( $html, $post_id, $thumbnail_id, $size, $a
 		if ( $images ) {
 			foreach ( $images as $child_id => $attachment ) {
 
-				$html = wp_get_attachment_image( $child_id, $size, false, $attr );
+				$html = wp_get_attachment_image( (int) $child_id, $size, false, $attr );
 				break;
 
 			}

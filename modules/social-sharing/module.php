@@ -64,7 +64,7 @@ function toolbelt_social_sharing( $content ) {
 		 * immediately after.
 		 */
 		if ( isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) ) {
-			$canonical = $https . ':// ' . wp_unslash( $_SERVER['HTTP_HOST'] ) . wp_unslash( $_SERVER['REQUEST_URI'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			$canonical = $https . ':// ' . (string) wp_unslash( $_SERVER['HTTP_HOST'] ) . (string) wp_unslash( $_SERVER['REQUEST_URI'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		}
 	}
 

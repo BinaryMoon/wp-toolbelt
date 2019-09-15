@@ -232,15 +232,26 @@ add_filter( sprintf( 'manage_%s_posts_custom_column', TOOLBELT_PORTFOLIO_CUSTOM_
  */
 function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 
+	if ( 'edit.php' !== $hook ) {
+		return;
+	}
+
+	if ( ! current_theme_supports( 'post-thumbnails' ) ) {
+		return;
+	}
+
 	$screen = get_current_screen();
 
-	if ( 'edit.php' === $hook && TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE === $screen->post_type && current_theme_supports( 'post-thumbnails' ) ) {
+	if ( $screen instanceof WP_Screen && TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE === $screen->post_type ) {
+
 		$styles = array(
 			'.column-thumbnail { width: 50px; }',
 			'.column-thumbnail img { max-width: 50px; height: auto; }',
 			'@media screen and (max-width: 360px) { .column-thumbnail{ display:none; } }',
 		);
+
 		wp_add_inline_style( 'wp-admin', implode( $styles, ' ' ) );
+
 	}
 
 }

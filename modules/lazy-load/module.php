@@ -13,7 +13,7 @@
  */
 function toolbelt_lazy_load_image( $content ) {
 
-	return preg_replace(
+	return (string) preg_replace(
 		'/<img /',
 		'<img loading="lazy" ',
 		$content
@@ -30,7 +30,7 @@ function toolbelt_lazy_load_image( $content ) {
  */
 function toolbelt_lazy_load_iframe( $content ) {
 
-	return preg_replace(
+	return (string) preg_replace(
 		'/<iframe /',
 		'<iframe loading="lazy" ',
 		$content

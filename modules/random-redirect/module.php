@@ -33,7 +33,7 @@ function toolbelt_random_redirect() {
 	 * We ignore the phpcs warning because we're not processing the server value.
 	 * Similar to the _POST value problem above.
 	 */
-	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && strstr( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ), 'AppEngine-Google' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && strstr( (string) wp_unslash( $_SERVER['HTTP_USER_AGENT'] ), 'AppEngine-Google' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		return;
 	}
 
@@ -57,7 +57,11 @@ add_action( 'template_redirect', 'toolbelt_random_redirect' );
  */
 function toolbelt_random_get_post() {
 
-	$post_count = wp_count_posts()->publish;
+	$post_count = 0;
+	if ( wp_count_posts()->publish ) {
+		$post_count = wp_count_posts()->publish;
+	}
+
 	$random_post = wp_rand( 1, $post_count );
 
 	$the_post = new WP_Query(

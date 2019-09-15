@@ -183,7 +183,7 @@ function toolbelt_is_render() {
 	while ( have_posts() ) {
 
 		the_post();
-		get_template_part( 'content', get_post_format() );
+		get_template_part( 'content', (string) get_post_format() );
 
 	}
 

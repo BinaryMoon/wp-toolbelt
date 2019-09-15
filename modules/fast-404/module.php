@@ -18,12 +18,14 @@ function toolbelt_404_response() {
 	}
 
 	if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
+
 		/**
 		 * Ignoring the $_SERVER sanitization since we're not outputting
 		 * anything, we just want to get the file extension.
 		 */
 		$request_uri = wp_unslash( $_SERVER['REQUEST_URI'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-		$file_extension = strtolower( pathinfo( $request_uri, PATHINFO_EXTENSION ) );
+		$file_extension = strtolower( pathinfo( (string) $request_uri, PATHINFO_EXTENSION ) );
+
 	}
 
 	if ( ! isset( $file_extension ) ) {
