@@ -151,7 +151,7 @@ function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 	$categories = get_the_terms( $id, $post_taxonomy );
 	$category_ids = array();
 
-	if ( $categories && ! is_wp_error( $categories ) && $categories instanceof WP_Term ) {
+	if ( $categories && ! is_wp_error( $categories ) ) {
 
 		foreach ( $categories as $category ) {
 			$category_ids[] = $category->term_id;

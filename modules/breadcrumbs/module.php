@@ -127,8 +127,9 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 		return '';
 	}
 
-	if ( $current->parent ) {
-		$breadcrumb = toolbelt_get_term_parents( $current->parent, $taxonomy );
+	$current_parent = wp_get_post_parent_id( $current );
+	if ( $current_parent ) {
+		$breadcrumb = toolbelt_get_term_parents( $current_parent, $taxonomy );
 	}
 
 	$breadcrumb .= sprintf(
@@ -158,11 +159,18 @@ function toolbelt_breadcrumb_post_hierarchical() {
 
 	if ( $ancestors ) {
 		foreach ( $ancestors as $ancestor ) {
+
+			$post_title = get_the_title( $ancestor );
+			if ( ! $post_title ) {
+				next;
+			}
+
 			$breadcrumb .= sprintf(
 				'<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="%1$s" itemprop="item"><span itemprop="name">%2$s</span></a></span>',
-				esc_url( get_permalink( $ancestor ) ),
-				esc_html( get_the_title( $ancestor ) )
+				esc_url( (string) get_permalink( $ancestor ) ),
+				esc_html( $post_title )
 			);
+
 		}
 	}
 
