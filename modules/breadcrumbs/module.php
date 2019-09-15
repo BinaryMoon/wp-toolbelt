@@ -200,11 +200,11 @@ function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 
 	$parent = get_term( $term, $taxonomy );
 
-	if ( ! $parent instanceof WP_Term ) {
+	if ( is_wp_error( $parent ) ) {
 		return '';
 	}
 
-	if ( is_wp_error( $parent ) ) {
+	if ( ! $parent instanceof WP_Term ) {
 		return '';
 	}
 

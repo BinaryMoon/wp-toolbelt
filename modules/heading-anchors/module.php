@@ -20,6 +20,7 @@ function toolbelt_heading_anchors( $content ) {
 	}
 
 	$doc = new DOMDocument();
+
 	/**
 	 * DOMDocument::loadHTML does not really support HTML5 so I am silencing the
 	 * errors it may generate based on content it doesn't understand.
@@ -52,9 +53,9 @@ add_filter( 'the_content', 'toolbelt_heading_anchors', 9 );
 /**
  * Add the anchors to the specified tag.
  *
- * @param object $doc The DOMDocument object for the current page.
- * @param string $tag The tag to search and add the anchor to.
- * @return object The modified DOMDocument object.
+ * @param DOMDocument $doc The DOMDocument object for the current page.
+ * @param string      $tag The tag to search and add the anchor to.
+ * @return DOMDocument The modified DOMDocument object.
  */
 function toolbelt_heading_ids( $doc, $tag ) {
 
