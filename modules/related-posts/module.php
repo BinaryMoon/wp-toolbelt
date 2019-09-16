@@ -221,7 +221,7 @@ function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 
 	}
 
-	set_transient( $transient, $related_posts );
+	set_transient( $transient, $related_posts, 5 * DAY_IN_SECONDS );
 
 	return $related_posts;
 
