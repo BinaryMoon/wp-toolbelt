@@ -22,24 +22,23 @@ do_action( 'toolbelt_module_settings' );
 
 <script>
 function toolbeltFilterModules() {
+
 	// Declare variables
 	var input = document.getElementById( 'toolbelt-search-input' );
 	var filter = input.value.toUpperCase();
-	var table = document.getElementById( 'toolbelt-modules-table' );
-	var tr = table.getElementsByTagName( 'tr' );
+	var tr = document.querySelectorAll( 'tbody tr' );
 	var txtValue = '';
 
-	// Loop through all table rows, and hide those who don't match the search query
+	// Loop through all table rows, and hide those that don't match the search query
 	for ( i = 0; i < tr.length; i++ ) {
-		td = tr[i].getElementsByTagName( 'td' )[0].;
-		if (td) {
-			txtValue += ' ' + (tr[i].getElementsByTagName( 'td' )[0] ? tr[i].getElementsByTagName( 'td' )[0] : '' );
-		}
 
-		td = tr[i].getElementsByTagName( 'td' )[1].;
-		if (td) {
-			txtValue += ' ' + (tr[i].getElementsByTagName( 'td' )[0] ? tr[i].getElementsByTagName( 'td' )[0] : '' );
-		}
+		txtValue = '';
+
+		td = tr[i].getElementsByTagName( 'td' )[0].getElementsByTagName( 'strong' )[0];
+		txtValue += ' ' + ( td.textContent || td.innerText );
+
+		td = tr[i].getElementsByTagName( 'td' )[1].getElementsByTagName( 'p' )[0];
+		txtValue += ' ' + ( td.textContent || td.innerText );
 
 		if ( txtValue ) {
 			if ( txtValue.toUpperCase().indexOf( filter ) > -1 ) {
