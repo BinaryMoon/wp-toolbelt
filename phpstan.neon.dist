@@ -34,5 +34,5 @@ parameters:
         # Uses func_get_args()
         - '#^Function [a-zA-Z_]+ invoked with [1-9] parameters?, [0-9\-]+ required\.$#'
         # https://github.com/phpstan/phpstan/issues/1714
-        - '#^Cannot assign offset \'HTTP_HOST\' to array\|string.$#'
-        - '#^Cannot assign offset \'REQUEST_URI\' to array\|string.$#'
+        - '#^Cannot assign offset \'HTTP_HOST\' to array|string.$#'
+        - '#^Cannot assign offset \'REQUEST_URI\' to array|string.$#'
