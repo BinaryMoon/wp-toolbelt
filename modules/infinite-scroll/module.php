@@ -79,7 +79,7 @@ function toolbelt_is_init() {
 
 }
 
-add_action( 'init', 'toolbelt_is_init' );
+add_action( 'wp', 'toolbelt_is_init' );
 
 
 /**
@@ -146,7 +146,7 @@ function toolbelt_is_active() {
 	 * Does not work on archives or other post types.
 	 * Simplifies the code massively.
 	 */
-	if ( ! is_home() && ! is_main_query() ) {
+	if ( ! is_home() ) {
 		return false;
 	}
 
