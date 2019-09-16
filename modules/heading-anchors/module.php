@@ -61,7 +61,7 @@ function toolbelt_heading_ids( $doc, $tag ) {
 
 	$elements = $doc->getElementsByTagName( $tag );
 
-	if ( ! $elements ) {
+	if ( $elements->length <= 0 ) {
 		return $doc;
 	}
 

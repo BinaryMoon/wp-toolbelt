@@ -62,8 +62,9 @@ add_action( 'template_redirect', 'toolbelt_random_redirect' );
 function toolbelt_random_get_post() {
 
 	$post_count = 0;
-	if ( wp_count_posts()->publish ) {
-		$post_count = wp_count_posts()->publish;
+	$count_posts = wp_count_posts();
+	if ( isset( $count_posts ) && isset( $count_posts->publish ) ) {
+		$post_count = $count_posts->publish;
 	}
 
 	$random_post = wp_rand( 1, $post_count );

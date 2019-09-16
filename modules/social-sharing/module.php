@@ -58,13 +58,14 @@ function toolbelt_social_sharing( $content ) {
 	 */
 	if ( ! $canonical ) {
 
-		$https = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
+		$server = wp_unslash( $_SERVER );
+		$https = isset( $server['HTTPS'] ) && 'on' === $server['HTTPS'] ? 'https' : 'http';
 		/**
 		 * Ignore input sanitization since the generated url will be escaped
 		 * immediately after.
 		 */
-		if ( isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) ) {
-			$canonical = $https . ':// ' . (string) wp_unslash( $_SERVER['HTTP_HOST'] ) . (string) wp_unslash( $_SERVER['REQUEST_URI'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		if ( isset( $server['HTTP_HOST'] ) && isset( $server['REQUEST_URI'] ) ) {
+			$canonical = $https . ':// ' . (string) $server['HTTP_HOST'] . (string) $server['REQUEST_URI']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		}
 	}
 
