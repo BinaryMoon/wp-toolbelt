@@ -89,6 +89,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 2.0 - 16th September 2019 =
+* Update page weight numbers.
+
 = 1.9.1 - 16th September 2019 =
 * Fix settings table filters.
 
