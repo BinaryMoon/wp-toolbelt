@@ -8,9 +8,9 @@
 /**
  * Display the widget display rules input.
  *
- * @param object $widget The widget instance.
- * @param null   $return Return null if new fields are added.
- * @param array  $instance The widgets settings.
+ * @param WP_Widget $widget The widget instance.
+ * @param null      $return Return null if new fields are added.
+ * @param array     $instance The widgets settings.
  */
 function toolbelt_widget_display_form( $widget, $return, $instance ) {
 

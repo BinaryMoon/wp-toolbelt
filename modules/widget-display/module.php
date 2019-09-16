@@ -177,11 +177,11 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 
 		if ( is_singular() && count( $properties ) > 1 ) {
 
-			$taxonomy = $properties[0];
+			$taxonomy = (string) $properties[0];
 			$terms = array_slice( $properties, 1 );
 			$post_id = get_the_ID();
 
-			if ( $post_id && has_term( (string) $terms, $taxonomy, $post_id ) ) {
+			if ( $post_id && has_term( $terms, $taxonomy, $post_id ) ) {
 				return true;
 			}
 		}
