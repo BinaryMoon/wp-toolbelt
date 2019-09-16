@@ -89,8 +89,10 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 1.9 - 12th September 2019 =
+= 1.9 - 16th September 2019 =
 * Flush rewrite rules on settings change.
+* Add an expiry time for transients so they aren't autoloaded, and so that the cache will be cleared.
+* Lots and lots of coding standards fixes. The code should be a lot more reilient now.
 
 = 1.8.1 - 12th September 2019 =
 * Tweak the cookie banner font sizes so they can be changed from a single place.
