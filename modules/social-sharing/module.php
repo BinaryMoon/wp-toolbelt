@@ -61,7 +61,7 @@ function toolbelt_social_sharing( $content ) {
 		$server = wp_unslash( $_SERVER );
 
 		$https = 'http';
-		if ( ! empty( $server['HTTPS'] ) && 'on' === $server['HTTPS'] ) {
+		if ( isset( $server['HTTPS'] ) && 'on' === $server['HTTPS'] ) {
 			$https = 'https';
 		}
 
@@ -69,7 +69,7 @@ function toolbelt_social_sharing( $content ) {
 		 * Ignore input sanitization since the generated url will be escaped
 		 * immediately after.
 		 */
-		if ( ! empty( $server['HTTP_HOST'] ) && ! empty( $server['REQUEST_URI'] ) ) {
+		if ( isset( $server['HTTP_HOST'] ) && isset( $server['REQUEST_URI'] ) ) {
 			$canonical = $https . '://' . (string) $server['HTTP_HOST'] . (string) $server['REQUEST_URI']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		}
 	}
