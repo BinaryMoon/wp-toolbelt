@@ -10,6 +10,7 @@ parameters:
         - %currentWorkingDirectory%/index.php
 		# Admin
         - %currentWorkingDirectory%/admin/admin.php
+        - %currentWorkingDirectory%/admin/updates.php
         - %currentWorkingDirectory%/admin/tools-functions.php
         # Modules
         - %currentWorkingDirectory%/modules/breadcrumbs/module.php
