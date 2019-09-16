@@ -5,6 +5,11 @@
  * @package toolbelt
  */
 
+/**
+ * Run module settings specific actions.
+ */
+do_action( 'toolbelt_module_settings' );
+
 ?>
 
 <style>
