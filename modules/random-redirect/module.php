@@ -12,6 +12,12 @@
  */
 function toolbelt_random_redirect() {
 
+	/**
+	 * Ignore nonce verification.
+	 *
+	 * We don't need a nonce here. We're only checking for the existance of a
+	 * value, and not actually doing anything with the info.
+	 */
 	if ( ! isset( $_GET['random'] ) ) {
 		return;
 	}
@@ -63,7 +69,7 @@ function toolbelt_random_get_post() {
 
 	$post_count = 0;
 	$count_posts = wp_count_posts();
-	if ( isset( $count_posts ) && isset( $count_posts->publish ) ) {
+	if ( isset( $count_posts->publish ) ) {
 		$post_count = $count_posts->publish;
 	}
 
