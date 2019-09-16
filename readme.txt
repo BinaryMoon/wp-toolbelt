@@ -93,6 +93,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Flush rewrite rules on settings change.
 * Add an expiry time for transients so they aren't autoloaded, and so that the cache will be cleared.
 * Lots and lots of coding standards fixes. The code should be a lot more reilient now.
+* Delete autoloaded related posts transients. This may be causing some slow down/ high memory usage. Update the plugin and visit the module settings to clear the old transients.
 
 = 1.8.1 - 12th September 2019 =
 * Tweak the cookie banner font sizes so they can be changed from a single place.
