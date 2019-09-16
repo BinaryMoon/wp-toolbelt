@@ -89,7 +89,11 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 1.9.1 - 16th September 2019 =
+* Fix settings table filters.
+
 = 1.9 - 16th September 2019 =
+* Add module filtering to settings page.
 * Flush rewrite rules on settings change.
 * Add an expiry time for transients so they aren't autoloaded, and so that the cache will be cleared.
 * Lots and lots of coding standards fixes. The code should be a lot more reilient now.
