@@ -244,3 +244,9 @@ function toolbelt_save_admin_settings() {
 	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
 
 }
+
+
+/**
+ * Include database updates.
+ */
+require_once TOOLBELT_PATH . '/admin/updates.php';
