@@ -21,6 +21,7 @@ define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 
 	require TOOLBELT_PATH . 'admin/admin.php';
+	require TOOLBELT_PATH . 'admin/updates.php';
 
 }
 
