@@ -27,6 +27,14 @@ define( 'TOOLBELT_RELATED_POST_TRANSIENT', 'toolbelt_related_post_' . TOOLBELT_V
  */
 function toolbelt_related_posts( $content ) {
 
+	if ( ! is_singular() ) {
+		return $content;
+	}
+
+	if ( doing_filter( 'get_the_excerpt' ) ) {
+		return $content;
+	}
+
 	return $content . toolbelt_related_posts_get();
 
 }
