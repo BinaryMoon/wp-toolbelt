@@ -11,10 +11,6 @@
 .about-wrap h2 {
 	text-align: left;
 }
-p.submit {
-	margin-top: 0;
-	padding: 0;
-}
 </style>
 
 <div class="wrap about-wrap full-width-layout">
@@ -22,7 +18,7 @@ p.submit {
 	<div class="wp-header-end"></div><!-- admin notices go after .wp-header-end or .wrap>h2:first-child -->
 	<h1><?php esc_html_e( 'Toolbelt Settings', 'wp-toolbelt' ); ?></h1>
 
-	<form>
+	<form action="" method="POST">
 
 <?php
 
