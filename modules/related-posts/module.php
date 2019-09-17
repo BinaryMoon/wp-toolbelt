@@ -257,14 +257,3 @@ function toolbelt_related_posts_add() {
 	return $post_info;
 
 }
-
-
-/**
- * Load the module tools.
- */
-if ( is_admin() ) {
-
-	require_once TOOLBELT_PATH . '/modules/related-posts/tools.php';
-
-}
-
