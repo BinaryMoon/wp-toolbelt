@@ -26,12 +26,15 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 			esc_url( add_query_arg( array( 'page' => 'toolbelt-settings' ), admin_url( 'options-general.php' ) ) )
 		);
 
-		$new_actions['toolbelt_tools'] = sprintf(
-			'<a href="%2$s">%1$s</a>',
-			esc_html__( 'Tools', 'wp-toolbelt' ),
-			esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'tools.php' ) ) )
-		);
+		if ( has_action( 'toolbelt_module_tools' ) ) {
 
+			$new_actions['toolbelt_tools'] = sprintf(
+				'<a href="%2$s">%1$s</a>',
+				esc_html__( 'Tools', 'wp-toolbelt' ),
+				esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'tools.php' ) ) )
+			);
+
+		}
 	}
 
 	return array_merge( $new_actions, $plugin_actions );
@@ -59,15 +62,18 @@ function toolbelt_admin_menu() {
 		'toolbelt_admin_page'
 	);
 
-	// Add tools pagre.
-	add_management_page(
-		'Toolbelt', // Page title.
-		'Toolbelt', // Menu title.
-		'manage_options', // Author capability.
-		'toolbelt-tools', // Slug.
-		'toolbelt_tools_page'
-	);
+	// Add tools page.
+	if ( has_action( 'toolbelt_module_tools' ) ) {
 
+		add_management_page(
+			'Toolbelt', // Page title.
+			'Toolbelt', // Menu title.
+			'manage_options', // Author capability.
+			'toolbelt-tools', // Slug.
+			'toolbelt_tools_page'
+		);
+
+	}
 }
 
 add_action( 'admin_menu', 'toolbelt_admin_menu' );
@@ -130,7 +136,7 @@ function toolbelt_admin_page() {
 
 	toolbelt_save_admin_settings();
 
-	require TOOLBELT_PATH . 'admin/settings.php';
+	require TOOLBELT_PATH . 'admin/screen-modules.php';
 
 }
 
@@ -142,7 +148,7 @@ function toolbelt_tools_page() {
 
 	toolbelt_tools_actions();
 
-	require TOOLBELT_PATH . 'admin/tools.php';
+	require TOOLBELT_PATH . 'admin/screen-tools.php';
 
 }
 
@@ -193,23 +199,7 @@ function toolbelt_tools_actions() {
 	 */
 	check_admin_referer( 'toolbelt_' . esc_html( $action ) );
 
-	/**
-	 * Include functions that perform actions used by the tools.
-	 */
-	require_once 'tools-functions.php';
-
-	switch ( $action ) {
-
-		case 'convert_toolbelt_portfolio':
-		case 'convert_jetpack_portfolio':
-			toolbelt_tools_convert( $action );
-			break;
-
-		case 'remove_comment_links':
-			toolbelt_tools_remove_comment_links();
-			break;
-
-	}
+	do_action( 'toolbelt_tool_actions', $action );
 
 }
 
@@ -242,6 +232,34 @@ function toolbelt_save_admin_settings() {
 	flush_rewrite_rules();
 
 	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
+
+}
+
+
+/**
+ * Display a success message after tools run.
+ *
+ * @param string $message The success message to display. Should be a collection of list items.
+ * @param string $success The type of notice.
+ */
+function toolbelt_tools_message( $message, $type = 'success' ) {
+
+	$types = array(
+		'success' => esc_html__( 'Success', 'wp-toolbelt' ),
+		'error' => esc_html__( 'Error', 'wp-toolbelt' ),
+	);
+
+	// Add the message title if appropriate.
+	if ( ! empty( $types[ $type ] ) ) {
+		$message = '<p><strong>' . $types[ $type ] . '</strong></p>' . $message;
+	}
+
+	/**
+	 * Output any messages.
+	 * Sanitization of the message is ignored since the properties should be
+	 * sanitized when the $message variable is set.
+	 */
+	echo '<div class="notice notice-' . esc_attr( $type ) . '">' . $message . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
 

@@ -1,16 +1,60 @@
 <?php
 /**
- * Functions called by the tools page.
+ * Projects Tools.
  *
  * @package toolbelt
  */
 
 /**
+ * Display the Projects tool forms.
+ */
+function toolbelt_projects_tools() {
+
+?>
+	<section id="toolbelt-projects">
+
+		<form action="" method="POST">
+
+			<h2><?php esc_html_e( 'Convert Jetpack Portfolio to Toolbelt Portfolio', 'wp-toolbelt' ); ?></h2>
+			<input type="hidden" name="action" value="convert_jetpack_portfolio" />
+			<p><?php esc_html_e( 'Jetpack has its own Portfolio post type. This command converts the Jetpack posts to Toolbelt Portfolio posts.', 'wp-toolbelt' ); ?></p>
+			<?php wp_nonce_field( 'toolbelt_convert_jetpack_portfolio' ); ?>
+			<?php submit_button( esc_html__( 'Convert', 'wp-toolbelt' ) ); ?>
+
+		</form>
+
+		<form action="" method="POST">
+
+			<h2><?php esc_html_e( 'Convert Toolbelt Portfolio to Jetpack Portfolio', 'wp-toolbelt' ); ?></h2>
+			<input type="hidden" name="action" value="convert_toolbelt_portfolio" />
+			<p><?php esc_html_e( 'Convert Toolbelt portfolio items so they will work with Jetpack.', 'wp-toolbelt' ); ?></p>
+			<?php wp_nonce_field( 'toolbelt_convert_toolbelt_portfolio' ); ?>
+			<?php submit_button( esc_html__( 'Convert', 'wp-toolbelt' ) ); ?>
+
+		</form>
+
+	</section>
+
+<?php
+
+}
+
+add_action( 'toolbelt_module_tools', 'toolbelt_projects_tools' );
+
+
+/**
  * Convert toolbelt and related post types.
  *
  * @param string $action The action to perform.
+ * @return void
  */
 function toolbelt_tools_convert( $action ) {
+
+	$actions = array( 'convert_toolbelt_portfolio', 'convert_jetpack_portfolio' );
+
+	if ( ! in_array( $action, $actions, true ) ) {
+		return;
+	}
 
 	$types = array(
 		'jetpack' => array(
@@ -79,41 +123,4 @@ function toolbelt_tools_convert( $action ) {
 
 }
 
-
-/**
- * Remove comment author urls from the site.
- *
- * This is not currently in use anywhere but may be added as a tool in the
- * future.
- */
-function toolbelt_tools_remove_comment_links() {
-
-	global $wpdb;
-	$message = '';
-
-	// Convert post types.
-	$rows = $wpdb->update(
-		$wpdb->comments,
-		array( 'comment_author_url' => '' )
-	);
-
-	toolbelt_tools_message( '<p>' . esc_html__( 'Comment Author Urls Erased', 'wp-toolbelt' ) . '</p>' );
-
-}
-
-
-/**
- * Display a success message after tools run.
- *
- * @param string $message The success message to display. Should be a collection of list items.
- */
-function toolbelt_tools_message( $message ) {
-
-	/**
-	 * Output any messages.
-	 * Sanitization is ignored since the properties are sanitized when the
-	 * $message variable is set.
-	 */
-	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Success', 'wp-toolbelt' ) . '</strong></p>' . $message . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
-}
+add_action( 'toolbelt_tool_actions', 'toolbelt_tools_convert' );

@@ -45,7 +45,7 @@ function toolbelt_load_modules() {
 
 }
 
-add_action( 'after_setup_theme', 'toolbelt_load_modules' );
+toolbelt_load_modules();
 
 
 /**

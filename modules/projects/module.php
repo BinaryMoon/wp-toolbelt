@@ -257,3 +257,13 @@ function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 }
 
 add_action( 'admin_enqueue_scripts', 'toolbelt_portfolio_enqueue_admin_styles' );
+
+
+/**
+ * Load the module tools.
+ */
+if ( is_admin() ) {
+
+	require_once TOOLBELT_PATH . '/modules/projects/tools.php';
+
+}
