@@ -11,6 +11,7 @@
 function toolbelt_related_posts_tools() {
 
 ?>
+
 	<section id="toolbelt-related-posts">
 
 		<h2><?php esc_html_e( 'Related Posts', 'wp-toolbelt' ); ?></h2>
@@ -41,8 +42,6 @@ add_action( 'toolbelt_module_tools', 'toolbelt_related_posts_tools' );
  * @return void
  */
 function toolbelt_related_posts_clear_tool( $action ) {
-
-	$actions = array( 'convert_toolbelt_portfolio', 'convert_jetpack_portfolio' );
 
 	if ( 'clear_related_posts' !== $action ) {
 		return;
