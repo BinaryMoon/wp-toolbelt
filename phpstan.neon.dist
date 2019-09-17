@@ -11,7 +11,6 @@ parameters:
 		# Admin
         - %currentWorkingDirectory%/admin/admin.php
         - %currentWorkingDirectory%/admin/updates.php
-        - %currentWorkingDirectory%/admin/tools-functions.php
         # Modules
         - %currentWorkingDirectory%/modules/breadcrumbs/module.php
         - %currentWorkingDirectory%/modules/cleanup/module.php
@@ -23,8 +22,10 @@ parameters:
         - %currentWorkingDirectory%/modules/infinite-scroll/module.php
         - %currentWorkingDirectory%/modules/lazy-load/module.php
         - %currentWorkingDirectory%/modules/projects/module.php
+        - %currentWorkingDirectory%/modules/projects/tools.php
         - %currentWorkingDirectory%/modules/random-redirect/module.php
         - %currentWorkingDirectory%/modules/related-posts/module.php
+        - %currentWorkingDirectory%/modules/related-posts/tools.php
         - %currentWorkingDirectory%/modules/responsive-videos/module.php
         - %currentWorkingDirectory%/modules/social-menu/module.php
         - %currentWorkingDirectory%/modules/social-sharing/module.php
