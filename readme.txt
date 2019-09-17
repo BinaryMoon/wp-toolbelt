@@ -1,6 +1,6 @@
 === Toolbelt ===
 Contributors: BinaryMoon
-Tags: speed, user experience, UX, optimization, related posts, social sharing, social menu
+Tags: speed, privacy, accessibility, optimization, related posts, social sharing, social menu, social-sharing, cookie banner, widget display
 Requires at least: 5.0
 Tested up to: 5.3
 Stable tag: trunk
