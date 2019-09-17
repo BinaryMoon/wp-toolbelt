@@ -91,6 +91,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 = 2.0 - 16th September 2019 =
 * Update page weight numbers.
+* Add tools link to active modules on module settings page.
+* Add related posts 'clear cache' tool.
 
 = 1.9.1 - 16th September 2019 =
 * Fix settings table filters.
