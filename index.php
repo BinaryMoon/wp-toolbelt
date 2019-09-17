@@ -35,10 +35,25 @@ function toolbelt_load_modules() {
 
 	foreach ( $modules as $slug => $module ) {
 
-		// if module has been enabled then load it.
+		$active = false;
+
 		if ( ! empty( $options[ $slug ] ) && 'on' === $options[ $slug ] ) {
 
-			require TOOLBELT_PATH . 'modules/' . $slug . '/module.php';
+			$active = true;
+
+		}
+
+		// Load module code.
+		if ( $active === true ) {
+
+			require_once TOOLBELT_PATH . 'modules/' . $slug . '/module.php';
+
+		}
+
+		// Load module tools.
+		if ( $active === true && isset( $module['supports'] ) && in_array( 'tools', $module['supports'] ) ) {
+
+			require_once TOOLBELT_PATH . 'modules/' . $slug . '/tools.php';
 
 		}
 	}
