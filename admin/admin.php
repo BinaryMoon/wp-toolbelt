@@ -242,10 +242,11 @@ function toolbelt_save_admin_settings() {
 
 
 /**
- * Display a success message after tools run.
+ * Display a message after tools run.
+ * Defaults to a success message.
  *
  * @param string $message The success message to display. Should be a collection of list items.
- * @param string $success The type of notice.
+ * @param string $type The type of message to display.
  */
 function toolbelt_tools_message( $message, $type = 'success' ) {
 
@@ -267,9 +268,3 @@ function toolbelt_tools_message( $message, $type = 'success' ) {
 	echo '<div class="notice notice-' . esc_attr( $type ) . '">' . $message . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
-
-
-/**
- * Include database updates.
- */
-require_once TOOLBELT_PATH . '/admin/updates.php';
