@@ -35,25 +35,9 @@ function toolbelt_load_modules() {
 
 	foreach ( $modules as $slug => $module ) {
 
-		$active = false;
-
 		if ( ! empty( $options[ $slug ] ) && 'on' === $options[ $slug ] ) {
 
-			$active = true;
-
-		}
-
-		// Load module code.
-		if ( $active === true ) {
-
-			require_once TOOLBELT_PATH . 'modules/' . $slug . '/module.php';
-
-		}
-
-		// Load module tools.
-		if ( $active === true && isset( $module['supports'] ) && in_array( 'tools', $module['supports'] ) ) {
-
-			require_once TOOLBELT_PATH . 'modules/' . $slug . '/tools.php';
+			toolbelt_load_module( $slug, $module );
 
 		}
 	}
@@ -61,6 +45,47 @@ function toolbelt_load_modules() {
 }
 
 toolbelt_load_modules();
+
+
+/**
+ * Load the module and associated admin functionality.
+ *
+ * @param string $slug The module slug. Used as the file path.
+ * @param array  $module The module properties.
+ * @return void
+ */
+function toolbelt_load_module( $slug, $module ) {
+
+	// Load core module code.
+	require_once TOOLBELT_PATH . 'modules/' . $slug . '/module.php';
+
+	if ( ! is_admin() ) {
+
+		return;
+
+	}
+
+	if ( ! isset( $module['supports'] ) ) {
+
+		return;
+
+	}
+
+	// Load module tools.
+	if ( in_array( 'tools', $module['supports'], true ) ) {
+
+		require_once TOOLBELT_PATH . 'modules/' . $slug . '/tools.php';
+
+	}
+
+	// Load module settings.
+	if ( in_array( 'settings', $module['supports'], true ) ) {
+
+		require_once TOOLBELT_PATH . 'modules/' . $slug . '/settings.php';
+
+	}
+
+}
 
 
 /**
