@@ -23,7 +23,7 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 		$new_actions['toolbelt_settings'] = sprintf(
 			'<a href="%2$s">%1$s</a>',
 			esc_html__( 'Settings', 'wp-toolbelt' ),
-			esc_url( add_query_arg( array( 'page' => 'toolbelt-settings' ), admin_url( 'options-general.php' ) ) )
+			esc_url( add_query_arg( array( 'page' => 'toolbelt-modules' ), admin_url( 'admin.php' ) ) )
 		);
 
 		if ( has_action( 'toolbelt_module_tools' ) ) {
@@ -31,7 +31,17 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 			$new_actions['toolbelt_tools'] = sprintf(
 				'<a href="%2$s">%1$s</a>',
 				esc_html__( 'Tools', 'wp-toolbelt' ),
-				esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'tools.php' ) ) )
+				esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'admin.php' ) ) )
+			);
+
+		}
+
+		if ( has_action( 'toolbelt_module_settings' ) ) {
+
+			$new_actions['toolbelt_settings'] = sprintf(
+				'<a href="%2$s">%1$s</a>',
+				esc_html__( 'Settings', 'wp-toolbelt' ),
+				esc_url( add_query_arg( array( 'page' => 'toolbelt-settings' ), admin_url( 'admin.php' ) ) )
 			);
 
 		}
@@ -53,21 +63,39 @@ function toolbelt_admin_menu() {
 		return;
 	}
 
-	// Add settings page.
-	add_options_page(
-		'Toolbelt', // Page title.
-		'Toolbelt', // Menu title.
-		'manage_options', // Author capability.
-		'toolbelt-settings', // Slug.
-		'toolbelt_admin_page'
+	$icon = file_get_contents( TOOLBELT_PATH . 'assets/menu-icon.svg' );
+
+	// Add module selection page.
+	add_menu_page(
+		'Toolbelt',
+		'Toolbelt',
+		'manage_options',
+		'toolbelt-modules',
+		'toolbelt_admin_page',
+		'data:image/svg+xml;base64,' . base64_encode( $icon )
 	);
+
+	// Add settings page.
+	if ( has_action( 'toolbelt_module_settings_fields' ) ) {
+
+		add_submenu_page(
+			'toolbelt-modules',
+			'Toolbelt Settings',
+			'Settings',
+			'manage_options', // Author capability.
+			'toolbelt-settings', // Slug.
+			'toolbelt_settings_page'
+		);
+
+	}
 
 	// Add tools page.
 	if ( has_action( 'toolbelt_module_tools' ) ) {
 
-		add_management_page(
-			'Toolbelt', // Page title.
-			'Toolbelt', // Menu title.
+		add_submenu_page(
+			'toolbelt-modules',
+			'Toolbelt Tools',
+			'Tools',
 			'manage_options', // Author capability.
 			'toolbelt-tools', // Slug.
 			'toolbelt_tools_page'
@@ -119,8 +147,11 @@ function toolbelt_field( $slug, $module ) {
 			<p><?php echo esc_html( $module['description'] ); ?></p>
 			<p class="doc-link">
 				<a href="<?php echo esc_url( $module['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a>
+				<?php if ( $checked && isset( $module['supports'] ) && in_array( 'settings', $module['supports'], true ) ) { ?>
+				<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'toolbelt-settings' ), admin_url( 'admin.php' ) ) ); ?>"><?php esc_html_e( 'Settings', 'wp-toolbelt' ); ?></a>
+				<?php } ?>
 				<?php if ( $checked && isset( $module['supports'] ) && in_array( 'tools', $module['supports'], true ) ) { ?>
-				<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'tools.php' ) ) ); ?>"><?php esc_html_e( 'Tools', 'wp-toolbelt' ); ?></a>
+				<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'admin.php' ) ) ); ?>"><?php esc_html_e( 'Tools', 'wp-toolbelt' ); ?></a>
 				<?php } ?>
 			</p>
 		</td>
@@ -154,6 +185,18 @@ function toolbelt_tools_page() {
 	toolbelt_tools_actions();
 
 	require TOOLBELT_PATH . 'admin/screen-tools.php';
+
+}
+
+
+/**
+ * Display the tools page.
+ */
+function toolbelt_settings_page() {
+
+	// toolbelt_settings_actions();
+
+	require TOOLBELT_PATH . 'admin/screen-settings.php';
 
 }
 
