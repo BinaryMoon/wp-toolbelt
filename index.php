@@ -70,6 +70,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
 			'description' => esc_html__( 'A portfolio custom post type.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio',
+			'supports' => array( 'tools' ),
 		),
 		'cleanup' => array(
 			'name' => esc_html__( 'Header Cleanup', 'wp-toolbelt' ),
@@ -88,6 +89,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Speedy related posts.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts',
 			'weight' => esc_html__( '0.3kb of inline CSS, plus the HTML and images.', 'wp-toolbelt' ),
+			'supports' => array( 'tools' ),
 		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
