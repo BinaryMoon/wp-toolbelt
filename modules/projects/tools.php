@@ -13,9 +13,11 @@ function toolbelt_projects_tools() {
 ?>
 	<section id="toolbelt-projects">
 
+		<h2><?php esc_html_e( 'Projects', 'wp-toolbelt' ); ?></h2>
+
 		<form action="" method="POST">
 
-			<h2><?php esc_html_e( 'Convert Jetpack Portfolio to Toolbelt Portfolio', 'wp-toolbelt' ); ?></h2>
+			<h3><?php esc_html_e( 'Convert Jetpack Portfolio to Toolbelt Portfolio', 'wp-toolbelt' ); ?></h3>
 			<input type="hidden" name="action" value="convert_jetpack_portfolio" />
 			<p><?php esc_html_e( 'Jetpack has its own Portfolio post type. This command converts the Jetpack posts to Toolbelt Portfolio posts.', 'wp-toolbelt' ); ?></p>
 			<?php wp_nonce_field( 'toolbelt_convert_jetpack_portfolio' ); ?>
@@ -25,7 +27,7 @@ function toolbelt_projects_tools() {
 
 		<form action="" method="POST">
 
-			<h2><?php esc_html_e( 'Convert Toolbelt Portfolio to Jetpack Portfolio', 'wp-toolbelt' ); ?></h2>
+			<h3><?php esc_html_e( 'Convert Toolbelt Portfolio to Jetpack Portfolio', 'wp-toolbelt' ); ?></h3>
 			<input type="hidden" name="action" value="convert_toolbelt_portfolio" />
 			<p><?php esc_html_e( 'Convert Toolbelt portfolio items so they will work with Jetpack.', 'wp-toolbelt' ); ?></p>
 			<?php wp_nonce_field( 'toolbelt_convert_toolbelt_portfolio' ); ?>

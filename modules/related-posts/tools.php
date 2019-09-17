@@ -13,9 +13,11 @@ function toolbelt_related_posts_tools() {
 ?>
 	<section id="toolbelt-related-posts">
 
+		<h2><?php esc_html_e( 'Related Posts', 'wp-toolbelt' ); ?></h2>
+
 		<form action="" method="POST">
 
-			<h2><?php esc_html_e( 'Clear the Related Posts Cache', 'wp-toolbelt' ); ?></h2>
+			<h3><?php esc_html_e( 'Clear the Related Posts Cache', 'wp-toolbelt' ); ?></h3>
 			<input type="hidden" name="action" value="clear_related_posts" />
 			<p><?php esc_html_e( 'Related Posts are cached per post. They get cleared automatically once a week. You can use this to clear them instantly.', 'wp-toolbelt' ); ?></p>
 			<?php wp_nonce_field( 'toolbelt_clear_related_posts' ); ?>
@@ -29,7 +31,7 @@ function toolbelt_related_posts_tools() {
 
 }
 
-add_action( 'toolbelt_module_tools', 'toolbelt_projects_tools' );
+add_action( 'toolbelt_module_tools', 'toolbelt_related_posts_tools' );
 
 
 /**
