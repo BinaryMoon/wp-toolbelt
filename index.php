@@ -180,6 +180,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Disable Comment Urls', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls',
+			'supports' => array( 'tools' ),
 		),
 		'widget-display' => array(
 			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),
