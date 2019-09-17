@@ -117,7 +117,12 @@ function toolbelt_field( $slug, $module ) {
 		</td>
 		<td data-colname="<?php esc_attr_e( 'Description', 'wp-toolbelt' ); ?>">
 			<p><?php echo esc_html( $module['description'] ); ?></p>
-			<p class="doc-link"><a href="<?php echo esc_html( $module['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a></p>
+			<p class="doc-link">
+				<a href="<?php echo esc_url( $module['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a>
+				<?php if ( $checked && isset( $module['supports'] ) && in_array( 'tools', $module['supports'], true ) ) { ?>
+				<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'tools.php' ) ) ); ?>"><?php esc_html_e( 'Tools', 'wp-toolbelt' ); ?></a>
+				<?php } ?>
+			</p>
 		</td>
 		<td class="column-weight" data-colname="<?php esc_attr_e( 'Page Impact', 'wp-toolbelt' ); ?>">
 			<?php echo esc_html( $weight ); ?>

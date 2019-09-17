@@ -18,6 +18,7 @@ do_action( 'toolbelt_module_settings' );
 	p.search-box { float: none; }
 	.search-box input[name="s"] { width: 100%; font-size: 18px; height: 40px; margin-bottom: 15px; }
 	td p.doc-link { margin-bottom: 0; }
+	td p.doc-link a + a { margin: 0 0.5em; }
 </style>
 
 <script>
