@@ -1,14 +1,16 @@
 includes:
-    - phar://phpstan.phar/conf/bleedingEdge.neon
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
     - vendor/szepeviktor/phpstan-wordpress/extension.neon
 parameters:
     level: max
+    excludes_analyse:
+        - %currentWorkingDirectory%/vendor/
     paths:
         - %currentWorkingDirectory%/modules/
         - %currentWorkingDirectory%/admin/
     autoload_files:
         - %currentWorkingDirectory%/index.php
-		# Admin
+        # Admin
         - %currentWorkingDirectory%/admin/admin.php
         - %currentWorkingDirectory%/admin/updates.php
         # Modules
@@ -38,6 +40,3 @@ parameters:
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function [a-zA-Z_]+ invoked with [1-9] parameters?, [0-9\-]+ required\.$#'
-        # https://github.com/phpstan/phpstan/issues/1714
-        - '#^Cannot assign offset \'HTTP_HOST\' to array\|string#'
-        - '#^Cannot assign offset \'REQUEST_URI\' to array\|string#'
