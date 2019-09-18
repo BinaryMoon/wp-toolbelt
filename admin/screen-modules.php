@@ -19,6 +19,7 @@ do_action( 'toolbelt_module_settings' );
 	.search-box input[name="s"] { width: 100%; font-size: 18px; height: 40px; margin-bottom: 15px; }
 	td p.doc-link { margin-bottom: 0; }
 	td p.doc-link a + a { margin: 0 0.5em; }
+	.wrap { max-width: 600px; margin: 0 auto; }
 </style>
 
 <script>
@@ -52,12 +53,11 @@ function toolbeltFilterModules() {
 }
 </script>
 
-<div class="wrap about-wrap full-width-layout">
+<div class="wrap">
+
+	<h1 class="wp-heading-inline"><?php esc_html_e( 'Toolbelt Modules', 'wp-toolbelt' ); ?></h1>
 
 	<div class="wp-header-end"></div><!-- admin notices go after .wp-header-end or .wrap>h2:first-child -->
-	<h1><?php esc_html_e( 'Toolbelt', 'wp-toolbelt' ); ?></h1>
-
-	<div class="about-text"><?php esc_html_e( 'Toolbelt is a lightweight, privacy focused, collection of things that add commonly needed features to your WordPress website.', 'wp-toolbelt' ); ?></div>
 
 	<form action="" method="POST">
 

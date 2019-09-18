@@ -34,7 +34,7 @@ function toolbelt_monetization_fields() {
 				<th scope="row">
 					<label for="toolbelt-monetization"><?php esc_html_e( 'Payment Pointer', 'wp-toolbelt' ); ?></label>
 				</th>
-				<td><input type="text" name="toolbelt-monetization" id="toolbelt-monetization" value="<?php echo esc_attr( $monetization ); ?>" /></td>
+				<td><input type="text" name="toolbelt-monetization" id="toolbelt-monetization" class="regular-text" value="<?php echo esc_attr( $monetization ); ?>" /></td>
 			</tr>
 
 		</table>

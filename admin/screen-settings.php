@@ -8,15 +8,15 @@
 ?>
 
 <style>
-.about-wrap h2 {
-	text-align: left;
-}
+	.wrap { max-width: 600px; margin: 0 auto; }
+	.wrap fieldset { margin-bottom: 45px; }
 </style>
 
-<div class="wrap about-wrap full-width-layout">
+<div class="wrap">
+
+	<h1 class="wp-heading-inline"><?php esc_html_e( 'Toolbelt Settings', 'wp-toolbelt' ); ?></h1>
 
 	<div class="wp-header-end"></div><!-- admin notices go after .wp-header-end or .wrap>h2:first-child -->
-	<h1><?php esc_html_e( 'Toolbelt Settings', 'wp-toolbelt' ); ?></h1>
 
 	<form action="" method="POST">
 
