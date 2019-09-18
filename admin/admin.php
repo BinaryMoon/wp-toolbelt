@@ -69,7 +69,7 @@ function toolbelt_admin_menu() {
 	 * Generate the base64 encoded icon string.
 	 */
 	$icon_data = '';
-	if ( ! $icon ) {
+	if ( is_string( $icon ) ) {
 		$icon_data = 'data:image/svg+xml;base64,' . base64_encode( $icon );
 	}
 
