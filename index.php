@@ -154,6 +154,12 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
 			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
 		),
+		'monetization' => array(
+			'name' => esc_html__( 'Web Monetization', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization',
+			'supports' => array( 'settings' ),
+		),
 		'random-redirect' => array(
 			'name' => esc_html__( 'Random Redirect', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Randomly Redirect to a blog post.', 'wp-toolbelt' ),
