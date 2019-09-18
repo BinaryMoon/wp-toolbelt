@@ -1,1 +1,6 @@
 node_modules
+vendor
+composer
+.wp-toolbelt-stubs.sh
+composer.json
+composer.lock

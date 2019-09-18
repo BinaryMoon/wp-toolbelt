@@ -13,159 +13,163 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:58
+#: index.php:99
 msgid "Cookie Banner"
 msgstr ""
 
-#: index.php:59
+#: index.php:100
 msgid "Display a simple banner with a link to your Privacy Policy."
 msgstr ""
 
-#: index.php:61
+#: index.php:102
 msgid "1.2kb of inline JS and CSS."
 msgstr ""
 
-#: index.php:64
+#: index.php:105
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:65
+#: index.php:106
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:67
+#: index.php:108
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:70, modules/projects/module.php:37
+#: index.php:111, modules/projects/module.php:37
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:71
+#: index.php:112
 msgid "A portfolio custom post type."
 msgstr ""
 
-#: index.php:75
+#: index.php:117
 msgid "Header Cleanup"
 msgstr ""
 
-#: index.php:76
+#: index.php:118
 msgid "Remove unnecessary HTML from the site header."
 msgstr ""
 
-#: index.php:78
+#: index.php:120
 msgid "Minus 5kb of HTML from the page head."
 msgstr ""
 
-#: index.php:81
+#: index.php:123
 msgid "Breadcrumbs"
 msgstr ""
 
-#: index.php:82
+#: index.php:124
 msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
 msgstr ""
 
-#: index.php:84
+#: index.php:126
 msgid "1 or 2kb of HTML."
 msgstr ""
 
-#: index.php:87, modules/related-posts/module.php:97
+#: index.php:129, modules/related-posts/module.php:97, modules/related-posts/tools.php:16
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:88
+#: index.php:130
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:90
+#: index.php:132
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:93
+#: index.php:136
 msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:94
+#: index.php:137
 msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
-#: index.php:98, modules/social-menu/module.php:14, modules/social-menu/module.php:31
+#: index.php:141, modules/social-menu/module.php:14, modules/social-menu/module.php:31
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:99
+#: index.php:142
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:101
-msgid "0.2kb of inline CSS, plus the SVGs needed for the icons"
+#: index.php:144
+msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:104
+#: index.php:147
 msgid "Featured Attachment"
 msgstr ""
 
-#: index.php:105
+#: index.php:148
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:109
+#: index.php:152
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:110
+#: index.php:153
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:112
-msgid "0.2kb of CSS"
+#: index.php:155, index.php:166
+msgid "0.2kb of inline CSS."
 msgstr ""
 
-#: index.php:115
+#: index.php:158
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:116
+#: index.php:159
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:120
+#: index.php:163
 msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:121
+#: index.php:164
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:125
+#: index.php:169
 msgid "Infinite Scroll"
 msgstr ""
 
-#: index.php:126
+#: index.php:170
 msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
-#: index.php:130
+#: index.php:172
+msgid "0.8kb of inline CSS and 1.3kb of inline JS."
+msgstr ""
+
+#: index.php:175
 msgid "Fast 404s"
 msgstr ""
 
-#: index.php:131
+#: index.php:176
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:135
+#: index.php:180
 msgid "Disable Comment Urls"
 msgstr ""
 
-#: index.php:136
+#: index.php:181
 msgid "Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
-#: index.php:140
+#: index.php:185
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:141
+#: index.php:186
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -173,94 +177,67 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: admin/admin.php:31
+#: admin/admin.php:33, admin/admin.php:123
 msgid "Tools"
 msgstr ""
 
-#: admin/admin.php:110
+#: admin/admin.php:116
 msgid "Show more details"
 msgstr ""
 
-#: admin/admin.php:112, admin/settings.php:37
+#: admin/admin.php:118, admin/screen-modules.php:81
 msgid "Description"
 msgstr ""
 
-#: admin/admin.php:114
+#: admin/admin.php:121
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:116, admin/settings.php:40
+#: admin/admin.php:127, admin/screen-modules.php:84
 msgid "Page Impact"
 msgstr ""
 
-#: admin/admin.php:238
+#: admin/admin.php:239
 msgid "Settings Saved"
 msgstr ""
 
-#: admin/settings.php:19
-msgid "Toolbelt Settings"
-msgstr ""
-
-#: admin/settings.php:21
-msgid "Toolbelt is a lightweight, privacy focused, collection of things that add commonly needed features to your WordPress website."
-msgstr ""
-
-#: admin/settings.php:34
-msgid "Module"
-msgstr ""
-
-#: admin/settings.php:60
-msgid "Save Settings"
-msgstr ""
-
-#. translators: %d = numbers of posts.
-#: admin/tools-functions.php:56
-msgid "%d posts converted"
-msgstr ""
-
-#. translators: %d = numbers of categories.
-#: admin/tools-functions.php:66
-msgid "%d categories converted"
-msgstr ""
-
-#. translators: %d = numbers of tags.
-#: admin/tools-functions.php:76
-msgid "%d tags converted"
-msgstr ""
-
-#: admin/tools-functions.php:100
-msgid "Comment Author Urls Erased"
-msgstr ""
-
-#: admin/tools-functions.php:117
+#: admin/admin.php:254
 msgid "Success"
 msgstr ""
 
-#: admin/tools.php:13
+#: admin/admin.php:255
+msgid "Error"
+msgstr ""
+
+#: admin/screen-modules.php:58
+msgid "Toolbelt Settings"
+msgstr ""
+
+#: admin/screen-modules.php:60
+msgid "Toolbelt is a lightweight, privacy focused, collection of things that add commonly needed features to your WordPress website."
+msgstr ""
+
+#: admin/screen-modules.php:65
+msgid "Search for Modules"
+msgstr ""
+
+#: admin/screen-modules.php:66
+msgid "Search for Modules..."
+msgstr ""
+
+#: admin/screen-modules.php:78
+msgid "Module"
+msgstr ""
+
+#: admin/screen-modules.php:104
+msgid "Save Settings"
+msgstr ""
+
+#: admin/screen-tools.php:23
 msgid "Toolbelt Tools"
 msgstr ""
 
-#: admin/tools.php:17
-msgid "Convert Jetpack Portfolio to Toolbelt Portfolio"
-msgstr ""
-
-#: admin/tools.php:19
-msgid "Jetpack has its own Portfolio post type. This command converts the Jetpack posts to Toolbelt Portfolio posts."
-msgstr ""
-
-#: admin/tools.php:21, admin/tools.php:31
-msgid "Convert"
-msgstr ""
-
-#: admin/tools.php:27
-msgid "Convert Toolbelt Portfolio to Jetpack Portfolio"
-msgstr ""
-
-#: admin/tools.php:29
-msgid "Convert Toolbelt portfolio items so they will work with Jetpack."
-msgstr ""
-
-#: modules/breadcrumbs/module.php:56
+#: modules/breadcrumbs/module.php:60
 msgid "Home"
 msgstr ""
 
@@ -285,7 +262,7 @@ msgstr ""
 msgid "&times;"
 msgstr ""
 
-#: modules/fast-404/module.php:57
+#: modules/fast-404/module.php:55
 msgid "404 error - file does not exist"
 msgstr ""
 
@@ -298,7 +275,7 @@ msgstr ""
 msgid "Page %d"
 msgstr ""
 
-#: modules/projects/module.php:35
+#: modules/projects/module.php:35, modules/projects/tools.php:16
 msgid "Projects"
 msgstr ""
 
@@ -470,47 +447,98 @@ msgstr ""
 msgid "Project tag list"
 msgstr ""
 
-#: modules/social-sharing/module.php:118
+#: modules/projects/tools.php:20
+msgid "Convert Jetpack Portfolio to Toolbelt Portfolio"
+msgstr ""
+
+#: modules/projects/tools.php:22
+msgid "Jetpack has its own Portfolio post type. This command converts the Jetpack posts to Toolbelt Portfolio posts."
+msgstr ""
+
+#: modules/projects/tools.php:24, modules/projects/tools.php:34
+msgid "Convert"
+msgstr ""
+
+#: modules/projects/tools.php:30
+msgid "Convert Toolbelt Portfolio to Jetpack Portfolio"
+msgstr ""
+
+#: modules/projects/tools.php:32
+msgid "Convert Toolbelt portfolio items so they will work with Jetpack."
+msgstr ""
+
+#. translators: %d = numbers of posts.
+#: modules/projects/tools.php:102
+msgid "%d posts converted"
+msgstr ""
+
+#. translators: %d = numbers of categories.
+#: modules/projects/tools.php:112
+msgid "%d categories converted"
+msgstr ""
+
+#. translators: %d = numbers of tags.
+#: modules/projects/tools.php:122
+msgid "%d tags converted"
+msgstr ""
+
+#: modules/related-posts/tools.php:20
+msgid "Clear the Related Posts Cache"
+msgstr ""
+
+#: modules/related-posts/tools.php:22
+msgid "Related Posts are cached per post. They get cleared automatically once a week. You can use this to clear them instantly."
+msgstr ""
+
+#: modules/related-posts/tools.php:24
+msgid "Clear"
+msgstr ""
+
+#: modules/related-posts/tools.php:54
+msgid "Related Posts cache cleared."
+msgstr ""
+
+#: modules/social-sharing/module.php:124
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:119
+#: modules/social-sharing/module.php:125
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:123
+#: modules/social-sharing/module.php:129
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:124
+#: modules/social-sharing/module.php:130
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:128
+#: modules/social-sharing/module.php:134
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:129
+#: modules/social-sharing/module.php:135
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:133
+#: modules/social-sharing/module.php:139
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:134
+#: modules/social-sharing/module.php:140
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:138
+#: modules/social-sharing/module.php:144
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:139
+#: modules/social-sharing/module.php:145
 msgctxt "Pinterest button label"
 msgid "Pin this"
 msgstr ""

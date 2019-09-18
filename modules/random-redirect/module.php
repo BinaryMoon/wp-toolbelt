@@ -12,6 +12,12 @@
  */
 function toolbelt_random_redirect() {
 
+	/**
+	 * Ignore nonce verification.
+	 *
+	 * We don't need a nonce here. We're only checking for the existance of a
+	 * value, and not actually doing anything with the info.
+	 */
 	if ( ! isset( $_GET['random'] ) ) {
 		return;
 	}
@@ -28,13 +34,17 @@ function toolbelt_random_redirect() {
 	}
 
 	/**
-	 * Persistent AppEngine abuse. ORDER BY RAND is expensive.
+	 * Persistent AppEngine abuse.
+	 * ORDER BY RAND is expensive.
 	 *
 	 * We ignore the phpcs warning because we're not processing the server value.
 	 * Similar to the _POST value problem above.
 	 */
-	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && strstr( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ), 'AppEngine-Google' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-		return;
+	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) ) {
+		$user_agent = wp_unslash( $_SERVER['HTTP_USER_AGENT'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		if ( is_string( $user_agent ) && strstr( $user_agent, 'AppEngine-Google' ) ) {
+			return;
+		}
 	}
 
 	$permalink = toolbelt_random_get_post();
@@ -57,7 +67,12 @@ add_action( 'template_redirect', 'toolbelt_random_redirect' );
  */
 function toolbelt_random_get_post() {
 
-	$post_count = wp_count_posts()->publish;
+	$post_count = 0;
+	$count_posts = wp_count_posts();
+	if ( isset( $count_posts->publish ) ) {
+		$post_count = $count_posts->publish;
+	}
+
 	$random_post = wp_rand( 1, $post_count );
 
 	$the_post = new WP_Query(

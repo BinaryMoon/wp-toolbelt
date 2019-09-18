@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, fast.
  * Author: Ben Gillbanks
- * Version: 1.8.1
+ * Version: 2.0
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -14,13 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '1.8.1' );
+define( 'TOOLBELT_VERSION', '2.0' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
 
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 
 	require TOOLBELT_PATH . 'admin/admin.php';
+	require TOOLBELT_PATH . 'admin/updates.php';
 
 }
 
@@ -35,17 +36,57 @@ function toolbelt_load_modules() {
 
 	foreach ( $modules as $slug => $module ) {
 
-		// if module has been enabled then load it.
 		if ( ! empty( $options[ $slug ] ) && 'on' === $options[ $slug ] ) {
 
-			require TOOLBELT_PATH . 'modules/' . $slug . '/module.php';
+			toolbelt_load_module( $slug, $module );
 
 		}
 	}
 
 }
 
-add_action( 'after_setup_theme', 'toolbelt_load_modules' );
+toolbelt_load_modules();
+
+
+/**
+ * Load the module and associated admin functionality.
+ *
+ * @param string $slug The module slug. Used as the file path.
+ * @param array  $module The module properties.
+ * @return void
+ */
+function toolbelt_load_module( $slug, $module ) {
+
+	// Load core module code.
+	require_once TOOLBELT_PATH . 'modules/' . $slug . '/module.php';
+
+	if ( ! is_admin() ) {
+
+		return;
+
+	}
+
+	if ( ! isset( $module['supports'] ) ) {
+
+		return;
+
+	}
+
+	// Load module tools.
+	if ( in_array( 'tools', $module['supports'], true ) ) {
+
+		require_once TOOLBELT_PATH . 'modules/' . $slug . '/tools.php';
+
+	}
+
+	// Load module settings.
+	if ( in_array( 'settings', $module['supports'], true ) ) {
+
+		require_once TOOLBELT_PATH . 'modules/' . $slug . '/settings.php';
+
+	}
+
+}
 
 
 /**
@@ -70,6 +111,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
 			'description' => esc_html__( 'A portfolio custom post type.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio',
+			'supports' => array( 'tools' ),
 		),
 		'cleanup' => array(
 			'name' => esc_html__( 'Header Cleanup', 'wp-toolbelt' ),
@@ -88,6 +130,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Speedy related posts.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts',
 			'weight' => esc_html__( '0.3kb of inline CSS, plus the HTML and images.', 'wp-toolbelt' ),
+			'supports' => array( 'tools' ),
 		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
@@ -98,7 +141,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add a social icons menu. This must be integrated into the theme.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu',
-			'weight' => esc_html__( '0.2kb of inline CSS, plus the SVGs needed for the icons', 'wp-toolbelt' ),
+			'weight' => esc_html__( '0.2kb of inline CSS, plus the SVGs needed for the icons.', 'wp-toolbelt' ),
 		),
 		'featured-attachment' => array(
 			'name' => esc_html__( 'Featured Attachment', 'wp-toolbelt' ),
@@ -109,7 +152,13 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Responsive Videos', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
-			'weight' => esc_html__( '0.2kb of CSS', 'wp-toolbelt' ),
+			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
+		),
+		'monetization' => array(
+			'name' => esc_html__( 'Web Monetization', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization',
+			'supports' => array( 'settings' ),
 		),
 		'random-redirect' => array(
 			'name' => esc_html__( 'Random Redirect', 'wp-toolbelt' ),
@@ -120,11 +169,13 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Heading Anchors', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Allow site visitors to link to individual sections of the page. Adds unique ids to each heading.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor',
+			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
 		),
 		'infinite-scroll' => array(
 			'name' => esc_html__( 'Infinite Scroll', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Load new post content indefinitely. This may require some changes to your theme for it to work properly.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll',
+			'weight' => esc_html__( '0.8kb of inline CSS and 1.3kb of inline JS.', 'wp-toolbelt' ),
 		),
 		'fast-404' => array(
 			'name' => esc_html__( 'Fast 404s', 'wp-toolbelt' ),
@@ -135,6 +186,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Disable Comment Urls', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls',
+			'supports' => array( 'tools' ),
 		),
 		'widget-display' => array(
 			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),

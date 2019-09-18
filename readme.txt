@@ -1,6 +1,6 @@
 === Toolbelt ===
 Contributors: BinaryMoon
-Tags: speed, user experience, UX, optimization, related posts, social sharing, social menu
+Tags: speed, privacy, accessibility, optimization, related posts, social sharing, social menu, social-sharing, cookie banner, widget display
 Requires at least: 5.0
 Tested up to: 5.3
 Stable tag: trunk
@@ -88,6 +88,27 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 2.0 - 16th September 2019 =
+* Move settings pages to a top level menu.
+* Add Web Monetization module.
+* Add tools link to active modules on module settings page.
+* Add related posts 'clear cache' tool.
+* Add tool to delete all comment author urls.
+* Update page weight numbers.
+
+= 1.9.2 - 17th September 2019 =
+* Fix bug with publishing content when Related Posts is enabled. Thanks to Pavel from wpzoom.com for the heads up.
+
+= 1.9.1 - 16th September 2019 =
+* Fix settings table filters.
+
+= 1.9 - 16th September 2019 =
+* Add module filtering to settings page.
+* Flush rewrite rules on settings change.
+* Add an expiry time for transients so they aren't autoloaded, and so that the cache will be cleared.
+* Lots and lots of coding standards fixes. The code should be a lot more reilient now.
+* Delete autoloaded related posts transients. This may be causing some slow down/ high memory usage. Update the plugin and visit the module settings to clear the old transients.
 
 = 1.8.1 - 12th September 2019 =
 * Tweak the cookie banner font sizes so they can be changed from a single place.

@@ -152,10 +152,10 @@ function toolbelt_responsive_video_maybe_wrap_oembed( $html, $url = null ) {
  * @param array  $block         The full block, including name and attributes.
  * @return string $block_content String of rendered HTML.
  */
-function toolbelt_responsive_video_remove_wrap_oembed( $block_content, $block ) {
+function toolbelt_responsive_video_remove_wrap_oembed( $block_content = '', $block ) {
 
 	if ( isset( $block['blockName'] ) && false !== strpos( $block['blockName'], 'core-embed' ) ) {
-		$block_content = preg_replace( '#<div class="toolbelt-video-wrapper">(.*?)</div>#', '${1}', $block_content );
+		$block_content = (string) preg_replace( '#<div class="toolbelt-video-wrapper">(.*?)</div>#', '${1}', $block_content );
 	}
 
 	return $block_content;

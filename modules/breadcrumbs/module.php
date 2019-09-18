@@ -127,8 +127,12 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 		return '';
 	}
 
-	if ( $current->parent ) {
-		$breadcrumb = toolbelt_get_term_parents( $current->parent, $taxonomy );
+	if ( ! $current instanceof WP_Term ) {
+		return '';
+	}
+
+	if ( isset( $current->parent ) ) {
+		$breadcrumb = toolbelt_get_term_parents( (int) $current->parent, $taxonomy );
 	}
 
 	$breadcrumb .= sprintf(
@@ -158,11 +162,18 @@ function toolbelt_breadcrumb_post_hierarchical() {
 
 	if ( $ancestors ) {
 		foreach ( $ancestors as $ancestor ) {
+
+			$post_title = get_the_title( $ancestor );
+			if ( ! $post_title ) {
+				continue;
+			}
+
 			$breadcrumb .= sprintf(
 				'<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="%1$s" itemprop="item"><span itemprop="name">%2$s</span></a></span>',
-				esc_url( get_permalink( $ancestor ) ),
-				esc_html( get_the_title( $ancestor ) )
+				esc_url( (string) get_permalink( $ancestor ) ),
+				esc_html( $post_title )
 			);
+
 		}
 	}
 
@@ -190,6 +201,10 @@ function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 	$parent = get_term( $term, $taxonomy );
 
 	if ( is_wp_error( $parent ) ) {
+		return '';
+	}
+
+	if ( ! $parent instanceof WP_Term ) {
 		return '';
 	}
 

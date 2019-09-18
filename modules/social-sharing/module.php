@@ -58,21 +58,26 @@ function toolbelt_social_sharing( $content ) {
 	 */
 	if ( ! $canonical ) {
 
-		$https = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
-		/**
-		 * Ignore input sanitization since the generated url will be escaped
-		 * immediately after.
-		 */
-		if ( isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) ) {
-			$canonical = $https . ':// ' . wp_unslash( $_SERVER['HTTP_HOST'] ) . wp_unslash( $_SERVER['REQUEST_URI'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$server = wp_unslash( $_SERVER );
+
+		if ( is_array( $server ) ) {
+
+			$https = 'http';
+			if ( isset( $server['HTTPS'] ) ) {
+				if ( 'on' === $server['HTTPS'] ) {
+					$https = 'https';
+				}
+			}
+
+			/**
+			 * Ignore input sanitization since the generated url will be escaped
+			 * immediately after.
+			 */
+			if ( isset( $server['HTTP_HOST'] ) && isset( $server['REQUEST_URI'] ) ) {
+				$canonical = $https . '://' . $server['HTTP_HOST'] . $server['REQUEST_URI']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			}
 		}
 	}
-
-	/**
-	 * Escape the url. Particularly important for urls that have been generated
-	 * from the $_SERVER properties.
-	 */
-	$canonical = esc_url( $canonical );
 
 	/**
 	 * There's no url so let's quit.
@@ -83,6 +88,12 @@ function toolbelt_social_sharing( $content ) {
 	if ( empty( $canonical ) ) {
 		return $content;
 	}
+
+	/**
+	 * Escape the url. Particularly important for urls that have been generated
+	 * from the $_SERVER properties.
+	 */
+	$canonical = esc_url( (string) $canonical );
 
 	// Display a list of social networks.
 	$networks = toolbelt_social_networks();

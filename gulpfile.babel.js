@@ -17,6 +17,7 @@ import {
 import compress from './gulp/zip';
 import translate from './gulp/pot';
 
+export const buildTranslations = translate;
 export const buildZip = compress;
 
 export const build = series(
