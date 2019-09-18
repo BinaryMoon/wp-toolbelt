@@ -170,7 +170,7 @@ function toolbelt_field( $slug, $module ) {
  */
 function toolbelt_admin_page() {
 
-	toolbelt_save_admin_settings();
+	toolbelt_save_modules();
 
 	require TOOLBELT_PATH . 'admin/screen-modules.php';
 
@@ -194,7 +194,7 @@ function toolbelt_tools_page() {
  */
 function toolbelt_settings_page() {
 
-	// toolbelt_settings_actions();
+	toolbelt_save_settings();
 
 	require TOOLBELT_PATH . 'admin/screen-settings.php';
 
@@ -255,7 +255,39 @@ function toolbelt_tools_actions() {
 /**
  * Save Toolbelt settings.
  */
-function toolbelt_save_admin_settings() {
+function toolbelt_save_modules() {
+
+	// Use the nonce value to check to see if the form has been submitted.
+	if ( null === filter_input( INPUT_POST, '_wpnonce' ) ) {
+		return;
+	}
+
+	/**
+	 * Check the admin referer.
+	 * Quit automatically if the nonce is missing/ wrong.
+	 */
+	check_admin_referer( 'toolbelt_modules' );
+
+	// Get the options and filter them.
+	$options = filter_input( INPUT_POST, 'toolbelt_options', FILTER_DEFAULT, FILTER_FORCE_ARRAY );
+	// Save the options.
+	update_option( 'toolbelt_options', $options, true );
+
+	/**
+	 * Flush rewrite rules.
+	 * Mostly covers us when the Portfolio CPT is enabled/ disabled.
+	 */
+	flush_rewrite_rules();
+
+	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
+
+}
+
+
+/**
+ * Save individual module settings.
+ */
+function toolbelt_save_settings() {
 
 	// Use the nonce value to check to see if the form has been submitted.
 	if ( null === filter_input( INPUT_POST, '_wpnonce' ) ) {
@@ -268,18 +300,12 @@ function toolbelt_save_admin_settings() {
 	 */
 	check_admin_referer( 'toolbelt_settings' );
 
-	// Get the options and filter them.
-	$options = filter_input( INPUT_POST, 'toolbelt_options', FILTER_DEFAULT, FILTER_FORCE_ARRAY );
-	// Save the options.
-	update_option( 'toolbelt_options', $options );
+	$options = array();
+	$options = apply_filters( 'toolbelt_save_settings', $options );
 
-	/**
-	 * Flush rewrite rules.
-	 * Mostly covers us when the Portfolio CPT is enabled/ disabled.
-	 */
-	flush_rewrite_rules();
+	update_option( 'toolbelt_settings', $options, true );
 
-	echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings Saved', 'wp-toolbelt' ) . '</p></div>';
+	toolbelt_tools_message( '<p>' . esc_html__( 'Toolbelt settings saved.', 'wp-toolbelt' ) . '</p>' );
 
 }
 
@@ -311,3 +337,4 @@ function toolbelt_tools_message( $message, $type = 'success' ) {
 	echo '<div class="notice notice-' . esc_attr( $type ) . '">' . $message . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
+

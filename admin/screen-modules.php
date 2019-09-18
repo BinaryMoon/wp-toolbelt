@@ -66,7 +66,7 @@ function toolbeltFilterModules() {
 			<input type="search" id="toolbelt-search-input" onkeyup="toolbeltFilterModules()" class="wp-filter-search" name="s" value="" placeholder="<?php esc_attr_e( 'Search for Modules...', 'wp-toolbelt' ); ?>" />
 		</p>
 
-		<?php wp_nonce_field( 'toolbelt_settings' ); ?>
+		<?php wp_nonce_field( 'toolbelt_modules' ); ?>
 
 		<table class="wp-list-table widefat fixed striped" id="toolbelt-modules-table">
 			<thead>
