@@ -25,14 +25,14 @@ function toolbelt_monetization_fields() {
 
 		<p>
 			<?php esc_html_e( 'Add Web Monetization so that you can get paid by your visitors for your content.', 'wp-toolbelt' ); ?>
-			<a href="https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization" target="_blank"><?php esc_html_e( 'Monetization Docs.', 'wp-toolbelt' ); ?></a>
+			<a href="https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization" target="_blank"><?php esc_html_e( 'Web Monetization Docs.', 'wp-toolbelt' ); ?></a>
 		</p>
 
 		<table class="form-table" role="presentation">
 
 			<tr>
 				<th scope="row">
-					<label for="toolbelt-monetization"><?php esc_html_e( 'Monetization Key', 'wp-toolbelt' ); ?></label>
+					<label for="toolbelt-monetization"><?php esc_html_e( 'Payment Pointer', 'wp-toolbelt' ); ?></label>
 				</th>
 				<td><input type="text" name="toolbelt-monetization" id="toolbelt-monetization" value="<?php echo esc_attr( $monetization ); ?>" /></td>
 			</tr>

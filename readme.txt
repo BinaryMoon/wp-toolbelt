@@ -92,10 +92,10 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 = 2.0 - 16th September 2019 =
 * Move settings pages to a top level menu.
 * Add Web Monetization module.
-* Update page weight numbers.
 * Add tools link to active modules on module settings page.
 * Add related posts 'clear cache' tool.
 * Add tool to delete all comment author urls.
+* Update page weight numbers.
 
 = 1.9.2 - 17th September 2019 =
 * Fix bug with publishing content when Related Posts is enabled. Thanks to Pavel from wpzoom.com for the heads up.
