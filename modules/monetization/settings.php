@@ -48,7 +48,12 @@ function toolbelt_monetization_fields() {
 add_action( 'toolbelt_module_settings_fields', 'toolbelt_monetization_fields' );
 
 
-
+/**
+ * Filter the monetization settings so that they can be saved.
+ *
+ * @param array $settings The existing settings.
+ * @return array
+ */
 function toolbelt_monetization_settings( $settings ) {
 
 	$settings['monetization'] = filter_input( INPUT_POST, 'toolbelt-monetization', FILTER_SANITIZE_STRING );
