@@ -6,8 +6,7 @@ php:
 
 install:
   - composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer phpstan/phpstan-shim szepeviktor/phpstan-wordpress
-  - |
-    if [ "$(phpenv version-name)" == 7.3 ]; then sed -e 's#^function is_countable(#// &#' -i vendor/giacocorsiglia/wordpress-stubs/wordpress-stubs.php; fi
+  - sed -e 's#^function is_countable(#// &#' -i vendor/giacocorsiglia/wordpress-stubs/wordpress-stubs.php;
   - npm i jshint
 
 script:
