@@ -65,6 +65,14 @@ function toolbelt_admin_menu() {
 
 	$icon = file_get_contents( TOOLBELT_PATH . 'assets/menu-icon.svg' );
 
+	/**
+	 * Generate the base64 encoded icon string.
+	 */
+	$icon_data = '';
+	if ( ! $icon ) {
+		$icon_data = 'data:image/svg+xml;base64,' . base64_encode( $icon );
+	}
+
 	// Add module selection page.
 	add_menu_page(
 		'Toolbelt',
@@ -72,7 +80,7 @@ function toolbelt_admin_menu() {
 		'manage_options',
 		'toolbelt-modules',
 		'toolbelt_admin_page',
-		'data:image/svg+xml;base64,' . base64_encode( $icon )
+		$icon_data
 	);
 
 	// Add settings page.
