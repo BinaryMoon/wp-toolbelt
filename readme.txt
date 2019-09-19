@@ -17,6 +17,8 @@ A collection of simple addons that provide every day functionality with speed an
 
 Taking inspiration from Jetpack I want to rebuild the features I use the most and make them as simple and fast as possible.
 
+Toolbelt has been featured on The WordPress Tavern in [an interview with me](https://wptavern.com/toolbelt-a-new-jetpack-inspired-plugin-with-a-focus-on-speed-and-privacy). You can read more about the creation of the plugin and my desire for a more private internet.
+
 = Features =
 
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
