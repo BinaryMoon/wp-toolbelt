@@ -140,10 +140,20 @@ function toolbelt_social_networks() {
 			'label' => esc_html_x( 'Share this', 'LinkedIn button label', 'wp-toolbelt' ),
 			'url' => 'https://www.linkedin.com/shareArticle?mini=true&url=%s',
 		),
+		/**
+		 * Share Whatsapp
+		 *
+		 * According to the documentation the link should be:
+		 * 'https://wa.me/?text=%s'
+		 * This link works on desktop but not on mobile.
+		 *
+		 * The docs can be seen here:
+		 * https://faq.whatsapp.com/en/android/26000030/
+		 */
 		'whatsapp' => array(
 			'title' => esc_html__( 'Share on WhatsApp', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'WhatsApp button label', 'wp-toolbelt' ),
-			'url' => 'https://wa.me/?text=%s',
+			'url' => 'https://api.whatsapp.com/send?text=%s',
 		),
 		'pinterest' => array(
 			'title' => esc_html__( 'Pin on Pinterest', 'wp-toolbelt' ),
