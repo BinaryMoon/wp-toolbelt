@@ -95,6 +95,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add tools link to active modules on module settings page.
 * Add related posts 'clear cache' tool.
 * Add tool to delete all comment author urls.
+* Add a filter so you can disable heading anchors on specific posts/ pages.
+* Change the WhatsApp share link. Whilst I am using the official link it doesn't seem to work on mobile, so I've changed it to another that is meant to work. I guess we will see.
 * Update page weight numbers.
 
 = 1.9.2 - 17th September 2019 =
