@@ -14,7 +14,7 @@ function toolbelt_stats_simple_analytics() {
 
 ?>
 
-<script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
+<script async defer src="https://cdn.simpleanalytics.io/hello.js"></script> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript ?>
 <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
 
 <?php
