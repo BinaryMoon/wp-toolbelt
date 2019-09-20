@@ -25,7 +25,7 @@
 	do_action( 'toolbelt_module_settings_fields' );
 
 	wp_nonce_field( 'toolbelt_settings' );
-	submit_button( esc_html__( 'Save', 'wp-toolbelt' ) );
+	submit_button( esc_html__( 'Save Settings', 'wp-toolbelt' ) );
 
 ?>
 
