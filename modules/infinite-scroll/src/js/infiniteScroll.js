@@ -10,18 +10,18 @@ var toolbelt_is = ( function() {
 
 		// Doesn't work in IE.
 		if ( !window.history.pushState ) {
-			return;
-		}
 
-		// Only set state if we're not on the homepage.
-		if ( toolbelt_is.page > 1 ) {
+			return;
 
 		}
 
 		var slug = toolbelt_is.permalink.replace( '%d', toolbelt_is.page );
 
 		if ( window.location.href !== slug ) {
+
 			history.pushState( null, null, slug );
+			document.body.dispatchEvent( new Event( 'toolbelt-is-load' ) );
+
 		}
 
 	};
@@ -51,8 +51,6 @@ var toolbelt_is = ( function() {
 					el.insertAdjacentHTML( 'beforebegin', response.html );
 				}
 
-				url();
-
 				// No more posts to display so hide the 'load more' button.
 				if ( !response.html ) {
 					document.body.classList.add( 'toolbelt-infinite-scroll-end' );
@@ -65,6 +63,12 @@ var toolbelt_is = ( function() {
 				spinner.style.display = 'none';
 
 				/**
+				 * Update the page url to signify the loading of the page, and
+				 * so that refreshing and the back button work appropriately.
+				 */
+				url();
+
+				/**
 				 * Dispatch an event so that themes and plugins know when posts
 				 * have loaded.
 				 *
@@ -72,9 +76,9 @@ var toolbelt_is = ( function() {
 				 * rearrange content.
 				 *
 				 * The 'load-post' name comes from Jetpack, and I am using it
-				 * for backwards compatability.
+				 * for backwards (sideways?) compatability.
 				 */
-				document.body.dispatchEvent( new CustomEvent( 'load-post' ) );
+				document.body.dispatchEvent( new Event( 'load-post' ) );
 
 			}
 

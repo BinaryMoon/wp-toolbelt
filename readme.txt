@@ -17,6 +17,8 @@ A collection of simple addons that provide every day functionality with speed an
 
 Taking inspiration from Jetpack I want to rebuild the features I use the most and make them as simple and fast as possible.
 
+Toolbelt has been featured on The WordPress Tavern in [an interview with me](https://wptavern.com/toolbelt-a-new-jetpack-inspired-plugin-with-a-focus-on-speed-and-privacy). You can read more about the creation of the plugin and my desire for a more private internet.
+
 = Features =
 
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
@@ -95,6 +97,12 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add tools link to active modules on module settings page.
 * Add related posts 'clear cache' tool.
 * Add tool to delete all comment author urls.
+* Add a filter so you can disable heading anchors on specific posts/ pages.
+* Add stats tracking.
+* Add tracking to infinite scroll to track content load as a new page.
+* Change the WhatsApp share link. Whilst I am using the official link it doesn't seem to work on mobile, so I've changed it to another that is meant to work. I guess we will see.
+* Refactored the breadcrumbs module to make it a bit more consistent, and improve the markup standards.
+* Fix bug with Cleanup where a property could have already been defined.
 * Update page weight numbers.
 
 = 1.9.2 - 17th September 2019 =

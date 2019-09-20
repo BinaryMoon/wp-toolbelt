@@ -59,4 +59,4 @@ function toolbelt_404_response() {
 
 }
 
-add_filter( 'template_redirect', 'toolbelt_404_response' );
+add_action( 'wp', 'toolbelt_404_response' );

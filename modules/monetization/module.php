@@ -6,6 +6,14 @@
  */
 
 /**
+ * Don't monetize the admin.
+ */
+if ( is_admin() ) {
+	return;
+}
+
+
+/**
  * Display monetization meta tag in the site header.
  */
 function toolbelt_monetization() {

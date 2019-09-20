@@ -308,7 +308,7 @@ function toolbelt_save_settings() {
 	 */
 	check_admin_referer( 'toolbelt_settings' );
 
-	$options = array();
+	$options = get_option( 'toolbelt_settings', array() );
 	$options = apply_filters( 'toolbelt_save_settings', $options );
 
 	update_option( 'toolbelt_settings', $options, true );

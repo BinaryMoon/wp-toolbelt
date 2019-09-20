@@ -19,6 +19,12 @@ function toolbelt_heading_anchors( $content ) {
 
 	}
 
+	if ( ! apply_filters( 'toolbelt_heading_anchors_display', true ) ) {
+
+		return $content;
+
+	}
+
 	$doc = new DOMDocument();
 
 	/**
