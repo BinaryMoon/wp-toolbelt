@@ -2,6 +2,7 @@
 /**
  * Fathom Analytics.
  *
+ * @see https://usefathom.com/
  * @package toolbelt
  */
 
@@ -11,7 +12,7 @@
 function toolbelt_stats_fathom() {
 
 	$settings = get_option( 'toolbelt_settings', array() );
-	$code = '';
+	$site_id = '';
 
 	if ( ! empty( $settings['stats-site-id'] ) ) {
 
@@ -19,7 +20,7 @@ function toolbelt_stats_fathom() {
 
 	}
 
-	if ( empty( $code ) ) {
+	if ( empty( $site_id ) ) {
 
 		return;
 
@@ -37,11 +38,11 @@ function toolbelt_stats_fathom() {
 	o.async=1; o.src=t; o.id='fathom-script';
 	m.parentNode.insertBefore(o,m)
 })(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
-fathom('set', 'siteId', '<?php echo esc_attr( $code ); ?>');
+fathom('set', 'siteId', '<?php echo esc_attr( $site_id ); ?>');
 fathom('trackPageview');
 </script>
 
 <?php
 }
 
-add_action( 'wp_head', 'toolbelt_stats_fathom' );
+add_action( 'wp_footer', 'toolbelt_stats_fathom' );

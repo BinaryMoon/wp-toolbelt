@@ -2,6 +2,7 @@
 /**
  * Simple Analytics
  *
+ * @see https://simpleanalytics.com/
  * @package toolbelt
  */
 
@@ -21,4 +22,4 @@ function toolbelt_stats_simple_analytics() {
 
 }
 
-add_action( 'wp_head', 'toolbelt_stats_simple_analytics' );
+add_action( 'wp_footer', 'toolbelt_stats_simple_analytics' );

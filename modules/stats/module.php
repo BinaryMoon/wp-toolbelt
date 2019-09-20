@@ -12,13 +12,28 @@ function toolbelt_stats() {
 
 	$settings = get_option( 'toolbelt_settings', array() );
 
-	if ( isset( $settings['stats-provider'] ) ) {
+	/**
+	 * Quit if no provider is set.
+	 */
+	if ( empty( $settings['stats-provider'] ) ) {
 
-		$path = plugin_dir_path( __FILE__ ) . 'module-' . $settings['stats-provider'] . '.php';
+		return;
 
-		if ( file_exists( $path ) ) {
-			require_once $path;
-		}
+	}
+
+	/**
+	 * Get the file path for the relevant module.
+	 *
+	 * I'm escaping the path name to ensure nothing bad has been included. It's
+	 * not actually output anywhere but I'd rather be safe than sorry.
+	 */
+	$path = plugin_dir_path( __FILE__ ) . 'module-' . esc_attr( $settings['stats-provider'] ) . '.php';
+
+	// Make sure it's a valid provider.
+	if ( file_exists( $path ) ) {
+
+		require_once $path;
+
 	}
 
 }
@@ -39,22 +54,36 @@ function toolbelt_stats_toolbar_link( $wp_admin_bar ) {
 
 	$settings = get_option( 'toolbelt_settings' );
 
-	// Quit if no dashboard has been specified.
-	if ( empty( $settings['stats-dashboard-url'] ) ) {
+	// Quit if no provider set.
+	if ( empty( $settings['stats-provider'] ) ) {
+
 		return;
+
 	}
 
-	$args = array(
-		'id' => 'toolbelt-stats',
-		'title' => esc_html__( 'Site Stats', 'wp-toolbelt' ),
-		'href' => esc_url( $settings['stats-dashboard-url'] ),
-		'meta' => array(
-			'class' => 'toolbelt-stats',
-			'target' => '_blank',
-		),
-	);
+	// Quit if no dashboard has been specified.
+	if ( empty( $settings['stats-dashboard-url'] ) ) {
 
-	$wp_admin_bar->add_node( $args );
+		return;
+
+	}
+
+	/**
+	 * Add the admin bar node.
+	 *
+	 * @see https://developer.wordpress.org/reference/classes/wp_admin_bar/add_node/
+	 */
+	$wp_admin_bar->add_node(
+		array(
+			'id' => 'toolbelt-stats',
+			'title' => esc_html__( 'Site Stats', 'wp-toolbelt' ),
+			'href' => esc_url( $settings['stats-dashboard-url'] ),
+			'meta' => array(
+				'class' => 'toolbelt-stats',
+				'target' => '_blank',
+			),
+		)
+	);
 
 }
 
