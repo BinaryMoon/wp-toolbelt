@@ -38,6 +38,7 @@ export const build = series(
 );
 
 export const watchFiles = function( done ) {
+
 	watch(
 		'./**/*.scss',
 		parallel(
@@ -51,8 +52,9 @@ export const watchFiles = function( done ) {
 			styles_infinite_scroll
 		)
 	);
+
 	watch(
-		[ './**/*.js', '!./**/script.js', '!./**/script.min.js' ],
+		[ './**/*.js', '!./**/script.min.js' ],
 		parallel(
 			scripts_infiniteScroll,
 			scripts_cookieBanner
@@ -60,6 +62,7 @@ export const watchFiles = function( done ) {
 	);
 
 	done();
+
 };
 
 export default series(
