@@ -38,9 +38,9 @@ parameters:
         - %currentWorkingDirectory%/modules/monetization/module.php
         - %currentWorkingDirectory%/modules/monetization/settings.php
         - %currentWorkingDirectory%/modules/stats/module.php
-        - %currentWorkingDirectory%/modules/stats/module-fathom.php
-        - %currentWorkingDirectory%/modules/stats/module-simple-analytics.php
-        - %currentWorkingDirectory%/modules/stats/module-plausible.php
+        - %currentWorkingDirectory%/modules/stats/provider-fathom.php
+        - %currentWorkingDirectory%/modules/stats/provider-simple-analytics.php
+        - %currentWorkingDirectory%/modules/stats/provider-plausible.php
         - %currentWorkingDirectory%/modules/stats/settings.php
     ignoreErrors:
         # Uses func_get_args()
