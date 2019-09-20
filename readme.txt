@@ -98,7 +98,11 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add related posts 'clear cache' tool.
 * Add tool to delete all comment author urls.
 * Add a filter so you can disable heading anchors on specific posts/ pages.
+* Add stats tracking.
+* Add tracking to infinite scroll to track content load as a new page.
 * Change the WhatsApp share link. Whilst I am using the official link it doesn't seem to work on mobile, so I've changed it to another that is meant to work. I guess we will see.
+* Refactored the breadcrumbs module to make it a bit more consistent, and improve the markup standards.
+* Fix bug with Cleanup where a property could have already been defined.
 * Update page weight numbers.
 
 = 1.9.2 - 17th September 2019 =
