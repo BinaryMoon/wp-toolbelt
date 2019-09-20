@@ -129,10 +129,12 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 		return '';
 	}
 
+	/**
+	 * If the current taxonomy has a parent taxonomy then let's add them all
+	 * together.
+	 */
 	if ( isset( $current->parent ) ) {
-
 		$breadcrumb = toolbelt_get_term_parents( (int) $current->parent, $taxonomy );
-
 	}
 
 	$breadcrumb .= toolbelt_breadcrumb_item_current( $current->name );
@@ -143,37 +145,9 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 
 
 /**
- * Generate a post breadcrumb trail.
- *
- * By post I am referring to any single post type that supports a hierarchy.
- * This includes pages, and custom post types that can have a parent child
- * relationships.
- *
- * @return string
- */
-function toolbelt_breadcrumb_post_hierarchical() {
-
-	$post_id = get_queried_object_id();
-	$ancestors = array_reverse( get_post_ancestors( $post_id ) );
-	$breadcrumb = '';
-
-	if ( $ancestors ) {
-		foreach ( $ancestors as $ancestor ) {
-
-			$breadcrumb .= toolbelt_breadcrumb_item( get_permalink( $ancestor ), get_the_title( $ancestor ) );
-
-		}
-	}
-
-	$breadcrumb .= toolbelt_breadcrumb_item_current( get_the_title( $post_id ) );
-
-	return $breadcrumb;
-
-}
-
-
-/**
  * Return the parents for a given taxonomy term ID.
+ *
+ * This is a recursive function. It calls itself.
  *
  * @param int    $term Taxonomy term whose parents will be returned.
  * @param string $taxonomy Taxonomy name that the term belongs to.
@@ -194,6 +168,17 @@ function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 
 	$chain = '';
 
+	/**
+	 * If the term has a parent, and we haven't already added this parent to the
+	 * list then let's get the next parent.
+	 *
+	 * This calls the function again, and will keep looping until we're at the
+	 * most distant relative.
+	 *
+	 * When the function starts returning again it will start adding the
+	 * breadcrumbs. Because of the order of the operations the breadcrumbs will
+	 * display in the correct order.
+	 */
 	if ( $parent->parent && ( $parent->parent !== $parent->term_id ) && ! in_array( $parent->parent, $visited, true ) ) {
 		$visited[] = $parent->parent;
 		$chain .= toolbelt_get_term_parents( $parent->parent, $taxonomy, $visited );
@@ -202,6 +187,40 @@ function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 	$chain .= toolbelt_breadcrumb_item( get_category_link( $parent->term_id ), $parent->name );
 
 	return $chain;
+
+}
+
+
+/**
+ * Generate a post breadcrumb trail.
+ *
+ * By post I am referring to any single post type that supports a hierarchy.
+ * This includes pages, and custom post types that can have a parent child
+ * relationships.
+ *
+ * @return string
+ */
+function toolbelt_breadcrumb_post_hierarchical() {
+
+	$post_id = get_queried_object_id();
+	$ancestors = array_reverse( get_post_ancestors( $post_id ) );
+	$breadcrumb = '';
+
+	/**
+	 * Loop through the list of post parents and generate a list of breadcrumbs
+	 * from the list.
+	 */
+	if ( $ancestors ) {
+		foreach ( $ancestors as $ancestor ) {
+
+			$breadcrumb .= toolbelt_breadcrumb_item( get_permalink( $ancestor ), get_the_title( $ancestor ) );
+
+		}
+	}
+
+	$breadcrumb .= toolbelt_breadcrumb_item_current( get_the_title( $post_id ) );
+
+	return $breadcrumb;
 
 }
 
