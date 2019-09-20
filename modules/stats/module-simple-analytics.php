@@ -13,6 +13,12 @@
  */
 function toolbelt_stats_simple_analytics() {
 
+	if ( ! toolbelt_stats_track() ) {
+
+		return;
+
+	}
+
 ?>
 
 <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript ?>

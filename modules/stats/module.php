@@ -7,6 +7,8 @@
 
 /**
  * Work out which stats module to load.
+ *
+ * @return void
  */
 function toolbelt_stats() {
 
@@ -39,6 +41,36 @@ function toolbelt_stats() {
 }
 
 toolbelt_stats();
+
+
+/**
+ * Should we track the current user/ page?
+ *
+ * @return bool
+ */
+function toolbelt_stats_track() {
+
+	/**
+	 * Don't track the admin.
+	 */
+	if ( is_admin() ) {
+
+		return false;
+
+	}
+
+	/**
+	 * Allow users to filter the display of the stats.
+	 */
+	if ( ! apply_filters( 'toolbelt_stats_track', true ) ) {
+
+		return false;
+
+	}
+
+	return true;
+
+}
 
 
 /**

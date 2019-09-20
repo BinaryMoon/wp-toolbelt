@@ -11,6 +11,12 @@
  */
 function toolbelt_stats_fathom() {
 
+	if ( ! toolbelt_stats_track() ) {
+
+		return;
+
+	}
+
 	$settings = get_option( 'toolbelt_settings', array() );
 	$site_id = '';
 
