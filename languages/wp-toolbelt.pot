@@ -69,7 +69,7 @@ msgstr ""
 msgid "1 or 2kb of HTML."
 msgstr ""
 
-#: index.php:129, modules/related-posts/module.php:97, modules/related-posts/tools.php:16
+#: index.php:129, modules/related-posts/module.php:105, modules/related-posts/tools.php:17
 msgid "Related Posts"
 msgstr ""
 
@@ -117,104 +117,120 @@ msgstr ""
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:155, index.php:166
+#: index.php:155, index.php:178
 msgid "0.2kb of inline CSS."
 msgstr ""
 
 #: index.php:158
-msgid "Random Redirect"
+msgid "Web Monetization"
 msgstr ""
 
 #: index.php:159
-msgid "Randomly Redirect to a blog post."
-msgstr ""
-
-#: index.php:163
-msgid "Heading Anchors"
+msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
 #: index.php:164
-msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
+msgid "Random Redirect"
 msgstr ""
 
-#: index.php:169
-msgid "Infinite Scroll"
+#: index.php:165
+msgid "Randomly Redirect to a blog post."
+msgstr ""
+
+#: index.php:169, modules/stats/settings.php:38
+msgid "Stats"
 msgstr ""
 
 #: index.php:170
-msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
-msgstr ""
-
-#: index.php:172
-msgid "0.8kb of inline CSS and 1.3kb of inline JS."
+msgid "Website statistics and analytics."
 msgstr ""
 
 #: index.php:175
-msgid "Fast 404s"
+msgid "Heading Anchors"
 msgstr ""
 
 #: index.php:176
-msgid "Disable 404 pages for static files like images."
-msgstr ""
-
-#: index.php:180
-msgid "Disable Comment Urls"
+msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
 #: index.php:181
+msgid "Infinite Scroll"
+msgstr ""
+
+#: index.php:182
+msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
+msgstr ""
+
+#: index.php:184
+msgid "0.8kb of inline CSS and 1.3kb of inline JS."
+msgstr ""
+
+#: index.php:187
+msgid "Fast 404s"
+msgstr ""
+
+#: index.php:188
+msgid "Disable 404 pages for static files like images."
+msgstr ""
+
+#: index.php:192
+msgid "Disable Comment Urls"
+msgstr ""
+
+#: index.php:193
 msgid "Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
-#: index.php:185
+#: index.php:198
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:186
+#: index.php:199
 msgid "Control which pages widgets appear on."
 msgstr ""
 
-#: admin/admin.php:25
+#: admin/admin.php:25, admin/admin.php:43, admin/admin.php:159
 msgid "Settings"
 msgstr ""
 
-#: admin/admin.php:33, admin/admin.php:123
+#: admin/admin.php:33, admin/admin.php:162
 msgid "Tools"
 msgstr ""
 
-#: admin/admin.php:116
+#: admin/admin.php:152
 msgid "Show more details"
 msgstr ""
 
-#: admin/admin.php:118, admin/screen-modules.php:81
+#: admin/admin.php:154, admin/screen-modules.php:81
 msgid "Description"
 msgstr ""
 
-#: admin/admin.php:121
+#: admin/admin.php:157
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:127, admin/screen-modules.php:84
+#: admin/admin.php:166, admin/screen-modules.php:84
 msgid "Page Impact"
 msgstr ""
 
-#: admin/admin.php:239
+#: admin/admin.php:290
 msgid "Settings Saved"
 msgstr ""
 
-#: admin/admin.php:254
+#: admin/admin.php:316
+msgid "Toolbelt settings saved."
+msgstr ""
+
+#: admin/admin.php:331
 msgid "Success"
 msgstr ""
 
-#: admin/admin.php:255
+#: admin/admin.php:332
 msgid "Error"
 msgstr ""
 
 #: admin/screen-modules.php:58
-msgid "Toolbelt Settings"
-msgstr ""
-
-#: admin/screen-modules.php:60
-msgid "Toolbelt is a lightweight, privacy focused, collection of things that add commonly needed features to your WordPress website."
+msgid "Toolbelt Modules"
 msgstr ""
 
 #: admin/screen-modules.php:65
@@ -233,7 +249,15 @@ msgstr ""
 msgid "Save Settings"
 msgstr ""
 
-#: admin/screen-tools.php:23
+#: admin/screen-settings.php:17
+msgid "Toolbelt Settings"
+msgstr ""
+
+#: admin/screen-settings.php:28
+msgid "Save"
+msgstr ""
+
+#: admin/screen-tools.php:19
 msgid "Toolbelt Tools"
 msgstr ""
 
@@ -262,6 +286,30 @@ msgstr ""
 msgid "&times;"
 msgstr ""
 
+#: modules/disable-comment-urls/tools.php:17
+msgid "Are you sure? This will delete all author urls and can not be reversed."
+msgstr ""
+
+#: modules/disable-comment-urls/tools.php:23
+msgid "Disable Comment URLs"
+msgstr ""
+
+#: modules/disable-comment-urls/tools.php:27
+msgid "Delete Comment Author URLs from the database."
+msgstr ""
+
+#: modules/disable-comment-urls/tools.php:29
+msgid "Removes all comment author urls from the database. This is not reversible so be sure you want to do it."
+msgstr ""
+
+#: modules/disable-comment-urls/tools.php:31
+msgid "Delete All Urls"
+msgstr ""
+
+#: modules/disable-comment-urls/tools.php:59
+msgid "Comment Author URLs deleted."
+msgstr ""
+
 #: modules/fast-404/module.php:55
 msgid "404 error - file does not exist"
 msgstr ""
@@ -273,6 +321,18 @@ msgstr ""
 #. translators: %d = page number.
 #: modules/infinite-scroll/module.php:234
 msgid "Page %d"
+msgstr ""
+
+#: modules/monetization/settings.php:24
+msgid "Monetization"
+msgstr ""
+
+#: modules/monetization/settings.php:30
+msgid "Payment Pointer"
+msgstr ""
+
+#: modules/monetization/settings.php:34
+msgid "Web Monetization Documentation"
 msgstr ""
 
 #: modules/projects/module.php:35, modules/projects/tools.php:16
@@ -482,65 +542,85 @@ msgstr ""
 msgid "%d tags converted"
 msgstr ""
 
-#: modules/related-posts/tools.php:20
+#: modules/related-posts/tools.php:21
 msgid "Clear the Related Posts Cache"
 msgstr ""
 
-#: modules/related-posts/tools.php:22
+#: modules/related-posts/tools.php:23
 msgid "Related Posts are cached per post. They get cleared automatically once a week. You can use this to clear them instantly."
 msgstr ""
 
-#: modules/related-posts/tools.php:24
+#: modules/related-posts/tools.php:25
 msgid "Clear"
 msgstr ""
 
-#: modules/related-posts/tools.php:54
+#: modules/related-posts/tools.php:53
 msgid "Related Posts cache cleared."
 msgstr ""
 
-#: modules/social-sharing/module.php:124
+#: modules/social-sharing/module.php:129
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:125
+#: modules/social-sharing/module.php:130
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:129
+#: modules/social-sharing/module.php:134
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:130
+#: modules/social-sharing/module.php:135
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:134
+#: modules/social-sharing/module.php:139
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:135
+#: modules/social-sharing/module.php:140
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:139
+#: modules/social-sharing/module.php:154
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:140
+#: modules/social-sharing/module.php:155
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:144
+#: modules/social-sharing/module.php:159
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:145
+#: modules/social-sharing/module.php:160
 msgctxt "Pinterest button label"
 msgid "Pin this"
+msgstr ""
+
+#: modules/stats/module.php:111
+msgid "Site Stats"
+msgstr ""
+
+#: modules/stats/settings.php:44
+msgid "Analytics Service"
+msgstr ""
+
+#: modules/stats/settings.php:54
+msgid "More about the Stats Providers"
+msgstr ""
+
+#: modules/stats/settings.php:60
+msgid "Dashboard URL"
+msgstr ""
+
+#: modules/stats/settings.php:66
+msgid "Site ID"
 msgstr ""
 
 #: modules/widget-display/module-admin.php:28
