@@ -35,17 +35,25 @@ function toolbelt_stats_fathom() {
 ?>
 
 <script>
-(function(f, a, t, h, o, m){
-	a[h]=a[h]||function(){
-		(a[h].q=a[h].q||[]).push(arguments)
-	};
-	o=f.createElement('script'),
-	m=f.getElementsByTagName('script')[0];
-	o.async=1; o.src=t; o.id='fathom-script';
-	m.parentNode.insertBefore(o,m)
-})(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
-fathom('set', 'siteId', '<?php echo esc_attr( $site_id ); ?>');
-fathom('trackPageview');
+	(function(f, a, t, h, o, m){
+		a[h]=a[h]||function(){
+			(a[h].q=a[h].q||[]).push(arguments)
+		};
+		o=f.createElement('script'),
+		m=f.getElementsByTagName('script')[0];
+		o.async=1; o.src=t; o.id='fathom-script';
+		m.parentNode.insertBefore(o,m)
+	})(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
+
+	fathom('set', 'siteId', '<?php echo esc_attr( $site_id ); ?>');
+	fathom('trackPageview');
+
+	document.body.addEventListener(
+		'toolbelt-is-load',
+		function(event) {
+			fathom('trackPageview');
+		}
+	);
 </script>
 
 <?php
