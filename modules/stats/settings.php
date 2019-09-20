@@ -48,7 +48,7 @@ function toolbelt_stats_fields() {
 						<!-- Don't translate the brand names -->
 						<option value="fathom" <?php selected( 'fathom', $provider ); ?>>Fathom Analytics</option>
 						<option value="simple-analytics" <?php selected( 'simple-analytics', $provider ); ?>>Simple Analytics</option>
-						<!-- <option value="plausible">Plausible</option> -->
+						<option value="plausible" <?php selected( 'plausible', $provider ); ?>>Plausible</option>
 					</select>
 					<p class="description">
 						<a href="https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats#stats-providers"><?php esc_html_e( 'More about the Stats Providers', 'wp-toolbelt' ); ?></a>
