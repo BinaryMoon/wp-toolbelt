@@ -29,7 +29,7 @@ function toolbelt_stats() {
 	 * I'm escaping the path name to ensure nothing bad has been included. It's
 	 * not actually output anywhere but I'd rather be safe than sorry.
 	 */
-	$path = plugin_dir_path( __FILE__ ) . 'module-' . esc_attr( $settings['stats-provider'] ) . '.php';
+	$path = plugin_dir_path( __FILE__ ) . 'provider-' . esc_attr( $settings['stats-provider'] ) . '.php';
 
 	// Make sure it's a valid provider.
 	if ( file_exists( $path ) ) {
