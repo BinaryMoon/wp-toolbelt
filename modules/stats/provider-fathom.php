@@ -22,7 +22,7 @@ function toolbelt_stats_fathom() {
 
 	if ( ! empty( $settings['stats-site-id'] ) ) {
 
-		$code = $settings['stats-site-id'];
+		$site_id = $settings['stats-site-id'];
 
 	}
 
