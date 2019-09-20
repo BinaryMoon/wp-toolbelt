@@ -5,8 +5,13 @@
  * @package toolbelt
  */
 
-define( 'DISABLE_NAG_NOTICES', true );
-
+/**
+ * Disable nag notices.
+ * Make sure they aren't already defined!
+ */
+if ( ! defined( 'DISABLE_NAG_NOTICES' ) ) {
+	define( 'DISABLE_NAG_NOTICES', true );
+}
 
 // Remove really simple discovery link.
 remove_action( 'wp_head', 'rsd_link' );
