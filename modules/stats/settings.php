@@ -41,7 +41,7 @@ function toolbelt_stats_fields() {
 
 			<tr>
 				<th scope="row">
-					<label for="toolbelt-stats-provider"><?php esc_html_e( 'Analytics Company', 'wp-toolbelt' ); ?></label>
+					<label for="toolbelt-stats-provider"><?php esc_html_e( 'Analytics Service', 'wp-toolbelt' ); ?></label>
 				</th>
 				<td>
 					<select name="toolbelt-stats-provider" id="toolbelt-stats-provider">
@@ -50,6 +50,9 @@ function toolbelt_stats_fields() {
 						<option value="simple-analytics" <?php selected( 'simple-analytics', $provider ); ?>>Simple Analytics</option>
 						<!-- <option value="plausible">Plausible</option> -->
 					</select>
+					<p class="description">
+						<a href="https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats#stats-providers"><?php esc_html_e( 'More about the Stats Providers', 'wp-toolbelt' ); ?></a>
+					</p>
 				</td>
 			</tr>
 			<tr>
