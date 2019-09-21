@@ -97,6 +97,12 @@ export function styles_videos() {
 
 }
 
+export function styles_admin_tweaks() {
+
+	return process_styles( 'admin-tweaks' );
+
+}
+
 export function styles_heading_links() {
 
 	return process_styles( 'heading-anchors' );
