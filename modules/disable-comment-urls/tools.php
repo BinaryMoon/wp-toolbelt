@@ -28,7 +28,7 @@ function toolbelt_comment_url_tools() {
 			<input type="hidden" name="action" value="delete_comment_urls" />
 			<p><?php esc_html_e( 'Removes all comment author urls from the database. This is not reversible so be sure you want to do it.', 'wp-toolbelt' ); ?></p>
 			<?php wp_nonce_field( 'toolbelt_delete_comment_urls' ); ?>
-			<?php submit_button( esc_html__( 'Delete All Urls', 'wp-toolbelt' ) ); ?>
+			<?php submit_button( esc_html__( 'Delete All Comment Urls', 'wp-toolbelt' ) ); ?>
 
 		</form>
 
