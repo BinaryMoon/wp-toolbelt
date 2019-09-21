@@ -14,178 +14,186 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: index.php:99
-msgid "Cookie Banner"
+msgid "Admim Tweaks"
 msgstr ""
 
 #: index.php:100
-msgid "Display a simple banner with a link to your Privacy Policy."
+msgid "Tweak styles in the admin to make it more usable."
 msgstr ""
 
-#: index.php:102
-msgid "1.2kb of inline JS and CSS."
+#: index.php:104
+msgid "Cookie Banner"
 msgstr ""
 
 #: index.php:105
+msgid "Display a simple banner with a link to your Privacy Policy."
+msgstr ""
+
+#: index.php:107
+msgid "1.2kb of inline JS and CSS."
+msgstr ""
+
+#: index.php:110
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:106
+#: index.php:111
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:108
+#: index.php:113
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:111, modules/projects/module.php:37
+#: index.php:116, modules/projects/module.php:37
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:112
+#: index.php:117
 msgid "A portfolio custom post type."
 msgstr ""
 
-#: index.php:117
+#: index.php:122
 msgid "Header Cleanup"
 msgstr ""
 
-#: index.php:118
+#: index.php:123
 msgid "Remove unnecessary HTML from the site header."
 msgstr ""
 
-#: index.php:120
+#: index.php:125
 msgid "Minus 5kb of HTML from the page head."
 msgstr ""
 
-#: index.php:123
+#: index.php:128
 msgid "Breadcrumbs"
 msgstr ""
 
-#: index.php:124
+#: index.php:129
 msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
 msgstr ""
 
-#: index.php:126
+#: index.php:131
 msgid "1 or 2kb of HTML."
 msgstr ""
 
-#: index.php:129, modules/related-posts/module.php:107, modules/related-posts/tools.php:17
+#: index.php:134, modules/related-posts/module.php:107, modules/related-posts/tools.php:17
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:130
+#: index.php:135
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:132
+#: index.php:137
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:136
+#: index.php:141
 msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:137
+#: index.php:142
 msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
-#: index.php:141, modules/social-menu/module.php:14, modules/social-menu/module.php:31
+#: index.php:146, modules/social-menu/module.php:14, modules/social-menu/module.php:31
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:142
+#: index.php:147
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:144
+#: index.php:149
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:147
+#: index.php:152
 msgid "Featured Attachment"
 msgstr ""
 
-#: index.php:148
+#: index.php:153
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:152
+#: index.php:157
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:153
+#: index.php:158
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:155, index.php:178
+#: index.php:160, index.php:183
 msgid "0.2kb of inline CSS."
 msgstr ""
 
-#: index.php:158
+#: index.php:163
 msgid "Web Monetization"
 msgstr ""
 
-#: index.php:159
+#: index.php:164
 msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
-#: index.php:164
+#: index.php:169
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:165
+#: index.php:170
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:169, modules/stats/settings.php:38
+#: index.php:174, modules/stats/settings.php:38
 msgid "Stats"
 msgstr ""
 
-#: index.php:170
+#: index.php:175
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:175
+#: index.php:180
 msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:176
+#: index.php:181
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:181
+#: index.php:186
 msgid "Infinite Scroll"
 msgstr ""
 
-#: index.php:182
+#: index.php:187
 msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
-#: index.php:184
+#: index.php:189
 msgid "0.8kb of inline CSS and 1.3kb of inline JS."
 msgstr ""
 
-#: index.php:187
+#: index.php:192
 msgid "Fast 404s"
 msgstr ""
 
-#: index.php:188
+#: index.php:193
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:192
+#: index.php:197
 msgid "Disable Comment Urls"
 msgstr ""
 
-#: index.php:193
+#: index.php:198
 msgid "Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
-#: index.php:198
+#: index.php:203
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:199
+#: index.php:204
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -205,7 +213,7 @@ msgstr ""
 msgid "Show more details"
 msgstr ""
 
-#: admin/admin.php:154, admin/screen-modules.php:81
+#: admin/admin.php:154, admin/screen-modules.php:82
 msgid "Description"
 msgstr ""
 
@@ -213,7 +221,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:166, admin/screen-modules.php:84
+#: admin/admin.php:166, admin/screen-modules.php:85
 msgid "Page Impact"
 msgstr ""
 
@@ -245,16 +253,20 @@ msgstr ""
 msgid "Search for Modules..."
 msgstr ""
 
-#: admin/screen-modules.php:78
-msgid "Module"
+#: admin/screen-modules.php:70, admin/screen-modules.php:105
+msgid "Save Modules"
 msgstr ""
 
-#: admin/screen-modules.php:104, admin/screen-settings.php:28
-msgid "Save Settings"
+#: admin/screen-modules.php:79
+msgid "Module"
 msgstr ""
 
 #: admin/screen-settings.php:17
 msgid "Toolbelt Settings"
+msgstr ""
+
+#: admin/screen-settings.php:28
+msgid "Save Settings"
 msgstr ""
 
 #: admin/screen-tools.php:19
@@ -303,7 +315,7 @@ msgid "Removes all comment author urls from the database. This is not reversible
 msgstr ""
 
 #: modules/disable-comment-urls/tools.php:31
-msgid "Delete All Urls"
+msgid "Delete All Comment Urls"
 msgstr ""
 
 #: modules/disable-comment-urls/tools.php:59
