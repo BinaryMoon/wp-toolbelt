@@ -41,7 +41,7 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 			$new_actions['toolbelt_settings'] = sprintf(
 				'<a href="%2$s">%1$s</a>',
 				esc_html__( 'Settings', 'wp-toolbelt' ),
-				esc_url( add_query_arg( array( 'page' => 'toolbelt-settings' ), admin_url( 'admin.php' ) ) )
+				esc_url( add_query_arg( array( 'page' => 'toolbelt-modules' ), admin_url( 'admin.php' ) ) )
 			);
 
 		}
