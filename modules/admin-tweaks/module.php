@@ -11,7 +11,7 @@ if ( ! is_admin() ) {
 
 
 /**
- *
+ * Display some custom css to tweak the WordPress admin.
  */
 function toolbelt_admin_tweaks() {
 
