@@ -96,6 +96,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 = 2.0.1 - 21st September 2019 =
 * Fix setting link on plugin page.
+* Move toolbelt_related_posts filter to make it easier to use.
 
 = 2.0 - 21st September 2019 =
 * Move settings pages to a top level menu.
