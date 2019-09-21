@@ -21,6 +21,7 @@ Toolbelt has been featured on The WordPress Tavern in [an interview with me](htt
 
 = Features =
 
+* [Admin Tweaks](https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks)
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
 * [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls)
@@ -94,7 +95,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.0.1 - 21st September 2019 =
+= 2.1 - 22nd September 2019 =
+* Add Admin Tweaks module which has a few small CSS tweaks to the WordPress admin to make it a little easier to use the interface.
 * Fix setting link on plugin page.
 * Move toolbelt_related_posts filter to make it easier to use.
 
