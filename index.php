@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, fast.
  * Author: Ben Gillbanks
- * Version: 2.0
+ * Version: 2.1
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '2.0' );
+define( 'TOOLBELT_VERSION', '2.1' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
 
@@ -95,6 +95,11 @@ function toolbelt_load_module( $slug, $module ) {
 function toolbelt_get_modules() {
 
 	return array(
+		'admin-tweaks' => array(
+			'name' => esc_html__( 'Admim Tweaks', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Tweak styles in the admin to make it more usable.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks',
+		),
 		'cookie-banner' => array(
 			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display a simple banner with a link to your Privacy Policy.', 'wp-toolbelt' ),

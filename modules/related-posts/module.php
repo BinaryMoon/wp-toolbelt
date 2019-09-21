@@ -27,6 +27,18 @@ define( 'TOOLBELT_RELATED_POST_TRANSIENT', 'toolbelt_related_post_' . TOOLBELT_V
  */
 function toolbelt_related_posts( $content ) {
 
+	/**
+	 * An option to disable the automatic output of the related posts.
+	 *
+	 * Included directly since this file is included on the init hook.
+	 *
+	 * If you disable the related posts output you can still echo the
+	 * toolbelt_related_posts_get() function directly within your theme.
+	 */
+	if ( ! apply_filters( 'toolbelt_related_posts', true ) ) {
+		return $content;
+	}
+
 	if ( ! is_singular() ) {
 		return $content;
 	}
@@ -39,17 +51,7 @@ function toolbelt_related_posts( $content ) {
 
 }
 
-/**
- * An option to disable the automatic output of the related posts.
- *
- * Included directly since this file is included on the init hook.
- *
- * If you disable the related posts output you can still echo the
- * toolbelt_related_posts_get() function directly within your theme.
- */
-if ( apply_filters( 'toolbelt_related_posts', true ) ) {
-	add_filter( 'the_content', 'toolbelt_related_posts' );
-}
+add_filter( 'the_content', 'toolbelt_related_posts' );
 
 
 /**

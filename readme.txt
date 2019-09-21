@@ -21,13 +21,16 @@ Toolbelt has been featured on The WordPress Tavern in [an interview with me](htt
 
 = Features =
 
+* [Admin Tweaks](https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks)
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
 * [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls)
 * [Fast 404](https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404)
 * [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
 * [Heading Anchors](https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor)
+* [Infinite Scroll](https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll)
 * [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
+* [Monetization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization)
 * [Optimization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization)
 * [Portfolio](https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio)
 * [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
@@ -35,6 +38,7 @@ Toolbelt has been featured on The WordPress Tavern in [an interview with me](htt
 * [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
 * [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
 * [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
+* [Stats](https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats)
 * [Widget Display](https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display)
 
 = Fast =
@@ -91,7 +95,12 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.0 - 16th September 2019 =
+= 2.1 - 22nd September 2019 =
+* Add Admin Tweaks module which has a few small CSS tweaks to the WordPress admin to make it a little easier to use the interface.
+* Fix setting link on plugin page.
+* Move toolbelt_related_posts filter to make it easier to use.
+
+= 2.0 - 21st September 2019 =
 * Move settings pages to a top level menu.
 * Add Web Monetization module.
 * Add tools link to active modules on module settings page.
