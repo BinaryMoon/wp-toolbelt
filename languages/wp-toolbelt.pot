@@ -69,7 +69,7 @@ msgstr ""
 msgid "1 or 2kb of HTML."
 msgstr ""
 
-#: index.php:129, modules/related-posts/module.php:105, modules/related-posts/tools.php:17
+#: index.php:129, modules/related-posts/module.php:107, modules/related-posts/tools.php:17
 msgid "Related Posts"
 msgstr ""
 
@@ -189,12 +189,16 @@ msgstr ""
 msgid "Control which pages widgets appear on."
 msgstr ""
 
-#: admin/admin.php:25, admin/admin.php:43, admin/admin.php:159
-msgid "Settings"
+#: admin/admin.php:25
+msgid "Modules"
 msgstr ""
 
 #: admin/admin.php:33, admin/admin.php:162
 msgid "Tools"
+msgstr ""
+
+#: admin/admin.php:43, admin/admin.php:159
+msgid "Settings"
 msgstr ""
 
 #: admin/admin.php:152
@@ -245,7 +249,7 @@ msgstr ""
 msgid "Module"
 msgstr ""
 
-#: admin/screen-modules.php:104
+#: admin/screen-modules.php:104, admin/screen-settings.php:28
 msgid "Save Settings"
 msgstr ""
 
@@ -253,15 +257,11 @@ msgstr ""
 msgid "Toolbelt Settings"
 msgstr ""
 
-#: admin/screen-settings.php:28
-msgid "Save"
-msgstr ""
-
 #: admin/screen-tools.php:19
 msgid "Toolbelt Tools"
 msgstr ""
 
-#: modules/breadcrumbs/module.php:60
+#: modules/breadcrumbs/module.php:43
 msgid "Home"
 msgstr ""
 
