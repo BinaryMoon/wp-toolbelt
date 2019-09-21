@@ -95,6 +95,11 @@ function toolbelt_load_module( $slug, $module ) {
 function toolbelt_get_modules() {
 
 	return array(
+		'admin-tweaks' => array(
+			'name' => esc_html__( 'Admim Tweaks', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Tweak styles in the admin to make it more usable.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks',
+		),
 		'cookie-banner' => array(
 			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display a simple banner with a link to your Privacy Policy.', 'wp-toolbelt' ),
