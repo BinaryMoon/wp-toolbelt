@@ -26,12 +26,15 @@ function toolbelt_404_response() {
 	}
 
 	if ( ! isset( $file_extension ) ) {
+
 		return;
+
 	}
 
 	$bad_file_types = array(
 		'css',
 		'txt',
+		'md',
 		'jpg',
 		'gif',
 		'rar',
