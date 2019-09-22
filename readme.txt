@@ -95,6 +95,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 2.1.1 - 23rd September 2019 =
+* Add md to list of fast404 file types.
+
 = 2.1 - 22nd September 2019 =
 * Add Admin Tweaks module which has a few small CSS tweaks to the WordPress admin to make it a little easier to use the interface.
 * Fix setting link on plugin page.
