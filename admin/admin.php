@@ -104,7 +104,7 @@ function toolbelt_admin_menu() {
 		add_submenu_page(
 			'toolbelt-modules',
 			__( 'Toolbelt Tools', 'wp-toolbelt' ),
-			__( 'Tools', 'wp-toolbelt )',
+			__( 'Tools', 'wp-toolbelt' ),
 			'manage_options', // Author capability.
 			'toolbelt-tools', // Slug.
 			'toolbelt_tools_page'
