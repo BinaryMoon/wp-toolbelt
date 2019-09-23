@@ -75,8 +75,9 @@ function toolbelt_admin_menu() {
 
 	// Add module selection page.
 	add_menu_page(
-		'Toolbelt',
-		'Toolbelt',
+		/* translators: plugin name */
+		__( 'Toolbelt', 'wp-toolbelt' ),
+		__( 'Toolbelt', 'wp-toolbelt' ),
 		'manage_options',
 		'toolbelt-modules',
 		'toolbelt_admin_page',
@@ -88,8 +89,8 @@ function toolbelt_admin_menu() {
 
 		add_submenu_page(
 			'toolbelt-modules',
-			'Toolbelt Settings',
-			'Settings',
+			__( 'Toolbelt Settings', 'wp-toolbelt' ),
+			__( 'Settings', 'wp-toolbelt' ),
 			'manage_options', // Author capability.
 			'toolbelt-settings', // Slug.
 			'toolbelt_settings_page'
@@ -102,8 +103,8 @@ function toolbelt_admin_menu() {
 
 		add_submenu_page(
 			'toolbelt-modules',
-			'Toolbelt Tools',
-			'Tools',
+			__( 'Toolbelt Tools', 'wp-toolbelt' ),
+			__( 'Tools', 'wp-toolbelt' ),
 			'manage_options', // Author capability.
 			'toolbelt-tools', // Slug.
 			'toolbelt_tools_page'
