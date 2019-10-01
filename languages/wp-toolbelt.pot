@@ -182,11 +182,11 @@ msgid "Disable 404 pages for static files like images."
 msgstr ""
 
 #: index.php:197
-msgid "Disable Comment Urls"
+msgid "Disable the Comment URL Field"
 msgstr ""
 
 #: index.php:198
-msgid "Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes."
+msgid "Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
 #: index.php:203
@@ -213,7 +213,7 @@ msgstr ""
 msgid "Show more details"
 msgstr ""
 
-#: admin/admin.php:154, admin/screen-modules.php:82
+#: admin/admin.php:154, admin/screen-modules.php:84
 msgid "Description"
 msgstr ""
 
@@ -221,7 +221,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:166, admin/screen-modules.php:85
+#: admin/admin.php:166, admin/screen-modules.php:87
 msgid "Page Impact"
 msgstr ""
 
@@ -241,24 +241,32 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: admin/screen-modules.php:58
+#: admin/screen-modules.php:60
 msgid "Toolbelt Modules"
 msgstr ""
 
-#: admin/screen-modules.php:65
+#: admin/screen-modules.php:67
 msgid "Search for Modules"
 msgstr ""
 
-#: admin/screen-modules.php:66
+#: admin/screen-modules.php:68
 msgid "Search for Modules..."
 msgstr ""
 
-#: admin/screen-modules.php:70, admin/screen-modules.php:105
+#: admin/screen-modules.php:72, admin/screen-modules.php:107
 msgid "Save Modules"
 msgstr ""
 
-#: admin/screen-modules.php:79
+#: admin/screen-modules.php:81
 msgid "Module"
+msgstr ""
+
+#: admin/screen-modules.php:112
+msgid "Toolbelt is a free plugin. If you find it useful then a review on wordpress.org would be most appreciated!"
+msgstr ""
+
+#: admin/screen-modules.php:113
+msgid "Leave a review &rsaquo;"
 msgstr ""
 
 #: admin/screen-settings.php:17
@@ -322,7 +330,7 @@ msgstr ""
 msgid "Comment Author URLs deleted."
 msgstr ""
 
-#: modules/fast-404/module.php:55
+#: modules/fast-404/module.php:59
 msgid "404 error - file does not exist"
 msgstr ""
 
