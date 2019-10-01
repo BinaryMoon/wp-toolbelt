@@ -34,6 +34,7 @@ function toolbelt_stats_fathom() {
 
 ?>
 
+<!-- Fathom Analytics -->
 <script>
 	(function(f, a, t, h, o, m){
 		a[h]=a[h]||function(){
