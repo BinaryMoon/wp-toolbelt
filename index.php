@@ -194,8 +194,8 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404',
 		),
 		'disable-comment-urls' => array(
-			'name' => esc_html__( 'Disable Comment Urls', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
+			'name' => esc_html__( 'Disable the Comment URL Field', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls',
 			'supports' => array( 'tools' ),
 		),
