@@ -96,6 +96,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 == Changelog ==
 
 = 2.2 - 1st October 2019 =
+* Add new simple comment spam module. It's experimental so tread with care.
 * Add md to list of fast404 file types.
 * Tweak Menu titles to make things more logical.
 * Improve breadcrumb html.
