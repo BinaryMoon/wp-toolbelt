@@ -31,9 +31,9 @@ add_filter( 'comment_form_default_fields', 'toolbelt_spam_form_fields', 11 );
 /**
  * Do the actual spam check.
  *
- * @param string $approved The current comment status.
- * @param array  $comment Information about the comment.
- * @return array
+ * @param int|string $approved The current comment status.
+ * @param array      $comment Information about the comment.
+ * @return int|string
  */
 function toolbelt_spam_check( $approved, $comment ) {
 
