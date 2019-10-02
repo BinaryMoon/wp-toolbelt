@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: index.php:99
-msgid "Admim Tweaks"
+msgid "Admin Tweaks"
 msgstr ""
 
 #: index.php:100
@@ -190,95 +190,112 @@ msgid "Remove the URL field from comment forms. This may only work on the core c
 msgstr ""
 
 #: index.php:203
-msgid "Widget Display"
+msgid "Spam Blocker"
 msgstr ""
 
 #: index.php:204
+msgid "Attempt to block spam."
+msgstr ""
+
+#: index.php:209
+msgid "Widget Display"
+msgstr ""
+
+#: index.php:210
 msgid "Control which pages widgets appear on."
 msgstr ""
 
-#: admin/admin.php:25
+#: admin/admin.php:25, admin/admin.php:91
 msgid "Modules"
 msgstr ""
 
-#: admin/admin.php:33, admin/admin.php:162
-msgid "Tools"
-msgstr ""
-
-#: admin/admin.php:43, admin/admin.php:159
+#: admin/admin.php:33, admin/admin.php:103, admin/admin.php:173
 msgid "Settings"
 msgstr ""
 
-#: admin/admin.php:152
-msgid "Show more details"
+#: admin/admin.php:43, admin/admin.php:117
+msgid "Processes"
 msgstr ""
 
-#: admin/admin.php:154, admin/screen-modules.php:84
-msgid "Description"
+#. translators: plugin name
+#: admin/admin.php:79, admin/admin.php:80
+msgid "Toolbelt"
 msgstr ""
 
-#: admin/admin.php:157
-msgid "Documentation"
-msgstr ""
-
-#: admin/admin.php:166, admin/screen-modules.php:87
-msgid "Page Impact"
-msgstr ""
-
-#: admin/admin.php:290
-msgid "Settings Saved"
-msgstr ""
-
-#: admin/admin.php:316
-msgid "Toolbelt settings saved."
-msgstr ""
-
-#: admin/admin.php:331
-msgid "Success"
-msgstr ""
-
-#: admin/admin.php:332
-msgid "Error"
-msgstr ""
-
-#: admin/screen-modules.php:60
+#: admin/admin.php:90, admin/screen-modules.php:61
 msgid "Toolbelt Modules"
 msgstr ""
 
-#: admin/screen-modules.php:67
-msgid "Search for Modules"
+#: admin/admin.php:102, admin/screen-settings.php:17
+msgid "Toolbelt Settings"
+msgstr ""
+
+#: admin/admin.php:116, admin/screen-tools.php:19
+msgid "Toolbelt Processes"
+msgstr ""
+
+#: admin/admin.php:166
+msgid "Show more details"
+msgstr ""
+
+#: admin/admin.php:168, admin/screen-modules.php:85
+msgid "Description"
+msgstr ""
+
+#: admin/admin.php:171
+msgid "Documentation"
+msgstr ""
+
+#: admin/admin.php:176
+msgid "Tools"
+msgstr ""
+
+#: admin/admin.php:180, admin/screen-modules.php:88
+msgid "Page Impact"
+msgstr ""
+
+#: admin/admin.php:304
+msgid "Settings Saved"
+msgstr ""
+
+#: admin/admin.php:330
+msgid "Toolbelt settings saved."
+msgstr ""
+
+#: admin/admin.php:345
+msgid "Success"
+msgstr ""
+
+#: admin/admin.php:346
+msgid "Error"
 msgstr ""
 
 #: admin/screen-modules.php:68
+msgid "Search for Modules"
+msgstr ""
+
+#: admin/screen-modules.php:69
 msgid "Search for Modules..."
 msgstr ""
 
-#: admin/screen-modules.php:72, admin/screen-modules.php:107
+#: admin/screen-modules.php:73, admin/screen-modules.php:108
 msgid "Save Modules"
 msgstr ""
 
-#: admin/screen-modules.php:81
+#: admin/screen-modules.php:82
 msgid "Module"
 msgstr ""
 
-#: admin/screen-modules.php:112
+#: admin/screen-modules.php:113
 msgid "Toolbelt is a free plugin. If you find it useful then a review on wordpress.org would be most appreciated!"
 msgstr ""
 
-#: admin/screen-modules.php:113
+#: admin/screen-modules.php:114
 msgid "Leave a review &rsaquo;"
-msgstr ""
-
-#: admin/screen-settings.php:17
-msgid "Toolbelt Settings"
 msgstr ""
 
 #: admin/screen-settings.php:28
 msgid "Save Settings"
-msgstr ""
-
-#: admin/screen-tools.php:19
-msgid "Toolbelt Tools"
 msgstr ""
 
 #: modules/breadcrumbs/module.php:43
