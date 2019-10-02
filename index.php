@@ -96,7 +96,7 @@ function toolbelt_get_modules() {
 
 	return array(
 		'admin-tweaks' => array(
-			'name' => esc_html__( 'Admim Tweaks', 'wp-toolbelt' ),
+			'name' => esc_html__( 'Admin Tweaks', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Tweak styles in the admin to make it more usable.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks',
 		),
