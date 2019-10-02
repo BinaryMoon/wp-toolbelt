@@ -26,22 +26,22 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 			esc_url( add_query_arg( array( 'page' => 'toolbelt-modules' ), admin_url( 'admin.php' ) ) )
 		);
 
-		if ( has_action( 'toolbelt_module_tools' ) ) {
-
-			$new_actions['toolbelt_tools'] = sprintf(
-				'<a href="%2$s">%1$s</a>',
-				esc_html__( 'Tools', 'wp-toolbelt' ),
-				esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'admin.php' ) ) )
-			);
-
-		}
-
 		if ( has_action( 'toolbelt_module_settings' ) ) {
 
 			$new_actions['toolbelt_settings'] = sprintf(
 				'<a href="%2$s">%1$s</a>',
 				esc_html__( 'Settings', 'wp-toolbelt' ),
 				esc_url( add_query_arg( array( 'page' => 'toolbelt-settings' ), admin_url( 'admin.php' ) ) )
+			);
+
+		}
+
+		if ( has_action( 'toolbelt_module_tools' ) ) {
+
+			$new_actions['toolbelt_tools'] = sprintf(
+				'<a href="%2$s">%1$s</a>',
+				esc_html__( 'Processes', 'wp-toolbelt' ),
+				esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'admin.php' ) ) )
 			);
 
 		}
@@ -73,15 +73,25 @@ function toolbelt_admin_menu() {
 		$icon_data = 'data:image/svg+xml;base64,' . base64_encode( $icon );
 	}
 
-	// Add module selection page.
+	// Add top level Toolbelt menu.
 	add_menu_page(
 		/* translators: plugin name */
-		__( 'Toolbelt', 'wp-toolbelt' ),
-		__( 'Toolbelt', 'wp-toolbelt' ),
+		esc_html__( 'Toolbelt', 'wp-toolbelt' ),
+		esc_html__( 'Toolbelt', 'wp-toolbelt' ),
 		'manage_options',
 		'toolbelt-modules',
 		'toolbelt_admin_page',
 		$icon_data
+	);
+
+	// Replace default Modules page with a different title.
+	add_submenu_page(
+		'toolbelt-modules',
+		esc_html__( 'Toolbelt Modules', 'wp-toolbelt' ),
+		esc_html__( 'Modules', 'wp-toolbelt' ),
+		'manage_options',
+		'toolbelt-modules',
+		'toolbelt_admin_page'
 	);
 
 	// Add settings page.
@@ -89,10 +99,10 @@ function toolbelt_admin_menu() {
 
 		add_submenu_page(
 			'toolbelt-modules',
-			__( 'Toolbelt Settings', 'wp-toolbelt' ),
-			__( 'Settings', 'wp-toolbelt' ),
-			'manage_options', // Author capability.
-			'toolbelt-settings', // Slug.
+			esc_html__( 'Toolbelt Settings', 'wp-toolbelt' ),
+			esc_html__( 'Settings', 'wp-toolbelt' ),
+			'manage_options',
+			'toolbelt-settings',
 			'toolbelt_settings_page'
 		);
 
@@ -103,10 +113,10 @@ function toolbelt_admin_menu() {
 
 		add_submenu_page(
 			'toolbelt-modules',
-			__( 'Toolbelt Tools', 'wp-toolbelt' ),
-			__( 'Tools', 'wp-toolbelt' ),
-			'manage_options', // Author capability.
-			'toolbelt-tools', // Slug.
+			esc_html__( 'Toolbelt Processes', 'wp-toolbelt' ),
+			esc_html__( 'Processes', 'wp-toolbelt' ),
+			'manage_options',
+			'toolbelt-tools',
 			'toolbelt_tools_page'
 		);
 

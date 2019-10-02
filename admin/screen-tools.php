@@ -16,7 +16,7 @@
 
 <div class="wrap">
 
-	<h1><?php esc_html_e( 'Toolbelt Tools', 'wp-toolbelt' ); ?></h1>
+	<h1><?php esc_html_e( 'Toolbelt Processes', 'wp-toolbelt' ); ?></h1>
 
 	<div class="wp-header-end"></div><!-- admin notices go after .wp-header-end or .wrap>h2:first-child -->
 
