@@ -199,6 +199,12 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls',
 			'supports' => array( 'tools' ),
 		),
+		'spam-blocker' => array(
+			'name' => esc_html__( 'Spam Blocker', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Attempt to block spam.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker',
+			'supports' => array( 'experimental' ),
+		),
 		'widget-display' => array(
 			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Control which pages widgets appear on.', 'wp-toolbelt' ),
