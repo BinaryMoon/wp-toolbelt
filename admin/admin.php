@@ -158,6 +158,9 @@ function toolbelt_field( $slug, $module ) {
 		<td class="column-title column-primary">
 			<label for="<?php echo esc_attr( $slug ); ?>">
 				<strong><?php echo esc_html( $module['name'] ); ?></strong>
+				<?php if ( isset( $module['supports'] ) && in_array( 'experimental', $module['supports'], true ) ) { ?>
+				<em class="experimental"><?php esc_html_e( 'Experimental' ); ?></em>
+				<?php } ?>
 			</label>
 
 			<button type="button" class="toggle-row"><span class="screen-reader-text"><?php esc_html_e( 'Show more details', 'wp-toolbelt' ); ?></span></button>

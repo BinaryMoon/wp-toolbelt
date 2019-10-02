@@ -22,6 +22,7 @@ do_action( 'toolbelt_module_settings' );
 	.wrap { max-width: 600px; margin: 0 auto; }
 	.toolbelt-ratings { margin: 30px 0; }
 	.toolbelt-ratings p { font-size: 16px; }
+	.experimental { color: red; }
 </style>
 
 <script>
