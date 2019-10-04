@@ -24,6 +24,8 @@
 
 	do_action( 'toolbelt_module_tools' );
 
+	require 'admin-credits.php';
+
 ?>
 
 </div>
