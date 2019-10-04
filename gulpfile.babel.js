@@ -13,7 +13,8 @@ import {
 } from './gulp/sass';
 import {
 	scripts_cookieBanner,
-	scripts_infiniteScroll
+	scripts_infiniteScroll,
+	scripts_spam
 } from './gulp/script';
 import compress from './gulp/zip';
 import translate from './gulp/pot';
@@ -34,6 +35,7 @@ export const build = series(
 		styles_admin_tweaks,
 		scripts_cookieBanner,
 		scripts_infiniteScroll,
+		scripts_spam,
 		translate
 	),
 	compress
@@ -60,7 +62,8 @@ export const watchFiles = function( done ) {
 		[ './modules/**/*.js', '!./modules/**/script.min.js' ],
 		parallel(
 			scripts_infiniteScroll,
-			scripts_cookieBanner
+			scripts_cookieBanner,
+			scripts_spam
 		)
 	);
 
