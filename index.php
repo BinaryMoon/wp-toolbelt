@@ -203,6 +203,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Spam Blocker', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Attempt to block spam.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker',
+			'weight' => esc_html( '0.3kb of inline JS', 'wp-toolbelt' ),
 			'supports' => array( 'experimental' ),
 		),
 		'widget-display' => array(

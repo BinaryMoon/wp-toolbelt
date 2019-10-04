@@ -3,14 +3,30 @@
  * Spam Blocking.
  *
  * Uses the following methods.
- * 1. Url Honeypot.
+ * 1. Url Honeypot (check for empty url).
  * 2. Comment Blacklist.
- * 3. Min length 20 characters.
+ * 3. Key Honeypot (check for altered key).
+ * 4. Javascript checker (https://davidwalsh.name/wordpress-comment-spam).
  *
  * @package toolbelt
  */
 
+/**
+ * Add a spam key. This will change with each plugin update.
+ */
 define( 'TOOLBELT_SPAM_KEY', md5( 'toolbelt-spam-key' . TOOLBELT_VERSION ) );
+
+
+/**
+ * Output the spam blocker javascript.
+ */
+function toolbelt_spam_scripts() {
+
+	toolbelt_scripts( 'spam-blocker' );
+
+}
+
+add_action( 'wp_footer', 'toolbelt_spam_scripts' );
 
 
 /**
@@ -22,8 +38,17 @@ define( 'TOOLBELT_SPAM_KEY', md5( 'toolbelt-spam-key' . TOOLBELT_VERSION ) );
  */
 function toolbelt_spam_form_fields( $fields ) {
 
-	$fields['toolbelt-url'] = '<input type="url" value="" name="toolbelt-url" id="toolbelt-url" style="display: none;" />';
-	$fields['toolbelt-junk'] = '<input type="text" value="' . esc_attr( TOOLBELT_SPAM_KEY ) . '" name="toolbelt-key" id="toolbelt-key" style="display: none;" />';
+	/**
+	 * Hide the honeypot fields in public and display them on dev.
+	 */
+	$visibility = 'display: none;';
+
+	if ( WP_DEBUG ) {
+		$visibility = '';
+	}
+
+	$fields['toolbelt-url'] = '<input type="url" value="" name="toolbelt-url" id="toolbelt-url" style="' . esc_attr( $visibility ) . '" />';
+	$fields['toolbelt-junk'] = '<input type="text" value="' . esc_attr( TOOLBELT_SPAM_KEY ) . '" name="toolbelt-key" id="toolbelt-key" style="' . esc_attr( $visibility ) . '" />';
 
 	return $fields;
 
@@ -73,9 +98,10 @@ function toolbelt_spam_check( $approved, $comment ) {
 	}
 
 	/**
-	 * Minimum length has to be greater than 20.
+	 * If the check field does not exist then it's spam (or a user has javascript disabled).
 	 */
-	if ( strlen( $comment['comment_content'] ) <= 20 ) {
+	$toolbelt_check = filter_input( INPUT_POST, 'toolbelt-check' );
+	if ( '1' !== $toolbelt_check ) {
 		$approved = 'spam';
 	}
 
