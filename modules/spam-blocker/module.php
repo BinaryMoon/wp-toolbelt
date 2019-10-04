@@ -3,7 +3,7 @@
  * Spam Blocking.
  *
  * Uses the following methods.
- * 1. Url Honeypot
+ * 1. Url Honeypot.
  * 2. Comment Blacklist.
  * 3. Min length 20 characters.
  *
@@ -20,6 +20,7 @@
 function toolbelt_spam_form_fields( $fields ) {
 
 	$fields['toolbelt-url'] = '<input type="url" value="" name="toolbelt-url" id="toolbelt-url" />';
+	$fields['toolbelt-url'] = '<input type="url" value="" name="toolbelt-url" id="toolbelt-url" style="display: none;" />';
 
 	return $fields;
 
