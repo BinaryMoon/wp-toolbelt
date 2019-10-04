@@ -17,20 +17,24 @@ function toolbelt_404_response() {
 		return;
 	}
 
-	if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
+	global $wp;
 
-		global $wp;
+	if ( ! empty( $wp->request ) ) {
+
 		$file_extension = strtolower( pathinfo( $wp->request, PATHINFO_EXTENSION ) );
 
 	}
 
 	if ( ! isset( $file_extension ) ) {
+
 		return;
+
 	}
 
 	$bad_file_types = array(
 		'css',
 		'txt',
+		'md',
 		'jpg',
 		'gif',
 		'rar',

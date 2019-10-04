@@ -37,3 +37,9 @@ export function scripts_infiniteScroll() {
 	return process_scripts( 'infinite-scroll' );
 
 }
+
+export function scripts_spam() {
+
+	return process_scripts( 'spam-blocker' );
+
+}

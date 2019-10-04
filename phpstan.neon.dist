@@ -24,6 +24,7 @@ parameters:
         - %currentWorkingDirectory%/modules/heading-anchors/module.php
         - %currentWorkingDirectory%/modules/infinite-scroll/module.php
         - %currentWorkingDirectory%/modules/lazy-load/module.php
+        - %currentWorkingDirectory%/modules/spam-blocker/module.php
         - %currentWorkingDirectory%/modules/projects/module.php
         - %currentWorkingDirectory%/modules/projects/tools.php
         - %currentWorkingDirectory%/modules/random-redirect/module.php

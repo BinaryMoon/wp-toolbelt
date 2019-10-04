@@ -20,6 +20,7 @@ do_action( 'toolbelt_module_settings' );
 	td p.doc-link { margin-bottom: 0; }
 	td p.doc-link a + a { margin: 0 0.5em; }
 	.wrap { max-width: 600px; margin: 0 auto; }
+	.experimental { color: red; }
 </style>
 
 <script>
@@ -105,5 +106,7 @@ function toolbeltFilterModules() {
 		<?php submit_button( esc_html__( 'Save Modules', 'wp-toolbelt' ) ); ?>
 
 	</form>
+
+	<?php require 'admin-credits.php'; ?>
 
 </div>

@@ -64,7 +64,7 @@ function toolbelt_breadcrumbs() {
 	 * Output the breadcrumbs.
 	 * Sanitization is ignored since we are already sanitizing the values when the string is generated.
 	 */
-	echo '<nav class="entry-breadcrumbs toolbelt-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $breadcrumb . '</nav>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo '<ol class="entry-breadcrumbs toolbelt-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $breadcrumb . '</ol>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
 
@@ -247,10 +247,10 @@ function toolbelt_breadcrumb_item( $url, $title ) {
 	$toolbelt_breadcrumb_position ++;
 
 	$html = '';
-	$html .= '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
+	$html .= '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
 	$html .= '<a href="%1$s" itemprop="item"><span itemprop="name">%2$s</span></a>';
 	$html .= '<meta itemprop="position" content="%3$d" />';
-	$html .= '</span>';
+	$html .= '</li>';
 
 	return sprintf(
 		$html,
@@ -278,10 +278,10 @@ function toolbelt_breadcrumb_item_current( $title ) {
 	$toolbelt_breadcrumb_position ++;
 
 	$html = '';
-	$html .= '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
-	$html .= '<span itemprop="item"><span itemprop="name">%1$s</span></span>';
+	$html .= '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
+	$html .= '<span itemprop="name">%1$s</span>';
 	$html .= '<meta itemprop="position" content="%2$d" />';
-	$html .= '</span>';
+	$html .= '</li>';
 
 	return sprintf(
 		$html,

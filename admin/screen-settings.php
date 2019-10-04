@@ -31,4 +31,6 @@
 
 	</form>
 
+	<?php require 'admin-credits.php'; ?>
+
 </div>

@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, fast.
  * Author: Ben Gillbanks
- * Version: 2.1
+ * Version: 2.2
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '2.1' );
+define( 'TOOLBELT_VERSION', '2.2' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
 
@@ -194,10 +194,17 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404',
 		),
 		'disable-comment-urls' => array(
-			'name' => esc_html__( 'Disable Comment Urls', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Remove the URL field from Comment forms. Probably only works on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
+			'name' => esc_html__( 'Disable the Comment URL Field', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls',
 			'supports' => array( 'tools' ),
+		),
+		'spam-blocker' => array(
+			'name' => esc_html__( 'Spam Blocker', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Attempt to block spam.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker',
+			'weight' => esc_html( '0.3kb of inline JS', 'wp-toolbelt' ),
+			'supports' => array( 'experimental' ),
 		),
 		'widget-display' => array(
 			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),

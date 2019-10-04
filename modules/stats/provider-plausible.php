@@ -19,6 +19,7 @@ function toolbelt_stats_plausible() {
 
 ?>
 
+<!-- Plausible Analytics -->
 <script>
 	(function (w,d,s,o,f,js,fjs) {
 		w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
