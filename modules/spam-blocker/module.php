@@ -10,6 +10,9 @@
  * @package toolbelt
  */
 
+define( 'TOOLBELT_SPAM_KEY', md5( 'toolbelt-spam-key' . TOOLBELT_VERSION ) );
+
+
 /**
  * Add Honeypot URL field.
  * This acts as a honeypot.
@@ -19,8 +22,8 @@
  */
 function toolbelt_spam_form_fields( $fields ) {
 
-	$fields['toolbelt-url'] = '<input type="url" value="" name="toolbelt-url" id="toolbelt-url" />';
 	$fields['toolbelt-url'] = '<input type="url" value="" name="toolbelt-url" id="toolbelt-url" style="display: none;" />';
+	$fields['toolbelt-junk'] = '<input type="text" value="' . esc_attr( TOOLBELT_SPAM_KEY ) . '" name="toolbelt-key" id="toolbelt-key" style="display: none;" />';
 
 	return $fields;
 
@@ -58,6 +61,14 @@ function toolbelt_spam_check( $approved, $comment ) {
 	 */
 	$toolbelt_url = filter_input( INPUT_POST, 'toolbelt-url' );
 	if ( null !== $toolbelt_url && strlen( $toolbelt_url ) > 0 ) {
+		$approved = 'spam';
+	}
+
+	/**
+	 * If the key field has been changed then it must be spam.
+	 */
+	$toolbelt_key = filter_input( INPUT_POST, 'toolbelt-key' );
+	if ( TOOLBELT_SPAM_KEY !== $toolbelt_key ) {
 		$approved = 'spam';
 	}
 
