@@ -43,17 +43,25 @@ var toolbelt_cookie_bar = ( function() {
 
 				document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'flex';
 
-				document.querySelector( '.toolbelt_cookie_wrapper .toolbelt_cookie_accept' ).addEventListener(
-					'click',
-					toolbelt_cookie_bar.accept,
-					false
-				);
+				var accept = document.querySelector( '.toolbelt_cookie_wrapper .toolbelt_cookie_accept' );
+				if ( accept !== null ) {
+					accept.addEventListener(
+						'click',
+						toolbelt_cookie_bar.accept,
+						false
+					);
+				}
 
-				document.querySelector( '.toolbelt_cookie_wrapper .toolbelt_cookie_decline' ).addEventListener(
-					'click',
-					toolbelt_cookie_bar.decline,
-					false
-				);
+				var decline = document.querySelector( '.toolbelt_cookie_wrapper .toolbelt_cookie_decline' );
+				if ( decline !== null ) {
+
+					decline.addEventListener(
+						'click',
+						toolbelt_cookie_bar.decline,
+						false
+					);
+
+				}
 
 			}
 
