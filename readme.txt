@@ -99,6 +99,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add new simple comment spam module. It's experimental so tread with care.
 * Add md to list of fast404 file types.
 * Tweak Menu titles to make things more logical.
+* Fix small js bug in cookie banner.
 * Improve breadcrumb html.
 
 = 2.1 - 22nd September 2019 =
