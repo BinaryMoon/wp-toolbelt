@@ -246,7 +246,7 @@ function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
  * This includes pages, and custom post types that can have a parent child
  * relationships.
  *
- * @return string
+ * @return array
  */
 function toolbelt_breadcrumb_post_hierarchical() {
 
