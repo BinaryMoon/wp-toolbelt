@@ -171,11 +171,11 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 	$breadcrumbs = array();
 
 	if ( is_wp_error( $current ) ) {
-		return '';
+		return $breadcrumbs;
 	}
 
 	if ( ! $current instanceof WP_Term ) {
-		return '';
+		return $breadcrumbs;
 	}
 
 	/**
