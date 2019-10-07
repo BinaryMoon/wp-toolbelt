@@ -98,7 +98,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 = 2.2.1 - 7th October 2019 =
 * Refactor breadcrumbs again. Slightly longer code, but hopefully clearer what it's doing. And will allow adding caching/ filtering if we want.
-* Add spam blocking for Jetpack comment forms (still experimental)
+* Add spam blocking for Jetpack comment forms (still experimental).
 
 = 2.2 - 4th October 2019 =
 * Add new simple comment spam module. It's experimental so tread with care.
