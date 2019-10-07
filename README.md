@@ -43,6 +43,7 @@ To ensure the plugin is as privacy focused as possible it:
 * [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
 * [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
 * [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
+* [Spam Blocker](https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker)
 * [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
 * [Stats](https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats)
 * [Widget Display](https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display)

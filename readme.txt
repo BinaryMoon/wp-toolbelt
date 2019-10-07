@@ -37,9 +37,19 @@ Toolbelt has been featured on The WordPress Tavern in [an interview with me](htt
 * [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
 * [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
 * [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
+* [Spam Blocker](https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker)
 * [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
 * [Stats](https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats)
 * [Widget Display](https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display)
+
+= Private =
+
+To ensure the plugin is as privacy focused as possible it:
+
+* Does not phone out. No data is shared with third parties.
+* Does not use standard social sharing javascripts (loaded from social networks servers).
+* Does not track your usage of the plugin.
+* Does not add generator comments, or secret comments to your site html.
 
 = Fast =
 
@@ -52,15 +62,6 @@ I want it to be fast. I want to be able to enable any of the features and not ha
 * No options. There's only one database option, and that's an array that stores what modules are active.
 * Uses the minimum code possible. Minimum Javascript and PHP. Less code means more speed, and fewer bugs.
 * All options are disabled by default. You enable just the ones you need.
-
-= Private =
-
-To ensure the plugin is as privacy focused as possible it:
-
-* Does not phone out. No data is shared with third parties.
-* Does not use standard social sharing javascripts (loaded from social networks servers).
-* Does not track your usage of the plugin.
-* Does not add generator comments, or secret comments to your site html.
 
 = More... =
 
@@ -94,6 +95,10 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 2.2.1 - 7th October 2019 =
+* Refactor breadcrumbs again. Slightly longer code, but hopefully clearer what it's doing. And will allow adding caching/ filtering if we want.
+* Add spam blocking for Jetpack comment forms (still experimental)
 
 = 2.2 - 4th October 2019 =
 * Add new simple comment spam module. It's experimental so tread with care.
