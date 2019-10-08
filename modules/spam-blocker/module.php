@@ -163,7 +163,7 @@ function toolbelt_spam_blacklist_check( $content ) {
 	}
 
 	// Ensure HTML tags are not being used to bypass the blacklist.
-	$comment_without_html = wp_strip_all_tags( $comment );
+	$comment_without_html = wp_strip_all_tags( $content );
 
 	$words = explode( "\n", $mod_keys );
 
