@@ -143,6 +143,7 @@ function toolbelt_spam_check() {
 }
 
 add_filter( 'jetpack_contact_form_is_spam', 'toolbelt_spam_check' );
+add_filter( 'gform_entry_is_spam', 'toolbelt_spam_check' );
 
 
 /**

@@ -34,8 +34,12 @@ var toolbelt_spam = ( function() {
 		init: function() {
 
 			var forms = [
-				'#commentform',
-				'.contact-form.commentsblock',
+				'#commentform',						// WordPress comments.
+				'.contact-form.commentsblock',		// Jetpack Contact form.
+				'#contactform',						// ?
+				'.ninja-forms-form',				// Ninja Forms.
+				'.wpforms-form',					// WPForms.
+				'.gform_wrapper form'				// Gravity Forms.
 			];
 
 			/**
