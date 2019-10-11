@@ -30,3 +30,27 @@ function toolbelt_stats_simple_analytics() {
 }
 
 add_action( 'wp_footer', 'toolbelt_stats_simple_analytics' );
+
+
+/**
+ * Output prefetch info for Plausible.
+ *
+ * @param array  $urls          URLs to print for resource hints.
+ * @param string $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
+ */
+function toolbelt_stats_simple_analytics_resource_hints( $urls, $relation_type ) {
+
+	if ( 'dns-prefetch' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://api.simpleanalytics.io',
+		);
+		$urls[] = array(
+			'href' => 'https://cdn.simpleanalytics.io',
+		);
+	}
+
+	return $urls;
+
+}
+
+add_filter( 'wp_resource_hints', 'toolbelt_stats_simple_analytics_resource_hints', 10, 2 );
