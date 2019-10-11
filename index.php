@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WP Toolbelt
- * Description: More features, fast.
+ * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
  * Version: 2.2.2
  * Author URI: https://prothemedesign.com
