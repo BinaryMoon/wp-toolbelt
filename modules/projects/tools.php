@@ -98,8 +98,8 @@ function toolbelt_tools_convert( $action ) {
 		array( 'post_type' => $types[ $from ]['post'] )
 	);
 
-	// translators: %d = numbers of posts.
-	$message .= '<li>' . sprintf( esc_html__( '%d posts converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
+	// translators: %d = numbers of projects.
+	$message .= '<li>' . sprintf( esc_html__( '%d projects converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
 	// Convert post categories.
 	$rows = $wpdb->update(
