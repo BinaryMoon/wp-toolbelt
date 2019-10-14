@@ -206,6 +206,12 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats',
 			'supports' => array( 'settings' ),
 		),
+		'testimonials' => array(
+			'name' => esc_html__( 'Testimonial', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A testimonials custom post type.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Testimonials',
+			'supports' => array( 'tools' ),
+		),
 		'widget-display' => array(
 			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Control which pages widgets appear on.', 'wp-toolbelt' ),
