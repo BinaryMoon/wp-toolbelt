@@ -96,9 +96,11 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.2.2 - 10th October 2019 =
+= 2.3 - 10th October 2019 =
+* Add testimonials post type.
 * Add spam blocking support for Gravity Forms.
 * Add DNS Prefetching to the stats providers.
+* Tidy up copy issues.
 
 = 2.2.1 - 7th October 2019 =
 * Refactor breadcrumbs again. Slightly longer code, but hopefully clearer what it's doing. And will allow adding caching/ filtering if we want.
