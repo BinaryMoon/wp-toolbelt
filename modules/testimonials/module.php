@@ -122,3 +122,24 @@ add_filter(
 	'toolbelt_testimonials_edit_admin_columns'
 );
 
+
+/**
+ * Change the post title text in the post editor to make it clear what the title
+ * is used for.
+ *
+ * @param string $title The current post title.
+ * @return string
+ */
+function toolbelt_testimonials_change_title( $title ) {
+
+	if ( TOOLBELT_TESTIMONIALS_CUSTOM_POST_TYPE === get_post_type() ) {
+
+		$title = esc_html__( 'Enter the customer name here', 'wp-toolbelt' );
+
+	}
+
+	return $title;
+
+}
+
+add_filter( 'enter_title_here', 'toolbelt_testimonials_change_title' );
