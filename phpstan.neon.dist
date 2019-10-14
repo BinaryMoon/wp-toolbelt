@@ -27,6 +27,8 @@ parameters:
         - %currentWorkingDirectory%/modules/spam-blocker/module.php
         - %currentWorkingDirectory%/modules/projects/module.php
         - %currentWorkingDirectory%/modules/projects/tools.php
+        - %currentWorkingDirectory%/modules/testimonials/module.php
+        - %currentWorkingDirectory%/modules/testimonials/tools.php
         - %currentWorkingDirectory%/modules/random-redirect/module.php
         - %currentWorkingDirectory%/modules/related-posts/module.php
         - %currentWorkingDirectory%/modules/related-posts/tools.php
