@@ -118,6 +118,9 @@ function toolbelt_tools_convert_projects( $action ) {
 		array( 'taxonomy' => $types[ $from ]['tag'] )
 	);
 
+	// Clear rewrite rules, to ensure portfolio posts display properly.
+	flush_rewrite_rules();
+
 	// translators: %d = numbers of tags.
 	$message .= '<li>' . sprintf( esc_html__( '%d tags converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 

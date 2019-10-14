@@ -89,6 +89,9 @@ function toolbelt_tools_convert_testimonials( $action ) {
 		array( 'post_type' => $types[ $from ] )
 	);
 
+	// Clear rewrite rules, to ensure testimonials display properly.
+	flush_rewrite_rules();
+
 	// translators: %d = numbers of testimonials.
 	$message .= '<li>' . sprintf( esc_html__( '%d testimonials converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
