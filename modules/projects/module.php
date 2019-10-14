@@ -203,7 +203,10 @@ function toolbelt_portfolio_edit_admin_columns( $columns ) {
 
 }
 
-add_filter( sprintf( 'manage_%s_posts_columns', TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE ), 'toolbelt_portfolio_edit_admin_columns' );
+add_filter(
+	sprintf( 'manage_%s_posts_columns', TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE ),
+	'toolbelt_portfolio_edit_admin_columns'
+);
 
 
 /**
@@ -222,7 +225,12 @@ function toolbelt_portfolio_image_column( $column, $post_id ) {
 
 }
 
-add_filter( sprintf( 'manage_%s_posts_custom_column', TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE ), 'toolbelt_portfolio_image_column', 10, 2 );
+add_filter(
+	sprintf( 'manage_%s_posts_custom_column', TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE ),
+	'toolbelt_portfolio_image_column',
+	10,
+	2
+);
 
 
 /**
