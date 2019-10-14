@@ -46,6 +46,7 @@ To ensure the plugin is as privacy focused as possible it:
 * [Spam Blocker](https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker)
 * [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
 * [Stats](https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats)
+* [Testimonials](https://github.com/BinaryMoon/wp-toolbelt/wiki/Testimonials)
 * [Widget Display](https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display)
 
 ## Thanks!
