@@ -50,7 +50,7 @@ add_action( 'toolbelt_module_tools', 'toolbelt_projects_tools' );
  * @param string $action The action to perform.
  * @return void
  */
-function toolbelt_tools_convert( $action ) {
+function toolbelt_tools_convert_projects( $action ) {
 
 	$actions = array( 'convert_toolbelt_portfolio', 'convert_jetpack_portfolio' );
 
@@ -125,4 +125,4 @@ function toolbelt_tools_convert( $action ) {
 
 }
 
-add_action( 'toolbelt_tool_actions', 'toolbelt_tools_convert' );
+add_action( 'toolbelt_tool_actions', 'toolbelt_tools_convert_projects' );
