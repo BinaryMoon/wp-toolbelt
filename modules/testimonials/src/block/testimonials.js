@@ -75,7 +75,7 @@ registerBlockType(
 									initialOpen: true,
 								},
 								[
-									// A simple text control for post id.
+									// Rows.
 									createElement(
 										RangeControl,
 										{
@@ -86,7 +86,8 @@ registerBlockType(
 											max: 10
 										}
 									),
-									// A simple text control for post id.
+
+									// Columns.
 									createElement(
 										RangeControl,
 										{
@@ -97,7 +98,8 @@ registerBlockType(
 											max: 4
 										}
 									),
-									// Select heading level.
+
+									// Order.
 									createElement(
 										SelectControl,
 										{
