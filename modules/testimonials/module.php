@@ -266,13 +266,15 @@ function toolbelt_testimonials_get_html( $count = 2, $order_by ) {
 
 			$testimonials->the_post();
 
+			$content = apply_filters( 'toolbelt_testimonial_content', trim( get_the_content() ) );
+
 			/**
 			 * Use null for `get_the_post_thumbnail` since this will use the
 			 * global post object.
 			 */
 			$testimonials_list[] = sprintf(
 				$html,
-				get_the_content(),
+				$content,
 				get_the_post_thumbnail( null, 'thumbnail' ),
 				get_the_title()
 			);
@@ -285,6 +287,11 @@ function toolbelt_testimonials_get_html( $count = 2, $order_by ) {
 	return implode( '', $testimonials_list );
 
 }
+
+add_filter( 'toolbelt_testimonial_content', 'wptexturize' );
+add_filter( 'toolbelt_testimonial_content', 'convert_chars' );
+add_filter( 'toolbelt_testimonial_content', 'wpautop' );
+add_filter( 'toolbelt_testimonial_content', 'shortcode_unautop' );
 
 
 /**
