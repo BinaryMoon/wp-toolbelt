@@ -352,7 +352,7 @@ function toolbelt_testimonials_register_block() {
 			'wp-element',
 			'wp-components',
 		),
-		filemtime( $block_js ),
+		'1.0',
 		true
 	);
 
@@ -364,7 +364,7 @@ function toolbelt_testimonials_register_block() {
 			'attributes' => array(
 				'rows' => array(
 					'default' => 2,
-					'type' => 'int'
+					'type' => 'int',
 				),
 				'columns' => array(
 					'default' => 2,
