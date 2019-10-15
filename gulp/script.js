@@ -40,3 +40,9 @@ export function scripts_spam() {
 	return process_scripts( 'spam-blocker' );
 
 }
+
+export function scripts_testimonials() {
+
+	return process_scripts( 'testimonials', 'blocks', 'block' );
+
+}
