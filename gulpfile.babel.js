@@ -47,7 +47,7 @@ export const build = series(
 export const watchFiles = function( done ) {
 
 	watch(
-		'./modules/**/*.scss',
+		'./modules/*/src/sass/*.scss',
 		parallel(
 			styles_cookie,
 			styles_social,
@@ -63,7 +63,7 @@ export const watchFiles = function( done ) {
 	);
 
 	watch(
-		[ './modules/**/*.js', '!./modules/**/script.min.js' ],
+		[ './modules/*/src/*/*.js' ],
 		parallel(
 			scripts_infiniteScroll,
 			scripts_cookieBanner,
