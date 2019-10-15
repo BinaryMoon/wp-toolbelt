@@ -12,7 +12,16 @@
 
 	.toolbelt-entry {
 
+		background: white;
+		color: black;
+		padding: var( --toolbelt-spacing );
 		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+
+		*:last-child {
+
+			margin-bottom: 0;
+
+		}
 
 	}
 
