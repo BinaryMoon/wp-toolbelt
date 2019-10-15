@@ -266,10 +266,14 @@ function toolbelt_testimonials_get_html( $count = 2, $order_by ) {
 
 			$testimonials->the_post();
 
+			/**
+			 * Use null for `get_the_post_thumbnail` since this will use the
+			 * global post object.
+			 */
 			$testimonials_list[] = sprintf(
 				$html,
 				get_the_content(),
-				get_the_post_thumbnail( get_the_ID(), 'thumbnail' ),
+				get_the_post_thumbnail( null, 'thumbnail' ),
 				get_the_title()
 			);
 
