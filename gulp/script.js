@@ -4,25 +4,22 @@
 const { src, dest } = require( 'gulp' );
 const concat = require( 'gulp-concat' );
 const uglify = require( 'gulp-uglify' );
-const rename = require( 'gulp-rename' );
+const size = require( 'gulp-filesize' );
 
-function process_scripts( slug ) {
+function process_scripts( slug, type = 'js', name = 'script' ) {
 
 	const destination = './modules/' + slug + '/';
-	const source = './modules/' + slug + '/src/js/**.js';
+	const source = './modules/' + slug + '/src/' + type + '/**.js';
 
 	return src( source )
 		.pipe(
-			concat( 'script.js' )
+			concat( name + '.min.js' )
 		)
-		//.pipe( dest( destination ) )
 		.pipe(
 			uglify()
 		)
-		.pipe(
-			rename( 'script.min.js' )
-		)
-		.pipe( dest( destination ) );
+		.pipe( dest( destination ) )
+		.pipe( size() );
 
 }
 
