@@ -336,7 +336,7 @@ add_action( 'enqueue_block_editor_assets', 'toolbelt_testimonials_editor_styles'
  */
 function toolbelt_testimonials_register_block() {
 
-	// Skip block registration if Gutenberg is not enabled/merged.
+	// Skip block registration if Gutenberg is not enabled.
 	if ( ! function_exists( 'register_block_type' ) ) {
 		return;
 	}
