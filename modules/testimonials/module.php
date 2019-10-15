@@ -157,7 +157,7 @@ function toolbelt_testimonials_shortcode( $attrs ) {
 		array(
 			'columns' => '2',
 			'rows' => '2',
-			'order_by' => 'date',
+			'orderby' => 'date',
 		),
 		$attrs,
 		'testimonials'
@@ -194,10 +194,12 @@ function toolbelt_testimonials_shortcode( $attrs ) {
 	 *
 	 * Allowed parameters are date and rand.
 	 */
-	$order_by = $attrs['order_by'];
+	$order_by = $attrs['orderby'];
 	if ( ! in_array( $order_by, array( 'date', 'rand' ), true ) ) {
 		$order_by = 'date';
 	}
+
+	var_dump( $order_by );
 
 	/**
 	 * The number of testimonials to load.
@@ -231,7 +233,7 @@ if ( ! shortcode_exists( 'testimonials' ) ) {
  * @param string $order_by The order method.
  * @return string
  */
-function toolbelt_testimonials_get_html( $count = 2, $order_by ) {
+function toolbelt_testimonials_get_html( $count = 2, $order_by = 'date' ) {
 
 	/**
 	 * Make sure something is loaded.
@@ -255,7 +257,7 @@ function toolbelt_testimonials_get_html( $count = 2, $order_by ) {
 		array(
 			'post_type' => TOOLBELT_TESTIMONIALS_CUSTOM_POST_TYPE,
 			'posts_per_page' => (int) $count,
-			'order_by' => $order_by,
+			'orderby' => $order_by,
 		)
 	);
 
