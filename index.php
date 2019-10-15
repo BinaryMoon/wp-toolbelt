@@ -210,6 +210,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Testimonial', 'wp-toolbelt' ),
 			'description' => esc_html__( 'A testimonials custom post type.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Testimonials',
+			'weight' => esc_html__( '0.5kb of inline CSS.', 'wp-toolbelt' ),
 			'supports' => array( 'tools' ),
 		),
 		'widget-display' => array(
