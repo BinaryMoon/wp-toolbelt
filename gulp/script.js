@@ -5,6 +5,7 @@ const { src, dest } = require( 'gulp' );
 const concat = require( 'gulp-concat' );
 const uglify = require( 'gulp-uglify' );
 const size = require( 'gulp-filesize' );
+const babel = require( 'gulp-babel' );
 
 function process_scripts( slug, type = 'js', name = 'script' ) {
 
@@ -14,6 +15,9 @@ function process_scripts( slug, type = 'js', name = 'script' ) {
 	return src( source )
 		.pipe(
 			concat( name + '.min.js' )
+		)
+		.pipe(
+			babel( { presets: [ '@babel/preset-env' ] } )
 		)
 		.pipe(
 			uglify()
@@ -43,6 +47,6 @@ export function scripts_spam() {
 
 export function scripts_testimonials() {
 
-	return process_scripts( 'testimonials', 'blocks', 'block' );
+	return process_scripts( 'testimonials', 'block', 'block' );
 
 }
