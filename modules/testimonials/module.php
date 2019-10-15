@@ -158,6 +158,7 @@ function toolbelt_testimonials_shortcode( $attrs ) {
 			'columns' => '2',
 			'rows' => '2',
 			'orderby' => 'date',
+			'align' => '',
 		),
 		$attrs,
 		'testimonials'
@@ -199,7 +200,10 @@ function toolbelt_testimonials_shortcode( $attrs ) {
 		$order_by = 'date';
 	}
 
-	var_dump( $order_by );
+	$align = '';
+	if ( ! empty( $attrs['align'] ) ) {
+		$align = 'align' . $attrs['align'];
+	}
 
 	/**
 	 * The number of testimonials to load.
@@ -210,8 +214,9 @@ function toolbelt_testimonials_shortcode( $attrs ) {
 	$count = $columns * $rows;
 
 	return sprintf(
-		'<div class="toolbelt-testimonials toolbelt-testimonials-cols-%d">%s</div>',
-		$columns,
+		'<div class="toolbelt-testimonials toolbelt-testimonials-cols-%1$d %2$s">%3$s</div>',
+		(int) $columns,
+		esc_attr( $align ),
 		toolbelt_testimonials_get_html( $count, $order_by )
 	);
 
@@ -311,3 +316,73 @@ function toolbelt_testimonials_styles() {
 }
 
 add_action( 'wp_print_styles', 'toolbelt_testimonials_styles' );
+
+
+/**
+ * Include the Testimonials styles if the current post uses the testimonials
+ * shortcode.
+ */
+function toolbelt_testimonials_editor_styles() {
+
+	toolbelt_styles( 'testimonials' );
+
+}
+
+add_action( 'enqueue_block_editor_assets', 'toolbelt_testimonials_editor_styles' );
+
+
+/**
+ * Register a Testimonials block.
+ */
+function toolbelt_testimonials_register_block() {
+
+	// Skip block registration if Gutenberg is not enabled/merged.
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
+
+	$block_js = dirname( __FILE__ ) . '/block.min.js';
+
+	wp_register_script(
+		'toolbelt-testimonials-block',
+		plugins_url( 'block.min.js', __FILE__ ),
+		array(
+			'wp-blocks',
+			'wp-i18n',
+			'wp-element',
+			'wp-components',
+		),
+		filemtime( $block_js ),
+		true
+	);
+
+	register_block_type(
+		'toolbelt/testimonials',
+		array(
+			'editor_script' => 'toolbelt-testimonials-block',
+			'render_callback' => 'toolbelt_testimonials_shortcode',
+			'attributes' => array(
+				'rows' => array(
+					'default' => 2,
+					'type' => 'int'
+				),
+				'columns' => array(
+					'default' => 2,
+					'type' => 'int',
+				),
+				'orderby' => array(
+					'default' => 'date',
+					'type' => 'string',
+				),
+				'align' => array(
+					'default' => '',
+					'type' => 'string',
+				),
+			),
+		)
+	);
+
+}
+
+add_action( 'init', 'toolbelt_testimonials_register_block' );
+

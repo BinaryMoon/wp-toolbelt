@@ -1,0 +1,125 @@
+const { registerBlockType } = wp.blocks;
+const { createElement } = wp.element;
+const { InspectorControls } = wp.blockEditor;
+const { RangeControl, SelectControl, PanelBody } = wp.components;
+const { __ } = wp.i18n;
+
+registerBlockType(
+	'toolbelt/testimonials',
+	{
+		title: __( 'Testimonials' ),
+
+		description: __( 'Display a grid of Toolbelt Testimonials.' ),
+
+		category: __( 'common' ),
+
+		supports: {
+			align: [ 'full', 'wide' ],
+		},
+
+		attributes: {
+			rows: {
+				default: 2,
+			},
+			columns: {
+				default: 2
+			},
+			orderby: {
+				default: 'date'
+			}
+		},
+
+		edit( props ) {
+
+			const attributes = props.attributes;
+			const setAttributes = props.setAttributes;
+
+			// Function to update the number of rows.
+			function changeRows( rows ) {
+				setAttributes( { rows } );
+			}
+
+			// Function to update the number of columns.
+			function changeColumns( columns ) {
+				setAttributes( { columns } );
+			}
+
+			// Function to update the testimonial order.
+			function changeOrderby( orderby ) {
+				setAttributes( { orderby } );
+			}
+
+			return createElement(
+				'div',
+				{},
+				[
+
+					// Editor Preview.
+					createElement(
+						wp.serverSideRender,
+						{
+							block: 'toolbelt/testimonials',
+							attributes: attributes
+						}
+					),
+
+					// Sidebar Controls.
+					createElement(
+						InspectorControls,
+						{},
+						[
+							createElement(
+								PanelBody,
+								{
+									title: __( 'Layout' ),
+									initialOpen: true,
+								},
+								[
+									// A simple text control for post id.
+									createElement(
+										RangeControl,
+										{
+											value: attributes.rows,
+											label: __( 'Rows' ),
+											onChange: changeRows,
+											min: 1,
+											max: 10
+										}
+									),
+									// A simple text control for post id.
+									createElement(
+										RangeControl,
+										{
+											value: attributes.columns,
+											label: __( 'Columns' ),
+											onChange: changeColumns,
+											min: 1,
+											max: 4
+										}
+									),
+									// Select heading level.
+									createElement(
+										SelectControl,
+										{
+											value: attributes.orderby,
+											label: __( 'Orderby' ),
+											onChange: changeOrderby,
+											options: [
+												{ value: 'date', label: __( 'date' ) },
+												{ value: 'rand', label: __( 'rand' ) },
+											]
+										}
+									)
+								]
+							)
+						]
+					)
+				]
+			);
+		},
+
+		save() {
+			return null;
+		}
+	}
+);

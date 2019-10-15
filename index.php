@@ -252,6 +252,7 @@ function toolbelt_css_properties() {
 }
 
 add_filter( 'wp_print_styles', 'toolbelt_css_properties' );
+add_filter( 'enqueue_block_editor_assets', 'toolbelt_css_properties' );
 
 
 /**
