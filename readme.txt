@@ -109,7 +109,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 == Changelog ==
 
 = 2.3 - 14th October 2019 =
-* Add testimonials post type.
+* Add testimonials post type and shortcode.
 * Add spam blocking support for Gravity Forms.
 * Add DNS Prefetching to the stats providers.
 * Tidy up copy issues.
