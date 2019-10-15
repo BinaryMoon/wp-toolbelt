@@ -209,11 +209,15 @@ msgstr ""
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:216
-msgid "Widget Display"
+#: index.php:213
+msgid "0.5kb of inline CSS."
 msgstr ""
 
 #: index.php:217
+msgid "Widget Display"
+msgstr ""
+
+#: index.php:218
 msgid "Control which pages widgets appear on."
 msgstr ""
 
