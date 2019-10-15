@@ -9,7 +9,7 @@ import {
 	styles_related_posts, styles_social_menu,
 	styles_breadcrumbs, styles_videos,
 	styles_heading_links, styles_infinite_scroll,
-	styles_admin_tweaks
+	styles_testimonials, styles_admin_tweaks
 } from './gulp/sass';
 import {
 	scripts_cookieBanner,
@@ -35,6 +35,7 @@ export const build = series(
 		styles_admin_tweaks,
 		scripts_cookieBanner,
 		scripts_infiniteScroll,
+		styles_testimonials,
 		scripts_spam,
 		translate
 	),
@@ -54,7 +55,8 @@ export const watchFiles = function( done ) {
 			styles_heading_links,
 			styles_videos,
 			styles_infinite_scroll,
-			styles_admin_tweaks
+			styles_admin_tweaks,
+			styles_testimonials
 		)
 	);
 

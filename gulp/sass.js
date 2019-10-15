@@ -73,6 +73,12 @@ export function styles_related_posts() {
 
 }
 
+export function styles_testimonials() {
+
+	return process_styles( 'testimonials' );
+
+}
+
 export function styles_social_menu() {
 
 	return process_styles( 'social-menu' );
