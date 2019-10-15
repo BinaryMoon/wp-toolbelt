@@ -7,6 +7,7 @@ const rename = require( 'gulp-rename' );
 const autoprefixer = require( 'gulp-autoprefixer' );
 const cleancss = require( 'gulp-clean-css' );
 const change = require( 'gulp-change' );
+const size = require( 'gulp-filesize' );
 
 /**
  * Build SASS files.
@@ -51,7 +52,8 @@ function process_styles( slug ) {
 				}
 			)
 		)
-		.pipe( dest( destination ) );
+		.pipe( dest( destination ) )
+		.pipe( size() );
 
 }
 
