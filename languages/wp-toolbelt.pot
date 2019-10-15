@@ -189,6 +189,10 @@ msgstr ""
 msgid "Attempt to block spam."
 msgstr ""
 
+#: index.php:200
+msgid "0.3kb of inline JS"
+msgstr ""
+
 #: index.php:204, modules/stats/settings.php:38
 msgid "Stats"
 msgstr ""
@@ -197,19 +201,27 @@ msgstr ""
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:210
-msgid "Widget Display"
+#: index.php:210, modules/testimonials/module.php:42
+msgid "Testimonial"
 msgstr ""
 
 #: index.php:211
+msgid "A testimonials custom post type."
+msgstr ""
+
+#: index.php:216
+msgid "Widget Display"
+msgstr ""
+
+#: index.php:217
 msgid "Control which pages widgets appear on."
 msgstr ""
 
-#: admin/admin-credits.php:16
+#: admin/admin-credits.php:21
 msgid "Toolbelt is a free plugin. If you find it useful then a review on wordpress.org would be most appreciated!"
 msgstr ""
 
-#: admin/admin-credits.php:17
+#: admin/admin-credits.php:22
 msgid "Leave a review &rsaquo;"
 msgstr ""
 
@@ -384,7 +396,7 @@ msgstr ""
 msgid "All Projects"
 msgstr ""
 
-#: modules/projects/module.php:39
+#: modules/projects/module.php:39, modules/testimonials/module.php:45
 msgid "Add New"
 msgstr ""
 
@@ -552,7 +564,7 @@ msgstr ""
 msgid "Jetpack has its own Portfolio post type. This command converts the Jetpack posts to Toolbelt Portfolio posts."
 msgstr ""
 
-#: modules/projects/tools.php:24, modules/projects/tools.php:34
+#: modules/projects/tools.php:24, modules/projects/tools.php:34, modules/testimonials/tools.php:24, modules/testimonials/tools.php:34
 msgid "Convert"
 msgstr ""
 
@@ -564,9 +576,9 @@ msgstr ""
 msgid "Convert Toolbelt portfolio items so they will work with Jetpack."
 msgstr ""
 
-#. translators: %d = numbers of posts.
+#. translators: %d = numbers of projects.
 #: modules/projects/tools.php:102
-msgid "%d posts converted"
+msgid "%d projects converted"
 msgstr ""
 
 #. translators: %d = numbers of categories.
@@ -575,7 +587,7 @@ msgid "%d categories converted"
 msgstr ""
 
 #. translators: %d = numbers of tags.
-#: modules/projects/tools.php:122
+#: modules/projects/tools.php:125
 msgid "%d tags converted"
 msgstr ""
 
@@ -658,6 +670,87 @@ msgstr ""
 
 #: modules/stats/settings.php:66
 msgid "Site ID"
+msgstr ""
+
+#: modules/testimonials/module.php:39
+msgid "Customer Testimonials"
+msgstr ""
+
+#: modules/testimonials/module.php:41, modules/testimonials/module.php:43, modules/testimonials/tools.php:16
+msgid "Testimonials"
+msgstr ""
+
+#: modules/testimonials/module.php:44
+msgid "All Testimonials"
+msgstr ""
+
+#: modules/testimonials/module.php:46
+msgid "Add New Testimonial"
+msgstr ""
+
+#: modules/testimonials/module.php:47
+msgid "Edit Testimonial"
+msgstr ""
+
+#: modules/testimonials/module.php:48
+msgid "New Testimonial"
+msgstr ""
+
+#: modules/testimonials/module.php:49
+msgid "View Testimonial"
+msgstr ""
+
+#: modules/testimonials/module.php:50
+msgid "Search Testimonials"
+msgstr ""
+
+#: modules/testimonials/module.php:51
+msgid "No Testimonials found"
+msgstr ""
+
+#: modules/testimonials/module.php:52
+msgid "No Testimonials found in Trash"
+msgstr ""
+
+#: modules/testimonials/module.php:53
+msgid "Filter Testimonials list"
+msgstr ""
+
+#: modules/testimonials/module.php:54
+msgid "Testimonial list navigation"
+msgstr ""
+
+#: modules/testimonials/module.php:55
+msgid "Testimonials list"
+msgstr ""
+
+#: modules/testimonials/module.php:114
+msgid "Customer Name"
+msgstr ""
+
+#: modules/testimonials/module.php:137
+msgid "Enter the customer name here"
+msgstr ""
+
+#: modules/testimonials/tools.php:20
+msgid "Convert Jetpack Testimonials to Toolbelt Testimonials"
+msgstr ""
+
+#: modules/testimonials/tools.php:22
+msgid "Jetpack has its own Testimonial post type. This command converts the Jetpack posts to Toolbelt Testimonial posts."
+msgstr ""
+
+#: modules/testimonials/tools.php:30
+msgid "Convert Toolbelt Testimonials to Jetpack Testimonials"
+msgstr ""
+
+#: modules/testimonials/tools.php:32
+msgid "Convert Toolbelt testimonial items so they will work with Jetpack."
+msgstr ""
+
+#. translators: %d = numbers of testimonials.
+#: modules/testimonials/tools.php:96
+msgid "%d testimonials converted"
 msgstr ""
 
 #: modules/widget-display/module-admin.php:28
