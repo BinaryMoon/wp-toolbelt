@@ -1,0 +1,67 @@
+.toolbelt-testimonials {
+
+	display: flex;
+	flex-wrap: wrap;
+	margin: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) * -1 );
+
+	> div {
+
+		padding: var( --toolbelt-spacing );
+
+	}
+
+	.toolbelt-entry {
+
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+	footer {
+
+		display: flex;
+		align-items: center;
+
+		.author {
+
+			flex-grow: 1;
+			font-weight: bold;
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+
+		}
+
+		.avatar {
+
+			max-width: 25%;
+			min-width: calc( var( --toolbelt-spacing ) * 2 );
+			margin-right: calc( var( --toolbelt-spacing ) / 2 );
+
+		}
+
+	}
+
+}
+
+.toolbelt-testimonials-cols-1 > div {
+
+	width: 100%;
+
+}
+
+.toolbelt-testimonials-cols-2 > div {
+
+	width: 50%;
+
+}
+
+.toolbelt-testimonials-cols-3 > div {
+
+	width: 33.3333%;
+
+}
+
+.toolbelt-testimonials-cols-4 > div {
+
+	width: 25%;
+
+}

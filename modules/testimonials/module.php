@@ -143,3 +143,158 @@ function toolbelt_testimonials_change_title( $title ) {
 }
 
 add_filter( 'enter_title_here', 'toolbelt_testimonials_change_title' );
+
+
+/**
+ * Generate the testimonials shortcode.
+ *
+ * @param array $attrs Shortcode attributes.
+ * @return string
+ */
+function toolbelt_testimonials_shortcode( $attrs ) {
+
+	$attrs = shortcode_atts(
+		array(
+			'columns' => '2',
+			'rows' => '2',
+			'order_by' => 'date',
+		),
+		$attrs,
+		'testimonials'
+	);
+
+	/**
+	 * Restrict the number of columns to a number between 1 and 4.
+	 *
+	 * We have to do this to:
+	 * a) ensure there are some columns.
+	 * b) stop the columns from getting too narrow.
+	 * c) ensure the custom css is setup for the number of columns chosen.
+	 */
+	$columns = (int) $attrs['columns'];
+	if ( $columns < 1 ) {
+		$columns = 1;
+	}
+	if ( $columns > 4 ) {
+		$columns = 4;
+	}
+
+	/**
+	 * Select the number of rows.
+	 *
+	 * Ensure there is at least 1 row selected.
+	 */
+	$rows = (int) $attrs['rows'];
+	if ( $rows < 1 ) {
+		$rows = 1;
+	}
+
+	/**
+	 * Set the order_by parameter for the selection query.
+	 *
+	 * Allowed parameters are date and rand.
+	 */
+	$order_by = $attrs['order_by'];
+	if ( ! in_array( $order_by, array( 'date', 'rand' ), true ) ) {
+		$order_by = 'date';
+	}
+
+	/**
+	 * The number of testimonials to load.
+	 *
+	 * Rather than use a count attribute I'm calculating the number of
+	 * testimonials so that the rows will (hopefully) always be full.
+	 */
+	$count = $columns * $rows;
+
+	return sprintf(
+		'<div class="toolbelt-testimonials toolbelt-testimonials-cols-%d">%s</div>',
+		$columns,
+		toolbelt_testimonials_get_html( $count, $order_by )
+	);
+
+}
+
+
+/**
+ * Step aside for Jetpack (or other) Testimonials shortcodes.
+ */
+if ( ! shortcode_exists( 'testimonials' ) ) {
+	add_shortcode( 'testimonials', 'toolbelt_testimonials_shortcode' );
+}
+
+
+/**
+ * Generate the html for the testimonials.
+ *
+ * @param int    $count The number of testimonials to try to load.
+ * @param string $order_by The order method.
+ * @return string
+ */
+function toolbelt_testimonials_get_html( $count = 2, $order_by ) {
+
+	/**
+	 * Make sure something is loaded.
+	 */
+	if ( $count < 1 ) {
+		$count = 2;
+	}
+
+	/**
+	 * The html template for displaying a single testimonial.
+	 */
+	$html = '<div class="toolbelt-testimonial">
+	<div class="toolbelt-entry">%1$s</div>
+	<footer>
+		<span class="avatar">%2$s</span>
+		<span class="author">%3$s</span>
+	</footer>
+	</div>';
+
+	$testimonials = new WP_Query(
+		array(
+			'post_type' => TOOLBELT_TESTIMONIALS_CUSTOM_POST_TYPE,
+			'posts_per_page' => (int) $count,
+			'order_by' => $order_by,
+		)
+	);
+
+	$testimonials_list = array();
+
+	if ( $testimonials->have_posts() ) {
+		while ( $testimonials->have_posts() ) {
+
+			$testimonials->the_post();
+
+			$testimonials_list[] = sprintf(
+				$html,
+				get_the_content(),
+				get_the_post_thumbnail( get_the_ID(), 'thumbnail' ),
+				get_the_title()
+			);
+
+		}
+	}
+
+	wp_reset_postdata();
+
+	return implode( '', $testimonials_list );
+
+}
+
+
+/**
+ * Include the Testimonials styles if the current post uses the testimonials
+ * shortcode.
+ */
+function toolbelt_testimonials_styles() {
+
+	global $post;
+
+	if ( is_singular() && has_shortcode( $post->post_content, 'testimonials' ) ) {
+		toolbelt_styles( 'testimonials' );
+	}
+
+}
+
+add_action( 'wp_print_styles', 'toolbelt_testimonials_styles' );
