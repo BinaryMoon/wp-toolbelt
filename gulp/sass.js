@@ -94,6 +94,12 @@ export function styles_testimonials() {
 
 }
 
+export function styles_portfolio() {
+
+	return process_styles( 'projects' );
+
+}
+
 export function styles_social_menu() {
 
 	return process_styles( 'social-menu' );
@@ -140,4 +146,4 @@ const removeComments = function( content ) {
 
 	return content;
 
-}
+};
