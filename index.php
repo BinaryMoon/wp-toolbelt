@@ -282,6 +282,32 @@ function toolbelt_styles( $module ) {
 
 
 /**
+ * Inline the module css.
+ *
+ * @param string $module The module slug.
+ */
+function toolbelt_global_styles( $module ) {
+
+	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
+		return;
+	}
+
+	$css_filter = sprintf( 'toolbelt_hide_%s_styles', $module );
+
+	if ( apply_filters( $css_filter, false ) ) {
+		return;
+	}
+
+	$path = TOOLBELT_PATH . 'assets/css/' . $module . '.css';
+
+	echo '<style name="toolbelt-global-style-' . esc_attr( $module ) . '">';
+	require_once $path;
+	echo '</style>';
+
+}
+
+
+/**
  * Inline the module script.
  *
  * @param string $module The module slug.
