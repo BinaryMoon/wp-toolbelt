@@ -88,6 +88,7 @@ function toolbelt_related_posts_get() {
 	shuffle( $related_posts );
 	$related_posts = array_slice( $related_posts, 0, apply_filters( 'toolbelt_related_posts_count', 2 ) );
 
+	toolbelt_global_styles( 'columns' );
 	toolbelt_styles( 'related-posts' );
 
 	return toolbelt_related_posts_html( $related_posts );
@@ -105,7 +106,7 @@ function toolbelt_related_posts_html( $related_posts ) {
 
 	$html = '<section class="toolbelt-related-posts">';
 	$html .= '<h3>' . esc_html__( 'Related Posts', 'wp-toolbelt' ) . '</h3>';
-	$html .= '<div>';
+	$html .= '<div class="toolbelt-cols-2">';
 
 	foreach ( $related_posts as $related ) {
 

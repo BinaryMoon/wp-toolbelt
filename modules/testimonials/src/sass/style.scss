@@ -1,9 +1,5 @@
 .toolbelt-testimonials {
 
-	display: flex;
-	flex-wrap: wrap;
-	margin: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) * -1 );
-
 	> div {
 
 		padding: var( --toolbelt-spacing );
@@ -57,29 +53,5 @@
 		}
 
 	}
-
-}
-
-.toolbelt-testimonials-cols-1 > div {
-
-	width: 100%;
-
-}
-
-.toolbelt-testimonials-cols-2 > div {
-
-	width: 50%;
-
-}
-
-.toolbelt-testimonials-cols-3 > div {
-
-	width: 33.3333%;
-
-}
-
-.toolbelt-testimonials-cols-4 > div {
-
-	width: 25%;
 
 }

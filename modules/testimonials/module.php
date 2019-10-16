@@ -214,7 +214,7 @@ function toolbelt_testimonials_shortcode( $attrs ) {
 	$count = $columns * $rows;
 
 	return sprintf(
-		'<div class="toolbelt-testimonials toolbelt-testimonials-cols-%1$d %2$s">%3$s</div>',
+		'<div class="toolbelt-testimonials toolbelt-cols-%1$d %2$s">%3$s</div>',
 		(int) $columns,
 		esc_attr( $align ),
 		toolbelt_testimonials_get_html( $count, $order_by )
@@ -310,6 +310,7 @@ function toolbelt_testimonials_styles() {
 	global $post;
 
 	if ( is_singular() && has_shortcode( $post->post_content, 'testimonials' ) ) {
+		toolbelt_global_styles( 'columns' );
 		toolbelt_styles( 'testimonials' );
 	}
 
@@ -324,6 +325,7 @@ add_action( 'wp_print_styles', 'toolbelt_testimonials_styles' );
  */
 function toolbelt_testimonials_editor_styles() {
 
+	toolbelt_global_styles( 'columns' );
 	toolbelt_styles( 'testimonials' );
 
 }
