@@ -7,6 +7,7 @@ const rename = require( 'gulp-rename' );
 const autoprefixer = require( 'gulp-autoprefixer' );
 const cleancss = require( 'gulp-clean-css' );
 const change = require( 'gulp-change' );
+const concat = require( 'gulp-concat' );
 const size = require( 'gulp-filesize' );
 
 /**
@@ -15,13 +16,14 @@ const size = require( 'gulp-filesize' );
 function process_styles( slug ) {
 
 	const destination = './modules/' + slug + '/';
-	const source = './modules/' + slug + '/src/sass/style.scss';
+	const source = './modules/' + slug + '/src/sass/*.scss';
 
 	/**
 	 * Uses node-sass options:
 	 * https://github.com/sass/node-sass#options
 	 */
 	return src( source )
+		.pipe( concat( 'style.min.css' ) )
 		.pipe(
 			sass(
 				{
@@ -40,8 +42,6 @@ function process_styles( slug ) {
 				}
 			)
 		)
-		// .pipe( dest( destination ) )
-		.pipe( rename( 'style.min.css' ) )
 		.pipe(
 			change( removeComments )
 		)
