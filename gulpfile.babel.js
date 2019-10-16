@@ -15,7 +15,8 @@ import {
 	scripts_cookieBanner,
 	scripts_infiniteScroll,
 	scripts_spam,
-	scripts_testimonials
+	scripts_testimonials,
+	scripts_projects_block
 } from './gulp/script';
 import compress from './gulp/zip';
 import translate from './gulp/pot';
@@ -38,6 +39,7 @@ export const build = series(
 		scripts_infiniteScroll,
 		scripts_testimonials,
 		styles_testimonials,
+		scripts_projects_block,
 		scripts_spam,
 		translate
 	),
@@ -69,6 +71,7 @@ export const watchFiles = function( done ) {
 			scripts_cookieBanner,
 			scripts_spam,
 			scripts_testimonials,
+			scripts_projects_block
 		)
 	);
 

@@ -50,3 +50,9 @@ export function scripts_testimonials() {
 	return process_scripts( 'testimonials', 'block', 'block' );
 
 }
+
+export function scripts_projects_block() {
+
+	return process_scripts( 'projects', 'block', 'block' );
+
+}
