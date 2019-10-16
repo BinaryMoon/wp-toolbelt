@@ -5,13 +5,15 @@ const { RangeControl, SelectControl, PanelBody } = wp.components;
 const { __ } = wp.i18n;
 
 registerBlockType(
-	'toolbelt/projects',
+	'toolbelt/portfolio',
 	{
-		title: __( 'Projects' ),
+		title: __( 'Portfolio' ),
 
 		description: __( 'Display a grid of Toolbelt Projects.' ),
 
 		category: __( 'common' ),
+
+		keywords: [ __( 'projects' ), __( 'toolbelt' ) ],
 
 		supports: {
 			align: [ 'full', 'wide' ],
@@ -58,7 +60,7 @@ registerBlockType(
 					createElement(
 						wp.serverSideRender,
 						{
-							block: 'toolbelt/testimonials',
+							block: 'toolbelt/portfolio',
 							attributes: attributes
 						}
 					),

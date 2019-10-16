@@ -265,3 +265,245 @@ function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 }
 
 add_action( 'admin_enqueue_scripts', 'toolbelt_portfolio_enqueue_admin_styles' );
+
+
+/**
+ * Generate the portfolio shortcode.
+ *
+ * @param array $attrs Shortcode attributes.
+ * @return string
+ */
+function toolbelt_portfolio_shortcode( $attrs ) {
+
+	$attrs = shortcode_atts(
+		array(
+			'columns' => '2',
+			'rows' => '2',
+			'orderby' => 'date',
+			'align' => '',
+		),
+		$attrs,
+		'portfolio'
+	);
+
+	/**
+	 * Restrict the number of columns to a number between 1 and 4.
+	 *
+	 * We have to do this to:
+	 * a) ensure there are some columns.
+	 * b) stop the columns from getting too narrow.
+	 * c) ensure the custom css is setup for the number of columns chosen.
+	 */
+	$columns = (int) $attrs['columns'];
+	if ( $columns < 1 ) {
+		$columns = 1;
+	}
+	if ( $columns > 4 ) {
+		$columns = 4;
+	}
+
+	/**
+	 * Select the number of rows.
+	 *
+	 * Ensure there is at least 1 row selected.
+	 */
+	$rows = (int) $attrs['rows'];
+	if ( $rows < 1 ) {
+		$rows = 1;
+	}
+
+	/**
+	 * Set the order_by parameter for the selection query.
+	 *
+	 * Allowed parameters are date and rand.
+	 */
+	$order_by = $attrs['orderby'];
+	if ( ! in_array( $order_by, array( 'date', 'rand' ), true ) ) {
+		$order_by = 'date';
+	}
+
+	$align = '';
+	if ( ! empty( $attrs['align'] ) ) {
+		$align = 'align' . $attrs['align'];
+	}
+
+	/**
+	 * The number of portfolio to load.
+	 *
+	 * Rather than use a count attribute I'm calculating the number of
+	 * portfolio so that the rows will (hopefully) always be full.
+	 */
+	$count = $columns * $rows;
+
+	return sprintf(
+		'<div class="toolbelt-portfolio toolbelt-cols-%1$d %2$s">%3$s</div>',
+		(int) $columns,
+		esc_attr( $align ),
+		toolbelt_portfolio_get_html( $count, $order_by )
+	);
+
+}
+
+
+/**
+ * Step aside for Jetpack (or other) portfolio shortcodes.
+ */
+if ( ! shortcode_exists( 'portfolio' ) ) {
+	add_shortcode( 'portfolio', 'toolbelt_portfolio_shortcode' );
+}
+
+
+/**
+ * Generate the html for the portfolios.
+ *
+ * @param int    $count The number of portfolios to try to load.
+ * @param string $order_by The order method.
+ * @return string
+ */
+function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date' ) {
+
+	/**
+	 * Make sure something is loaded.
+	 */
+	if ( (int) $count < 1 ) {
+		$count = 1;
+	}
+
+	/**
+	 * The html template for displaying a single testimonial.
+	 */
+	$html = '<div class="toolbelt-project">
+	<div class="thumbnail">%1$s</div>
+	<h2><a href="%2$s">%3$s</a></h2>
+	<div class="toolbelt-entry">%4$s</div>
+	</div>';
+
+	$projects = new WP_Query(
+		array(
+			'post_type' => TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE,
+			'posts_per_page' => (int) $count,
+			'orderby' => $order_by,
+		)
+	);
+
+	$projects_list = array();
+
+	if ( $projects->have_posts() ) {
+		while ( $projects->have_posts() ) {
+
+			$projects->the_post();
+
+			$excerpt = apply_filters( 'toolbelt_portfolio_excerpt', trim( get_the_excerpt() ) );
+
+			/**
+			 * Use null for `get_the_post_thumbnail` since this will use the
+			 * global post object.
+			 *
+			 * 1. Thumbnail image.
+			 * 2. Permalink.
+			 * 3. Post title.
+			 * 4. Excerpt.
+			 */
+			$projects_list[] = sprintf(
+				$html,
+				get_the_post_thumbnail( null, 'medium' ),
+				esc_url( get_the_permalink() ),
+				get_the_title(),
+				$excerpt
+			);
+
+		}
+	}
+
+	wp_reset_postdata();
+
+	return implode( '', $projects_list );
+
+}
+
+
+/**
+ * Include the potfolio styles if the current post uses the portfolio shortcode.
+ */
+function toolbelt_portfolio_styles() {
+
+	global $post;
+
+	if ( is_singular() && has_shortcode( $post->post_content, 'portfolio' ) ) {
+		toolbelt_global_styles( 'columns' );
+		toolbelt_styles( 'projects' );
+	}
+
+}
+
+add_action( 'wp_print_styles', 'toolbelt_portfolio_styles' );
+
+
+/**
+ * Include the Portfolio styles if the current post uses the portolio shortcode.
+ */
+function toolbelt_portfolio_editor_styles() {
+
+	toolbelt_global_styles( 'columns' );
+	toolbelt_styles( 'projects' );
+
+}
+
+add_action( 'enqueue_block_editor_assets', 'toolbelt_portfolio_editor_styles' );
+
+
+/**
+ * Register a Portfolio block.
+ */
+function toolbelt_portfolio_register_block() {
+
+	// Skip block registration if Gutenberg is not enabled.
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
+
+	$block_js = dirname( __FILE__ ) . '/block.min.js';
+
+	wp_register_script(
+		'toolbelt-portfolio-block',
+		plugins_url( 'block.min.js', __FILE__ ),
+		array(
+			'wp-blocks',
+			'wp-i18n',
+			'wp-element',
+			'wp-components',
+		),
+		'1.0',
+		true
+	);
+
+	register_block_type(
+		'toolbelt/portfolio',
+		array(
+			'editor_script' => 'toolbelt-portfolio-block',
+			'render_callback' => 'toolbelt_portfolio_shortcode',
+			'attributes' => array(
+				'rows' => array(
+					'default' => 2,
+					'type' => 'int',
+				),
+				'columns' => array(
+					'default' => 2,
+					'type' => 'int',
+				),
+				'orderby' => array(
+					'default' => 'date',
+					'type' => 'string',
+				),
+				'align' => array(
+					'default' => '',
+					'type' => 'string',
+				),
+			),
+		)
+	);
+
+}
+
+add_action( 'init', 'toolbelt_portfolio_register_block' );
+
