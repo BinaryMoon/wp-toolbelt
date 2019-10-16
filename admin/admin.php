@@ -63,7 +63,7 @@ function toolbelt_admin_menu() {
 		return;
 	}
 
-	$icon = file_get_contents( TOOLBELT_PATH . 'assets/menu-icon.svg' );
+	$icon = file_get_contents( TOOLBELT_PATH . 'assets/svg/menu-icon.svg' );
 
 	/**
 	 * Generate the base64 encoded icon string.
