@@ -274,6 +274,10 @@ function toolbelt_styles( $module ) {
 
 	$path = TOOLBELT_PATH . 'modules/' . $module . '/style.min.css';
 
+	if ( in_array( $path, get_included_files(), true ) ) {
+		return;
+	}
+
 	echo '<style name="toolbelt-style-' . esc_attr( $module ) . '">';
 	require_once $path;
 	echo '</style>';
@@ -299,6 +303,10 @@ function toolbelt_global_styles( $module ) {
 	}
 
 	$path = TOOLBELT_PATH . 'assets/css/' . $module . '.css';
+
+	if ( in_array( $path, get_included_files(), true ) ) {
+		return;
+	}
 
 	echo '<style name="toolbelt-global-style-' . esc_attr( $module ) . '">';
 	require_once $path;
