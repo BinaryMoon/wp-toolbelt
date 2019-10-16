@@ -11,6 +11,8 @@ registerBlockType(
 
 		description: __( 'Display a grid of Toolbelt Testimonials.' ),
 
+		keywords: [ __( 'toolbelt' ) ],
+
 		category: __( 'common' ),
 
 		supports: {
