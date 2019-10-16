@@ -5,6 +5,7 @@
 import { series, parallel, watch } from 'gulp';
 
 import {
+	process_global_styles,
 	styles_cookie, styles_social,
 	styles_related_posts, styles_social_menu,
 	styles_breadcrumbs, styles_videos,
@@ -41,6 +42,7 @@ export const build = series(
 		styles_testimonials,
 		scripts_projects_block,
 		scripts_spam,
+		process_global_styles,
 		translate
 	),
 	compress
@@ -73,6 +75,11 @@ export const watchFiles = function( done ) {
 			scripts_testimonials,
 			scripts_projects_block
 		)
+	);
+
+	watch(
+		[ './assets/sass/*.scss' ],
+		process_global_styles
 	);
 
 	done();

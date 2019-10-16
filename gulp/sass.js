@@ -3,12 +3,18 @@
 
 const { src, dest } = require( 'gulp' );
 const sass = require( 'gulp-sass' );
-const rename = require( 'gulp-rename' );
 const autoprefixer = require( 'gulp-autoprefixer' );
 const cleancss = require( 'gulp-clean-css' );
 const change = require( 'gulp-change' );
 const concat = require( 'gulp-concat' );
 const size = require( 'gulp-filesize' );
+
+const sass_properties = {
+	indentType: 'tab',
+	indentWidth: 1,
+	outputStyle: 'expanded',
+	precision: 3,
+};
 
 /**
  * Build SASS files.
@@ -25,35 +31,42 @@ function process_styles( slug ) {
 	return src( source )
 		.pipe( concat( 'style.min.css' ) )
 		.pipe(
-			sass(
-				{
-					indentType: 'tab',
-					indentWidth: 1,
-					outputStyle: 'expanded',
-					precision: 3,
-
-				}
-			).on( 'error', sass.logError )
+			sass( sass_properties ).on( 'error', sass.logError )
 		)
 		.pipe(
 			autoprefixer(
-				{
-					cascade: false
-				}
+				{ cascade: false }
 			)
 		)
 		.pipe(
 			change( removeComments )
 		)
 		.pipe(
-			cleancss(
-				{
-					level: 2
-				}
-			)
+			cleancss( { level: 2 } )
 		)
 		.pipe( dest( destination ) )
 		.pipe( size() );
+
+}
+
+/**
+ *
+ */
+export function process_global_styles() {
+
+	return src( './assets/sass/*.scss' )
+		.pipe(
+			sass( sass_properties ).on( 'error', sass.logError )
+		)
+		.pipe(
+			autoprefixer(
+				{ cascade: false }
+			)
+		)
+		.pipe(
+			cleancss( { level: 2 } )
+		)
+		.pipe( dest( './assets/css/' ) );
 
 }
 
