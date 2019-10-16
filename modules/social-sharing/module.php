@@ -112,7 +112,7 @@ function toolbelt_social_sharing( $content ) {
 
 	}
 
-	return $content . '<section class="toolbelt_social_share">' . $html . '</section>';
+	return $content . '<section class="toolbelt_social_share toolbelt-social-share">' . $html . '</section>';
 
 }
 
