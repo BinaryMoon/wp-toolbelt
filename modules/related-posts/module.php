@@ -60,6 +60,16 @@ add_filter( 'the_content', 'toolbelt_related_posts' );
  */
 function toolbelt_related_posts_get() {
 
+	/**
+	 * If a password is required then don't display anything.
+	 *
+	 * This is added here, rather than in `toolbelt_related_posts` so that the
+	 * function takes effect for people who call the function directly.
+	 */
+	if ( post_password_required() ) {
+		return '';
+	}
+
 	$available_post_types = apply_filters(
 		'toolbelt_related_post_types',
 		array( 'post' => 'category' )

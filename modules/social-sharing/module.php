@@ -31,6 +31,11 @@ function toolbelt_social_sharing( $content ) {
 		return $content;
 	}
 
+	// If a password is required then don't add this stuff.
+	if ( post_password_required() ) {
+		return $content;
+	}
+
 	/**
 	 * Check a filter to see if we should quit.
 	 *
