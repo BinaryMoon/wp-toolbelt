@@ -7,15 +7,15 @@ const { __ } = wp.i18n;
 registerBlockType(
 	'toolbelt/portfolio',
 	{
-		title: __( 'Portfolio' ),
+		title: __( 'Portfolio', 'wp-toolbelt' ),
 
 		icon: 'portfolio',
 
-		description: __( 'Display a grid of Toolbelt Projects.' ),
+		description: __( 'Display a grid of Toolbelt Projects.', 'wp-toolbelt' ),
 
-		category: __( 'common' ),
+		category: 'common',
 
-		keywords: [ __( 'projects' ), __( 'toolbelt' ) ],
+		keywords: [ __( 'projects', 'wp-toolbelt' ), __( 'toolbelt', 'wp-toolbelt' ) ],
 
 		supports: {
 			align: [ 'full', 'wide' ],
@@ -78,7 +78,7 @@ registerBlockType(
 							createElement(
 								PanelBody,
 								{
-									title: __( 'Layout' ),
+									title: __( 'Layout', 'wp-toolbelt' ),
 									initialOpen: true,
 								},
 								[
@@ -87,7 +87,7 @@ registerBlockType(
 										RangeControl,
 										{
 											value: attributes.rows,
-											label: __( 'Rows' ),
+											label: __( 'Rows', 'wp-toolbelt' ),
 											onChange: changeRows,
 											min: 1,
 											max: 10
@@ -99,7 +99,7 @@ registerBlockType(
 										RangeControl,
 										{
 											value: attributes.columns,
-											label: __( 'Columns' ),
+											label: __( 'Columns', 'wp-toolbelt' ),
 											onChange: changeColumns,
 											min: 1,
 											max: 4
@@ -111,11 +111,11 @@ registerBlockType(
 										SelectControl,
 										{
 											value: attributes.orderby,
-											label: __( 'Orderby' ),
+											label: __( 'Order by', 'wp-toolbelt' ),
 											onChange: changeOrderby,
 											options: [
-												{ value: 'date', label: __( 'date' ) },
-												{ value: 'rand', label: __( 'rand' ) },
+												{ value: 'date', label: __( 'date', 'wp-toolbelt' ) },
+												{ value: 'rand', label: __( 'random', 'wp-toolbelt' ) },
 											]
 										}
 									)
