@@ -9,6 +9,8 @@ registerBlockType(
 	{
 		title: __( 'Portfolio' ),
 
+		icon: 'portfolio',
+
 		description: __( 'Display a grid of Toolbelt Projects.' ),
 
 		category: __( 'common' ),
@@ -28,6 +30,9 @@ registerBlockType(
 			},
 			orderby: {
 				default: 'date'
+			},
+			category: {
+				default: ''
 			}
 		},
 

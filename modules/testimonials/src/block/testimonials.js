@@ -9,6 +9,8 @@ registerBlockType(
 	{
 		title: __( 'Testimonials' ),
 
+		icon: 'testimonial',
+
 		description: __( 'Display a grid of Toolbelt Testimonials.' ),
 
 		keywords: [ __( 'toolbelt' ) ],
