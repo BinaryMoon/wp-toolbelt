@@ -280,6 +280,7 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 			'columns' => '2',
 			'rows' => '2',
 			'orderby' => 'date',
+			'categories' => array(),
 			'align' => '',
 		),
 		$attrs,
@@ -322,9 +323,20 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 		$order_by = 'date';
 	}
 
+	/**
+	 * Set block alignment.
+	 */
 	$align = '';
 	if ( ! empty( $attrs['align'] ) ) {
 		$align = 'align' . $attrs['align'];
+	}
+
+	/**
+	 * Post categories.
+	 */
+	$categories = $attrs['categories'];
+	if ( is_string( $categories ) && strlen( $categories ) > 1 ) {
+		$categories = explode( ',', $categories );
 	}
 
 	/**
@@ -339,7 +351,7 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 		'<div class="toolbelt-portfolio toolbelt-cols-%1$d %2$s">%3$s</div>',
 		(int) $columns,
 		esc_attr( $align ),
-		toolbelt_portfolio_get_html( $count, $order_by )
+		toolbelt_portfolio_get_html( $count, $order_by, $categories )
 	);
 
 }
@@ -358,9 +370,10 @@ if ( ! shortcode_exists( 'portfolio' ) ) {
  *
  * @param int    $count The number of portfolios to try to load.
  * @param string $order_by The order method.
+ * @param array  $categories The categories to filter by.
  * @return string
  */
-function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date' ) {
+function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categories = array() ) {
 
 	/**
 	 * Make sure something is loaded.
@@ -378,13 +391,23 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date' ) {
 	<div class="toolbelt-entry">%4$s</div>
 	</div>';
 
-	$projects = new WP_Query(
-		array(
-			'post_type' => TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE,
-			'posts_per_page' => (int) $count,
-			'orderby' => $order_by,
-		)
+	$properties = array(
+		'post_type' => TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE,
+		'posts_per_page' => (int) $count,
+		'orderby' => $order_by,
 	);
+
+	if ( ! empty( $categories ) ) {
+		$properties['tax_query'] = array(
+			array(
+				'taxonomy' => TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TYPE,
+				'field' => 'term_id',
+				'terms' => $categories,
+			),
+		);
+	}
+
+	$projects = new WP_Query( $properties );
 
 	$projects_list = array();
 
@@ -463,9 +486,10 @@ function toolbelt_portfolio_register_block() {
 	}
 
 	$block_js = dirname( __FILE__ ) . '/block.min.js';
+	$block_name = 'toolbelt-portfolio-block';
 
 	wp_register_script(
-		'toolbelt-portfolio-block',
+		$block_name,
 		plugins_url( 'block.min.js', __FILE__ ),
 		array(
 			'wp-blocks',
@@ -476,6 +500,20 @@ function toolbelt_portfolio_register_block() {
 		'1.0',
 		true
 	);
+
+	/**
+	 * Only generate the classes in the admin. Technically we only need it on
+	 * the post edit page.
+	 */
+	if ( is_admin() ) {
+
+		wp_add_inline_script(
+			$block_name,
+			'var toolbelt_portfolio_categories = ' . toolbelt_portfolio_type_list() . ';',
+			'before'
+		);
+
+	}
 
 	register_block_type(
 		'toolbelt/portfolio',
@@ -499,11 +537,54 @@ function toolbelt_portfolio_register_block() {
 					'default' => '',
 					'enum' => array( 'wide', 'full' ),
 				),
+				'categories' => array(
+					'default' => array(),
+					'type' => 'string',
+				),
 			),
 		)
 	);
 
 }
 
-add_action( 'init', 'toolbelt_portfolio_register_block' );
+/**
+ * The post type is registered on init (priority 11) so this needs to be called
+ * after since it tries to load the post taxonomies.
+ */
+add_action( 'init', 'toolbelt_portfolio_register_block', 12 );
 
+
+/**
+ * Get a list of portfolio categories.
+ *
+ * @return string JSON encoded list of post categories.
+ */
+function toolbelt_portfolio_type_list() {
+
+	$terms = get_terms(
+		array(
+			'taxonomy' => TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TYPE,
+			'post_type' => TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE,
+			'hide_empty' => false,
+		)
+	);
+
+	// Make sure the term exists and has some results.
+	if ( is_wp_error( $terms ) || empty( $terms ) ) {
+		return 'null';
+	}
+
+	$categories = array();
+
+	foreach ( $terms as $term ) {
+
+		$categories[] = array(
+			'id' => $term->term_id,
+			'name' => $term->name,
+		);
+
+	}
+
+	return wp_json_encode( $categories );
+
+}

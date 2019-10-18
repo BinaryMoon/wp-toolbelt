@@ -1,7 +1,7 @@
 const { registerBlockType } = wp.blocks;
 const { createElement } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { RangeControl, SelectControl, PanelBody } = wp.components;
+const { RangeControl, SelectControl, PanelBody, CheckboxControl } = wp.components;
 const { __ } = wp.i18n;
 
 registerBlockType(
@@ -31,7 +31,7 @@ registerBlockType(
 			orderby: {
 				default: 'date'
 			},
-			category: {
+			categories: {
 				default: ''
 			}
 		},
@@ -40,6 +40,13 @@ registerBlockType(
 
 			const attributes = props.attributes;
 			const setAttributes = props.setAttributes;
+			let categoriesArray = [];
+
+			if ( attributes.categories.length > 0 ) {
+				categoriesArray = attributes.categories.split( ',' );
+			}
+
+			console.log( 'cat', categoriesArray );
 
 			// Function to update the number of rows.
 			function changeRows( rows ) {
@@ -54,6 +61,70 @@ registerBlockType(
 			// Function to update the testimonial order.
 			function changeOrderby( orderby ) {
 				setAttributes( { orderby } );
+			}
+
+			// Add a category to the active list.
+			function categoriesAdd( term ) {
+
+				if ( !categorySelected( term ) ) {
+					categoriesArray.push( term.id );
+				}
+				setAttributes( { categories: categoriesArray.join( ',' ) } );
+
+			}
+
+			// Remove a category from the active list.
+			function categoriesRemove( term ) {
+
+				categoriesArray = categoriesArray.filter( item => parseInt( item ) !== term.id );
+				setAttributes( { categories: categoriesArray.join( ',' ) } );
+
+			}
+
+			// Is the specified category currently enabled?
+			function categorySelected( term ) {
+
+				if ( categoriesArray.findIndex( v => parseInt( v ) === term.id ) > -1 ) {
+					return true;
+				}
+				return false;
+
+			}
+
+			// Get the list of categories as checkboxes.
+			function getCategoryCheckboxes() {
+
+				let categoryElements = [];
+
+				if ( !toolbelt_portfolio_categories ) {
+					return categoryElements;
+				}
+
+				Object.keys( toolbelt_portfolio_categories ).forEach(
+					( key ) => {
+						let term = toolbelt_portfolio_categories[ key ];
+						categoryElements.push(
+							createElement(
+								CheckboxControl,
+								{
+									label: term.name,
+									onChange: ( state ) => {
+										if ( state ) {
+											categoriesAdd( term );
+										} else {
+											categoriesRemove( term );
+										}
+									},
+									value: term,
+									checked: categorySelected( term ),
+								}
+							)
+						);
+					}
+				);
+
+				return categoryElements;
+
 			}
 
 			return createElement(
@@ -120,6 +191,14 @@ registerBlockType(
 										}
 									)
 								]
+							),
+							createElement(
+								PanelBody,
+								{
+									title: __( 'Project Types', 'wp-toolbelt' ),
+									initialOpen: true,
+								},
+								getCategoryCheckboxes()
 							)
 						]
 					)
