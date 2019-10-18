@@ -6,7 +6,7 @@ const wpPot = require( 'gulp-wp-pot' );
 
 export default function translate() {
 
-	return gulp.src( '**/*.php' )
+	return gulp.src( [ '**/*.php', './modules/**/*.min.js' ] )
 		.pipe(
 			wpPot(
 				{

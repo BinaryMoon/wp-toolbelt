@@ -137,7 +137,7 @@ msgstr ""
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:172, modules/related-posts/module.php:108, modules/related-posts/tools.php:17
+#: index.php:172, modules/related-posts/module.php:118, modules/related-posts/tools.php:17
 msgid "Related Posts"
 msgstr ""
 
@@ -611,47 +611,47 @@ msgstr ""
 msgid "Related Posts cache cleared."
 msgstr ""
 
-#: modules/social-sharing/module.php:129
+#: modules/social-sharing/module.php:134
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:130
+#: modules/social-sharing/module.php:135
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:134
+#: modules/social-sharing/module.php:139
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:135
+#: modules/social-sharing/module.php:140
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:139
+#: modules/social-sharing/module.php:144
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:140
+#: modules/social-sharing/module.php:145
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:154
+#: modules/social-sharing/module.php:159
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:155
+#: modules/social-sharing/module.php:160
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:159
+#: modules/social-sharing/module.php:164
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:160
+#: modules/social-sharing/module.php:165
 msgctxt "Pinterest button label"
 msgid "Pin this"
 msgstr ""
