@@ -1,7 +1,7 @@
 const { registerBlockType } = wp.blocks;
 const { createElement } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { RangeControl, SelectControl, PanelBody, CheckboxControl } = wp.components;
+const { RangeControl, SelectControl, PanelBody, CheckboxControl, ServerSideRender } = wp.components;
 const { __ } = wp.i18n;
 
 registerBlockType(
