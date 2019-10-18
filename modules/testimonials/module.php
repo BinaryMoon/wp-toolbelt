@@ -200,6 +200,9 @@ function toolbelt_testimonials_shortcode( $attrs ) {
 		$order_by = 'date';
 	}
 
+	/**
+	 * Set block alignment.
+	 */
 	$align = '';
 	if ( ! empty( $attrs['align'] ) ) {
 		$align = 'align' . $attrs['align'];
