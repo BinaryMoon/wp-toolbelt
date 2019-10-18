@@ -7,17 +7,25 @@ const uglify = require( 'gulp-uglify' );
 const size = require( 'gulp-filesize' );
 const babel = require( 'gulp-babel' );
 
-function process_scripts( slug, type = 'js', name = 'script' ) {
+function process_scripts( slug, type = 'js' ) {
 
 	const destination = './modules/' + slug + '/';
 	const source = './modules/' + slug + '/src/' + type + '/**.js';
+
+	let env = '@babel/preset-env';
+	let name = 'script';
+
+	if ( 'block' === type ) {
+		env = '@wordpress/babel-preset-default';
+		name = 'block';
+	}
 
 	return src( source )
 		.pipe(
 			concat( name + '.min.js' )
 		)
 		.pipe(
-			babel( { presets: [ '@babel/preset-env' ] } )
+			babel( { presets: [ env ] } )
 		)
 		.pipe(
 			uglify()
@@ -47,12 +55,18 @@ export function scripts_spam() {
 
 export function scripts_testimonials() {
 
-	return process_scripts( 'testimonials', 'block', 'block' );
+	return process_scripts( 'testimonials', 'block' );
 
 }
 
 export function scripts_projects_block() {
 
-	return process_scripts( 'projects', 'block', 'block' );
+	return process_scripts( 'projects', 'block' );
+
+}
+
+export function scripts_markdown_block() {
+
+	return process_scripts( 'markdown', 'block' );
 
 }
