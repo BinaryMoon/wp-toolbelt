@@ -7,16 +7,19 @@ const uglify = require( 'gulp-uglify' );
 const size = require( 'gulp-filesize' );
 const babel = require( 'gulp-babel' );
 
+
 function process_scripts( slug, type = 'js' ) {
 
 	const destination = './modules/' + slug + '/';
 	const source = './modules/' + slug + '/src/' + type + '/**.js';
+	const env = [
+		'@babel/preset-env',
+		'@wordpress/babel-preset-default'
+	];
 
-	let env = '@babel/preset-env';
 	let name = 'script';
 
 	if ( 'block' === type ) {
-		env = '@wordpress/babel-preset-default';
 		name = 'block';
 	}
 
@@ -25,7 +28,7 @@ function process_scripts( slug, type = 'js' ) {
 			concat( name + '.min.js' )
 		)
 		.pipe(
-			babel( { presets: [ env ] } )
+			babel( { presets: env } )
 		)
 		.pipe(
 			uglify()
