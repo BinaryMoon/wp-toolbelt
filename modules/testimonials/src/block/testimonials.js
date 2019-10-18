@@ -1,7 +1,7 @@
 const { registerBlockType } = wp.blocks;
 const { createElement } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { RangeControl, SelectControl, PanelBody } = wp.components;
+const { RangeControl, SelectControl, PanelBody, ServerSideRender } = wp.components;
 const { __ } = wp.i18n;
 
 registerBlockType(
@@ -53,75 +53,45 @@ registerBlockType(
 				setAttributes( { orderby } );
 			}
 
-			return createElement(
-				'div',
-				{},
-				[
-
-					// Editor Preview.
-					createElement(
-						wp.serverSideRender,
-						{
-							block: 'toolbelt/testimonials',
-							attributes: attributes
-						}
-					),
-
-					// Sidebar Controls.
-					createElement(
-						InspectorControls,
-						{},
-						[
-							createElement(
-								PanelBody,
-								{
-									title: __( 'Layout', 'wp-toolbelt' ),
-									initialOpen: true,
-								},
+			return [
+				<ServerSideRender
+					block="toolbelt/testimonials"
+					attributes={attributes}
+				/>,
+				<InspectorControls>
+					<PanelBody
+						title={__( 'Layout', 'wp-toolbelt' )}
+						initialOpen={true}
+					>
+						<RangeControl
+							value={attributes.rows}
+							label={__( 'Rows', 'wp-toolbelt' )}
+							onChange={changeRows}
+							min={1}
+							max={10}
+						/>
+						<RangeControl
+							value={attributes.columns}
+							label={__( 'Columns', 'wp-toolbelt' )}
+							onChange={changeColumns}
+							min={1}
+							max={4}
+						/>
+						<SelectControl
+							value={attributes.orderby}
+							label={__( 'Order by', 'wp-toolbelt' )}
+							onChange={changeOrderby}
+							options={
 								[
-									// Rows.
-									createElement(
-										RangeControl,
-										{
-											value: attributes.rows,
-											label: __( 'Rows', 'wp-toolbelt' ),
-											onChange: changeRows,
-											min: 1,
-											max: 10
-										}
-									),
-
-									// Columns.
-									createElement(
-										RangeControl,
-										{
-											value: attributes.columns,
-											label: __( 'Columns', 'wp-toolbelt' ),
-											onChange: changeColumns,
-											min: 1,
-											max: 4
-										}
-									),
-
-									// Order.
-									createElement(
-										SelectControl,
-										{
-											value: attributes.orderby,
-											label: __( 'Order by', 'wp-toolbelt' ),
-											onChange: changeOrderby,
-											options: [
-												{ value: 'date', label: __( 'date', 'wp-toolbelt' ) },
-												{ value: 'rand', label: __( 'random', 'wp-toolbelt' ) },
-											]
-										}
-									)
+									{ value: 'date', label: __( 'date', 'wp-toolbelt' ) },
+									{ value: 'rand', label: __( 'random', 'wp-toolbelt' ) },
 								]
-							)
-						]
-					)
-				]
-			);
+							}
+						/>
+					</PanelBody>
+				</InspectorControls>
+			];
+
 		},
 
 		save() {

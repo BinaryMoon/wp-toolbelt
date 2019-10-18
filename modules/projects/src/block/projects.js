@@ -104,21 +104,20 @@ registerBlockType(
 					( key ) => {
 						let term = toolbelt_portfolio_categories[ key ];
 						categoryElements.push(
-							createElement(
-								CheckboxControl,
-								{
-									label: term.name,
-									onChange: ( state ) => {
+							<CheckboxControl
+								label={term.name}
+								onChange={
+									( state ) => {
 										if ( state ) {
 											categoriesAdd( term );
 										} else {
 											categoriesRemove( term );
 										}
-									},
-									value: term,
-									checked: categorySelected( term ),
+									}
 								}
-							)
+								vale={term}
+								checked={categorySelected( term )}
+							/>
 						);
 					}
 				);
@@ -127,83 +126,56 @@ registerBlockType(
 
 			}
 
-			return createElement(
-				'div',
-				{},
-				[
+			return [
+				<ServerSideRender
+					block="toolbelt/portfolio"
+					attributes={attributes}
+				/>,
+				<InspectorControls>
+					<PanelBody
+						title={__( 'Layout', 'wp-toolbelt' )}
+						initialOpen={true}
+					>
 
-					// Editor Preview.
-					createElement(
-						wp.serverSideRender,
-						{
-							block: 'toolbelt/portfolio',
-							attributes: attributes
-						}
-					),
+						<RangeControl
+							value={attributes.rows}
+							label={__( 'Rows', 'wp-toolbelt' )}
+							onChange={changeRows}
+							min={1}
+							max={10}
+						/>
 
-					// Sidebar Controls.
-					createElement(
-						InspectorControls,
-						{},
-						[
-							createElement(
-								PanelBody,
-								{
-									title: __( 'Layout', 'wp-toolbelt' ),
-									initialOpen: true,
-								},
+						<RangeControl
+							value={attributes.columns}
+							label={__( 'Columns', 'wp-toolbelt' )}
+							onChange={changeColumns}
+							min={1}
+							max={4}
+						/>
+
+						<SelectControl
+							value={attributes.orderby}
+							label={__( 'Order by', 'wp-toolbelt' )}
+							onChange={changeOrderby}
+							options={
 								[
-									// Rows.
-									createElement(
-										RangeControl,
-										{
-											value: attributes.rows,
-											label: __( 'Rows', 'wp-toolbelt' ),
-											onChange: changeRows,
-											min: 1,
-											max: 10
-										}
-									),
-
-									// Columns.
-									createElement(
-										RangeControl,
-										{
-											value: attributes.columns,
-											label: __( 'Columns', 'wp-toolbelt' ),
-											onChange: changeColumns,
-											min: 1,
-											max: 4
-										}
-									),
-
-									// Order.
-									createElement(
-										SelectControl,
-										{
-											value: attributes.orderby,
-											label: __( 'Order by', 'wp-toolbelt' ),
-											onChange: changeOrderby,
-											options: [
-												{ value: 'date', label: __( 'date', 'wp-toolbelt' ) },
-												{ value: 'rand', label: __( 'random', 'wp-toolbelt' ) },
-											]
-										}
-									)
+									{ value: 'date', label: __( 'date', 'wp-toolbelt' ) },
+									{ value: 'rand', label: __( 'random', 'wp-toolbelt' ) },
 								]
-							),
-							createElement(
-								PanelBody,
-								{
-									title: __( 'Project Types', 'wp-toolbelt' ),
-									initialOpen: true,
-								},
-								getCategoryCheckboxes()
-							)
-						]
-					)
-				]
-			);
+							}
+						/>
+
+					</PanelBody>
+
+					<PanelBody
+						title={__( 'Project Types', 'wp-toolbelt' )}
+						initialOpen={true}
+					>
+						{getCategoryCheckboxes()}
+					</PanelBody>
+				</InspectorControls>
+			];
+
 		},
 
 		save() {
