@@ -3,6 +3,10 @@
 	"version": "2.2.2",
 	"description": "Stuff for WordPress",
 	"main": "index.php",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BinaryMoon/wp-toolbelt.git"
+	},
 	"scripts": {
 		"dev": "gulp",
 		"build": "gulp build",
