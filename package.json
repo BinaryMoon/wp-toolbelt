@@ -1,6 +1,6 @@
 {
-	"name": "toolbelt",
-	"version": "0.0.1",
+	"name": "Toolbelt",
+	"version": "2.2.2",
 	"description": "Stuff for WordPress",
 	"main": "index.php",
 	"scripts": {
