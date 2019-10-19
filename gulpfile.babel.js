@@ -74,7 +74,7 @@ export const build = series(
 	parallel(
 		rollup_testimonials,
 		rollup_projects,
-		rollup_markdown,
+		rollup_markdown
 	),
 	compress
 );
