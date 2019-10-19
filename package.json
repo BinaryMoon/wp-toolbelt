@@ -27,6 +27,9 @@
 		"gulp-uglify": "^3.0.2",
 		"gulp-wp-pot": "^2.3.5",
 		"gulp-zip": "^5.0.1",
-		"jshint": "^2.10.2"
+		"jshint": "^2.10.2",
+		"rollup-stream": "^1.24.1",
+		"vinyl-buffer": "^1.0.1",
+		"vinyl-source-stream": "^2.0.0"
 	}
 }

@@ -8,20 +8,16 @@ const size = require( 'gulp-filesize' );
 const babel = require( 'gulp-babel' );
 
 
-function process_scripts( slug, type = 'js' ) {
+function process_scripts( slug ) {
 
 	const destination = './modules/' + slug + '/';
-	const source = './modules/' + slug + '/src/' + type + '/**.js';
+	const source = './modules/' + slug + '/src/js/**.js';
 	const env = [
 		'@babel/preset-env',
 		'@wordpress/babel-preset-default'
 	];
 
 	let name = 'script';
-
-	if ( 'block' === type ) {
-		name = 'block';
-	}
 
 	return src( source )
 		.pipe(
@@ -53,23 +49,5 @@ export function scripts_infiniteScroll() {
 export function scripts_spam() {
 
 	return process_scripts( 'spam-blocker' );
-
-}
-
-export function scripts_testimonials() {
-
-	return process_scripts( 'testimonials', 'block' );
-
-}
-
-export function scripts_projects_block() {
-
-	return process_scripts( 'projects', 'block' );
-
-}
-
-export function scripts_markdown_block() {
-
-	return process_scripts( 'markdown', 'block' );
 
 }
