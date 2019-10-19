@@ -89,7 +89,7 @@ msgstr ""
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:141, index.php:182
+#: index.php:141, index.php:187
 msgid "0.2kb of inline CSS."
 msgstr ""
 
@@ -114,110 +114,118 @@ msgid "Add native browser lazy loading to all images on your website. Currently 
 msgstr ""
 
 #: index.php:155
-msgid "Web Monetization"
+msgid "Markdown"
 msgstr ""
 
 #: index.php:156
+msgid "Render Markdown. Uses Github flavor Markdown."
+msgstr ""
+
+#: index.php:160
+msgid "Web Monetization"
+msgstr ""
+
+#: index.php:161
 msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
-#: index.php:161, modules/projects/module.php:37
+#: index.php:166, modules/projects/module.php:37
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:162
+#: index.php:167
 msgid "A portfolio custom post type."
 msgstr ""
 
-#: index.php:167
+#: index.php:172
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:168
+#: index.php:173
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:172, modules/related-posts/module.php:118, modules/related-posts/tools.php:17
+#: index.php:177, modules/related-posts/module.php:118, modules/related-posts/tools.php:17
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:173
+#: index.php:178
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:175
+#: index.php:180
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:179
+#: index.php:184
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:180
+#: index.php:185
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:185, modules/social-menu/module.php:14, modules/social-menu/module.php:31
+#: index.php:190, modules/social-menu/module.php:14, modules/social-menu/module.php:31
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:186
+#: index.php:191
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:188
+#: index.php:193
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:191
+#: index.php:196
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:192
+#: index.php:197
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:194
+#: index.php:199
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:197
+#: index.php:202
 msgid "Spam Blocker"
 msgstr ""
 
-#: index.php:198
+#: index.php:203
 msgid "Attempt to block spam."
 msgstr ""
 
-#: index.php:200
+#: index.php:205
 msgid "0.3kb of inline JS"
 msgstr ""
 
-#: index.php:204, modules/stats/settings.php:38
+#: index.php:209, modules/stats/settings.php:38
 msgid "Stats"
 msgstr ""
 
-#: index.php:205
+#: index.php:210
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:210, modules/testimonials/module.php:42
+#: index.php:215, modules/testimonials/module.php:42
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:211
+#: index.php:216
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:213
+#: index.php:218
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:217
+#: index.php:222
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:218
+#: index.php:223
 msgid "Control which pages widgets appear on."
 msgstr ""
 
