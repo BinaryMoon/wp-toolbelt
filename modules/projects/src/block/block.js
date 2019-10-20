@@ -46,8 +46,6 @@ registerBlockType(
 				categoriesArray = attributes.categories.split( ',' );
 			}
 
-			console.log( 'cat', categoriesArray );
-
 			// Function to update the number of rows.
 			function changeRows( rows ) {
 				setAttributes( { rows } );
