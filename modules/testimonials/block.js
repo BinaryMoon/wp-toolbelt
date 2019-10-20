@@ -20,13 +20,13 @@ registerBlockType('toolbelt/testimonials', {
   },
   attributes: {
     rows: {
-      "default": 2
+      default: 2
     },
     columns: {
-      "default": 2
+      default: 2
     },
     orderby: {
-      "default": 'date'
+      default: 'date'
     }
   },
   edit: function edit(props) {

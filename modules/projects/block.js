@@ -21,16 +21,16 @@ registerBlockType('toolbelt/portfolio', {
   },
   attributes: {
     rows: {
-      "default": 2
+      default: 2
     },
     columns: {
-      "default": 2
+      default: 2
     },
     orderby: {
-      "default": 'date'
+      default: 'date'
     },
     categories: {
-      "default": ''
+      default: ''
     }
   },
   edit: function edit(props) {
@@ -40,9 +40,8 @@ registerBlockType('toolbelt/portfolio', {
 
     if (attributes.categories.length > 0) {
       categoriesArray = attributes.categories.split(',');
-    }
+    } // Function to update the number of rows.
 
-    console.log('cat', categoriesArray); // Function to update the number of rows.
 
     function changeRows(rows) {
       setAttributes({
