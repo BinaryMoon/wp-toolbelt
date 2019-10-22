@@ -16,6 +16,7 @@
 	"license": "GPL-2.0-or-later",
 	"devDependencies": {
 		"@babel/core": "^7.6.4",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
 		"@babel/preset-env": "^7.6.3",
 		"@babel/register": "^7.6.2",
 		"@wordpress/babel-preset-default": "^4.6.2",
@@ -26,14 +27,13 @@
 		"gulp-clean-css": "^4.2.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-filesize": "0.0.6",
+		"gulp-include": "^2.4.1",
 		"gulp-rename": "^1.4.0",
 		"gulp-sass": "^4.0.2",
 		"gulp-uglify": "^3.0.2",
 		"gulp-wp-pot": "^2.3.5",
 		"gulp-zip": "^5.0.1",
-		"jshint": "^2.10.2",
-		"rollup-stream": "^1.24.1",
-		"vinyl-buffer": "^1.0.1",
-		"vinyl-source-stream": "^2.0.0"
-	}
+		"jshint": "^2.10.2"
+	},
+	"dependencies": {}
 }
