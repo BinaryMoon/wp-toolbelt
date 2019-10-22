@@ -27,12 +27,6 @@ import {
 } from './gulp/script';
 
 import {
-	rollup_markdown,
-	rollup_testimonials,
-	rollup_projects
-} from './gulp/script-rollup';
-
-import {
 	block_markdown,
 	block_testimonials,
 	block_projects
@@ -47,7 +41,7 @@ import translate from './gulp/pot';
  */
 export const buildTranslations = translate;
 export const buildZip = compress;
-export const buildMD = series( block_markdown, rollup_markdown );
+export const buildMD = block_markdown;
 
 export const build = series(
 	parallel(
@@ -70,11 +64,6 @@ export const build = series(
 		block_projects,
 		block_markdown,
 		translate
-	),
-	parallel(
-		rollup_testimonials,
-		rollup_projects,
-		rollup_markdown
 	),
 	compress
 );
@@ -114,11 +103,6 @@ export const watchFiles = function( done ) {
 				block_testimonials,
 				block_projects,
 				block_markdown
-			),
-			parallel(
-				rollup_testimonials,
-				rollup_projects,
-				rollup_markdown
 			)
 		)
 	);
