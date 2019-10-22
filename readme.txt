@@ -21,7 +21,17 @@ Taking inspiration from Jetpack I want to rebuild the features I use the most an
 
 Toolbelt has been featured on The WordPress Tavern in [an interview with me](https://wptavern.com/toolbelt-a-new-jetpack-inspired-plugin-with-a-focus-on-speed-and-privacy). You can read more about the creation of the plugin and my desire for a more private internet.
 
-= Features =
+= Gutenberg Blocks =
+
+Some of the Toolbelt modules include blocks to make working with the generated content easier. The available blocks are:
+
+* **Projects Grid** - to list a collection of projects. These can be filtered by project category.
+* **Testimonials Grid** - to list a group of testimonials. Great for showing off! :)
+* **Markdown** - for those who like a simpler writing experience.
+
+= All Features =
+
+Toolbelt has a lot of features. The complete list is below.
 
 * [Admin Tweaks](https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks)
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
@@ -55,7 +65,6 @@ To ensure Toolbelt is as privacy focused as possible it:
 * Does not use standard social sharing javascripts (loaded from social networks servers).
 * Does not track your usage of the plugin.
 * Does not add generator comments, or secret promotional comments to your site html.
-
 
 = Toolbelt is Fast =
 
@@ -108,10 +117,15 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.3 - 14th October 2019 =
-* Add testimonials post type and shortcode.
+= 2.3 - 17th October 2019 =
+* Add a Markdown block.
+* Add testimonials post type, shortcode, and block.
+* Add projects shortcode and block.
 * Add spam blocking support for Gravity Forms.
 * Add DNS Prefetching to the stats providers.
+* Change social sharing css class name from `toolbelt_social_sharing` to `toolbelt-social-sharing`.
+* Change related posts, and social sharing so that they don't appear on password protected pages.
+* Fix: stop css styles from trying to be included multiple times.
 * Tidy up copy issues.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
