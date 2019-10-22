@@ -356,3 +356,16 @@ function toolbelt_get_options() {
 	return $options;
 
 }
+
+
+/**
+ * Display the plugin url relative to the plugin root.
+ *
+ * @param string $path The path to load.
+ * @return string
+ */
+function toolbelt_plugins_url( $path ) {
+
+	return TOOLBELT_PLUGIN_URL . '/' . ltrim( $path, '/' );
+
+}
