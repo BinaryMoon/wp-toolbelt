@@ -1,7 +1,7 @@
 const { registerBlockType } = wp.blocks;
 const { createElement } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { RangeControl, SelectControl, PanelBody, CheckboxControl, ServerSideRender } = wp.components;
+const { RangeControl, RadioControl, PanelBody, CheckboxControl, ServerSideRender } = wp.components;
 // const { ServerSideRender } = wp.serverSideRender;
 const { __ } = wp.i18n;
 
@@ -152,8 +152,8 @@ registerBlockType(
 							max={4}
 						/>
 
-						<SelectControl
-							value={attributes.orderby}
+						<RadioControl
+							selected={attributes.orderby}
 							label={__( 'Order by', 'wp-toolbelt' )}
 							onChange={changeOrderby}
 							options={

@@ -1,7 +1,7 @@
 const { registerBlockType } = wp.blocks;
 const { createElement } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { RangeControl, SelectControl, PanelBody, ServerSideRender } = wp.components;
+const { RangeControl, RadioControl, PanelBody, ServerSideRender } = wp.components;
 // const { ServerSideRender } = wp.serverSideRender;
 const { __ } = wp.i18n;
 
@@ -64,6 +64,7 @@ registerBlockType(
 						title={__( 'Layout', 'wp-toolbelt' )}
 						initialOpen={true}
 					>
+
 						<RangeControl
 							value={attributes.rows}
 							label={__( 'Rows', 'wp-toolbelt' )}
@@ -71,6 +72,7 @@ registerBlockType(
 							min={1}
 							max={10}
 						/>
+
 						<RangeControl
 							value={attributes.columns}
 							label={__( 'Columns', 'wp-toolbelt' )}
@@ -78,8 +80,9 @@ registerBlockType(
 							min={1}
 							max={4}
 						/>
-						<SelectControl
-							value={attributes.orderby}
+
+						<RadioControl
+							selected={attributes.orderby}
 							label={__( 'Order by', 'wp-toolbelt' )}
 							onChange={changeOrderby}
 							options={
@@ -89,6 +92,7 @@ registerBlockType(
 								]
 							}
 						/>
+
 					</PanelBody>
 				</InspectorControls>
 			];
@@ -98,5 +102,6 @@ registerBlockType(
 		save() {
 			return null;
 		}
+
 	}
 );
