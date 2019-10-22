@@ -348,7 +348,7 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 	$count = $columns * $rows;
 
 	return sprintf(
-		'<div class="toolbelt-portfolio toolbelt-cols-%1$d %2$s">%3$s</div>',
+		'<div class="wp-block-toolbelt-portfolio toolbelt-portfolio toolbelt-cols-%1$d %2$s">%3$s</div>',
 		(int) $columns,
 		esc_attr( $align ),
 		toolbelt_portfolio_get_html( $count, $order_by, $categories )
