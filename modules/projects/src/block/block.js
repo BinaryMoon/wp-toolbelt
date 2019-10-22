@@ -2,6 +2,7 @@ const { registerBlockType } = wp.blocks;
 const { createElement } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { RangeControl, SelectControl, PanelBody, CheckboxControl, ServerSideRender } = wp.components;
+// const { ServerSideRender } = wp.serverSideRender;
 const { __ } = wp.i18n;
 
 registerBlockType(
@@ -47,17 +48,17 @@ registerBlockType(
 			}
 
 			// Function to update the number of rows.
-			function changeRows( rows ) {
+			const changeRows = ( rows ) => {
 				setAttributes( { rows } );
 			}
 
 			// Function to update the number of columns.
-			function changeColumns( columns ) {
+			const changeColumns = ( columns ) => {
 				setAttributes( { columns } );
 			}
 
 			// Function to update the testimonial order.
-			function changeOrderby( orderby ) {
+			const changeOrderby = ( orderby ) => {
 				setAttributes( { orderby } );
 			}
 
