@@ -1,20 +1,25 @@
 const { registerBlockType } = wp.blocks;
-const { createElement, Fragment } = wp.element;
-const { ExternalLink, Path, Rect, SVG, TextareaControl } = wp.components;
+const { createElement, Fragment, Component, RawHTML } = wp.element;
+const { ExternalLink, Path, Rect, SVG } = wp.components;
 const { __ } = wp.i18n;
+const { PlainText } = wp.blockEditor;
+
+const exampleTitle = __( 'Try Markdown', 'wp-toolbelt' );
+const exampleDescription = __(
+	'Markdown is a text formatting syntax that is converted into HTML. You can _emphasize_ text or **make it strong** with just a few characters.',
+	'wp-toolbelt'
+);
 
 registerBlockType(
 	'toolbelt/markdown',
 	{
+
 		title: __( 'Markdown', 'wp-toolbelt' ),
 
 		description: (
 			<Fragment>
 				<p>
-					{__(
-						'Use regular characters and punctuation to style text, links, and lists.',
-						'wp-toolbelt'
-					)}
+					{__( 'Use regular characters and punctuation to style text, links, and lists.', 'wp-toolbelt' )}
 				</p>
 				<ExternalLink href="https://en.support.wordpress.com/markdown-quick-reference/">
 					{__( 'Support reference', 'wp-toolbelt' )}
@@ -54,16 +59,88 @@ registerBlockType(
 			html: false,
 		},
 
-		edit() {
+		/**
+		 * Save the formatted markdown content.
+		 */
+		save( props ) {
+
+			const { attributes, className } = props;
+			const { source } = attributes;
+
 			return (
-				<TextareaControl
-					placeholder={__( 'Enter your Markdown here', 'wp-toolbelt' )}
-				/>
+				<>
+					{source.length ? marked( source ) : ''}
+				</>
 			);
+
 		},
 
-		save() {
-			return null;
+		/**
+		 * Edit the settings.
+		 */
+		edit( props ) {
+
+			const { attributes, isSelected, className } = props;
+			const { source } = attributes;
+
+			/**
+			 * Check to see if the markdown content is empty or not.
+			 */
+			const isEmpty = () => {
+				return !source || source.trim() === '';
+			}
+
+			/**
+			 * Upadte the markdown content attribute.
+			 */
+			const updateSource = ( source ) => {
+				props.setAttributes( { source } );
+			}
+
+			/**
+			 * Display a placeholder.
+			 */
+			if ( !isSelected && isEmpty() ) {
+				return (
+					<RawHTML className={className}>
+						<p>
+							<strong>{__( 'Write your _Markdown_ **here**…', 'wp-toolbelt' )}</strong>
+						</p>
+					</RawHTML>
+				);
+			}
+
+			/**
+			 * Render the markdown content.
+			 */
+			if ( !isSelected && !isEmpty() ) {
+				return (
+					<RawHTML className={className}>
+						{source.length ? marked( source ) : ''}
+					</RawHTML>
+				)
+			}
+
+			/**
+			 * Edit the markdown content.
+			 */
+			return (
+				<div className={className}>
+					<PlainText
+						placeholder={__( 'Write your _Markdown_ **here**…', 'wp-toolbelt' )}
+						value={source}
+						onChange={updateSource}
+					></PlainText >
+				</div>
+			);
+
+		},
+
+		example: {
+			attributes: {
+				source: `## ## ${exampleTitle}\n\n${exampleDescription}`,
+			},
 		}
+
 	}
-)
+);

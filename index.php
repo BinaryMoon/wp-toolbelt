@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'TOOLBELT_VERSION', '2.2.2' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
+define( 'TOOLBELT_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
 
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
@@ -150,6 +151,11 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading',
+		),
+		'markdown' => array(
+			'name' => esc_html__( 'Markdown', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Render Markdown. Uses Github flavor Markdown.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Markdown',
 		),
 		'monetization' => array(
 			'name' => esc_html__( 'Web Monetization', 'wp-toolbelt' ),
