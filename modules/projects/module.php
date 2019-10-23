@@ -418,6 +418,13 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 
 			$excerpt = apply_filters( 'toolbelt_portfolio_excerpt', trim( get_the_excerpt() ) );
 
+			// Ensure there's a permalink.
+			$permalink = get_permalink();
+			if ( ! $permalink ) {
+				$permalink = '';
+			}
+
+
 			/**
 			 * Use null for `get_the_post_thumbnail` since this will use the
 			 * global post object.
@@ -430,7 +437,7 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 			$projects_list[] = sprintf(
 				$html,
 				get_the_post_thumbnail( null, 'medium' ),
-				esc_url( get_the_permalink() ),
+				esc_url( $permalink ),
 				get_the_title(),
 				$excerpt
 			);
@@ -576,15 +583,24 @@ function toolbelt_portfolio_type_list() {
 
 	$categories = array();
 
-	foreach ( $terms as $term ) {
+	if ( is_array( $terms ) ) {
 
-		$categories[] = array(
-			'id' => $term->term_id,
-			'name' => $term->name,
-		);
+		foreach ( $terms as $term ) {
 
+			$categories[] = array(
+				'id' => $term->term_id,
+				'name' => $term->name,
+			);
+
+		}
 	}
 
-	return wp_json_encode( $categories );
+	// Ensure the json is a string.
+	$json = wp_json_encode( $categories );
+	if ( ! $json ) {
+		$json = '';
+	}
+
+	return $json;
 
 }
