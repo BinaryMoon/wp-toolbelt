@@ -102,11 +102,9 @@ registerBlockType(
 			 */
 			if ( !isSelected && isEmpty() ) {
 				return (
-					<RawHTML className={className}>
-						<p>
-							<strong>{__( 'Write your _Markdown_ **here**…', 'wp-toolbelt' )}</strong>
-						</p>
-					</RawHTML>
+					<p className={className}>
+						<strong>{__( 'Write your _Markdown_ **here**…', 'wp-toolbelt' )}</strong>
+					</p>
 				);
 			}
 
