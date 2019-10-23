@@ -68,9 +68,9 @@ registerBlockType(
 			const { source } = attributes;
 
 			return (
-				<>
+				<RawHTML className={className}>
 					{source.length ? marked( source ) : ''}
-				</>
+				</RawHTML>
 			);
 
 		},
