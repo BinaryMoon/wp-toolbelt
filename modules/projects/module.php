@@ -538,10 +538,12 @@ function toolbelt_portfolio_register_block() {
 				'orderby' => array(
 					'default' => 'date',
 					'enum' => array( 'date', 'rand' ),
+					'type' => 'string',
 				),
 				'align' => array(
 					'default' => '',
 					'enum' => array( 'wide', 'full' ),
+					'type' => 'string',
 				),
 				'categories' => array(
 					'default' => array(),

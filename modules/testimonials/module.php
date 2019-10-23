@@ -378,10 +378,12 @@ function toolbelt_testimonials_register_block() {
 				'orderby' => array(
 					'default' => 'date',
 					'enum' => array( 'date', 'rand' ),
+					'type' => 'string',
 				),
 				'align' => array(
 					'default' => '',
 					'enum' => array( 'wide', 'full' ),
+					'type' => 'string',
 				),
 			),
 		)
