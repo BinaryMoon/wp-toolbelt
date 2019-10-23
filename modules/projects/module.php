@@ -424,7 +424,6 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 				$permalink = '';
 			}
 
-
 			/**
 			 * Use null for `get_the_post_thumbnail` since this will use the
 			 * global post object.
