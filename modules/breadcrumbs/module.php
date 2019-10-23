@@ -40,22 +40,10 @@ function toolbelt_breadcrumbs() {
 		return;
 	}
 
-	$breadcrumb = toolbelt_breadcrumb_item( home_url( '/' ), __( 'Home', 'wp-toolbelt' ) );
+	$breadcrumbs = toolbelt_breadcrumb_get( $breadcrumb_type );
 
-	switch ( $breadcrumb_type[0] ) {
-
-		case 'post':
-			$breadcrumb .= toolbelt_breadcrumb_post_hierarchical();
-			break;
-
-		case 'taxonomy':
-			$breadcrumb .= toolbelt_breadcrumb_tax_hierarchical( $breadcrumb_type[1] );
-			break;
-
-		default:
-			$breadcrumb = '';
-			break;
-
+	if ( empty( $breadcrumbs ) ) {
+		return;
 	}
 
 	toolbelt_styles( 'breadcrumbs' );
@@ -64,7 +52,68 @@ function toolbelt_breadcrumbs() {
 	 * Output the breadcrumbs.
 	 * Sanitization is ignored since we are already sanitizing the values when the string is generated.
 	 */
-	echo '<ol class="entry-breadcrumbs toolbelt-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $breadcrumb . '</ol>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo toolbelt_breadcrumb_html( $breadcrumbs ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+}
+
+
+/**
+ * Generate the breadcrumb list.
+ * The list is stored in a transient for faster retrieval.
+ *
+ * @param array $type Information about the type of breadcrumb list to get.
+ * @return array
+ */
+function toolbelt_breadcrumb_get( $type ) {
+
+	$breadcrumbs = array();
+	$breadcrumbs[] = array( home_url( '/' ), __( 'Home', 'wp-toolbelt' ) );
+
+	switch ( $type[0] ) {
+
+		case 'post':
+			$breadcrumbs = array_merge( $breadcrumbs, toolbelt_breadcrumb_post_hierarchical() );
+			break;
+
+		case 'taxonomy':
+			$breadcrumbs = array_merge( $breadcrumbs, toolbelt_breadcrumb_tax_hierarchical( $type[1] ) );
+			break;
+
+		default:
+			$breadcrumbs = array();
+			break;
+
+	}
+
+	return $breadcrumbs;
+
+}
+
+
+/**
+ * Generate the breadcrumb html.
+ *
+ * @param array $breadcrumbs List of breadcrumbs to display as html.
+ * @return string
+ */
+function toolbelt_breadcrumb_html( $breadcrumbs ) {
+
+	$html = '';
+
+	foreach ( $breadcrumbs as $crumb ) {
+
+		if ( null !== $crumb[1] ) {
+
+			$html .= toolbelt_breadcrumb_link( $crumb[0], $crumb[1] );
+
+		} else {
+
+			$html .= toolbelt_breadcrumb_item( $crumb[0] );
+
+		}
+	}
+
+	return '<ol class="entry-breadcrumbs toolbelt-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $html . '</ol>';
 
 }
 
@@ -114,19 +163,19 @@ function toolbelt_breadcrumb_type() {
  * Generate a hierarchical breadcrumb trail.
  *
  * @param string $taxonomy The taxonomy type for the archive.
- * @return string
+ * @return array
  */
 function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 
 	$current = get_term( get_queried_object_id(), $taxonomy );
-	$breadcrumb = '';
+	$breadcrumbs = array();
 
 	if ( is_wp_error( $current ) ) {
-		return '';
+		return $breadcrumbs;
 	}
 
 	if ( ! $current instanceof WP_Term ) {
-		return '';
+		return $breadcrumbs;
 	}
 
 	/**
@@ -134,12 +183,12 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 	 * together.
 	 */
 	if ( isset( $current->parent ) ) {
-		$breadcrumb = toolbelt_get_term_parents( (int) $current->parent, $taxonomy );
+		$breadcrumbs = array_merge( $breadcrumbs, toolbelt_get_term_parents( (int) $current->parent, $taxonomy ) );
 	}
 
-	$breadcrumb .= toolbelt_breadcrumb_item_current( $current->name );
+	$breadcrumbs[] = array( $current->name, null );
 
-	return $breadcrumb;
+	return $breadcrumbs;
 
 }
 
@@ -152,21 +201,20 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
  * @param int    $term Taxonomy term whose parents will be returned.
  * @param string $taxonomy Taxonomy name that the term belongs to.
  * @param array  $visited Terms already added to prevent duplicates.
- * @return string A list of links to the term parents.
+ * @return array A list of links to the term parents.
  */
 function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 
 	$parent = get_term( $term, $taxonomy );
+	$breadcrumbs = array();
 
 	if ( is_wp_error( $parent ) ) {
-		return '';
+		return $breadcrumbs;
 	}
 
 	if ( ! $parent instanceof WP_Term ) {
-		return '';
+		return $breadcrumbs;
 	}
-
-	$chain = '';
 
 	/**
 	 * If the term has a parent, and we haven't already added this parent to the
@@ -181,12 +229,12 @@ function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 	 */
 	if ( $parent->parent && ( $parent->parent !== $parent->term_id ) && ! in_array( $parent->parent, $visited, true ) ) {
 		$visited[] = $parent->parent;
-		$chain .= toolbelt_get_term_parents( $parent->parent, $taxonomy, $visited );
+		$breadcrumbs = array_merge( $breadcrumbs, toolbelt_get_term_parents( $parent->parent, $taxonomy, $visited ) );
 	}
 
-	$chain .= toolbelt_breadcrumb_item( get_category_link( $parent->term_id ), $parent->name );
+	$breadcrumbs[] = array( get_category_link( $parent->term_id ), $parent->name );
 
-	return $chain;
+	return $breadcrumbs;
 
 }
 
@@ -198,13 +246,13 @@ function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
  * This includes pages, and custom post types that can have a parent child
  * relationships.
  *
- * @return string
+ * @return array
  */
 function toolbelt_breadcrumb_post_hierarchical() {
 
 	$post_id = get_queried_object_id();
 	$ancestors = array_reverse( get_post_ancestors( $post_id ) );
-	$breadcrumb = '';
+	$breadcrumbs = array();
 
 	/**
 	 * Loop through the list of post parents and generate a list of breadcrumbs
@@ -213,14 +261,14 @@ function toolbelt_breadcrumb_post_hierarchical() {
 	if ( $ancestors ) {
 		foreach ( $ancestors as $ancestor ) {
 
-			$breadcrumb .= toolbelt_breadcrumb_item( get_permalink( $ancestor ), get_the_title( $ancestor ) );
+			$breadcrumbs[] = array( get_permalink( $ancestor ), get_the_title( $ancestor ) );
 
 		}
 	}
 
-	$breadcrumb .= toolbelt_breadcrumb_item_current( get_the_title( $post_id ) );
+	$breadcrumbs[] = array( get_the_title( $post_id ), null );
 
-	return $breadcrumb;
+	return $breadcrumbs;
 
 }
 
@@ -232,7 +280,7 @@ function toolbelt_breadcrumb_post_hierarchical() {
  * @param string|false $title The title to display.
  * @return string The html for the breadcrumb item.
  */
-function toolbelt_breadcrumb_item( $url, $title ) {
+function toolbelt_breadcrumb_link( $url, $title ) {
 
 	if ( ! $title || ! $url ) {
 		return '';
@@ -261,13 +309,14 @@ function toolbelt_breadcrumb_item( $url, $title ) {
 
 }
 
+
 /**
  * Generate a Breadcrumb item with no link.
  *
  * @param string|false $title The title to display.
  * @return string The html for the breadcrumb item.
  */
-function toolbelt_breadcrumb_item_current( $title ) {
+function toolbelt_breadcrumb_item( $title ) {
 
 	if ( ! $title ) {
 		return '';

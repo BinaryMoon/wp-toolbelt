@@ -1,0 +1,46 @@
+.toolbelt-testimonials {
+
+	> div {
+
+		padding: var( --toolbelt-spacing );
+
+	}
+
+	.toolbelt-entry {
+
+		margin-bottom: var( --toolbelt-spacing );
+
+		*:last-child {
+
+			margin-bottom: 0;
+
+		}
+
+	}
+
+	footer {
+
+		display: flex;
+		align-items: center;
+
+		.author {
+
+			flex-grow: 1;
+			font-weight: bold;
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+
+		}
+
+		.avatar {
+
+			width: 30%;
+			max-width: calc( var( --toolbelt-spacing ) * 4 );
+			min-width: calc( var( --toolbelt-spacing ) * 2 );
+			margin-right: calc( var( --toolbelt-spacing ) / 2 );
+
+		}
+
+	}
+
+}

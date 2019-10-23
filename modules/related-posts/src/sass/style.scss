@@ -2,10 +2,6 @@
 
 	div {
 
-		display: flex;
-		margin: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) * -1 );
-		flex-wrap: wrap;
-
 		a {
 
 			padding: var( --toolbelt-spacing );
@@ -31,8 +27,6 @@
 	a {
 
 		display: block;
-		flex-grow: 1;
-		flex-basis: 50%;
 
 	}
 

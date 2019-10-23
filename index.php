@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: WP Toolbelt
- * Description: More features, fast.
+ * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 2.2
+ * Version: 2.2.2
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -14,8 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '2.2' );
+define( 'TOOLBELT_VERSION', '2.2.2' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
+define( 'TOOLBELT_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
 
 if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
@@ -100,23 +101,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Tweak styles in the admin to make it more usable.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks',
 		),
-		'cookie-banner' => array(
-			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Display a simple banner with a link to your Privacy Policy.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner',
-			'weight' => esc_html__( '1.2kb of inline JS and CSS.', 'wp-toolbelt' ),
-		),
-		'social-sharing' => array(
-			'name' => esc_html__( 'Static Social Sharing', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Add social sharing links that use the platforms native sharing system.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing',
-			'weight' => esc_html__( '4.1kb of inline SVG icons, and 0.7kb of inline CSS.', 'wp-toolbelt' ),
-		),
-		'projects' => array(
-			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
-			'description' => esc_html__( 'A portfolio custom post type.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio',
-			'supports' => array( 'tools' ),
+		'breadcrumbs' => array(
+			'name' => esc_html__( 'Breadcrumbs', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs',
+			'weight' => esc_html__( '1 or 2kb of HTML.', 'wp-toolbelt' ),
 		),
 		'cleanup' => array(
 			'name' => esc_html__( 'Header Cleanup', 'wp-toolbelt' ),
@@ -124,57 +113,27 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization',
 			'weight' => esc_html__( 'Minus 5kb of HTML from the page head.', 'wp-toolbelt' ),
 		),
-		'breadcrumbs' => array(
-			'name' => esc_html__( 'Breadcrumbs', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs',
-			'weight' => esc_html__( '1 or 2kb of HTML.', 'wp-toolbelt' ),
+		'cookie-banner' => array(
+			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Display a simple banner with a link to your Privacy Policy.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner',
+			'weight' => esc_html__( '1.2kb of inline JS and CSS.', 'wp-toolbelt' ),
 		),
-		'related-posts' => array(
-			'name' => esc_html__( 'Related Posts', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Speedy related posts.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts',
-			'weight' => esc_html__( '0.3kb of inline CSS, plus the HTML and images.', 'wp-toolbelt' ),
+		'disable-comment-urls' => array(
+			'name' => esc_html__( 'Disable the Comment URL Field', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls',
 			'supports' => array( 'tools' ),
 		),
-		'lazy-load' => array(
-			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading',
-		),
-		'social-menu' => array(
-			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Add a social icons menu. This must be integrated into the theme.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu',
-			'weight' => esc_html__( '0.2kb of inline CSS, plus the SVGs needed for the icons.', 'wp-toolbelt' ),
+		'fast-404' => array(
+			'name' => esc_html__( 'Fast 404s', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Disable 404 pages for static files like images.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404',
 		),
 		'featured-attachment' => array(
 			'name' => esc_html__( 'Featured Attachment', 'wp-toolbelt' ),
 			'description' => esc_html__( 'If there is no featured image for a post then use the first image attachment instead.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment',
-		),
-		'responsive-videos' => array(
-			'name' => esc_html__( 'Responsive Videos', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
-			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
-		),
-		'monetization' => array(
-			'name' => esc_html__( 'Web Monetization', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization',
-			'supports' => array( 'settings' ),
-		),
-		'random-redirect' => array(
-			'name' => esc_html__( 'Random Redirect', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Randomly Redirect to a blog post.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect',
-		),
-		'stats' => array(
-			'name' => esc_html__( 'Stats', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Website statistics and analytics.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats',
-			'supports' => array( 'settings' ),
 		),
 		'heading-anchors' => array(
 			'name' => esc_html__( 'Heading Anchors', 'wp-toolbelt' ),
@@ -188,23 +147,77 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll',
 			'weight' => esc_html__( '0.8kb of inline CSS and 1.3kb of inline JS.', 'wp-toolbelt' ),
 		),
-		'fast-404' => array(
-			'name' => esc_html__( 'Fast 404s', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Disable 404 pages for static files like images.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404',
+		'lazy-load' => array(
+			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading',
 		),
-		'disable-comment-urls' => array(
-			'name' => esc_html__( 'Disable the Comment URL Field', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls',
+		'markdown' => array(
+			'name' => esc_html__( 'Markdown', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Render Markdown. Uses Github flavor Markdown.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Markdown',
+		),
+		'monetization' => array(
+			'name' => esc_html__( 'Web Monetization', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization',
+			'supports' => array( 'settings' ),
+		),
+		'projects' => array(
+			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A portfolio custom post type.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio',
 			'supports' => array( 'tools' ),
+		),
+		'random-redirect' => array(
+			'name' => esc_html__( 'Random Redirect', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Randomly Redirect to a blog post.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect',
+		),
+		'related-posts' => array(
+			'name' => esc_html__( 'Related Posts', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Speedy related posts.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts',
+			'weight' => esc_html__( '0.3kb of inline CSS, plus the HTML and images.', 'wp-toolbelt' ),
+			'supports' => array( 'tools' ),
+		),
+		'responsive-videos' => array(
+			'name' => esc_html__( 'Responsive Videos', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
+			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
+		),
+		'social-menu' => array(
+			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Add a social icons menu. This must be integrated into the theme.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu',
+			'weight' => esc_html__( '0.2kb of inline CSS, plus the SVGs needed for the icons.', 'wp-toolbelt' ),
+		),
+		'social-sharing' => array(
+			'name' => esc_html__( 'Static Social Sharing', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Add social sharing links that use the platforms native sharing system.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing',
+			'weight' => esc_html__( '4.1kb of inline SVG icons, and 0.7kb of inline CSS.', 'wp-toolbelt' ),
 		),
 		'spam-blocker' => array(
 			'name' => esc_html__( 'Spam Blocker', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Attempt to block spam.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker',
-			'weight' => esc_html( '0.3kb of inline JS', 'wp-toolbelt' ),
+			'weight' => esc_html__( '0.3kb of inline JS', 'wp-toolbelt' ),
 			'supports' => array( 'experimental' ),
+		),
+		'stats' => array(
+			'name' => esc_html__( 'Stats', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Website statistics and analytics.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats',
+			'supports' => array( 'settings' ),
+		),
+		'testimonials' => array(
+			'name' => esc_html__( 'Testimonial', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A testimonials custom post type.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Testimonials',
+			'weight' => esc_html__( '0.5kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'tools' ),
 		),
 		'widget-display' => array(
 			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),
@@ -245,6 +258,7 @@ function toolbelt_css_properties() {
 }
 
 add_filter( 'wp_print_styles', 'toolbelt_css_properties' );
+add_filter( 'enqueue_block_editor_assets', 'toolbelt_css_properties' );
 
 
 /**
@@ -266,7 +280,41 @@ function toolbelt_styles( $module ) {
 
 	$path = TOOLBELT_PATH . 'modules/' . $module . '/style.min.css';
 
+	if ( in_array( $path, get_included_files(), true ) ) {
+		return;
+	}
+
 	echo '<style name="toolbelt-style-' . esc_attr( $module ) . '">';
+	require_once $path;
+	echo '</style>';
+
+}
+
+
+/**
+ * Inline the module css.
+ *
+ * @param string $module The module slug.
+ */
+function toolbelt_global_styles( $module ) {
+
+	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
+		return;
+	}
+
+	$css_filter = sprintf( 'toolbelt_hide_%s_styles', $module );
+
+	if ( apply_filters( $css_filter, false ) ) {
+		return;
+	}
+
+	$path = TOOLBELT_PATH . 'assets/css/' . $module . '.css';
+
+	if ( in_array( $path, get_included_files(), true ) ) {
+		return;
+	}
+
+	echo '<style name="toolbelt-global-style-' . esc_attr( $module ) . '">';
 	require_once $path;
 	echo '</style>';
 
@@ -312,5 +360,18 @@ function toolbelt_get_options() {
 	}
 
 	return $options;
+
+}
+
+
+/**
+ * Display the plugin url relative to the plugin root.
+ *
+ * @param string $path The path to load.
+ * @return string
+ */
+function toolbelt_plugins_url( $path ) {
+
+	return TOOLBELT_PLUGIN_URL . '/' . ltrim( $path, '/' );
 
 }

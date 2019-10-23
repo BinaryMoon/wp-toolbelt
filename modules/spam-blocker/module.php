@@ -12,6 +12,14 @@
  */
 
 /**
+ * Inspiration
+ *
+ * WordPress Zero Spam is based on the ideas outlined in David Walshes spam blocker.
+ *
+ * @link https://github.com/bmarshall511/wordpress-zero-spam
+ */
+
+/**
  * Add a spam key. This will change with each plugin update.
  */
 define( 'TOOLBELT_SPAM_KEY', md5( 'toolbelt-spam-key' . TOOLBELT_VERSION ) );
@@ -58,13 +66,13 @@ add_filter( 'comment_form_default_fields', 'toolbelt_spam_form_fields', 11 );
 
 
 /**
- * Do the actual spam check.
+ * Check for comment spam.
  *
  * @param int|string $approved The current comment status.
  * @param array      $comment Information about the comment.
  * @return int|string
  */
-function toolbelt_spam_check( $approved, $comment ) {
+function toolbelt_spam_check_comments( $approved, $comment ) {
 
 	/**
 	 * Ignore logged in users.
@@ -109,7 +117,79 @@ function toolbelt_spam_check( $approved, $comment ) {
 
 }
 
-add_filter( 'pre_comment_approved', 'toolbelt_spam_check', 10, 2 );
+add_filter( 'pre_comment_approved', 'toolbelt_spam_check_comments', 10, 2 );
+
+
+/**
+ * Generic form spam check.
+ * Only checks for the field added on submission,
+ *
+ * @return boolean
+ */
+function toolbelt_spam_check() {
+
+	/**
+	 * If the check field does not exist then it's spam (or a user has javascript disabled).
+	 */
+	$toolbelt_check = filter_input( INPUT_POST, 'toolbelt-check' );
+	if ( '1' !== $toolbelt_check ) {
+		// Return IS spam.
+		return true;
+	}
+
+	// Return NOT spam.
+	return false;
+
+}
+
+add_filter( 'jetpack_contact_form_is_spam', 'toolbelt_spam_check' );
+add_filter( 'gform_entry_is_spam', 'toolbelt_spam_check' );
+
+
+/**
+ * Check content against the blacklist.
+ *
+ * This is largely lifted from the comment blacklist checker.
+ *
+ * @link https://developer.wordpress.org/reference/functions/wp_blacklist_check/
+ *
+ * @param string $content The content to check.
+ * @return bool
+ */
+function toolbelt_spam_blacklist_check( $content ) {
+
+	$mod_keys = trim( get_option( 'blacklist_keys' ) );
+	if ( empty( $mod_keys ) ) {
+		return false;
+	}
+
+	// Ensure HTML tags are not being used to bypass the blacklist.
+	$comment_without_html = wp_strip_all_tags( $content );
+
+	$words = explode( "\n", $mod_keys );
+
+	foreach ( (array) $words as $word ) {
+
+		$word = trim( $word );
+
+		// Skip empty lines.
+		if ( empty( $word ) ) {
+			continue;
+		}
+
+		// Do some escaping magic so that '#' chars in the
+		// spam words don't break things.
+		$word = preg_quote( $word, '#' );
+
+		$pattern = "#$word#i";
+		if ( preg_match( $pattern, $content ) ) {
+			return true;
+		}
+	}
+
+	return false;
+
+}
 
 
 /**

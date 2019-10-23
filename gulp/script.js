@@ -4,25 +4,33 @@
 const { src, dest } = require( 'gulp' );
 const concat = require( 'gulp-concat' );
 const uglify = require( 'gulp-uglify' );
-const rename = require( 'gulp-rename' );
+const size = require( 'gulp-filesize' );
+const babel = require( 'gulp-babel' );
+
 
 function process_scripts( slug ) {
 
 	const destination = './modules/' + slug + '/';
 	const source = './modules/' + slug + '/src/js/**.js';
+	const env = [
+		'@babel/preset-env',
+		'@wordpress/babel-preset-default'
+	];
+
+	let name = 'script';
 
 	return src( source )
 		.pipe(
-			concat( 'script.js' )
+			concat( name + '.min.js' )
 		)
-		//.pipe( dest( destination ) )
+		.pipe(
+			babel( { presets: env } )
+		)
 		.pipe(
 			uglify()
 		)
-		.pipe(
-			rename( 'script.min.js' )
-		)
-		.pipe( dest( destination ) );
+		.pipe( dest( destination ) )
+		.pipe( size() );
 
 }
 

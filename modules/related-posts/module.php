@@ -60,6 +60,16 @@ add_filter( 'the_content', 'toolbelt_related_posts' );
  */
 function toolbelt_related_posts_get() {
 
+	/**
+	 * If a password is required then don't display anything.
+	 *
+	 * This is added here, rather than in `toolbelt_related_posts` so that the
+	 * function takes effect for people who call the function directly.
+	 */
+	if ( post_password_required() ) {
+		return '';
+	}
+
 	$available_post_types = apply_filters(
 		'toolbelt_related_post_types',
 		array( 'post' => 'category' )
@@ -88,6 +98,7 @@ function toolbelt_related_posts_get() {
 	shuffle( $related_posts );
 	$related_posts = array_slice( $related_posts, 0, apply_filters( 'toolbelt_related_posts_count', 2 ) );
 
+	toolbelt_global_styles( 'columns' );
 	toolbelt_styles( 'related-posts' );
 
 	return toolbelt_related_posts_html( $related_posts );
@@ -105,7 +116,7 @@ function toolbelt_related_posts_html( $related_posts ) {
 
 	$html = '<section class="toolbelt-related-posts">';
 	$html .= '<h3>' . esc_html__( 'Related Posts', 'wp-toolbelt' ) . '</h3>';
-	$html .= '<div>';
+	$html .= '<div class="toolbelt-cols-2">';
 
 	foreach ( $related_posts as $related ) {
 

@@ -3,10 +3,18 @@
 
 const { src, dest } = require( 'gulp' );
 const sass = require( 'gulp-sass' );
-const rename = require( 'gulp-rename' );
 const autoprefixer = require( 'gulp-autoprefixer' );
 const cleancss = require( 'gulp-clean-css' );
 const change = require( 'gulp-change' );
+const concat = require( 'gulp-concat' );
+const size = require( 'gulp-filesize' );
+
+const sass_properties = {
+	indentType: 'tab',
+	indentWidth: 1,
+	outputStyle: 'expanded',
+	precision: 3,
+};
 
 /**
  * Build SASS files.
@@ -14,44 +22,51 @@ const change = require( 'gulp-change' );
 function process_styles( slug ) {
 
 	const destination = './modules/' + slug + '/';
-	const source = './modules/' + slug + '/src/sass/style.scss';
+	const source = './modules/' + slug + '/src/sass/*.scss';
 
 	/**
 	 * Uses node-sass options:
 	 * https://github.com/sass/node-sass#options
 	 */
 	return src( source )
+		.pipe( concat( 'style.min.css' ) )
 		.pipe(
-			sass(
-				{
-					indentType: 'tab',
-					indentWidth: 1,
-					outputStyle: 'expanded',
-					precision: 3,
-
-				}
-			).on( 'error', sass.logError )
+			sass( sass_properties ).on( 'error', sass.logError )
 		)
 		.pipe(
 			autoprefixer(
-				{
-					cascade: false
-				}
+				{ cascade: false }
 			)
 		)
-		// .pipe( dest( destination ) )
-		.pipe( rename( 'style.min.css' ) )
 		.pipe(
 			change( removeComments )
 		)
 		.pipe(
-			cleancss(
-				{
-					level: 2
-				}
+			cleancss( { level: 2 } )
+		)
+		.pipe( dest( destination ) )
+		.pipe( size() );
+
+}
+
+/**
+ *
+ */
+export function process_global_styles() {
+
+	return src( './assets/sass/*.scss' )
+		.pipe(
+			sass( sass_properties ).on( 'error', sass.logError )
+		)
+		.pipe(
+			autoprefixer(
+				{ cascade: false }
 			)
 		)
-		.pipe( dest( destination ) );
+		.pipe(
+			cleancss( { level: 2 } )
+		)
+		.pipe( dest( './assets/css/' ) );
 
 }
 
@@ -70,6 +85,18 @@ export function styles_social() {
 export function styles_related_posts() {
 
 	return process_styles( 'related-posts' );
+
+}
+
+export function styles_testimonials() {
+
+	return process_styles( 'testimonials' );
+
+}
+
+export function styles_portfolio() {
+
+	return process_styles( 'projects' );
 
 }
 
@@ -119,4 +146,4 @@ const removeComments = function( content ) {
 
 	return content;
 
-}
+};

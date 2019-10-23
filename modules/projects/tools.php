@@ -50,7 +50,7 @@ add_action( 'toolbelt_module_tools', 'toolbelt_projects_tools' );
  * @param string $action The action to perform.
  * @return void
  */
-function toolbelt_tools_convert( $action ) {
+function toolbelt_tools_convert_projects( $action ) {
 
 	$actions = array( 'convert_toolbelt_portfolio', 'convert_jetpack_portfolio' );
 
@@ -98,8 +98,8 @@ function toolbelt_tools_convert( $action ) {
 		array( 'post_type' => $types[ $from ]['post'] )
 	);
 
-	// translators: %d = numbers of posts.
-	$message .= '<li>' . sprintf( esc_html__( '%d posts converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
+	// translators: %d = numbers of projects.
+	$message .= '<li>' . sprintf( esc_html__( '%d projects converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
 	// Convert post categories.
 	$rows = $wpdb->update(
@@ -118,6 +118,9 @@ function toolbelt_tools_convert( $action ) {
 		array( 'taxonomy' => $types[ $from ]['tag'] )
 	);
 
+	// Clear rewrite rules, to ensure portfolio posts display properly.
+	flush_rewrite_rules();
+
 	// translators: %d = numbers of tags.
 	$message .= '<li>' . sprintf( esc_html__( '%d tags converted', 'wp-toolbelt' ), (int) $rows ) . '</li>';
 
@@ -125,4 +128,4 @@ function toolbelt_tools_convert( $action ) {
 
 }
 
-add_action( 'toolbelt_tool_actions', 'toolbelt_tools_convert' );
+add_action( 'toolbelt_tool_actions', 'toolbelt_tools_convert_projects' );

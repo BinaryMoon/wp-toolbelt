@@ -1,7 +1,5 @@
 var toolbelt_spam = ( function() {
 
-	var inputAdded = false;
-
 	/**
 	 * Attach the spam check field to the comment form.
 	 *
@@ -9,42 +7,63 @@ var toolbelt_spam = ( function() {
 	 */
 	var attachInput = function( event ) {
 
-		// Check to stop us from adding multiple fields.
-		if ( inputAdded ) {
+		if ( !event.target ) {
 			return;
 		}
 
-		var commentform = document.getElementById( 'commentform' );
+		// Check we haven't already added the check element.
+		if ( event.target.querySelector( '.toolbelt-check' ) ) {
+			return;
+		}
 
 		// Create an input field to add to the form.
 		var input = document.createElement( 'input' );
 		input.type = 'hidden';
 		input.name = 'toolbelt-check';
+		input.className = 'toolbelt-check';
 		input.value = 1;
 
 		// Append the field.
-		commentform.appendChild( input );
-
-		inputAdded = true;
+		event.target.appendChild( input );
 
 	};
+
 
 	return {
 
 		init: function() {
 
-			var commentform = document.getElementById( 'commentform' );
+			var forms = [
+				'#commentform',						// WordPress comments.
+				'.contact-form.commentsblock',		// Jetpack Contact form.
+				'#contactform',						// ?
+				'.ninja-forms-form',				// Ninja Forms.
+				'.wpforms-form',					// WPForms.
+				'.gform_wrapper form'				// Gravity Forms.
+			];
 
-			// Quit if there's no comment form.
-			if ( ! commentform ) {
+			/**
+			 * Get all forms on the page.
+			 */
+			var commentforms = document.querySelectorAll( forms.join() );
+
+			// Quit if there's no forms.
+			if ( !commentforms.length ) {
 				return;
 			}
 
-			commentform.addEventListener(
-				'submit',
-				attachInput,
-				false
-			);
+			/**
+			 * Add the submit event to all forms.
+			 */
+			for ( i = 0; i < commentforms.length; i++ ) {
+
+				commentforms[ i ].addEventListener(
+					'submit',
+					attachInput,
+					false
+				);
+
+			}
 
 		}
 

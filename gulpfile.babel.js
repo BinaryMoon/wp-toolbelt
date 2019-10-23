@@ -1,26 +1,47 @@
 /* jshint esnext: true */
 'use strict';
 
-// External dependencies.
-import { series, parallel, watch } from 'gulp';
+/**
+ * External dependencies.
+ */
+import {
+	series,
+	parallel,
+	watch
+} from 'gulp';
 
 import {
+	process_global_styles,
 	styles_cookie, styles_social,
 	styles_related_posts, styles_social_menu,
 	styles_breadcrumbs, styles_videos,
 	styles_heading_links, styles_infinite_scroll,
-	styles_admin_tweaks
+	styles_testimonials, styles_admin_tweaks,
+	styles_portfolio
 } from './gulp/sass';
+
 import {
 	scripts_cookieBanner,
 	scripts_infiniteScroll,
 	scripts_spam
 } from './gulp/script';
+
+import {
+	block_markdown,
+	block_testimonials,
+	block_projects
+} from './gulp/script-block';
+
 import compress from './gulp/zip';
+
 import translate from './gulp/pot';
 
+/**
+ * Export Gulp tasks.
+ */
 export const buildTranslations = translate;
 export const buildZip = compress;
+export const buildMD = block_markdown;
 
 export const build = series(
 	parallel(
@@ -33,9 +54,15 @@ export const build = series(
 		styles_heading_links,
 		styles_infinite_scroll,
 		styles_admin_tweaks,
+		styles_portfolio,
+		styles_testimonials,
 		scripts_cookieBanner,
 		scripts_infiniteScroll,
 		scripts_spam,
+		process_global_styles,
+		block_testimonials,
+		block_projects,
+		block_markdown,
 		translate
 	),
 	compress
@@ -44,7 +71,7 @@ export const build = series(
 export const watchFiles = function( done ) {
 
 	watch(
-		'./modules/**/*.scss',
+		'./modules/*/src/sass/*.scss',
 		parallel(
 			styles_cookie,
 			styles_social,
@@ -54,17 +81,35 @@ export const watchFiles = function( done ) {
 			styles_heading_links,
 			styles_videos,
 			styles_infinite_scroll,
-			styles_admin_tweaks
+			styles_admin_tweaks,
+			styles_testimonials,
+			styles_portfolio
 		)
 	);
 
 	watch(
-		[ './modules/**/*.js', '!./modules/**/script.min.js' ],
+		[ './modules/*/src/js/*.js' ],
 		parallel(
 			scripts_infiniteScroll,
 			scripts_cookieBanner,
 			scripts_spam
 		)
+	);
+
+	watch(
+		[ './modules/*/src/block/*.js' ],
+		series(
+			parallel(
+				block_testimonials,
+				block_projects,
+				block_markdown
+			)
+		)
+	);
+
+	watch(
+		[ './assets/sass/*.scss' ],
+		process_global_styles
 	);
 
 	done();
