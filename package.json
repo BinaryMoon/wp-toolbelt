@@ -21,7 +21,7 @@
 		"@babel/register": "^7.6.2",
 		"@wordpress/babel-preset-default": "^4.6.2",
 		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^6.1.0",
+		"gulp-autoprefixer": "^7.0.0",
 		"gulp-babel": "^8.0.0",
 		"gulp-change": "^1.0.2",
 		"gulp-clean-css": "^4.2.0",
