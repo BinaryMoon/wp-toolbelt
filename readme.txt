@@ -1,6 +1,6 @@
 === Toolbelt ===
 Contributors: BinaryMoon
-Tags: speed, privacy, accessibility, optimization, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display
+Tags: speed, privacy, accessibility, optimization, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, testimonials
 Requires at least: 5.0
 Tested up to: 5.3
 Stable tag: trunk
@@ -9,11 +9,11 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://paypal.me/binarymoon
 
-Speedy utilities to make your website more private.
+Fast, privacy focused, utilities to improve your website. Includes a Markdown block, spam protection, related posts, widget display, cookie banner, and lots more.
 
 == Description ==
 
-A collection of simple addons that provide every day functionality with privacy and speed. There's no options, and no unnecessary filler. It does exactly what it needs to do and nothing else.
+A collection of simple addons that provide every day functionality with privacy and speed. There's very few options, and no unnecessary filler. It does exactly what it needs to do and nothing else.
 
 Toolbelt takes a privacy first approach to adding features. Everything happens on your server. No data is sent to third party servers without your explicit consent. No data is loaded from third parties (for example social sharing scripts).
 
@@ -117,7 +117,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.3 - 17th October 2019 =
+= 2.3 - 24th October 2019 =
 * Add a Markdown block.
 * Add testimonials post type, shortcode, and block.
 * Add projects shortcode and block.
