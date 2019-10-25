@@ -51,7 +51,7 @@ function toolbelt_spam_form_fields( $fields ) {
 	 */
 	$visibility = 'display: none;';
 
-	if ( WP_DEBUG ) {
+	if ( WP_DEBUG && apply_filters( 'toolbelt_spam_visible_honeypot', false ) ) {
 		$visibility = '';
 	}
 
