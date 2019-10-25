@@ -1,6 +1,6 @@
 === Toolbelt ===
 Contributors: BinaryMoon
-Tags: speed, privacy, accessibility, optimization, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, testimonials
+Tags: speed, privacy, accessibility, optimization, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, testimonials, blocks
 Requires at least: 5.0
 Tested up to: 5.3
 Stable tag: trunk
@@ -9,7 +9,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://paypal.me/binarymoon
 
-Fast, privacy focused, utilities to improve your website. Includes a Markdown block, spam protection, related posts, widget display, cookie banner, and lots more.
+Fast, privacy focused, utilities to improve your website. Includes a Markdown block, spam protection, related posts, cookie banner, and more.
 
 == Description ==
 
@@ -61,7 +61,7 @@ Every week there's a new story about Facebook tracking people inappropriately, o
 
 To ensure Toolbelt is as privacy focused as possible it:
 
-* Does not phone out. No([1]()) data is shared with third parties.
+* Does not phone out. No data is shared with third parties.
 * Does not use standard social sharing javascripts (loaded from social networks servers).
 * Does not track your usage of the plugin.
 * Does not add generator comments, or secret promotional comments to your site html.
