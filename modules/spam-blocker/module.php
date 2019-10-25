@@ -4,7 +4,7 @@
  *
  * Uses the following methods.
  * 1. Url Honeypot (check for empty url).
- * 2. Comment Blacklist.
+ * 2. Comment Blacklist (https://github.com/splorp/wordpress-comment-blacklist).
  * 3. Key Honeypot (check for altered key).
  * 4. Javascript checker (https://davidwalsh.name/wordpress-comment-spam).
  *
