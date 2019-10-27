@@ -117,6 +117,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 2.3.1 - 27th October 2019 =
+* Update spam blacklist.
+
 = 2.3 - 24th October 2019 =
 * Add a Markdown block.
 * Add testimonials post type, shortcode, and block.
