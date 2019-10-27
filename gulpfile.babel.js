@@ -32,6 +32,8 @@ import {
 	block_projects
 } from './gulp/script-block';
 
+import update_blacklist from './gulp/blacklist';
+
 import compress from './gulp/zip';
 
 import translate from './gulp/pot';
@@ -41,7 +43,7 @@ import translate from './gulp/pot';
  */
 export const buildTranslations = translate;
 export const buildZip = compress;
-export const buildMD = block_markdown;
+export const buildBlacklist = update_blacklist;
 
 export const build = series(
 	parallel(
