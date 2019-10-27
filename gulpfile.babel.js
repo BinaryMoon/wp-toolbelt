@@ -65,7 +65,8 @@ export const build = series(
 		block_testimonials,
 		block_projects,
 		block_markdown,
-		translate
+		translate,
+		update_blacklist
 	),
 	compress
 );
