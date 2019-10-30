@@ -3,7 +3,12 @@
 	const { registerBlockType } = wp.blocks;
 	const { createElement } = wp.element;
 	const { InspectorControls } = wp.blockEditor;
-	const { RangeControl, RadioControl, PanelBody, CheckboxControl } = wp.components;
+	const {
+		RangeControl,
+		RadioControl,
+		PanelBody,
+		CheckboxControl
+	} = wp.components;
 	const ServerSideRender = wp.serverSideRender;
 	const { __ } = wp.i18n;
 
