@@ -159,7 +159,7 @@ function toolbelt_field( $slug, $module ) {
 			<label for="<?php echo esc_attr( $slug ); ?>">
 				<strong><?php echo esc_html( $module['name'] ); ?></strong>
 				<?php if ( isset( $module['supports'] ) && in_array( 'experimental', $module['supports'], true ) ) { ?>
-				<em class="experimental"><?php esc_html_e( 'Experimental' ); ?></em>
+				<em class="experimental"><?php esc_html_e( 'Experimental', 'wp-toolbelt' ); ?></em>
 				<?php } ?>
 			</label>
 
