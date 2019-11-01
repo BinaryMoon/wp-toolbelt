@@ -393,3 +393,4 @@ function toolbelt_testimonials_register_block() {
 
 add_action( 'init', 'toolbelt_testimonials_register_block' );
 
+toolbelt_register_block_category();

@@ -10,7 +10,7 @@
 		CheckboxControl
 	} = wp.components;
 	const ServerSideRender = wp.serverSideRender;
-	const { __ } = wp.i18n;
+	const { __, _x } = wp.i18n;
 
 	registerBlockType(
 		'toolbelt/portfolio',
@@ -21,9 +21,12 @@
 
 			description: __( 'Display a grid of Toolbelt Projects.', 'wp-toolbelt' ),
 
-			category: 'common',
+			category: 'wp-toolbelt',
 
-			keywords: [ __( 'projects', 'wp-toolbelt' ), __( 'toolbelt', 'wp-toolbelt' ) ],
+			keywords: [
+				_x( 'projects', 'block search term', 'wp-toolbelt' ),
+				_x( 'toolbelt', 'block search term', 'wp-toolbelt' )
+			],
 
 			supports: {
 				align: [ 'full', 'wide' ],

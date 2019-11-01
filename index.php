@@ -392,7 +392,6 @@ function toolbelt_block_category( $categories, $post ) {
 			array(
 				'slug' => 'wp-toolbelt',
 				'title' => esc_html__( 'Toolbelt', 'toolbelt' ),
-				'icon'  => 'wordpress',
 			),
 		)
 	);

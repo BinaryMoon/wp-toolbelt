@@ -605,3 +605,6 @@ function toolbelt_portfolio_type_list() {
 	return $json;
 
 }
+
+toolbelt_register_block_category();
+

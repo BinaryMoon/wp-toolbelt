@@ -49,3 +49,5 @@ function toolbelt_markdown_register_block() {
 }
 
 add_action( 'init', 'toolbelt_markdown_register_block' );
+
+toolbelt_register_block_category();
