@@ -13,10 +13,6 @@ function process_scripts( slug ) {
 
 	const destination = './modules/' + slug + '/';
 	const source = './modules/' + slug + '/src/block/block.js';
-	const env = [
-		'@babel/preset-env',
-		'@wordpress/babel-preset-default'
-	];
 
 	return src( source )
 		.pipe(
@@ -29,7 +25,7 @@ function process_scripts( slug ) {
 			)
 		)
 		.pipe(
-			babel( { presets: env } )
+			babel()
 		)
 		.pipe(
 			uglify()

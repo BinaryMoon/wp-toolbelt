@@ -12,10 +12,6 @@ function process_scripts( slug ) {
 
 	const destination = './modules/' + slug + '/';
 	const source = './modules/' + slug + '/src/js/**.js';
-	const env = [
-		'@babel/preset-env',
-		'@wordpress/babel-preset-default'
-	];
 
 	let name = 'script';
 
@@ -24,7 +20,7 @@ function process_scripts( slug ) {
 			concat( name + '.min.js' )
 		)
 		.pipe(
-			babel( { presets: env } )
+			babel()
 		)
 		.pipe(
 			uglify()
