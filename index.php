@@ -375,3 +375,42 @@ function toolbelt_plugins_url( $path ) {
 	return TOOLBELT_PLUGIN_URL . '/' . ltrim( $path, '/' );
 
 }
+
+
+/**
+ * Add a block category for Toolbelt.
+ *
+ * @param array  $categories The current list of categories.
+ * @param string $post The post type for the current page.
+ * @return array
+ */
+function toolbelt_block_category( $categories, $post ) {
+
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'wp-toolbelt',
+				'title' => esc_html__( 'Toolbelt', 'toolbelt' ),
+				'icon'  => 'wordpress',
+			),
+		)
+	);
+
+}
+
+
+/**
+ * Register block categories.
+ *
+ * Call this directly from modules. It will only add the filter once.
+ */
+function toolbelt_register_block_category() {
+
+	if ( has_filter( 'block_categories', 'toolbelt_block_category' ) ) {
+		return;
+	}
+
+	add_filter( 'block_categories', 'toolbelt_block_category', 10, 2 );
+
+}
