@@ -27,6 +27,8 @@ function process_scripts( slug ) {
 		.pipe(
 			babel()
 		)
+		.pipe( rename( 'block.js' ) )
+		.pipe( dest( destination ) )
 		.pipe(
 			uglify()
 		)
