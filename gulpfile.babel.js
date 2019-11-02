@@ -100,7 +100,10 @@ export const watchFiles = function( done ) {
 	);
 
 	watch(
-		[ './modules/*/src/block/*.js' ],
+		[
+			'./modules/*/src/block/*.js',
+			'./modules/*/src/block/**/*.js'
+		],
 		series(
 			parallel(
 				block_testimonials,
