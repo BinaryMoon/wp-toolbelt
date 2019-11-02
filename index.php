@@ -331,6 +331,10 @@ function toolbelt_scripts( $module ) {
 	// Output scripts.
 	$path = TOOLBELT_PATH . 'modules/' . $module . '/script.min.js';
 
+	if ( in_array( $path, get_included_files(), true ) ) {
+		return;
+	}
+
 	echo '<script name="toolbelt-script-' . esc_attr( $module ) . '">';
 	require_once $path;
 	echo '</script>';
