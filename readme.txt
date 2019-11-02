@@ -122,16 +122,6 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Fix undefined variable error in spam blocking.
 * Ensure projects and testimonials block styles are loaded.
 * Prevent scripts from being loaded multiple times.
-
-= 2.3 - 24th October 2019 =
-* Add a Markdown block.
-* Add testimonials post type, shortcode, and block.
-* Add projects shortcode and block.
-* Add spam blocking support for Gravity Forms.
-* Add DNS Prefetching to the stats providers.
-* Change social sharing css class name from `toolbelt_social_sharing` to `toolbelt-social-sharing`.
-* Change related posts, and social sharing so that they don't appear on password protected pages.
-* Fix: stop css styles from trying to be included multiple times.
-* Tidy up copy issues.
+* Make the featured images on the projects block link to the project.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
