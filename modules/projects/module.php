@@ -386,7 +386,7 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 	 * The html template for displaying a single testimonial.
 	 */
 	$html = '<div class="toolbelt-project">
-	<div class="thumbnail">%1$s</div>
+	<a href="%2$s" class="thumbnail">%1$s</a>
 	<h2><a href="%2$s">%3$s</a></h2>
 	<div class="toolbelt-entry">%4$s</div>
 	</div>';
