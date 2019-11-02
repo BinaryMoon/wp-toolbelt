@@ -117,8 +117,11 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.3.1 - 27th October 2019 =
+= 2.4 - 2nd November 2019 =
 * Update spam blacklist.
+* Fix undefined variable error in spam blocking.
+* Ensure projects and testimonials block styles are loaded.
+* Prevent scripts from being loaded multiple times.
 
 = 2.3 - 24th October 2019 =
 * Add a Markdown block.
