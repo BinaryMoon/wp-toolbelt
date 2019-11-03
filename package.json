@@ -31,6 +31,7 @@
 		"gulp-include": "^2.4.1",
 		"gulp-rename": "^1.4.0",
 		"gulp-sass": "^4.0.2",
+		"gulp-sloc": "^1.0.4",
 		"gulp-uglify": "^3.0.2",
 		"gulp-wp-pot": "^2.3.5",
 		"gulp-zip": "^5.0.1",

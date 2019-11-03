@@ -38,12 +38,18 @@ import compress from './gulp/zip';
 
 import translate from './gulp/pot';
 
+import {
+	jetpack_stats,
+	toolbelt_stats
+} from './gulp/stats';
+
 /**
  * Export Gulp tasks.
  */
 export const buildTranslations = translate;
 export const buildZip = compress;
 export const buildBlacklist = update_blacklist;
+export const buildStats = parallel( jetpack_stats, toolbelt_stats );
 
 export const build = series(
 	parallel(
