@@ -473,7 +473,7 @@ add_action( 'wp_print_styles', 'toolbelt_portfolio_styles' );
 
 
 /**
- * Include the Portfolio styles if the current post uses the portolio shortcode.
+ * Include the Portfolio styles in the editor.
  */
 function toolbelt_portfolio_editor_styles() {
 
