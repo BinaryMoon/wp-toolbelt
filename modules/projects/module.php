@@ -387,7 +387,7 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 	 */
 	$html = '<div class="toolbelt-project">
 	<a href="%2$s" class="thumbnail">%1$s</a>
-	<h2><a href="%2$s">%3$s</a></h2>
+	<h2 class="toolbelt-skip-anchor"><a href="%2$s">%3$s</a></h2>
 	<div class="toolbelt-entry">%4$s</div>
 	</div>';
 

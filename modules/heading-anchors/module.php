@@ -78,16 +78,21 @@ function toolbelt_heading_ids( $doc, $tag ) {
 		$el->setAttribute( 'id', $slug );
 
 		// Set class so we can style it nicely.
-		$element_class = $el->getAttribute( 'class' ) . ' toolbelt-anchor';
-		$el->setAttribute( 'class', trim( $element_class ) );
+		$element_class = $el->getAttribute( 'class' );
 
-		// Add a link element.
-		$link = $doc->createElement( 'a', '#' );
-		$link->setAttribute( 'class', 'toolbelt-link' );
-		$link->setAttribute( 'href', '#' . $slug );
-		$link->setAttribute( 'aria-hidden', 'true' );
-		$el->appendChild( $link );
+		if ( false === strpos( $element_class, 'toolbelt-skip-anchor' ) ) {
 
+			$element_class .= ' toolbelt-anchor';
+			$el->setAttribute( 'class', trim( $element_class ) );
+
+			// Add a link element.
+			$link = $doc->createElement( 'a', '#' );
+			$link->setAttribute( 'class', 'toolbelt-link' );
+			$link->setAttribute( 'href', '#' . $slug );
+			$link->setAttribute( 'aria-hidden', 'true' );
+			$el->appendChild( $link );
+
+		}
 	}
 
 	return $doc;
