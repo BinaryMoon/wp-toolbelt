@@ -266,7 +266,7 @@ add_filter( 'enqueue_block_editor_assets', 'toolbelt_css_properties' );
  *
  * @param string $module The module slug.
  */
-function toolbelt_styles( $module ) {
+function toolbelt_styles( $module, $name = 'style' ) {
 
 	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
 		return;
@@ -287,6 +287,18 @@ function toolbelt_styles( $module ) {
 	echo '<style name="toolbelt-style-' . esc_attr( $module ) . '">';
 	require_once $path;
 	echo '</style>';
+
+}
+
+
+/**
+ * Load the block editor styles.
+ *
+ * @param string $module The module to load.
+ */
+function toolbelt_styles_editor( $module ) {
+
+	toolbelt_styles( $module, 'block' );
 
 }
 
