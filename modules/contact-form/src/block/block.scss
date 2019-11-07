@@ -1,0 +1,47 @@
+.toolbelt-field-checkbox,
+.toolbelt-field-label {
+
+	display: flex;
+	align-items: center;
+
+	font-size: 13px;
+	margin-bottom: 0.5rem;
+
+}
+
+.toolbelt-field-label-required {
+
+	margin: 0 !important;
+
+}
+
+.toolbelt-field-label-text {
+
+	font-weight: bold;
+	font-size: 13px;
+	margin-inline-end: 0.5rem;
+
+}
+
+.toolbelt-field-multiple {
+
+	margin: 0 0 1rem 0 !important;
+	padding: 0 !important;
+	list-style-type: none;
+	width: 100%;
+
+	li {
+
+		display: flex;
+		align-items: center;
+		margin-bottom: 0.25rem !important;
+
+		.toolbelt-option-input {
+
+			flex-grow: 1;
+
+		}
+
+	}
+
+}
