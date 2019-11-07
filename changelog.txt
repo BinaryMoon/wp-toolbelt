@@ -1,14 +1,3 @@
-= 2.3 - 24th October 2019 =
-* Add a Markdown block.
-* Add testimonials post type, shortcode, and block.
-* Add projects shortcode and block.
-* Add spam blocking support for Gravity Forms.
-* Add DNS Prefetching to the stats providers.
-* Change social sharing css class name from `toolbelt_social_sharing` to `toolbelt-social-sharing`.
-* Change related posts, and social sharing so that they don't appear on password protected pages.
-* Fix: stop css styles from trying to be included multiple times.
-* Tidy up copy issues.
-
 = 2.2.1 - 7th October 2019 =
 * Refactor breadcrumbs again. Slightly longer code, but hopefully clearer what it's doing. And will allow adding caching/ filtering if we want.
 * Add spam blocking for Jetpack comment forms (still experimental).
