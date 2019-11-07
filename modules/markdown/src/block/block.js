@@ -49,7 +49,7 @@
 				)
 			},
 
-			category: 'common',
+			category: 'wp-toolbelt',
 
 			attributes: {
 				source: {

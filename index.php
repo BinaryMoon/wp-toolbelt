@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 2.3.0
+ * Version: 2.4.0
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -265,8 +265,9 @@ add_filter( 'enqueue_block_editor_assets', 'toolbelt_css_properties' );
  * Inline the module css.
  *
  * @param string $module The module slug.
+ * @param string $name The folder name for the style to include.
  */
-function toolbelt_styles( $module ) {
+function toolbelt_styles( $module, $name = 'style' ) {
 
 	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
 		return;
@@ -278,7 +279,7 @@ function toolbelt_styles( $module ) {
 		return;
 	}
 
-	$path = TOOLBELT_PATH . 'modules/' . $module . '/style.min.css';
+	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $name . '.min.css';
 
 	if ( in_array( $path, get_included_files(), true ) ) {
 		return;
@@ -287,6 +288,18 @@ function toolbelt_styles( $module ) {
 	echo '<style name="toolbelt-style-' . esc_attr( $module ) . '">';
 	require_once $path;
 	echo '</style>';
+
+}
+
+
+/**
+ * Load the block editor styles.
+ *
+ * @param string $module The module to load.
+ */
+function toolbelt_styles_editor( $module ) {
+
+	toolbelt_styles( $module, 'block' );
 
 }
 
@@ -331,6 +344,10 @@ function toolbelt_scripts( $module ) {
 	// Output scripts.
 	$path = TOOLBELT_PATH . 'modules/' . $module . '/script.min.js';
 
+	if ( in_array( $path, get_included_files(), true ) ) {
+		return;
+	}
+
 	echo '<script name="toolbelt-script-' . esc_attr( $module ) . '">';
 	require_once $path;
 	echo '</script>';
@@ -373,5 +390,43 @@ function toolbelt_get_options() {
 function toolbelt_plugins_url( $path ) {
 
 	return TOOLBELT_PLUGIN_URL . '/' . ltrim( $path, '/' );
+
+}
+
+
+/**
+ * Add a block category for Toolbelt.
+ *
+ * @param array  $categories The current list of categories.
+ * @param string $post The post type for the current page.
+ * @return array
+ */
+function toolbelt_block_category( $categories, $post ) {
+
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'wp-toolbelt',
+				'title' => esc_html__( 'Toolbelt', 'toolbelt' ),
+			),
+		)
+	);
+
+}
+
+
+/**
+ * Register block categories.
+ *
+ * Call this directly from modules. It will only add the filter once.
+ */
+function toolbelt_register_block_category() {
+
+	if ( has_filter( 'block_categories', 'toolbelt_block_category' ) ) {
+		return;
+	}
+
+	add_filter( 'block_categories', 'toolbelt_block_category', 10, 2 );
 
 }

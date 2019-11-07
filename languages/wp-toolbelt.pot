@@ -266,6 +266,10 @@ msgstr ""
 msgid "Toolbelt Processes"
 msgstr ""
 
+#: admin/admin.php:162
+msgid "Experimental"
+msgstr ""
+
 #: admin/admin.php:166
 msgid "Show more details"
 msgstr ""

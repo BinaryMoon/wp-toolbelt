@@ -312,7 +312,11 @@ function toolbelt_testimonials_styles() {
 
 	global $post;
 
-	if ( is_singular() && has_shortcode( $post->post_content, 'testimonials' ) ) {
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	if ( has_shortcode( $post->post_content, 'testimonials' ) || has_block( 'toolbelt/testimonials' ) ) {
 		toolbelt_global_styles( 'columns' );
 		toolbelt_styles( 'testimonials' );
 	}
@@ -393,3 +397,4 @@ function toolbelt_testimonials_register_block() {
 
 add_action( 'init', 'toolbelt_testimonials_register_block' );
 
+toolbelt_register_block_category();

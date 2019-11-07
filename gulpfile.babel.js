@@ -32,16 +32,24 @@ import {
 	block_projects
 } from './gulp/script-block';
 
+import update_blacklist from './gulp/blacklist';
+
 import compress from './gulp/zip';
 
 import translate from './gulp/pot';
+
+import {
+	jetpack_stats,
+	toolbelt_stats
+} from './gulp/stats';
 
 /**
  * Export Gulp tasks.
  */
 export const buildTranslations = translate;
 export const buildZip = compress;
-export const buildMD = block_markdown;
+export const buildBlacklist = update_blacklist;
+export const buildStats = parallel( jetpack_stats, toolbelt_stats );
 
 export const build = series(
 	parallel(
@@ -63,7 +71,8 @@ export const build = series(
 		block_testimonials,
 		block_projects,
 		block_markdown,
-		translate
+		translate,
+		update_blacklist
 	),
 	compress
 );
@@ -97,7 +106,10 @@ export const watchFiles = function( done ) {
 	);
 
 	watch(
-		[ './modules/*/src/block/*.js' ],
+		[
+			'./modules/*/src/block/*.js',
+			'./modules/*/src/block/**/*.js'
+		],
 		series(
 			parallel(
 				block_testimonials,

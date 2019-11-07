@@ -55,7 +55,7 @@ var toolbelt_spam = ( function() {
 			/**
 			 * Add the submit event to all forms.
 			 */
-			for ( i = 0; i < commentforms.length; i++ ) {
+			for ( var i = 0; i < commentforms.length; i++ ) {
 
 				commentforms[ i ].addEventListener(
 					'submit',

@@ -386,8 +386,8 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 	 * The html template for displaying a single testimonial.
 	 */
 	$html = '<div class="toolbelt-project">
-	<div class="thumbnail">%1$s</div>
-	<h2><a href="%2$s">%3$s</a></h2>
+	<a href="%2$s" class="thumbnail">%1$s</a>
+	<h2 class="toolbelt-skip-anchor"><a href="%2$s">%3$s</a></h2>
 	<div class="toolbelt-entry">%4$s</div>
 	</div>';
 
@@ -458,7 +458,11 @@ function toolbelt_portfolio_styles() {
 
 	global $post;
 
-	if ( is_singular() && has_shortcode( $post->post_content, 'portfolio' ) ) {
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	if ( has_shortcode( $post->post_content, 'portfolio' ) || has_block( 'toolbelt/portfolio' ) ) {
 		toolbelt_global_styles( 'columns' );
 		toolbelt_styles( 'projects' );
 	}
@@ -469,7 +473,7 @@ add_action( 'wp_print_styles', 'toolbelt_portfolio_styles' );
 
 
 /**
- * Include the Portfolio styles if the current post uses the portolio shortcode.
+ * Include the Portfolio styles in the editor.
  */
 function toolbelt_portfolio_editor_styles() {
 
@@ -605,3 +609,6 @@ function toolbelt_portfolio_type_list() {
 	return $json;
 
 }
+
+toolbelt_register_block_category();
+

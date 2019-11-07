@@ -18,7 +18,7 @@
 
 			keywords: [ __( 'toolbelt', 'wp-toolbelt' ) ],
 
-			category: 'common',
+			category: 'wp-toolbelt',
 
 			supports: {
 				align: [ 'full', 'wide' ],

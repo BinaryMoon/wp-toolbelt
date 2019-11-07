@@ -51,7 +51,12 @@ function toolbelt_spam_form_fields( $fields ) {
 	 */
 	$visibility = 'display: none;';
 
-	if ( WP_DEBUG ) {
+	/**
+	 * Use the following filter to display the honeypot fields in a dev
+	 * environment. Will also require enabling wp_debug.
+	 * add_filter( 'toolbelt_spam_display_honeypot', '__return_true' );
+	 */
+	if ( WP_DEBUG && apply_filters( 'toolbelt_spam_visible_honeypot', false ) ) {
 		$visibility = '';
 	}
 
