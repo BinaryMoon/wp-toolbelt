@@ -113,11 +113,6 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization',
 			'weight' => esc_html__( 'Minus 5kb of HTML from the page head.', 'wp-toolbelt' ),
 		),
-		'contact-form' => array(
-			'name' => esc_html__( 'Contact Form', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Create a contact form.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form',
-		),
 		'cookie-banner' => array(
 			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display a simple banner with a link to your Privacy Policy.', 'wp-toolbelt' ),
