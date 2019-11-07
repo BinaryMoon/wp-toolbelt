@@ -334,6 +334,42 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+#: modules/contact-form/module.php:276
+msgid "Required"
+msgstr ""
+
+#: modules/contact-form/module.php:313
+msgid "Submit"
+msgstr ""
+
+#: modules/contact-form/module.php:351
+msgid "Text"
+msgstr ""
+
+#: modules/contact-form/module.php:368
+msgid "Name"
+msgstr ""
+
+#: modules/contact-form/module.php:385
+msgid "Email"
+msgstr ""
+
+#: modules/contact-form/module.php:403
+msgid "Website"
+msgstr ""
+
+#: modules/contact-form/module.php:421
+msgid "Date"
+msgstr ""
+
+#: modules/contact-form/module.php:438
+msgid "Phone Number"
+msgstr ""
+
+#: modules/contact-form/module.php:454
+msgid "Message"
+msgstr ""
+
 #. translators: %s = privacy policy link
 #: modules/cookie-banner/module.php:53
 msgid "By using this website, you agree to our %s"
