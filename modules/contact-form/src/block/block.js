@@ -2,9 +2,20 @@
 
 	const { __, _x } = wp.i18n;
 	const { createElement } = wp.element;
-	const { InspectorControls, InnerBlocks, PlainText } = wp.blockEditor;
+	const {
+		InspectorControls,
+		InnerBlocks,
+		PlainText
+	} = wp.blockEditor;
 	const { getBlockType, registerBlockType } = wp.blocks;
-	const { Fragment, Component, createBlock, createRef, useEffect } = wp.element;
+	const {
+		Fragment,
+		Component,
+		createBlock,
+		createRef,
+		useEffect,
+		useState
+	} = wp.element;
 	const { compose, withInstanceId } = wp.compose;
 	const {
 		BaseControl,

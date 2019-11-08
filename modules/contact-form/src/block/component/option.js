@@ -13,8 +13,6 @@ function ToolbeltMultiOption(
 
 	const thisRef = createRef();
 
-	console.log( inFocus, index );
-
 	useEffect(
 		() => {
 
@@ -23,7 +21,6 @@ function ToolbeltMultiOption(
 			}
 
 			if ( index === inFocus ) {
-				console.log( 'focus', index );
 				thisRef.current.focus();
 			}
 		}
@@ -49,8 +46,10 @@ function ToolbeltMultiOption(
 						value={option}
 						placeholder={__( 'Write option…', 'toolbelt' )}
 						ref={thisRef}
-						onChange={value => { updateOption( index, value ); }}
-						onKeyDown={( event ) => { keyPress( event, index ); }}
+						onChange={( event ) => { updateOption( index, event.target.value ); }}
+						onKeyDown={( event ) => {
+							keyPress( event, index );
+						}}
 					/>
 
 					<IconButton

@@ -17,7 +17,8 @@
       Component = _wp$element.Component,
       createBlock = _wp$element.createBlock,
       createRef = _wp$element.createRef,
-      useEffect = _wp$element.useEffect;
+      useEffect = _wp$element.useEffect,
+      useState = _wp$element.useState;
   var _wp$compose = wp.compose,
       compose = _wp$compose.compose,
       withInstanceId = _wp$compose.withInstanceId;
@@ -562,7 +563,7 @@
       value: defaultValue,
       onChange: function onChange(value) {
         return setAttributes({
-          placeholder: value
+          defaultValue: value
         });
       }
     })), createElement(InspectorControls, null, createElement(PanelBody, {
@@ -666,13 +667,25 @@
         type = _ref6.type;
 
     /**
+     * Set the state focus state.
+     *
+     * I have written this as three variables rather than the shorter
+     * `[x, y] = useState` since this works without bundling.
+     */
+    var focusState = useState(-1);
+    var inFocus = focusState[0];
+    var setInFocus = focusState[1];
+    /**
      * Ensure there is at least one option so we have something to start from.
      */
-    if (!options.length) {
-      options = [__('Example', 'wp-toolbelt')];
-    }
 
-    var inFocus = 0;
+    if (!options.length) {
+      options = [''];
+    }
+    /**
+     * Add a new option to the bottom of the list and set focus to that option.
+     */
+
 
     var addNewOption = function addNewOption() {
       /**
@@ -689,11 +702,11 @@
       setAttributes({
         options: newOptions
       });
-      inFocus = options.length;
+      setInFocus(options.length);
     };
 
     var updateOption = function updateOption(index, value) {
-      if (!index) {
+      if (!index && index !== 0) {
         return;
       }
 
@@ -702,6 +715,7 @@
       setAttributes({
         options: optionsList
       });
+      setInFocus(index);
     };
 
     var deleteOption = function deleteOption(index) {
@@ -710,13 +724,15 @@
       setAttributes({
         options: newOptions
       });
-      inFocus = index - 1;
+
+      if (index > 0) {
+        setInFocus(index - 1);
+      }
     };
 
     var keyPress = function keyPress(event, index) {
       if (event.key === 'Enter') {
-        inFocus = index + 1; // addNewOption();
-
+        addNewOption();
         event.preventDefault();
         return;
       }
@@ -740,8 +756,8 @@
       return createElement(ToolbeltMultiOption, {
         type: type,
         key: index,
-        option: option,
         index: index,
+        option: option,
         isSelected: isSelected,
         inFocus: inFocus,
         updateOption: updateOption,
@@ -763,43 +779,7 @@
           label: value
         });
       }
-    })))); // onChangeOption( key = null, option = null ) {
-    // 	const newOptions = this.props.options.slice( 0 );
-    // 	if ( null === option ) {
-    // 		// Remove a key
-    // 		newOptions.splice( key, 1 );
-    // 		if ( key > 0 ) {
-    // 			this.setState( { inFocus: key - 1 } );
-    // 		}
-    // 	} else {
-    // 		// update a key
-    // 		newOptions.splice( key, 1, option );
-    // 		this.setState( { inFocus: key } ); // set the focus.
-    // 	}
-    // 	this.props.setAttributes( { options: newOptions } );
-    // }
-    // addNewOption( key = null ) {
-    // 	const newOptions = this.props.options.slice( 0 );
-    // 	let inFocus = 0;
-    // 	if ( 'object' === typeof key ) {
-    // 		newOptions.push( '' );
-    // 		inFocus = newOptions.length - 1;
-    // 	} else {
-    // 		newOptions.splice( key + 1, 0, '' );
-    // 		inFocus = key + 1;
-    // 	}
-    // 	this.setState( { inFocus: inFocus } );
-    // 	this.props.setAttributes( { options: newOptions } );
-    // }
-    // render() {
-    // 	const { type, instanceId, required, label, setAttributes, isSelected, id } = this.props;
-    // 	let { options } = this.props;
-    // 	let { inFocus } = this.state;
-    // 	if ( !options.length ) {
-    // 		options = [ '' ];
-    // 		inFocus = 0;
-    // 	}
-    // }
+    }))));
   }
 
   function ToolbeltMultiOption(_ref7) {
@@ -812,14 +792,12 @@
         index = _ref7.index,
         inFocus = _ref7.inFocus;
     var thisRef = createRef();
-    console.log(inFocus, index);
     useEffect(function () {
       if (!thisRef || !thisRef.current) {
         return;
       }
 
       if (index === inFocus) {
-        console.log('focus', index);
         thisRef.current.focus();
       }
     });
@@ -835,8 +813,8 @@
       value: option,
       placeholder: __('Write option…', 'toolbelt'),
       ref: thisRef,
-      onChange: function onChange(value) {
-        updateOption(index, value);
+      onChange: function onChange(event) {
+        updateOption(index, event.target.value);
       },
       onKeyDown: function onKeyDown(event) {
         keyPress(event, index);

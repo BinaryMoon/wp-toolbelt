@@ -12,14 +12,25 @@ function ToolbeltFieldMultiple(
 ) {
 
 	/**
+	 * Set the state focus state.
+	 *
+	 * I have written this as three variables rather than the shorter
+	 * `[x, y] = useState` since this works without bundling.
+	 */
+	const focusState = useState( -1 );
+	const inFocus = focusState[ 0 ];
+	const setInFocus = focusState[ 1 ];
+
+	/**
 	 * Ensure there is at least one option so we have something to start from.
 	 */
 	if ( !options.length ) {
-		options = [ __( 'Example', 'wp-toolbelt' ) ];
+		options = [ '' ];
 	}
 
-	let inFocus = 0;
-
+	/**
+	 * Add a new option to the bottom of the list and set focus to that option.
+	 */
 	const addNewOption = () => {
 
 		/**
@@ -35,20 +46,21 @@ function ToolbeltFieldMultiple(
 		newOptions.push( '' );
 		setAttributes( { options: newOptions } );
 
-		inFocus = options.length;
+		setInFocus( options.length );
 
 	};
 
 
 	const updateOption = ( index, value ) => {
 
-		if ( !index ) {
+		if ( !index && index !== 0 ) {
 			return;
 		}
 
 		const optionsList = options.slice( 0 );
 		optionsList[ index ] = value;
 		setAttributes( { options: optionsList } );
+		setInFocus( index );
 
 	};
 
@@ -58,7 +70,9 @@ function ToolbeltFieldMultiple(
 		const newOptions = optionsList.slice( 0, index ).concat( optionsList.slice( index + 1, optionsList.length ) );
 		setAttributes( { options: newOptions } );
 
-		inFocus = index - 1;
+		if ( index > 0 ) {
+			setInFocus( index - 1 );
+		}
 
 	};
 
@@ -66,9 +80,7 @@ function ToolbeltFieldMultiple(
 
 		if ( event.key === 'Enter' ) {
 
-			inFocus = index + 1;
-
-			// addNewOption();
+			addNewOption();
 			event.preventDefault();
 			return;
 
@@ -105,8 +117,8 @@ function ToolbeltFieldMultiple(
 						<ToolbeltMultiOption
 							type={type}
 							key={index}
-							option={option}
 							index={index}
+							option={option}
 							isSelected={isSelected}
 							inFocus={inFocus}
 							updateOption={updateOption}
@@ -146,48 +158,6 @@ function ToolbeltFieldMultiple(
 
 		</Fragment >
 	);
-
-	// onChangeOption( key = null, option = null ) {
-	// 	const newOptions = this.props.options.slice( 0 );
-	// 	if ( null === option ) {
-	// 		// Remove a key
-	// 		newOptions.splice( key, 1 );
-	// 		if ( key > 0 ) {
-	// 			this.setState( { inFocus: key - 1 } );
-	// 		}
-	// 	} else {
-	// 		// update a key
-	// 		newOptions.splice( key, 1, option );
-	// 		this.setState( { inFocus: key } ); // set the focus.
-	// 	}
-	// 	this.props.setAttributes( { options: newOptions } );
-	// }
-
-	// addNewOption( key = null ) {
-	// 	const newOptions = this.props.options.slice( 0 );
-	// 	let inFocus = 0;
-	// 	if ( 'object' === typeof key ) {
-	// 		newOptions.push( '' );
-	// 		inFocus = newOptions.length - 1;
-	// 	} else {
-	// 		newOptions.splice( key + 1, 0, '' );
-	// 		inFocus = key + 1;
-	// 	}
-
-	// 	this.setState( { inFocus: inFocus } );
-	// 	this.props.setAttributes( { options: newOptions } );
-	// }
-
-	// render() {
-	// 	const { type, instanceId, required, label, setAttributes, isSelected, id } = this.props;
-	// 	let { options } = this.props;
-	// 	let { inFocus } = this.state;
-	// 	if ( !options.length ) {
-	// 		options = [ '' ];
-	// 		inFocus = 0;
-	// 	}
-
-	// }
 
 }
 

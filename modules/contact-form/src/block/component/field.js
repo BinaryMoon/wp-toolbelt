@@ -25,7 +25,7 @@ function ToolbeltField(
 					type={type}
 					placeholder={placeholder}
 					value={defaultValue}
-					onChange={value => setAttributes( { placeholder: value } )}
+					onChange={value => setAttributes( { defaultValue: value } )}
 				/>
 
 			</div>
