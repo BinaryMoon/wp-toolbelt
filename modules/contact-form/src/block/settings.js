@@ -110,6 +110,76 @@ const AttributeDefaults = {
 	},
 }
 
+const FieldTransforms = {
+	to: [
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-text' ],
+			isMatch: ( { options } ) => !options.length,
+			transform: attributes => createBlock( 'toolbelt/field-text', attributes ),
+		},
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-name' ],
+			isMatch: ( { options } ) => !options.length,
+			transform: attributes => createBlock( 'toolbelt/field-name', attributes ),
+		},
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-email' ],
+			isMatch: ( { options } ) => !options.length,
+			transform: attributes => createBlock( 'toolbelt/field-email', attributes ),
+		},
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-url' ],
+			isMatch: ( { options } ) => !options.length,
+			transform: attributes => createBlock( 'toolbelt/field-url', attributes ),
+		},
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-date' ],
+			isMatch: ( { options } ) => !options.length,
+			transform: attributes => createBlock( 'toolbelt/field-date', attributes ),
+		},
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-telephone' ],
+			isMatch: ( { options } ) => !options.length,
+			transform: attributes => createBlock( 'toolbelt/field-telephone', attributes ),
+		},
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-textarea' ],
+			isMatch: ( { options } ) => !options.length,
+			transform: attributes => createBlock( 'toolbelt/field-textarea', attributes ),
+		},
+	],
+};
+
+const MultiFieldTransforms = {
+	to: [
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-checkbox-multiple' ],
+			isMatch: ( { options } ) => 1 <= options.length,
+			transform: attributes => createBlock( 'toolbelt/field-checkbox-multiple', attributes ),
+		},
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-radio' ],
+			isMatch: ( { options } ) => 1 <= options.length,
+			transform: attributes => createBlock( 'toolbelt/field-radio', attributes ),
+		},
+		{
+			type: 'block',
+			blocks: [ 'toolbelt/field-select' ],
+			isMatch: ( { options } ) => 1 <= options.length,
+			transform: attributes => createBlock( 'toolbelt/field-select', attributes ),
+		},
+	]
+};
+
 const FieldDefaults = {
 	category: 'wp-toolbelt',
 	parent: [ 'toolbelt/contact-form' ],
@@ -118,70 +188,7 @@ const FieldDefaults = {
 		html: false,
 	},
 	attributes: AttributeDefaults,
-	// transforms: {
-	// 	to: [
-	// 		{
-	// 			type: 'block',
-	// 			blocks: [ 'toolbelt/field-text' ],
-	// 			isMatch: ( { options } ) => !options.length,
-	// 			transform: attributes => createBlock( 'toolbelt/field-text', attributes ),
-	// 		},
-	// 		{
-	// 			type: 'block',
-	// 			blocks: [ 'toolbelt/field-name' ],
-	// 			isMatch: ( { options } ) => !options.length,
-	// 			transform: attributes => createBlock( 'toolbelt/field-name', attributes ),
-	// 		},
-	// 		{
-	// 			type: 'block',
-	// 			blocks: [ 'toolbelt/field-email' ],
-	// 			isMatch: ( { options } ) => !options.length,
-	// 			transform: attributes => createBlock( 'toolbelt/field-email', attributes ),
-	// 		},
-	// 		{
-	// 			type: 'block',
-	// 			blocks: [ 'toolbelt/field-url' ],
-	// 			isMatch: ( { options } ) => !options.length,
-	// 			transform: attributes => createBlock( 'toolbelt/field-url', attributes ),
-	// 		},
-	// 		{
-	// 			type: 'block',
-	// 			blocks: [ 'toolbelt/field-date' ],
-	// 			isMatch: ( { options } ) => !options.length,
-	// 			transform: attributes => createBlock( 'toolbelt/field-date', attributes ),
-	// 		},
-	// 		{
-	// 			type: 'block',
-	// 			blocks: [ 'toolbelt/field-telephone' ],
-	// 			isMatch: ( { options } ) => !options.length,
-	// 			transform: attributes => createBlock( 'toolbelt/field-telephone', attributes ),
-	// 		},
-	// 		{
-	// 			type: 'block',
-	// 			blocks: [ 'toolbelt/field-textarea' ],
-	// 			isMatch: ( { options } ) => !options.length,
-	// 			transform: attributes => createBlock( 'toolbelt/field-textarea', attributes ),
-	// 		},
-	// 		// {
-	// 		// 	type: 'block',
-	// 		// 	blocks: [ 'toolbelt/field-checkbox-multiple' ],
-	// 		// 	isMatch: ( { options } ) => 1 <= options.length,
-	// 		// 	transform: attributes => createBlock( 'toolbelt/field-checkbox-multiple', attributes ),
-	// 		// },
-	// 		// {
-	// 		// 	type: 'block',
-	// 		// 	blocks: [ 'toolbelt/field-radio' ],
-	// 		// 	isMatch: ( { options } ) => 1 <= options.length,
-	// 		// 	transform: attributes => createBlock( 'toolbelt/field-radio', attributes ),
-	// 		// },
-	// 		// {
-	// 		// 	type: 'block',
-	// 		// 	blocks: [ 'toolbelt/field-select' ],
-	// 		// 	isMatch: ( { options } ) => 1 <= options.length,
-	// 		// 	transform: attributes => createBlock( 'toolbelt/field-select', attributes ),
-	// 		// },
-	// 	],
-	// },
+	transforms: FieldTransforms,
 	save: () => null,
 };
 
@@ -386,6 +393,7 @@ const childBlocks = [
 				<Path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z" />
 			),
 			edit: editMultiField( 'checkbox' ),
+			transforms: MultiFieldTransforms,
 			attributes: {
 				...FieldDefaults.attributes,
 				label: {
@@ -412,6 +420,7 @@ const childBlocks = [
 				</Fragment>
 			),
 			edit: editMultiField( 'radio' ),
+			transforms: MultiFieldTransforms,
 			attributes: {
 				...FieldDefaults.attributes,
 				label: {
@@ -436,6 +445,7 @@ const childBlocks = [
 				<Path d="M3 17h18v2H3zm16-5v1H5v-1h14m2-2H3v5h18v-5zM3 6h18v2H3z" />
 			),
 			edit: editMultiField( 'select' ),
+			transforms: MultiFieldTransforms,
 			attributes: {
 				...FieldDefaults.attributes,
 				label: {

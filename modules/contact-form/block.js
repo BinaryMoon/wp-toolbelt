@@ -4,18 +4,18 @@
   var _wp$i18n = wp.i18n,
       __ = _wp$i18n.__,
       _x = _wp$i18n._x;
-  var createElement = wp.element.createElement;
   var _wp$blockEditor = wp.blockEditor,
       InspectorControls = _wp$blockEditor.InspectorControls,
       InnerBlocks = _wp$blockEditor.InnerBlocks,
       PlainText = _wp$blockEditor.PlainText;
   var _wp$blocks = wp.blocks,
       getBlockType = _wp$blocks.getBlockType,
+      createBlock = _wp$blocks.createBlock,
       registerBlockType = _wp$blocks.registerBlockType;
   var _wp$element = wp.element,
       Fragment = _wp$element.Fragment,
       Component = _wp$element.Component,
-      createBlock = _wp$element.createBlock,
+      createElement = _wp$element.createElement,
       createRef = _wp$element.createRef,
       useEffect = _wp$element.useEffect,
       useState = _wp$element.useState;
@@ -203,6 +203,112 @@
       "default": ''
     }
   };
+  var FieldTransforms = {
+    to: [{
+      type: 'block',
+      blocks: ['toolbelt/field-text'],
+      isMatch: function isMatch(_ref) {
+        var options = _ref.options;
+        return !options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-text', attributes);
+      }
+    }, {
+      type: 'block',
+      blocks: ['toolbelt/field-name'],
+      isMatch: function isMatch(_ref2) {
+        var options = _ref2.options;
+        return !options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-name', attributes);
+      }
+    }, {
+      type: 'block',
+      blocks: ['toolbelt/field-email'],
+      isMatch: function isMatch(_ref3) {
+        var options = _ref3.options;
+        return !options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-email', attributes);
+      }
+    }, {
+      type: 'block',
+      blocks: ['toolbelt/field-url'],
+      isMatch: function isMatch(_ref4) {
+        var options = _ref4.options;
+        return !options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-url', attributes);
+      }
+    }, {
+      type: 'block',
+      blocks: ['toolbelt/field-date'],
+      isMatch: function isMatch(_ref5) {
+        var options = _ref5.options;
+        return !options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-date', attributes);
+      }
+    }, {
+      type: 'block',
+      blocks: ['toolbelt/field-telephone'],
+      isMatch: function isMatch(_ref6) {
+        var options = _ref6.options;
+        return !options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-telephone', attributes);
+      }
+    }, {
+      type: 'block',
+      blocks: ['toolbelt/field-textarea'],
+      isMatch: function isMatch(_ref7) {
+        var options = _ref7.options;
+        return !options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-textarea', attributes);
+      }
+    }]
+  };
+  var MultiFieldTransforms = {
+    to: [{
+      type: 'block',
+      blocks: ['toolbelt/field-checkbox-multiple'],
+      isMatch: function isMatch(_ref8) {
+        var options = _ref8.options;
+        return 1 <= options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-checkbox-multiple', attributes);
+      }
+    }, {
+      type: 'block',
+      blocks: ['toolbelt/field-radio'],
+      isMatch: function isMatch(_ref9) {
+        var options = _ref9.options;
+        return 1 <= options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-radio', attributes);
+      }
+    }, {
+      type: 'block',
+      blocks: ['toolbelt/field-select'],
+      isMatch: function isMatch(_ref10) {
+        var options = _ref10.options;
+        return 1 <= options.length;
+      },
+      transform: function transform(attributes) {
+        return createBlock('toolbelt/field-select', attributes);
+      }
+    }]
+  };
   var FieldDefaults = {
     category: 'wp-toolbelt',
     parent: ['toolbelt/contact-form'],
@@ -211,78 +317,15 @@
       html: false
     },
     attributes: AttributeDefaults,
-    // transforms: {
-    // 	to: [
-    // 		{
-    // 			type: 'block',
-    // 			blocks: [ 'toolbelt/field-text' ],
-    // 			isMatch: ( { options } ) => !options.length,
-    // 			transform: attributes => createBlock( 'toolbelt/field-text', attributes ),
-    // 		},
-    // 		{
-    // 			type: 'block',
-    // 			blocks: [ 'toolbelt/field-name' ],
-    // 			isMatch: ( { options } ) => !options.length,
-    // 			transform: attributes => createBlock( 'toolbelt/field-name', attributes ),
-    // 		},
-    // 		{
-    // 			type: 'block',
-    // 			blocks: [ 'toolbelt/field-email' ],
-    // 			isMatch: ( { options } ) => !options.length,
-    // 			transform: attributes => createBlock( 'toolbelt/field-email', attributes ),
-    // 		},
-    // 		{
-    // 			type: 'block',
-    // 			blocks: [ 'toolbelt/field-url' ],
-    // 			isMatch: ( { options } ) => !options.length,
-    // 			transform: attributes => createBlock( 'toolbelt/field-url', attributes ),
-    // 		},
-    // 		{
-    // 			type: 'block',
-    // 			blocks: [ 'toolbelt/field-date' ],
-    // 			isMatch: ( { options } ) => !options.length,
-    // 			transform: attributes => createBlock( 'toolbelt/field-date', attributes ),
-    // 		},
-    // 		{
-    // 			type: 'block',
-    // 			blocks: [ 'toolbelt/field-telephone' ],
-    // 			isMatch: ( { options } ) => !options.length,
-    // 			transform: attributes => createBlock( 'toolbelt/field-telephone', attributes ),
-    // 		},
-    // 		{
-    // 			type: 'block',
-    // 			blocks: [ 'toolbelt/field-textarea' ],
-    // 			isMatch: ( { options } ) => !options.length,
-    // 			transform: attributes => createBlock( 'toolbelt/field-textarea', attributes ),
-    // 		},
-    // 		// {
-    // 		// 	type: 'block',
-    // 		// 	blocks: [ 'toolbelt/field-checkbox-multiple' ],
-    // 		// 	isMatch: ( { options } ) => 1 <= options.length,
-    // 		// 	transform: attributes => createBlock( 'toolbelt/field-checkbox-multiple', attributes ),
-    // 		// },
-    // 		// {
-    // 		// 	type: 'block',
-    // 		// 	blocks: [ 'toolbelt/field-radio' ],
-    // 		// 	isMatch: ( { options } ) => 1 <= options.length,
-    // 		// 	transform: attributes => createBlock( 'toolbelt/field-radio', attributes ),
-    // 		// },
-    // 		// {
-    // 		// 	type: 'block',
-    // 		// 	blocks: [ 'toolbelt/field-select' ],
-    // 		// 	isMatch: ( { options } ) => 1 <= options.length,
-    // 		// 	transform: attributes => createBlock( 'toolbelt/field-select', attributes ),
-    // 		// },
-    // 	],
-    // },
+    transforms: FieldTransforms,
     save: function save() {
       return null;
     }
   };
 
-  var getFieldLabel = function getFieldLabel(_ref) {
-    var attributes = _ref.attributes,
-        blockName = _ref.name;
+  var getFieldLabel = function getFieldLabel(_ref11) {
+    var attributes = _ref11.attributes,
+        blockName = _ref11.name;
     return null === attributes.label ? getBlockType(blockName).title : attributes.label;
   };
 
@@ -449,6 +492,7 @@
         d: "M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"
       })),
       edit: editMultiField('checkbox'),
+      transforms: MultiFieldTransforms,
       attributes: Object.assign({}, FieldDefaults.attributes, {
         label: {
           type: 'string',
@@ -470,6 +514,7 @@
         r: "5"
       }))),
       edit: editMultiField('radio'),
+      transforms: MultiFieldTransforms,
       attributes: Object.assign({}, FieldDefaults.attributes, {
         label: {
           type: 'string',
@@ -487,6 +532,7 @@
         d: "M3 17h18v2H3zm16-5v1H5v-1h14m2-2H3v5h18v-5zM3 6h18v2H3z"
       })),
       edit: editMultiField('select'),
+      transforms: MultiFieldTransforms,
       attributes: Object.assign({}, FieldDefaults.attributes, {
         label: {
           type: 'string',
@@ -496,11 +542,11 @@
     })
   }];
 
-  function ToolbeltFieldCheckbox(_ref2) {
-    var label = _ref2.label,
-        setAttributes = _ref2.setAttributes,
-        defaultValue = _ref2.defaultValue,
-        isSelected = _ref2.isSelected;
+  function ToolbeltFieldCheckbox(_ref12) {
+    var label = _ref12.label,
+        setAttributes = _ref12.setAttributes,
+        defaultValue = _ref12.defaultValue,
+        isSelected = _ref12.isSelected;
     return createElement(Fragment, null, createElement("div", {
       className: "toolbelt-field-checkbox"
     }, createElement("input", {
@@ -542,14 +588,14 @@
 
   ;
 
-  function ToolbeltField(_ref3) {
-    var type = _ref3.type,
-        required = _ref3.required,
-        label = _ref3.label,
-        setAttributes = _ref3.setAttributes,
-        defaultValue = _ref3.defaultValue,
-        placeholder = _ref3.placeholder,
-        isSelected = _ref3.isSelected;
+  function ToolbeltField(_ref13) {
+    var type = _ref13.type,
+        required = _ref13.required,
+        label = _ref13.label,
+        setAttributes = _ref13.setAttributes,
+        defaultValue = _ref13.defaultValue,
+        placeholder = _ref13.placeholder,
+        isSelected = _ref13.isSelected;
     return createElement(Fragment, null, createElement("div", {
       className: 'toolbelt-field'
     }, createElement(ToolbeltFieldLabel, {
@@ -595,11 +641,11 @@
     }))));
   }
 
-  function ToolbeltFieldLabel(_ref4) {
-    var setAttributes = _ref4.setAttributes,
-        label = _ref4.label,
-        required = _ref4.required,
-        isSelected = _ref4.isSelected;
+  function ToolbeltFieldLabel(_ref14) {
+    var setAttributes = _ref14.setAttributes,
+        label = _ref14.label,
+        required = _ref14.required,
+        isSelected = _ref14.isSelected;
     var thisRef = createRef();
     return createElement("div", {
       className: "toolbelt-field-label"
@@ -630,11 +676,11 @@
 
   ;
 
-  function ToolbeltFieldTextarea(_ref5) {
-    var required = _ref5.required,
-        label = _ref5.label,
-        setAttributes = _ref5.setAttributes,
-        isSelected = _ref5.isSelected;
+  function ToolbeltFieldTextarea(_ref15) {
+    var required = _ref15.required,
+        label = _ref15.label,
+        setAttributes = _ref15.setAttributes,
+        isSelected = _ref15.isSelected;
     return createElement(Fragment, null, createElement("div", {
       className: "toolbelt-field"
     }, createElement(ToolbeltFieldLabel, {
@@ -657,14 +703,14 @@
     }))));
   }
 
-  function ToolbeltFieldMultiple(_ref6) {
-    var instanceId = _ref6.instanceId,
-        required = _ref6.required,
-        label = _ref6.label,
-        isSelected = _ref6.isSelected,
-        setAttributes = _ref6.setAttributes,
-        options = _ref6.options,
-        type = _ref6.type;
+  function ToolbeltFieldMultiple(_ref16) {
+    var instanceId = _ref16.instanceId,
+        required = _ref16.required,
+        label = _ref16.label,
+        isSelected = _ref16.isSelected,
+        setAttributes = _ref16.setAttributes,
+        options = _ref16.options,
+        type = _ref16.type;
 
     /**
      * Set the state focus state.
@@ -782,15 +828,15 @@
     }))));
   }
 
-  function ToolbeltMultiOption(_ref7) {
-    var isSelected = _ref7.isSelected,
-        option = _ref7.option,
-        type = _ref7.type,
-        updateOption = _ref7.updateOption,
-        deleteOption = _ref7.deleteOption,
-        keyPress = _ref7.keyPress,
-        index = _ref7.index,
-        inFocus = _ref7.inFocus;
+  function ToolbeltMultiOption(_ref17) {
+    var isSelected = _ref17.isSelected,
+        option = _ref17.option,
+        type = _ref17.type,
+        updateOption = _ref17.updateOption,
+        deleteOption = _ref17.deleteOption,
+        keyPress = _ref17.keyPress,
+        index = _ref17.index,
+        inFocus = _ref17.inFocus;
     var thisRef = createRef();
     useEffect(function () {
       if (!thisRef || !thisRef.current) {
