@@ -15,12 +15,16 @@ function toolbelt_contact_form_register_block() {
 		return;
 	}
 
-	$block_js = dirname( __FILE__ ) . '/block.min.js';
+	$block_js = plugins_url( 'block.min.js', __FILE__ );
+	if ( WP_DEBUG ) {
+		$block_js = plugins_url( 'block.js', __FILE__ );
+	}
+
 	$block_name = 'toolbelt-contact-form-block';
 
 	wp_register_script(
 		$block_name,
-		plugins_url( 'block.min.js', __FILE__ ),
+		$block_js,
 		array(
 			'wp-blocks',
 			'wp-i18n',
