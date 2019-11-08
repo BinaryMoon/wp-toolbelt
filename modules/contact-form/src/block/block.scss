@@ -3,7 +3,6 @@
 
 	display: flex;
 	align-items: center;
-
 	font-size: 13px;
 	margin-bottom: 0.5rem;
 
@@ -43,5 +42,13 @@
 		}
 
 	}
+
+}
+
+.toolbelt-field-multiple-select {
+
+	border: 1px solid rgba( 0, 0, 0, 0.25 );
+	border-radius: 5px;
+	padding: 5px 10px !important;
 
 }

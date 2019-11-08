@@ -13,4 +13,24 @@
 
 	}
 
+	.toolbelt-fieldset {
+
+		margin-bottom: var(--toolbelt-spacing);
+
+		label {
+
+			padding: 1rem;
+			margin-bottom: calc( var(--toolbelt-spacing) / 4 );
+			background: rgba( 0,0,0,0.25 );
+
+		}
+
+		label:last-child {
+
+			margin-bottom: 0;
+
+		}
+
+	}
+
 }

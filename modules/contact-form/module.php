@@ -122,6 +122,15 @@ function toolbelt_contact_form_register_block() {
 		)
 	);
 
+	// Checkbox Multi.
+	register_block_type(
+		'toolbelt/field-checkbox-multiple',
+		array(
+			'parent' => array( 'toolbelt/contact-form' ),
+			'render_callback' => 'toolbelt_contact_field_checkbox_multi',
+		)
+	);
+
 	// Radio buttons.
 	register_block_type(
 		'toolbelt/field-radio',
@@ -147,11 +156,11 @@ function toolbelt_contact_form_register_block() {
  * Display an input field.
  *
  * @param string $type The field type to display.
- * @param array  $attrs The field attributes.
+ * @param array  $atts The field attributes.
  * @param array  $default_attrs The default field attributes.
  * @return string The field html to render.
  */
-function toolbelt_contact_input_field( $type, $attrs = array(), $default_attrs = array() ) {
+function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = array() ) {
 
 	if ( empty( $type ) ) {
 		$type = 'text';
@@ -173,7 +182,7 @@ function toolbelt_contact_input_field( $type, $attrs = array(), $default_attrs =
 		'contact-form-defaults'
 	);
 
-	$attrs = shortcode_atts(
+	$atts = shortcode_atts(
 		array(
 			'label' => $default_attrs['label'],
 			'value' => '',
@@ -181,7 +190,7 @@ function toolbelt_contact_input_field( $type, $attrs = array(), $default_attrs =
 			'placeholder' => $default_attrs['placeholder'],
 			'required' => false,
 		),
-		$attrs,
+		$atts,
 		'contact-form'
 	);
 
@@ -193,45 +202,83 @@ function toolbelt_contact_input_field( $type, $attrs = array(), $default_attrs =
 	 * use `:invalid` styles?
 	 */
 
-	$id = 'toolbelt-contact-' . sanitize_title( $attrs['label'] );
+	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
 
 	$html = sprintf(
 		'<input type="%1$s" name="%2$s" id="%2$s" value="%3$s" class="%4$s" placeholder="%5$s" %6$s />',
 		esc_attr( $type ),
 		$id,
-		esc_attr( $attrs['value'] ),
-		esc_attr( $attrs['className'] ),
-		esc_attr( $attrs['placeholder'] ),
-		( $attrs['required'] ? 'required aria-required="true"' : '' )
+		esc_attr( $atts['value'] ),
+		esc_attr( $atts['className'] ),
+		esc_attr( $atts['placeholder'] ),
+		( $atts['required'] ? 'required aria-required="true"' : '' )
 	);
 
-	return toolbelt_contact_field_wrap_label( $attrs['label'], $id, $attrs['required'], $html );
+	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $html );
 
 }
 
 
-function toolbelt_contact_textarea_field( $attrs, $default_label = '' ) {
+/**
+ * Display a textarea field.
+ *
+ * @param array  $atts The field attributes.
+ * @param string $default_label The default label for the textarea.
+ * @return string The field html.
+ */
+function toolbelt_contact_textarea_field( $atts, $default_label = '' ) {
 
-	$attrs = shortcode_atts(
+	$atts = shortcode_atts(
 		array(
 			'label' => $default_label,
 			'className' => '',
 			'required' => false,
 		),
-		$attrs,
+		$atts,
 		'contact-form'
 	);
 
-	$id = 'toolbelt-contact-' . sanitize_title( $attrs['label'] );
+	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
 
 	$html = sprintf(
 		'<textarea name="%1$s" id="%1$s" class="%2$s" %3$s /></textarea>',
 		$id,
-		esc_attr( $attrs['className'] ),
-		( $attrs['required'] ? 'required aria-required="true"' : '' )
+		esc_attr( $atts['className'] ),
+		( $atts['required'] ? 'required aria-required="true"' : '' )
 	);
 
-	return toolbelt_contact_field_wrap_label( $attrs['label'], $id, $attrs['required'], $html );
+	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $html );
+
+}
+
+
+/**
+ * Display checkbox field.
+ *
+ * @param array $atts Checkbox field attributes.
+ * @return string Checkbox field html.
+ */
+function toolbelt_contact_checkbox_field( $atts ) {
+
+	$atts = shortcode_atts(
+		array(
+			'label' => '',
+			'className' => '',
+			'required' => false,
+		),
+		$atts,
+		'contact-form'
+	);
+
+	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
+
+	return sprintf(
+		'<label for="%1$s"><input type="checkbox" name="%1$s" id="%1$s" class="%2$s" %3$s />%4$s</label>',
+		$id,
+		esc_attr( $atts['className'] ),
+		( $atts['required'] ? 'required aria-required="true"' : '' ),
+		esc_attr( $atts['label'] )
+	);
 
 }
 
@@ -239,27 +286,84 @@ function toolbelt_contact_textarea_field( $attrs, $default_label = '' ) {
 /**
  *
  */
-function toolbelt_contact_checkbox_field( $attrs ) {
+function toolbelt_contact_field_multi( $type, $atts ) {
 
-	$attrs = shortcode_atts(
+	$atts = shortcode_atts(
 		array(
 			'label' => '',
 			'className' => '',
 			'required' => false,
+			'options' => null,
 		),
-		$attrs,
+		$atts,
 		'contact-form'
 	);
 
-	$id = 'toolbelt-contact-' . sanitize_title( $attrs['label'] );
+	if ( count( $atts['options'] ) <= 0 ) {
+		return '';
+	}
 
-	return sprintf(
-		'<label for="%1$s"><input type="checkbox" name="%1$s" id="%1$s" class="%2$s" %3$s />%4$s</label>',
-		$id,
-		esc_attr( $attrs['className'] ),
-		( $attrs['required'] ? 'required aria-required="true"' : '' ),
-		esc_attr( $attrs['label'] )
+	$html = '';
+	$name = sanitize_title( $atts['label'] );
+
+	foreach ( $atts['options'] as $option ) {
+
+		$html .= sprintf(
+			'<label><input type="%1$s" value="%2$s" name="%3$s" />%4$s</label>',
+			esc_attr( $type ),
+			sanitize_title( $option ),
+			$name,
+			esc_html( $option )
+		);
+
+	}
+
+	return toolbelt_contact_field_wrap_fieldset( $atts['label'], $atts['required'], $html );
+
+}
+
+
+/**
+ *
+ */
+function toolbelt_contact_field_multi_select( $atts ) {
+
+	$atts = shortcode_atts(
+		array(
+			'label' => '',
+			'className' => '',
+			'required' => false,
+			'options' => null,
+		),
+		$atts,
+		'contact-form'
 	);
+
+	if ( count( $atts['options'] ) <= 0 ) {
+		return '';
+	}
+
+	$html = '';
+	$html_options = '';
+	$name = sanitize_title( $atts['label'] );
+
+	foreach ( $atts['options'] as $option ) {
+
+		$html_options .= sprintf(
+			'<option value="%1$s">%2$s</option>',
+			sanitize_title( $option ),
+			esc_html( $option )
+		);
+
+	}
+
+	$html = sprintf(
+		'<select name="%1$s">%2$s</select>',
+		$name,
+		$html_options
+	);
+
+	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $html );
 
 }
 
@@ -292,6 +396,31 @@ function toolbelt_contact_field_wrap_label( $label, $id, $required = true, $cont
 
 
 /**
+ * Wrap a label element around a field.
+ *
+ * @param string $label The field label.
+ * @param bool   $required Is the field required or not.
+ * @param string $content The actual field html.
+ * @return string The final html with the field and label all bundled together.
+ */
+function toolbelt_contact_field_wrap_fieldset( $label, $required = true, $content = '' ) {
+
+	$required_html = '';
+	if ( $required ) {
+		$required_html = '<em class="toolbelt-required">(' . esc_html__( 'Required', 'wp-toolbelt' ) . ')</em>';
+	}
+
+	return sprintf(
+		'<fieldset class="toolbelt-fieldset"><legend class="toolbelt-field-label">%1$s %2$s</legend>%3$s</fieldset>',
+		esc_html( $label ),
+		$required_html,
+		$content
+	);
+
+}
+
+
+/**
  * Include the Contact form editor styles.
  */
 function toolbelt_contact_editor_styles() {
@@ -306,24 +435,24 @@ add_action( 'enqueue_block_editor_assets', 'toolbelt_contact_editor_styles' );
 /**
  * Display the form.
  *
- * @param array  $attrs The form attributes.
+ * @param array  $atts The form attributes.
  * @param string $content The inner content of the form (likely all the fields).
  * @return string The form html.
  */
-function toolbelt_contact_form_html( $attrs, $content ) {
+function toolbelt_contact_form_html( $atts, $content ) {
 
-	$attrs = shortcode_atts(
+	$atts = shortcode_atts(
 		array(
 			'submitButtonText' => esc_html__( 'Submit', 'wp-toolbelt' ),
 		),
-		$attrs,
+		$atts,
 		'contact-form'
 	);
 
 	return sprintf(
 		'<form class="toolbelt-contact-form">%1$s<input type="submit" value="%2$s" /></form>',
 		$content,
-		$attrs['submitButtonText']
+		$atts['submitButtonText']
 	);
 
 }
@@ -462,10 +591,34 @@ function toolbelt_contact_field_textarea( $atts ) {
 
 /**
  * Render a checkbox on the frontend.
+ *
+ * @param array $atts Field attributes.
+ * @return string
  */
-function toolbelt_contact_field_checkbox( $atts, $content ) {
+function toolbelt_contact_field_checkbox( $atts ) {
 
 	return toolbelt_contact_checkbox_field( $atts );
+
+}
+
+
+function toolbelt_contact_field_checkbox_multi( $atts ) {
+
+	return toolbelt_contact_field_multi( 'checkbox', $atts );
+
+}
+
+
+function toolbelt_contact_field_radio( $atts ) {
+
+	return toolbelt_contact_field_multi( 'radio', $atts );
+
+}
+
+
+function toolbelt_contact_field_select( $atts ) {
+
+	return toolbelt_contact_field_multi_select( $atts );
 
 }
 

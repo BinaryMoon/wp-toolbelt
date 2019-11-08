@@ -1,1 +1,1 @@
-.toolbelt-contact-form label{margin-bottom:var(--toolbelt-spacing);width:100%}.toolbelt-contact-form label input{width:100%}
+.toolbelt-contact-form label{margin-bottom:var(--toolbelt-spacing);width:100%}.toolbelt-contact-form label input{width:100%}.toolbelt-contact-form .toolbelt-fieldset{margin-bottom:var(--toolbelt-spacing)}.toolbelt-contact-form .toolbelt-fieldset label{padding:1rem;margin-bottom:calc(var(--toolbelt-spacing)/ 4);background:rgba(0,0,0,.25)}.toolbelt-contact-form .toolbelt-fieldset label:last-child{margin-bottom:0}
