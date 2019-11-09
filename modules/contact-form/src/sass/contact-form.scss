@@ -1,33 +1,36 @@
 .toolbelt-contact-form {
 
-	label {
+	label,
+	fieldset {
 
-		margin-bottom: var( --toolbelt-spacing );
+		margin-bottom: var(--toolbelt-spacing);
+
+	}
+
+	label,
+	.toolbelt-label {
+
 		width: 100%;
+		display: block;
+
+	}
+
+	label {
 
 		input {
 
-			width: 100%;
+			// width: 100%;
 
 		}
 
 	}
 
-	.toolbelt-fieldset {
-
-		margin-bottom: var(--toolbelt-spacing);
+	fieldset {
 
 		label {
 
-			padding: 1rem;
-			margin-bottom: calc( var(--toolbelt-spacing) / 4 );
-			background: rgba( 0,0,0,0.25 );
-
-		}
-
-		label:last-child {
-
-			margin-bottom: 0;
+			margin: 0;
+			padding: ( calc( var(--toolbelt-spacing) / 4) ) 0;
 
 		}
 
