@@ -380,8 +380,8 @@ function toolbelt_contact_field_multi_select( $atts ) {
 function toolbelt_contact_field_wrap_label( $label, $id, $required = true, $content = '' ) {
 
 	$required_html = '';
-	if ( $required ) {
-		$required_html = '<em class="toolbelt-required">(' . esc_html__( 'Required', 'wp-toolbelt' ) . ')</em>';
+	if ( ! $required ) {
+		$required_html = '<em class="toolbelt-required">(' . esc_html__( 'Optional', 'wp-toolbelt' ) . ')</em>';
 	}
 
 	return sprintf(
@@ -406,8 +406,9 @@ function toolbelt_contact_field_wrap_label( $label, $id, $required = true, $cont
 function toolbelt_contact_field_wrap_fieldset( $label, $required = true, $content = '' ) {
 
 	$required_html = '';
-	if ( $required ) {
-		$required_html = '<em class="toolbelt-required">(' . esc_html__( 'Required', 'wp-toolbelt' ) . ')</em>';
+	$required_attr = 'required aria-required="true"';
+	if ( ! $required ) {
+		$required_html = '<em class="toolbelt-required">(' . esc_html__( 'Optional', 'wp-toolbelt' ) . ')</em>';
 	}
 
 	return sprintf(

@@ -44,9 +44,9 @@ function ToolbeltFieldLabel(
 
 			)}
 
-			{!isSelected && required && (
+			{!isSelected && !required && (
 
-				<em>({__( 'Required', 'wp-toolbelt' )})</em>
+				<em>({__( 'Optional', 'wp-toolbelt' )})</em>
 
 			)}
 

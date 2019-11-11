@@ -671,7 +671,7 @@
           required: value
         });
       }
-    }), !isSelected && required && createElement("em", null, "(", __('Required', 'wp-toolbelt'), ")"));
+    }), !isSelected && !required && createElement("em", null, "(", __('Optional', 'wp-toolbelt'), ")"));
   }
 
   ;
