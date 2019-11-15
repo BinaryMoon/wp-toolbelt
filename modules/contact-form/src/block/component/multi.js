@@ -1,4 +1,9 @@
-
+/**
+ * Toolbelt Multi Option Field.
+ *
+ * A field used to display multiple input types. It supports radio, checkbox,
+ * and select elements.
+ */
 function ToolbeltFieldMultiple(
 	{
 		instanceId,

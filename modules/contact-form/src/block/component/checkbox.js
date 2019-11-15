@@ -1,3 +1,8 @@
+/**
+ * Toolbelt Field Checkbox
+ *
+ * A field used specifically for checkbox items.
+ */
 function ToolbeltFieldCheckbox(
 	{
 		label,

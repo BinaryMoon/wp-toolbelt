@@ -1,3 +1,9 @@
+/**
+ * Toolbelt Field
+ *
+ * This is a generic text field. It can have any text field type (text, url,
+ * date etc) but functions the same regardless of content type.
+ */
 function ToolbeltField(
 	{
 		type,

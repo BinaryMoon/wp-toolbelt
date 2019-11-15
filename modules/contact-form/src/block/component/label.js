@@ -1,3 +1,9 @@
+/**
+ * Toolbelt Field Label
+ *
+ * A generic label component. This displays a label, and a 'required' flag. It
+ * can be reused across all field types.
+ */
 function ToolbeltFieldLabel(
 	{
 		setAttributes,

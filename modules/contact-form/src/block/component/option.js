@@ -1,3 +1,13 @@
+/**
+ * Toolbelt Multi Options
+ *
+ * A field used to display multiple input types. It supports radio, checkbox,
+ * and select elements.
+ *
+ * This is the wrapper component that holds the list of elements that will be
+ * displayed. This component includes the main label, and the required flag, and
+ * a repeater with the list of children.
+ */
 function ToolbeltMultiOption(
 	{
 		isSelected,

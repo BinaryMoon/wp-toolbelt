@@ -1,3 +1,8 @@
+/**
+ * Toolbelt Field Textarea
+ *
+ * A textarea field.
+ */
 function ToolbeltFieldTextarea(
 	{
 		required,
