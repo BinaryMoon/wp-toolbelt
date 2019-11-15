@@ -541,6 +541,11 @@
       })
     })
   }];
+  /**
+   * Toolbelt Field Checkbox
+   *
+   * A field used specifically for checkbox items.
+   */
 
   function ToolbeltFieldCheckbox(_ref12) {
     var label = _ref12.label,
@@ -558,9 +563,9 @@
       type: "text",
       className: "toolbelt-field-label-text",
       value: label,
-      onChange: function onChange(value) {
+      onChange: function onChange(event) {
         return setAttributes({
-          label: value
+          label: event.target.value
         });
       }
     }), !isSelected && createElement("label", {
@@ -587,6 +592,12 @@
   }
 
   ;
+  /**
+   * Toolbelt Field
+   *
+   * This is a generic text field. It can have any text field type (text, url,
+   * date etc) but functions the same regardless of content type.
+   */
 
   function ToolbeltField(_ref13) {
     var type = _ref13.type,
@@ -640,6 +651,13 @@
       }
     }))));
   }
+  /**
+   * Toolbelt Field Label
+   *
+   * A generic label component. This displays a label, and a 'required' flag. It
+   * can be reused across all field types.
+   */
+
 
   function ToolbeltFieldLabel(_ref14) {
     var setAttributes = _ref14.setAttributes,
@@ -653,9 +671,9 @@
       type: "text",
       value: label,
       className: "toolbelt-field-label-text",
-      onChange: function onChange(value) {
+      onChange: function onChange(event) {
         setAttributes({
-          label: value
+          label: event.target.value
         });
       },
       placeholder: __('Write label…', 'wp-toolbelt'),
@@ -675,6 +693,11 @@
   }
 
   ;
+  /**
+   * Toolbelt Field Textarea
+   *
+   * A textarea field.
+   */
 
   function ToolbeltFieldTextarea(_ref15) {
     var required = _ref15.required,
@@ -702,6 +725,13 @@
       }
     }))));
   }
+  /**
+   * Toolbelt Multi Option Field.
+   *
+   * A field used to display multiple input types. It supports radio, checkbox,
+   * and select elements.
+   */
+
 
   function ToolbeltFieldMultiple(_ref16) {
     var instanceId = _ref16.instanceId,
@@ -827,6 +857,17 @@
       }
     }))));
   }
+  /**
+   * Toolbelt Multi Options
+   *
+   * A field used to display multiple input types. It supports radio, checkbox,
+   * and select elements.
+   *
+   * This is the wrapper component that holds the list of elements that will be
+   * displayed. This component includes the main label, and the required flag, and
+   * a repeater with the list of children.
+   */
+
 
   function ToolbeltMultiOption(_ref17) {
     var isSelected = _ref17.isSelected,
