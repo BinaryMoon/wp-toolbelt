@@ -117,8 +117,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.3.2 - 14th November 2019 =
+= 2.3.2 - 15th November 2019 =
 * Tweak admin styles for WP 5.3.
+* Add javascript events for accept and decline cookie options on cookie bar.
 * Update spam blacklist.
 
 = 2.3.1 - 7th November 2019 =
