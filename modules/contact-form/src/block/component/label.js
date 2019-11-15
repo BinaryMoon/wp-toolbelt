@@ -24,7 +24,7 @@ function ToolbeltFieldLabel(
 					type="text"
 					value={label}
 					className="toolbelt-field-label-text"
-					onChange={value => { setAttributes( { label: value } ); }}
+					onChange={event => { setAttributes( { label: event.target.value } ); }}
 					placeholder={__( 'Write label…', 'wp-toolbelt' )}
 					ref={thisRef}
 				/>

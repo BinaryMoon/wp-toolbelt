@@ -60,10 +60,8 @@ function ToolbeltMultiOption(
 						value={option}
 						placeholder={__( 'Write option…', 'toolbelt' )}
 						ref={thisRef}
-						onChange={( event ) => { updateOption( index, event.target.value ); }}
-						onKeyDown={( event ) => {
-							keyPress( event, index );
-						}}
+						onChange={event => { updateOption( index, event.target.value ); }}
+						onKeyDown={event => { keyPress( event, index ); }}
 					/>
 
 					<IconButton

@@ -29,7 +29,7 @@ function ToolbeltFieldCheckbox(
 						type="text"
 						className="toolbelt-field-label-text"
 						value={label}
-						onChange={value => setAttributes( { label: value } )}
+						onChange={event => setAttributes( { label: event.target.value } )}
 					/>
 
 				)}
