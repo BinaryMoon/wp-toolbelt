@@ -42,7 +42,11 @@ function ToolbeltMultiOption(
 
 			{type && type !== 'select' && (
 
-				<input className="toolbelt-option-type" type={type} disabled />
+				<input
+					className="toolbelt-option-type"
+					type={type}
+					disabled
+				/>
 
 			)}
 
