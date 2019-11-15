@@ -6,6 +6,19 @@
  */
 
 /**
+ * Todo
+ *
+ * range
+ * number (with min and max values?)
+ * hidden field
+ * star rating
+ *
+ *
+ * add description between the label and the field(s)
+ * drag and drop items in multi field
+ */
+
+/**
  * Register a Contact Form block.
  */
 function toolbelt_contact_form_register_block() {
