@@ -658,6 +658,12 @@ function toolbelt_contact_field_checkbox( $atts ) {
 }
 
 
+/**
+ * Render a multi checkbox on the frontend.
+ *
+ * @param array $atts Field attributes.
+ * @return string
+ */
 function toolbelt_contact_field_checkbox_multi( $atts ) {
 
 	return toolbelt_contact_field_multi( 'checkbox', $atts );
@@ -665,6 +671,12 @@ function toolbelt_contact_field_checkbox_multi( $atts ) {
 }
 
 
+/**
+ * Render a radio field on the frontend.
+ *
+ * @param array $atts Field attributes.
+ * @return string
+ */
 function toolbelt_contact_field_radio( $atts ) {
 
 	return toolbelt_contact_field_multi( 'radio', $atts );
@@ -672,6 +684,12 @@ function toolbelt_contact_field_radio( $atts ) {
 }
 
 
+/**
+ * Render a select field on the frontend.
+ *
+ * @param array $atts Field attributes.
+ * @return string
+ */
 function toolbelt_contact_field_select( $atts ) {
 
 	return toolbelt_contact_field_multi_select( $atts );
