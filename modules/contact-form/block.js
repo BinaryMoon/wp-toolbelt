@@ -190,6 +190,10 @@
       type: 'boolean',
       "default": false
     },
+    description: {
+      type: 'string',
+      "default": ''
+    },
     options: {
       type: 'array',
       "default": []
@@ -335,6 +339,7 @@
         type: type,
         label: getFieldLabel(props),
         required: props.attributes.required,
+        description: props.attributes.description,
         setAttributes: props.setAttributes,
         isSelected: props.isSelected,
         defaultValue: props.attributes.defaultValue,
@@ -350,6 +355,7 @@
         label: getFieldLabel(props),
         required: props.attributes.required,
         options: props.attributes.options,
+        description: props.attributes.description,
         setAttributes: props.setAttributes,
         type: type,
         isSelected: props.isSelected,
@@ -469,6 +475,7 @@
           label: props.attributes.label // label intentinally left blank
           ,
           required: props.attributes.required,
+          description: props.attributes.description,
           setAttributes: props.setAttributes,
           isSelected: props.isSelected,
           defaultValue: props.attributes.defaultValue,
@@ -551,7 +558,9 @@
     var label = _ref12.label,
         setAttributes = _ref12.setAttributes,
         defaultValue = _ref12.defaultValue,
-        isSelected = _ref12.isSelected;
+        isSelected = _ref12.isSelected,
+        description = _ref12.description;
+    console.log(description);
     return createElement(Fragment, null, createElement("div", {
       className: "toolbelt-field-checkbox"
     }, createElement("input", {
@@ -559,7 +568,7 @@
       type: "checkbox",
       disabled: true,
       checked: defaultValue
-    }), isSelected && createElement("input", {
+    }), isSelected && createElement(Fragment, null, createElement("input", {
       type: "text",
       className: "toolbelt-field-label-text",
       value: label,
@@ -568,9 +577,21 @@
           label: event.target.value
         });
       }
-    }), !isSelected && createElement("label", {
+    }), createElement(TextareaControl, {
+      label: __('Description', 'wp-toolbelt'),
+      value: description,
+      className: "toolbelt-field-label-description",
+      onChange: function onChange(value) {
+        console.log(value);
+        setAttributes({
+          description: value
+        });
+      }
+    })), !isSelected && createElement(Fragment, null, createElement("label", {
       className: "toolbelt-field-label-text"
-    }, label)), createElement(InspectorControls, null, createElement(PanelBody, {
+    }, label), description && createElement("p", {
+      className: "toolbelt-field-label-description"
+    }, description))), createElement(InspectorControls, null, createElement(PanelBody, {
       title: __('Field Settings', 'wp-toolbelt')
     }, createElement(TextControl, {
       label: __('Label', 'wp-toolbelt'),
@@ -602,6 +623,7 @@
   function ToolbeltField(_ref13) {
     var type = _ref13.type,
         required = _ref13.required,
+        description = _ref13.description,
         label = _ref13.label,
         setAttributes = _ref13.setAttributes,
         defaultValue = _ref13.defaultValue,
@@ -612,6 +634,7 @@
     }, createElement(ToolbeltFieldLabel, {
       required: required,
       label: label,
+      description: description,
       setAttributes: setAttributes,
       isSelected: isSelected
     }), createElement(TextControl, {
@@ -654,8 +677,8 @@
   /**
    * Toolbelt Field Label
    *
-   * A generic label component. This displays a label, and a 'required' flag. It
-   * can be reused across all field types.
+   * A generic label component. This displays a label, a 'required' flag, and
+   * space for a description. It can be reused across all field types.
    */
 
 
@@ -663,7 +686,8 @@
     var setAttributes = _ref14.setAttributes,
         label = _ref14.label,
         required = _ref14.required,
-        isSelected = _ref14.isSelected;
+        isSelected = _ref14.isSelected,
+        description = _ref14.description;
     var thisRef = createRef();
     return createElement("div", {
       className: "toolbelt-field-label"
@@ -680,7 +704,7 @@
       ref: thisRef
     }), !isSelected && createElement("label", {
       className: "toolbelt-field-label-text"
-    }, label, "\xA0"), isSelected && createElement(ToggleControl, {
+    }, label, "\xA0"), isSelected && createElement(Fragment, null, createElement(ToggleControl, {
       label: __('Required', 'wp-toolbelt'),
       className: "toolbelt-field-label-required",
       checked: required,
@@ -689,7 +713,19 @@
           required: value
         });
       }
-    }), !isSelected && !required && createElement("em", null, "(", __('Optional', 'wp-toolbelt'), ")"));
+    }), createElement(TextareaControl, {
+      label: __('Description', 'wp-toolbelt'),
+      value: description,
+      className: "toolbelt-field-label-description",
+      onChange: function onChange(value) {
+        console.log(value);
+        setAttributes({
+          description: value
+        });
+      }
+    })), !isSelected && !required && createElement("em", null, "(", __('Optional', 'wp-toolbelt'), ")"), !isSelected && description && createElement("p", {
+      className: "toolbelt-field-label-description"
+    }, description));
   }
 
   ;
@@ -703,12 +739,14 @@
     var required = _ref15.required,
         label = _ref15.label,
         setAttributes = _ref15.setAttributes,
+        description = _ref15.description,
         isSelected = _ref15.isSelected;
     return createElement(Fragment, null, createElement("div", {
       className: "toolbelt-field"
     }, createElement(ToolbeltFieldLabel, {
       required: required,
       label: label,
+      description: description,
       setAttributes: setAttributes,
       isSelected: isSelected
     }), createElement(TextareaControl, {
@@ -736,6 +774,7 @@
   function ToolbeltFieldMultiple(_ref16) {
     var instanceId = _ref16.instanceId,
         required = _ref16.required,
+        description = _ref16.description,
         label = _ref16.label,
         isSelected = _ref16.isSelected,
         setAttributes = _ref16.setAttributes,
@@ -823,6 +862,7 @@
     return createElement(Fragment, null, createElement(ToolbeltFieldLabel, {
       required: required,
       label: label,
+      description: description,
       setAttributes: setAttributes,
       isSelected: isSelected
     }), createElement("ol", {
