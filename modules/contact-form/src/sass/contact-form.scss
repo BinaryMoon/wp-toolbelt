@@ -3,12 +3,13 @@
 	label,
 	fieldset {
 
-		margin-bottom: var(--toolbelt-spacing);
+		margin-bottom: var( --toolbelt-spacing );
 
 	}
 
 	label,
-	.toolbelt-label {
+	.toolbelt-label,
+	.toolbelt-description {
 
 		width: 100%;
 		display: block;
@@ -22,6 +23,14 @@
 			// width: 100%;
 
 		}
+
+	}
+
+	.toolbelt-description {
+
+		font-weight: normal;
+		font-style: italic;
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
 
 	}
 
