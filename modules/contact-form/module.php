@@ -199,6 +199,7 @@ function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = 
 		array(
 			'label' => $default_attrs['label'],
 			'value' => '',
+			'description' => '',
 			'className' => '',
 			'placeholder' => $default_attrs['placeholder'],
 			'required' => false,
@@ -227,7 +228,7 @@ function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = 
 		( $atts['required'] ? 'required aria-required="true"' : '' )
 	);
 
-	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $html );
+	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $atts['description'], $html );
 
 }
 
@@ -246,6 +247,7 @@ function toolbelt_contact_textarea_field( $atts, $default_label = '' ) {
 			'label' => $default_label,
 			'className' => '',
 			'required' => false,
+			'description' => '',
 		),
 		$atts,
 		'contact-form'
@@ -260,7 +262,7 @@ function toolbelt_contact_textarea_field( $atts, $default_label = '' ) {
 		( $atts['required'] ? 'required aria-required="true"' : '' )
 	);
 
-	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $html );
+	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $atts['description'], $html );
 
 }
 
@@ -278,6 +280,7 @@ function toolbelt_contact_checkbox_field( $atts ) {
 			'label' => '',
 			'className' => '',
 			'required' => false,
+			'description' => '',
 		),
 		$atts,
 		'contact-form'
@@ -285,19 +288,27 @@ function toolbelt_contact_checkbox_field( $atts ) {
 
 	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
 
+	$description = toolbelt_contact_description( $atts['description'] );
+
 	return sprintf(
-		'<label for="%1$s"><input type="checkbox" name="%1$s" id="%1$s" class="%2$s" %3$s />%4$s</label>',
+		'<label for="%1$s"><input type="checkbox" name="%1$s" id="%1$s" class="%2$s" %3$s />%4$s%5$s</label>',
 		$id,
 		esc_attr( $atts['className'] ),
 		( $atts['required'] ? 'required aria-required="true"' : '' ),
-		esc_attr( $atts['label'] )
+		esc_attr( $atts['label'] ),
+		wp_kses_post( $description )
 	);
 
 }
 
 
 /**
+ * Display a multi field.
+ * Supports radio and checkbox types.
  *
+ * @param string $type The type of field to display.
+ * @param array  $atts The field attributes.
+ * @return string
  */
 function toolbelt_contact_field_multi( $type, $atts ) {
 
@@ -306,6 +317,7 @@ function toolbelt_contact_field_multi( $type, $atts ) {
 			'label' => '',
 			'className' => '',
 			'required' => false,
+			'description' => '',
 			'options' => null,
 		),
 		$atts,
@@ -331,13 +343,33 @@ function toolbelt_contact_field_multi( $type, $atts ) {
 
 	}
 
-	return toolbelt_contact_field_wrap_fieldset( $atts['label'], $atts['required'], $html );
+	return toolbelt_contact_field_wrap_fieldset( $atts['label'], $atts['required'], $atts['description'], $html );
 
 }
 
 
 /**
+ * Format the field description.
  *
+ * @param string $description The description to format.
+ * @return string
+ */
+function toolbelt_contact_description( $description = null ) {
+
+	if ( ! empty( $description ) ) {
+		$description = '<p class="toolbelt-description">' . $description . '</p>';
+	}
+
+	return $description;
+
+}
+
+
+/**
+ * Display a multi select dropdown.
+ *
+ * @param array $atts The select field attributes.
+ * @return string
  */
 function toolbelt_contact_field_multi_select( $atts ) {
 
@@ -346,7 +378,9 @@ function toolbelt_contact_field_multi_select( $atts ) {
 			'label' => '',
 			'className' => '',
 			'required' => false,
+			'description' => '',
 			'options' => null,
+			'description' => '',
 		),
 		$atts,
 		'contact-form'
@@ -376,7 +410,7 @@ function toolbelt_contact_field_multi_select( $atts ) {
 		$html_options
 	);
 
-	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $html );
+	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $atts['description'], $html );
 
 }
 
@@ -387,22 +421,26 @@ function toolbelt_contact_field_multi_select( $atts ) {
  * @param string $label The field label.
  * @param string $id A unique id that refers to the field being wrapped (for the 'for' attribute).
  * @param bool   $required Is the field required or not.
+ * @param string $description The field description.
  * @param string $content The actual field html.
  * @return string The final html with the field and label all bundled together.
  */
-function toolbelt_contact_field_wrap_label( $label, $id, $required = true, $content = '' ) {
+function toolbelt_contact_field_wrap_label( $label, $id, $required = true, $description = '', $content = '' ) {
 
 	$required_html = '';
 	if ( ! $required ) {
 		$required_html = '<em class="toolbelt-required">(' . esc_html__( 'Optional', 'wp-toolbelt' ) . ')</em>';
 	}
 
+	$description = toolbelt_contact_description( $description );
+
 	return sprintf(
-		'<label for="%4$s"><span class="toolbelt-label">%1$s %2$s</span>%3$s</label>',
+		'<label for="%4$s"><span class="toolbelt-label">%1$s %2$s</span>%5$s%3$s</label>',
 		esc_html( $label ),
 		$required_html,
 		$content,
-		esc_attr( $id )
+		esc_attr( $id ),
+		wp_kses_post( $description )
 	);
 
 }
@@ -413,10 +451,11 @@ function toolbelt_contact_field_wrap_label( $label, $id, $required = true, $cont
  *
  * @param string $label The field label.
  * @param bool   $required Is the field required or not.
+ * @param string $description The field description.
  * @param string $content The actual field html.
  * @return string The final html with the field and label all bundled together.
  */
-function toolbelt_contact_field_wrap_fieldset( $label, $required = true, $content = '' ) {
+function toolbelt_contact_field_wrap_fieldset( $label, $required = true, $description = '', $content = '' ) {
 
 	$required_html = '';
 	$required_attr = 'required aria-required="true"';
@@ -424,11 +463,14 @@ function toolbelt_contact_field_wrap_fieldset( $label, $required = true, $conten
 		$required_html = '<em class="toolbelt-required">(' . esc_html__( 'Optional', 'wp-toolbelt' ) . ')</em>';
 	}
 
+	$descriotion = toolbelt_contact_description( $description );
+
 	return sprintf(
-		'<fieldset class="toolbelt-fieldset"><legend class="toolbelt-field-label">%1$s %2$s</legend>%3$s</fieldset>',
+		'<fieldset class="toolbelt-fieldset"><legend class="toolbelt-field-label">%1$s %2$s</legend>%4$s%3$s</fieldset>',
 		esc_html( $label ),
 		$required_html,
-		$content
+		$content,
+		wp_kses_post( $description )
 	);
 
 }
