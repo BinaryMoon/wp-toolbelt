@@ -354,7 +354,7 @@ function toolbelt_contact_field_multi( $type, $atts ) {
  * @param string $description The description to format.
  * @return string
  */
-function toolbelt_contact_description( $description = null ) {
+function toolbelt_contact_description( $description = '' ) {
 
 	if ( ! empty( $description ) ) {
 		$description = '<p class="toolbelt-description">' . $description . '</p>';
@@ -378,7 +378,6 @@ function toolbelt_contact_field_multi_select( $atts ) {
 			'label' => '',
 			'className' => '',
 			'required' => false,
-			'description' => '',
 			'options' => null,
 			'description' => '',
 		),
@@ -409,6 +408,8 @@ function toolbelt_contact_field_multi_select( $atts ) {
 		$name,
 		$html_options
 	);
+
+	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
 
 	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $atts['description'], $html );
 
