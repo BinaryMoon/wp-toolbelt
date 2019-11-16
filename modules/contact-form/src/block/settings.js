@@ -96,6 +96,10 @@ const AttributeDefaults = {
 		type: 'boolean',
 		default: false,
 	},
+	description: {
+		type: 'string',
+		default: '',
+	},
 	options: {
 		type: 'array',
 		default: [],
@@ -204,6 +208,7 @@ const editField = type => props => (
 		type={type}
 		label={getFieldLabel( props )}
 		required={props.attributes.required}
+		description={props.attributes.description}
 		setAttributes={props.setAttributes}
 		isSelected={props.isSelected}
 		defaultValue={props.attributes.defaultValue}
@@ -219,6 +224,7 @@ const editMultiField = type => props => (
 		label={getFieldLabel( props )}
 		required={props.attributes.required}
 		options={props.attributes.options}
+		description={props.attributes.description}
 		setAttributes={props.setAttributes}
 		type={type}
 		isSelected={props.isSelected}
@@ -367,6 +373,7 @@ const childBlocks = [
 				<ToolbeltFieldCheckbox
 					label={props.attributes.label} // label intentinally left blank
 					required={props.attributes.required}
+					description={props.attributes.description}
 					setAttributes={props.setAttributes}
 					isSelected={props.isSelected}
 					defaultValue={props.attributes.defaultValue}

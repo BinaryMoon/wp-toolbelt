@@ -8,6 +8,7 @@ function ToolbeltField(
 	{
 		type,
 		required,
+		description,
 		label,
 		setAttributes,
 		defaultValue,
@@ -23,6 +24,7 @@ function ToolbeltField(
 				<ToolbeltFieldLabel
 					required={required}
 					label={label}
+					description={description}
 					setAttributes={setAttributes}
 					isSelected={isSelected}
 				/>

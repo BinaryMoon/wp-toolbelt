@@ -8,6 +8,7 @@ function ToolbeltFieldTextarea(
 		required,
 		label,
 		setAttributes,
+		description,
 		isSelected
 	}
 ) {
@@ -18,6 +19,7 @@ function ToolbeltFieldTextarea(
 				<ToolbeltFieldLabel
 					required={required}
 					label={label}
+					description={description}
 					setAttributes={setAttributes}
 					isSelected={isSelected}
 				/>

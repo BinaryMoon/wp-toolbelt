@@ -8,6 +8,7 @@ function ToolbeltFieldMultiple(
 	{
 		instanceId,
 		required,
+		description,
 		label,
 		isSelected,
 		setAttributes,
@@ -107,6 +108,7 @@ function ToolbeltFieldMultiple(
 			<ToolbeltFieldLabel
 				required={required}
 				label={label}
+				description={description}
 				setAttributes={setAttributes}
 				isSelected={isSelected}
 			/>

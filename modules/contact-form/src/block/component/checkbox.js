@@ -9,8 +9,12 @@ function ToolbeltFieldCheckbox(
 		setAttributes,
 		defaultValue,
 		isSelected,
+		description
 	}
 ) {
+
+	console.log( description );
+
 	return (
 		<Fragment>
 
@@ -25,20 +29,39 @@ function ToolbeltFieldCheckbox(
 
 				{isSelected && (
 
-					<input
-						type="text"
-						className="toolbelt-field-label-text"
-						value={label}
-						onChange={event => setAttributes( { label: event.target.value } )}
-					/>
+					<>
+
+						<input
+							type="text"
+							className="toolbelt-field-label-text"
+							value={label}
+							onChange={event => setAttributes( { label: event.target.value } )}
+						/>
+
+						<TextareaControl
+							label={__( 'Description', 'wp-toolbelt' )}
+							value={description}
+							className="toolbelt-field-label-description"
+							onChange={( value ) => { console.log( value ); setAttributes( { description: value } ) }}
+						/>
+
+					</>
 
 				)}
 
 				{!isSelected && (
 
-					<label className="toolbelt-field-label-text">
-						{label}
-					</label>
+					<>
+
+						<label className="toolbelt-field-label-text">
+							{label}
+						</label>
+
+						{description && (
+							<p className="toolbelt-field-label-description">{description}</p>
+						)}
+
+					</>
 
 				)}
 

@@ -1,15 +1,16 @@
 /**
  * Toolbelt Field Label
  *
- * A generic label component. This displays a label, and a 'required' flag. It
- * can be reused across all field types.
+ * A generic label component. This displays a label, a 'required' flag, and
+ * space for a description. It can be reused across all field types.
  */
 function ToolbeltFieldLabel(
 	{
 		setAttributes,
 		label,
 		required,
-		isSelected
+		isSelected,
+		description
 	}
 ) {
 
@@ -41,18 +42,35 @@ function ToolbeltFieldLabel(
 
 			{isSelected && (
 
-				<ToggleControl
-					label={__( 'Required', 'wp-toolbelt' )}
-					className="toolbelt-field-label-required"
-					checked={required}
-					onChange={value => setAttributes( { required: value } )}
-				/>
+				<>
+
+					<ToggleControl
+						label={__( 'Required', 'wp-toolbelt' )}
+						className="toolbelt-field-label-required"
+						checked={required}
+						onChange={value => setAttributes( { required: value } )}
+					/>
+
+					<TextareaControl
+						label={__( 'Description', 'wp-toolbelt' )}
+						value={description}
+						className="toolbelt-field-label-description"
+						onChange={( value ) => { console.log( value ); setAttributes( { description: value } ) }}
+					/>
+
+				</>
 
 			)}
 
 			{!isSelected && !required && (
 
 				<em>({__( 'Optional', 'wp-toolbelt' )})</em>
+
+			)}
+
+			{!isSelected && description && (
+
+				<p className="toolbelt-field-label-description">{description}</p>
 
 			)}
 
