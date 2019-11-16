@@ -338,39 +338,39 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module.php:384, modules/contact-form/module.php:411
+#: modules/contact-form/module.php:397, modules/contact-form/module.php:424
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module.php:447
+#: modules/contact-form/module.php:460
 msgid "Submit"
 msgstr ""
 
-#: modules/contact-form/module.php:485
+#: modules/contact-form/module.php:498
 msgid "Text"
 msgstr ""
 
-#: modules/contact-form/module.php:502
+#: modules/contact-form/module.php:515
 msgid "Name"
 msgstr ""
 
-#: modules/contact-form/module.php:519
+#: modules/contact-form/module.php:532
 msgid "Email"
 msgstr ""
 
-#: modules/contact-form/module.php:537
+#: modules/contact-form/module.php:550
 msgid "Website"
 msgstr ""
 
-#: modules/contact-form/module.php:555
+#: modules/contact-form/module.php:568
 msgid "Date"
 msgstr ""
 
-#: modules/contact-form/module.php:572
+#: modules/contact-form/module.php:585
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module.php:588
+#: modules/contact-form/module.php:601
 msgid "Message"
 msgstr ""
 
