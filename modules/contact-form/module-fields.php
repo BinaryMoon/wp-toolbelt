@@ -363,7 +363,7 @@ function toolbelt_contact_form_html( $atts, $content ) {
 	);
 
 	return sprintf(
-		'<form class="toolbelt-contact-form">%1$s %2$s</form>',
+		'<form class="toolbelt-contact-form" method="POST">%1$s %2$s</form>',
 		$content,
 		implode( $fields )
 	);
