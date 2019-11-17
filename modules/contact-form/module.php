@@ -2,6 +2,8 @@
 /**
  * Custom contact form
  *
+ * Form validation uses Bouncer: @link https://github.com/cferdinandi/bouncer
+ *
  * @package toolbelt
  */
 
@@ -510,10 +512,18 @@ function toolbelt_contact_form_html( $atts, $content ) {
 	 */
 	toolbelt_global_script( 'bouncer.polyfills.min' );
 
+	/**
+	 * Custom fields.
+	 */
+	$fields = array(
+		'<input type="hidden" name="post-id" value="' . (int) get_the_ID() . '" />',
+	);
+
 	return sprintf(
-		'<form class="toolbelt-contact-form">%1$s<input type="submit" value="%2$s" /></form>',
+		'<form class="toolbelt-contact-form">%1$s%3$s<input type="submit" value="%2$s" /></form>',
 		$content,
-		$atts['submitButtonText']
+		$atts['submitButtonText'],
+		implode( $fields )
 	);
 
 }
