@@ -361,6 +361,27 @@ function toolbelt_scripts( $module ) {
 
 
 /**
+ * Inline the module script.
+ *
+ * @param string $module The module slug.
+ */
+function toolbelt_global_script( $script ) {
+
+	// Output scripts.
+	$path = TOOLBELT_PATH . 'assets/js/' . $script . '.js';
+
+	if ( in_array( $path, get_included_files(), true ) ) {
+		return;
+	}
+
+	echo '<script name="toolbelt-script-' . esc_attr( sanitize_title( $script ) ) . '">';
+	require_once $path;
+	echo '</script>';
+
+}
+
+
+/**
  * Load the toolbelt options.
  */
 function toolbelt_get_options() {

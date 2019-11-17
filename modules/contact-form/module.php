@@ -505,6 +505,11 @@ function toolbelt_contact_form_html( $atts, $content ) {
 		'contact-form'
 	);
 
+	/**
+	 * Include the bouncer script. This will only include itself once.
+	 */
+	toolbelt_global_script( 'bouncer.polyfills.min' );
+
 	return sprintf(
 		'<form class="toolbelt-contact-form">%1$s<input type="submit" value="%2$s" /></form>',
 		$content,
@@ -512,6 +517,52 @@ function toolbelt_contact_form_html( $atts, $content ) {
 	);
 
 }
+
+
+
+function toolbelt_contact_form_validation() {
+
+?>
+<script>
+	var validate = new Bouncer(
+		'.toolbelt-contact-form',
+		{
+
+			messages: {
+				missingValue: {
+					checkbox: '<?php esc_html_e( 'This field is required.', 'wp-toolbelt' ); ?>',
+					radio: '<?php esc_html_e( 'Please select a value.', 'wp-toolbelt' ); ?>',
+					select: '<?php esc_html_e( 'Please select a value.', 'wp-toolbelt' ); ?>',
+					'select-multiple': '<?php esc_html_e( 'Please select at least one value.', 'wp-toolbelt' ); ?>',
+					default: '<?php esc_html_e( 'Please fill out this field.', 'wp-toolbelt' ); ?>'
+				},
+				patternMismatch: {
+					email: '<?php esc_html_e( 'Please enter a valid email address.', 'wp-toolbelt' ); ?>',
+					url: '<?php esc_html_e( 'Please enter a URL.', 'wp-toolbelt' ); ?>',
+					number: '<?php esc_html_e( 'Please enter a number', 'wp-toolbelt' ); ?>',
+					color: '<?php esc_html_e( 'Please match the following format: #rrggbb', 'wp-toolbelt' ); ?>',
+					date: '<?php esc_html_e( 'Please use the YYYY-MM-DD format', 'wp-toolbelt' ); ?>',
+					time: '<?php esc_html_e( 'Please use the 24-hour time format. Ex. 23:00', 'wp-toolbelt' ); ?>',
+					month: '<?php esc_html_e( 'Please use the YYYY-MM format', 'wp-toolbelt' ); ?>',
+					default: '<?php esc_html_e( 'Please match the requested format.', 'wp-toolbelt' ); ?>'
+				},
+				outOfRange: {
+					over: '<?php esc_html_e( 'Please select a value that is no more than {max}.', 'wp-toolbelt' ); ?>',
+					under: '<?php esc_html_e( 'Please select a value that is no less than {min}.', 'wp-toolbelt' ); ?>'
+				},
+				wrongLength: {
+					over: '<?php esc_html_e( 'Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters.', 'wp-toolbelt' ); ?>',
+					under: '<?php esc_html_e( 'Please lengthen this text to {minLength} characters or more. You are currently using {length} characters.', 'wp-toolbelt' ); ?>'
+				}
+			}
+		}
+	);
+</script>
+<?php
+
+}
+
+add_action( 'wp_footer', 'toolbelt_contact_form_validation' );
 
 
 /**
