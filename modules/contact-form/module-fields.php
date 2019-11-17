@@ -354,9 +354,12 @@ function toolbelt_contact_form_html( $atts, $content ) {
 	/**
 	 * Custom fields.
 	 */
-	$fields = array(
-		'<input type="hidden" name="toolbelt-post-id" value="' . (int) get_the_ID() . '" />',
-		'<input type="submit" value="' . esc_attr( $atts['submitButtonText'] ) . '" />',
+	$fields = apply_filters(
+		'toolbelt_contact_fields',
+		array(
+			'<input type="hidden" name="toolbelt-post-id" value="' . (int) get_the_ID() . '" />',
+			'<input type="submit" value="' . esc_attr( $atts['submitButtonText'] ) . '" />',
+		)
 	);
 
 	return sprintf(
