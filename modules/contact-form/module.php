@@ -519,11 +519,16 @@ function toolbelt_contact_form_html( $atts, $content ) {
 }
 
 
-
+/**
+ * Validate the form with js.
+ *
+ * We should also make sure to validate/ sanitize all the fields in php as well
+ * so we can be sure everything is clean.
+ */
 function toolbelt_contact_form_validation() {
 
 ?>
-<script>
+<script id="toolbelt-contact-validation">
 	var validate = new Bouncer(
 		'.toolbelt-contact-form',
 		{
