@@ -8,14 +8,13 @@
 /**
  * Todo
  *
- * range
- * number (with min and max values?)
- * hidden field
- * star rating
+ * Range
+ * Number (with min and max values?)
+ * Hidden field
+ * Star rating
  *
  *
- * add description between the label and the field(s)
- * drag and drop items in multi field
+ * Drag and drop items in multi field.
  */
 
 /**
