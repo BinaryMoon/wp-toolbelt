@@ -338,39 +338,103 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module.php:397, modules/contact-form/module.php:424
+#: modules/contact-form/module-fields.php:273, modules/contact-form/module-fields.php:304
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module.php:460
+#: modules/contact-form/module-fields.php:343
 msgid "Submit"
 msgstr ""
 
-#: modules/contact-form/module.php:498
+#: modules/contact-form/module-fields.php:389
+msgid "This field is required."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:390, modules/contact-form/module-fields.php:391
+msgid "Please select a value."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:392
+msgid "Please select at least one value."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:393
+msgid "Please fill out this field."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:396
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:397
+msgid "Please enter a URL."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:398
+msgid "Please enter a number"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:399
+msgid "Please match the following format: #rrggbb"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:400
+msgid "Please use the YYYY-MM-DD format"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:401
+msgid "Please use the 24-hour time format. Ex. 23:00"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:402
+msgid "Please use the YYYY-MM format"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:403
+msgid "Please match the requested format."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:406
+msgid "Please select a value that is no more than {max}."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:407
+msgid "Please select a value that is no less than {min}."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:410
+msgid "Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:411
+msgid "Please lengthen this text to {minLength} characters or more. You are currently using {length} characters."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:442
 msgid "Text"
 msgstr ""
 
-#: modules/contact-form/module.php:515
+#: modules/contact-form/module-fields.php:445
 msgid "Name"
 msgstr ""
 
-#: modules/contact-form/module.php:532
+#: modules/contact-form/module-fields.php:448
 msgid "Email"
 msgstr ""
 
-#: modules/contact-form/module.php:550
+#: modules/contact-form/module-fields.php:452
 msgid "Website"
 msgstr ""
 
-#: modules/contact-form/module.php:568
+#: modules/contact-form/module-fields.php:456
 msgid "Date"
 msgstr ""
 
-#: modules/contact-form/module.php:585
+#: modules/contact-form/module-fields.php:459
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module.php:601
+#: modules/contact-form/module-fields.php:562
 msgid "Message"
 msgstr ""
 
