@@ -560,7 +560,6 @@
         defaultValue = _ref12.defaultValue,
         isSelected = _ref12.isSelected,
         description = _ref12.description;
-    console.log(description);
     return createElement(Fragment, null, createElement("div", {
       className: "toolbelt-field-checkbox"
     }, createElement("input", {
@@ -582,7 +581,6 @@
       value: description,
       className: "toolbelt-field-label-description",
       onChange: function onChange(value) {
-        console.log(value);
         setAttributes({
           description: value
         });
@@ -718,7 +716,6 @@
       value: description,
       className: "toolbelt-field-label-description",
       onChange: function onChange(value) {
-        console.log(value);
         setAttributes({
           description: value
         });

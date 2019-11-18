@@ -55,7 +55,7 @@ function ToolbeltFieldLabel(
 						label={__( 'Description', 'wp-toolbelt' )}
 						value={description}
 						className="toolbelt-field-label-description"
-						onChange={( value ) => { console.log( value ); setAttributes( { description: value } ) }}
+						onChange={( value ) => { setAttributes( { description: value } ) }}
 					/>
 
 				</>
