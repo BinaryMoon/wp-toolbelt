@@ -56,7 +56,7 @@ function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = 
 	 * use `:invalid` styles?
 	 */
 
-	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
+	$id = toolbelt_contact_get_field_name( $atts['label'] );
 
 	$html = sprintf(
 		'<input type="%1$s" name="%2$s" id="%2$s" value="%3$s" class="%4$s" placeholder="%5$s" %6$s />',
@@ -93,7 +93,7 @@ function toolbelt_contact_textarea_field( $atts, $default_label = '' ) {
 		'contact-form'
 	);
 
-	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
+	$id = toolbelt_contact_get_field_name( $atts['label'] );
 
 	$html = sprintf(
 		'<textarea name="%1$s" id="%1$s" class="%2$s" %3$s /></textarea>',
@@ -126,7 +126,7 @@ function toolbelt_contact_checkbox_field( $atts ) {
 		'contact-form'
 	);
 
-	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
+	$id = toolbelt_contact_get_field_name( $atts['label'] );
 
 	$description = toolbelt_contact_description( $atts['description'] );
 
@@ -249,7 +249,7 @@ function toolbelt_contact_field_multi_select( $atts ) {
 		$html_options
 	);
 
-	$id = 'toolbelt-contact-' . sanitize_title( $atts['label'] );
+	$id = toolbelt_contact_get_field_name( $atts['label'] );
 
 	return toolbelt_contact_field_wrap_label( $atts['label'], $id, $atts['required'], $atts['description'], $html );
 

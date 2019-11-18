@@ -167,6 +167,19 @@ function toolbelt_contact_form_register_block() {
 
 
 /**
+ * Generate a unique, reusable, field name for the current field.
+ *
+ * @param string $label The label ised for the current field.
+ * @return string
+ */
+function toolbelt_contact_get_field_name( $label ) {
+
+	return 'tbc-' . sanitize_title( $label );
+
+}
+
+
+/**
  * The post type is registered on init (priority 11) so this needs to be called
  * after since it tries to load the post taxonomies.
  */
