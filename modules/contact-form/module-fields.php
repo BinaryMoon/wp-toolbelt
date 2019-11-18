@@ -347,11 +347,6 @@ function toolbelt_contact_form_html( $atts, $content ) {
 	);
 
 	/**
-	 * Include the bouncer script. This will only include itself once.
-	 */
-	toolbelt_global_script( 'bouncer.polyfills.min' );
-
-	/**
 	 * Custom fields.
 	 */
 	$fields = apply_filters(
@@ -426,13 +421,67 @@ add_action( 'wp_footer', 'toolbelt_contact_form_validation' );
  */
 function toolbelt_contact_form_styles() {
 
-	if ( has_block( 'toolbelt/contact-form' ) ) {
-		toolbelt_styles( 'contact-form' );
+	if ( !has_block( 'toolbelt/contact-form' ) ) {
+
+		return;
+
 	}
+
+	toolbelt_styles( 'contact-form' );
+	toolbelt_global_script( 'bouncer.polyfills.min' );
 
 }
 
 add_action( 'wp_print_styles', 'toolbelt_contact_form_styles' );
+
+
+/**
+ * Get the default field values.
+ *
+ * If a key is set and it exists then this will return an array of default
+ * values.
+ * If the key is set and does not exist it will return false.
+ * If no key is set it will return all default values.
+ *
+ * @param string $key The defaults to return.
+ * @return array|false
+ */
+function toolbelt_contact_field_defaults( $key = null ) {
+
+	$defaults = array(
+		'text' => array(
+			'label' => esc_html__( 'Text', 'wp-toolbelt' ),
+		),
+		'name' => array(
+			'label' => esc_html__( 'Name', 'wp-toolbelt' ),
+		),
+		'email' => array(
+			'label' => esc_html__( 'Email', 'wp-toolbelt' ),
+			'placeholder' => 'name@domain.com',
+		),
+		'url' => array(
+			'label' => esc_html__( 'Website', 'wp-toolbelt' ),
+			'placeholder' => 'https://domain.com',
+		),
+		'date' => array(
+			'label' => esc_html__( 'Date', 'wp-toolbelt' ),
+		),
+		'telephone' => array(
+			'label' => esc_html__( 'Phone Number', 'wp-toolbelt' ),
+		),
+	);
+
+	if ( null !== $key && isset( $defaults[ $key ] ) ) {
+		return $defaults[ $key ];
+	}
+
+	if ( null !== $key ) {
+		return false;
+	}
+
+	return $defaults;
+
+}
 
 
 /**
@@ -443,11 +492,7 @@ add_action( 'wp_print_styles', 'toolbelt_contact_form_styles' );
  */
 function toolbelt_contact_field_text( $atts ) {
 
-	$defaults = array(
-		'label' => esc_html__( 'Text', 'wp-toolbelt' ),
-	);
-
-	return toolbelt_contact_input_field( 'text', $atts, $defaults );
+	return toolbelt_contact_input_field( 'text', $atts, toolbelt_contact_field_defaults( 'text' ) );
 
 }
 
@@ -460,11 +505,7 @@ function toolbelt_contact_field_text( $atts ) {
  */
 function toolbelt_contact_field_name( $atts ) {
 
-	$defaults = array(
-		'label' => esc_html__( 'Name', 'wp-toolbelt' ),
-	);
-
-	return toolbelt_contact_input_field( 'text', $atts, $defaults );
+	return toolbelt_contact_input_field( 'text', $atts, toolbelt_contact_field_defaults( 'name' ) );
 
 }
 
@@ -477,12 +518,7 @@ function toolbelt_contact_field_name( $atts ) {
  */
 function toolbelt_contact_field_email( $atts ) {
 
-	$defaults = array(
-		'label' => esc_html__( 'Email', 'wp-toolbelt' ),
-		'placeholder' => 'name@domain.com',
-	);
-
-	return toolbelt_contact_input_field( 'email', $atts, $defaults );
+	return toolbelt_contact_input_field( 'email', $atts, toolbelt_contact_field_defaults( 'email' ) );
 
 }
 
@@ -495,12 +531,7 @@ function toolbelt_contact_field_email( $atts ) {
  */
 function toolbelt_contact_field_url( $atts ) {
 
-	$defaults = array(
-		'label' => esc_html__( 'Website', 'wp-toolbelt' ),
-		'placeholder' => 'https://domain.com',
-	);
-
-	return toolbelt_contact_input_field( 'url', $atts, $defaults );
+	return toolbelt_contact_input_field( 'url', $atts, toolbelt_contact_field_defaults( 'url' ) );
 
 }
 
@@ -513,11 +544,7 @@ function toolbelt_contact_field_url( $atts ) {
  */
 function toolbelt_contact_field_date( $atts ) {
 
-	$defaults = array(
-		'label' => esc_html__( 'Date', 'wp-toolbelt' ),
-	);
-
-	return toolbelt_contact_input_field( 'date', $atts, $defaults );
+	return toolbelt_contact_input_field( 'date', $atts, toolbelt_contact_field_defaults( 'date' ) );
 
 }
 
@@ -530,11 +557,7 @@ function toolbelt_contact_field_date( $atts ) {
  */
 function toolbelt_contact_field_telephone( $atts ) {
 
-	$defaults = array(
-		'label' => esc_html__( 'Phone Number', 'wp-toolbelt' ),
-	);
-
-	return toolbelt_contact_input_field( 'tel', $atts, $defaults );
+	return toolbelt_contact_input_field( 'tel', $atts, toolbelt_contact_field_defaults( 'telephone' ) );
 
 }
 
