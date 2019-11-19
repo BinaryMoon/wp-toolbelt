@@ -405,7 +405,7 @@ const childBlocks = [
 				...FieldDefaults.attributes,
 				label: {
 					type: 'string',
-					default: 'Choose several',
+					default: __( 'Select several', 'wp-toolbelt' ),
 				},
 			},
 		},
@@ -432,7 +432,7 @@ const childBlocks = [
 				...FieldDefaults.attributes,
 				label: {
 					type: 'string',
-					default: 'Choose one',
+					default: __( 'Select one', 'wp-toolbelt' ),
 				},
 			},
 		},
@@ -457,7 +457,7 @@ const childBlocks = [
 				...FieldDefaults.attributes,
 				label: {
 					type: 'string',
-					default: 'Select one',
+					default: __( 'Select one', 'wp-toolbelt' ),
 				},
 			},
 		},
