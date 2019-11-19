@@ -16,6 +16,28 @@ const edit = ( props ) => {
 	const { attributes, setAttributes } = props;
 	const { subject, to, submitButtonText } = attributes;
 
+	const form_settings = [
+		<TextControl
+			label={__( 'Email address', 'wp-toolbelt' )}
+			value={to}
+			placeholder={__( 'name@example.com', 'wp-toolbelt' )}
+			help={__( 'You can enter multiple email addresses separated by commas.', 'wp-toolbelt' )}
+			onChange={value => setAttributes( { to: value } )}
+		/>,
+		<TextControl
+			label={__( 'Email subject line', 'wp-toolbelt' )}
+			value={subject}
+			placeholder={__( "Let's work together", 'wp-toolbelt' )}
+			onChange={value => setAttributes( { subject: value } )}
+		/>,
+		<p className="toolbelt-contact-description">
+			{__(
+				'(If you leave these blank, notifications will go to the author with the post or page title as the subject line.)',
+				'wp-toolbelt'
+			)}
+		</p>
+	];
+
 	return [
 		<InspectorControls>
 
@@ -24,18 +46,7 @@ const edit = ( props ) => {
 				initialOpen={true}
 			>
 
-				<TextControl
-					label={__( 'Email address', 'wp-toolbelt' )}
-					value={to}
-					placeholder={__( 'name@example.com', 'wp-toolbelt' )}
-					help={__( 'You can enter multiple email addresses separated by commas.', 'wp-toolbelt' )}
-				/>
-
-				<TextControl
-					label={__( 'Email subject line', 'wp-toolbelt' )}
-					value={subject}
-					placeholder={__( "Let's work together", 'wp-toolbelt' )}
-				/>
+				{form_settings}
 
 			</PanelBody>
 
@@ -65,33 +76,17 @@ const edit = ( props ) => {
 		<Fragment>
 
 			<Placeholder
-				label={__( 'Form', 'wp-toolbelt' )}
-				icon='email'
+				icon="email"
+				label={__( 'Contact Form', 'wp-toolbelt' )}
+				className="toolbelt-contact-form-settings"
 			>
 
 				<form>
 
-					<TextControl
-						label={__( 'Email address', 'wp-toolbelt' )}
-						value={to}
-						placeholder={__( 'name@example.com', 'wp-toolbelt' )}
-						help={__( 'You can enter multiple email addresses separated by commas.', 'wp-toolbelt' )}
-					/>
-
-					<TextControl
-						label={__( 'Email subject line', 'wp-toolbelt' )}
-						value={subject}
-						placeholder={__( "Let's work together", 'wp-toolbelt' )}
-					/>
-
-					<p className="toolbelt-intro-message">
-						{__(
-							'(If you leave these blank, notifications will go to the author with the post or page title as the subject line.)',
-							'wp-toolbelt'
-						)}
-					</p>
+					{form_settings}
 
 				</form>
+
 			</Placeholder>
 
 			<InnerBlocks
@@ -121,7 +116,7 @@ const edit = ( props ) => {
 
 			<button disabled>{submitButtonText}</button>
 
-		</Fragment>
+		</Fragment >
 	];
 
 };

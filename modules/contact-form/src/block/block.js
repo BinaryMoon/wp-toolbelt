@@ -28,6 +28,7 @@
 			BaseControl,
 			Button,
 			IconButton,
+			Icon,
 			PanelBody,
 			Placeholder,
 			SelectControl,
