@@ -469,6 +469,9 @@ function toolbelt_contact_field_defaults( $key = null ) {
 		'telephone' => array(
 			'label' => esc_html__( 'Phone Number', 'wp-toolbelt' ),
 		),
+		'textarea' => array(
+			'label' => esc_html__( 'Message', 'wp-toolbelt' ),
+		),
 	);
 
 	if ( null !== $key && isset( $defaults[ $key ] ) ) {
