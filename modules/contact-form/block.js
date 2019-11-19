@@ -26,6 +26,7 @@
       BaseControl = _wp$components.BaseControl,
       Button = _wp$components.Button,
       IconButton = _wp$components.IconButton,
+      Icon = _wp$components.Icon,
       PanelBody = _wp$components.PanelBody,
       Placeholder = _wp$components.Placeholder,
       SelectControl = _wp$components.SelectControl,
@@ -48,19 +49,32 @@
     var subject = attributes.subject,
         to = attributes.to,
         submitButtonText = attributes.submitButtonText;
-    return [createElement(InspectorControls, null, createElement(PanelBody, {
-      title: __('Email Feedback Settings', 'wp-toolbelt'),
-      initialOpen: true
-    }, createElement(TextControl, {
+    var form_settings = [createElement(TextControl, {
       label: __('Email address', 'wp-toolbelt'),
       value: to,
       placeholder: __('name@example.com', 'wp-toolbelt'),
-      help: __('You can enter multiple email addresses separated by commas.', 'wp-toolbelt')
+      help: __('You can enter multiple email addresses separated by commas.', 'wp-toolbelt'),
+      onChange: function onChange(value) {
+        return setAttributes({
+          to: value
+        });
+      }
     }), createElement(TextControl, {
       label: __('Email subject line', 'wp-toolbelt'),
       value: subject,
-      placeholder: __("Let's work together", 'wp-toolbelt')
-    })), createElement(PanelBody, {
+      placeholder: __("Let's work together", 'wp-toolbelt'),
+      onChange: function onChange(value) {
+        return setAttributes({
+          subject: value
+        });
+      }
+    }), createElement("p", {
+      className: "toolbelt-contact-description"
+    }, __('(If you leave these blank, notifications will go to the author with the post or page title as the subject line.)', 'wp-toolbelt'))];
+    return [createElement(InspectorControls, null, createElement(PanelBody, {
+      title: __('Email Feedback Settings', 'wp-toolbelt'),
+      initialOpen: true
+    }, form_settings), createElement(PanelBody, {
       title: __('Messages', 'wp-toolbelt')
     }, createElement(TextControl, {
       label: __('Submit Button Text', 'wp-toolbelt'),
@@ -77,20 +91,10 @@
       label: __('Error Message'),
       value: "nope"
     }))), createElement(Fragment, null, createElement(Placeholder, {
-      label: __('Form', 'wp-toolbelt'),
-      icon: "email"
-    }, createElement("form", null, createElement(TextControl, {
-      label: __('Email address', 'wp-toolbelt'),
-      value: to,
-      placeholder: __('name@example.com', 'wp-toolbelt'),
-      help: __('You can enter multiple email addresses separated by commas.', 'wp-toolbelt')
-    }), createElement(TextControl, {
-      label: __('Email subject line', 'wp-toolbelt'),
-      value: subject,
-      placeholder: __("Let's work together", 'wp-toolbelt')
-    }), createElement("p", {
-      className: "toolbelt-intro-message"
-    }, __('(If you leave these blank, notifications will go to the author with the post or page title as the subject line.)', 'wp-toolbelt')))), createElement(InnerBlocks, {
+      icon: "email",
+      label: __('Contact Form', 'wp-toolbelt'),
+      className: "toolbelt-contact-form-settings"
+    }, createElement("form", null, form_settings)), createElement(InnerBlocks, {
       allowedBlocks: ALLOWED_BLOCKS,
       templateLock: false,
       template: [['toolbelt/field-name', {
