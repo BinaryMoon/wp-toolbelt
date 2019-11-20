@@ -154,7 +154,7 @@ function toolbelt_contact_field_multi( $type, $atts ) {
 
 	$atts = shortcode_atts(
 		array(
-			'label' => '',
+			'label' => esc_html__( 'Select several', 'wp-toolbelt' ),
 			'className' => '',
 			'required' => false,
 			'description' => '',
@@ -215,7 +215,7 @@ function toolbelt_contact_field_multi_select( $atts ) {
 
 	$atts = shortcode_atts(
 		array(
-			'label' => '',
+			'label' => esc_html__( 'Select one', 'wp-toolbelt' ),
 			'className' => '',
 			'required' => false,
 			'options' => null,
