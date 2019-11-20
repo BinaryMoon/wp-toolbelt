@@ -124,5 +124,6 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Prevent scripts from being loaded multiple times.
 * Make the featured images on the projects block link to the project.
 * Add a method for skipping headings in the heading anchor module. Added support for this to the Projects block.
+* Make it clearer that buttons are buttons in the WordPress admin by adding some subtle inset shadows.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
