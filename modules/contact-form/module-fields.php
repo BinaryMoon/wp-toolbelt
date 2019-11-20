@@ -421,25 +421,6 @@ add_action( 'wp_footer', 'toolbelt_contact_form_validation' );
 
 
 /**
- * Display the contact form styles on the front end.
- */
-function toolbelt_contact_form_styles() {
-
-	if ( !has_block( 'toolbelt/contact-form' ) ) {
-
-		return;
-
-	}
-
-	toolbelt_styles( 'contact-form' );
-	toolbelt_global_script( 'bouncer.polyfills.min' );
-
-}
-
-add_action( 'wp_print_styles', 'toolbelt_contact_form_styles' );
-
-
-/**
  * Get the default field values.
  *
  * If a key is set and it exists then this will return an array of default
