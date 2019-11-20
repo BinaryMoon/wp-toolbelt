@@ -363,6 +363,7 @@ function toolbelt_contact_form_html( $atts, $content ) {
 	$fields = apply_filters(
 		'toolbelt_contact_fields',
 		array(
+			'<input type="hidden" name="toolbelt-form-hash" value="' . esc_attr( toolbelt_contact_hash( $atts ) ) . '" />',
 			'<input type="hidden" name="toolbelt-post-id" value="' . (int) get_the_ID() . '" />',
 			'<input type="submit" value="' . esc_attr( $atts['submitButtonText'] ) . '" />',
 		)
