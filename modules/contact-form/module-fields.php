@@ -48,14 +48,6 @@ function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = 
 		'contact-form'
 	);
 
-	/**
-	 * Needs to support
-	 * ---
-	 * https://www.w3schools.com/html/html_form_input_types.asp
-	 * input pattern
-	 * use `:invalid` styles?
-	 */
-
 	$id = toolbelt_contact_get_field_name( $atts['label'] );
 
 	$html = sprintf(
