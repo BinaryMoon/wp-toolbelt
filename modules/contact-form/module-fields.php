@@ -169,7 +169,14 @@ function toolbelt_contact_field_multi( $type, $atts ) {
 	}
 
 	$html = '';
-	$name = sanitize_title( $atts['label'] );
+
+	/**
+	 * Generate the field name.
+	 *
+	 * If the post is a checkbox we want to pass the value as an array instead
+	 * of a single value so we add the [].
+	 */
+	$id = toolbelt_contact_get_field_name( $atts['label'] );
 
 	foreach ( $atts['options'] as $option ) {
 
@@ -177,7 +184,7 @@ function toolbelt_contact_field_multi( $type, $atts ) {
 			'<label><input type="%1$s" value="%2$s" name="%3$s" />%4$s</label>',
 			esc_attr( $type ),
 			sanitize_title( $option ),
-			$name,
+			$id,
 			esc_html( $option )
 		);
 
@@ -245,7 +252,7 @@ function toolbelt_contact_field_multi_select( $atts ) {
 
 	$html = sprintf(
 		'<select name="%1$s">%2$s</select>',
-		$name,
+		toolbelt_contact_get_field_name( $atts['label'] ),
 		$html_options
 	);
 
