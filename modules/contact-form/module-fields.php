@@ -304,7 +304,7 @@ function toolbelt_contact_field_wrap_fieldset( $label, $required = true, $descri
 		$required_html = '<em class="toolbelt-required">(' . esc_html__( 'Optional', 'wp-toolbelt' ) . ')</em>';
 	}
 
-	$descriotion = toolbelt_contact_description( $description );
+	$description = toolbelt_contact_description( $description );
 
 	return sprintf(
 		'<fieldset class="toolbelt-fieldset"><legend class="toolbelt-field-label">%1$s %2$s</legend>%4$s%3$s</fieldset>',
