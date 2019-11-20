@@ -378,6 +378,9 @@ function toolbelt_contact_form_html( $atts, $content ) {
  */
 function toolbelt_contact_form_validation() {
 
+	/**
+	 * Initialize the validation javascript and allow the text to be translated.
+	 */
 ?>
 <script id="toolbelt-contact-validation">
 	var validate = new Bouncer(
@@ -459,14 +462,24 @@ function toolbelt_contact_field_defaults( $key = null ) {
 		),
 	);
 
+	/**
+	 * In a key is specified and a default exists for that key then return the
+	 * value.
+	 */
 	if ( null !== $key && isset( $defaults[ $key ] ) ) {
 		return $defaults[ $key ];
 	}
 
+	/**
+	 * If a key is specified and a default does not exist then return false.
+	 */
 	if ( null !== $key ) {
 		return false;
 	}
 
+	/**
+	 * No key so return everything.
+	 */
 	return $defaults;
 
 }
