@@ -348,13 +348,14 @@ add_action( 'enqueue_block_editor_assets', 'toolbelt_contact_editor_styles' );
  */
 function toolbelt_contact_form_html( $atts, $content ) {
 
-	$atts = shortcode_atts(
-		array(
-			'submitButtonText' => esc_html__( 'Submit', 'wp-toolbelt' ),
-		),
-		$atts,
-		'contact-form'
-	);
+	/**
+	 * Set a default value for the submit button text.
+	 */
+	if ( empty( $atts['submitButtonText'] ) ) {
+
+		$atts['submitButtonText'] = esc_html__( 'Submit', 'wp-toolbelt' );
+
+	}
 
 	/**
 	 * Custom fields.
