@@ -24,7 +24,7 @@ import {
 import {
 	scripts_cookieBanner,
 	scripts_infiniteScroll,
-	scripts_spam
+	scripts_spam, scripts_contact_form
 } from './gulp/script';
 
 import {
@@ -72,6 +72,7 @@ export const build = series(
 		scripts_cookieBanner,
 		scripts_infiniteScroll,
 		scripts_spam,
+		scripts_contact_form,
 		process_global_styles,
 		block_testimonials,
 		block_projects,
@@ -115,7 +116,8 @@ export const watchFiles = function( done ) {
 		parallel(
 			scripts_infiniteScroll,
 			scripts_cookieBanner,
-			scripts_spam
+			scripts_spam,
+			scripts_contact_form
 		)
 	);
 
