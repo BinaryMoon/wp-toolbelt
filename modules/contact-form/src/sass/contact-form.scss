@@ -51,4 +51,15 @@
 
 	}
 
+	.toolbelt-changed {
+
+		&:invalid,
+		&:focus:invalid {
+
+			outline: 0.1em solid red;
+
+		}
+
+	}
+
 }
