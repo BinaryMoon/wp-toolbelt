@@ -178,6 +178,10 @@ function toolbelt_contact_field_multi( $type, $atts ) {
 	 */
 	$id = toolbelt_contact_get_field_name( $atts['label'] );
 
+	if ( 'checkbox' === $type ) {
+		$id .= '[]';
+	}
+
 	foreach ( $atts['options'] as $option ) {
 
 		$html .= sprintf(
