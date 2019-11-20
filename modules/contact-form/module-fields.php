@@ -242,7 +242,6 @@ function toolbelt_contact_field_multi_select( $atts ) {
 
 	$html = '';
 	$html_options = '';
-	$name = sanitize_title( $atts['label'] );
 
 	foreach ( $atts['options'] as $option ) {
 
