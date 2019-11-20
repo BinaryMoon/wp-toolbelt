@@ -47,3 +47,9 @@ export function scripts_spam() {
 	return process_scripts( 'spam-blocker' );
 
 }
+
+export function scripts_contact_form() {
+
+	return process_scripts( 'contact-form' );
+
+}
