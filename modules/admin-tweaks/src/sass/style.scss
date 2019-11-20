@@ -50,3 +50,18 @@
 	}
 
 }
+
+
+/**
+ * Make the buttons look more like buttons.
+ */
+.wp-core-ui .button,
+.wp-core-ui .button-secondary,
+.wrap .add-new-h2,
+.wrap .page-title-action,
+.components-button.is-default,
+.components-button.is-primary {
+
+	box-shadow: inset 0 -0.15em rgba(0,0,0,0.2);
+
+}
