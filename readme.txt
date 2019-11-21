@@ -1,6 +1,6 @@
 === Toolbelt ===
 Contributors: BinaryMoon
-Tags: speed, privacy, accessibility, optimization, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, testimonials, blocks
+Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
 Tested up to: 5.3
 Stable tag: trunk
@@ -117,7 +117,12 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.4 - 2nd November 2019 =
+= 2.3.2 - 15th November 2019 =
+* Tweak admin styles for WP 5.3.
+* Add javascript events for accept and decline cookie options on cookie bar.
+* Update spam blacklist.
+
+= 2.3.1 - 7th November 2019 =
 * Update spam blacklist.
 * Fix undefined variable error in spam blocking.
 * Ensure projects and testimonials block styles are loaded.
