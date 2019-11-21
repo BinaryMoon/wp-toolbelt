@@ -1,1 +1,1 @@
-@media screen and (min-width:783px){.widefat input[type=checkbox],.widefat input[type=radio]{width:20px;height:20px;margin-bottom:8px}.widefat input[type=checkbox]:checked:before,.widefat input[type=radio]:checked:before{font:25px/1 dashicons;width:10px;height:10px}}.widefat tbody tr:hover{background:#eef}
+@media screen and (min-width:783px){.widefat input[type=checkbox],.widefat input[type=radio]{width:20px;height:20px;margin-bottom:8px}.widefat input[type=checkbox]:checked:before,.widefat input[type=radio]:checked:before{width:25px}}.widefat tbody tr:hover{background:#eef}

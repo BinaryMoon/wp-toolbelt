@@ -69,11 +69,14 @@ var toolbelt_cookie_bar = ( function() {
 			if ( 'accepted' === cookie || 'yes' === cookie ) {
 
 				toolbelt_cookies_accepted();
+				document.body.dispatchEvent( new Event( 'toolbelt-cookie-accepted' ) );
 
 			}
 
 			// Cookie is declined.
 			if ( 'declined' === cookie ) {
+
+				document.body.dispatchEvent( new Event( 'toolbelt-cookie-declined' ) );
 
 			}
 
@@ -86,6 +89,7 @@ var toolbelt_cookie_bar = ( function() {
 			document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'none';
 
 			toolbelt_cookies_accepted();
+			document.body.dispatchEvent( new Event( 'toolbelt-cookie-accepted' ) );
 
 		},
 
@@ -94,6 +98,8 @@ var toolbelt_cookie_bar = ( function() {
 			set_cookie( 'toolbelt_accepted_cookies', 'declined', 365 );
 
 			document.querySelector( '.toolbelt_cookie_wrapper' ).style.display = 'none';
+
+			document.body.dispatchEvent( new Event( 'toolbelt-cookie-declined' ) );
 
 		}
 
