@@ -410,43 +410,43 @@ msgstr ""
 msgid "Please lengthen this text to {minLength} characters or more. You are currently using {length} characters."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:464
+#: modules/contact-form/module-fields.php:441
 msgid "Text"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:467
+#: modules/contact-form/module-fields.php:444
 msgid "Name"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:470
+#: modules/contact-form/module-fields.php:447
 msgid "Email"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:474
+#: modules/contact-form/module-fields.php:451
 msgid "Website"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:478
+#: modules/contact-form/module-fields.php:455
 msgid "Date"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:481
+#: modules/contact-form/module-fields.php:458
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:484, modules/contact-form/module-fields.php:597
+#: modules/contact-form/module-fields.php:461, modules/contact-form/module-fields.php:574
 msgid "Message"
 msgstr ""
 
-#: modules/contact-form/module.php:502, modules/contact-form/module.php:520
+#: modules/contact-form/module.php:543, modules/contact-form/module.php:565
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:504, modules/contact-form/module.php:520
+#: modules/contact-form/module.php:545, modules/contact-form/module.php:565
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:545
+#: modules/contact-form/module.php:594
 msgid "No value supplied"
 msgstr ""
 
