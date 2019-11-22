@@ -242,9 +242,9 @@ function toolbelt_contact_submit() {
 		'Content-Type: text/html; charset=UTF-8',
 	);
 
-	var_dump( $to, $subject, $message, $headers );
+//	var_dump( $to, $subject, $message, $headers );
 
-	die();
+	$return_url = get_permalink( $contact_post );
 
 	wp_mail(
 		sanitize_email( $to ),
@@ -253,8 +253,9 @@ function toolbelt_contact_submit() {
 		$headers
 	);
 
+	wp_safe_redirect( $return_url );
+
 	die();
-	// wp_redirect to original page to prevent duplicate emails from page refreshes.
 
 }
 
