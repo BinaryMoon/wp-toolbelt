@@ -9,18 +9,23 @@
 
 /**
  * Todo
+ * ---
+ * Spam blocking/ checking
+ * success/ failure message (just success, wp_doe on failure?)
  *
+ * Field Ideas
+ * ---
  * Range
  * Number (with min and max values?)
  * Hidden field
  * Star rating
+ * Country list
  *
- * Spam blocking/ checking
- * nonce check
- * success message
- *
- *
- * Drag and drop items in multi field.
+ * Wishlist
+ * ---
+ * Drag and drop items in multi field?
+ * custom post type to temporarily store contact form messages.
+ * wp_cron to periodically delete old contact form messages.
  */
 
 /**
@@ -267,7 +272,7 @@ add_action( 'init', 'toolbelt_contact_submit' );
  *
  * @param string $content The post content.
  * @param string $hash The contact form hash.
- * @return array
+ * @return array|false
  */
 function toolbelt_contact_get_blocks( $content, $hash ) {
 
@@ -627,9 +632,7 @@ toolbelt_register_block_category();
 function toolbelt_contact_form_styles() {
 
 	if ( ! has_block( 'toolbelt/contact-form' ) ) {
-
 		return;
-
 	}
 
 	toolbelt_styles( 'contact-form' );
