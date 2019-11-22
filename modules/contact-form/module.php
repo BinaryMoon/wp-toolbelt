@@ -49,7 +49,7 @@ function toolbelt_contact_form_register_block() {
 			'wp-element',
 			'wp-components',
 			'wp-compose',
-			'wp-blockEditor',
+			'wp-block-editor',
 		),
 		'1.0',
 		true
