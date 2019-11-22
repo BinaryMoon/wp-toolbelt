@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 2.3.1
+ * Version: 2.4.0
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -112,6 +112,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Remove unnecessary HTML from the site header.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization',
 			'weight' => esc_html__( 'Minus 5kb of HTML from the page head.', 'wp-toolbelt' ),
+		),
+		'contact-form' => array(
+			'name' => esc_html__( 'Contact Form', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Create a contact form.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form',
 		),
 		'cookie-banner' => array(
 			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
