@@ -1,6 +1,6 @@
 {
 	"name": "Toolbelt",
-	"version": "2.3.1",
+	"version": "2.4.0",
 	"description": "Stuff for WordPress",
 	"main": "index.php",
 	"repository": {
@@ -15,12 +15,12 @@
 	"author": "",
 	"license": "GPL-2.0-or-later",
 	"devDependencies": {
-		"@babel/core": "^7.6.4",
-		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/core": "^7.7.2",
+		"@babel/plugin-proposal-class-properties": "^7.7.0",
 		"@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-		"@babel/preset-env": "^7.6.3",
-		"@babel/register": "^7.6.2",
-		"@wordpress/babel-preset-default": "^4.6.2",
+		"@babel/preset-env": "^7.7.1",
+		"@babel/register": "^7.7.0",
+		"@wordpress/babel-preset-default": "^4.7.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.0",
 		"gulp-babel": "^8.0.0",
@@ -36,7 +36,7 @@
 		"gulp-uglify": "^3.0.2",
 		"gulp-wp-pot": "^2.3.5",
 		"gulp-zip": "^5.0.1",
-		"jshint": "^2.10.2",
+		"jshint": "^2.10.3",
 		"lodash.template": "^4.5.0"
 	},
 	"dependencies": {}
