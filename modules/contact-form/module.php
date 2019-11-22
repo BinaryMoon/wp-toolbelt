@@ -177,6 +177,20 @@ function toolbelt_contact_form_register_block() {
  */
 function toolbelt_contact_submit() {
 
+	/**
+	 * Check for the nonce and the hash.
+	 * Both have to exist for the contact form to submit.
+	 */
+	$hash = filter_input( INPUT_POST, 'toolbelt-form-hash' );
+	$nonce = filter_input( INPUT_POST, 'toolbelt-token' );
+	if ( $hash && ! wp_verify_nonce( $nonce, 'toolbelt_contact_form_token' ) ) {
+		wp_die();
+	}
+
+	if ( ! $hash ) {
+		return;
+	}
+
 	$post_id = filter_input( INPUT_POST, 'toolbelt-post-id', FILTER_SANITIZE_NUMBER_INT );
 
 	/**
@@ -194,8 +208,6 @@ function toolbelt_contact_submit() {
 	if ( null === $contact_post ) {
 		return;
 	}
-
-	$hash = filter_input( INPUT_POST, 'toolbelt-form-hash' );
 
 	/**
 	 * Get the allowed blocks and fields.
