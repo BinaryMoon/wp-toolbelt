@@ -9,12 +9,7 @@
  */
 
 /**
- * Todo
- * ---
- * Spam blocking/ checking
- * different width fields (eg make date select narrower)
- *
- * Field Ideas
+ * New Field Ideas
  * ---
  * Range
  * Number (with min and max values?)
