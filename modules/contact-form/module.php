@@ -249,7 +249,12 @@ function toolbelt_contact_submit() {
 
 //	var_dump( $to, $subject, $message, $headers );
 
-	$return_url = get_permalink( $contact_post );
+	$return_url = add_query_arg(
+		array(
+			'toolbelt-message' => 'sent',
+		),
+		get_permalink( $contact_post )
+	);
 
 	wp_mail(
 		sanitize_email( $to ),
