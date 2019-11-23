@@ -3,6 +3,7 @@
  * Custom contact form
  *
  * Form validation uses Bouncer: @link https://github.com/cferdinandi/bouncer
+ * Form design inspired by: @link https://adamsilver.io/articles/form-design-from-zero-to-hero-all-in-one-blog-post/
  *
  * @package toolbelt
  */
@@ -11,7 +12,7 @@
  * Todo
  * ---
  * Spam blocking/ checking
- * success/ failure message (just success, wp_doe on failure?)
+ * different width fields (eg make date select narrower)
  *
  * Field Ideas
  * ---
@@ -26,6 +27,7 @@
  * Drag and drop items in multi field?
  * custom post type to temporarily store contact form messages.
  * wp_cron to periodically delete old contact form messages.
+ * [shorttags] for subject line to add different properties from the form.
  */
 
 /**
