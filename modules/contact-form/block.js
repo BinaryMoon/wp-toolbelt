@@ -48,7 +48,8 @@
         setAttributes = props.setAttributes;
     var subject = attributes.subject,
         to = attributes.to,
-        submitButtonText = attributes.submitButtonText;
+        submitButtonText = attributes.submitButtonText,
+        messageConfirmation = attributes.messageConfirmation;
     var form_settings = [createElement(TextControl, {
       label: __('Email address', 'wp-toolbelt'),
       value: to,
@@ -86,10 +87,12 @@
       }
     }), createElement(TextareaControl, {
       label: __('Confirmation Message'),
-      value: "hi"
-    }), createElement(TextareaControl, {
-      label: __('Error Message'),
-      value: "nope"
+      value: messageConfirmation,
+      onChange: function onChange(value) {
+        return setAttributes({
+          messageConfirmation: value
+        });
+      }
     }))), createElement(Fragment, null, createElement(Placeholder, {
       icon: "email",
       label: __('Contact Form', 'wp-toolbelt'),
@@ -144,15 +147,7 @@
         type: 'string',
         "default": __('Submit', 'wp-toolbelt')
       },
-      customThankyou: {
-        type: 'string',
-        "default": ''
-      },
-      customThankyouMessage: {
-        type: 'string',
-        "default": ''
-      },
-      customThankyouRedirect: {
+      messageConfirmation: {
         type: 'string',
         "default": ''
       }
