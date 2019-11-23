@@ -30,6 +30,7 @@ function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = 
 		array(
 			'label' => '',
 			'placeholder' => '',
+			'className' => '',
 		),
 		$default_attrs,
 		'contact-form-defaults'
@@ -40,7 +41,7 @@ function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = 
 			'label' => $default_attrs['label'],
 			'value' => '',
 			'description' => '',
-			'className' => '',
+			'className' => $default_attrs['className'],
 			'placeholder' => $default_attrs['placeholder'],
 			'required' => false,
 		),
@@ -246,7 +247,7 @@ function toolbelt_contact_field_multi_select( $atts ) {
 	}
 
 	$html = sprintf(
-		'<select name="%1$s">%2$s</select>',
+		'<select name="%1$s" class="toolbelt-field">%2$s</select>',
 		toolbelt_contact_get_field_name( $atts['label'] ),
 		$html_options
 	);
@@ -479,20 +480,25 @@ function toolbelt_contact_field_defaults( $key = null ) {
 		),
 		'name' => array(
 			'label' => esc_html__( 'Name', 'wp-toolbelt' ),
+			'className' => 'toolbelt-field',
 		),
 		'email' => array(
 			'label' => esc_html__( 'Email', 'wp-toolbelt' ),
 			'placeholder' => 'name@domain.com',
+			'className' => 'toolbelt-field',
 		),
 		'url' => array(
 			'label' => esc_html__( 'Website', 'wp-toolbelt' ),
 			'placeholder' => 'https://domain.com',
+			'className' => 'toolbelt-field',
 		),
 		'date' => array(
 			'label' => esc_html__( 'Date', 'wp-toolbelt' ),
+			'className' => 'toolbelt-field-short',
 		),
 		'telephone' => array(
 			'label' => esc_html__( 'Phone Number', 'wp-toolbelt' ),
+			'className' => 'toolbelt-field',
 		),
 		'textarea' => array(
 			'label' => esc_html__( 'Message', 'wp-toolbelt' ),
