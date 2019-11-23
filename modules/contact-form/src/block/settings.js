@@ -40,15 +40,7 @@ const settings = {
 			type: 'string',
 			default: __( 'Submit', 'wp-toolbelt' ),
 		},
-		customThankyou: {
-			type: 'string',
-			default: '',
-		},
-		customThankyouMessage: {
-			type: 'string',
-			default: '',
-		},
-		customThankyouRedirect: {
+		messageConfirmation: {
 			type: 'string',
 			default: '',
 		},

@@ -14,7 +14,7 @@ const ALLOWED_BLOCKS = [
 const edit = ( props ) => {
 
 	const { attributes, setAttributes } = props;
-	const { subject, to, submitButtonText } = attributes;
+	const { subject, to, submitButtonText, messageConfirmation } = attributes;
 
 	const form_settings = [
 		<TextControl
@@ -62,12 +62,8 @@ const edit = ( props ) => {
 
 				<TextareaControl
 					label={__( 'Confirmation Message' )}
-					value='hi'
-				/>
-
-				<TextareaControl
-					label={__( 'Error Message' )}
-					value='nope'
+					value={messageConfirmation}
+					onChange={value => setAttributes( { messageConfirmation: value } )}
 				/>
 
 			</PanelBody>
