@@ -189,7 +189,7 @@ function toolbelt_contact_submit() {
 	$hash = filter_input( INPUT_POST, 'toolbelt-form-hash' );
 	$nonce = filter_input( INPUT_POST, 'toolbelt-token' );
 	if ( $hash && ! wp_verify_nonce( $nonce, 'toolbelt_contact_form_token' ) ) {
-		wp_die();
+		wp_die( esc_html__( 'Contact Form timed out', 'wp-toolbelt' ) );
 	}
 
 	if ( ! $hash ) {
