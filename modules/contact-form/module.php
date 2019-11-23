@@ -249,8 +249,34 @@ function toolbelt_contact_submit() {
 		'Content-Type: text/html; charset=UTF-8',
 	);
 
-//	var_dump( $to, $subject, $message, $headers );
+	/**
+	 * Check for spam.
+	 *
+	 * If the Toolbelt spam module is activated then it will use the internal
+	 * spam checking system to ensure content is safe to post.
+	 */
+	$is_spam = apply_filters( 'toolbelt_contact_form_spam', false );
+	$is_spam_content = apply_filters( 'toolbelt_contact_form_spam_content', implode( ' ', array( $message, $subject, $comment_author ) ) );
 
+	/**
+	 * If is spam then prepend a message on the front of the content subject
+	 * line.
+	 */
+	if ( $is_spam || $is_spam_content ) {
+
+		$subject = '**SPAM** ' . $subject;
+
+	}
+
+	/**
+	 * Work out wheree to redirect the page to.
+	 *
+	 * Redirecting the page stops the message from being sent again if the page
+	 * is refreshed.
+	 *
+	 * It also gives us the opportunity to add a 'message sent' parameter to the
+	 * url so that we can display a message telling the user whst has happened.
+	 */
 	$return_url = add_query_arg(
 		array(
 			'toolbelt-message' => 'sent',
@@ -258,6 +284,9 @@ function toolbelt_contact_submit() {
 		get_permalink( $contact_post )
 	);
 
+	/**
+	 * Actually send the email.
+	 */
 	wp_mail(
 		sanitize_email( $to ),
 		esc_html( $subject ),

@@ -28,7 +28,6 @@ var toolbelt_spam = ( function() {
 
 	};
 
-
 	return {
 
 		init: function() {
