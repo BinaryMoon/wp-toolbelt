@@ -106,7 +106,7 @@ function toolbelt_spam_check_comments( $approved, $comment ) {
 	 * If the key field has been changed then it must be spam.
 	 */
 	$toolbelt_key = filter_input( INPUT_POST, 'toolbelt-key' );
-	if ( TOOLBELT_SPAM_KEY !== $toolbelt_key ) {
+	if ( null !== $toolbelt_key && TOOLBELT_SPAM_KEY !== $toolbelt_key ) {
 		$approved = 'spam';
 	}
 
