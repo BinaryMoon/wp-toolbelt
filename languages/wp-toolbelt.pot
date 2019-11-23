@@ -53,187 +53,187 @@ msgstr ""
 msgid "Create a contact form."
 msgstr ""
 
-#: index.php:122
+#: index.php:123
 msgid "Cookie Banner"
 msgstr ""
 
-#: index.php:123
+#: index.php:124
 msgid "Display a simple banner with a link to your Privacy Policy."
 msgstr ""
 
-#: index.php:125
+#: index.php:126
 msgid "1.2kb of inline JS and CSS."
 msgstr ""
 
-#: index.php:128
+#: index.php:129
 msgid "Disable the Comment URL Field"
 msgstr ""
 
-#: index.php:129
+#: index.php:130
 msgid "Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
-#: index.php:134
+#: index.php:135
 msgid "Fast 404s"
 msgstr ""
 
-#: index.php:135
+#: index.php:136
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:139
+#: index.php:140
 msgid "Featured Attachment"
 msgstr ""
 
-#: index.php:140
+#: index.php:141
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:144
+#: index.php:145
 msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:145
+#: index.php:146
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:147, index.php:193
+#: index.php:148, index.php:194
 msgid "0.2kb of inline CSS."
 msgstr ""
 
-#: index.php:150
+#: index.php:151
 msgid "Infinite Scroll"
 msgstr ""
 
-#: index.php:151
+#: index.php:152
 msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
-#: index.php:153
+#: index.php:154
 msgid "0.8kb of inline CSS and 1.3kb of inline JS."
 msgstr ""
 
-#: index.php:156
+#: index.php:157
 msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:157
+#: index.php:158
 msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
-#: index.php:161
+#: index.php:162
 msgid "Markdown"
 msgstr ""
 
-#: index.php:162
+#: index.php:163
 msgid "Render Markdown. Uses Github flavor Markdown."
 msgstr ""
 
-#: index.php:166
+#: index.php:167
 msgid "Web Monetization"
 msgstr ""
 
-#: index.php:167
+#: index.php:168
 msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
-#: index.php:172, modules/projects/module.php:37
+#: index.php:173, modules/projects/module.php:37
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:173
+#: index.php:174
 msgid "A portfolio custom post type."
 msgstr ""
 
-#: index.php:178
+#: index.php:179
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:179
+#: index.php:180
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:183, modules/related-posts/module.php:118, modules/related-posts/tools.php:17
+#: index.php:184, modules/related-posts/module.php:118, modules/related-posts/tools.php:17
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:184
+#: index.php:185
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:186
+#: index.php:187
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:190
+#: index.php:191
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:191
+#: index.php:192
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:196, modules/social-menu/module.php:14, modules/social-menu/module.php:31
+#: index.php:197, modules/social-menu/module.php:14, modules/social-menu/module.php:31
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:197
+#: index.php:198
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:199
+#: index.php:200
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:202
+#: index.php:203
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:203
+#: index.php:204
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:205
+#: index.php:206
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:208
+#: index.php:209
 msgid "Spam Blocker"
 msgstr ""
 
-#: index.php:209
+#: index.php:210
 msgid "Attempt to block spam."
 msgstr ""
 
-#: index.php:211
+#: index.php:212
 msgid "0.3kb of inline JS"
 msgstr ""
 
-#: index.php:215, modules/stats/settings.php:38
+#: index.php:216, modules/stats/settings.php:38
 msgid "Stats"
 msgstr ""
 
-#: index.php:216
+#: index.php:217
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:221, modules/testimonials/module.php:42
+#: index.php:222, modules/testimonials/module.php:42
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:222
+#: index.php:223
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:224
+#: index.php:225
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:228
+#: index.php:229
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:229
+#: index.php:230
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -350,111 +350,119 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:348
+#: modules/contact-form/module-fields.php:360
 msgid "Submit"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:391
+#: modules/contact-form/module-fields.php:394
+msgid "Message Sent"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:428
 msgid "This field is required."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:392, modules/contact-form/module-fields.php:393
+#: modules/contact-form/module-fields.php:429, modules/contact-form/module-fields.php:430
 msgid "Please select a value."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:394
+#: modules/contact-form/module-fields.php:431
 msgid "Please select at least one value."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:395
+#: modules/contact-form/module-fields.php:432
 msgid "Please fill out this field."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:398
+#: modules/contact-form/module-fields.php:435
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:399
+#: modules/contact-form/module-fields.php:436
 msgid "Please enter a URL."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:400
+#: modules/contact-form/module-fields.php:437
 msgid "Please enter a number"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:401
+#: modules/contact-form/module-fields.php:438
 msgid "Please match the following format: #rrggbb"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:402
+#: modules/contact-form/module-fields.php:439
 msgid "Please use the YYYY-MM-DD format"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:403
+#: modules/contact-form/module-fields.php:440
 msgid "Please use the 24-hour time format. Ex. 23:00"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:404
+#: modules/contact-form/module-fields.php:441
 msgid "Please use the YYYY-MM format"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:405
+#: modules/contact-form/module-fields.php:442
 msgid "Please match the requested format."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:408
+#: modules/contact-form/module-fields.php:445
 msgid "Please select a value that is no more than {max}."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:409
+#: modules/contact-form/module-fields.php:446
 msgid "Please select a value that is no less than {min}."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:412
+#: modules/contact-form/module-fields.php:449
 msgid "Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:413
+#: modules/contact-form/module-fields.php:450
 msgid "Please lengthen this text to {minLength} characters or more. You are currently using {length} characters."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:441
+#: modules/contact-form/module-fields.php:478
 msgid "Text"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:444
+#: modules/contact-form/module-fields.php:481
 msgid "Name"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:447
+#: modules/contact-form/module-fields.php:484
 msgid "Email"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:451
+#: modules/contact-form/module-fields.php:488
 msgid "Website"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:455
+#: modules/contact-form/module-fields.php:492
 msgid "Date"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:458
+#: modules/contact-form/module-fields.php:495
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:461, modules/contact-form/module-fields.php:574
+#: modules/contact-form/module-fields.php:498, modules/contact-form/module-fields.php:611
 msgid "Message"
 msgstr ""
 
-#: modules/contact-form/module.php:543, modules/contact-form/module.php:565
+#: modules/contact-form/module.php:194
+msgid "Contact Form timed out"
+msgstr ""
+
+#: modules/contact-form/module.php:568, modules/contact-form/module.php:590
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:545, modules/contact-form/module.php:565
+#: modules/contact-form/module.php:570, modules/contact-form/module.php:590
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:594
+#: modules/contact-form/module.php:619
 msgid "No value supplied"
 msgstr ""
 
