@@ -340,6 +340,18 @@ add_action( 'enqueue_block_editor_assets', 'toolbelt_contact_editor_styles' );
  */
 function toolbelt_contact_form_html( $atts, $content ) {
 
+	$form_sent = filter_input( INPUT_GET, 'toolbelt-message' );
+
+	/**
+	 * If the message has been sent then display a confirmation message instead
+	 * of the form.
+	 */
+	if ( 'sent' === $form_sent ) {
+
+		return toolbelt_contact_confirmation_message( $atts );
+
+	}
+
 	/**
 	 * Set a default value for the submit button text.
 	 */
@@ -366,6 +378,30 @@ function toolbelt_contact_form_html( $atts, $content ) {
 		'<form class="toolbelt-contact-form" method="POST">%1$s %2$s</form>',
 		$content,
 		implode( $fields )
+	);
+
+}
+
+
+/**
+ * Display a confirmation message when an email has been sent successfully.
+ *
+ * @param array $atts The form attributes.
+ * @return string
+ */
+function toolbelt_contact_confirmation_message( $atts = array() ) {
+
+	$message_title = apply_filters( 'toolbelt_contact_confirmation_title', esc_html__( 'Message Sent', 'wp-toolbelt' ) );
+	$message_content = '';
+
+	if ( ! empty( $atts['messageConfirmation'] ) ) {
+		$message_content = nl2br( $atts['messageConfirmation'] );
+	}
+
+	return sprintf(
+		'<div class="toolbelt-contact-confirmation-message"><h3>%1$s</h3>%2$s</div>',
+		esc_html( $message_title ),
+		wp_kses_post( $message_content )
 	);
 
 }
