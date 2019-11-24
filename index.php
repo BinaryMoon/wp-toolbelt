@@ -257,7 +257,7 @@ function toolbelt_css_properties() {
 		$css_properties .= ' --' . $key . ':' . $value . ';';
 	}
 
-	echo '<style>:root {';
+	echo '<style name="toolbelt-properties">:root {';
 	echo esc_attr( $css_properties );
 	echo '}</style>';
 
