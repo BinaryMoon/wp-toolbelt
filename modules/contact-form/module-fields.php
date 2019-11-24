@@ -111,7 +111,6 @@ function toolbelt_contact_checkbox_field( $atts ) {
 	$atts = shortcode_atts(
 		array(
 			'label' => '',
-			'className' => '',
 			'required' => false,
 			'description' => '',
 		),
@@ -124,9 +123,8 @@ function toolbelt_contact_checkbox_field( $atts ) {
 	$description = toolbelt_contact_description( $atts['description'] );
 
 	return sprintf(
-		'<label for="%1$s"><input type="checkbox" name="%1$s" id="%1$s" class="%2$s" %3$s />%4$s%5$s</label>',
+		'<label for="%1$s" class="toolbelt-field-checkbox"><input type="checkbox" name="%1$s" id="%1$s" %2$s />%3$s%4$s</label>',
 		$id,
-		esc_attr( $atts['className'] ),
 		( $atts['required'] ? 'required aria-required="true"' : '' ),
 		esc_attr( $atts['label'] ),
 		wp_kses_post( $description )
