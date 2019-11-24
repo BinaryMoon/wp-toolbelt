@@ -482,7 +482,7 @@ function toolbelt_portfolio_editor_styles() {
 
 }
 
-add_action( 'enqueue_block_editor_assets', 'toolbelt_portfolio_editor_styles' );
+add_action( 'admin_head', 'toolbelt_portfolio_editor_styles' );
 
 
 /**

@@ -264,7 +264,7 @@ function toolbelt_css_properties() {
 }
 
 add_filter( 'wp_print_styles', 'toolbelt_css_properties' );
-add_filter( 'enqueue_block_editor_assets', 'toolbelt_css_properties' );
+add_filter( 'admin_head', 'toolbelt_css_properties' );
 
 
 /**
@@ -304,6 +304,12 @@ function toolbelt_styles( $module, $name = 'style' ) {
  * @param string $module The module to load.
  */
 function toolbelt_styles_editor( $module ) {
+
+	$screen = get_current_screen();
+
+	if ( ! $screen || 'post' !== $screen->base ) {
+		return;
+	}
 
 	toolbelt_styles( $module, 'block' );
 

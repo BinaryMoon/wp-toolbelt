@@ -329,7 +329,7 @@ function toolbelt_contact_editor_styles() {
 
 }
 
-add_action( 'enqueue_block_editor_assets', 'toolbelt_contact_editor_styles' );
+add_action( 'admin_head', 'toolbelt_contact_editor_styles' );
 
 
 /**
