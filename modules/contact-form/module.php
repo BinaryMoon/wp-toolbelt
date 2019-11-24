@@ -285,7 +285,7 @@ function toolbelt_contact_submit() {
 	wp_mail(
 		sanitize_email( $to ),
 		esc_html( $subject ),
-		implode( "\r\n", $email ),
+		implode( "\r\n", $message ),
 		$headers
 	);
 
