@@ -305,12 +305,12 @@ add_action( 'init', 'toolbelt_contact_submit' );
  *
  * @param string $content The post content.
  * @param string $hash The contact form hash.
- * @return array|false
+ * @return array
  */
 function toolbelt_contact_get_blocks( $content, $hash ) {
 
 	if ( ! $content ) {
-		return false;
+		return array();
 	}
 
 	$content_blocks = parse_blocks( $content );
