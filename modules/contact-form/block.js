@@ -558,7 +558,8 @@
         setAttributes = _ref12.setAttributes,
         defaultValue = _ref12.defaultValue,
         isSelected = _ref12.isSelected,
-        description = _ref12.description;
+        description = _ref12.description,
+        required = _ref12.required;
     return createElement(Fragment, null, createElement("div", {
       className: "toolbelt-field-checkbox"
     }, createElement("input", {
@@ -582,6 +583,15 @@
       onChange: function onChange(value) {
         setAttributes({
           description: value
+        });
+      }
+    }), createElement(ToggleControl, {
+      label: __('Required', 'wp-toolbelt'),
+      className: "toolbelt-field-label-required",
+      checked: required,
+      onChange: function onChange(value) {
+        return setAttributes({
+          required: value
         });
       }
     })), !isSelected && createElement(Fragment, null, createElement("label", {

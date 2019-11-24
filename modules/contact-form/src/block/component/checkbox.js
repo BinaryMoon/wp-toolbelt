@@ -9,7 +9,8 @@ function ToolbeltFieldCheckbox(
 		setAttributes,
 		defaultValue,
 		isSelected,
-		description
+		description,
+		required
 	}
 ) {
 
@@ -41,6 +42,13 @@ function ToolbeltFieldCheckbox(
 							value={description}
 							className="toolbelt-field-label-description"
 							onChange={( value ) => { setAttributes( { description: value } ) }}
+						/>
+
+						<ToggleControl
+							label={__( 'Required', 'wp-toolbelt' )}
+							className="toolbelt-field-label-required"
+							checked={required}
+							onChange={value => setAttributes( { required: value } )}
 						/>
 
 					</>
