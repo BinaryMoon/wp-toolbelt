@@ -117,11 +117,14 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.4 - 21st November 2019 =
+= 2.4 - 24th November 2019 =
 * Add contact form block.
 * Make admin button styles clearer (in Admin Tweaks module).
 * Update spam blacklist.
 * Fix dns prefetch for analytics.
 * Ensure scripts and styles do not load before the <html> element.
+* Remove emoji prefetch url from header in cleanup.
+* Fix bug with removing jquery migrate in cleanup (undefined parameter).
+* Dispatch events in cookie banner script. Makes it easier to hook into the events.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
