@@ -469,7 +469,7 @@ function toolbelt_contact_hash( $atts ) {
 		array(
 			'subject' => '',
 			'to' => '',
-			'submitButtonText' => '',
+			'submitButtonText' => esc_html__( 'Submit', 'wp-toolbelt' ),
 		),
 		$atts,
 		'contact-form-hash'
