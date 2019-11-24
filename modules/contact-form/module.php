@@ -477,7 +477,16 @@ function toolbelt_contact_hash( $atts ) {
 		'contact-form-hash'
 	);
 
-	return sha1( wp_json_encode( $atts ) );
+	/**
+	 * The WordPress json encode function can return false.
+	 * This ensures it is always a string.
+	 */
+	$json_hash_string = wp_json_encode( $atts );
+	if ( ! $json_hash_string ) {
+		$json_hash_string = 'Toolbelt';
+	}
+
+	return sha1( $json_hash_string );
 
 }
 
