@@ -370,7 +370,7 @@ function toolbelt_scripts( $module ) {
 /**
  * Inline the module script.
  *
- * @param string $module The module slug.
+ * @param string $script The module slug.
  */
 function toolbelt_global_script( $script ) {
 
