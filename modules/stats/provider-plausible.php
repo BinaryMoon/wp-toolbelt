@@ -53,9 +53,7 @@ add_action( 'wp_footer', 'toolbelt_stats_plausible' );
 function toolbelt_stats_plausible_resource_hints( $urls, $relation_type ) {
 
 	if ( 'dns-prefetch' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://plausible.io',
-		);
+		$urls[] = 'https://plausible.io';
 	}
 
 	return $urls;

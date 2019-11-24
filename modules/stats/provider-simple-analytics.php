@@ -41,12 +41,8 @@ add_action( 'wp_footer', 'toolbelt_stats_simple_analytics' );
 function toolbelt_stats_simple_analytics_resource_hints( $urls, $relation_type ) {
 
 	if ( 'dns-prefetch' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://api.simpleanalytics.io',
-		);
-		$urls[] = array(
-			'href' => 'https://cdn.simpleanalytics.io',
-		);
+		$urls[] = 'https://api.simpleanalytics.io';
+		$urls[] = 'https://cdn.simpleanalytics.io';
 	}
 
 	return $urls;
