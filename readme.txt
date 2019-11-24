@@ -121,5 +121,6 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add contact form block.
 * Make admin button styles clearer (in Admin Tweaks module).
 * Update spam blacklist.
+* Fix dns prefetch for analytics.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
