@@ -497,7 +497,7 @@ function toolbelt_contact_parse_fields( $blocks ) {
 	 * Return cos there's no fields to look at.
 	 */
 	if ( empty( $blocks['innerBlocks'] ) ) {
-		return;
+		return $fields;
 	}
 
 	foreach ( $blocks['innerBlocks'] as $block ) {
@@ -519,7 +519,7 @@ function toolbelt_contact_parse_fields( $blocks ) {
 		 */
 		$default_props = toolbelt_contact_field_defaults( $type );
 		$label = '';
-		if ( false !== $default_label ) {
+		if ( ! empty( $default_props['label'] ) ) {
 			$label = $default_props['label'];
 		}
 		if ( ! empty( $atts['label'] ) ) {
