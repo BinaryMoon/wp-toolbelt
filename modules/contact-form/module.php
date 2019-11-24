@@ -264,7 +264,7 @@ function toolbelt_contact_submit() {
 	}
 
 	/**
-	 * Work out wheree to redirect the page to.
+	 * Work out where to redirect the page to.
 	 *
 	 * Redirecting the page stops the message from being sent again if the page
 	 * is refreshed.
@@ -285,7 +285,7 @@ function toolbelt_contact_submit() {
 	wp_mail(
 		sanitize_email( $to ),
 		esc_html( $subject ),
-		implode( "\r\n", $message ),
+		wp_kses_post( $message ),
 		$headers
 	);
 
