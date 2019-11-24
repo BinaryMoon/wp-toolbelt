@@ -57,6 +57,7 @@ function toolbelt_contact_form_register_block() {
 		true
 	);
 
+	// The main contact form.
 	register_block_type(
 		'toolbelt/contact-form',
 		array(
