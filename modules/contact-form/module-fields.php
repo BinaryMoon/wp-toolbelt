@@ -400,7 +400,7 @@ function toolbelt_contact_confirmation_message( $atts = array() ) {
 	}
 
 	return sprintf(
-		'<div class="toolbelt-contact-confirmation-message"><h3>%1$s</h3>%2$s</div>',
+		'<div class="toolbelt-contact-confirmation-message"><h2>%1$s</h2>%2$s</div>',
 		esc_html( $message_title ),
 		wp_kses_post( $message_content )
 	);
