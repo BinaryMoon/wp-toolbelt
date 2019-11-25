@@ -338,131 +338,131 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:150
+#: modules/contact-form/module-fields.php:148
 msgid "Select several"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:222
+#: modules/contact-form/module-fields.php:220
 msgid "Select one"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:276, modules/contact-form/module-fields.php:307
+#: modules/contact-form/module-fields.php:274, modules/contact-form/module-fields.php:305
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:361, modules/contact-form/module.php:473
+#: modules/contact-form/module-fields.php:359, modules/contact-form/module.php:484
 msgid "Submit"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:395
+#: modules/contact-form/module-fields.php:393
 msgid "Message Sent"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:429
+#: modules/contact-form/module-fields.php:427
 msgid "This field is required."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:430, modules/contact-form/module-fields.php:431
+#: modules/contact-form/module-fields.php:428, modules/contact-form/module-fields.php:429
 msgid "Please select a value."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:432
+#: modules/contact-form/module-fields.php:430
 msgid "Please select at least one value."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:433
+#: modules/contact-form/module-fields.php:431
 msgid "Please fill out this field."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:436
+#: modules/contact-form/module-fields.php:434
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:437
+#: modules/contact-form/module-fields.php:435
 msgid "Please enter a URL."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:438
+#: modules/contact-form/module-fields.php:436
 msgid "Please enter a number"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:439
+#: modules/contact-form/module-fields.php:437
 msgid "Please match the following format: #rrggbb"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:440
+#: modules/contact-form/module-fields.php:438
 msgid "Please use the YYYY-MM-DD format"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:441
+#: modules/contact-form/module-fields.php:439
 msgid "Please use the 24-hour time format. Ex. 23:00"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:442
+#: modules/contact-form/module-fields.php:440
 msgid "Please use the YYYY-MM format"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:443
+#: modules/contact-form/module-fields.php:441
 msgid "Please match the requested format."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:446
+#: modules/contact-form/module-fields.php:444
 msgid "Please select a value that is no more than {max}."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:447
+#: modules/contact-form/module-fields.php:445
 msgid "Please select a value that is no less than {min}."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:450
+#: modules/contact-form/module-fields.php:448
 msgid "Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:451
+#: modules/contact-form/module-fields.php:449
 msgid "Please lengthen this text to {minLength} characters or more. You are currently using {length} characters."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:479
+#: modules/contact-form/module-fields.php:477
 msgid "Text"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:482
+#: modules/contact-form/module-fields.php:480
 msgid "Name"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:486
+#: modules/contact-form/module-fields.php:484
 msgid "Email"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:491
+#: modules/contact-form/module-fields.php:489
 msgid "Website"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:496
+#: modules/contact-form/module-fields.php:494
 msgid "Date"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:500
+#: modules/contact-form/module-fields.php:498
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:504, modules/contact-form/module-fields.php:617
+#: modules/contact-form/module-fields.php:502, modules/contact-form/module-fields.php:615
 msgid "Message"
 msgstr ""
 
-#: modules/contact-form/module.php:190
+#: modules/contact-form/module.php:201
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module.php:593, modules/contact-form/module.php:615
+#: modules/contact-form/module.php:613, modules/contact-form/module.php:635
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:595, modules/contact-form/module.php:615
+#: modules/contact-form/module.php:615, modules/contact-form/module.php:635
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:644
+#: modules/contact-form/module.php:664
 msgid "No value supplied"
 msgstr ""
 
