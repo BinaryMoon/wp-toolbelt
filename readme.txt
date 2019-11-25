@@ -119,7 +119,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 = 2.4.1 - 25th November 2019 =
 * Ensure the contact form submit button stays in the right place! :)
-* Fix issue with settings link appearing when it shouldn't
+* Fix issue with settings link appearing when it shouldn't.
 
 = 2.4.0 - 24th November 2019 =
 * Add contact form block.
