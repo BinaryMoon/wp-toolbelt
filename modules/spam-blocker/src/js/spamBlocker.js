@@ -28,12 +28,12 @@ var toolbelt_spam = ( function() {
 
 	};
 
-
 	return {
 
 		init: function() {
 
 			var forms = [
+				'.toolbelt-contact-form',			// Toolbelt.
 				'#commentform',						// WordPress comments.
 				'.contact-form.commentsblock',		// Jetpack Contact form.
 				'#contactform',						// ?

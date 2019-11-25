@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 2.3.1
+ * Version: 2.4.0
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '2.2.2' );
+define( 'TOOLBELT_VERSION', '2.4.0' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TOOLBELT_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
@@ -112,6 +112,12 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Remove unnecessary HTML from the site header.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization',
 			'weight' => esc_html__( 'Minus 5kb of HTML from the page head.', 'wp-toolbelt' ),
+		),
+		'contact-form' => array(
+			'name' => esc_html__( 'Contact Form', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Create a contact form.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form',
+			'supports' => array( 'experimental' ),
 		),
 		'cookie-banner' => array(
 			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
@@ -251,14 +257,14 @@ function toolbelt_css_properties() {
 		$css_properties .= ' --' . $key . ':' . $value . ';';
 	}
 
-	echo '<style>:root {';
+	echo '<style name="toolbelt-properties">:root {';
 	echo esc_attr( $css_properties );
 	echo '}</style>';
 
 }
 
 add_filter( 'wp_print_styles', 'toolbelt_css_properties' );
-add_filter( 'enqueue_block_editor_assets', 'toolbelt_css_properties' );
+add_filter( 'admin_head', 'toolbelt_css_properties' );
 
 
 /**
@@ -298,6 +304,12 @@ function toolbelt_styles( $module, $name = 'style' ) {
  * @param string $module The module to load.
  */
 function toolbelt_styles_editor( $module ) {
+
+	$screen = get_current_screen();
+
+	if ( ! $screen || 'post' !== $screen->base ) {
+		return;
+	}
 
 	toolbelt_styles( $module, 'block' );
 
@@ -349,6 +361,27 @@ function toolbelt_scripts( $module ) {
 	}
 
 	echo '<script name="toolbelt-script-' . esc_attr( $module ) . '">';
+	require_once $path;
+	echo '</script>';
+
+}
+
+
+/**
+ * Inline the module script.
+ *
+ * @param string $script The module slug.
+ */
+function toolbelt_global_script( $script ) {
+
+	// Output scripts.
+	$path = TOOLBELT_PATH . 'assets/js/' . $script . '.js';
+
+	if ( in_array( $path, get_included_files(), true ) ) {
+		return;
+	}
+
+	echo '<script name="toolbelt-script-' . esc_attr( sanitize_title( $script ) ) . '">';
 	require_once $path;
 	echo '</script>';
 

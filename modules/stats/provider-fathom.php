@@ -72,9 +72,7 @@ add_action( 'wp_footer', 'toolbelt_stats_fathom' );
 function toolbelt_stats_fathom_resource_hints( $urls, $relation_type ) {
 
 	if ( 'dns-prefetch' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://cdn.usefathom.com',
-		);
+		$urls[] = 'https://cdn.usefathom.com';
 	}
 
 	return $urls;

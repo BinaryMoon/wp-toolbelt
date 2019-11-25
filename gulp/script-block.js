@@ -55,3 +55,9 @@ export function block_projects() {
 	return process_scripts( 'projects' );
 
 }
+
+export function block_contact_form() {
+
+	return process_scripts( 'contact-form' );
+
+}

@@ -106,7 +106,7 @@ function toolbelt_spam_check_comments( $approved, $comment ) {
 	 * If the key field has been changed then it must be spam.
 	 */
 	$toolbelt_key = filter_input( INPUT_POST, 'toolbelt-key' );
-	if ( TOOLBELT_SPAM_KEY !== $toolbelt_key ) {
+	if ( null !== $toolbelt_key && TOOLBELT_SPAM_KEY !== $toolbelt_key ) {
 		$approved = 'spam';
 	}
 
@@ -149,6 +149,7 @@ function toolbelt_spam_check() {
 
 add_filter( 'jetpack_contact_form_is_spam', 'toolbelt_spam_check' );
 add_filter( 'gform_entry_is_spam', 'toolbelt_spam_check' );
+add_filter( 'toolbelt_contact_form_spam', 'toolbelt_spam_check' );
 
 
 /**
@@ -173,6 +174,10 @@ function toolbelt_spam_blacklist_check( $content ) {
 
 	$words = explode( "\n", $mod_keys );
 
+	/**
+	 * Loop through all the blacklist words and check them against the content
+	 * value.
+	 */
 	foreach ( (array) $words as $word ) {
 
 		$word = trim( $word );
@@ -195,6 +200,8 @@ function toolbelt_spam_blacklist_check( $content ) {
 	return false;
 
 }
+
+add_filter( 'toolbelt_contact_form_spam_content', 'toolbelt_spam_blacklist_check' );
 
 
 /**

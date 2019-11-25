@@ -117,29 +117,14 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.3.2 - 15th November 2019 =
-* Tweak admin styles for WP 5.3.
-* Add javascript events for accept and decline cookie options on cookie bar.
+= 2.4 - 24th November 2019 =
+* Add contact form block.
+* Make admin button styles clearer (in Admin Tweaks module).
 * Update spam blacklist.
-
-= 2.3.1 - 7th November 2019 =
-* Update spam blacklist.
-* Fix undefined variable error in spam blocking.
-* Ensure projects and testimonials block styles are loaded.
-* Prevent scripts from being loaded multiple times.
-* Make the featured images on the projects block link to the project.
-* Add a method for skipping headings in the heading anchor module. Added support for this to the Projects block.
-* Fix translation string. Thanks @pixolin for the patch.
-
-= 2.3 - 24th October 2019 =
-* Add a Markdown block.
-* Add testimonials post type, shortcode, and block.
-* Add projects shortcode and block.
-* Add spam blocking support for Gravity Forms.
-* Add DNS Prefetching to the stats providers.
-* Change social sharing css class name from `toolbelt_social_sharing` to `toolbelt-social-sharing`.
-* Change related posts, and social sharing so that they don't appear on password protected pages.
-* Fix: stop css styles from trying to be included multiple times.
-* Tidy up copy issues.
+* Fix dns prefetch for analytics.
+* Ensure scripts and styles do not load before the <html> element.
+* Remove emoji prefetch url from header in cleanup.
+* Fix bug with removing jquery migrate in cleanup (undefined parameter).
+* Dispatch events in cookie banner script. Makes it easier to hook into the events.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
