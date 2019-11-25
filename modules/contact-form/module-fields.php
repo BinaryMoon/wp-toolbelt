@@ -369,7 +369,7 @@ function toolbelt_contact_form_html( $atts, $content ) {
 			'<input type="hidden" name="toolbelt-token" value="' . wp_create_nonce( 'toolbelt_contact_form_token' ) . '" />',
 			'<input type="hidden" name="toolbelt-form-hash" value="' . esc_attr( toolbelt_contact_hash( $atts ) ) . '" />',
 			'<input type="hidden" name="toolbelt-post-id" value="' . (int) get_the_ID() . '" />',
-			'<input type="submit" value="' . esc_attr( $atts['submitButtonText'] ) . '" />',
+			'<div class="toolbelt-submit"><input type="submit" value="' . esc_attr( $atts['submitButtonText'] ) . '" /></div>',
 		)
 	);
 
