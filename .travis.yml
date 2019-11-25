@@ -7,7 +7,6 @@ php:
 install:
   - |
     composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer phpstan/phpstan-shim szepeviktor/phpstan-wordpress
-    sed -e 's#^function is_countable(#// &#' -i vendor/giacocorsiglia/wordpress-stubs/wordpress-stubs.php;
 
 script:
   - vendor/bin/parallel-lint modules/ admin/ index.php
