@@ -12,14 +12,17 @@
 		"build": "gulp build",
 		"test": "./node_modules/jshint/bin/jshint ./modules/**/src/js/*.js"
 	},
+	"jshintConfig": {
+		"esversion": 6
+	},
 	"author": "",
 	"license": "GPL-2.0-or-later",
 	"devDependencies": {
-		"@babel/core": "^7.7.2",
-		"@babel/plugin-proposal-class-properties": "^7.7.0",
-		"@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-		"@babel/preset-env": "^7.7.1",
-		"@babel/register": "^7.7.0",
+		"@babel/core": "^7.7.4",
+		"@babel/plugin-proposal-class-properties": "^7.7.4",
+		"@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+		"@babel/preset-env": "^7.7.4",
+		"@babel/register": "^7.7.4",
 		"@wordpress/babel-preset-default": "^4.7.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.0",
