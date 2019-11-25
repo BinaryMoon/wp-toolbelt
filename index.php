@@ -118,6 +118,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Create a contact form.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form',
 			'supports' => array( 'experimental' ),
+			'weight' => esc_html__( '1.2kb of inline CSS, and 12kb of inline JS.', 'wp-toolbelt' ),
 		),
 		'cookie-banner' => array(
 			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
