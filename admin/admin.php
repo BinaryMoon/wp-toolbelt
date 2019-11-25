@@ -26,7 +26,7 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 			esc_url( add_query_arg( array( 'page' => 'toolbelt-modules' ), admin_url( 'admin.php' ) ) )
 		);
 
-		if ( has_action( 'toolbelt_module_settings' ) ) {
+		if ( has_action( 'toolbelt_module_settings_fields' ) ) {
 
 			$new_actions['toolbelt_settings'] = sprintf(
 				'<a href="%2$s">%1$s</a>',
