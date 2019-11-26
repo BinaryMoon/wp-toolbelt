@@ -124,5 +124,6 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Fix issue with settings link appearing when it shouldn't.
 * Make GDPR requirements of cookie banner clearer.
 * Improve module selector design.
+* Make the admin style tweaks show in the customier (mostly the button improvements).
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
