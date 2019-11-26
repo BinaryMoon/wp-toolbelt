@@ -9,9 +9,18 @@
  */
 
 /**
+ * Templates
+ * ---
+ * Project Quote Form
+ * Blank Form
+ * Competition form
+ * Feedback form (with star rating)
+ * template inspiration - https://www.typeform.com/templates/
+ * Survey Form
+ *
  * New Field Ideas
  * ---
- * Range
+ * Range slider
  * Number (with min and max values?)
  * Hidden field
  * Star rating
@@ -19,6 +28,7 @@
  *
  * Wishlist
  * ---
+ * Stripe and Paypal support.
  * Add support for extra blocks inside contact form.
  * Drag and drop items in multi field?
  * custom post type to temporarily store contact form messages.
