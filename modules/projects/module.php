@@ -282,6 +282,7 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 			'orderby' => 'date',
 			'categories' => array(),
 			'align' => '',
+			'showExcerpt' => true
 		),
 		$attrs,
 		'portfolio'
@@ -340,6 +341,11 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 	}
 
 	/**
+	 * Excerpt.
+	 */
+	$show_excerpt = (bool) $attrs['showExcerpt'];
+
+	/**
 	 * The number of portfolio to load.
 	 *
 	 * Rather than use a count attribute I'm calculating the number of
@@ -351,7 +357,7 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 		'<div class="wp-block-toolbelt-portfolio toolbelt-portfolio toolbelt-cols-%1$d %2$s">%3$s</div>',
 		(int) $columns,
 		esc_attr( $align ),
-		toolbelt_portfolio_get_html( $count, $order_by, $categories )
+		toolbelt_portfolio_get_html( $count, $order_by, $categories, $show_excerpt )
 	);
 
 }
@@ -371,9 +377,10 @@ if ( ! shortcode_exists( 'portfolio' ) ) {
  * @param int    $count The number of portfolios to try to load.
  * @param string $order_by The order method.
  * @param array  $categories The categories to filter by.
+ * @param bool   $show_excerpt Display or hide the excerpt.
  * @return string
  */
-function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categories = array() ) {
+function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categories = array(), $show_excerpt = true ) {
 
 	/**
 	 * Make sure something is loaded.
@@ -388,7 +395,7 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 	$html = '<div class="toolbelt-project">
 	<a href="%2$s" class="thumbnail">%1$s</a>
 	<h2 class="toolbelt-skip-anchor"><a href="%2$s">%3$s</a></h2>
-	<div class="toolbelt-entry">%4$s</div>
+	%4$s
 	</div>';
 
 	$properties = array(
@@ -416,7 +423,24 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 
 			$projects->the_post();
 
-			$excerpt = apply_filters( 'toolbelt_portfolio_excerpt', trim( get_the_excerpt() ) );
+			/**
+			 * Must reset the excerpt no matter what.
+			 * Otherwise we could end up displaying the wrong excerpt (from the
+			 * previous project), or there could be an undefined variable error.
+			 */
+			$excerpt = '';
+			if ( $show_excerpt ) {
+				$excerpt = apply_filters( 'toolbelt_portfolio_excerpt', trim( get_the_excerpt() ) );
+			}
+
+			/**
+			 * We add the div here instead of in the html template above since
+			 * the excerpt could be hidden and we don't want an empty div on the
+			 * page. That's just wrong.
+			 */
+			if ( ! empty( $excerpt ) ) {
+				$excerpt = '<div class="toolbelt-entry">' . $excerpt . '</div>';
+			}
 
 			// Ensure there's a permalink.
 			$permalink = get_permalink();
@@ -553,6 +577,10 @@ function toolbelt_portfolio_register_block() {
 					'default' => array(),
 					'type' => 'string',
 				),
+				'showExcerpt' => array(
+					'default' => true,
+					'type' => 'boolean',
+				)
 			),
 		)
 	);

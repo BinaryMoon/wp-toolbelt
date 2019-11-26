@@ -7,7 +7,8 @@
 		RangeControl,
 		RadioControl,
 		PanelBody,
-		CheckboxControl
+		CheckboxControl,
+		ToggleControl
 	} = wp.components;
 	const ServerSideRender = wp.serverSideRender;
 	const { __, _x } = wp.i18n;
@@ -44,6 +45,9 @@
 				},
 				categories: {
 					default: ''
+				},
+				showExcerpt: {
+					default: true
 				}
 			},
 
@@ -172,6 +176,12 @@
 										{ value: 'rand', label: __( 'random', 'wp-toolbelt' ) },
 									]
 								}
+							/>
+
+							<ToggleControl
+								label={__( 'Display Excerpt', 'wp-toolbelt' )}
+								checked={attributes.showExcerpt}
+								onChange={value => setAttributes( { showExcerpt: value } )}
 							/>
 
 						</PanelBody>

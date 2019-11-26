@@ -8,7 +8,8 @@
       RangeControl = _wp$components.RangeControl,
       RadioControl = _wp$components.RadioControl,
       PanelBody = _wp$components.PanelBody,
-      CheckboxControl = _wp$components.CheckboxControl;
+      CheckboxControl = _wp$components.CheckboxControl,
+      ToggleControl = _wp$components.ToggleControl;
   var ServerSideRender = wp.serverSideRender;
   var _wp$i18n = wp.i18n,
       __ = _wp$i18n.__,
@@ -34,6 +35,9 @@
       },
       categories: {
         "default": ''
+      },
+      showExcerpt: {
+        "default": true
       }
     },
     edit: function edit(props) {
@@ -153,6 +157,14 @@
           value: 'rand',
           label: __('random', 'wp-toolbelt')
         }]
+      }), createElement(ToggleControl, {
+        label: __('Display Excerpt', 'wp-toolbelt'),
+        checked: attributes.showExcerpt,
+        onChange: function onChange(value) {
+          return setAttributes({
+            showExcerpt: value
+          });
+        }
       })), createElement(PanelBody, {
         title: __('Project Types', 'wp-toolbelt'),
         initialOpen: true
