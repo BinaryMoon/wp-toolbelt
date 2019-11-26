@@ -117,20 +117,11 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.4.1 - 25th November 2019 =
+= 2.5 - 25th November 2019 =
+* Refactor widget display code. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
 * Ensure the contact form submit button stays in the right place! :)
 * Fix issue with settings link appearing when it shouldn't.
 * Make GDPR requirements of cookie banner clearer.
 * Improve module selector design.
-
-= 2.4.0 - 24th November 2019 =
-* Add contact form block.
-* Make admin button styles clearer (in Admin Tweaks module).
-* Update spam blacklist.
-* Fix dns prefetch for analytics.
-* Ensure scripts and styles do not load before the <html> element.
-* Remove emoji prefetch url from header in cleanup.
-* Fix bug with removing jquery migrate in cleanup (undefined parameter).
-* Dispatch events in cookie banner script. Makes it easier to hook into the events.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
