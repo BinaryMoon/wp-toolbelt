@@ -198,6 +198,38 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	}
 
 	/**
+	 * Show widget on posts or pages with the specified parent.
+	 */
+	if ( 'pagechild' === $key ) {
+
+		if ( is_page() && is_array( $properties ) ) {
+
+			foreach ( $properties as $parent ) {
+
+				/**
+				 * Display on any parent pages.
+				 * No need to check anything else.
+				 */
+				if ( $test_id === $parent ) {
+					return true;
+				}
+
+				/**
+				 * Get the children for the current parent page.
+				 */
+				$children = toolbelt_widget_page_children( $parent );
+
+				if ( in_array( $test_id, $children, true ) ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+
+	}
+
+	/**
 	 * Show on 404 page.
 	 */
 	if ( '404' === $key ) {
@@ -279,3 +311,40 @@ function toolbelt_widget_display_by_id( $widget_id ) {
 
 }
 
+
+/**
+ * Get a posts children, and those posts children.
+ *
+ * This is a recursive function. It will keep calling itself until there are no
+ * more children to load.
+ *
+ * Since each request makes a database call, this could be slow. In particular
+ * on larger sites. I recommend using caching.
+ *
+ * @param int $parent The parent id.
+ * @return array
+ */
+function toolbelt_widget_page_children( $parent ) {
+
+	$children = array();
+
+	// Grab the posts children.
+	$posts = get_children( $parent );
+	$posts = array_keys( $posts );
+
+	// Now grab the grand children.
+	foreach ( $posts as $child ) {
+
+		// Recursion!! hurrah.
+		$grand_children = get_posts_children( $child );
+
+		// Merge the grand children into the children array.
+		if ( ! empty( $grand_children ) ) {
+			$children = array_merge( $children, $grand_children );
+		}
+	}
+
+	// Merge in the direct descendants we found earlier.
+	return array_merge( $children, $posts );
+
+}
