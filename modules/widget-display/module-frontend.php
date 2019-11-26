@@ -55,7 +55,7 @@ add_filter( 'sidebars_widgets', 'toolbelt_widget_display_filter_sidebars_widgets
 
 
 /**
- * Add the
+ * Add the widget settings to the customizer.
  */
 function toolbelt_widget_display_customizer() {
 
