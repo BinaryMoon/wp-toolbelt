@@ -39,7 +39,18 @@ function toolbelt_widget_display( $logic ) {
 	$results = array();
 
 	foreach ( $logic_tokens as $token ) {
-		$results[] = toolbelt_widget_display_check_token( $token );
+
+		if ( '!' === $token[0] ) {
+
+			// If not then we want to invert the result.
+			$token = ltrim( $token, '!' );
+			$results[] = ! toolbelt_widget_display_check_token( $token );
+
+		} else {
+
+			$results[] = toolbelt_widget_display_check_token( $token );
+
+		}
 	}
 
 	/**
@@ -116,33 +127,6 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	}
 
 	/**
-	 * Check is NOT single post type.
-	 * This uses is_singular(), so we're checking all post types including pages.
-	 */
-	if ( '!single' === $key ) {
-
-		if ( is_singular() ) {
-
-			if ( empty( $properties ) ) {
-				return false;
-			}
-
-			if ( is_array( $properties ) ) {
-
-				if ( in_array( $test_id, $properties, true ) ) {
-					return false;
-				}
-			}
-		}
-
-		/**
-		 * It's not a singular post so let's show it.
-		 */
-		return true;
-
-	}
-
-	/**
 	 * Check archives.
 	 */
 	if ( 'archive' === $key ) {
@@ -167,30 +151,6 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	}
 
 	/**
-	 * Check NOT archives.
-	 */
-	if ( '!archive' === $key ) {
-
-		if ( is_archive() ) {
-
-			if ( empty( $properties ) ) {
-				return false;
-			}
-
-			if ( is_array( $properties ) ) {
-
-				// Test for the id being included.
-				if ( in_array( $test_id, $properties, true ) ) {
-					return false;
-				}
-			}
-		}
-
-		return true;
-
-	}
-
-	/**
 	 * Check homepage.
 	 * Uses is_front_page() so only supports the actual homepage and not the
 	 * blog page.
@@ -202,21 +162,6 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 		}
 
 		return false;
-
-	}
-
-	/**
-	 * Check NOT homepage.
-	 * Uses is_front_page() so only supports the actual homepage and not the
-	 * blog page.
-	 */
-	if ( '!home' === $key ) {
-
-		if ( is_front_page() ) {
-			return false;
-		}
-
-		return true;
 
 	}
 
@@ -239,24 +184,6 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	}
 
 	/**
-	 * Check for post types.
-	 * Will work for single posts and archives.
-	 * Requires an array of properties or it will be ignored.
-	 */
-	if ( '!posttype' === $key && is_array( $properties ) ) {
-
-		$type = get_post_type();
-
-		// Include this post type.
-		if ( in_array( $type, $properties, true ) ) {
-			return false;
-		}
-
-		return true;
-
-	}
-
-	/**
 	 * Check the post category.
 	 * This includes post categories.
 	 */
@@ -271,20 +198,6 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	}
 
 	/**
-	 * Check NOT the post category.
-	 * This includes post categories.
-	 */
-	if ( '!postcategory' === $key ) {
-
-		if ( is_singular() && is_array( $properties ) && in_category( $properties ) ) {
-			return false;
-		}
-
-		return true;
-
-	}
-
-	/**
 	 * Show on 404 page.
 	 */
 	if ( '404' === $key ) {
@@ -294,19 +207,6 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 		}
 
 		return false;
-
-	}
-
-	/**
-	 * Hide on 404 page.
-	 */
-	if ( '!404' === $key ) {
-
-		if ( is_404() ) {
-			return false;
-		}
-
-		return true;
 
 	}
 
@@ -328,27 +228,6 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 		}
 
 		return false;
-
-	}
-
-	/**
-	 * Check the post taxonomy.
-	 * This includes post categories, and tags, and whatever else there might
-	 * be.
-	 */
-	if ( '!posttaxonomy' === $key ) {
-
-		if ( is_singular() && is_array( $properties ) && count( $properties ) >= 1 ) {
-
-			$taxonomy = (string) $properties[0];
-			$terms = array_slice( $properties, 1 );
-
-			if ( $test_id && has_term( $terms, $taxonomy, $post_id ) ) {
-				return false;
-			}
-		}
-
-		return true;
 
 	}
 
