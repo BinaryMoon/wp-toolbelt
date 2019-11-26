@@ -336,7 +336,7 @@ function toolbelt_widget_page_children( $parent ) {
 	foreach ( $posts as $child ) {
 
 		// Recursion!! hurrah.
-		$grand_children = get_posts_children( $child );
+		$grand_children = toolbelt_widget_page_children( $child );
 
 		// Merge the grand children into the children array.
 		if ( ! empty( $grand_children ) ) {
