@@ -85,9 +85,7 @@ function toolbelt_widget_display_dynamic_sidebar( $widget ) {
 	if ( ! toolbelt_widget_display( $rules ) ) {
 ?>
 <style>
-	<?php echo '#' . esc_attr( $widget_id ); ?> {
-		opacity: 0.25;
-	}
+	<?php echo '#' . esc_attr( $widget_id ); ?> { opacity: 0.25; }
 </style>
 <?php
 	}
