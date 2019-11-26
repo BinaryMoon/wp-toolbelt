@@ -1,3 +1,13 @@
+= 2.4.0 - 24th November 2019 =
+* Add contact form block.
+* Make admin button styles clearer (in Admin Tweaks module).
+* Update spam blacklist.
+* Fix dns prefetch for analytics.
+* Ensure scripts and styles do not load before the <html> element.
+* Remove emoji prefetch url from header in cleanup.
+* Fix bug with removing jquery migrate in cleanup (undefined parameter).
+* Dispatch events in cookie banner script. Makes it easier to hook into the events.
+
 = 2.3.2 - 15th November 2019 =
 * Tweak admin styles for WP 5.3.
 * Add javascript events for accept and decline cookie options on cookie bar.
