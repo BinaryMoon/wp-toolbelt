@@ -172,7 +172,7 @@ function toolbelt_get_modules() {
 		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
-			'description' => esc_html__( 'A portfolio custom post type.', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio',
 			'supports' => array( 'tools' ),
 		),
