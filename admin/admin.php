@@ -167,6 +167,13 @@ function toolbelt_field( $slug, $module ) {
 		</td>
 		<td data-colname="<?php esc_attr_e( 'Description', 'wp-toolbelt' ); ?>">
 			<p><?php echo esc_html( $module['description'] ); ?></p>
+
+<?php
+	if ( isset( $module['supports'] ) && in_array( 'gdpr-hard-mode', $module['supports'], true ) ) {
+		echo '<p class="gdpr-hard-mode"><em>' . esc_html__( 'By default this module does not support GDPR. Full support requires developer integration. See documentation for more details.', 'wp-toolbelt' ) . '</em></p>';
+	}
+?>
+
 			<p class="doc-link">
 				<a href="<?php echo esc_url( $module['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a>
 				<?php if ( $checked && isset( $module['supports'] ) && in_array( 'settings', $module['supports'], true ) ) { ?>
