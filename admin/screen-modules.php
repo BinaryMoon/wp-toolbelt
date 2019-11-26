@@ -13,14 +13,13 @@ do_action( 'toolbelt_module_settings' );
 ?>
 
 <style>
-	.column-title { width: 20%; }
 	.column-weight { width: 25%; }
 	p.search-box { float: none; }
 	.search-box input[name="s"] { width: 100%; font-size: 18px; height: 40px; margin-bottom: 30px; }
 	td p.doc-link { margin-bottom: 0; }
 	td p.doc-link a + a { margin: 0 0.5em; }
 	.wrap { max-width: 600px; margin: 0 auto; }
-	.experimental { color: red; }
+	.experimental, .gdpr-hard-mode em { color: red; }
 </style>
 
 <script>
@@ -29,25 +28,25 @@ function toolbeltFilterModules() {
 	// Declare variables
 	var input = document.getElementById( 'toolbelt-search-input' );
 	var filter = input.value.toUpperCase();
-	var tr = document.querySelectorAll( 'tbody tr' );
+	var tr = document.querySelectorAll( '#toolbelt-modules-table tbody tr' );
 	var txtValue = '';
 
 	// Loop through all table rows, and hide those that don't match the search query
-	for ( i = 0; i < tr.length; i++ ) {
+	for ( var row = 0; row < tr.length; row ++ ) {
 
 		txtValue = '';
 
-		td = tr[i].getElementsByTagName( 'td' )[0].getElementsByTagName( 'strong' )[0];
-		txtValue += ' ' + ( td.textContent || td.innerText );
+		var paragraphlist = tr[row].getElementsByTagName( 'td' )[0].getElementsByTagName( 'p' );
 
-		td = tr[i].getElementsByTagName( 'td' )[1].getElementsByTagName( 'p' )[0];
-		txtValue += ' ' + ( td.textContent || td.innerText );
+		for ( var paragraph = 0; paragraph < paragraphlist.length; paragraph ++ ) {
+			txtValue += ' ' + ( paragraphlist[paragraph].textContent || paragraphlist[paragraph].innerText );
+		}
 
 		if ( txtValue ) {
 			if ( txtValue.toUpperCase().indexOf( filter ) > -1 ) {
-				tr[i].style.display = '';
+				tr[row].style.display = '';
 			} else {
-				tr[i].style.display = 'none';
+				tr[row].style.display = 'none';
 			}
 		}
 	}
@@ -78,9 +77,6 @@ function toolbeltFilterModules() {
 					</td>
 					<th class="column-title column-primary">
 						<?php esc_html_e( 'Module', 'wp-toolbelt' ); ?>
-					</th>
-					<th>
-						<?php esc_html_e( 'Description', 'wp-toolbelt' ); ?>
 					</th>
 					<th class="column-weight">
 						<?php esc_html_e( 'Page Impact', 'wp-toolbelt' ); ?>

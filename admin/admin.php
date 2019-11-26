@@ -155,17 +155,17 @@ function toolbelt_field( $slug, $module ) {
 				<?php checked( $checked ); ?>
 				type="checkbox" />
 		</th>
-		<td class="column-title column-primary">
-			<label for="<?php echo esc_attr( $slug ); ?>">
-				<strong><?php echo esc_html( $module['name'] ); ?></strong>
-				<?php if ( isset( $module['supports'] ) && in_array( 'experimental', $module['supports'], true ) ) { ?>
-				<em class="experimental"><?php esc_html_e( 'Experimental', 'wp-toolbelt' ); ?></em>
-				<?php } ?>
-			</label>
+		<td class="column-primary" data-colname="<?php esc_attr_e( 'Module', 'wp-toolbelt' ); ?>">
 
-			<button type="button" class="toggle-row"><span class="screen-reader-text"><?php esc_html_e( 'Show more details', 'wp-toolbelt' ); ?></span></button>
-		</td>
-		<td data-colname="<?php esc_attr_e( 'Description', 'wp-toolbelt' ); ?>">
+			<p>
+				<label for="<?php echo esc_attr( $slug ); ?>">
+					<strong><?php echo esc_html( $module['name'] ); ?></strong>
+					<?php if ( isset( $module['supports'] ) && in_array( 'experimental', $module['supports'], true ) ) { ?>
+					<em class="experimental"><?php esc_html_e( 'Experimental', 'wp-toolbelt' ); ?></em>
+					<?php } ?>
+				</label>
+			</p>
+
 			<p><?php echo esc_html( $module['description'] ); ?></p>
 
 <?php
@@ -183,7 +183,9 @@ function toolbelt_field( $slug, $module ) {
 				<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'admin.php' ) ) ); ?>"><?php esc_html_e( 'Tools', 'wp-toolbelt' ); ?></a>
 				<?php } ?>
 			</p>
+
 		</td>
+
 		<td class="column-weight" data-colname="<?php esc_attr_e( 'Page Impact', 'wp-toolbelt' ); ?>">
 			<?php echo esc_html( $weight ); ?>
 		</td>
