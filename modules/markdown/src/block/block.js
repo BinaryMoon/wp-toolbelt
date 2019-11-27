@@ -29,7 +29,7 @@
 				</Fragment>
 			),
 
-			keywords: [ __( 'toolbelt', 'wp-toolbelt' ) ],
+			keywords: [ __( 'toolbelt', 'wp-toolbelt' ), __( 'markdown', 'wp-toolbelt' ) ],
 
 			icon: {
 				src: (

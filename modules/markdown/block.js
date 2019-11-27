@@ -24,7 +24,7 @@
     description: createElement(Fragment, null, createElement("p", null, __('Use regular characters and punctuation to style text, links, and lists.', 'wp-toolbelt')), createElement(ExternalLink, {
       href: "https://en.support.wordpress.com/markdown-quick-reference/"
     }, __('Support reference', 'wp-toolbelt'))),
-    keywords: [__('toolbelt', 'wp-toolbelt')],
+    keywords: [__('toolbelt', 'wp-toolbelt'), __('markdown', 'wp-toolbelt')],
     icon: {
       src: createElement("svg", {
         xmlns: "http://www.w3.org/2000/svg",
