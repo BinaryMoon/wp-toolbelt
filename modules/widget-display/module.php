@@ -261,7 +261,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 			$taxonomy = (string) $properties[0];
 			$terms = array_slice( $properties, 1 );
 
-			if ( $test_id && has_term( $terms, $taxonomy, $post_id ) ) {
+			if ( $test_id && has_term( $terms, $taxonomy, $test_id ) ) {
 				return true;
 			}
 		}
