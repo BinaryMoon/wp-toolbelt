@@ -282,7 +282,7 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 			'orderby' => 'date',
 			'categories' => array(),
 			'align' => '',
-			'showExcerpt' => true
+			'showExcerpt' => true,
 		),
 		$attrs,
 		'portfolio'
@@ -580,7 +580,7 @@ function toolbelt_portfolio_register_block() {
 				'showExcerpt' => array(
 					'default' => true,
 					'type' => 'boolean',
-				)
+				),
 			),
 		)
 	);
