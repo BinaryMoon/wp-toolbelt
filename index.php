@@ -143,6 +143,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'If there is no featured image for a post then use the first image attachment instead.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment',
 		),
+		'gist' => array(
+			'name' => esc_html__( 'Gist Embed Block', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Easily embed Github Gists onto your site.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Gist',
+		),
 		'heading-anchors' => array(
 			'name' => esc_html__( 'Heading Anchors', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Allow site visitors to link to individual sections of the page. Adds unique ids to each heading.', 'wp-toolbelt' ),

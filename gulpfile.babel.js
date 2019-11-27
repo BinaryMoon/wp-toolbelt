@@ -31,7 +31,8 @@ import {
 	block_markdown,
 	block_testimonials,
 	block_projects,
-	block_contact_form
+	block_contact_form,
+	block_gist
 } from './gulp/script-block';
 
 import update_blacklist from './gulp/blacklist';
@@ -78,6 +79,7 @@ export const build = series(
 		block_projects,
 		block_markdown,
 		block_contact_form,
+		block_gist,
 		translate,
 		update_blacklist
 	),
@@ -131,7 +133,8 @@ export const watchFiles = function( done ) {
 				block_testimonials,
 				block_projects,
 				block_markdown,
-				block_contact_form
+				block_contact_form,
+				block_gist
 			)
 		)
 	);

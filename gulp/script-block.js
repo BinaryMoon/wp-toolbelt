@@ -61,3 +61,9 @@ export function block_contact_form() {
 	return process_scripts( 'contact-form' );
 
 }
+
+export function block_gist() {
+
+	return process_scripts( 'gist' );
+
+}

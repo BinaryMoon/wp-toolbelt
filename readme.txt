@@ -118,12 +118,14 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 == Changelog ==
 
 = 2.5 - 27th November 2019 =
-* Refactor widget visitbility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
+* Added a simple Gist block.
+* Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
 * Add new pagechild and 404 display rules to the widget visibility module.
 * Ensure the contact form submit button stays in the right place! :)
 * Fix issue with settings link appearing when it shouldn't.
 * Make GDPR requirements of cookie banner clearer.
 * Improve module selector design.
 * Make the admin style tweaks show in the customizer (most important for the button improvements).
+
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
