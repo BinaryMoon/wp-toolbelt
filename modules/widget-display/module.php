@@ -97,7 +97,11 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	 * Set variables here to reduce code duplication.
 	 */
 	$test_id = (int) get_queried_object_id();
-	if ( is_array( $properties ) ) {
+	/**
+	 * Don't convert the properties to ints for 'posttype' key since we will
+	 * have to compare with a string.
+	 */
+	if ( is_array( $properties ) && 'posttype' !== $key ) {
 		$properties = array_map( 'intval', $properties );
 	}
 
@@ -170,13 +174,16 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	 * Will work for single posts and archives.
 	 * Requires an array of properties or it will be ignored.
 	 */
-	if ( 'posttype' === $key && is_array( $properties ) ) {
+	if ( 'posttype' === $key ) {
 
 		$type = get_post_type();
 
-		// Include this post type.
-		if ( in_array( $type, $properties, true ) ) {
-			return true;
+		if ( is_array( $properties ) ) {
+
+			// Include this post type.
+			if ( in_array( $type, $properties, true ) ) {
+				return true;
+			}
 		}
 
 		return false;
