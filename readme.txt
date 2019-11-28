@@ -117,7 +117,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.5 - 27th November 2019 =
+= 2.5 - 28th November 2019 =
 * Added a simple Gist block.
 * Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
 * Add new pagechild and 404 display rules to the widget visibility module.
@@ -126,6 +126,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Make GDPR requirements of cookie banner clearer.
 * Improve module selector design.
 * Make the admin style tweaks show in the customizer (most important for the button improvements).
+* Simplify portfolio and testimonial block code a little.
 
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
