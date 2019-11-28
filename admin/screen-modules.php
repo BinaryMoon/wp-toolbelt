@@ -19,7 +19,8 @@ do_action( 'toolbelt_module_settings' );
 	td p.doc-link { margin-bottom: 0; }
 	td p.doc-link a + a { margin: 0 0.5em; }
 	.wrap { max-width: 600px; margin: 0 auto; }
-	.experimental, .gdpr-hard-mode em { color: red; }
+	.experimental { color: red; }
+	p.gdpr-hard-mode { color: grey; font-weight: bold; }
 </style>
 
 <script>

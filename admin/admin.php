@@ -170,7 +170,7 @@ function toolbelt_field( $slug, $module ) {
 
 <?php
 	if ( isset( $module['supports'] ) && in_array( 'gdpr-hard-mode', $module['supports'], true ) ) {
-		echo '<p class="gdpr-hard-mode"><em>' . esc_html__( 'By default this module does not support GDPR. Full support requires developer integration. See documentation for more details.', 'wp-toolbelt' ) . '</em></p>';
+		echo '<p class="gdpr-hard-mode">' . esc_html__( 'Full GDPR support requires developer integration. See documentation for more details.', 'wp-toolbelt' ) . '</p>';
 	}
 ?>
 
