@@ -47,28 +47,7 @@
 
       if (attributes.categories.length > 0) {
         categoriesArray = attributes.categories.split(',');
-      } // Function to update the number of rows.
-
-
-      var changeRows = function changeRows(rows) {
-        setAttributes({
-          rows: rows
-        });
-      }; // Function to update the number of columns.
-
-
-      var changeColumns = function changeColumns(columns) {
-        setAttributes({
-          columns: columns
-        });
-      }; // Function to update the testimonial order.
-
-
-      var changeOrderby = function changeOrderby(orderby) {
-        setAttributes({
-          orderby: orderby
-        });
-      }; // Add a category to the active list.
+      } // Add a category to the active list.
 
 
       function categoriesAdd(term) {
@@ -137,19 +116,31 @@
       }, createElement(RangeControl, {
         value: attributes.rows,
         label: __('Rows', 'wp-toolbelt'),
-        onChange: changeRows,
+        onChange: function onChange(value) {
+          return setAttributes({
+            rows: value
+          });
+        },
         min: 1,
         max: 10
       }), createElement(RangeControl, {
         value: attributes.columns,
         label: __('Columns', 'wp-toolbelt'),
-        onChange: changeColumns,
+        onChange: function onChange(value) {
+          return setAttributes({
+            columns: value
+          });
+        },
         min: 1,
         max: 4
       }), createElement(RadioControl, {
         selected: attributes.orderby,
         label: __('Order by', 'wp-toolbelt'),
-        onChange: changeOrderby,
+        onChange: function onChange(value) {
+          return setAttributes({
+            orderby: value
+          });
+        },
         options: [{
           value: 'date',
           label: __('date', 'wp-toolbelt')
