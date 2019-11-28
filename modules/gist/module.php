@@ -81,7 +81,7 @@ function toolbelt_gist_render( $attrs ) {
 	}
 
 	return sprintf(
-		'<div class="%2$s"><script src="%1$s"></script></div>',
+		'<div class="%2$s"><script src="%1$s"></script></div>', // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
 		esc_url( $attrs['url'] . '.js' ),
 		esc_attr( implode( ' ', $class_name ) )
 	);
@@ -89,6 +89,3 @@ function toolbelt_gist_render( $attrs ) {
 }
 
 toolbelt_register_block_category();
-
-
-// <script src="https://gist.github.com/BinaryMoon/eb64ef98b4ede0673ab37baddbb28358.js"></script>
