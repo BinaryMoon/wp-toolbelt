@@ -32,7 +32,8 @@
  * Add support for extra blocks inside contact form.
  * Drag and drop items in multi field?
  * custom post type to temporarily store contact form messages.
- * wp_cron to periodically delete old contact form messages.
+ * daily wp_cron to delete old contact form messages.
+ * weekly wp_cron to report spam emails.
  * [shorttags] for subject line to add different properties from the form.
  */
 
