@@ -49,6 +49,10 @@ function toolbelt_gist_register_block() {
 		)
 	);
 
+	if ( is_admin() ) {
+		toolbelt_global_styles( 'blocks' );
+	}
+
 }
 
 add_action( 'init', 'toolbelt_gist_register_block' );

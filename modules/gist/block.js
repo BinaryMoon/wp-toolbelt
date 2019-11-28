@@ -57,6 +57,7 @@
         icon: github_icon
       }), __('Github Gist URL', 'wp-toolbelt')), createElement(TextControl, {
         id: inputId,
+        className: "toolbelt-block-wide",
         placeholder: __('Add Gist URL here...', 'wp-toolbelt'),
         value: url,
         onChange: function onChange(value) {

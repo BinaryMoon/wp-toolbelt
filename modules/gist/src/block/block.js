@@ -65,6 +65,7 @@
 
 						<TextControl
 							id={inputId}
+							className="toolbelt-block-wide"
 							placeholder={__( 'Add Gist URL here...', 'wp-toolbelt' )}
 							value={url}
 							onChange={value => setAttributes( { url: value } )}
