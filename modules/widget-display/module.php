@@ -224,7 +224,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 				/**
 				 * Get the children for the current parent page.
 				 */
-				$children = toolbelt_widget_page_children( $parent );
+				$children = toolbelt_widget_page_children( (int) $parent );
 
 				if ( in_array( $test_id, $children, true ) ) {
 					return true;
