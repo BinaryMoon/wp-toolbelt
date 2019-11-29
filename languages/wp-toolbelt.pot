@@ -346,6 +346,41 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+#: modules/contact-form/module-cpt.php:18, modules/contact-form/module-cpt.php:19
+msgid "Feedback"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:20
+msgid "Search Feedback"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:21, modules/contact-form/module-cpt.php:22
+msgid "No feedback found"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:62
+msgid "Spam"
+msgstr ""
+
+#. translators: %s = The post count.
+#: modules/contact-form/module-cpt.php:67
+msgid "Spam <span class=\"count\">(%s)</span>"
+msgid_plural "Spam <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/contact-form/module-cpt.php:105
+msgid "From"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:106, modules/contact-form/module-fields.php:506, modules/contact-form/module-fields.php:632
+msgid "Message"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:107, modules/contact-form/module-fields.php:498
+msgid "Date"
+msgstr ""
+
 #: modules/contact-form/module-fields.php:148
 msgid "Select several"
 msgstr ""
@@ -358,7 +393,7 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:359, modules/contact-form/module.php:485
+#: modules/contact-form/module-fields.php:359, modules/contact-form/module.php:510
 msgid "Submit"
 msgstr ""
 
@@ -439,42 +474,38 @@ msgid "Name"
 msgstr ""
 
 #: modules/contact-form/module-fields.php:484
+msgid "Subject"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:488
 msgid "Email"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:489
+#: modules/contact-form/module-fields.php:493
 msgid "Website"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:494
-msgid "Date"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:498
+#: modules/contact-form/module-fields.php:502
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:502, modules/contact-form/module-fields.php:615
-msgid "Message"
-msgstr ""
-
-#: modules/contact-form/module.php:202
+#: modules/contact-form/module.php:211
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module.php:614, modules/contact-form/module.php:636
+#: modules/contact-form/module.php:639, modules/contact-form/module.php:661
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:616, modules/contact-form/module.php:636
+#: modules/contact-form/module.php:641, modules/contact-form/module.php:661
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:665
+#: modules/contact-form/module.php:690
 msgid "No value supplied"
 msgstr ""
 
-#. translators: %s = privacy policy link
+#. translators: %s = privacy policy link.
 #: modules/cookie-banner/module.php:53
 msgid "By using this website, you agree to our %s"
 msgstr ""
