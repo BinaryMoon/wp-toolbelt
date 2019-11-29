@@ -274,7 +274,7 @@ msgstr ""
 msgid "Toolbelt"
 msgstr ""
 
-#: admin/admin.php:90, admin/screen-modules.php:58
+#: admin/admin.php:90, admin/screen-modules.php:59
 msgid "Toolbelt Modules"
 msgstr ""
 
@@ -286,7 +286,7 @@ msgstr ""
 msgid "Toolbelt Processes"
 msgstr ""
 
-#: admin/admin.php:158, admin/screen-modules.php:79
+#: admin/admin.php:158, admin/screen-modules.php:80
 msgid "Module"
 msgstr ""
 
@@ -295,7 +295,7 @@ msgid "Experimental"
 msgstr ""
 
 #: admin/admin.php:173
-msgid "By default this module does not support GDPR. Full support requires developer integration. See documentation for more details."
+msgid "Full GDPR support requires developer integration. See documentation for more details."
 msgstr ""
 
 #: admin/admin.php:178
@@ -306,7 +306,7 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
-#: admin/admin.php:189, admin/screen-modules.php:82
+#: admin/admin.php:189, admin/screen-modules.php:83
 msgid "Page Impact"
 msgstr ""
 
@@ -326,15 +326,15 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: admin/screen-modules.php:65
+#: admin/screen-modules.php:66
 msgid "Search for Modules"
 msgstr ""
 
-#: admin/screen-modules.php:66
+#: admin/screen-modules.php:67
 msgid "Search for Modules..."
 msgstr ""
 
-#: admin/screen-modules.php:70, admin/screen-modules.php:102
+#: admin/screen-modules.php:71, admin/screen-modules.php:103
 msgid "Save Modules"
 msgstr ""
 
@@ -358,7 +358,7 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:359, modules/contact-form/module.php:484
+#: modules/contact-form/module-fields.php:359, modules/contact-form/module.php:485
 msgid "Submit"
 msgstr ""
 
@@ -458,19 +458,19 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: modules/contact-form/module.php:201
+#: modules/contact-form/module.php:202
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module.php:613, modules/contact-form/module.php:635
+#: modules/contact-form/module.php:614, modules/contact-form/module.php:636
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:615, modules/contact-form/module.php:635
+#: modules/contact-form/module.php:616, modules/contact-form/module.php:636
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:664
+#: modules/contact-form/module.php:665
 msgid "No value supplied"
 msgstr ""
 
