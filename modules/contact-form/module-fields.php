@@ -480,6 +480,10 @@ function toolbelt_contact_field_defaults( $key = null ) {
 			'label' => esc_html__( 'Name', 'wp-toolbelt' ),
 			'className' => 'toolbelt-field',
 		),
+		'subject' => array(
+			'label' => esc_html__( 'Subject', 'wp-toolbelt' ),
+			'className' => 'toolbelt-field',
+		),
 		'email' => array(
 			'label' => esc_html__( 'Email', 'wp-toolbelt' ),
 			'placeholder' => 'name@domain.com',
@@ -548,6 +552,19 @@ function toolbelt_contact_field_text( $atts ) {
 function toolbelt_contact_field_name( $atts ) {
 
 	return toolbelt_contact_input_field( 'text', $atts, toolbelt_contact_field_defaults( 'name' ) );
+
+}
+
+
+/**
+ * Render a subject field on the frontend.
+ *
+ * @param array $atts Field attributes.
+ * @return string
+ */
+function toolbelt_contact_field_subject( $atts ) {
+
+	return toolbelt_contact_input_field( 'text', $atts, toolbelt_contact_field_defaults( 'subject' ) );
 
 }
 

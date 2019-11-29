@@ -253,6 +253,19 @@ const childBlocks = [
 		},
 	},
 	{
+		name: 'field-subject',
+		settings: {
+			...FieldDefaults,
+			title: __( 'Subject', 'wp-toolbelt' ),
+			description: __(
+				'What is the message about?',
+				'wp-toolbelt'
+			),
+			icon: 'email',
+			edit: editField( 'text' ),
+		},
+	},
+	{
 		name: 'field-email',
 		settings: {
 			...FieldDefaults,

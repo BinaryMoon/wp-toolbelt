@@ -103,6 +103,15 @@ function toolbelt_contact_form_register_block() {
 		)
 	);
 
+	// Subject.
+	register_block_type(
+		'toolbelt/field-subject',
+		array(
+			'parent' => array( 'toolbelt/contact-form' ),
+			'render_callback' => 'toolbelt_contact_field_subject',
+		)
+	);
+
 	// Email.
 	register_block_type(
 		'toolbelt/field-email',
