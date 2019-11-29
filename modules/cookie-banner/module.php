@@ -49,7 +49,7 @@ add_filter( 'wp_footer', 'toolbelt_cookie_footer' );
 function toolbelt_cookie_message() {
 
 	// Privacy policy message.
-	/* Translators: %s = privacy policy link */
+	// translators: %s = privacy policy link.
 	$message = esc_html__( 'By using this website, you agree to our %s', 'wp-toolbelt' );
 	$link = esc_html__( 'cookie policy', 'wp-toolbelt' );
 
