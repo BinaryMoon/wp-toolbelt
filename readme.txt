@@ -117,11 +117,12 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.5 - 28th November 2019 =
+= 2.5 - 29th November 2019 =
 * Added a simple Gist block.
 * Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
 * Add new pagechild and 404 display rules to the widget visibility module.
 * Add a contact form 'subject' field which we can use to override the default contact form subject.
+* Add fix for typographic widows.
 * Ensure the contact form submit button stays in the right place! :)
 * Fix issue with settings link appearing when it shouldn't.
 * Make GDPR requirements of cookie banner clearer.
