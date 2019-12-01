@@ -2,28 +2,29 @@
 'use strict';
 
 const { src, dest } = require( 'gulp' );
-const concat = require( 'gulp-concat' );
 const uglify = require( 'gulp-uglify' );
 const size = require( 'gulp-filesize' );
+const rename = require( 'gulp-rename' );
 const babel = require( 'gulp-babel' );
-
 
 function process_scripts( slug ) {
 
 	const destination = './modules/' + slug + '/';
 	const source = './modules/' + slug + '/src/js/**.js';
 
-	let name = 'script';
-
 	return src( source )
-		.pipe(
-			concat( name + '.min.js' )
-		)
 		.pipe(
 			babel()
 		)
 		.pipe(
 			uglify()
+		)
+		.pipe(
+			rename(
+				( path ) => {
+					path.basename += '.min';
+				}
+			)
 		)
 		.pipe( dest( destination ) )
 		.pipe( size() );
