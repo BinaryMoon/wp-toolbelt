@@ -242,10 +242,18 @@ msgid "0.5kb of inline CSS."
 msgstr ""
 
 #: index.php:236
-msgid "Widget Display"
+msgid "Typographic Widows"
 msgstr ""
 
 #: index.php:237
+msgid "Fix typographic widows in titles and headings."
+msgstr ""
+
+#: index.php:241
+msgid "Widget Display"
+msgstr ""
+
+#: index.php:242
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -346,39 +354,72 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:18, modules/contact-form/module-cpt.php:19
+#: modules/contact-form/module-cpt.php:20, modules/contact-form/module-cpt.php:21
 msgid "Feedback"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:20
+#: modules/contact-form/module-cpt.php:22
 msgid "Search Feedback"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:21, modules/contact-form/module-cpt.php:22
+#: modules/contact-form/module-cpt.php:23, modules/contact-form/module-cpt.php:24
 msgid "No feedback found"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:62
+#: modules/contact-form/module-cpt.php:64
 msgid "Spam"
 msgstr ""
 
 #. translators: %s = The post count.
-#: modules/contact-form/module-cpt.php:67
+#: modules/contact-form/module-cpt.php:69
 msgid "Spam <span class=\"count\">(%s)</span>"
 msgid_plural "Spam <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: modules/contact-form/module-cpt.php:105
+#: modules/contact-form/module-cpt.php:115
 msgid "From"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:106, modules/contact-form/module-fields.php:506, modules/contact-form/module-fields.php:632
+#: modules/contact-form/module-cpt.php:116, modules/contact-form/module-fields.php:506, modules/contact-form/module-fields.php:632
 msgid "Message"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:107, modules/contact-form/module-fields.php:498
+#: modules/contact-form/module-cpt.php:117, modules/contact-form/module-fields.php:498
 msgid "Date"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:187
+msgid "Restore this item from the Trash"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:190
+msgid "Restore"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:195, modules/contact-form/module-cpt.php:308
+msgid "Delete this item permanently"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:197, modules/contact-form/module-cpt.php:310
+msgid "Delete Permanently"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:245
+msgid "Mark this message as spam"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:251, modules/contact-form/module-cpt.php:253
+msgid "Trash"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:303
+msgid "Mark this message as NOT spam"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:347
+msgctxt "{$date_format} \a\t {$time_format}"
+msgid "%1$s \a\t %2$s"
 msgstr ""
 
 #: modules/contact-form/module-fields.php:148
@@ -393,7 +434,7 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:359, modules/contact-form/module.php:510
+#: modules/contact-form/module-fields.php:359, modules/contact-form/module.php:511
 msgid "Submit"
 msgstr ""
 
@@ -493,15 +534,15 @@ msgstr ""
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module.php:639, modules/contact-form/module.php:661
+#: modules/contact-form/module.php:640, modules/contact-form/module.php:662
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:641, modules/contact-form/module.php:661
+#: modules/contact-form/module.php:642, modules/contact-form/module.php:662
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:690
+#: modules/contact-form/module.php:691
 msgid "No value supplied"
 msgstr ""
 
