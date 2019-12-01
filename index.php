@@ -232,6 +232,11 @@ function toolbelt_get_modules() {
 			'weight' => esc_html__( '0.5kb of inline CSS.', 'wp-toolbelt' ),
 			'supports' => array( 'tools' ),
 		),
+		'widows' => array(
+			'name' => esc_html__( 'Typographic Widows', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Fix typographic widows in titles and headings.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Typographic-Widows',
+		),
 		'widget-display' => array(
 			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Control which pages widgets appear on.', 'wp-toolbelt' ),
