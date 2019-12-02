@@ -366,7 +366,7 @@ msgstr ""
 msgid "No feedback found"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:64
+#: modules/contact-form/module-cpt.php:64, modules/contact-form/module-cpt.php:208
 msgid "Spam"
 msgstr ""
 
@@ -393,31 +393,39 @@ msgstr ""
 msgid "Restore this item from the Trash"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:190
+#: modules/contact-form/module-cpt.php:189
 msgid "Restore"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:195, modules/contact-form/module-cpt.php:308
+#: modules/contact-form/module-cpt.php:194
 msgid "Delete this item permanently"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:197, modules/contact-form/module-cpt.php:310
+#: modules/contact-form/module-cpt.php:196, modules/contact-form/module-cpt.php:234
 msgid "Delete Permanently"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:245
+#: modules/contact-form/module-cpt.php:206
 msgid "Mark this message as spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:251, modules/contact-form/module-cpt.php:253
+#: modules/contact-form/module-cpt.php:214, modules/contact-form/module-cpt.php:216
 msgid "Trash"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:303
+#: modules/contact-form/module-cpt.php:225
 msgid "Mark this message as NOT spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:347
+#: modules/contact-form/module-cpt.php:226
+msgid "Not Spam"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:232
+msgid "elete this item permanently"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:253
 msgctxt "{$date_format} \a\t {$time_format}"
 msgid "%1$s \a\t %2$s"
 msgstr ""
