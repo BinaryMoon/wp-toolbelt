@@ -36,28 +36,52 @@ function toolbelt_widget_display( $logic ) {
 	$logic = str_replace( ' ', '', $logic );
 	$logic = strtolower( $logic );
 	$logic_tokens = explode( ';', $logic );
-	$results = array();
 
-	foreach ( $logic_tokens as $token ) {
+	/**
+	 * Do the exclude tokens first. If an exclude rule is false then the widget
+	 * should be hidden.
+	 *
+	 * If it's hidden then we can ignore the include tokens.
+	 */
+	$exclude_tokens = array_filter(
+		$logic_tokens,
+		function( $token ) {
+			return '!' === $token[0];
+		}
+	);
 
-		if ( '!' === $token[0] ) {
+	foreach ( $exclude_tokens as $token ) {
 
-			// If not then we want to invert the result.
-			$token = ltrim( $token, '!' );
-			$results[] = ! toolbelt_widget_display_check_token( $token );
-
-		} else {
-
-			$results[] = toolbelt_widget_display_check_token( $token );
-
+		// If not then we want to invert the result.
+		$token = ltrim( $token, '!' );
+		if ( toolbelt_widget_display_check_token( $token ) ) {
+			return false;
 		}
 	}
 
 	/**
-	 * If one result is true then display the widget, else hide it.
+	 * Default response if there's no inclusion tokens is to display the widget.
+	 * The exclusion list should have hidden the widget if required.
 	 */
-	if ( in_array( true, $results, true ) ) {
+	if ( 0 === count( $include_tokens ) ) {
 		return true;
+	}
+
+	/**
+	 * Check for inclusions.
+	 */
+	$include_tokens = array_filter(
+		$logic_tokens,
+		function( $token ) {
+			return '!' !== $token[0];
+		}
+	);
+
+	foreach ( $include_tokens as $token ) {
+
+		if ( toolbelt_widget_display_check_token( $token ) ) {
+			return true;
+		}
 	}
 
 	/**
