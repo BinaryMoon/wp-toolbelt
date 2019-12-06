@@ -254,6 +254,7 @@ function toolbelt_contact_submit() {
 	 */
 	$message = toolbelt_contact_create_message( $fields );
 	$comment_author = toolbelt_contact_get_field( $fields, 'name' );
+	$subject = toolbelt_contact_get_field( $fields, 'subject', $subject );
 	$from_email_address = toolbelt_contact_get_field( $fields, 'email', get_option( 'admin_email' ) );
 
 	if ( empty( $message ) ) {
@@ -310,6 +311,21 @@ function toolbelt_contact_submit() {
 		wp_kses_post( $message ),
 		$headers
 	);
+
+	/**
+	 * Save the email to the database.
+	 */
+	if ( function_exists( 'toolbelt_contact_save_feedback' ) ) {
+
+		toolbelt_contact_save_feedback(
+			$to,
+			$subject,
+			$message,
+			$is_spam || $is_spam_content,
+			$fields
+		);
+
+	}
 
 	wp_safe_redirect( $return_url );
 
@@ -722,3 +738,13 @@ add_action( 'wp_footer', 'toolbelt_contact_form_script' );
 
 
 require 'module-fields.php';
+
+require 'module-cpt.php';
+
+/**
+ * Only include in the admin.
+ * We don't want regular site visitors using this.
+ */
+if ( is_admin() ) {
+	require 'module-ajax.php';
+}
