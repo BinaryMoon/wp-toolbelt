@@ -52,7 +52,7 @@ function toolbelt_contact_feedback_status( $status ) {
 		array(
 			'ID' => (int) $id,
 			'post_type' => 'feedback',
-		),
+		)
 	);
 
 }
