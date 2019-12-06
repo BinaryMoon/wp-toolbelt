@@ -49,13 +49,21 @@ function toolbelt_gist_register_block() {
 		)
 	);
 
-	if ( is_admin() ) {
-		toolbelt_global_styles( 'blocks' );
-	}
-
 }
 
 add_action( 'init', 'toolbelt_gist_register_block' );
+
+
+/**
+ * Display admin styles for editor block.
+ */
+function toolbelt_gist_admin_styles() {
+
+	toolbelt_global_styles( 'blocks' );
+
+}
+
+add_action( 'admin_head', 'toolbelt_gist_admin_styles' );
 
 
 /**
