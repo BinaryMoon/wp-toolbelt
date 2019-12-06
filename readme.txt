@@ -25,6 +25,7 @@ Toolbelt has been featured on The WordPress Tavern in [an interview with me](htt
 
 Some of the Toolbelt modules include blocks to make working with the generated content easier. The available blocks are:
 
+* **Contact Form** - The simplest way to have people get in touch. Works with the spam module.
 * **Projects Grid** - to list a collection of projects. These can be filtered by project category.
 * **Testimonials Grid** - to list a group of testimonials. Great for showing off! :)
 * **Markdown** - for those who like a simpler writing experience.
@@ -117,7 +118,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.5 - 29th November 2019 =
+= 2.5 - 6th December 2019 =
 * Added a simple Gist block.
 * Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
 * Add new pagechild and 404 display rules to the widget visibility module.
@@ -129,6 +130,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Improve module selector design.
 * Make the admin style tweaks show in the customizer (most important for the button improvements).
 * Simplify portfolio and testimonial block code a little.
+* Rename blacklist to blocklist. Language matters!
 
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
