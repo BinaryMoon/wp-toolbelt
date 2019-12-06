@@ -126,6 +126,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add fix for typographic widows.
 * Ensure the contact form submit button stays in the right place! :)
 * Fix issue with settings link appearing when it shouldn't.
+* Fix: Only include contact form validation rules when there is a contact form on the page
 * Make GDPR requirements of cookie banner clearer.
 * Improve module selector design.
 * Make the admin style tweaks show in the customizer (most important for the button improvements).
