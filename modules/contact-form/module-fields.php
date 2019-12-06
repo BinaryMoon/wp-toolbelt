@@ -414,6 +414,10 @@ function toolbelt_contact_confirmation_message( $atts = array() ) {
  */
 function toolbelt_contact_form_validation() {
 
+	if ( ! has_block( 'toolbelt/contact-form' ) ) {
+		return;
+	}
+
 	/**
 	 * Initialize the validation javascript and allow the text to be translated.
 	 */
