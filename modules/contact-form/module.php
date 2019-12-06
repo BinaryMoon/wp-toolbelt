@@ -303,14 +303,11 @@ function toolbelt_contact_submit() {
 	);
 
 	/**
-	 * Actually send the email.
+	 * If the post is spam, and the feedback form post type is enabled then we
+	 * won't actually send the spam message. The message can be seen in the
+	 * admin instead.
 	 */
-	wp_mail(
-		sanitize_email( $to ),
-		esc_html( $subject ),
-		wp_kses_post( $message ),
-		$headers
-	);
+	$send_email = true;
 
 	/**
 	 * Save the email to the database.
@@ -323,6 +320,23 @@ function toolbelt_contact_submit() {
 			$message,
 			$is_spam || $is_spam_content,
 			$fields
+		);
+
+		// The email has been saved so let's not send anything.
+		$send_email = false;
+
+	}
+
+	/**
+	 * Actually send the email.
+	 */
+	if ( $send_email ) {
+
+		wp_mail(
+			sanitize_email( $to ),
+			esc_html( $subject ),
+			wp_kses_post( $message ),
+			$headers
 		);
 
 	}
