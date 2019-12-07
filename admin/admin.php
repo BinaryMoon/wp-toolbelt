@@ -13,8 +13,9 @@
  *
  * @param array  $plugin_actions The current links for the plugin being checked.
  * @param string $plugin_file The filepath for the plugin being checked.
+ * @return array
  */
-function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
+function toolbelt_admin_settings_link( array $plugin_actions, $plugin_file ) {
 
 	$new_actions = array();
 
@@ -134,7 +135,7 @@ add_action( 'admin_menu', 'toolbelt_admin_menu' );
  * @param string $slug The module slug.
  * @param array  $module The module parameters.
  */
-function toolbelt_field( $slug, $module ) {
+function toolbelt_field( $slug, array $module ) {
 
 	$options = get_option( 'toolbelt_options' );
 
