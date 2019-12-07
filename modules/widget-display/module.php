@@ -60,14 +60,6 @@ function toolbelt_widget_display( $logic ) {
 	}
 
 	/**
-	 * Default response if there's no inclusion tokens is to display the widget.
-	 * The exclusion list should have hidden the widget if required.
-	 */
-	if ( 0 === count( $include_tokens ) ) {
-		return true;
-	}
-
-	/**
 	 * Check for inclusions.
 	 */
 	$include_tokens = array_filter(
@@ -76,6 +68,14 @@ function toolbelt_widget_display( $logic ) {
 			return '!' !== $token[0];
 		}
 	);
+
+	/**
+	 * Default response if there's no inclusion tokens is to display the widget.
+	 * The exclusion list should have hidden the widget if required.
+	 */
+	if ( 0 === count( $include_tokens ) ) {
+		return true;
+	}
 
 	foreach ( $include_tokens as $token ) {
 
