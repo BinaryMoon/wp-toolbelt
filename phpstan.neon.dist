@@ -3,8 +3,6 @@ includes:
     - vendor/szepeviktor/phpstan-wordpress/extension.neon
 parameters:
     level: max
-    excludes_analyse:
-        - %currentWorkingDirectory%/vendor/
     paths:
         - %currentWorkingDirectory%/modules/
         - %currentWorkingDirectory%/admin/
