@@ -95,7 +95,7 @@ function toolbelt_load_module( $slug, $module ) {
 /**
  * Get the list of available Toolbelt modules.
  *
- * @return void
+ * @return array<mixed>
  */
 function toolbelt_get_modules() {
 
@@ -414,7 +414,7 @@ function toolbelt_global_script( $script ) {
 /**
  * Load the toolbelt options.
  *
- * @return void
+ * @return string
  */
 function toolbelt_get_options() {
 
