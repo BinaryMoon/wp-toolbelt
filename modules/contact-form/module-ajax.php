@@ -144,7 +144,7 @@ function toolbelt_contact_cpt_post_type_nav() {
 /**
  * Get the number of feedback posts in each status type.
  *
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_contact_cpt_status() {
 

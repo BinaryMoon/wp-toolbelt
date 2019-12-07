@@ -9,7 +9,7 @@
  * Set or unset the widgets.
  *
  * @param array $sidebar_widgets List of widgets to check.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_widget_display_filter_sidebars_widgets( $sidebar_widgets ) {
 

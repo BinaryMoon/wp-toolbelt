@@ -353,7 +353,7 @@ function toolbelt_widget_display_by_id( $widget_id ) {
  * on larger sites. I recommend using caching.
  *
  * @param int $parent The parent id.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_widget_page_children( $parent ) {
 

@@ -457,7 +457,7 @@ function toolbelt_plugins_url( $path ) {
  *
  * @param array  $categories The current list of categories.
  * @param string $post The post type for the current page.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_block_category( $categories, $post ) {
 

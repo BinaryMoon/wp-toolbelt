@@ -359,7 +359,7 @@ add_action( 'init', 'toolbelt_contact_submit' );
  *
  * @param string $content The post content.
  * @param string $hash The contact form hash.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_contact_get_blocks( $content, $hash ) {
 
@@ -403,7 +403,7 @@ function toolbelt_contact_get_blocks( $content, $hash ) {
  * Combine all of the contact form fields from the post blocks.
  *
  * @param array $blocks The list of blocks to check.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_contact_get_fields( $blocks ) {
 
@@ -550,7 +550,7 @@ function toolbelt_contact_hash( $atts ) {
  * consume.
  *
  * @param array $blocks List of inner blocks to parse.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_contact_parse_fields( $blocks ) {
 

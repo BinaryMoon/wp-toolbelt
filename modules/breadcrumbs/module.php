@@ -62,7 +62,7 @@ function toolbelt_breadcrumbs() {
  * The list is stored in a transient for faster retrieval.
  *
  * @param array $type Information about the type of breadcrumb list to get.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_breadcrumb_get( array $type ) {
 
@@ -163,7 +163,7 @@ function toolbelt_breadcrumb_type() {
  * Generate a hierarchical breadcrumb trail.
  *
  * @param string $taxonomy The taxonomy type for the archive.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 
@@ -201,7 +201,7 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
  * @param int    $term Taxonomy term whose parents will be returned.
  * @param string $taxonomy Taxonomy name that the term belongs to.
  * @param array  $visited Terms already added to prevent duplicates.
- * @return array A list of links to the term parents.
+ * @return array<mixed> A list of links to the term parents.
  */
 function toolbelt_get_term_parents( $term, $taxonomy, array $visited = array() ) {
 
@@ -246,7 +246,7 @@ function toolbelt_get_term_parents( $term, $taxonomy, array $visited = array() )
  * This includes pages, and custom post types that can have a parent child
  * relationships.
  *
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_breadcrumb_post_hierarchical() {
 

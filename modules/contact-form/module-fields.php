@@ -476,7 +476,7 @@ add_action( 'wp_footer', 'toolbelt_contact_form_validation' );
  * If no key is set it will return all default values.
  *
  * @param string $key The defaults to return.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_contact_field_defaults( $key = null ) {
 

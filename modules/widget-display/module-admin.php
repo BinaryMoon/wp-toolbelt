@@ -50,7 +50,7 @@ add_filter( 'in_widget_form', 'toolbelt_widget_display_form', 10, 3 );
  *
  * @param array $instance     The settings to save.
  * @param array $new_instance The new settings that may have changed.
- * @return array
+ * @return array<string>
  */
 function toolbelt_widget_display_update_callback( $instance, $new_instance ) {
 

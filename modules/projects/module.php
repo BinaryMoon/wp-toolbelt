@@ -154,7 +154,7 @@ add_action( 'init', 'toolbelt_portfolio_register_post_types', 11 );
  * Add the portfolio post type to the related post types.
  *
  * @param array $types The current list of post types.
- * @return array
+ * @return array<string>
  */
 function toolbelt_portfolio_related_posts_type( $types ) {
 
@@ -170,7 +170,7 @@ add_filter( 'toolbelt_related_post_types', 'toolbelt_portfolio_related_posts_typ
  * Add the portfolio post type to the related post types.
  *
  * @param array $types The current list of post types.
- * @return array
+ * @return array<string>
  */
 function toolbelt_portfolio_social_sharing_post_types( $types ) {
 
@@ -187,7 +187,7 @@ add_filter( 'toolbelt_social_sharing_post_types', 'toolbelt_portfolio_social_sha
  * Add Featured Image column.
  *
  * @param array $columns A list of all the current columns.
- * @return array
+ * @return array<string>
  */
 function toolbelt_portfolio_edit_admin_columns( $columns ) {
 

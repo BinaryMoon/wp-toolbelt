@@ -75,7 +75,7 @@ function toolbelt_social_menu_svg( $key ) {
 /**
  * Returns an array of supported social links (URL and icon name).
  *
- * @return array $social_links_icons
+ * @return array<string> $social_links_icons
  */
 function toolbelt_social_menu_icons() {
 

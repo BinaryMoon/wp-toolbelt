@@ -118,7 +118,7 @@ function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam
  * The post list table column headings.
  *
  * @param array $cols List of table columns.
- * @return array
+ * @return array<string>
  */
 function toolbelt_contact_post_type_columns_filter( array $cols ) {
 

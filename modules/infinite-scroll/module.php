@@ -125,7 +125,7 @@ function toolbelt_is_button() {
  * Add body class letting the world know Infinite scroll is enabled.
  *
  * @param array $classes List of current classes.
- * @return array
+ * @return array<string>
  */
 function toolbelt_is_class( $classes ) {
 
@@ -204,7 +204,7 @@ function toolbelt_is_render() {
  * Display the REST posts.
  *
  * @param WP_REST_Request $data The REST response data.
- * @return array
+ * @return array<string>
  */
 function toolbelt_is_rest_response( $data ) {
 

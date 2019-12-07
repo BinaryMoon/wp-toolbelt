@@ -44,7 +44,7 @@ add_action( 'wp_footer', 'toolbelt_spam_scripts' );
  * This acts as a honeypot.
  *
  * @param array $fields List of form fields to display.
- * @return array
+ * @return array<string>
  */
 function toolbelt_spam_form_fields( $fields ) {
 
