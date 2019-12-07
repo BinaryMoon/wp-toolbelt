@@ -13,7 +13,7 @@
  *
  * @param array<string> $plugin_actions The current links for the plugin being checked.
  * @param string        $plugin_file The filepath for the plugin being checked.
- * @return array<string, mixed>
+ * @return array<string>
  */
 function toolbelt_admin_settings_link( array $plugin_actions, $plugin_file ) {
 

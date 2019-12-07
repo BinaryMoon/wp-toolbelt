@@ -8,12 +8,12 @@
 /**
  * Display an input field.
  *
- * @param string $type The field type to display.
- * @param array  $atts The field attributes.
- * @param array  $default_attrs The default field attributes.
+ * @param string               $type The field type to display.
+ * @param array<string, mixed> $atts The field attributes.
+ * @param array<string, mixed> $default_attrs The default field attributes.
  * @return string The field html to render.
  */
-function toolbelt_contact_input_field( $type, array $atts = array(), array $default_attrs = array() ) {
+function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = array() ) {
 
 	if ( empty( $type ) ) {
 		$type = 'text';
@@ -69,11 +69,11 @@ function toolbelt_contact_input_field( $type, array $atts = array(), array $defa
 /**
  * Display a textarea field.
  *
- * @param array  $atts The field attributes.
- * @param string $default_label The default label for the textarea.
+ * @param array<string, mixed> $atts The field attributes.
+ * @param string               $default_label The default label for the textarea.
  * @return string The field html.
  */
-function toolbelt_contact_textarea_field( array $atts, $default_label = '' ) {
+function toolbelt_contact_textarea_field( $atts, $default_label = '' ) {
 
 	$atts = shortcode_atts(
 		array(
