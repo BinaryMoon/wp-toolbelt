@@ -6,6 +6,10 @@
 
 	<description>Automatically use WordPress rules</description>
 
+	<rule ref="PSR2">
+		<exclude name="PSR2.ControlStructures.SwitchDeclaration.BodyOnNextLineCASE" />
+	</rule>
+
 	<rule ref="WordPress">
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
