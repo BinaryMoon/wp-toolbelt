@@ -145,19 +145,20 @@ function toolbelt_contact_cpt_status() {
 
 	global $wpdb;
 
-	$sql = "SELECT post_status,
-			COUNT( * ) AS post_count
+	$feedback_status = (array) $wpdb->get_results(
+		"SELECT `post_status`, COUNT( * ) AS `post_count`
 		FROM `{$wpdb->posts}`
-		WHERE post_type = 'feedback'
-		GROUP BY post_status";
+			WHERE `post_type` = 'feedback'
+			GROUP BY `post_status`",
+		ARRAY_A
+	);
 
-	$status_count = (array) $wpdb->get_results( $sql, ARRAY_A );
-	$status = array();
-
-	foreach ( $status_count as $i => $row ) {
-		$status[ $row['post_status'] ] = $row['post_count'];
-	}
-
-	return $status;
-
+	return array_reduce(
+		$feedback_status,
+		function ( $status, $row ) {
+			$status[ $row['post_status'] ] = $row['post_count'];
+			return $status
+		},
+		array()
+	);
 }
