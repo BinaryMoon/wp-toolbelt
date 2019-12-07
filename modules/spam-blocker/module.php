@@ -43,7 +43,7 @@ add_action( 'wp_footer', 'toolbelt_spam_scripts' );
  * Add Honeypot URL field.
  * This acts as a honeypot.
  *
- * @param array $fields List of form fields to display.
+ * @param array<mixed> $fields List of form fields to display.
  * @return array<string>
  */
 function toolbelt_spam_form_fields( $fields ) {
@@ -75,8 +75,8 @@ add_filter( 'comment_form_default_fields', 'toolbelt_spam_form_fields', 11 );
 /**
  * Check for comment spam.
  *
- * @param int|string $approved The current comment status.
- * @param array      $comment Information about the comment.
+ * @param int|string   $approved The current comment status.
+ * @param array<mixed> $comment Information about the comment.
  * @return int|string
  */
 function toolbelt_spam_check_comments( $approved, $comment ) {

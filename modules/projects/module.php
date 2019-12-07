@@ -153,7 +153,7 @@ add_action( 'init', 'toolbelt_portfolio_register_post_types', 11 );
 /**
  * Add the portfolio post type to the related post types.
  *
- * @param array $types The current list of post types.
+ * @param array<string> $types The current list of post types.
  * @return array<string>
  */
 function toolbelt_portfolio_related_posts_type( $types ) {
@@ -169,7 +169,7 @@ add_filter( 'toolbelt_related_post_types', 'toolbelt_portfolio_related_posts_typ
 /**
  * Add the portfolio post type to the related post types.
  *
- * @param array $types The current list of post types.
+ * @param array<string> $types The current list of post types.
  * @return array<string>
  */
 function toolbelt_portfolio_social_sharing_post_types( $types ) {
@@ -186,7 +186,7 @@ add_filter( 'toolbelt_social_sharing_post_types', 'toolbelt_portfolio_social_sha
  * Change ‘Title’ column label.
  * Add Featured Image column.
  *
- * @param array $columns A list of all the current columns.
+ * @param array<string> $columns A list of all the current columns.
  * @return array<string>
  */
 function toolbelt_portfolio_edit_admin_columns( $columns ) {
@@ -273,7 +273,7 @@ add_action( 'admin_enqueue_scripts', 'toolbelt_portfolio_enqueue_admin_styles' )
 /**
  * Generate the portfolio shortcode.
  *
- * @param array $attrs Shortcode attributes.
+ * @param array<string|int> $attrs Shortcode attributes.
  * @return string
  */
 function toolbelt_portfolio_shortcode( $attrs ) {
@@ -377,10 +377,10 @@ if ( ! shortcode_exists( 'portfolio' ) ) {
 /**
  * Generate the html for the portfolios.
  *
- * @param int    $count The number of portfolios to try to load.
- * @param string $order_by The order method.
- * @param array  $categories The categories to filter by.
- * @param bool   $show_excerpt Display or hide the excerpt.
+ * @param int          $count The number of portfolios to try to load.
+ * @param string       $order_by The order method.
+ * @param array<mixed> $categories The categories to filter by.
+ * @param bool         $show_excerpt Display or hide the excerpt.
  * @return string
  */
 function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categories = array(), $show_excerpt = true ) {

@@ -61,10 +61,10 @@ function toolbelt_breadcrumbs() {
  * Generate the breadcrumb list.
  * The list is stored in a transient for faster retrieval.
  *
- * @param array $type Information about the type of breadcrumb list to get.
+ * @param array<string> $type Information about the type of breadcrumb list to get.
  * @return array<mixed>
  */
-function toolbelt_breadcrumb_get( array $type ) {
+function toolbelt_breadcrumb_get( $type ) {
 
 	$breadcrumbs = array();
 	$breadcrumbs[] = array( home_url( '/' ), __( 'Home', 'wp-toolbelt' ) );
@@ -93,10 +93,10 @@ function toolbelt_breadcrumb_get( array $type ) {
 /**
  * Generate the breadcrumb html.
  *
- * @param array $breadcrumbs List of breadcrumbs to display as html.
+ * @param array<mixed> $breadcrumbs List of breadcrumbs to display as html.
  * @return string
  */
-function toolbelt_breadcrumb_html( array $breadcrumbs ) {
+function toolbelt_breadcrumb_html( $breadcrumbs ) {
 
 	$html = '';
 
@@ -198,12 +198,12 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
  *
  * This is a recursive function. It calls itself.
  *
- * @param int    $term Taxonomy term whose parents will be returned.
- * @param string $taxonomy Taxonomy name that the term belongs to.
- * @param array  $visited Terms already added to prevent duplicates.
+ * @param int        $term Taxonomy term whose parents will be returned.
+ * @param string     $taxonomy Taxonomy name that the term belongs to.
+ * @param array<int> $visited Terms already added to prevent duplicates.
  * @return array<mixed> A list of links to the term parents.
  */
-function toolbelt_get_term_parents( $term, $taxonomy, array $visited = array() ) {
+function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
 
 	$parent = get_term( $term, $taxonomy );
 	$breadcrumbs = array();

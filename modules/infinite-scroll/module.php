@@ -124,7 +124,7 @@ function toolbelt_is_button() {
 /**
  * Add body class letting the world know Infinite scroll is enabled.
  *
- * @param array $classes List of current classes.
+ * @param array<string> $classes List of current classes.
  * @return array<string>
  */
 function toolbelt_is_class( $classes ) {

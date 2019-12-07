@@ -150,7 +150,7 @@ add_filter( 'enter_title_here', 'toolbelt_testimonials_change_title' );
 /**
  * Generate the testimonials shortcode.
  *
- * @param array $attrs Shortcode attributes.
+ * @param array<string|int> $attrs Shortcode attributes.
  * @return string
  */
 function toolbelt_testimonials_shortcode( $attrs ) {

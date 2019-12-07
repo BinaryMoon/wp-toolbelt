@@ -111,7 +111,7 @@ function toolbelt_related_posts_get() {
 /**
  * Get the html for the related posts output.
  *
- * @param array $related_posts A list of the related posts to output.
+ * @param array<mixed> $related_posts A list of the related posts to output.
  * @return string
  */
 function toolbelt_related_posts_html( $related_posts ) {

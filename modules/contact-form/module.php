@@ -402,7 +402,7 @@ function toolbelt_contact_get_blocks( $content, $hash ) {
 /**
  * Combine all of the contact form fields from the post blocks.
  *
- * @param array $blocks The list of blocks to check.
+ * @param array<mixed> $blocks The list of blocks to check.
  * @return array<mixed>
  */
 function toolbelt_contact_get_fields( $blocks ) {
@@ -423,9 +423,9 @@ function toolbelt_contact_get_fields( $blocks ) {
 /**
  * Get a specific attribute for the current block.
  *
- * @param array  $blocks The blocks to get the attributes from.
- * @param string $attribute The name of the attribute to search for.
- * @param mixed  $default The default value if none is set in the attribute.
+ * @param array<mixed> $blocks The blocks to get the attributes from.
+ * @param string       $attribute The name of the attribute to search for.
+ * @param mixed        $default The default value if none is set in the attribute.
  * @return mixed
  */
 function toolbelt_contact_get_block_attribute( $blocks, $attribute = '', $default = null ) {
@@ -449,7 +449,7 @@ function toolbelt_contact_get_block_attribute( $blocks, $attribute = '', $defaul
  * Convert an arrazy of fields and values into a text string to send as an email
  * message.
  *
- * @param array $fields The list of fields to search through.
+ * @param array<mixed> $fields The list of fields to search through.
  * @return string
  */
 function toolbelt_contact_create_message( $fields ) {
@@ -476,9 +476,9 @@ function toolbelt_contact_create_message( $fields ) {
 /**
  * Get field value from list of fields.
  *
- * @param array  $fields List of fields to search through.
- * @param string $key Field key to return.
- * @param mixed  $default The default value for the field.
+ * @param array<mixed> $fields List of fields to search through.
+ * @param string       $key Field key to return.
+ * @param mixed        $default The default value for the field.
  * @return mixed
  */
 function toolbelt_contact_get_field( $fields, $key = '', $default = null ) {
@@ -516,7 +516,7 @@ function toolbelt_contact_get_field( $fields, $key = '', $default = null ) {
  * This needs to be repeatable (a pure function) so that we can match form
  * properties between the front and backend.
  *
- * @param array $atts The contact form attributes.
+ * @param array<string|int> $atts The contact form attributes.
  * @return string
  */
 function toolbelt_contact_hash( $atts ) {
@@ -549,7 +549,7 @@ function toolbelt_contact_hash( $atts ) {
  * Parse the contact form fields and generate a list of data I can more easily
  * consume.
  *
- * @param array $blocks List of inner blocks to parse.
+ * @param array<mixed> $blocks List of inner blocks to parse.
  * @return array<mixed>
  */
 function toolbelt_contact_parse_fields( $blocks ) {
@@ -633,7 +633,7 @@ function toolbelt_contact_get_field_name( $label ) {
 /**
  * Sanitize the data input before sending it.
  *
- * @param array $data The data object for the sanitized value.
+ * @param array<mixed> $data The data object for the sanitized value.
  * @return string
  */
 function toolbelt_contact_sanitize( $data ) {

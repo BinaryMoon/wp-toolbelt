@@ -73,7 +73,7 @@ add_action( 'admin_head', 'toolbelt_gist_admin_styles' );
 /**
  * Render the Github Gist.
  *
- * @param array $attrs The block attributes.
+ * @param array<mixed> $attrs The block attributes.
  * @return string
  */
 function toolbelt_gist_render( $attrs ) {

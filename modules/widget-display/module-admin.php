@@ -8,9 +8,9 @@
 /**
  * Display the widget display rules input.
  *
- * @param WP_Widget $widget The widget instance.
- * @param null      $return Return null if new fields are added.
- * @param array     $instance The widgets settings.
+ * @param WP_Widget    $widget The widget instance.
+ * @param null         $return Return null if new fields are added.
+ * @param array<mixed> $instance The widgets settings.
  */
 function toolbelt_widget_display_form( $widget, $return, $instance ) {
 
@@ -48,8 +48,8 @@ add_filter( 'in_widget_form', 'toolbelt_widget_display_form', 10, 3 );
 /**
  * Update the widget settings.
  *
- * @param array $instance     The settings to save.
- * @param array $new_instance The new settings that may have changed.
+ * @param array<string> $instance     The settings to save.
+ * @param array<string> $new_instance The new settings that may have changed.
  * @return array<string>
  */
 function toolbelt_widget_display_update_callback( $instance, $new_instance ) {

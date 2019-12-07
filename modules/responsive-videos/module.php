@@ -152,8 +152,8 @@ function toolbelt_responsive_video_maybe_wrap_oembed( $html, $url = null ) {
 /**
  * Remove the responsive video wrapper in embed blocks.
  *
- * @param string $block_content The block content about to be appended.
- * @param array  $block         The full block, including name and attributes.
+ * @param string       $block_content The block content about to be appended.
+ * @param array<mixed> $block         The full block, including name and attributes.
  * @return string $block_content String of rendered HTML.
  */
 function toolbelt_responsive_video_remove_wrap_oembed( $block_content = '', $block ) {

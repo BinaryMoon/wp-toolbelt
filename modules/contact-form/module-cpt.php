@@ -82,14 +82,14 @@ toolbelt_contact_cpt();
 /**
  * Save a feedback submission.
  *
- * @param string $to_email The email address to send the feedback to.
- * @param string $subject The email subject.
- * @param string $message The email message.
- * @param bool   $is_spam Is this email spam or not?.
- * @param array  $fields A list of the fields that have been submitted.
+ * @param string       $to_email The email address to send the feedback to.
+ * @param string       $subject The email subject.
+ * @param string       $message The email message.
+ * @param bool         $is_spam Is this email spam or not?.
+ * @param array<mixed> $fields A list of the fields that have been submitted.
  * @return void
  */
-function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, array $fields ) {
+function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, $fields ) {
 
 	$feedback_title = $subject;
 
@@ -117,10 +117,10 @@ function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam
 /**
  * The post list table column headings.
  *
- * @param array $cols List of table columns.
+ * @param array<string> $cols List of table columns.
  * @return array<string>
  */
-function toolbelt_contact_post_type_columns_filter( array $cols ) {
+function toolbelt_contact_post_type_columns_filter( $cols ) {
 
 	return array(
 		'cb' => '<input type="checkbox" />',

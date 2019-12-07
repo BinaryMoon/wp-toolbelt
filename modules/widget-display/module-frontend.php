@@ -8,7 +8,7 @@
 /**
  * Set or unset the widgets.
  *
- * @param array $sidebar_widgets List of widgets to check.
+ * @param array<mixed> $sidebar_widgets List of widgets to check.
  * @return array<mixed>
  */
 function toolbelt_widget_display_filter_sidebars_widgets( $sidebar_widgets ) {
@@ -70,7 +70,7 @@ add_action( 'customize_preview_init', 'toolbelt_widget_display_customizer' );
  * Display sidebar widgets, fading out the widgets that should be hidden on the
  * current page.
  *
- * @param array $widget The widget properties.
+ * @param array<mixed> $widget The widget properties.
  */
 function toolbelt_widget_display_dynamic_sidebar( $widget ) {
 

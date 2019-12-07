@@ -54,8 +54,8 @@ toolbelt_load_modules();
 /**
  * Load the module and associated admin functionality.
  *
- * @param string $slug The module slug. Used as the file path.
- * @param array  $module The module properties.
+ * @param string        $slug The module slug. Used as the file path.
+ * @param array<string> $module The module properties.
  * @return void
  */
 function toolbelt_load_module( $slug, $module ) {
@@ -455,8 +455,8 @@ function toolbelt_plugins_url( $path ) {
 /**
  * Add a block category for Toolbelt.
  *
- * @param array  $categories The current list of categories.
- * @param string $post The post type for the current page.
+ * @param array<mixed> $categories The current list of categories.
+ * @param string       $post The post type for the current page.
  * @return array<mixed>
  */
 function toolbelt_block_category( $categories, $post ) {
