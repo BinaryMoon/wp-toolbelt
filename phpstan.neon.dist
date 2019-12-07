@@ -46,6 +46,7 @@ parameters:
         - %currentWorkingDirectory%/modules/admin-tweaks/module.php
         - %currentWorkingDirectory%/modules/markdown/module.php
         - %currentWorkingDirectory%/modules/gist/module.php
+        - %currentWorkingDirectory%/modules/widows/module.php
         - %currentWorkingDirectory%/modules/contact-form/module.php
         - %currentWorkingDirectory%/modules/contact-form/module-fields.php
         - %currentWorkingDirectory%/modules/contact-form/module-cpt.php
