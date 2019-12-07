@@ -7,6 +7,8 @@
 
 /**
  * Display the Web Monetization settings.
+ *
+ * @return void
  */
 function toolbelt_monetization_fields() {
 

@@ -57,6 +57,8 @@ add_filter( 'the_content', 'toolbelt_related_posts' );
 /**
  * Get the related posts content.
  * With html formatting.
+ *
+ * @return void
  */
 function toolbelt_related_posts_get() {
 

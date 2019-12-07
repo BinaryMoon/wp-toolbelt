@@ -27,6 +27,8 @@ define( 'TOOLBELT_SPAM_KEY', md5( 'toolbelt-spam-key' . TOOLBELT_VERSION ) );
 
 /**
  * Output the spam blocker javascript.
+ *
+ * @return void
  */
 function toolbelt_spam_scripts() {
 

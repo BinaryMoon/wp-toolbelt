@@ -126,6 +126,8 @@ add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
 
 /**
  * Get a list of social networks and their sharing links.
+ *
+ * @return void
  */
 function toolbelt_social_networks() {
 

@@ -10,6 +10,8 @@
  * Display the Simple Analytics tracking code.
  *
  * @see https://docs.simpleanalytics.com/script
+ *
+ * @return void
  */
 function toolbelt_stats_simple_analytics() {
 
@@ -37,6 +39,7 @@ add_action( 'wp_footer', 'toolbelt_stats_simple_analytics' );
  *
  * @param array  $urls          URLs to print for resource hints.
  * @param string $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
+ * @return array<string>
  */
 function toolbelt_stats_simple_analytics_resource_hints( $urls, $relation_type ) {
 

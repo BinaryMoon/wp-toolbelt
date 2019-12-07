@@ -11,6 +11,8 @@ if ( is_admin() ) {
 
 /**
  * Load the Responsive videos plugin.
+ *
+ * @return void
  */
 function toolbelt_responsive_video_init() {
 
@@ -47,6 +49,8 @@ add_action( 'after_setup_theme', 'toolbelt_responsive_video_init', 99 );
 
 /**
  * Add the toolbelt video styles.
+ *
+ * @return void
  */
 function toolbelt_responsive_video_styles() {
 

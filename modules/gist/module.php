@@ -7,6 +7,8 @@
 
 /**
  * Register a Github Gist block.
+ *
+ * @return void
  */
 function toolbelt_gist_register_block() {
 
@@ -56,6 +58,8 @@ add_action( 'init', 'toolbelt_gist_register_block' );
 
 /**
  * Display admin styles for editor block.
+ *
+ * @return void
  */
 function toolbelt_gist_admin_styles() {
 

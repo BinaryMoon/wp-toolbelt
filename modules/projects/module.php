@@ -14,6 +14,8 @@ define( 'TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TAG', 'toolbelt-portfolio-tag' );
 
 /**
  * Register Portfolio post type and associated taxonomies.
+ *
+ * @return void
  */
 function toolbelt_portfolio_register_post_types() {
 
@@ -214,6 +216,7 @@ add_filter(
  *
  * @param string $column The name of the coloumn being checked.
  * @param int    $post_id The id of the post for the current row.
+ * @return void
  */
 function toolbelt_portfolio_image_column( $column, $post_id ) {
 
@@ -477,6 +480,8 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 
 /**
  * Include the potfolio styles if the current post uses the portfolio shortcode.
+ *
+ * @return void
  */
 function toolbelt_portfolio_styles() {
 
@@ -498,6 +503,8 @@ add_action( 'wp_print_styles', 'toolbelt_portfolio_styles' );
 
 /**
  * Include the Portfolio styles in the editor.
+ *
+ * @return void
  */
 function toolbelt_portfolio_editor_styles() {
 
@@ -511,6 +518,8 @@ add_action( 'admin_head', 'toolbelt_portfolio_editor_styles' );
 
 /**
  * Register a Portfolio block.
+ *
+ * @return void
  */
 function toolbelt_portfolio_register_block() {
 

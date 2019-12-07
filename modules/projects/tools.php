@@ -7,6 +7,8 @@
 
 /**
  * Display the Projects tool forms.
+ *
+ * @return void
  */
 function toolbelt_projects_tools() {
 

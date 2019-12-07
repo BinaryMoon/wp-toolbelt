@@ -10,12 +10,16 @@
  *
  * Normally I'd hook these into an action but since this file is included in
  * the after_setup_theme action I'm calling it directly.
+ *
+ * @return void
  */
 register_nav_menu( 'toolbelt-social', esc_html__( 'Social Menu', 'wp-toolbelt' ) );
 
 
 /**
  * Display the social menu.
+ *
+ * @return void
  */
 function toolbelt_social_menu() {
 

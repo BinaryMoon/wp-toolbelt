@@ -39,6 +39,8 @@
 
 /**
  * Register a Contact Form block.
+ *
+ * @return void
  */
 function toolbelt_contact_form_register_block() {
 
@@ -198,6 +200,8 @@ function toolbelt_contact_form_register_block() {
 
 /**
  * Submit the form and send an email.
+ *
+ * @return void
  */
 function toolbelt_contact_submit() {
 
@@ -712,6 +716,8 @@ function toolbelt_contact_sanitize( $data ) {
 /**
  * The post type is registered on init (priority 11) so this needs to be called
  * after since it tries to load the post taxonomies.
+ *
+ * @return void
  */
 add_action( 'init', 'toolbelt_contact_form_register_block', 12 );
 
@@ -720,6 +726,8 @@ toolbelt_register_block_category();
 
 /**
  * Display the contact form styles on the front end.
+ *
+ * @return void
  */
 function toolbelt_contact_form_styles() {
 
@@ -737,6 +745,8 @@ add_action( 'wp_print_styles', 'toolbelt_contact_form_styles' );
 
 /**
  * Display the contact form script on the front end.
+ *
+ * @return void
  */
 function toolbelt_contact_form_script() {
 

@@ -13,6 +13,8 @@ if ( is_admin() ) {
 
 /**
  * Add infinite scroll scripts to footer.
+ *
+ * @return void
  */
 function toolbelt_is_footer() {
 
@@ -51,6 +53,8 @@ add_filter( 'wp_footer', 'toolbelt_is_footer' );
  *
  * Normally I include styles before they are needed, but this ensures they are
  * added before the pagination is displayed.
+ *
+ * @return void
  */
 function toolbelt_is_head() {
 
@@ -67,6 +71,8 @@ add_filter( 'wp_head', 'toolbelt_is_head' );
 
 /**
  * Initialize Infinite Scroll styles.
+ *
+ * @return void
  */
 function toolbelt_is_init() {
 
@@ -157,6 +163,8 @@ function toolbelt_is_active() {
 
 /**
  * Set REST routes for IS.
+ *
+ * @return void
  */
 function toolbelt_is_rest() {
 
@@ -177,6 +185,8 @@ add_action( 'rest_api_init', 'toolbelt_is_rest' );
 
 /**
  * Fallback post renderer for when themes don't support Infinite Scroll.
+ *
+ * @return void
  */
 function toolbelt_is_render() {
 

@@ -29,6 +29,8 @@ if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 
 /**
  * Load the enabled modules.
+ *
+ * @return void
  */
 function toolbelt_load_modules() {
 
@@ -92,6 +94,8 @@ function toolbelt_load_module( $slug, $module ) {
 
 /**
  * Get the list of available Toolbelt modules.
+ *
+ * @return void
  */
 function toolbelt_get_modules() {
 
@@ -251,6 +255,8 @@ function toolbelt_get_modules() {
  * Output custom css properties that are used by the plugin css.
  *
  * This can be used by themes to make the spacings match those used.
+ *
+ * @return void
  */
 function toolbelt_css_properties() {
 
@@ -284,6 +290,7 @@ add_filter( 'admin_head', 'toolbelt_css_properties' );
  *
  * @param string $module The module slug.
  * @param string $name The folder name for the style to include.
+ * @return void
  */
 function toolbelt_styles( $module, $name = 'style' ) {
 
@@ -314,6 +321,7 @@ function toolbelt_styles( $module, $name = 'style' ) {
  * Load the block editor styles.
  *
  * @param string $module The module to load.
+ * @return void|null
  */
 function toolbelt_styles_editor( $module ) {
 
@@ -332,6 +340,7 @@ function toolbelt_styles_editor( $module ) {
  * Inline the module css.
  *
  * @param string $module The module slug.
+ * @return void|null
  */
 function toolbelt_global_styles( $module ) {
 
@@ -362,6 +371,7 @@ function toolbelt_global_styles( $module ) {
  * Inline the module script.
  *
  * @param string $module The module slug.
+ * @return void|null
  */
 function toolbelt_scripts( $module ) {
 
@@ -383,6 +393,7 @@ function toolbelt_scripts( $module ) {
  * Inline the module script.
  *
  * @param string $script The module slug.
+ * @return void|null
  */
 function toolbelt_global_script( $script ) {
 
@@ -402,6 +413,8 @@ function toolbelt_global_script( $script ) {
 
 /**
  * Load the toolbelt options.
+ *
+ * @return void
  */
 function toolbelt_get_options() {
 
@@ -465,6 +478,8 @@ function toolbelt_block_category( $categories, $post ) {
  * Register block categories.
  *
  * Call this directly from modules. It will only add the filter once.
+ *
+ * @return void
  */
 function toolbelt_register_block_category() {
 

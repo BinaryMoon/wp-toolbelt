@@ -7,6 +7,8 @@
 
 /**
  * Register a Markdown block.
+ *
+ * @return void
  */
 function toolbelt_markdown_register_block() {
 

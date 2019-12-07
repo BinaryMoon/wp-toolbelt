@@ -14,6 +14,8 @@ define( 'TOOLBELT_COOKIE_ACCEPTED', 'toolbelt_cookies_accepted' );
 
 /**
  * Display the cookie data in the footer.
+ *
+ * @return void
  */
 function toolbelt_cookie_footer() {
 
@@ -45,6 +47,8 @@ add_filter( 'wp_footer', 'toolbelt_cookie_footer' );
 
 /**
  * Get the cookie banner message.
+ *
+ * @return void
  */
 function toolbelt_cookie_message() {
 
@@ -69,6 +73,8 @@ function toolbelt_cookie_message() {
 
 /**
  * Work out what buttons to display in the cookie bar.
+ *
+ * @return void
  */
 function toolbelt_cookie_buttons() {
 
