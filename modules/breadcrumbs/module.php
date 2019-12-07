@@ -64,7 +64,7 @@ function toolbelt_breadcrumbs() {
  * @param array $type Information about the type of breadcrumb list to get.
  * @return array
  */
-function toolbelt_breadcrumb_get( $type ) {
+function toolbelt_breadcrumb_get( array $type ) {
 
 	$breadcrumbs = array();
 	$breadcrumbs[] = array( home_url( '/' ), __( 'Home', 'wp-toolbelt' ) );
@@ -96,7 +96,7 @@ function toolbelt_breadcrumb_get( $type ) {
  * @param array $breadcrumbs List of breadcrumbs to display as html.
  * @return string
  */
-function toolbelt_breadcrumb_html( $breadcrumbs ) {
+function toolbelt_breadcrumb_html( array $breadcrumbs ) {
 
 	$html = '';
 
@@ -203,7 +203,7 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
  * @param array  $visited Terms already added to prevent duplicates.
  * @return array A list of links to the term parents.
  */
-function toolbelt_get_term_parents( $term, $taxonomy, $visited = array() ) {
+function toolbelt_get_term_parents( $term, $taxonomy, array $visited = array() ) {
 
 	$parent = get_term( $term, $taxonomy );
 	$breadcrumbs = array();

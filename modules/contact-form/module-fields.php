@@ -13,7 +13,7 @@
  * @param array  $default_attrs The default field attributes.
  * @return string The field html to render.
  */
-function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = array() ) {
+function toolbelt_contact_input_field( $type, array $atts = array(), array $default_attrs = array() ) {
 
 	if ( empty( $type ) ) {
 		$type = 'text';
@@ -73,7 +73,7 @@ function toolbelt_contact_input_field( $type, $atts = array(), $default_attrs = 
  * @param string $default_label The default label for the textarea.
  * @return string The field html.
  */
-function toolbelt_contact_textarea_field( $atts, $default_label = '' ) {
+function toolbelt_contact_textarea_field( array $atts, $default_label = '' ) {
 
 	$atts = shortcode_atts(
 		array(
@@ -106,7 +106,7 @@ function toolbelt_contact_textarea_field( $atts, $default_label = '' ) {
  * @param array $atts Checkbox field attributes.
  * @return string Checkbox field html.
  */
-function toolbelt_contact_checkbox_field( $atts ) {
+function toolbelt_contact_checkbox_field( array $atts ) {
 
 	$atts = shortcode_atts(
 		array(
@@ -141,7 +141,7 @@ function toolbelt_contact_checkbox_field( $atts ) {
  * @param array  $atts The field attributes.
  * @return string
  */
-function toolbelt_contact_field_multi( $type, $atts ) {
+function toolbelt_contact_field_multi( $type, array $atts ) {
 
 	$atts = shortcode_atts(
 		array(
@@ -213,7 +213,7 @@ function toolbelt_contact_description( $description = '' ) {
  * @param array $atts The select field attributes.
  * @return string
  */
-function toolbelt_contact_field_multi_select( $atts ) {
+function toolbelt_contact_field_multi_select( array $atts ) {
 
 	$atts = shortcode_atts(
 		array(
@@ -320,6 +320,8 @@ function toolbelt_contact_field_wrap_fieldset( $label, $required = true, $descri
 
 /**
  * Include the Contact form editor styles.
+ *
+ * @return void
  */
 function toolbelt_contact_editor_styles() {
 
@@ -337,7 +339,7 @@ add_action( 'admin_head', 'toolbelt_contact_editor_styles' );
  * @param string $content The inner content of the form (likely all the fields).
  * @return string The form html.
  */
-function toolbelt_contact_form_html( $atts, $content ) {
+function toolbelt_contact_form_html( array $atts, $content ) {
 
 	$form_sent = filter_input( INPUT_GET, 'toolbelt-message' );
 
@@ -388,7 +390,7 @@ function toolbelt_contact_form_html( $atts, $content ) {
  * @param array $atts The form attributes.
  * @return string
  */
-function toolbelt_contact_confirmation_message( $atts = array() ) {
+function toolbelt_contact_confirmation_message( array $atts = array() ) {
 
 	$message_title = apply_filters( 'toolbelt_contact_confirmation_title', esc_html__( 'Message Sent', 'wp-toolbelt' ) );
 	$message_content = '';
@@ -411,6 +413,8 @@ function toolbelt_contact_confirmation_message( $atts = array() ) {
  *
  * We should also make sure to validate/ sanitize all the fields in php as well
  * so we can be sure everything is clean.
+ *
+ * @return void
  */
 function toolbelt_contact_form_validation() {
 
@@ -540,7 +544,7 @@ function toolbelt_contact_field_defaults( $key = null ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_text( $atts ) {
+function toolbelt_contact_field_text( array $atts ) {
 
 	return toolbelt_contact_input_field( 'text', $atts, toolbelt_contact_field_defaults( 'text' ) );
 
@@ -553,7 +557,7 @@ function toolbelt_contact_field_text( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_name( $atts ) {
+function toolbelt_contact_field_name( array $atts ) {
 
 	return toolbelt_contact_input_field( 'text', $atts, toolbelt_contact_field_defaults( 'name' ) );
 
@@ -566,7 +570,7 @@ function toolbelt_contact_field_name( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_subject( $atts ) {
+function toolbelt_contact_field_subject( array $atts ) {
 
 	return toolbelt_contact_input_field( 'text', $atts, toolbelt_contact_field_defaults( 'subject' ) );
 
@@ -579,7 +583,7 @@ function toolbelt_contact_field_subject( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_email( $atts ) {
+function toolbelt_contact_field_email( array $atts ) {
 
 	return toolbelt_contact_input_field( 'email', $atts, toolbelt_contact_field_defaults( 'email' ) );
 
@@ -592,7 +596,7 @@ function toolbelt_contact_field_email( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_url( $atts ) {
+function toolbelt_contact_field_url( array $atts ) {
 
 	return toolbelt_contact_input_field( 'url', $atts, toolbelt_contact_field_defaults( 'url' ) );
 
@@ -605,7 +609,7 @@ function toolbelt_contact_field_url( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_date( $atts ) {
+function toolbelt_contact_field_date( array $atts ) {
 
 	return toolbelt_contact_input_field( 'date', $atts, toolbelt_contact_field_defaults( 'date' ) );
 
@@ -618,7 +622,7 @@ function toolbelt_contact_field_date( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_telephone( $atts ) {
+function toolbelt_contact_field_telephone( array $atts ) {
 
 	return toolbelt_contact_input_field( 'tel', $atts, toolbelt_contact_field_defaults( 'telephone' ) );
 
@@ -631,7 +635,7 @@ function toolbelt_contact_field_telephone( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_textarea( $atts ) {
+function toolbelt_contact_field_textarea( array $atts ) {
 
 	return toolbelt_contact_textarea_field( $atts, esc_html__( 'Message', 'wp-toolbelt' ) );
 
@@ -644,7 +648,7 @@ function toolbelt_contact_field_textarea( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_checkbox( $atts ) {
+function toolbelt_contact_field_checkbox( array $atts ) {
 
 	return toolbelt_contact_checkbox_field( $atts );
 
@@ -657,7 +661,7 @@ function toolbelt_contact_field_checkbox( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_checkbox_multi( $atts ) {
+function toolbelt_contact_field_checkbox_multi( array $atts ) {
 
 	return toolbelt_contact_field_multi( 'checkbox', $atts );
 
@@ -670,7 +674,7 @@ function toolbelt_contact_field_checkbox_multi( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_radio( $atts ) {
+function toolbelt_contact_field_radio( array $atts ) {
 
 	return toolbelt_contact_field_multi( 'radio', $atts );
 
@@ -683,7 +687,7 @@ function toolbelt_contact_field_radio( $atts ) {
  * @param array $atts Field attributes.
  * @return string
  */
-function toolbelt_contact_field_select( $atts ) {
+function toolbelt_contact_field_select( array $atts ) {
 
 	return toolbelt_contact_field_multi_select( $atts );
 

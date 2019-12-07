@@ -7,6 +7,8 @@
 
 /**
  * Change the feedback to 'spam' status.
+ *
+ * @return void
  */
 function toolbelt_contact_ajax_spam() {
 
@@ -21,6 +23,8 @@ add_action( 'wp_ajax_toolbelt_ajax_spam', 'toolbelt_contact_ajax_spam' );
 
 /**
  * Change the feedback to 'publish' status.
+ *
+ * @return void
  */
 function toolbelt_contact_ajax_ham() {
 
@@ -37,6 +41,7 @@ add_action( 'wp_ajax_toolbelt_ajax_ham', 'toolbelt_contact_ajax_ham' );
  * Update the status of a feedback post.
  *
  * @param string $status The status to change the post to.
+ * @return void
  */
 function toolbelt_contact_feedback_status( $status ) {
 

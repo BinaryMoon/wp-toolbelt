@@ -57,6 +57,8 @@ add_filter( 'plugin_action_links', 'toolbelt_admin_settings_link', 10, 2 );
 
 /**
  * Add a Toolbelt admin menu item.
+ *
+ * @return void
  */
 function toolbelt_admin_menu() {
 
@@ -134,6 +136,7 @@ add_action( 'admin_menu', 'toolbelt_admin_menu' );
  *
  * @param string $slug The module slug.
  * @param array  $module The module parameters.
+ * @return void
  */
 function toolbelt_field( $slug, array $module ) {
 
@@ -199,6 +202,8 @@ function toolbelt_field( $slug, array $module ) {
 
 /**
  * Display the Toolbelt admin page.
+ *
+ * @return void
  */
 function toolbelt_admin_page() {
 
@@ -211,6 +216,8 @@ function toolbelt_admin_page() {
 
 /**
  * Display the tools page.
+ *
+ * @return void
  */
 function toolbelt_tools_page() {
 
@@ -223,6 +230,8 @@ function toolbelt_tools_page() {
 
 /**
  * Display the tools page.
+ *
+ * @return void
  */
 function toolbelt_settings_page() {
 
@@ -263,6 +272,8 @@ function toolbelt_admin_all_modules_enabled() {
 
 /**
  * Do toolbelt form actions.
+ *
+ * @return void
  */
 function toolbelt_tools_actions() {
 
@@ -286,6 +297,8 @@ function toolbelt_tools_actions() {
 
 /**
  * Save Toolbelt settings.
+ *
+ * @return void
  */
 function toolbelt_save_modules() {
 
@@ -318,6 +331,8 @@ function toolbelt_save_modules() {
 
 /**
  * Save individual module settings.
+ *
+ * @return void
  */
 function toolbelt_save_settings() {
 
@@ -348,6 +363,7 @@ function toolbelt_save_settings() {
  *
  * @param string $message The success message to display. Should be a collection of list items.
  * @param string $type The type of message to display.
+ * @return void
  */
 function toolbelt_tools_message( $message, $type = 'success' ) {
 

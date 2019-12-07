@@ -7,6 +7,8 @@
 
 /**
  * Display some custom css to tweak the WordPress admin.
+ *
+ * @return void
  */
 function toolbelt_admin_tweaks() {
 

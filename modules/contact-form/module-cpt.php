@@ -9,6 +9,8 @@ define( 'TOOLBELT_CONTACT_POST_META', 'toolbelt-contact-post-meta' );
 
 /**
  * Setup the contact form CPT.
+ *
+ * @return void
  */
 function toolbelt_contact_cpt() {
 
@@ -85,8 +87,9 @@ toolbelt_contact_cpt();
  * @param string $message The email message.
  * @param bool   $is_spam Is this email spam or not?.
  * @param array  $fields A list of the fields that have been submitted.
+ * @return void
  */
-function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, $fields ) {
+function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, array $fields ) {
 
 	$feedback_title = $subject;
 
@@ -117,7 +120,7 @@ function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam
  * @param array $cols List of table columns.
  * @return array
  */
-function toolbelt_contact_post_type_columns_filter( $cols ) {
+function toolbelt_contact_post_type_columns_filter( array $cols ) {
 
 	return array(
 		'cb' => '<input type="checkbox" />',
@@ -136,6 +139,7 @@ add_action( 'manage_feedback_posts_columns', 'toolbelt_contact_post_type_columns
  *
  * @param string $col The column we are displaying.
  * @param int    $post_id The post id we are displaying.
+ * @return void
  */
 function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 
@@ -253,6 +257,8 @@ add_action( 'manage_posts_custom_column', 'toolbelt_contact_manage_post_columns'
 
 /**
  * Add a custom script for managing the feedback post type.
+ *
+ * @return void
  */
 function toolbelt_contact_admin_script() {
 
