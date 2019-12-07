@@ -145,13 +145,24 @@ function toolbelt_contact_cpt_status() {
 
 	global $wpdb;
 
-	$sql = "SELECT post_status,
-			COUNT( * ) AS post_count
+	/**
+	 * Use wpdb->prepare to prepare the sql query.
+	 *
+	 * This isn't really needed since there's no user input so we don't need to
+	 * worry about sanitizing the data.
+	 *
+	 * However, the code is tested with PHPCS and that requires wpdv prepare for
+	 * coding standards.
+	 */
+	$query = $wpdb->prepare(
+		"SELECT post_status,
+		COUNT(*) AS post_count
 		FROM `{$wpdb->posts}`
-		WHERE post_type = 'feedback'
-		GROUP BY post_status";
+		WHERE post_type='feedback'
+		GROUP BY post_status"
+	);
 
-	$status_count = (array) $wpdb->get_results( $sql, ARRAY_A );
+	$status_count = (array) $wpdb->get_results( $query, ARRAY_A );
 	$status = array();
 
 	foreach ( $status_count as $i => $row ) {
