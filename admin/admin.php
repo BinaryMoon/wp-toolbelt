@@ -11,9 +11,9 @@
  * This function gets called for all plugins, so we need to check which plugin
  * is being tested, and only add the settings for the relevant one.
  *
- * @param array  $plugin_actions The current links for the plugin being checked.
- * @param string $plugin_file The filepath for the plugin being checked.
- * @return array
+ * @param array<string> $plugin_actions The current links for the plugin being checked.
+ * @param string        $plugin_file The filepath for the plugin being checked.
+ * @return array<string, mixed>
  */
 function toolbelt_admin_settings_link( array $plugin_actions, $plugin_file ) {
 
@@ -134,8 +134,8 @@ add_action( 'admin_menu', 'toolbelt_admin_menu' );
  *
  * Displays a brief description and a link to the module docs.
  *
- * @param string $slug The module slug.
- * @param array  $module The module parameters.
+ * @param string               $slug The module slug.
+ * @param array<string, mixed> $module The module parameters.
  * @return void
  */
 function toolbelt_field( $slug, array $module ) {
