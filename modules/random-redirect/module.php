@@ -67,7 +67,7 @@ add_action( 'template_redirect', 'toolbelt_random_redirect' );
 /**
  * Get the id of a random post that we can redirect to.
  *
- * @return string
+ * @return string|false
  */
 function toolbelt_random_get_post() {
 

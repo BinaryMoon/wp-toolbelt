@@ -11,6 +11,7 @@
  * @param WP_Widget    $widget The widget instance.
  * @param null         $return Return null if new fields are added.
  * @param array<mixed> $instance The widgets settings.
+ * @return void
  */
 function toolbelt_widget_display_form( $widget, $return, $instance ) {
 

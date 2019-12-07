@@ -123,7 +123,7 @@ function toolbelt_breadcrumb_html( $breadcrumbs ) {
  *
  * This works out if it's a post or taxonomy trail.
  *
- * @return false|array Item 0 = breadcrumb type (taxonomy or post), Item 1 = type of breadcrumb type. Eg, archive or tag.
+ * @return false|array<string> Item 0 = breadcrumb type (taxonomy or post), Item 1 = type of breadcrumb type. Eg, archive or tag.
  */
 function toolbelt_breadcrumb_type() {
 

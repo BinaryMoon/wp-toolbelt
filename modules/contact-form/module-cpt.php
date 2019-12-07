@@ -87,7 +87,7 @@ toolbelt_contact_cpt();
  * @param string       $message The email message.
  * @param bool         $is_spam Is this email spam or not?.
  * @param array<mixed> $fields A list of the fields that have been submitted.
- * @return void
+ * @return void|null
  */
 function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, $fields ) {
 
@@ -105,9 +105,12 @@ function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam
 			'post_title' => addslashes( esc_html( $feedback_title ) ),
 			'post_content' => addslashes( wp_kses_post( $message ) ),
 			'post_parent' => (int) toolbelt_contact_get_field( $fields, 'toolbelt-post-id', null ),
-			'post_name' => $feedback_id,
 		)
 	);
+
+	if ( is_wp_error( $post_id ) ) {
+		return;
+	}
 
 	update_post_meta( $post_id, TOOLBELT_CONTACT_POST_META, $fields );
 
@@ -181,7 +184,9 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 
 			if ( isset( $post->post_parent ) && $post->post_parent > 0 ) {
 				$form_url = get_permalink( $post->post_parent );
-				echo '<a href="' . esc_url( $form_url ) . '">' . esc_html( $form_url ) . '</a>';
+				if ( $form_url ) {
+					echo '<a href="' . esc_url( $form_url ) . '">' . esc_html( $form_url ) . '</a>';
+				}
 			}
 
 			break;
@@ -244,7 +249,7 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 				esc_html( get_option( 'time_format' ) )
 			);
 
-			echo esc_html( date_i18n( $date_time_format, get_the_time( 'U' ) ) );
+			echo esc_html( date_i18n( $date_time_format, (int) get_the_time( 'U' ) ) );
 
 			break;
 
