@@ -20,7 +20,7 @@ function toolbelt_random_redirect() {
 	 * We don't need a nonce here. We're only checking for the existance of a
 	 * value, and not actually doing anything with the info.
 	 */
-	if ( ! isset( $_GET['random'] ) ) {
+	if ( null === filter_input( INPUT_GET, 'random' ) ) {
 		return;
 	}
 
