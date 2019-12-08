@@ -240,7 +240,7 @@ add_filter(
  * Adjust image column width.
  *
  * @param string $hook The id for the current page.
- * @return null
+ * @return void
  */
 function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 

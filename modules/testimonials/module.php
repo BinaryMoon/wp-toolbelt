@@ -22,7 +22,7 @@ define( 'TOOLBELT_TESTIMONIALS_CUSTOM_POST_TYPE', 'toolbelt-testimonial' );
 /**
  * Register Portfolio post type and associated taxonomies.
  *
- * @return null
+ * @return void
  */
 function toolbelt_testimonials_register_post_type() {
 

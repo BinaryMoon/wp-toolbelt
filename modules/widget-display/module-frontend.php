@@ -73,7 +73,7 @@ add_action( 'customize_preview_init', 'toolbelt_widget_display_customizer' );
  * current page.
  *
  * @param array<mixed> $widget The widget properties.
- * @return void|null
+ * @return void
  */
 function toolbelt_widget_display_dynamic_sidebar( $widget ) {
 

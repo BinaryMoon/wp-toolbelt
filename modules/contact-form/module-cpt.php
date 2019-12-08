@@ -87,7 +87,7 @@ toolbelt_contact_cpt();
  * @param string       $message The email message.
  * @param bool         $is_spam Is this email spam or not?.
  * @param array<mixed> $fields A list of the fields that have been submitted.
- * @return void|null
+ * @return void
  */
 function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, $fields ) {
 
