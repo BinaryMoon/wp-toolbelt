@@ -194,47 +194,7 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 
 		case 'feedback_message':
 
-			the_excerpt( $post );
-
-			// Message actions.
-
-			$links = array();
-
-			switch ( $post->post_status ) {
-
-				case 'trash':
-
-					break;
-
-				case 'draft':
-				case 'publish':
-
-					$links[] = sprintf(
-						'<span class="spam feedback-spam"><a data-id="%1$d" title="%2$s" href="%3$s">%4$s</a></span>',
-						(int) $post_id,
-						esc_html__( 'Mark this message as spam', 'wp-toolbelt' ),
-						wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post_id . '&amp;action=spam' ), 'spam-feedback_' . $post_id ),
-						esc_html__( 'Spam', 'wp-toolbelt' )
-					);
-
-					break;
-
-				case 'spam':
-
-					$links[] = sprintf(
-						'<span class="unspam unapprove feedback-ham"><a data-id="%1$d" title="%2$s" href="">%3$s</a></span>',
-						(int) $post_id,
-						esc_html__( 'Mark this message as NOT spam', 'wp-toolbelt' ),
-						esc_html__( 'Not Spam', 'wp-toolbelt' )
-					);
-
-					break;
-
-			}
-
-			if ( $links ) {
-				echo '<div class="row-actions">' . implode( ' | ', $links ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
+			the_content( $post );
 
 			break;
 
@@ -259,6 +219,63 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 }
 
 add_action( 'manage_posts_custom_column', 'toolbelt_contact_manage_post_columns', 10, 2 );
+
+
+/**
+ * Add feedback manipulation links to posts.
+ *
+ * Allows users to easily spam and unspam posts.
+ *
+ * @param array<string> $actions List of actions.
+ * @param WP_POST       $post Post info.
+ * @return array<string>
+ */
+function toolbelt_contact_row_actions( $actions, $post ) {
+
+	// Only add the spam option to the feedback post type.
+	if ( 'feedback' !== $post->post_type ) {
+		return $actions;
+	}
+
+	switch ( $post->post_status ) {
+
+		case 'trash':
+
+			break;
+
+		case 'draft':
+		case 'publish':
+
+			// Mark as spam.
+			$actions[] = sprintf(
+				'<span class="spam feedback-spam"><a data-id="%1$d" title="%2$s" href="%3$s">%4$s</a></span>',
+				(int) $post->ID,
+				esc_html__( 'Mark this message as spam', 'wp-toolbelt' ),
+				wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post_id . '&amp;action=spam' ), 'spam-feedback_' . $post_id ),
+				esc_html__( 'Spam', 'wp-toolbelt' )
+			);
+
+			break;
+
+		case 'spam':
+
+			// Mark as NOT spam.
+			$actions[] = sprintf(
+				'<span class="unspam unapprove feedback-ham"><a data-id="%1$d" title="%2$s" href="">%3$s</a></span>',
+				(int) $post->ID,
+				esc_html__( 'Mark this message as NOT spam', 'wp-toolbelt' ),
+				esc_html__( 'Not Spam', 'wp-toolbelt' )
+			);
+
+			break;
+
+	}
+
+	return $actions;
+
+}
+
+add_filter( 'post_row_actions', 'toolbelt_contact_row_actions', 10, 2 );
 
 
 /**
