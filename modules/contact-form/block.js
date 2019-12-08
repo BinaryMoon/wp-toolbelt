@@ -384,6 +384,14 @@
       edit: editField('text')
     })
   }, {
+    name: 'field-subject',
+    settings: Object.assign({}, FieldDefaults, {
+      title: __('Subject', 'wp-toolbelt'),
+      description: __('What is the message about?', 'wp-toolbelt'),
+      icon: 'email',
+      edit: editField('text')
+    })
+  }, {
     name: 'field-email',
     settings: Object.assign({}, FieldDefaults, {
       title: __('Email', 'wp-toolbelt'),

@@ -53,187 +53,207 @@ msgstr ""
 msgid "Create a contact form."
 msgstr ""
 
-#: index.php:123
-msgid "Cookie Banner"
+#: index.php:121
+msgid "1.2kb of inline CSS, and 12kb of inline JS."
 msgstr ""
 
 #: index.php:124
+msgid "Cookie Banner"
+msgstr ""
+
+#: index.php:125
 msgid "Display a simple banner with a link to your Privacy Policy."
 msgstr ""
 
-#: index.php:126
+#: index.php:128
 msgid "1.2kb of inline JS and CSS."
 msgstr ""
 
-#: index.php:129
+#: index.php:131
 msgid "Disable the Comment URL Field"
 msgstr ""
 
-#: index.php:130
+#: index.php:132
 msgid "Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
-#: index.php:135
+#: index.php:137
 msgid "Fast 404s"
 msgstr ""
 
-#: index.php:136
+#: index.php:138
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:140
+#: index.php:142
 msgid "Featured Attachment"
 msgstr ""
 
-#: index.php:141
+#: index.php:143
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:145
-msgid "Heading Anchors"
+#: index.php:147
+msgid "Gist Embed Block"
 msgstr ""
 
-#: index.php:146
-msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
-msgstr ""
-
-#: index.php:148, index.php:194
-msgid "0.2kb of inline CSS."
-msgstr ""
-
-#: index.php:151
-msgid "Infinite Scroll"
+#: index.php:148
+msgid "Easily embed Github Gists onto your site."
 msgstr ""
 
 #: index.php:152
-msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
+msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:154
-msgid "0.8kb of inline CSS and 1.3kb of inline JS."
+#: index.php:153
+msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:157
-msgid "Lazy Load images"
+#: index.php:155, index.php:201
+msgid "0.2kb of inline CSS."
 msgstr ""
 
 #: index.php:158
+msgid "Infinite Scroll"
+msgstr ""
+
+#: index.php:159
+msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
+msgstr ""
+
+#: index.php:161
+msgid "0.8kb of inline CSS and 1.3kb of inline JS."
+msgstr ""
+
+#: index.php:164
+msgid "Lazy Load images"
+msgstr ""
+
+#: index.php:165
 msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
-#: index.php:162
+#: index.php:169
 msgid "Markdown"
 msgstr ""
 
-#: index.php:163
+#: index.php:170
 msgid "Render Markdown. Uses Github flavor Markdown."
 msgstr ""
 
-#: index.php:167
+#: index.php:174
 msgid "Web Monetization"
 msgstr ""
 
-#: index.php:168
+#: index.php:175
 msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
-#: index.php:173, modules/projects/module.php:37
+#: index.php:180, modules/projects/module.php:37
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:174
-msgid "A portfolio custom post type."
+#: index.php:181
+msgid "A portfolio custom post type for your projects."
 msgstr ""
 
-#: index.php:179
+#: index.php:186
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:180
+#: index.php:187
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:184, modules/related-posts/module.php:118, modules/related-posts/tools.php:17
+#: index.php:191, modules/related-posts/module.php:118, modules/related-posts/tools.php:17
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:185
+#: index.php:192
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:187
+#: index.php:194
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:191
+#: index.php:198
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:192
+#: index.php:199
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:197, modules/social-menu/module.php:14, modules/social-menu/module.php:31
+#: index.php:204, modules/social-menu/module.php:14, modules/social-menu/module.php:31
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:198
+#: index.php:205
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:200
+#: index.php:207
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:203
+#: index.php:210
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:204
+#: index.php:211
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:206
+#: index.php:213
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:209
+#: index.php:216
 msgid "Spam Blocker"
 msgstr ""
 
-#: index.php:210
+#: index.php:217
 msgid "Attempt to block spam."
 msgstr ""
 
-#: index.php:212
+#: index.php:219
 msgid "0.3kb of inline JS"
 msgstr ""
 
-#: index.php:216, modules/stats/settings.php:38
+#: index.php:223, modules/stats/settings.php:38
 msgid "Stats"
 msgstr ""
 
-#: index.php:217
+#: index.php:224
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:222, modules/testimonials/module.php:42
+#: index.php:229, modules/testimonials/module.php:42
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:223
+#: index.php:230
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:225
+#: index.php:232
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:229
+#: index.php:236
+msgid "Typographic Widows"
+msgstr ""
+
+#: index.php:237
+msgid "Fix typographic widows in titles and headings."
+msgstr ""
+
+#: index.php:241
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:230
+#: index.php:242
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -249,7 +269,7 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
-#: admin/admin.php:33, admin/admin.php:103, admin/admin.php:173
+#: admin/admin.php:33, admin/admin.php:103, admin/admin.php:180
 msgid "Settings"
 msgstr ""
 
@@ -274,43 +294,43 @@ msgstr ""
 msgid "Toolbelt Processes"
 msgstr ""
 
-#: admin/admin.php:162
+#: admin/admin.php:158, admin/screen-modules.php:80
+msgid "Module"
+msgstr ""
+
+#: admin/admin.php:164
 msgid "Experimental"
 msgstr ""
 
-#: admin/admin.php:166
-msgid "Show more details"
+#: admin/admin.php:173
+msgid "Full GDPR support requires developer integration. See documentation for more details."
 msgstr ""
 
-#: admin/admin.php:168, admin/screen-modules.php:83
-msgid "Description"
-msgstr ""
-
-#: admin/admin.php:171
+#: admin/admin.php:178
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:176
+#: admin/admin.php:183
 msgid "Tools"
 msgstr ""
 
-#: admin/admin.php:180, admin/screen-modules.php:86
+#: admin/admin.php:189, admin/screen-modules.php:83
 msgid "Page Impact"
 msgstr ""
 
-#: admin/admin.php:304
+#: admin/admin.php:313
 msgid "Settings Saved"
 msgstr ""
 
-#: admin/admin.php:330
+#: admin/admin.php:339
 msgid "Toolbelt settings saved."
 msgstr ""
 
-#: admin/admin.php:345
+#: admin/admin.php:354
 msgid "Success"
 msgstr ""
 
-#: admin/admin.php:346
+#: admin/admin.php:355
 msgid "Error"
 msgstr ""
 
@@ -322,12 +342,8 @@ msgstr ""
 msgid "Search for Modules..."
 msgstr ""
 
-#: admin/screen-modules.php:71, admin/screen-modules.php:106
+#: admin/screen-modules.php:71, admin/screen-modules.php:103
 msgid "Save Modules"
-msgstr ""
-
-#: admin/screen-modules.php:80
-msgid "Module"
 msgstr ""
 
 #: admin/screen-settings.php:28
@@ -338,135 +354,196 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:150
-msgid "Select several"
+#: modules/contact-form/module-ajax.php:84
+msgid "All"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:222
-msgid "Select one"
+#: modules/contact-form/module-ajax.php:92
+msgid "Published"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:276, modules/contact-form/module-fields.php:307
-msgid "Optional"
+#: modules/contact-form/module-ajax.php:105
+msgid "Trash"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:361, modules/contact-form/module.php:473
-msgid "Submit"
+#: modules/contact-form/module-ajax.php:118, modules/contact-form/module-cpt.php:64, modules/contact-form/module-cpt.php:207
+msgid "Spam"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:395
-msgid "Message Sent"
+#: modules/contact-form/module-cpt.php:20, modules/contact-form/module-cpt.php:21
+msgid "Feedback"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:429
-msgid "This field is required."
+#: modules/contact-form/module-cpt.php:22
+msgid "Search Feedback"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:430, modules/contact-form/module-fields.php:431
-msgid "Please select a value."
+#: modules/contact-form/module-cpt.php:23, modules/contact-form/module-cpt.php:24
+msgid "No feedback found"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:432
-msgid "Please select at least one value."
+#. translators: %s = The post count.
+#: modules/contact-form/module-cpt.php:69
+msgid "Spam <span class=\"count\">(%s)</span>"
+msgid_plural "Spam <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/contact-form/module-cpt.php:124
+msgid "From"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:433
-msgid "Please fill out this field."
-msgstr ""
-
-#: modules/contact-form/module-fields.php:436
-msgid "Please enter a valid email address."
-msgstr ""
-
-#: modules/contact-form/module-fields.php:437
-msgid "Please enter a URL."
-msgstr ""
-
-#: modules/contact-form/module-fields.php:438
-msgid "Please enter a number"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:439
-msgid "Please match the following format: #rrggbb"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:440
-msgid "Please use the YYYY-MM-DD format"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:441
-msgid "Please use the 24-hour time format. Ex. 23:00"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:442
-msgid "Please use the YYYY-MM format"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:443
-msgid "Please match the requested format."
-msgstr ""
-
-#: modules/contact-form/module-fields.php:446
-msgid "Please select a value that is no more than {max}."
-msgstr ""
-
-#: modules/contact-form/module-fields.php:447
-msgid "Please select a value that is no less than {min}."
-msgstr ""
-
-#: modules/contact-form/module-fields.php:450
-msgid "Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters."
-msgstr ""
-
-#: modules/contact-form/module-fields.php:451
-msgid "Please lengthen this text to {minLength} characters or more. You are currently using {length} characters."
-msgstr ""
-
-#: modules/contact-form/module-fields.php:479
-msgid "Text"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:482
-msgid "Name"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:486
-msgid "Email"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:491
-msgid "Website"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:496
-msgid "Date"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:500
-msgid "Phone Number"
-msgstr ""
-
-#: modules/contact-form/module-fields.php:504, modules/contact-form/module-fields.php:617
+#: modules/contact-form/module-cpt.php:125, modules/contact-form/module-fields.php:510, modules/contact-form/module-fields.php:636
 msgid "Message"
 msgstr ""
 
-#: modules/contact-form/module.php:190
+#: modules/contact-form/module-cpt.php:126, modules/contact-form/module-fields.php:502
+msgid "Date"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:205
+msgid "Mark this message as spam"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:217
+msgid "Mark this message as NOT spam"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:218
+msgid "Not Spam"
+msgstr ""
+
+#. translators: %1$s = date, %2$s = time.
+#: modules/contact-form/module-cpt.php:238
+msgctxt "{$date_format} \a\t {$time_format}"
+msgid "%1$s \a\t %2$s"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:148
+msgid "Select several"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:220
+msgid "Select one"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:274, modules/contact-form/module-fields.php:305
+msgid "Optional"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:359, modules/contact-form/module.php:524
+msgid "Submit"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:393
+msgid "Message Sent"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:431
+msgid "This field is required."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:432, modules/contact-form/module-fields.php:433
+msgid "Please select a value."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:434
+msgid "Please select at least one value."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:435
+msgid "Please fill out this field."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:438
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:439
+msgid "Please enter a URL."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:440
+msgid "Please enter a number"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:441
+msgid "Please match the following format: #rrggbb"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:442
+msgid "Please use the YYYY-MM-DD format"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:443
+msgid "Please use the 24-hour time format. Ex. 23:00"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:444
+msgid "Please use the YYYY-MM format"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:445
+msgid "Please match the requested format."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:448
+msgid "Please select a value that is no more than {max}."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:449
+msgid "Please select a value that is no less than {min}."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:452
+msgid "Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:453
+msgid "Please lengthen this text to {minLength} characters or more. You are currently using {length} characters."
+msgstr ""
+
+#: modules/contact-form/module-fields.php:481
+msgid "Text"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:484
+msgid "Name"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:488
+msgid "Subject"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:492
+msgid "Email"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:497
+msgid "Website"
+msgstr ""
+
+#: modules/contact-form/module-fields.php:506
+msgid "Phone Number"
+msgstr ""
+
+#: modules/contact-form/module.php:211
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module.php:593, modules/contact-form/module.php:615
+#: modules/contact-form/module.php:653, modules/contact-form/module.php:675
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:595, modules/contact-form/module.php:615
+#: modules/contact-form/module.php:655, modules/contact-form/module.php:675
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:644
+#: modules/contact-form/module.php:704
 msgid "No value supplied"
 msgstr ""
 
-#. translators: %s = privacy policy link
+#. translators: %s = privacy policy link.
 #: modules/cookie-banner/module.php:53
 msgid "By using this website, you agree to our %s"
 msgstr ""

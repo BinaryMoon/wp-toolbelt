@@ -8,6 +8,8 @@
 
 /**
  * Display the Plausible tracking code.
+ *
+ * @return void
  */
 function toolbelt_stats_plausible() {
 
@@ -47,8 +49,9 @@ add_action( 'wp_footer', 'toolbelt_stats_plausible' );
 /**
  * Output prefetch info for Plausible.
  *
- * @param array  $urls          URLs to print for resource hints.
- * @param string $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
+ * @param array<string> $urls          URLs to print for resource hints.
+ * @param string        $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
+ * @return array<string>
  */
 function toolbelt_stats_plausible_resource_hints( $urls, $relation_type ) {
 

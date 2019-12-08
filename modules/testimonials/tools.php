@@ -7,6 +7,8 @@
 
 /**
  * Display the Testimonial tool forms.
+ *
+ * @return void
  */
 function toolbelt_testimonials_tools() {
 

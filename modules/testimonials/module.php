@@ -14,11 +14,15 @@
  *
  * I wanted to use `toolbelt-testimonials` but it was 1 character too long and
  * stopped the entire thing from displaying. I learn something new every day!
+ *
+ * @return void
  */
 define( 'TOOLBELT_TESTIMONIALS_CUSTOM_POST_TYPE', 'toolbelt-testimonial' );
 
 /**
  * Register Portfolio post type and associated taxonomies.
+ *
+ * @return void
  */
 function toolbelt_testimonials_register_post_type() {
 
@@ -88,8 +92,8 @@ add_action( 'init', 'toolbelt_testimonials_register_post_type', 11 );
 /**
  * Add the testimonial post type to the related post types.
  *
- * @param array $types The current list of post types.
- * @return array
+ * @param array<string> $types The current list of post types.
+ * @return array<string>
  */
 function toolbelt_testimonials_social_sharing_post_types( $types ) {
 
@@ -105,8 +109,8 @@ add_filter( 'toolbelt_social_sharing_post_types', 'toolbelt_testimonials_social_
  * Change ‘Title’ column label.
  * Add Featured Image column.
  *
- * @param array $columns A list of all the current columns.
- * @return array
+ * @param array<string> $columns A list of all the current columns.
+ * @return array<string>
  */
 function toolbelt_testimonials_edit_admin_columns( $columns ) {
 
@@ -148,7 +152,7 @@ add_filter( 'enter_title_here', 'toolbelt_testimonials_change_title' );
 /**
  * Generate the testimonials shortcode.
  *
- * @param array $attrs Shortcode attributes.
+ * @param array<string|int> $attrs Shortcode attributes.
  * @return string
  */
 function toolbelt_testimonials_shortcode( $attrs ) {
@@ -307,6 +311,8 @@ add_filter( 'toolbelt_testimonial_content', 'shortcode_unautop' );
 /**
  * Include the Testimonials styles if the current post uses the testimonials
  * shortcode.
+ *
+ * @return void
  */
 function toolbelt_testimonials_styles() {
 
@@ -329,6 +335,8 @@ add_action( 'wp_print_styles', 'toolbelt_testimonials_styles' );
 /**
  * Include the Testimonials styles if the current post uses the testimonials
  * shortcode.
+ *
+ * @return void
  */
 function toolbelt_testimonials_editor_styles() {
 
@@ -342,6 +350,8 @@ add_action( 'admin_head', 'toolbelt_testimonials_editor_styles' );
 
 /**
  * Register a Testimonials block.
+ *
+ * @return void
  */
 function toolbelt_testimonials_register_block() {
 

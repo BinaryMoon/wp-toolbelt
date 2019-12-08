@@ -6,7 +6,7 @@ php:
 
 install:
   - |
-    composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer phpstan/phpstan-shim szepeviktor/phpstan-wordpress
+    composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer szepeviktor/phpstan-wordpress
 
 script:
   - vendor/bin/parallel-lint modules/ admin/ index.php

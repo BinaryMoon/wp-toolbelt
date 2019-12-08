@@ -9,6 +9,8 @@
  * Randomly redirect to a blog post.
  *
  * If the post url has ?random on it.
+ *
+ * @return void|null
  */
 function toolbelt_random_redirect() {
 
@@ -18,7 +20,7 @@ function toolbelt_random_redirect() {
 	 * We don't need a nonce here. We're only checking for the existance of a
 	 * value, and not actually doing anything with the info.
 	 */
-	if ( ! isset( $_GET['random'] ) ) {
+	if ( null === filter_input( INPUT_GET, 'random' ) ) {
 		return;
 	}
 
@@ -64,6 +66,8 @@ add_action( 'template_redirect', 'toolbelt_random_redirect' );
 
 /**
  * Get the id of a random post that we can redirect to.
+ *
+ * @return string|false
  */
 function toolbelt_random_get_post() {
 

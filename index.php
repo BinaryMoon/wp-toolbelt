@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 2.4.0
+ * Version: 2.5.0
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '2.4.0' );
+define( 'TOOLBELT_VERSION', '2.5.0' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TOOLBELT_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
@@ -29,6 +29,8 @@ if ( ! defined( 'TOOLBELT_DISABLE_ADMIN' ) && is_admin() ) {
 
 /**
  * Load the enabled modules.
+ *
+ * @return void
  */
 function toolbelt_load_modules() {
 
@@ -52,8 +54,8 @@ toolbelt_load_modules();
 /**
  * Load the module and associated admin functionality.
  *
- * @param string $slug The module slug. Used as the file path.
- * @param array  $module The module properties.
+ * @param string        $slug The module slug. Used as the file path.
+ * @param array<string> $module The module properties.
  * @return void
  */
 function toolbelt_load_module( $slug, $module ) {
@@ -92,6 +94,8 @@ function toolbelt_load_module( $slug, $module ) {
 
 /**
  * Get the list of available Toolbelt modules.
+ *
+ * @return array<mixed>
  */
 function toolbelt_get_modules() {
 
@@ -118,11 +122,13 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Create a contact form.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form',
 			'supports' => array( 'experimental' ),
+			'weight' => esc_html__( '1.2kb of inline CSS, and 12kb of inline JS.', 'wp-toolbelt' ),
 		),
 		'cookie-banner' => array(
 			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display a simple banner with a link to your Privacy Policy.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner',
+			'supports' => array( 'gdpr-hard-mode' ),
 			'weight' => esc_html__( '1.2kb of inline JS and CSS.', 'wp-toolbelt' ),
 		),
 		'disable-comment-urls' => array(
@@ -140,6 +146,11 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Featured Attachment', 'wp-toolbelt' ),
 			'description' => esc_html__( 'If there is no featured image for a post then use the first image attachment instead.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment',
+		),
+		'gist' => array(
+			'name' => esc_html__( 'Gist Embed Block', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Easily embed Github Gists onto your site.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Gist',
 		),
 		'heading-anchors' => array(
 			'name' => esc_html__( 'Heading Anchors', 'wp-toolbelt' ),
@@ -171,7 +182,7 @@ function toolbelt_get_modules() {
 		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
-			'description' => esc_html__( 'A portfolio custom post type.', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio',
 			'supports' => array( 'tools' ),
 		),
@@ -225,6 +236,11 @@ function toolbelt_get_modules() {
 			'weight' => esc_html__( '0.5kb of inline CSS.', 'wp-toolbelt' ),
 			'supports' => array( 'tools' ),
 		),
+		'widows' => array(
+			'name' => esc_html__( 'Typographic Widows', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Fix typographic widows in titles and headings.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Typographic-Widows',
+		),
 		'widget-display' => array(
 			'name' => esc_html__( 'Widget Display', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Control which pages widgets appear on.', 'wp-toolbelt' ),
@@ -239,6 +255,8 @@ function toolbelt_get_modules() {
  * Output custom css properties that are used by the plugin css.
  *
  * This can be used by themes to make the spacings match those used.
+ *
+ * @return void
  */
 function toolbelt_css_properties() {
 
@@ -272,6 +290,7 @@ add_filter( 'admin_head', 'toolbelt_css_properties' );
  *
  * @param string $module The module slug.
  * @param string $name The folder name for the style to include.
+ * @return void
  */
 function toolbelt_styles( $module, $name = 'style' ) {
 
@@ -302,6 +321,7 @@ function toolbelt_styles( $module, $name = 'style' ) {
  * Load the block editor styles.
  *
  * @param string $module The module to load.
+ * @return void|null
  */
 function toolbelt_styles_editor( $module ) {
 
@@ -320,6 +340,7 @@ function toolbelt_styles_editor( $module ) {
  * Inline the module css.
  *
  * @param string $module The module slug.
+ * @return void|null
  */
 function toolbelt_global_styles( $module ) {
 
@@ -350,6 +371,7 @@ function toolbelt_global_styles( $module ) {
  * Inline the module script.
  *
  * @param string $module The module slug.
+ * @return void|null
  */
 function toolbelt_scripts( $module ) {
 
@@ -371,6 +393,7 @@ function toolbelt_scripts( $module ) {
  * Inline the module script.
  *
  * @param string $script The module slug.
+ * @return void|null
  */
 function toolbelt_global_script( $script ) {
 
@@ -390,6 +413,8 @@ function toolbelt_global_script( $script ) {
 
 /**
  * Load the toolbelt options.
+ *
+ * @return string
  */
 function toolbelt_get_options() {
 
@@ -430,9 +455,9 @@ function toolbelt_plugins_url( $path ) {
 /**
  * Add a block category for Toolbelt.
  *
- * @param array  $categories The current list of categories.
- * @param string $post The post type for the current page.
- * @return array
+ * @param array<mixed> $categories The current list of categories.
+ * @param string       $post The post type for the current page.
+ * @return array<mixed>
  */
 function toolbelt_block_category( $categories, $post ) {
 
@@ -453,6 +478,8 @@ function toolbelt_block_category( $categories, $post ) {
  * Register block categories.
  *
  * Call this directly from modules. It will only add the filter once.
+ *
+ * @return void
  */
 function toolbelt_register_block_category() {
 

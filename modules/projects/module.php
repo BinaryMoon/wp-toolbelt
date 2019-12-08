@@ -14,6 +14,8 @@ define( 'TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TAG', 'toolbelt-portfolio-tag' );
 
 /**
  * Register Portfolio post type and associated taxonomies.
+ *
+ * @return void
  */
 function toolbelt_portfolio_register_post_types() {
 
@@ -151,8 +153,8 @@ add_action( 'init', 'toolbelt_portfolio_register_post_types', 11 );
 /**
  * Add the portfolio post type to the related post types.
  *
- * @param array $types The current list of post types.
- * @return array
+ * @param array<string> $types The current list of post types.
+ * @return array<string>
  */
 function toolbelt_portfolio_related_posts_type( $types ) {
 
@@ -167,8 +169,8 @@ add_filter( 'toolbelt_related_post_types', 'toolbelt_portfolio_related_posts_typ
 /**
  * Add the portfolio post type to the related post types.
  *
- * @param array $types The current list of post types.
- * @return array
+ * @param array<string> $types The current list of post types.
+ * @return array<string>
  */
 function toolbelt_portfolio_social_sharing_post_types( $types ) {
 
@@ -184,8 +186,8 @@ add_filter( 'toolbelt_social_sharing_post_types', 'toolbelt_portfolio_social_sha
  * Change ‘Title’ column label.
  * Add Featured Image column.
  *
- * @param array $columns A list of all the current columns.
- * @return array
+ * @param array<string> $columns A list of all the current columns.
+ * @return array<string>
  */
 function toolbelt_portfolio_edit_admin_columns( $columns ) {
 
@@ -214,6 +216,7 @@ add_filter(
  *
  * @param string $column The name of the coloumn being checked.
  * @param int    $post_id The id of the post for the current row.
+ * @return void
  */
 function toolbelt_portfolio_image_column( $column, $post_id ) {
 
@@ -237,6 +240,7 @@ add_filter(
  * Adjust image column width.
  *
  * @param string $hook The id for the current page.
+ * @return void
  */
 function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 
@@ -270,7 +274,7 @@ add_action( 'admin_enqueue_scripts', 'toolbelt_portfolio_enqueue_admin_styles' )
 /**
  * Generate the portfolio shortcode.
  *
- * @param array $attrs Shortcode attributes.
+ * @param array<string|int> $attrs Shortcode attributes.
  * @return string
  */
 function toolbelt_portfolio_shortcode( $attrs ) {
@@ -282,6 +286,7 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 			'orderby' => 'date',
 			'categories' => array(),
 			'align' => '',
+			'showExcerpt' => true,
 		),
 		$attrs,
 		'portfolio'
@@ -340,6 +345,11 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 	}
 
 	/**
+	 * Excerpt.
+	 */
+	$show_excerpt = (bool) $attrs['showExcerpt'];
+
+	/**
 	 * The number of portfolio to load.
 	 *
 	 * Rather than use a count attribute I'm calculating the number of
@@ -351,7 +361,7 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 		'<div class="wp-block-toolbelt-portfolio toolbelt-portfolio toolbelt-cols-%1$d %2$s">%3$s</div>',
 		(int) $columns,
 		esc_attr( $align ),
-		toolbelt_portfolio_get_html( $count, $order_by, $categories )
+		toolbelt_portfolio_get_html( $count, $order_by, $categories, $show_excerpt )
 	);
 
 }
@@ -368,12 +378,13 @@ if ( ! shortcode_exists( 'portfolio' ) ) {
 /**
  * Generate the html for the portfolios.
  *
- * @param int    $count The number of portfolios to try to load.
- * @param string $order_by The order method.
- * @param array  $categories The categories to filter by.
+ * @param int          $count The number of portfolios to try to load.
+ * @param string       $order_by The order method.
+ * @param array<mixed> $categories The categories to filter by.
+ * @param bool         $show_excerpt Display or hide the excerpt.
  * @return string
  */
-function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categories = array() ) {
+function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categories = array(), $show_excerpt = true ) {
 
 	/**
 	 * Make sure something is loaded.
@@ -388,7 +399,7 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 	$html = '<div class="toolbelt-project">
 	<a href="%2$s" class="thumbnail">%1$s</a>
 	<h2 class="toolbelt-skip-anchor"><a href="%2$s">%3$s</a></h2>
-	<div class="toolbelt-entry">%4$s</div>
+	%4$s
 	</div>';
 
 	$properties = array(
@@ -416,7 +427,24 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 
 			$projects->the_post();
 
-			$excerpt = apply_filters( 'toolbelt_portfolio_excerpt', trim( get_the_excerpt() ) );
+			/**
+			 * Must reset the excerpt no matter what.
+			 * Otherwise we could end up displaying the wrong excerpt (from the
+			 * previous project), or there could be an undefined variable error.
+			 */
+			$excerpt = '';
+			if ( $show_excerpt ) {
+				$excerpt = apply_filters( 'toolbelt_portfolio_excerpt', trim( get_the_excerpt() ) );
+			}
+
+			/**
+			 * We add the div here instead of in the html template above since
+			 * the excerpt could be hidden and we don't want an empty div on the
+			 * page. That's just wrong.
+			 */
+			if ( ! empty( $excerpt ) ) {
+				$excerpt = '<div class="toolbelt-entry">' . $excerpt . '</div>';
+			}
 
 			// Ensure there's a permalink.
 			$permalink = get_permalink();
@@ -453,6 +481,8 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 
 /**
  * Include the potfolio styles if the current post uses the portfolio shortcode.
+ *
+ * @return void
  */
 function toolbelt_portfolio_styles() {
 
@@ -474,6 +504,8 @@ add_action( 'wp_print_styles', 'toolbelt_portfolio_styles' );
 
 /**
  * Include the Portfolio styles in the editor.
+ *
+ * @return void
  */
 function toolbelt_portfolio_editor_styles() {
 
@@ -487,6 +519,8 @@ add_action( 'admin_head', 'toolbelt_portfolio_editor_styles' );
 
 /**
  * Register a Portfolio block.
+ *
+ * @return void
  */
 function toolbelt_portfolio_register_block() {
 
@@ -552,6 +586,10 @@ function toolbelt_portfolio_register_block() {
 				'categories' => array(
 					'default' => array(),
 					'type' => 'string',
+				),
+				'showExcerpt' => array(
+					'default' => true,
+					'type' => 'boolean',
 				),
 			),
 		)

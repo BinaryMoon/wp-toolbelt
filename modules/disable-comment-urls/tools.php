@@ -7,6 +7,8 @@
 
 /**
  * Display the Disable Comment Url forms.
+ *
+ * @return void
  */
 function toolbelt_comment_url_tools() {
 

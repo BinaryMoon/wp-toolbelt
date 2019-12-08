@@ -1,6 +1,6 @@
 {
 	"name": "Toolbelt",
-	"version": "2.4.0",
+	"version": "2.5.0",
 	"description": "Stuff for WordPress",
 	"main": "index.php",
 	"repository": {
@@ -33,6 +33,7 @@
 		"gulp-download": "^0.0.1",
 		"gulp-filesize": "^0.0.6",
 		"gulp-include": "^2.4.1",
+		"gulp-plumber": "^1.2.1",
 		"gulp-rename": "^1.4.0",
 		"gulp-sass": "^4.0.2",
 		"gulp-sloc": "^1.0.4",

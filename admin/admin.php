@@ -11,10 +11,11 @@
  * This function gets called for all plugins, so we need to check which plugin
  * is being tested, and only add the settings for the relevant one.
  *
- * @param array  $plugin_actions The current links for the plugin being checked.
- * @param string $plugin_file The filepath for the plugin being checked.
+ * @param array<string> $plugin_actions The current links for the plugin being checked.
+ * @param string        $plugin_file The filepath for the plugin being checked.
+ * @return array<string>
  */
-function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
+function toolbelt_admin_settings_link( array $plugin_actions, $plugin_file ) {
 
 	$new_actions = array();
 
@@ -26,7 +27,7 @@ function toolbelt_admin_settings_link( $plugin_actions, $plugin_file ) {
 			esc_url( add_query_arg( array( 'page' => 'toolbelt-modules' ), admin_url( 'admin.php' ) ) )
 		);
 
-		if ( has_action( 'toolbelt_module_settings' ) ) {
+		if ( has_action( 'toolbelt_module_settings_fields' ) ) {
 
 			$new_actions['toolbelt_settings'] = sprintf(
 				'<a href="%2$s">%1$s</a>',
@@ -56,6 +57,8 @@ add_filter( 'plugin_action_links', 'toolbelt_admin_settings_link', 10, 2 );
 
 /**
  * Add a Toolbelt admin menu item.
+ *
+ * @return void
  */
 function toolbelt_admin_menu() {
 
@@ -131,10 +134,11 @@ add_action( 'admin_menu', 'toolbelt_admin_menu' );
  *
  * Displays a brief description and a link to the module docs.
  *
- * @param string $slug The module slug.
- * @param array  $module The module parameters.
+ * @param string               $slug The module slug.
+ * @param array<string, mixed> $module The module parameters.
+ * @return void
  */
-function toolbelt_field( $slug, $module ) {
+function toolbelt_field( $slug, array $module ) {
 
 	$options = get_option( 'toolbelt_options' );
 
@@ -155,18 +159,25 @@ function toolbelt_field( $slug, $module ) {
 				<?php checked( $checked ); ?>
 				type="checkbox" />
 		</th>
-		<td class="column-title column-primary">
-			<label for="<?php echo esc_attr( $slug ); ?>">
-				<strong><?php echo esc_html( $module['name'] ); ?></strong>
-				<?php if ( isset( $module['supports'] ) && in_array( 'experimental', $module['supports'], true ) ) { ?>
-				<em class="experimental"><?php esc_html_e( 'Experimental', 'wp-toolbelt' ); ?></em>
-				<?php } ?>
-			</label>
+		<td class="column-primary" data-colname="<?php esc_attr_e( 'Module', 'wp-toolbelt' ); ?>">
 
-			<button type="button" class="toggle-row"><span class="screen-reader-text"><?php esc_html_e( 'Show more details', 'wp-toolbelt' ); ?></span></button>
-		</td>
-		<td data-colname="<?php esc_attr_e( 'Description', 'wp-toolbelt' ); ?>">
+			<p>
+				<label for="<?php echo esc_attr( $slug ); ?>">
+					<strong><?php echo esc_html( $module['name'] ); ?></strong>
+					<?php if ( isset( $module['supports'] ) && in_array( 'experimental', $module['supports'], true ) ) { ?>
+					<em class="experimental"><?php esc_html_e( 'Experimental', 'wp-toolbelt' ); ?></em>
+					<?php } ?>
+				</label>
+			</p>
+
 			<p><?php echo esc_html( $module['description'] ); ?></p>
+
+<?php
+	if ( isset( $module['supports'] ) && in_array( 'gdpr-hard-mode', $module['supports'], true ) ) {
+		echo '<p class="gdpr-hard-mode">' . esc_html__( 'Full GDPR support requires developer integration. See documentation for more details.', 'wp-toolbelt' ) . '</p>';
+	}
+?>
+
 			<p class="doc-link">
 				<a href="<?php echo esc_url( $module['docs'] ); ?>"><?php esc_html_e( 'Documentation', 'wp-toolbelt' ); ?></a>
 				<?php if ( $checked && isset( $module['supports'] ) && in_array( 'settings', $module['supports'], true ) ) { ?>
@@ -176,7 +187,9 @@ function toolbelt_field( $slug, $module ) {
 				<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'toolbelt-tools' ), admin_url( 'admin.php' ) ) ); ?>"><?php esc_html_e( 'Tools', 'wp-toolbelt' ); ?></a>
 				<?php } ?>
 			</p>
+
 		</td>
+
 		<td class="column-weight" data-colname="<?php esc_attr_e( 'Page Impact', 'wp-toolbelt' ); ?>">
 			<?php echo esc_html( $weight ); ?>
 		</td>
@@ -189,6 +202,8 @@ function toolbelt_field( $slug, $module ) {
 
 /**
  * Display the Toolbelt admin page.
+ *
+ * @return void
  */
 function toolbelt_admin_page() {
 
@@ -201,6 +216,8 @@ function toolbelt_admin_page() {
 
 /**
  * Display the tools page.
+ *
+ * @return void
  */
 function toolbelt_tools_page() {
 
@@ -213,6 +230,8 @@ function toolbelt_tools_page() {
 
 /**
  * Display the tools page.
+ *
+ * @return void
  */
 function toolbelt_settings_page() {
 
@@ -253,6 +272,8 @@ function toolbelt_admin_all_modules_enabled() {
 
 /**
  * Do toolbelt form actions.
+ *
+ * @return void
  */
 function toolbelt_tools_actions() {
 
@@ -276,6 +297,8 @@ function toolbelt_tools_actions() {
 
 /**
  * Save Toolbelt settings.
+ *
+ * @return void
  */
 function toolbelt_save_modules() {
 
@@ -308,6 +331,8 @@ function toolbelt_save_modules() {
 
 /**
  * Save individual module settings.
+ *
+ * @return void
  */
 function toolbelt_save_settings() {
 
@@ -338,6 +363,7 @@ function toolbelt_save_settings() {
  *
  * @param string $message The success message to display. Should be a collection of list items.
  * @param string $type The type of message to display.
+ * @return void
  */
 function toolbelt_tools_message( $message, $type = 'success' ) {
 

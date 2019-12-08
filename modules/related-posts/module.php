@@ -57,6 +57,8 @@ add_filter( 'the_content', 'toolbelt_related_posts' );
 /**
  * Get the related posts content.
  * With html formatting.
+ *
+ * @return string
  */
 function toolbelt_related_posts_get() {
 
@@ -109,7 +111,7 @@ function toolbelt_related_posts_get() {
 /**
  * Get the html for the related posts output.
  *
- * @param array $related_posts A list of the related posts to output.
+ * @param array<mixed> $related_posts A list of the related posts to output.
  * @return string
  */
 function toolbelt_related_posts_html( $related_posts ) {
@@ -141,7 +143,7 @@ function toolbelt_related_posts_html( $related_posts ) {
  *
  * @param string $post_type The post type.
  * @param string $post_taxonomy The post taxonomy name.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 
@@ -252,7 +254,7 @@ function toolbelt_related_posts_get_data( $post_type, $post_taxonomy ) {
 /**
  * Return an array containing information about the current related post.
  *
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_related_posts_add() {
 

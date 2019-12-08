@@ -15,6 +15,8 @@ if ( is_admin() ) {
 
 /**
  * Display monetization meta tag in the site header.
+ *
+ * @return void
  */
 function toolbelt_monetization() {
 

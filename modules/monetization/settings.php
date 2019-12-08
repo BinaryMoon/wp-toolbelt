@@ -7,6 +7,8 @@
 
 /**
  * Display the Web Monetization settings.
+ *
+ * @return void
  */
 function toolbelt_monetization_fields() {
 
@@ -49,8 +51,8 @@ add_action( 'toolbelt_module_settings_fields', 'toolbelt_monetization_fields' );
 /**
  * Filter the monetization settings so that they can be saved.
  *
- * @param array $settings The existing settings.
- * @return array
+ * @param array<string> $settings The existing settings.
+ * @return array<string>
  */
 function toolbelt_monetization_settings( $settings ) {
 

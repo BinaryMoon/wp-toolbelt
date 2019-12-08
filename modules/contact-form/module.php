@@ -9,9 +9,18 @@
  */
 
 /**
+ * Templates
+ * ---
+ * Project Quote Form
+ * Blank Form
+ * Competition form
+ * Feedback form (with star rating)
+ * template inspiration - https://www.typeform.com/templates/
+ * Survey Form
+ *
  * New Field Ideas
  * ---
- * Range
+ * Range slider
  * Number (with min and max values?)
  * Hidden field
  * Star rating
@@ -19,15 +28,19 @@
  *
  * Wishlist
  * ---
+ * Stripe and Paypal support.
  * Add support for extra blocks inside contact form.
  * Drag and drop items in multi field?
  * custom post type to temporarily store contact form messages.
- * wp_cron to periodically delete old contact form messages.
+ * daily wp_cron to delete old contact form messages.
+ * weekly wp_cron to report spam emails.
  * [shorttags] for subject line to add different properties from the form.
  */
 
 /**
  * Register a Contact Form block.
+ *
+ * @return void
  */
 function toolbelt_contact_form_register_block() {
 
@@ -89,6 +102,15 @@ function toolbelt_contact_form_register_block() {
 		array(
 			'parent' => array( 'toolbelt/contact-form' ),
 			'render_callback' => 'toolbelt_contact_field_name',
+		)
+	);
+
+	// Subject.
+	register_block_type(
+		'toolbelt/field-subject',
+		array(
+			'parent' => array( 'toolbelt/contact-form' ),
+			'render_callback' => 'toolbelt_contact_field_subject',
 		)
 	);
 
@@ -178,6 +200,8 @@ function toolbelt_contact_form_register_block() {
 
 /**
  * Submit the form and send an email.
+ *
+ * @return void
  */
 function toolbelt_contact_submit() {
 
@@ -234,6 +258,7 @@ function toolbelt_contact_submit() {
 	 */
 	$message = toolbelt_contact_create_message( $fields );
 	$comment_author = toolbelt_contact_get_field( $fields, 'name' );
+	$subject = toolbelt_contact_get_field( $fields, 'subject', $subject );
 	$from_email_address = toolbelt_contact_get_field( $fields, 'email', get_option( 'admin_email' ) );
 
 	if ( empty( $message ) ) {
@@ -282,14 +307,43 @@ function toolbelt_contact_submit() {
 	);
 
 	/**
+	 * If the post is spam, and the feedback form post type is enabled then we
+	 * won't actually send the spam message. The message can be seen in the
+	 * admin instead.
+	 */
+	$send_email = true;
+
+	/**
+	 * Save the email to the database.
+	 */
+	if ( function_exists( 'toolbelt_contact_save_feedback' ) ) {
+
+		toolbelt_contact_save_feedback(
+			$to,
+			$subject,
+			$message,
+			$is_spam || $is_spam_content,
+			$fields
+		);
+
+		// The email has been saved so let's not send anything.
+		$send_email = false;
+
+	}
+
+	/**
 	 * Actually send the email.
 	 */
-	wp_mail(
-		sanitize_email( $to ),
-		esc_html( $subject ),
-		wp_kses_post( $message ),
-		$headers
-	);
+	if ( $send_email ) {
+
+		wp_mail(
+			sanitize_email( $to ),
+			esc_html( $subject ),
+			wp_kses_post( $message ),
+			$headers
+		);
+
+	}
 
 	wp_safe_redirect( $return_url );
 
@@ -305,7 +359,7 @@ add_action( 'init', 'toolbelt_contact_submit' );
  *
  * @param string $content The post content.
  * @param string $hash The contact form hash.
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_contact_get_blocks( $content, $hash ) {
 
@@ -348,8 +402,8 @@ function toolbelt_contact_get_blocks( $content, $hash ) {
 /**
  * Combine all of the contact form fields from the post blocks.
  *
- * @param array $blocks The list of blocks to check.
- * @return array
+ * @param array<mixed> $blocks The list of blocks to check.
+ * @return array<mixed>
  */
 function toolbelt_contact_get_fields( $blocks ) {
 
@@ -369,9 +423,9 @@ function toolbelt_contact_get_fields( $blocks ) {
 /**
  * Get a specific attribute for the current block.
  *
- * @param array  $blocks The blocks to get the attributes from.
- * @param string $attribute The name of the attribute to search for.
- * @param mixed  $default The default value if none is set in the attribute.
+ * @param array<mixed> $blocks The blocks to get the attributes from.
+ * @param string       $attribute The name of the attribute to search for.
+ * @param mixed        $default The default value if none is set in the attribute.
  * @return mixed
  */
 function toolbelt_contact_get_block_attribute( $blocks, $attribute = '', $default = null ) {
@@ -395,7 +449,7 @@ function toolbelt_contact_get_block_attribute( $blocks, $attribute = '', $defaul
  * Convert an arrazy of fields and values into a text string to send as an email
  * message.
  *
- * @param array $fields The list of fields to search through.
+ * @param array<mixed> $fields The list of fields to search through.
  * @return string
  */
 function toolbelt_contact_create_message( $fields ) {
@@ -422,9 +476,9 @@ function toolbelt_contact_create_message( $fields ) {
 /**
  * Get field value from list of fields.
  *
- * @param array  $fields List of fields to search through.
- * @param string $key Field key to return.
- * @param mixed  $default The default value for the field.
+ * @param array<mixed> $fields List of fields to search through.
+ * @param string       $key Field key to return.
+ * @param mixed        $default The default value for the field.
  * @return mixed
  */
 function toolbelt_contact_get_field( $fields, $key = '', $default = null ) {
@@ -462,7 +516,7 @@ function toolbelt_contact_get_field( $fields, $key = '', $default = null ) {
  * This needs to be repeatable (a pure function) so that we can match form
  * properties between the front and backend.
  *
- * @param array $atts The contact form attributes.
+ * @param array<string|int> $atts The contact form attributes.
  * @return string
  */
 function toolbelt_contact_hash( $atts ) {
@@ -495,8 +549,8 @@ function toolbelt_contact_hash( $atts ) {
  * Parse the contact form fields and generate a list of data I can more easily
  * consume.
  *
- * @param array $blocks List of inner blocks to parse.
- * @return array
+ * @param array<mixed> $blocks List of inner blocks to parse.
+ * @return array<mixed>
  */
 function toolbelt_contact_parse_fields( $blocks ) {
 
@@ -579,7 +633,7 @@ function toolbelt_contact_get_field_name( $label ) {
 /**
  * Sanitize the data input before sending it.
  *
- * @param array $data The data object for the sanitized value.
+ * @param array<mixed> $data The data object for the sanitized value.
  * @return string
  */
 function toolbelt_contact_sanitize( $data ) {
@@ -662,6 +716,8 @@ function toolbelt_contact_sanitize( $data ) {
 /**
  * The post type is registered on init (priority 11) so this needs to be called
  * after since it tries to load the post taxonomies.
+ *
+ * @return void
  */
 add_action( 'init', 'toolbelt_contact_form_register_block', 12 );
 
@@ -670,6 +726,8 @@ toolbelt_register_block_category();
 
 /**
  * Display the contact form styles on the front end.
+ *
+ * @return void
  */
 function toolbelt_contact_form_styles() {
 
@@ -687,6 +745,8 @@ add_action( 'wp_print_styles', 'toolbelt_contact_form_styles' );
 
 /**
  * Display the contact form script on the front end.
+ *
+ * @return void
  */
 function toolbelt_contact_form_script() {
 
@@ -702,3 +762,13 @@ add_action( 'wp_footer', 'toolbelt_contact_form_script' );
 
 
 require 'module-fields.php';
+
+require 'module-cpt.php';
+
+/**
+ * Only include in the admin.
+ * We don't want regular site visitors using this.
+ */
+if ( is_admin() ) {
+	require 'module-ajax.php';
+}

@@ -31,10 +31,11 @@ import {
 	block_markdown,
 	block_testimonials,
 	block_projects,
-	block_contact_form
+	block_contact_form,
+	block_gist
 } from './gulp/script-block';
 
-import update_blacklist from './gulp/blacklist';
+import update_blocklist from './gulp/blocklist';
 
 import compress from './gulp/zip';
 
@@ -50,7 +51,7 @@ import {
  */
 export const buildTranslations = translate;
 export const buildZip = compress;
-export const buildBlacklist = update_blacklist;
+export const buildblocklist = update_blocklist;
 export const buildContact = block_contact_form;
 export const buildStats = parallel( jetpack_stats, toolbelt_stats );
 
@@ -78,8 +79,9 @@ export const build = series(
 		block_projects,
 		block_markdown,
 		block_contact_form,
+		block_gist,
 		translate,
-		update_blacklist
+		update_blocklist
 	),
 	compress
 );
@@ -131,7 +133,8 @@ export const watchFiles = function( done ) {
 				block_testimonials,
 				block_projects,
 				block_markdown,
-				block_contact_form
+				block_contact_form,
+				block_gist
 			)
 		)
 	);
