@@ -9,7 +9,7 @@
  * Add heading anchors to the page/ post content.
  *
  * @param string $content The post content to add the anchors to.
- * @return string
+ * @return string|false
  */
 function toolbelt_heading_anchors( $content ) {
 
