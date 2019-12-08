@@ -6,14 +6,9 @@
  */
 
 /**
- * Display the widget display rules input.
- *
- * @param WP_Widget    $widget The widget instance.
- * @param null         $return Return null if new fields are added.
- * @param array<mixed> $instance The widgets settings.
- * @return void
+ * @param array<string, mixed> $instance  <-- this needs to be here as PHP does not support this in typehints
  */
-function toolbelt_widget_display_form( $widget, $return, $instance ) {
+function toolbelt_widget_display_form( WP_Widget $widget, null $_, array $widget_settings ) : void { // <-- everything in here!
 
 	$rules = '';
 
@@ -29,11 +24,17 @@ function toolbelt_widget_display_form( $widget, $return, $instance ) {
 				<?php esc_html_e( 'Widget display rules:', 'wp-toolbelt' ); ?>
 			</label>
 
-			<textarea
-				class="widefat"
-				name="<?php echo esc_attr( $widget->get_field_name( 'toolbelt_widget_display' ) ); ?>"
-				id="<?php echo esc_attr( $widget->get_field_id( 'toolbelt_widget_display' ) ); ?>"
-				><?php echo esc_textarea( $rules ); ?></textarea>
+			<?php
+	        tag( // <-- What a readable code! No HTML.
+				'textarea',
+				array(
+					'class' => 'widefat',
+				    'name'  => $widget->get_field_name( 'toolbelt_widget_display' ),
+					'id'    => $widget->get_field_id( 'toolbelt_widget_display' ),
+				),
+				esc_textarea( $rules )
+			);
+			?>
 
 			<span class="description"><a href="https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display#rules" target="_blank"><?php esc_html_e( 'How to write display rules.', 'wp-toolbelt' ); ?></a></span>
 
