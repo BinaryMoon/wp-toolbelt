@@ -86,10 +86,11 @@ toolbelt_contact_cpt();
  * @param string       $subject The email subject.
  * @param string       $message The email message.
  * @param bool         $is_spam Is this email spam or not?.
+ * @param int          $post_parent The post that holds the contact form.
  * @param array<mixed> $fields A list of the fields that have been submitted.
  * @return void
  */
-function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, $fields ) {
+function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, $post_parent, $fields ) {
 
 	$feedback_title = $subject;
 
@@ -104,7 +105,7 @@ function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam
 			'post_status' => addslashes( $feedback_status ),
 			'post_title' => addslashes( esc_html( $feedback_title ) ),
 			'post_content' => addslashes( wp_kses_post( $message ) ),
-			'post_parent' => (int) toolbelt_contact_get_field( $fields, 'toolbelt-post-id', null ),
+			'post_parent' => (int) $post_parent,
 		)
 	);
 

@@ -323,6 +323,7 @@ function toolbelt_contact_submit() {
 			$subject,
 			$message,
 			$is_spam || $is_spam_content,
+			$post_id,
 			$fields
 		);
 
