@@ -354,19 +354,19 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:89
+#: modules/contact-form/module-ajax.php:99
 msgid "All"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:97
+#: modules/contact-form/module-ajax.php:107
 msgid "Published"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:110
+#: modules/contact-form/module-ajax.php:120
 msgid "Trash"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:123, modules/contact-form/module-cpt.php:66, modules/contact-form/module-cpt.php:241
+#: modules/contact-form/module-ajax.php:133, modules/contact-form/module-cpt.php:66, modules/contact-form/module-cpt.php:241
 msgid "Spam"
 msgstr ""
 
@@ -401,6 +401,10 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
+#: modules/contact-form/module-cpt.php:201
+msgid "Show All"
+msgstr ""
+
 #: modules/contact-form/module-cpt.php:239
 msgid "Mark this message as spam"
 msgstr ""
@@ -411,14 +415,6 @@ msgstr ""
 
 #: modules/contact-form/module-cpt.php:253
 msgid "Not Spam"
-msgstr ""
-
-#: modules/contact-form/module-cpt.php:286
-msgid "Expand"
-msgstr ""
-
-#: modules/contact-form/module-cpt.php:287
-msgid "Collapse"
 msgstr ""
 
 #: modules/contact-form/module-fields.php:148
