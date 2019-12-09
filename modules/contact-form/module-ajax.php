@@ -12,8 +12,12 @@
  */
 function toolbelt_contact_ajax_spam() {
 
-	toolbelt_contact_feedback_status( 'spam' );
-	echo toolbelt_contact_cpt_post_type_nav(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	$return = array(
+		'id' => (int) toolbelt_contact_feedback_status( 'spam' ),
+		'html' => toolbelt_contact_cpt_post_type_nav()
+	);
+
+	echo wp_json_encode( $return );
 	die();
 
 }
@@ -28,8 +32,12 @@ add_action( 'wp_ajax_toolbelt_ajax_spam', 'toolbelt_contact_ajax_spam' );
  */
 function toolbelt_contact_ajax_ham() {
 
-	toolbelt_contact_feedback_status( 'publish' );
-	echo toolbelt_contact_cpt_post_type_nav(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	$return = array(
+		'id' => (int) toolbelt_contact_feedback_status( 'publish' ),
+		'html' => toolbelt_contact_cpt_post_type_nav()
+	);
+
+	echo wp_json_encode( $return );
 	die();
 
 }
@@ -59,6 +67,8 @@ function toolbelt_contact_feedback_status( $status ) {
 			'post_type' => 'feedback',
 		)
 	);
+
+	return (int) $id;
 
 }
 
