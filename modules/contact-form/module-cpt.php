@@ -198,7 +198,7 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 		echo '<div class="toolbelt-excerpt">';
 		the_content();
 		echo '</div>';
-		echo '<button class="toolbelt-excerpt-expand" style="display: none;">' . esc_html__( 'Show All', 'wp-toolbelt' ) . '</button>';
+		echo '<button class="toolbelt-excerpt-expand button action" style="display: none;">' . esc_html__( 'Show All', 'wp-toolbelt' ) . '</button>';
 
 	}
 
