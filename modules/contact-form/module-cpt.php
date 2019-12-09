@@ -237,7 +237,7 @@ function toolbelt_contact_row_actions( $actions, $post ) {
 				'<span class="spam feedback-spam"><a data-id="%1$d" title="%2$s" href="%3$s">%4$s</a></span>',
 				(int) $post->ID,
 				esc_html__( 'Mark this message as spam', 'wp-toolbelt' ),
-				wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post->id . '&amp;action=spam' ), 'spam-feedback_' . $post->id ),
+				wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post->ID . '&amp;action=spam' ), 'spam-feedback_' . $post->ID ),
 				esc_html__( 'Spam', 'wp-toolbelt' )
 			);
 

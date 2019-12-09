@@ -14,7 +14,7 @@ function toolbelt_contact_ajax_spam() {
 
 	$return = array(
 		'id' => (int) toolbelt_contact_feedback_status( 'spam' ),
-		'html' => toolbelt_contact_cpt_post_type_nav()
+		'html' => toolbelt_contact_cpt_post_type_nav(),
 	);
 
 	echo wp_json_encode( $return );
@@ -34,7 +34,7 @@ function toolbelt_contact_ajax_ham() {
 
 	$return = array(
 		'id' => (int) toolbelt_contact_feedback_status( 'publish' ),
-		'html' => toolbelt_contact_cpt_post_type_nav()
+		'html' => toolbelt_contact_cpt_post_type_nav(),
 	);
 
 	echo wp_json_encode( $return );
@@ -49,7 +49,7 @@ add_action( 'wp_ajax_toolbelt_ajax_ham', 'toolbelt_contact_ajax_ham' );
  * Update the status of a feedback post.
  *
  * @param string $status The status to change the post to.
- * @return void
+ * @return array<int>
  */
 function toolbelt_contact_feedback_status( $status ) {
 
