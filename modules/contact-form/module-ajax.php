@@ -49,7 +49,7 @@ add_action( 'wp_ajax_toolbelt_ajax_ham', 'toolbelt_contact_ajax_ham' );
  * Update the status of a feedback post.
  *
  * @param string $status The status to change the post to.
- * @return array<int>
+ * @return int
  */
 function toolbelt_contact_feedback_status( $status ) {
 

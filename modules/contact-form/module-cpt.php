@@ -213,7 +213,7 @@ add_action( 'manage_posts_custom_column', 'toolbelt_contact_manage_post_columns'
  * Allows users to easily spam and unspam posts.
  *
  * @param array<string> $actions List of actions.
- * @param WP_POST       $post Post info.
+ * @param WP_Post       $post Post info.
  * @return array<string>
  */
 function toolbelt_contact_row_actions( $actions, $post ) {
