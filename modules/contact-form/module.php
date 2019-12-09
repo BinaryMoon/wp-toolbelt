@@ -488,6 +488,10 @@ function toolbelt_contact_get_field( $fields, $key = '', $default = null ) {
 		return '';
 	}
 
+	if ( ! is_array( $fields ) ) {
+		return '';
+	}
+
 	$value = '';
 
 	foreach ( $fields as $field ) {
