@@ -195,10 +195,10 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 	 */
 	if ( 'feedback_message' === $col ) {
 
-		echo '<div class="toolbelt-excerpt">';
+		echo '<div class="toolbelt-excerpt" style="margin-bottom: 4px;">';
 		the_content();
 		echo '</div>';
-		echo '<button class="toolbelt-excerpt-expand button action" style="display: none;">' . esc_html__( 'Show All', 'wp-toolbelt' ) . '</button>';
+		echo '<button class="toolbelt-excerpt-expand button action" style="display: none; margin-bottom: 8px;">' . esc_html__( 'Show All', 'wp-toolbelt' ) . '</button>';
 
 	}
 
