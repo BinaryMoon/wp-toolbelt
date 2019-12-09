@@ -128,9 +128,9 @@ function toolbelt_contact_post_type_columns_filter( $cols ) {
 
 	return array(
 		'cb' => '<input type="checkbox" />',
-		'feedback_from' => esc_html__( 'From', 'wp-toolbelt' ),
 		'feedback_message' => esc_html__( 'Message', 'wp-toolbelt' ),
-		'feedback_date' => esc_html__( 'Date', 'wp-toolbelt' ),
+		'feedback_from' => esc_html__( 'From', 'wp-toolbelt' ),
+		'date' => esc_html__( 'Date', 'wp-toolbelt' ),
 	);
 
 }
@@ -141,6 +141,9 @@ add_action( 'manage_feedback_posts_columns', 'toolbelt_contact_post_type_columns
 /**
  * Output the content of the feedback columns.
  *
+ * This function takes care of the message and the from columns. The date column
+ * is generated automatically by WordPress.
+ *
  * @param string $col The column we are displaying.
  * @param int    $post_id The post id we are displaying.
  * @return void
@@ -150,69 +153,52 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 	global $post;
 
 	/**
-	 * Only call parse_fields_from_content if we're dealing with a Grunion custom column.
+	 * Display the from column.
+	 *
+	 * This is the info about who sent the message.
 	 */
-	if ( ! in_array( $col, array( 'feedback_date', 'feedback_from', 'feedback_message' ), true ) ) {
-		return;
+	if ( 'feedback_from' === $col ) {
+
+		$meta = get_post_meta( $post_id, TOOLBELT_CONTACT_POST_META, true );
+
+		$author_name = toolbelt_contact_get_field( $meta, 'name', '' );
+		$author_email = toolbelt_contact_get_field( $meta, 'email', '' );
+
+		// Display the author name.
+		if ( ! empty( $author_name ) ) {
+			printf(
+				'<strong>%s</strong><br />',
+				esc_html( $author_name )
+			);
+		}
+
+		// Display the author email address.
+		if ( ! empty( $author_email ) ) {
+			printf(
+				'<a href="%1$s" target="_blank">%2$s</a><br />',
+				esc_url( 'mailto:' . $author_email ),
+				esc_html( $author_email )
+			);
+		}
+
+		// Display the page that the contact form was submitted from.
+		if ( isset( $post->post_parent ) && $post->post_parent > 0 ) {
+			$form_url = get_permalink( $post->post_parent );
+			if ( $form_url ) {
+				echo '<a href="' . esc_url( $form_url ) . '">' . esc_html( $form_url ) . '</a>';
+			}
+		}
 	}
 
-	$meta = get_post_meta( $post_id, TOOLBELT_CONTACT_POST_META, true );
+	/**
+	 * Display the message column.
+	 */
+	if ( 'feedback_message' === $col ) {
 
-	switch ( $col ) {
-
-		/**
-		 * The from column.
-		 */
-		case 'feedback_from':
-
-			$author_name = toolbelt_contact_get_field( $meta, 'name', '' );
-			$author_email = toolbelt_contact_get_field( $meta, 'email', '' );
-
-			if ( ! empty( $author_name ) ) {
-				printf(
-					'<strong>%s</strong><br />',
-					esc_html( $author_name )
-				);
-			}
-
-			if ( ! empty( $author_email ) ) {
-				printf(
-					'<a href="%1$s" target="_blank">%2$s</a><br />',
-					esc_url( 'mailto:' . $author_email ),
-					esc_html( $author_email )
-				);
-			}
-
-			if ( isset( $post->post_parent ) && $post->post_parent > 0 ) {
-				$form_url = get_permalink( $post->post_parent );
-				if ( $form_url ) {
-					echo '<a href="' . esc_url( $form_url ) . '">' . esc_html( $form_url ) . '</a>';
-				}
-			}
-
-			break;
-
-		case 'feedback_message':
-
-			the_content( $post );
-
-			break;
-
-		/**
-		 * Contact submission date.
-		 */
-		case 'feedback_date':
-
-			$date_time_format = sprintf(
-				// translators: %1$s = date, %2$s = time.
-				_x( '%1$s \a\t %2$s', '{$date_format} \a\t {$time_format}', 'wp-toolbelt' ),
-				esc_html( get_option( 'date_format' ) ),
-				esc_html( get_option( 'time_format' ) )
-			);
-
-			echo esc_html( date_i18n( $date_time_format, (int) get_the_time( 'U' ) ) );
-
-			break;
+		echo '<div class="toolbelt-excerpt">';
+		the_content();
+		echo '</div>';
+		echo '<button class="toolbelt-excerpt-expand" style="display: none;"></button>';
 
 	}
 
@@ -251,7 +237,7 @@ function toolbelt_contact_row_actions( $actions, $post ) {
 				'<span class="spam feedback-spam"><a data-id="%1$d" title="%2$s" href="%3$s">%4$s</a></span>',
 				(int) $post->ID,
 				esc_html__( 'Mark this message as spam', 'wp-toolbelt' ),
-				wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post_id . '&amp;action=spam' ), 'spam-feedback_' . $post_id ),
+				wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post->id . '&amp;action=spam' ), 'spam-feedback_' . $post->id ),
 				esc_html__( 'Spam', 'wp-toolbelt' )
 			);
 
@@ -292,6 +278,15 @@ function toolbelt_contact_admin_script() {
 	}
 
 	wp_enqueue_script( 'toolbelt-cpt-actions', plugins_url( 'admin.min.js', __FILE__ ), array(), TOOLBELT_VERSION, true );
+
+	wp_localize_script(
+		'toolbelt-cpt-actions',
+		'toolbelt_cpt_actions',
+		array(
+			'expand_button' => esc_html__( 'Expand', 'wp-toolbelt' ),
+			'collapse_button' => esc_html__( 'Collapse', 'wp-toolbelt' ),
+		)
+	);
 
 }
 
