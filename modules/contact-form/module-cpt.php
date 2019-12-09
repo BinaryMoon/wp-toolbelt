@@ -198,7 +198,7 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 		echo '<div class="toolbelt-excerpt">';
 		the_content();
 		echo '</div>';
-		echo '<button class="toolbelt-excerpt-expand" style="display: none;"></button>';
+		echo '<button class="toolbelt-excerpt-expand" style="display: none;">' . esc_html__( 'Show All', 'wp-toolbelt' ) . '</button>';
 
 	}
 
@@ -278,15 +278,6 @@ function toolbelt_contact_admin_script() {
 	}
 
 	wp_enqueue_script( 'toolbelt-cpt-actions', plugins_url( 'admin.min.js', __FILE__ ), array(), TOOLBELT_VERSION, true );
-
-	wp_localize_script(
-		'toolbelt-cpt-actions',
-		'toolbelt_cpt_actions',
-		array(
-			'expand_button' => esc_html__( 'Expand', 'wp-toolbelt' ),
-			'collapse_button' => esc_html__( 'Collapse', 'wp-toolbelt' ),
-		)
-	);
 
 }
 

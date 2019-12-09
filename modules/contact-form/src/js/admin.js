@@ -40,15 +40,8 @@ jQuery( document ).ready(
 			const $this = $( this );
 			const $parent = $this.prev( '.toolbelt-excerpt' );
 
-			const height = parseInt( $parent.outerHeight() );
-
-			if ( height > desired_height ) {
-				$parent.css( { height: desired_height + '.px' } );
-				$this.html( toolbelt_cpt_actions.expand_button );
-			} else {
-				$parent.css( { 'height': 'auto' } );
-				$this.html( toolbelt_cpt_actions.collapse_button );
-			}
+			$parent.css( { 'height': 'auto' } );
+			$this.remove();
 
 		};
 
@@ -114,10 +107,8 @@ jQuery( document ).ready(
 						}
 					);
 
-					// Add the toggle button.
-					const $button = $this.next( 'button' );
-					$button
-						.html( toolbelt_cpt_actions.expand_button )
+					// Setup the toggle button.
+					$this.next( 'button' )
 						.on( 'click', buttonClickEvent )
 						.show();
 
