@@ -38,7 +38,9 @@ function toolbelt_contact_plugin_de_activation() {
 
 	$module_active = false;
 	if ( isset( $options['contact-form'] ) ) {
-		$module_active = ( 'on' === $options['contact-form'] );
+		if ( 'on' === $options['contact-form'] ) {
+			$module_active = true;
+		}
 	}
 
 	// Enable the cron job if it hasn't been set up already.
