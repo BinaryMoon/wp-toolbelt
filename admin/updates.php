@@ -34,8 +34,12 @@ add_action( 'upgrader_process_complete', 'toolbelt_related_posts_clear_transient
 function toolbelt_contact_plugin_de_activation() {
 
 	$options = toolbelt_get_options();
-	$module_active = isset( $options['contact-form'] ) && ( 'on' === $options['contact-form'] );
 	$cron_key = 'toolbelt_contact_cron';
+
+	$module_active = false;
+	if ( isset( $options['contact-form'] ) ) {
+		$module_active = ( 'on' === $options['contact-form'] );
+	}
 
 	// Enable the cron job if it hasn't been set up already.
 	if ( $module_active ) {
