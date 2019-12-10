@@ -414,7 +414,7 @@ function toolbelt_global_script( $script ) {
 /**
  * Load the toolbelt options.
  *
- * @return string
+ * @return array<string>
  */
 function toolbelt_get_options() {
 
