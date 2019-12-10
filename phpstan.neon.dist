@@ -50,6 +50,7 @@ parameters:
         - %currentWorkingDirectory%/modules/contact-form/module.php
         - %currentWorkingDirectory%/modules/contact-form/module-fields.php
         - %currentWorkingDirectory%/modules/contact-form/module-cpt.php
+        - %currentWorkingDirectory%/modules/contact-form/module-cron.php
         - %currentWorkingDirectory%/modules/contact-form/module-ajax.php
     ignoreErrors:
         # Uses func_get_args()

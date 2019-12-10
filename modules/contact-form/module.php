@@ -770,6 +770,8 @@ require 'module-fields.php';
 
 require 'module-cpt.php';
 
+require 'module-cron.php';
+
 /**
  * Only include in the admin.
  * We don't want regular site visitors using this.
