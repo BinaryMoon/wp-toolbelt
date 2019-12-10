@@ -273,7 +273,7 @@ function toolbelt_contact_admin_script() {
 
 	$screen = get_current_screen();
 
-	if ( 'edit-feedback' !== $screen->id ) {
+	if ( isset( $screen->id ) && 'edit-feedback' !== $screen->id ) {
 		return;
 	}
 
