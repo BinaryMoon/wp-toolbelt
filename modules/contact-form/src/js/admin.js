@@ -52,14 +52,16 @@ jQuery( document ).ready(
 			function( e ) {
 
 				e.preventDefault();
-				const id = $( this ).data( 'id' );
+				const $this = $( this );
+				const id = $this.data( 'id' );
+				const verify = $this.data( 'verify' );
 
 				$.post(
 					ajaxurl,
 					{
 						action: 'toolbelt_ajax_ham',
 						post_id: id,
-						_ajax_nonce: 3//'<?php echo wp_create_nonce( 'grunion- post - status - ' . $post_id ); ?>'
+						_wpnonce: verify
 					},
 					rowCallback
 				);
@@ -73,14 +75,16 @@ jQuery( document ).ready(
 			function( e ) {
 
 				e.preventDefault();
-				const id = $( this ).data( 'id' );
+				const $this = $( this );
+				const id = $this.data( 'id' );
+				const verify = $this.data( 'verify' );
 
 				$.post(
 					ajaxurl,
 					{
 						action: 'toolbelt_ajax_spam',
 						post_id: id,
-						_ajax_nonce: 3//'<?php echo wp_create_nonce( 'grunion- post - status - ' . $post_id ); ?>'
+						_wpnonce: verify
 					},
 					rowCallback
 				);

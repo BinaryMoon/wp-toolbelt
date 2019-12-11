@@ -234,11 +234,12 @@ function toolbelt_contact_row_actions( $actions, $post ) {
 
 			// Mark as spam.
 			$actions[] = sprintf(
-				'<span class="spam feedback-spam"><a data-id="%1$d" title="%2$s" href="%3$s">%4$s</a></span>',
+				'<span class="spam feedback-spam"><a data-id="%1$d" data-verify="%5$s" title="%2$s" href="%3$s">%4$s</a></span>',
 				(int) $post->ID,
 				esc_html__( 'Mark this message as spam', 'wp-toolbelt' ),
 				wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post->ID . '&amp;action=spam' ), 'spam-feedback_' . $post->ID ),
-				esc_html__( 'Spam', 'wp-toolbelt' )
+				esc_html__( 'Spam', 'wp-toolbelt' ),
+				wp_create_nonce( 'toolbelt-spam-' . (int) $post->ID )
 			);
 
 			break;
@@ -247,10 +248,11 @@ function toolbelt_contact_row_actions( $actions, $post ) {
 
 			// Mark as NOT spam.
 			$actions[] = sprintf(
-				'<span class="unspam unapprove feedback-ham"><a data-id="%1$d" title="%2$s" href="">%3$s</a></span>',
+				'<span class="unspam unapprove feedback-ham"><a data-id="%1$d" data-verify="%4$s" title="%2$s" href="">%3$s</a></span>',
 				(int) $post->ID,
 				esc_html__( 'Mark this message as NOT spam', 'wp-toolbelt' ),
-				esc_html__( 'Not Spam', 'wp-toolbelt' )
+				esc_html__( 'Not Spam', 'wp-toolbelt' ),
+				wp_create_nonce( 'toolbelt-publish-' . (int) $post->ID )
 			);
 
 			break;

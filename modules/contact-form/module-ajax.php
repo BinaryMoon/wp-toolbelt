@@ -57,6 +57,9 @@ function toolbelt_contact_feedback_status( $status ) {
 
 	$id = filter_input( INPUT_POST, 'post_id', FILTER_VALIDATE_INT );
 
+	$nonce_key = 'toolbelt-' . $status . '-' . $id;
+	check_ajax_referer( $nonce_key );
+
 	$wpdb->update(
 		$wpdb->posts,
 		array(
