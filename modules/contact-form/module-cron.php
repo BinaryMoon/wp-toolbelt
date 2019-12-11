@@ -20,7 +20,7 @@ function toolbelt_contact_cron() {
 
 	foreach ( $delete_posts as $post_id ) {
 
-		wp_delete_post( $post_id );
+		wp_trash_post( (int) $post_id );
 
 	}
 
