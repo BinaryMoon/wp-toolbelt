@@ -11,7 +11,7 @@
  *
  * @return void
  */
-function toolbelt_contact_cron() {
+function toolbelt_contact_cron_event() {
 
 	$delete_posts = array_merge(
 		toolbelt_contact_clean_posts( 'spam', 30 ),
@@ -25,6 +25,8 @@ function toolbelt_contact_cron() {
 	}
 
 }
+
+add_action( 'toolbelt_contact_cron', 'toolbelt_contact_cron_event' );
 
 
 /**
