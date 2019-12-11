@@ -409,11 +409,11 @@ msgstr ""
 msgid "Mark this message as spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:252
+#: modules/contact-form/module-cpt.php:253
 msgid "Mark this message as NOT spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:253
+#: modules/contact-form/module-cpt.php:254
 msgid "Not Spam"
 msgstr ""
 
@@ -429,7 +429,7 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:361, modules/contact-form/module.php:533
+#: modules/contact-form/module-fields.php:361, modules/contact-form/module-submit-form.php:249
 msgid "Submit"
 msgstr ""
 
@@ -525,19 +525,19 @@ msgstr ""
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module.php:215
+#: modules/contact-form/module-submit-form.php:22
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module.php:662, modules/contact-form/module.php:684
+#: modules/contact-form/module-submit-form.php:378, modules/contact-form/module-submit-form.php:400
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:664, modules/contact-form/module.php:684
+#: modules/contact-form/module-submit-form.php:380, modules/contact-form/module-submit-form.php:400
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:713
+#: modules/contact-form/module-submit-form.php:429
 msgid "No value supplied"
 msgstr ""
 
