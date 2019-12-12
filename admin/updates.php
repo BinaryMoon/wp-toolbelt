@@ -34,7 +34,7 @@ add_action( 'upgrader_process_complete', 'toolbelt_related_posts_clear_transient
 function toolbelt_contact_plugin_de_activation() {
 
 	$options = toolbelt_get_options();
-	$cron_key = 'toolbelt_contact_cron';
+	$cron_key = 'toolbelt_cron_daily';
 
 	$module_active = false;
 	if ( isset( $options['contact-form'] ) ) {

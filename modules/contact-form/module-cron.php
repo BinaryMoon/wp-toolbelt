@@ -26,7 +26,7 @@ function toolbelt_contact_cron_clean_posts() {
 
 }
 
-add_action( 'toolbelt_contact_cron', 'toolbelt_contact_cron_clean_posts' );
+add_action( 'toolbelt_cron_daily', 'toolbelt_contact_cron_clean_posts' );
 
 
 /**
