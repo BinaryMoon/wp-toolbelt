@@ -84,14 +84,15 @@ function toolbelt_contact_submit() {
 	 * If the Toolbelt spam module is activated then it will use the internal
 	 * spam checking system to ensure content is safe to post.
 	 */
-	$is_spam = apply_filters( 'toolbelt_contact_form_spam', false );
+	$is_spam_inputs = apply_filters( 'toolbelt_contact_form_spam', false );
 	$is_spam_content = apply_filters( 'toolbelt_contact_form_spam_content', implode( ' ', array( $message, $subject, $comment_author ) ) );
+	$is_spam = $is_spam_inputs || $is_spam_content;
 
 	/**
 	 * If is spam then prepend a message on the front of the content subject
 	 * line.
 	 */
-	if ( $is_spam || $is_spam_content ) {
+	if ( $is_spam ) {
 
 		$subject = '**SPAM** ' . $subject;
 
@@ -129,14 +130,18 @@ function toolbelt_contact_submit() {
 			$to,
 			$subject,
 			$message,
-			$is_spam || $is_spam_content,
+			$is_spam,
 			$post_id,
 			$fields
 		);
 
-		// The email has been saved so let's not send anything.
-		$send_email = false;
-
+		/**
+		 * The email has been saved, and is spam, so let's not send anything.
+		 * We still want to send none spam messages.
+		 */
+		if ( $is_spam ) {
+			$send_email = false;
+		}
 	}
 
 	/**
