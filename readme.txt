@@ -123,6 +123,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
 * Add new pagechild and 404 display rules to the widget visibility module.
 * Add a contact form 'subject' field which we can use to override the default contact form subject.
+* Add a custom post type for saving contact form submissions. The feedback gets deleted regularly so that we don't store user data unnecessarily.
+* Stop sending contact form messages that get flagged as spam. They are still saved to the database and readable through the admin.
 * Add fix for typographic widows.
 * Ensure the contact form submit button stays in the right place! :)
 * Fix issue with settings link appearing when it shouldn't.
