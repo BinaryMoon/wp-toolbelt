@@ -233,6 +233,78 @@ function toolbelt_contact_get_fields( $blocks ) {
 
 
 /**
+ * Parse the contact form fields and generate a list of data I can more easily
+ * consume.
+ *
+ * @param array<mixed> $blocks List of inner blocks to parse.
+ * @return array<mixed>
+ */
+function toolbelt_contact_parse_fields( $blocks ) {
+
+	$fields = array();
+
+	/**
+	 * Return cos there's no fields to look at.
+	 */
+	if ( empty( $blocks['innerBlocks'] ) ) {
+		return $fields;
+	}
+
+	foreach ( $blocks['innerBlocks'] as $block ) {
+
+		$atts = shortcode_atts(
+			array(
+				'label' => '',
+				'options' => array(),
+			),
+			$block['attrs']
+		);
+
+		// Get the field type.
+		$type = str_replace( 'toolbelt/field-', '', $block['blockName'] );
+
+		/**
+		 * Get the field label.
+		 * Get the default first, and then replace with the custom value if set.
+		 */
+		$default_props = toolbelt_contact_field_defaults( $type );
+		$label = '';
+		if ( ! empty( $default_props['label'] ) ) {
+			$label = $default_props['label'];
+		}
+		if ( ! empty( $atts['label'] ) ) {
+			$label = $atts['label'];
+		}
+
+		/**
+		 * Ignore fields without a label.
+		 */
+		if ( ! empty( $label ) || empty( $type ) ) {
+
+			$name = toolbelt_contact_get_field_name( $label );
+
+			if ( 'checkbox-multiple' === $type ) {
+				$value = filter_input( INPUT_POST, $name, FILTER_DEFAULT, FILTER_REQUIRE_ARRAY );
+			} else {
+				$value = filter_input( INPUT_POST, $name );
+			}
+
+			$fields[ $name ] = array(
+				'label' => $label,
+				'options' => $atts['options'],
+				'type' => $type,
+				'value' => $value,
+			);
+
+		}
+	}
+
+	return $fields;
+
+}
+
+
+/**
  * Get a specific attribute for the current block.
  *
  * @param array<mixed> $blocks The blocks to get the attributes from.
