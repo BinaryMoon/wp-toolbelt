@@ -181,7 +181,7 @@ function toolbelt_contact_subject_modifiers( $subject, $fields ) {
 
 		// Ignore the checkbox fields since they are only on/ off.
 		if ( 'checkbox' === $field['type'] ) {
-			next;
+			continue;
 		}
 
 		// What are we searching for.
