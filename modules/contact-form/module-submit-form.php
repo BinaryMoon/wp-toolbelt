@@ -56,7 +56,7 @@ function toolbelt_contact_submit() {
 	 */
 	$to = toolbelt_contact_get_block_attribute( $blocks, 'to', get_option( 'admin_email' ) );
 	$subject = toolbelt_contact_get_block_attribute( $blocks, 'subject', $contact_post->post_title );
-	$subject = apply_filters( 'toolbelt_contact_form_subject', get_option( 'blogname' ) . ': ' . $subject );
+	$subject = apply_filters( 'toolbelt_contact_form_subject', get_option( 'blogname' ) . ': ' . $subject, $fields );
 
 	/**
 	 * Grab additional data from the fields list. This will use the first item
@@ -165,6 +165,37 @@ function toolbelt_contact_submit() {
 }
 
 add_action( 'init', 'toolbelt_contact_submit' );
+
+
+/**
+ * Modify the subject line, inserting the values of fields into the subject.
+ *
+ * @param string       $subject The subject to modify.
+ * @param array<mixed> $fields The submitted form fields.
+ * @return string
+ */
+function toolbelt_contact_subject_modifiers( $subject, $fields ) {
+
+	// Loop through fields and modify the subject accordingly.
+	foreach ( $fields as $field ) {
+
+		// Ignore the checkbox fields since they are only on/ off.
+		if ( 'checkbox' === $field['type'] ) {
+			next;
+		}
+
+		// What are we searching for.
+		$needle = '[' . $field['label'] . ']';
+		// Case insensitive string search and replace.
+		$subject = str_ireplace( $needle, toolbelt_contact_sanitize( $field ), $subject );
+
+	}
+
+	return $subject;
+
+}
+
+add_filter( 'toolbelt_contact_form_subject', 'toolbelt_contact_subject_modifiers', 10, 2 );
 
 
 /**
