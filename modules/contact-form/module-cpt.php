@@ -195,6 +195,7 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 	 */
 	if ( 'feedback_message' === $col ) {
 
+		the_title( '<h2 style="margin:2px 0 0.4em 0;">', '</h2>' );
 		echo '<div class="toolbelt-excerpt" style="margin-bottom: 4px;">';
 		the_content();
 		echo '</div>';
