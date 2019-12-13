@@ -529,15 +529,15 @@ msgstr ""
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:342, modules/contact-form/module-submit-form.php:364
+#: modules/contact-form/module-submit-form.php:345, modules/contact-form/module-submit-form.php:369
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:344, modules/contact-form/module-submit-form.php:364
+#: modules/contact-form/module-submit-form.php:347, modules/contact-form/module-submit-form.php:369
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:393
+#: modules/contact-form/module-submit-form.php:400
 msgid "No value supplied"
 msgstr ""
 
