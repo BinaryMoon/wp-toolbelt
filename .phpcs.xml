@@ -13,6 +13,7 @@
 		<exclude name="Generic.Formatting.MultipleStatementAlignment" />
 		<exclude name="WordPress.Arrays.MultipleStatementAlignment" />
 		<exclude name="PSR2.ControlStructures.SwitchDeclaration.BodyOnNextLineCASE" />
+		<exclude name="PSR2.ControlStructures.SwitchDeclaration.BodyOnNextLineDEFAULT" />
 	</rule>
 
 </ruleset>
