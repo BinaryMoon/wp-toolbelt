@@ -328,14 +328,17 @@ function toolbelt_contact_sanitize( $data ) {
 	switch ( $data['type'] ) {
 
 		case 'text':
+
 			$value = wp_kses_post( $value );
 			break;
 
 		case 'url':
+
 			$value = esc_url( $value );
 			break;
 
 		case 'checkbox':
+
 			$value = esc_html( $value );
 
 			if ( 'on' === $value ) {
@@ -346,12 +349,14 @@ function toolbelt_contact_sanitize( $data ) {
 			break;
 
 		case 'textarea':
+
 			$value = wp_kses_post( $value );
 			$value = nl2br( $value );
 
 			break;
 
 		case 'checkbox-multiple':
+
 			/**
 			 * For the multiple checkbox list we will loop through all
 			 * checkboxes and display whether they were selected or not.
@@ -371,6 +376,7 @@ function toolbelt_contact_sanitize( $data ) {
 
 		case 'radio':
 		case 'select':
+
 			/**
 			 * For select and radio options we need to loop through the
 			 * available options to find the one that was selected.
@@ -384,6 +390,7 @@ function toolbelt_contact_sanitize( $data ) {
 			break;
 
 		default:
+
 			$value = esc_html( $value );
 			break;
 
