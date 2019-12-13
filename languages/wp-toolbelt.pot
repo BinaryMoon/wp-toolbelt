@@ -354,19 +354,19 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:99
+#: modules/contact-form/module-ajax.php:102
 msgid "All"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:107
+#: modules/contact-form/module-ajax.php:110
 msgid "Published"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:120
+#: modules/contact-form/module-ajax.php:123
 msgid "Trash"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:133, modules/contact-form/module-cpt.php:66, modules/contact-form/module-cpt.php:241
+#: modules/contact-form/module-ajax.php:136, modules/contact-form/module-cpt.php:66, modules/contact-form/module-cpt.php:242
 msgid "Spam"
 msgstr ""
 
@@ -401,19 +401,19 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:201
+#: modules/contact-form/module-cpt.php:202
 msgid "Show All"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:239
+#: modules/contact-form/module-cpt.php:240
 msgid "Mark this message as spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:253
+#: modules/contact-form/module-cpt.php:254
 msgid "Mark this message as NOT spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:254
+#: modules/contact-form/module-cpt.php:255
 msgid "Not Spam"
 msgstr ""
 
@@ -429,7 +429,7 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:361, modules/contact-form/module-submit-form.php:249
+#: modules/contact-form/module-fields.php:361, modules/contact-form/module-submit-form.php:285
 msgid "Submit"
 msgstr ""
 
@@ -529,15 +529,15 @@ msgstr ""
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:378, modules/contact-form/module-submit-form.php:400
+#: modules/contact-form/module-submit-form.php:342, modules/contact-form/module-submit-form.php:364
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:380, modules/contact-form/module-submit-form.php:400
+#: modules/contact-form/module-submit-form.php:344, modules/contact-form/module-submit-form.php:364
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:429
+#: modules/contact-form/module-submit-form.php:393
 msgid "No value supplied"
 msgstr ""
 
