@@ -41,7 +41,7 @@
    * External dependencies
    */
 
-  var ALLOWED_BLOCKS = ['toolbelt/markdown', 'core/paragraph', 'core/heading', 'core/separator', 'core/spacer', 'core/subhead'];
+  var ALLOWED_BLOCKS = ['toolbelt/markdown', 'core/paragraph', 'core/heading', 'core/list', 'core/separator', 'core/spacer', 'core/subhead', 'core/quote'];
 
   var edit = function edit(props) {
     var attributes = props.attributes,

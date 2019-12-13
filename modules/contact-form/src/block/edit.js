@@ -6,9 +6,11 @@ const ALLOWED_BLOCKS = [
 	'toolbelt/markdown',
 	'core/paragraph',
 	'core/heading',
+	'core/list',
 	'core/separator',
 	'core/spacer',
 	'core/subhead',
+	'core/quote',
 ];
 
 const edit = ( props ) => {

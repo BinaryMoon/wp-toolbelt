@@ -127,6 +127,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add contact form custom subject line modifications.
 * Stop sending contact form messages that get flagged as spam. They are still saved to the database and readable through the admin.
 * Add fix for typographic widows.
+* Add list and blockquote as internal block types for the contact form block.
 * Ensure the contact form submit button stays in the right place! :)
 * Fix issue with settings link appearing when it shouldn't.
 * Fix: Only include contact form validation rules when there is a contact form on the page
