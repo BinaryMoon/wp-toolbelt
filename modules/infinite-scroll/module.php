@@ -229,10 +229,6 @@ function toolbelt_is_rest_response( $data ) {
 		)
 	);
 
-	// Add page number before inserting posts.
-	// translators: %d = page number.
-	$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
-
 	/**
 	 * Render the content.
 	 *
@@ -243,6 +239,10 @@ function toolbelt_is_rest_response( $data ) {
 	 * Captured in output buffer so we can grab generated html easily.
 	 */
 	if ( have_posts() ) {
+
+		// Add page number before inserting posts.
+		// translators: %d = page number.
+		$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
 
 		ob_start();
 
