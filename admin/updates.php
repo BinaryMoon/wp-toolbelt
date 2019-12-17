@@ -7,6 +7,8 @@
 
 /**
  * Delete autoloading transients.
+ *
+ * @return void
  */
 function toolbelt_related_posts_clear_transients() {
 

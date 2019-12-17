@@ -19,17 +19,22 @@ const sass_properties = {
 /**
  * Build SASS files.
  */
-function process_styles( slug ) {
+function process_styles( slug, directory = 'sass' ) {
 
+	let filename = 'style';
 	const destination = './modules/' + slug + '/';
-	const source = './modules/' + slug + '/src/sass/*.scss';
+	const source = './modules/' + slug + '/src/' + directory + '/*.scss';
+
+	if ( 'block' === directory ) {
+		filename = 'block';
+	}
 
 	/**
 	 * Uses node-sass options:
 	 * https://github.com/sass/node-sass#options
 	 */
 	return src( source )
-		.pipe( concat( 'style.min.css' ) )
+		.pipe( concat( filename + '.min.css' ) )
 		.pipe(
 			sass( sass_properties ).on( 'error', sass.logError )
 		)
@@ -133,6 +138,18 @@ export function styles_admin_tweaks() {
 export function styles_heading_links() {
 
 	return process_styles( 'heading-anchors' );
+
+}
+
+export function styles_contact() {
+
+	return process_styles( 'contact-form' );
+
+}
+
+export function styles_block_contact() {
+
+	return process_styles( 'contact-form', 'block' );
 
 }
 

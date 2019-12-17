@@ -32,12 +32,52 @@ function toolbelt_widget_display( $logic ) {
 		return true;
 	}
 
-	// Split the logic out into tokens that we can iterate over.
+	// Split the logic out into tokens that we can iterate over them.
 	$logic = str_replace( ' ', '', $logic );
 	$logic = strtolower( $logic );
 	$logic_tokens = explode( ';', $logic );
 
-	foreach ( $logic_tokens as $token ) {
+	/**
+	 * Do the exclude tokens first. If an exclude rule is false then the widget
+	 * should be hidden.
+	 *
+	 * If it's hidden then we can ignore the include tokens.
+	 */
+	$exclude_tokens = array_filter(
+		$logic_tokens,
+		function( $token ) {
+			return '!' === $token[0];
+		}
+	);
+
+	foreach ( $exclude_tokens as $token ) {
+
+		// If not then we want to invert the result.
+		$token = ltrim( $token, '!' );
+		if ( toolbelt_widget_display_check_token( $token ) ) {
+			return false;
+		}
+	}
+
+	/**
+	 * Check for inclusions.
+	 */
+	$include_tokens = array_filter(
+		$logic_tokens,
+		function( $token ) {
+			return '!' !== $token[0];
+		}
+	);
+
+	/**
+	 * Default response if there's no inclusion tokens is to display the widget.
+	 * The exclusion list should have hidden the widget if required.
+	 */
+	if ( 0 === count( $include_tokens ) ) {
+		return true;
+	}
+
+	foreach ( $include_tokens as $token ) {
 
 		if ( toolbelt_widget_display_check_token( $token ) ) {
 			return true;
@@ -45,7 +85,8 @@ function toolbelt_widget_display( $logic ) {
 	}
 
 	/**
-	 * Didn't match any tokens so return false, to hide the widget, by default.
+	 * Default to hiding the widget.
+	 * Didn't match any tokens so return false, to hide the widget.
 	 */
 	return false;
 
@@ -54,6 +95,9 @@ function toolbelt_widget_display( $logic ) {
 
 /**
  * Check if the widget with the specified token should be visible.
+ *
+ * Returns true if the widget should be displayed, and false if it should be
+ * hidden.
  *
  * @param string $token The token to check.
  * @return bool
@@ -74,56 +118,64 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	}
 
 	/**
+	 * Set variables here to reduce code duplication.
+	 */
+	$test_id = (int) get_queried_object_id();
+	/**
+	 * Don't convert the properties to ints for 'posttype' key since we will
+	 * have to compare with a string.
+	 */
+	if ( is_array( $properties ) && 'posttype' !== $key ) {
+		$properties = array_map( 'intval', $properties );
+	}
+
+	/**
 	 * Check single posts.
 	 * This uses is_singular(), so we're checking all post types including pages.
 	 */
-	if ( 'single' === $key && is_singular() ) {
+	if ( 'single' === $key ) {
 
-		if ( empty( $properties ) ) {
-			return true;
-		}
+		if ( is_singular() ) {
 
-		if ( is_array( $properties ) ) {
-
-			$test_id = (int) get_queried_object_id();
-			$properties = array_map( 'intval', $properties );
-
-			// Test for the id being included.
-			if ( in_array( $test_id, $properties, true ) ) {
+			if ( empty( $properties ) ) {
 				return true;
 			}
 
-			// Test for the id being excluded.
-			if ( in_array( $test_id * -1, $properties, true ) ) {
-				return false;
+			if ( is_array( $properties ) ) {
+
+				// Test for the id being included.
+				if ( in_array( $test_id, $properties, true ) ) {
+					return true;
+				}
 			}
 		}
+
+		return false;
+
 	}
 
 	/**
 	 * Check archives.
 	 */
-	if ( 'archive' === $key && is_archive() ) {
+	if ( 'archive' === $key ) {
 
-		if ( empty( $properties ) ) {
-			return true;
-		}
+		if ( is_archive() ) {
 
-		if ( is_array( $properties ) ) {
-
-			$test_id = (int) get_queried_object_id();
-			$properties = array_map( 'intval', $properties );
-
-			// Test for the id being included.
-			if ( in_array( $test_id, $properties, true ) ) {
+			if ( empty( $properties ) ) {
 				return true;
 			}
 
-			// Test for the id being excluded.
-			if ( in_array( $test_id * -1, $properties, true ) ) {
-				return false;
+			if ( is_array( $properties ) ) {
+
+				// Test for the id being included.
+				if ( in_array( $test_id, $properties, true ) ) {
+					return true;
+				}
 			}
 		}
+
+		return false;
+
 	}
 
 	/**
@@ -131,9 +183,13 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	 * Uses is_front_page() so only supports the actual homepage and not the
 	 * blog page.
 	 */
-	if ( 'home' === $key && is_front_page() ) {
+	if ( 'home' === $key ) {
 
-		return true;
+		if ( is_front_page() ) {
+			return true;
+		}
+
+		return false;
 
 	}
 
@@ -142,30 +198,79 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	 * Will work for single posts and archives.
 	 * Requires an array of properties or it will be ignored.
 	 */
-	if ( 'posttype' === $key && is_array( $properties ) ) {
+	if ( 'posttype' === $key ) {
 
 		$type = get_post_type();
 
-		// Include this post type.
-		if ( in_array( $type, $properties, true ) ) {
-			return true;
+		if ( is_array( $properties ) ) {
+
+			// Include this post type.
+			if ( in_array( $type, $properties, true ) ) {
+				return true;
+			}
 		}
 
-		// Exclude this post type.
-		if ( in_array( '-' . $type, $properties, true ) ) {
-			return false;
-		}
+		return false;
+
 	}
 
 	/**
 	 * Check the post category.
 	 * This includes post categories.
 	 */
-	if ( 'postcategory' === $key && is_array( $properties ) ) {
+	if ( 'postcategory' === $key ) {
 
-		if ( is_singular() && in_category( $properties ) ) {
+		if ( is_singular() && is_array( $properties ) && in_category( $properties ) ) {
 			return true;
 		}
+
+		return false;
+
+	}
+
+	/**
+	 * Show widget on posts or pages with the specified parent.
+	 */
+	if ( 'pagechild' === $key ) {
+
+		if ( is_page() && is_array( $properties ) ) {
+
+			foreach ( $properties as $parent ) {
+
+				/**
+				 * Display on any parent pages.
+				 * No need to check anything else.
+				 */
+				if ( $test_id === $parent ) {
+					return true;
+				}
+
+				/**
+				 * Get the children for the current parent page.
+				 */
+				$children = toolbelt_widget_page_children( (int) $parent );
+
+				if ( in_array( $test_id, $children, true ) ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+
+	}
+
+	/**
+	 * Show on 404 page.
+	 */
+	if ( '404' === $key ) {
+
+		if ( is_404() ) {
+			return true;
+		}
+
+		return false;
+
 	}
 
 	/**
@@ -173,18 +278,20 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	 * This includes post categories, and tags, and whatever else there might
 	 * be.
 	 */
-	if ( 'posttaxonomy' === $key && is_array( $properties ) ) {
+	if ( 'posttaxonomy' === $key ) {
 
-		if ( is_singular() && count( $properties ) > 1 ) {
+		if ( is_singular() && is_array( $properties ) && count( $properties ) >= 1 ) {
 
 			$taxonomy = (string) $properties[0];
 			$terms = array_slice( $properties, 1 );
-			$post_id = get_the_ID();
 
-			if ( $post_id && has_term( $terms, $taxonomy, $post_id ) ) {
+			if ( $test_id && has_term( $terms, $taxonomy, $test_id ) ) {
 				return true;
 			}
 		}
+
+		return false;
+
 	}
 
 	return false;
@@ -235,3 +342,40 @@ function toolbelt_widget_display_by_id( $widget_id ) {
 
 }
 
+
+/**
+ * Get a posts children, and those posts children.
+ *
+ * This is a recursive function. It will keep calling itself until there are no
+ * more children to load.
+ *
+ * Since each request makes a database call, this could be slow. In particular
+ * on larger sites. I recommend using caching.
+ *
+ * @param int $parent The parent id.
+ * @return array<mixed>
+ */
+function toolbelt_widget_page_children( $parent ) {
+
+	$children = array();
+
+	// Grab the posts children.
+	$posts = get_children( $parent );
+	$posts = array_keys( $posts );
+
+	// Now grab the grand children.
+	foreach ( $posts as $child ) {
+
+		// Recursion!! hurrah.
+		$grand_children = toolbelt_widget_page_children( $child );
+
+		// Merge the grand children into the children array.
+		if ( ! empty( $grand_children ) ) {
+			$children = array_merge( $children, $grand_children );
+		}
+	}
+
+	// Merge in the direct descendants we found earlier.
+	return array_merge( $children, $posts );
+
+}

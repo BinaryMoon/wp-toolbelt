@@ -12,6 +12,7 @@
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 		<exclude name="Generic.Formatting.MultipleStatementAlignment" />
 		<exclude name="WordPress.Arrays.MultipleStatementAlignment" />
+		<exclude name="PSR2.ControlStructures.SwitchDeclaration.BodyOnNextLineCASE" />
 	</rule>
 
 </ruleset>

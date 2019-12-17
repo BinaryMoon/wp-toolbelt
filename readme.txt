@@ -25,6 +25,7 @@ Toolbelt has been featured on The WordPress Tavern in [an interview with me](htt
 
 Some of the Toolbelt modules include blocks to make working with the generated content easier. The available blocks are:
 
+* **Contact Form** - The simplest way to have people get in touch. Works with the spam module.
 * **Projects Grid** - to list a collection of projects. These can be filtered by project category.
 * **Testimonials Grid** - to list a group of testimonials. Great for showing off! :)
 * **Markdown** - for those who like a simpler writing experience.
@@ -117,29 +118,20 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.3.2 - 15th November 2019 =
-* Tweak admin styles for WP 5.3.
-* Add javascript events for accept and decline cookie options on cookie bar.
-* Update spam blacklist.
+= 2.5 - 6th December 2019 =
+* Added a simple Gist block.
+* Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
+* Add new pagechild and 404 display rules to the widget visibility module.
+* Add a contact form 'subject' field which we can use to override the default contact form subject.
+* Add fix for typographic widows.
+* Ensure the contact form submit button stays in the right place! :)
+* Fix issue with settings link appearing when it shouldn't.
+* Fix: Only include contact form validation rules when there is a contact form on the page
+* Make GDPR requirements of cookie banner clearer.
+* Improve module selector design.
+* Make the admin style tweaks show in the customizer (most important for the button improvements).
+* Simplify portfolio and testimonial block code a little.
+* Rename blacklist to blocklist. Language matters!
 
-= 2.3.1 - 7th November 2019 =
-* Update spam blacklist.
-* Fix undefined variable error in spam blocking.
-* Ensure projects and testimonials block styles are loaded.
-* Prevent scripts from being loaded multiple times.
-* Make the featured images on the projects block link to the project.
-* Add a method for skipping headings in the heading anchor module. Added support for this to the Projects block.
-* Fix translation string. Thanks @pixolin for the patch.
-
-= 2.3 - 24th October 2019 =
-* Add a Markdown block.
-* Add testimonials post type, shortcode, and block.
-* Add projects shortcode and block.
-* Add spam blocking support for Gravity Forms.
-* Add DNS Prefetching to the stats providers.
-* Change social sharing css class name from `toolbelt_social_sharing` to `toolbelt-social-sharing`.
-* Change related posts, and social sharing so that they don't appear on password protected pages.
-* Fix: stop css styles from trying to be included multiple times.
-* Tidy up copy issues.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)

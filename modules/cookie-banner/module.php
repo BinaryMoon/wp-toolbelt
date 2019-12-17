@@ -14,6 +14,8 @@ define( 'TOOLBELT_COOKIE_ACCEPTED', 'toolbelt_cookies_accepted' );
 
 /**
  * Display the cookie data in the footer.
+ *
+ * @return void
  */
 function toolbelt_cookie_footer() {
 
@@ -45,11 +47,13 @@ add_filter( 'wp_footer', 'toolbelt_cookie_footer' );
 
 /**
  * Get the cookie banner message.
+ *
+ * @return string
  */
 function toolbelt_cookie_message() {
 
 	// Privacy policy message.
-	/* Translators: %s = privacy policy link */
+	// translators: %s = privacy policy link.
 	$message = esc_html__( 'By using this website, you agree to our %s', 'wp-toolbelt' );
 	$link = esc_html__( 'cookie policy', 'wp-toolbelt' );
 
@@ -69,6 +73,8 @@ function toolbelt_cookie_message() {
 
 /**
  * Work out what buttons to display in the cookie bar.
+ *
+ * @return string
  */
 function toolbelt_cookie_buttons() {
 

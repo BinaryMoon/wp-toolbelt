@@ -7,7 +7,8 @@
 		RangeControl,
 		RadioControl,
 		PanelBody,
-		CheckboxControl
+		CheckboxControl,
+		ToggleControl
 	} = wp.components;
 	const ServerSideRender = wp.serverSideRender;
 	const { __, _x } = wp.i18n;
@@ -44,6 +45,9 @@
 				},
 				categories: {
 					default: ''
+				},
+				showExcerpt: {
+					default: true
 				}
 			},
 
@@ -55,21 +59,6 @@
 
 				if ( attributes.categories.length > 0 ) {
 					categoriesArray = attributes.categories.split( ',' );
-				}
-
-				// Function to update the number of rows.
-				const changeRows = ( rows ) => {
-					setAttributes( { rows } );
-				}
-
-				// Function to update the number of columns.
-				const changeColumns = ( columns ) => {
-					setAttributes( { columns } );
-				}
-
-				// Function to update the testimonial order.
-				const changeOrderby = ( orderby ) => {
-					setAttributes( { orderby } );
 				}
 
 				// Add a category to the active list.
@@ -149,7 +138,7 @@
 							<RangeControl
 								value={attributes.rows}
 								label={__( 'Rows', 'wp-toolbelt' )}
-								onChange={changeRows}
+								onChange={value => setAttributes( { rows: value } )}
 								min={1}
 								max={10}
 							/>
@@ -157,7 +146,7 @@
 							<RangeControl
 								value={attributes.columns}
 								label={__( 'Columns', 'wp-toolbelt' )}
-								onChange={changeColumns}
+								onChange={value => setAttributes( { columns: value } )}
 								min={1}
 								max={4}
 							/>
@@ -165,13 +154,19 @@
 							<RadioControl
 								selected={attributes.orderby}
 								label={__( 'Order by', 'wp-toolbelt' )}
-								onChange={changeOrderby}
+								onChange={value => setAttributes( { orderby: value } )}
 								options={
 									[
 										{ value: 'date', label: __( 'date', 'wp-toolbelt' ) },
 										{ value: 'rand', label: __( 'random', 'wp-toolbelt' ) },
 									]
 								}
+							/>
+
+							<ToggleControl
+								label={__( 'Display Excerpt', 'wp-toolbelt' )}
+								checked={attributes.showExcerpt}
+								onChange={value => setAttributes( { showExcerpt: value } )}
 							/>
 
 						</PanelBody>

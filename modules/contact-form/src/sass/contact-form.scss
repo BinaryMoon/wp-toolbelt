@@ -1,0 +1,110 @@
+.toolbelt-contact-form {
+
+	label,
+	fieldset {
+
+		margin-bottom: var( --toolbelt-spacing );
+
+	}
+
+	label,
+	.toolbelt-label,
+	.toolbelt-description {
+
+		width: 100%;
+		display: block;
+
+	}
+
+	.error-message {
+
+		background: #d00;
+		padding: 0.1em 0.5em;
+		display: inline-block;
+		margin: calc( var( --toolbelt-spacing ) / 2 ) 0 0 0;
+		color: white;
+		font-weight: normal;
+
+	}
+
+	label {
+
+		input {
+
+			// width: 100%;
+
+		}
+
+	}
+
+	.toolbelt-description {
+
+		font-weight: normal;
+		font-style: italic;
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+	.toolbelt-submit {
+
+		display: block;
+
+	}
+
+	fieldset {
+
+		label {
+
+			margin: 0;
+			padding: ( calc( var(--toolbelt-spacing) / 4) ) 0;
+
+		}
+
+	}
+
+	textarea {
+
+		resize: vertical; /* user can resize verticaly, but width is fixed */
+
+	}
+
+	.toolbelt-changed {
+
+		&:invalid,
+		&:focus:invalid {
+
+			outline: 0.1em solid red;
+
+		}
+
+	}
+
+	.toolbelt-field {
+
+		max-width: 32rem;
+
+	}
+
+	.toolbelt-field-short {
+
+		max-width: 16rem;
+
+	}
+
+	.toolbelt-field-checkbox {
+
+		.toolbelt-description {
+
+			margin-bottom: 0;
+
+		}
+
+		+ .error-message {
+
+			transform: translateY( calc( -1.25 * var( --toolbelt-spacing ) ) );
+
+		}
+
+	}
+
+}

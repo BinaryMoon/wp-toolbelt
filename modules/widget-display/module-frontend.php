@@ -8,8 +8,8 @@
 /**
  * Set or unset the widgets.
  *
- * @param array $sidebar_widgets List of widgets to check.
- * @return array
+ * @param array<mixed> $sidebar_widgets List of widgets to check.
+ * @return array<mixed>
  */
 function toolbelt_widget_display_filter_sidebars_widgets( $sidebar_widgets ) {
 
@@ -55,7 +55,9 @@ add_filter( 'sidebars_widgets', 'toolbelt_widget_display_filter_sidebars_widgets
 
 
 /**
- * Add the
+ * Add the widget settings to the customizer.
+ *
+ * @return void
  */
 function toolbelt_widget_display_customizer() {
 
@@ -70,7 +72,8 @@ add_action( 'customize_preview_init', 'toolbelt_widget_display_customizer' );
  * Display sidebar widgets, fading out the widgets that should be hidden on the
  * current page.
  *
- * @param array $widget The widget properties.
+ * @param array<mixed> $widget The widget properties.
+ * @return void
  */
 function toolbelt_widget_display_dynamic_sidebar( $widget ) {
 
@@ -85,9 +88,7 @@ function toolbelt_widget_display_dynamic_sidebar( $widget ) {
 	if ( ! toolbelt_widget_display( $rules ) ) {
 ?>
 <style>
-	<?php echo '#' . esc_attr( $widget_id ); ?> {
-		opacity: 0.25;
-	}
+	<?php echo '#' . esc_attr( $widget_id ); ?> { opacity: 0.25; }
 </style>
 <?php
 	}

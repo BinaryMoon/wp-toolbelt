@@ -4,7 +4,7 @@
  *
  * Uses the following methods.
  * 1. Url Honeypot (check for empty url).
- * 2. Comment Blacklist (https://github.com/splorp/wordpress-comment-blacklist).
+ * 2. Comment blocklist (https://github.com/splorp/wordpress-comment-blacklist).
  * 3. Key Honeypot (check for altered key).
  * 4. Javascript checker (https://davidwalsh.name/wordpress-comment-spam).
  *
@@ -27,6 +27,8 @@ define( 'TOOLBELT_SPAM_KEY', md5( 'toolbelt-spam-key' . TOOLBELT_VERSION ) );
 
 /**
  * Output the spam blocker javascript.
+ *
+ * @return void
  */
 function toolbelt_spam_scripts() {
 
@@ -41,8 +43,8 @@ add_action( 'wp_footer', 'toolbelt_spam_scripts' );
  * Add Honeypot URL field.
  * This acts as a honeypot.
  *
- * @param array $fields List of form fields to display.
- * @return array
+ * @param array<mixed> $fields List of form fields to display.
+ * @return array<string>
  */
 function toolbelt_spam_form_fields( $fields ) {
 
@@ -73,8 +75,8 @@ add_filter( 'comment_form_default_fields', 'toolbelt_spam_form_fields', 11 );
 /**
  * Check for comment spam.
  *
- * @param int|string $approved The current comment status.
- * @param array      $comment Information about the comment.
+ * @param int|string   $approved The current comment status.
+ * @param array<mixed> $comment Information about the comment.
  * @return int|string
  */
 function toolbelt_spam_check_comments( $approved, $comment ) {
@@ -106,7 +108,7 @@ function toolbelt_spam_check_comments( $approved, $comment ) {
 	 * If the key field has been changed then it must be spam.
 	 */
 	$toolbelt_key = filter_input( INPUT_POST, 'toolbelt-key' );
-	if ( TOOLBELT_SPAM_KEY !== $toolbelt_key ) {
+	if ( null !== $toolbelt_key && TOOLBELT_SPAM_KEY !== $toolbelt_key ) {
 		$approved = 'spam';
 	}
 
@@ -149,30 +151,35 @@ function toolbelt_spam_check() {
 
 add_filter( 'jetpack_contact_form_is_spam', 'toolbelt_spam_check' );
 add_filter( 'gform_entry_is_spam', 'toolbelt_spam_check' );
+add_filter( 'toolbelt_contact_form_spam', 'toolbelt_spam_check' );
 
 
 /**
- * Check content against the blacklist.
+ * Check content against the blocklist.
  *
- * This is largely lifted from the comment blacklist checker.
+ * This is largely lifted from the comment blocklist checker.
  *
  * @link https://developer.wordpress.org/reference/functions/wp_blacklist_check/
  *
  * @param string $content The content to check.
  * @return bool
  */
-function toolbelt_spam_blacklist_check( $content ) {
+function toolbelt_spam_blocklist_check( $content ) {
 
 	$mod_keys = trim( get_option( 'blacklist_keys' ) );
 	if ( empty( $mod_keys ) ) {
 		return false;
 	}
 
-	// Ensure HTML tags are not being used to bypass the blacklist.
+	// Ensure HTML tags are not being used to bypass the blocklist.
 	$comment_without_html = wp_strip_all_tags( $content );
 
 	$words = explode( "\n", $mod_keys );
 
+	/**
+	 * Loop through all the blocklist words and check them against the content
+	 * value.
+	 */
 	foreach ( (array) $words as $word ) {
 
 		$word = trim( $word );
@@ -196,36 +203,38 @@ function toolbelt_spam_blacklist_check( $content ) {
 
 }
 
+add_filter( 'toolbelt_contact_form_spam_content', 'toolbelt_spam_blocklist_check' );
+
 
 /**
- * Combine the plugin blacklist with the WordPress one.
+ * Combine the plugin blocklist with the WordPress one.
  *
- * The blacklist is loaded from:
+ * The blocklist is loaded from:
  *
  * @link https://github.com/splorp/wordpress-comment-blacklist
  *
- * @param string $blacklist Current option values.
+ * @param string $blocklist Current option values.
  * @return string
  */
-function toolbelt_spam_blacklist( $blacklist ) {
+function toolbelt_spam_blocklist( $blocklist ) {
 
 	/**
-	 * Convert the built in blacklist into a big old list.
+	 * Convert the built in blocklist into a big old list.
 	 */
-	if ( ! empty( $blacklist ) ) {
-		$blacklist = explode( "\n", $blacklist );
+	if ( ! empty( $blocklist ) ) {
+		$blocklist = explode( "\n", $blocklist );
 	} else {
-		// Ensure the blacklist is an array so that the rest works.
-		$blacklist = array();
+		// Ensure the blocklist is an array so that the rest works.
+		$blocklist = array();
 	}
 
 	/**
-	 * Get the local list of blacklist terms.
+	 * Get the local list of blocklist terms.
 	 */
-	$local = (array) file( plugin_dir_path( __FILE__ ) . 'blacklist.txt', FILE_IGNORE_NEW_LINES );
+	$local = (array) file( plugin_dir_path( __FILE__ ) . 'blocklist.txt', FILE_IGNORE_NEW_LINES );
 
 	// Merge both lists into a single array.
-	$listmerge = array_merge( $local, $blacklist );
+	$listmerge = array_merge( $local, $blocklist );
 
 	// Filter out duplicates.
 	$listunique = array_unique( $listmerge );
@@ -235,4 +244,4 @@ function toolbelt_spam_blacklist( $blacklist ) {
 
 }
 
-add_filter( 'option_blacklist_keys', 'toolbelt_spam_blacklist' );
+add_filter( 'option_blocklist_keys', 'toolbelt_spam_blocklist' );

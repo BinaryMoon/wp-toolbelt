@@ -3,8 +3,6 @@ includes:
     - vendor/szepeviktor/phpstan-wordpress/extension.neon
 parameters:
     level: max
-    excludes_analyse:
-        - %currentWorkingDirectory%/vendor/
     paths:
         - %currentWorkingDirectory%/modules/
         - %currentWorkingDirectory%/admin/
@@ -47,6 +45,12 @@ parameters:
         - %currentWorkingDirectory%/modules/stats/settings.php
         - %currentWorkingDirectory%/modules/admin-tweaks/module.php
         - %currentWorkingDirectory%/modules/markdown/module.php
+        - %currentWorkingDirectory%/modules/gist/module.php
+        - %currentWorkingDirectory%/modules/widows/module.php
+        - %currentWorkingDirectory%/modules/contact-form/module.php
+        - %currentWorkingDirectory%/modules/contact-form/module-fields.php
+        - %currentWorkingDirectory%/modules/contact-form/module-cpt.php
+        - %currentWorkingDirectory%/modules/contact-form/module-ajax.php
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function [a-zA-Z_]+ invoked with [1-9] parameters?, [0-9\-]+ required\.$#'

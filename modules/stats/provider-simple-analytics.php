@@ -10,6 +10,8 @@
  * Display the Simple Analytics tracking code.
  *
  * @see https://docs.simpleanalytics.com/script
+ *
+ * @return void
  */
 function toolbelt_stats_simple_analytics() {
 
@@ -35,18 +37,15 @@ add_action( 'wp_footer', 'toolbelt_stats_simple_analytics' );
 /**
  * Output prefetch info for Plausible.
  *
- * @param array  $urls          URLs to print for resource hints.
- * @param string $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
+ * @param array<string> $urls          URLs to print for resource hints.
+ * @param string        $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
+ * @return array<string>
  */
 function toolbelt_stats_simple_analytics_resource_hints( $urls, $relation_type ) {
 
 	if ( 'dns-prefetch' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://api.simpleanalytics.io',
-		);
-		$urls[] = array(
-			'href' => 'https://cdn.simpleanalytics.io',
-		);
+		$urls[] = 'https://api.simpleanalytics.io';
+		$urls[] = 'https://cdn.simpleanalytics.io';
 	}
 
 	return $urls;

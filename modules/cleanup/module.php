@@ -71,6 +71,7 @@ if ( is_admin() ) {
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	add_filter( 'emoji_svg_url', '__return_false' );
 
 	add_filter(
 		'xmlrpc_methods',
@@ -122,7 +123,7 @@ add_action(
 // Remove jQuery Migrate.
 add_action(
 	'wp_default_scripts',
-	function() {
+	function( $scripts ) {
 		if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
 			$jquery_dependencies = $scripts->registered['jquery']->deps;
 			$scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );

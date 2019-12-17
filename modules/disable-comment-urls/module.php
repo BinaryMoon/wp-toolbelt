@@ -26,8 +26,8 @@ add_filter( 'get_comment_author_link', 'toolbelt_disable_comment_author_links' )
 /**
  * Remove URL field from comments form.
  *
- * @param array $fields List of form fields to display.
- * @return array
+ * @param array<mixed> $fields List of form fields to display.
+ * @return array<string>
  */
 function toolbelt_comment_form_fields( $fields ) {
 

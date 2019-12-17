@@ -10,6 +10,8 @@
 
 /**
  * Do a 404 response for the files that don't need to be accessed.
+ *
+ * @return void
  */
 function toolbelt_404_response() {
 

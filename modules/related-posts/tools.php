@@ -7,6 +7,8 @@
 
 /**
  * Display the Related Posts tool forms.
+ *
+ * @return void
  */
 function toolbelt_related_posts_tools() {
 
