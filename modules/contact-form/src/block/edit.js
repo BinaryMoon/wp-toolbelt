@@ -2,13 +2,23 @@
  * External dependencies
  */
 
+/**
+ * These are the blocks allowed inside the contact form.
+ *
+ * Non form elements are allowed so that we can include descriptions and other
+ * things related to the form. When the form is submitted these elements will
+ * get removed, and replaced with the 'submission complete' message.
+ */
 const ALLOWED_BLOCKS = [
 	'toolbelt/markdown',
 	'core/paragraph',
 	'core/heading',
+	'core/list',
 	'core/separator',
 	'core/spacer',
 	'core/subhead',
+	'core/quote',
+	'core/image',
 ];
 
 const edit = ( props ) => {

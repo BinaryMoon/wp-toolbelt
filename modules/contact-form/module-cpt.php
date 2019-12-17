@@ -86,10 +86,11 @@ toolbelt_contact_cpt();
  * @param string       $subject The email subject.
  * @param string       $message The email message.
  * @param bool         $is_spam Is this email spam or not?.
+ * @param int          $post_parent The post that holds the contact form.
  * @param array<mixed> $fields A list of the fields that have been submitted.
  * @return void
  */
-function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, $fields ) {
+function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam, $post_parent, $fields ) {
 
 	$feedback_title = $subject;
 
@@ -104,7 +105,7 @@ function toolbelt_contact_save_feedback( $to_email, $subject, $message, $is_spam
 			'post_status' => addslashes( $feedback_status ),
 			'post_title' => addslashes( esc_html( $feedback_title ) ),
 			'post_content' => addslashes( wp_kses_post( $message ) ),
-			'post_parent' => (int) toolbelt_contact_get_field( $fields, 'toolbelt-post-id', null ),
+			'post_parent' => (int) $post_parent,
 		)
 	);
 
@@ -127,9 +128,9 @@ function toolbelt_contact_post_type_columns_filter( $cols ) {
 
 	return array(
 		'cb' => '<input type="checkbox" />',
-		'feedback_from' => esc_html__( 'From', 'wp-toolbelt' ),
 		'feedback_message' => esc_html__( 'Message', 'wp-toolbelt' ),
-		'feedback_date' => esc_html__( 'Date', 'wp-toolbelt' ),
+		'feedback_from' => esc_html__( 'From', 'wp-toolbelt' ),
+		'date' => esc_html__( 'Date', 'wp-toolbelt' ),
 	);
 
 }
@@ -140,6 +141,9 @@ add_action( 'manage_feedback_posts_columns', 'toolbelt_contact_post_type_columns
 /**
  * Output the content of the feedback columns.
  *
+ * This function takes care of the message and the from columns. The date column
+ * is generated automatically by WordPress.
+ *
  * @param string $col The column we are displaying.
  * @param int    $post_id The post id we are displaying.
  * @return void
@@ -149,115 +153,118 @@ function toolbelt_contact_manage_post_columns( $col, $post_id ) {
 	global $post;
 
 	/**
-	 * Only call parse_fields_from_content if we're dealing with a Grunion custom column.
+	 * Display the from column.
+	 *
+	 * This is the info about who sent the message.
 	 */
-	if ( ! in_array( $col, array( 'feedback_date', 'feedback_from', 'feedback_message' ), true ) ) {
-		return;
+	if ( 'feedback_from' === $col ) {
+
+		$meta = get_post_meta( $post_id, TOOLBELT_CONTACT_POST_META, true );
+
+		$author_name = toolbelt_contact_get_field( $meta, 'name', '' );
+		$author_email = toolbelt_contact_get_field( $meta, 'email', '' );
+
+		// Display the author name.
+		if ( ! empty( $author_name ) ) {
+			printf(
+				'<strong>%s</strong><br />',
+				esc_html( $author_name )
+			);
+		}
+
+		// Display the author email address.
+		if ( ! empty( $author_email ) ) {
+			printf(
+				'<a href="%1$s" target="_blank">%2$s</a><br />',
+				esc_url( 'mailto:' . $author_email ),
+				esc_html( $author_email )
+			);
+		}
+
+		// Display the page that the contact form was submitted from.
+		if ( isset( $post->post_parent ) && $post->post_parent > 0 ) {
+			$form_url = get_permalink( $post->post_parent );
+			if ( $form_url ) {
+				echo '<a href="' . esc_url( $form_url ) . '">' . esc_html( $form_url ) . '</a>';
+			}
+		}
 	}
 
-	$meta = get_post_meta( $post_id, TOOLBELT_CONTACT_POST_META, true );
+	/**
+	 * Display the message column.
+	 */
+	if ( 'feedback_message' === $col ) {
 
-	switch ( $col ) {
-
-		/**
-		 * The from column.
-		 */
-		case 'feedback_from':
-
-			$author_name = toolbelt_contact_get_field( $meta, 'name', '' );
-			$author_email = toolbelt_contact_get_field( $meta, 'email', '' );
-
-			if ( ! empty( $author_name ) ) {
-				printf(
-					'<strong>%s</strong><br />',
-					esc_html( $author_name )
-				);
-			}
-
-			if ( ! empty( $author_email ) ) {
-				printf(
-					'<a href="%1$s" target="_blank">%2$s</a><br />',
-					esc_url( 'mailto:' . $author_email ),
-					esc_html( $author_email )
-				);
-			}
-
-			if ( isset( $post->post_parent ) && $post->post_parent > 0 ) {
-				$form_url = get_permalink( $post->post_parent );
-				if ( $form_url ) {
-					echo '<a href="' . esc_url( $form_url ) . '">' . esc_html( $form_url ) . '</a>';
-				}
-			}
-
-			break;
-
-		case 'feedback_message':
-
-			the_excerpt( $post );
-
-			// Message actions.
-
-			$links = array();
-
-			switch ( $post->post_status ) {
-
-				case 'trash':
-
-					break;
-
-				case 'draft':
-				case 'publish':
-
-					$links[] = sprintf(
-						'<span class="spam feedback-spam"><a data-id="%1$d" title="%2$s" href="%3$s">%4$s</a></span>',
-						(int) $post_id,
-						esc_html__( 'Mark this message as spam', 'wp-toolbelt' ),
-						wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post_id . '&amp;action=spam' ), 'spam-feedback_' . $post_id ),
-						esc_html__( 'Spam', 'wp-toolbelt' )
-					);
-
-					break;
-
-				case 'spam':
-
-					$links[] = sprintf(
-						'<span class="unspam unapprove feedback-ham"><a data-id="%1$d" title="%2$s" href="">%3$s</a></span>',
-						(int) $post_id,
-						esc_html__( 'Mark this message as NOT spam', 'wp-toolbelt' ),
-						esc_html__( 'Not Spam', 'wp-toolbelt' )
-					);
-
-					break;
-
-			}
-
-			if ( $links ) {
-				echo '<div class="row-actions">' . implode( ' | ', $links ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-
-			break;
-
-		/**
-		 * Contact submission date.
-		 */
-		case 'feedback_date':
-
-			$date_time_format = sprintf(
-				// translators: %1$s = date, %2$s = time.
-				_x( '%1$s \a\t %2$s', '{$date_format} \a\t {$time_format}', 'wp-toolbelt' ),
-				esc_html( get_option( 'date_format' ) ),
-				esc_html( get_option( 'time_format' ) )
-			);
-
-			echo esc_html( date_i18n( $date_time_format, (int) get_the_time( 'U' ) ) );
-
-			break;
+		the_title( '<h2 style="margin:2px 0 0.4em 0;">', '</h2>' );
+		echo '<div class="toolbelt-excerpt" style="margin-bottom: 4px;">';
+		the_content();
+		echo '</div>';
+		echo '<button class="toolbelt-excerpt-expand button action" style="display: none; margin-bottom: 8px;">' . esc_html__( 'Show All', 'wp-toolbelt' ) . '</button>';
 
 	}
 
 }
 
 add_action( 'manage_posts_custom_column', 'toolbelt_contact_manage_post_columns', 10, 2 );
+
+
+/**
+ * Add feedback manipulation links to posts.
+ *
+ * Allows users to easily spam and unspam posts.
+ *
+ * @param array<string> $actions List of actions.
+ * @param WP_Post       $post Post info.
+ * @return array<string>
+ */
+function toolbelt_contact_row_actions( $actions, $post ) {
+
+	// Only add the spam option to the feedback post type.
+	if ( 'feedback' !== $post->post_type ) {
+		return $actions;
+	}
+
+	switch ( $post->post_status ) {
+
+		case 'trash':
+
+			break;
+
+		case 'draft':
+		case 'publish':
+
+			// Mark as spam.
+			$actions[] = sprintf(
+				'<span class="spam feedback-spam"><a data-id="%1$d" data-verify="%5$s" title="%2$s" href="%3$s">%4$s</a></span>',
+				(int) $post->ID,
+				esc_html__( 'Mark this message as spam', 'wp-toolbelt' ),
+				wp_nonce_url( admin_url( 'admin-ajax.php?post_id=' . (int) $post->ID . '&amp;action=spam' ), 'spam-feedback_' . $post->ID ),
+				esc_html__( 'Spam', 'wp-toolbelt' ),
+				wp_create_nonce( 'toolbelt-spam-' . (int) $post->ID )
+			);
+
+			break;
+
+		case 'spam':
+
+			// Mark as NOT spam.
+			$actions[] = sprintf(
+				'<span class="unspam unapprove feedback-ham"><a data-id="%1$d" data-verify="%4$s" title="%2$s" href="">%3$s</a></span>',
+				(int) $post->ID,
+				esc_html__( 'Mark this message as NOT spam', 'wp-toolbelt' ),
+				esc_html__( 'Not Spam', 'wp-toolbelt' ),
+				wp_create_nonce( 'toolbelt-publish-' . (int) $post->ID )
+			);
+
+			break;
+
+	}
+
+	return $actions;
+
+}
+
+add_filter( 'post_row_actions', 'toolbelt_contact_row_actions', 10, 2 );
 
 
 /**
@@ -269,7 +276,7 @@ function toolbelt_contact_admin_script() {
 
 	$screen = get_current_screen();
 
-	if ( 'edit-feedback' !== $screen->id ) {
+	if ( isset( $screen->id ) && 'edit-feedback' !== $screen->id ) {
 		return;
 	}
 

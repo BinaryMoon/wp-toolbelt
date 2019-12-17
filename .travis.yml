@@ -11,7 +11,7 @@ install:
 script:
   - vendor/bin/parallel-lint modules/ admin/ index.php
   - vendor/bin/phpcs -n -s modules/ admin/ index.php
-  - vendor/bin/phpstan analyze -l 7
+  - vendor/bin/phpstan analyze -l 8
 
 notifications:
   email:
