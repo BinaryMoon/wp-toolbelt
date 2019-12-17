@@ -200,6 +200,7 @@ function toolbelt_is_rest_response( $data ) {
 
 	$results = array(
 		'html' => '',
+		'last' => false,
 	);
 	$callback = 'toolbelt_is_render';
 	$page = isset( $data['page'] ) ? (int) $data['page'] : 1;
@@ -228,6 +229,15 @@ function toolbelt_is_rest_response( $data ) {
 			'paged' => $page,
 		)
 	);
+
+	/**
+	 * Store if we're on the last page or not.
+	 *
+	 * This allows us to hide the 'load more' button.
+	 */
+	if ( $page >= $GLOBALS['wp_query']->max_num_pages ) {
+		$results['last'] = true;
+	}
 
 	/**
 	 * Render the content.
