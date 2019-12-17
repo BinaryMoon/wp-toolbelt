@@ -52,7 +52,7 @@ var toolbelt_is = ( function() {
 				}
 
 				// No more posts to display so hide the 'load more' button.
-				if ( !response.html ) {
+				if ( !response.html || response.last ) {
 					document.body.classList.add( 'toolbelt-infinite-scroll-end' );
 				}
 
