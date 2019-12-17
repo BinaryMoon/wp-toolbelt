@@ -96,9 +96,41 @@ function toolbelt_gist_render( $attrs ) {
 		$class_name[] = 'align' . $attrs['align'];
 	}
 
+	/**
+	 * Work out the embed url.
+	 */
+	$url = $attrs['url'];
+	if ( false !== strpos( $url, '#file-' ) ) {
+
+		/**
+		 * The following code works out the embed code for a Gist that contains
+		 * multiple files, and links to a single file.
+		 *
+		 * Eg https://gist.github.com/BinaryMoon/edb39e27ec0327d01f63d8b9bc55e071#file-gulpfile-header-js
+		 *
+		 * If
+		 */
+		$url = str_replace( '#file-', '.js?file=', $url );
+
+		$pos = strrpos( $url, '-' );
+		if ( false !== $pos ) {
+			$url = substr_replace( $url, '.', $pos, 1 );
+		}
+
+	} else {
+
+		/**
+		 * This assumes the entire url is the embed path.
+		 *
+		 * Potentially there are instances where this won't work. I will have to address them as they arise.
+		 */
+		$url = $url . '.js';
+
+	}
+
 	return sprintf(
 		'<div class="%2$s"><script src="%1$s"></script></div>', // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
-		esc_url( $attrs['url'] . '.js' ),
+		esc_url( $url ),
 		esc_attr( implode( ' ', $class_name ) )
 	);
 
