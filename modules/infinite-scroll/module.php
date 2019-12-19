@@ -204,7 +204,7 @@ function toolbelt_is_render() {
  * Display the REST posts.
  *
  * @param WP_REST_Request $data The REST response data.
- * @return array<string>
+ * @return array<string, string|false>
  */
 function toolbelt_is_rest_response( $data ) {
 
