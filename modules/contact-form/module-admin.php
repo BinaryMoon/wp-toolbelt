@@ -167,6 +167,19 @@ function toolbelt_contact_form_register_block() {
 
 
 /**
+ * This file is included on init, so we should register the blocks immediately.
+ * No need to hook on init.
+ */
+toolbelt_contact_form_register_block();
+
+
+/**
+ * Make sure the block category is registered.
+ */
+toolbelt_register_block_category();
+
+
+/**
  * Get the Contact Form blocks from the post content.
  *
  * @param string $content The post content.
@@ -327,17 +340,6 @@ function toolbelt_contact_get_block_attribute( $blocks, $attribute = '', $defaul
 	return $value;
 
 }
-
-
-/**
- * The post type is registered on init (priority 11) so this needs to be called
- * after since it tries to load the post taxonomies.
- *
- * @return void
- */
-add_action( 'init', 'toolbelt_contact_form_register_block', 12 );
-
-toolbelt_register_block_category();
 
 
 /**
