@@ -152,12 +152,7 @@ function toolbelt_is_active() {
 	 * Does not work on archives or other post types.
 	 * Simplifies the code massively.
 	 */
-	if ( ! is_home() ) {
-		return false;
-	}
-
-	return true;
-
+	return is_home();
 }
 
 
