@@ -152,7 +152,12 @@ function toolbelt_is_active() {
 	 * Does not work on archives or other post types.
 	 * Simplifies the code massively.
 	 */
-	return is_home();
+	if ( ! is_home() ) {
+		return false;
+	}
+
+	return true;
+
 }
 
 
@@ -257,7 +262,7 @@ function toolbelt_is_rest_response( $data ) {
 
 		// Add page number before inserting posts.
 		// translators: %d = page number.
-		$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
+		$results['html'] = tag( 'h6', [ 'class' => 'toolbelt-divider' ], sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) );
 
 		ob_start();
 
