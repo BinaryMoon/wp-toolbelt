@@ -456,9 +456,6 @@ _zapat
 -cell-phone/
 -charms.
 -charms/
--chaterba-
--chaterba.
--chaterba/
 -cheap-
 -cheap.
 -cheap/
@@ -759,6 +756,9 @@ _zapat
 -ihover-
 -ihover.
 -ihover/
+-ile-kosztuje-
+-ile-kosztuje.
+-ile-kosztuje/
 -imap.to
 -income-
 -income.
@@ -1614,9 +1614,6 @@ _zapat
 .cfmx
 .cgi
 .chanel-
-.chaterba-
-.chaterba.
-.chaterba/
 .cheat-
 .cheat.
 .cheat/
@@ -1778,6 +1775,9 @@ _zapat
 .iapple-
 .iapple.
 .iapple/
+.ile-kosztuje-
+.ile-kosztuje.
+.ile-kosztuje/
 .in,
 .in/,
 .in/?entry.
@@ -2597,6 +2597,7 @@ _zapat
 /allocating-
 /allocating.
 /allocating/
+/alturl.co
 /an0n.me
 /android-market-
 /android-market.
@@ -2821,9 +2822,6 @@ _zapat
 /chanel.
 /chanel/
 /chat/
-/chaterba-
-/chaterba.
-/chaterba/
 /chaussure-
 /chaussure.
 /chaussures-
@@ -3045,6 +3043,7 @@ _zapat
 /f_4/
 /f_5/
 /fapme.pw
+/fas.st
 /fashion-
 /faux-
 /faux.
@@ -3188,6 +3187,9 @@ _zapat
 /ihover.
 /ihover/
 /ii/
+/ile-kosztuje-
+/ile-kosztuje.
+/ile-kosztuje/
 /images-
 /images.
 /img/
@@ -3698,6 +3700,7 @@ _zapat
 /shortcodes/
 /shorte.st
 /shorturl.at
+/shorturl.co
 /show/
 /sigareta-
 /sigareta.
@@ -5392,12 +5395,20 @@ adbeattrial
 adcrack
 add article
 add symptom
+add to fave
+add to favor
+add to favour
+add to feed
 add-article
 add-symptom
 addarticle
 addbusinessto
 addded
 added agreeable
+added to fave
+added to favor
+added to favour
+added to feed
 adderall
 adderoll
 addict xxx
@@ -6578,8 +6589,12 @@ aspiring-web
 aspnet_client
 áß
 ass lick
+ass nude
+ass porn
 ass small
 ass-lick
+ass-nude
+ass-porn
 ass-small
 assessories
 assessory
@@ -6597,11 +6612,14 @@ assist your kids cope
 assist-seo
 assist-with-seo
 asslick
+assnude
 associate link
 associate-link
 associated-article
 associateded
 assortiment
+assporn
+asssmall
 assured storm
 assured-storm
 asthma and also
@@ -7510,6 +7528,7 @@ best evance
 best fanny
 best forex
 best gaming
+best gas boil
 best jers
 best lawyer
 best mcm
@@ -7525,6 +7544,7 @@ best sex
 best shoe price
 best suppl
 best tummy
+best vape
 best vpn service
 best web
 best wordpress
@@ -7551,6 +7571,7 @@ best-fake
 best-fanny
 best-forex
 best-gaming
+best-gas-boil
 best-home-cinema
 best-jers
 best-lawyer
@@ -7571,6 +7592,7 @@ best-shop
 best-software-for
 best-suppl
 best-tummy
+best-vape
 best-vpn
 best-way-to
 best-web
@@ -7629,6 +7651,7 @@ bestsex
 bestshop
 bestsuppl
 besttummy
+bestvape
 bestvpn
 bestweb
 bestxxx
@@ -8222,6 +8245,9 @@ body-massage-in
 bodyhn
 bogus service
 bogus-service
+boiler spare
+boiler-spare
+boilerspare
 bokserki
 bola online
 bola terpercaya
@@ -9547,6 +9573,7 @@ cash-loan
 cash-masterclass
 cash-now
 cash-progress
+cash.com.
 cash4
 cashadvance
 cashbuzz
@@ -9692,15 +9719,20 @@ cazinos-24
 cazinos24
 cɑ
 cbd advert
+cbd beaut
 cbd best
 cbd cannabis
+cbd cream
 cbd weed
 cbd-advert
+cbd-beaut
 cbd-best
 cbd-cannabis
+cbd-cream
 cbd-weed
 cbdadvert
 cbdbest
+cbdcream
 cc shop
 cc-shop
 ccan visit
@@ -9962,10 +9994,14 @@ charmsthomas
 chat met vrouwen
 chat support office
 chat tarot
+chat-bait
+chat-bate
 chat-chat
 chat-met-vrouwen
 chat-tarot
+chatburt
 chatchat
+chaterba
 chatmatic bonus
 chatmatic program
 chatmatic review
@@ -9981,6 +10017,8 @@ chatmaticprogram
 chatmaticreview
 chatmaticsecret
 chatmaticsoftware
+chatrbat
+chattburt
 chatter-bait
 chatter-bate
 chatterbait
@@ -10647,7 +10685,11 @@ chrono hack
 chrono-hack
 chrr-llc
 chttp
+chua viem
+chữa viêm
+chua-viem
 chuan-nhat-hien-nay
+chuaviem
 chung cư
 chung hightop
 chung-cư
@@ -12035,6 +12077,12 @@ czesci skody
 czesci-skody
 czesciskody
 czxczx
+czytac blog
+czytać blog
+czytac post
+czytać post
+czytac-blog
+czytac-post
 cµ
 cг
 cе
@@ -12606,8 +12654,12 @@ dietplan
 dietreview
 dietsolution
 dietsuppl
+dieu hoa
+điều hòa
+dieu tri
 điều trị
-điều-trị
+dieu-hoa
+dieu-tri
 different blog
 different web page
 different web site
@@ -13237,12 +13289,17 @@ dо
 dу
 ɗe pieza
 ɗеl mueble
+e e juice
+e e-juice
+e ejuice
 e http
 e objetivo da
 é objetivo da
 é premium
 e-biz
 e-cig
+e-e-juice
+e-ejuice
 e-evance
 e-korting
 e-mail production
@@ -14264,6 +14321,10 @@ fajna-strona
 fajnafotka
 fajnastrona
 fajne
+fajny blog
+fajny post
+fajny-blog
+fajny-post
 fake coach
 fake converse
 fake date
@@ -14609,16 +14670,18 @@ favorable-blog
 favorable-page
 favorable-single
 favorable-web
-favorite earphone
-favorite justif
+favorite ear
+favorite just
 favorite this blog
 favorite this page
 favorite this site
 favorite this web
 favorite web
-favorite-earphone
-favorite-justif
+favorite-ear
+favorite-just
 favorite-web
+favour of blog
+favour of sharing
 favourable article
 favourable blog
 favourable page
@@ -14629,15 +14692,15 @@ favourable-blog
 favourable-page
 favourable-single
 favourable-web
-favourite earphone
-favourite justif
+favourite ear
+favourite just
 favourite this blog
 favourite this page
 favourite this site
 favourite this web
 favourite web
-favourite-earphone
-favourite-justif
+favourite-ear
+favourite-just
 favourite-web
 fazer tiara
 fazer-tiara
@@ -16059,6 +16122,9 @@ garena-free
 garenafree
 garlic health
 garlic-health
+gas boiler replace
+gas-boiler-replace
+gasboilerreplace
 gather utile
 gather-utile
 gathering utile
@@ -16875,8 +16941,13 @@ gosgov
 goshop.
 gossip posted
 gossip-posted
+got a article
 got a blog
+got a post
 got a web
+got a weblog
+got a webpage
+got a website
 got idea
 got much clear
 got typed the
@@ -17732,6 +17803,12 @@ hentai
 heook
 hepcinat
 her this submit
+herb vape
+herb vapor
+herb vapour
+herb-vape
+herb-vapor
+herb-vapour
 herbal smok
 herbal tincture
 herbal-medicin
@@ -17740,6 +17817,9 @@ herbal-tincture
 herbalmedicin
 herbalsmok
 herbaltincture
+herbvape
+herbvapor
+herbvapour
 here different
 here itt
 here lol!
@@ -18533,6 +18613,8 @@ iamimport
 icon/set
 icons/set
 idanmark
+idea for your blog
+ideas for your blog
 ideea
 idenfify
 idm crack
@@ -19596,6 +19678,7 @@ japan mont
 japan new
 japan online
 japan swarovsk
+japan xxx
 japan-1
 japan-converse
 japan-dr
@@ -19606,6 +19689,7 @@ japan-mont
 japan-new
 japan-online
 japan-swarovsk
+japan-xxx
 japanconverse
 japandrmarten
 japanese converse
@@ -19613,22 +19697,26 @@ japanese dr
 japanese marc
 japanese mont
 japanese swarovsk
+japanese xxx
 japanese-converse
 japanese-dr
 japanese-marc
 japanese-mont
 japanese-swarovsk
+japanese-xxx
 japaneseconverse
 japanesedrmarten
 japanesemarcjacobs
 japanesemontblanc
 japaneseswarovsk
+japanesexxx
 japanmarcjacobs
 japanmonster
 japanmontblanc
 japannew
 japanonline
 japanswarovsk
+japanxxx
 japon kumon
 japon-kumon
 japones kumon
@@ -19930,9 +20018,11 @@ journal/item
 journey-startup
 jovial salon
 jovial-salon
+jp xxx
 jp-bag
 jp-best
 jp-sale
+jp-xxx
 jp/blog
 jp/my
 jp/shop
@@ -19946,6 +20036,7 @@ jpmarcjacob
 jpmonster
 jpsale
 jpsasic
+jpxxx
 js wing
 js-wing
 jsadidas
@@ -20107,6 +20198,8 @@ kawastrefa
 kazino
 keen of read
 keep blogging!
+keep on blogging
+keep on posting
 keep posting!
 keep up blogging
 keep up posting
@@ -21498,6 +21591,9 @@ love connect
 love cougar
 love perfect
 love yokur
+love your blog
+love your weblog
+love your webpage
 love-connect
 love-cougar
 love-lv
@@ -22724,6 +22820,8 @@ mezzo-louis
 mezzolouis
 mgetting
 mhttp
+mi na komentarz
+mi-na-komentarz
 mi40 review
 mi40-review
 miami escort
@@ -23388,6 +23486,9 @@ moviesfree
 moviesonline
 movieszone
 moviezone
+mowia w internecie
+mówią w internecie
+mowia-w-internecie
 mp-escort
 mp3 music
 mp3-download
@@ -23684,7 +23785,8 @@ my-fashion
 my-hermes
 my-homepage
 my-know-how
-my-most-favorited
+my-most-favorite
+my-most-favourite
 my-my
 my-new-ip
 my-online
@@ -23927,10 +24029,13 @@ neat-web
 neatarticle
 neatblog
 neatly favor
+neatly favour
 neatly preferred
 neatly-favor
+neatly-favour
 neatly-preferred
 neatlyfavor
+neatlyfavour
 neatpage
 neatpost
 neatsite
@@ -25320,6 +25425,8 @@ outletuk
 outletusa
 outletweb
 outletwoolrich
+outlook-repair
+outlookrepair
 outnumbered gainer
 outnumbered loser
 outnumbered-gainer
@@ -27654,6 +27761,10 @@ publik-foto
 publik-seen
 publikacja
 publikfoto
+publikujesz na blog
+publikujesz na post
+publikujesz-na-blog
+publikujesz-na-post
 publish amazing
 publish-amazing
 pucci dress
@@ -27864,13 +27975,16 @@ quck question
 queen chiffon
 queen clutch
 queen out
+queen slot
 queen-chiffon
 queen-clutch
 queen-out
+queen-slot
 queenchiffon
 queenclutch
 queenjp
 queenout
+queenslot
 quelques autre
 quelques outre
 quelques-autre
@@ -29996,6 +30110,9 @@ share - point
 share and sub
 share site
 share ssite
+share this blog
+share this details
+share this web
 share-and-sub
 share-site
 share-ssite
@@ -30717,6 +30834,8 @@ smith sold
 smith-sold
 smithsold
 smnall
+smok priv
+smok-priv
 smoke smok
 smoke-smok
 smoke, smok
@@ -31139,6 +31258,10 @@ spotify.htm
 spotify.jsp
 spotify.php
 spotpoker
+spotykam blog
+spotykam post
+spotykam-blog
+spotykam-post
 spravochnik
 sprawdzian pdf
 sprawdzian-pdf
@@ -32316,10 +32439,14 @@ thanks alot :
 thanks considerably
 thanks designed
 thanks foor
+thanks for article
+thanks for blog
 thanks for posting
+thanks for share
 thanks for sharing
 thanks for the post
 thanks for this post
+thanks for web
 thanks for your post
 thanks regarding
 thanks to web
@@ -32460,6 +32587,7 @@ their email list
 their sincere idea
 their-email-list
 them inaccurate
+them middle
 them to our blog
 them to our page
 them to our site
@@ -33464,6 +33592,10 @@ twitter-hack
 two %
 twoj blog
 twój blog
+twojego blog
+twojego post
+twojego-blog
+twojego-post
 twoo minut
 twoo-minut
 tworzenie
@@ -35773,6 +35905,12 @@ without-ya!
 withthose
 wiuth a
 wiuth the
+wlasciwy blog
+właściwy blog
+wlasciwy post
+właściwy post
+wlasciwy-blog
+wlasciwy-post
 wmfの
 wo.r.t.h
 wo.rth
@@ -38246,6 +38384,7 @@ zyvox
 保証
 信息平台
 倒
+借錢網
 光碟破解
 全球华人
 公式

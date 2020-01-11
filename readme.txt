@@ -118,6 +118,10 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 2.5.1 - 17th December 2019 =
+* Fix infinite scroll button. It now hides when we get to the end of the content.
+* Update blocklist.
+
 = 2.5 - 14th December 2019 =
 * Added a simple Gist block.
 * Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display

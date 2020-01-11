@@ -204,12 +204,13 @@ function toolbelt_is_render() {
  * Display the REST posts.
  *
  * @param WP_REST_Request $data The REST response data.
- * @return array<string>
+ * @return array{html: string, last: bool}
  */
 function toolbelt_is_rest_response( $data ) {
 
 	$results = array(
 		'html' => '',
+		'last' => false,
 	);
 	$callback = 'toolbelt_is_render';
 	$page = isset( $data['page'] ) ? (int) $data['page'] : 1;
@@ -239,9 +240,14 @@ function toolbelt_is_rest_response( $data ) {
 		)
 	);
 
-	// Add page number before inserting posts.
-	// translators: %d = page number.
-	$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
+	/**
+	 * Store if we're on the last page or not.
+	 *
+	 * This allows us to hide the 'load more' button.
+	 */
+	if ( $page >= $GLOBALS['wp_query']->max_num_pages ) {
+		$results['last'] = true;
+	}
 
 	/**
 	 * Render the content.
@@ -253,6 +259,10 @@ function toolbelt_is_rest_response( $data ) {
 	 * Captured in output buffer so we can grab generated html easily.
 	 */
 	if ( have_posts() ) {
+
+		// Add page number before inserting posts.
+		// translators: %d = page number.
+		$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
 
 		ob_start();
 

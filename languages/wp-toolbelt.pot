@@ -354,19 +354,19 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:102
+#: modules/contact-form/module-ajax.php:89
 msgid "All"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:110
+#: modules/contact-form/module-ajax.php:97
 msgid "Published"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:123
+#: modules/contact-form/module-ajax.php:110
 msgid "Trash"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:136, modules/contact-form/module-cpt.php:66, modules/contact-form/module-cpt.php:242
+#: modules/contact-form/module-ajax.php:123, modules/contact-form/module-cpt.php:66, modules/contact-form/module-cpt.php:216
 msgid "Spam"
 msgstr ""
 
@@ -389,32 +389,34 @@ msgid_plural "Spam <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#: modules/contact-form/module-cpt.php:130
+msgid "From"
+msgstr ""
+
 #: modules/contact-form/module-cpt.php:131, modules/contact-form/module-fields.php:514, modules/contact-form/module-fields.php:640
 msgid "Message"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:132
-msgid "From"
-msgstr ""
-
-#: modules/contact-form/module-cpt.php:133, modules/contact-form/module-fields.php:506
+#: modules/contact-form/module-cpt.php:132, modules/contact-form/module-fields.php:506
 msgid "Date"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:202
-msgid "Show All"
-msgstr ""
-
-#: modules/contact-form/module-cpt.php:240
+#: modules/contact-form/module-cpt.php:214
 msgid "Mark this message as spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:254
+#: modules/contact-form/module-cpt.php:226
 msgid "Mark this message as NOT spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:255
+#: modules/contact-form/module-cpt.php:227
 msgid "Not Spam"
+msgstr ""
+
+#. translators: %1$s = date, %2$s = time.
+#: modules/contact-form/module-cpt.php:247
+msgctxt "{$date_format} \a\t {$time_format}"
+msgid "%1$s \a\t %2$s"
 msgstr ""
 
 #: modules/contact-form/module-fields.php:148
@@ -429,7 +431,7 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:361, modules/contact-form/module-submit-form.php:285
+#: modules/contact-form/module-fields.php:361, modules/contact-form/module.php:528
 msgid "Submit"
 msgstr ""
 
@@ -525,19 +527,19 @@ msgstr ""
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:22
+#: modules/contact-form/module.php:215
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:345, modules/contact-form/module-submit-form.php:369
+#: modules/contact-form/module.php:657, modules/contact-form/module.php:679
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:347, modules/contact-form/module-submit-form.php:369
+#: modules/contact-form/module.php:659, modules/contact-form/module.php:679
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:400
+#: modules/contact-form/module.php:708
 msgid "No value supplied"
 msgstr ""
 
@@ -595,7 +597,7 @@ msgid "Load More"
 msgstr ""
 
 #. translators: %d = page number.
-#: modules/infinite-scroll/module.php:244
+#: modules/infinite-scroll/module.php:265
 msgid "Page %d"
 msgstr ""
 
