@@ -36,6 +36,7 @@ function toolbelt_load_modules() {
 
 	$modules = toolbelt_get_modules();
 	$options = toolbelt_get_options();
+	$load_css_properties = false;
 
 	foreach ( $modules as $slug => $module ) {
 
@@ -43,7 +44,22 @@ function toolbelt_load_modules() {
 
 			toolbelt_load_module( $slug, $module );
 
+			if ( in_array( 'css-properties', $module['supports'], true ) ) {
+				$load_css_properties = true;
+			}
+
 		}
+	}
+
+	/**
+	 * If there's at least one moduole active that supports the css custom
+	 * properties then enqueue them.
+	 */
+	if ( $load_css_properties ) {
+
+		add_filter( 'wp_print_styles', 'toolbelt_css_properties' );
+		add_filter( 'admin_head', 'toolbelt_css_properties' );
+
 	}
 
 }
@@ -110,6 +126,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs',
 			'weight' => esc_html__( '1 or 2kb of HTML.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'cleanup' => array(
 			'name' => esc_html__( 'Header Cleanup', 'wp-toolbelt' ),
@@ -121,14 +138,14 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Contact Form', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Create a contact form.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form',
-			'supports' => array( 'experimental' ),
+			'supports' => array( 'experimental', 'css-properties' ),
 			'weight' => esc_html__( '1.2kb of inline CSS, and 12kb of inline JS.', 'wp-toolbelt' ),
 		),
 		'cookie-banner' => array(
 			'name' => esc_html__( 'Cookie Banner', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display a simple banner with a link to your Privacy Policy.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner',
-			'supports' => array( 'gdpr-hard-mode' ),
+			'supports' => array( 'gdpr-hard-mode', 'css-properties' ),
 			'weight' => esc_html__( '1.2kb of inline JS and CSS.', 'wp-toolbelt' ),
 		),
 		'disable-comment-urls' => array(
@@ -163,6 +180,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Load new post content indefinitely. This may require some changes to your theme for it to work properly.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll',
 			'weight' => esc_html__( '0.8kb of inline CSS and 1.3kb of inline JS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
@@ -184,7 +202,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
 			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio',
-			'supports' => array( 'tools' ),
+			'supports' => array( 'tools', 'css-properties' ),
 		),
 		'random-redirect' => array(
 			'name' => esc_html__( 'Random Redirect', 'wp-toolbelt' ),
@@ -196,7 +214,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Speedy related posts.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts',
 			'weight' => esc_html__( '0.3kb of inline CSS, plus the HTML and images.', 'wp-toolbelt' ),
-			'supports' => array( 'tools' ),
+			'supports' => array( 'tools', 'css-properties' ),
 		),
 		'responsive-videos' => array(
 			'name' => esc_html__( 'Responsive Videos', 'wp-toolbelt' ),
@@ -220,6 +238,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Add social sharing links that use the platforms native sharing system.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing',
 			'weight' => esc_html__( '4.1kb of inline SVG icons, and 0.7kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'spam-blocker' => array(
 			'name' => esc_html__( 'Spam Blocker', 'wp-toolbelt' ),
@@ -239,7 +258,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'A testimonials custom post type.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Testimonials',
 			'weight' => esc_html__( '0.5kb of inline CSS.', 'wp-toolbelt' ),
-			'supports' => array( 'tools' ),
+			'supports' => array( 'tools', 'css-properties' ),
 		),
 		'widows' => array(
 			'name' => esc_html__( 'Typographic Widows', 'wp-toolbelt' ),
@@ -285,9 +304,6 @@ function toolbelt_css_properties() {
 	echo '}</style>';
 
 }
-
-add_filter( 'wp_print_styles', 'toolbelt_css_properties' );
-add_filter( 'admin_head', 'toolbelt_css_properties' );
 
 
 /**
