@@ -118,6 +118,11 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 2.5.2 - 8th February 2020 =
+* Add a search results redirect if there's only a single result.
+* Add additional cleanup rules for more speed!
+* Only add css properties when a module is active thast supports them.
+
 = 2.5.1 - 17th December 2019 =
 * Fix infinite scroll button. It now hides when we get to the end of the content.
 * Update blocklist.
