@@ -38,6 +38,7 @@ parameters:
         - %currentWorkingDirectory%/modules/widget-display/module-frontend.php
         - %currentWorkingDirectory%/modules/monetization/module.php
         - %currentWorkingDirectory%/modules/monetization/settings.php
+        - %currentWorkingDirectory%/modules/search-results/module.php
         - %currentWorkingDirectory%/modules/stats/module.php
         - %currentWorkingDirectory%/modules/stats/provider-fathom.php
         - %currentWorkingDirectory%/modules/stats/provider-simple-analytics.php
