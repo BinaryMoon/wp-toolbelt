@@ -30,9 +30,12 @@ remove_action( 'opml_head', 'the_generator' );
 remove_action( 'app_head', 'the_generator' );
 add_filter( 'the_generator', '__return_false' );
 
+// Remove feeds from categories, tags, search etc.
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+
 // Remove the next and previous post links.
-remove_action( 'wp_head', 'adjacent_posts_rel_link', 10 );
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
+remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
 
@@ -124,9 +127,20 @@ add_action(
 add_action(
 	'wp_default_scripts',
 	function( $scripts ) {
+
 		if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
 			$jquery_dependencies = $scripts->registered['jquery']->deps;
 			$scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
 		}
+
+	}
+);
+
+
+// Remove devicepx.
+add_action(
+	'wp_enqueue_scripts',
+	function() {
+		wp_dequeue_script( 'devicepx' );
 	}
 );
