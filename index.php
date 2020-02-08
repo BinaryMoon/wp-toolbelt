@@ -204,6 +204,11 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
 			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
 		),
+		'search-redirect' => array(
+			'name' => esc_html__( 'Search Redirect', 'wp-toolbelt' ),
+			'description' => esc_html__( 'If there is a single search result then redirect to the result, rather than displaying a list of results.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Search-Redirect',
+		),
 		'social-menu' => array(
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add a social icons menu. This must be integrated into the theme.', 'wp-toolbelt' ),
