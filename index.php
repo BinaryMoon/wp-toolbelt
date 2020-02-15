@@ -44,7 +44,7 @@ function toolbelt_load_modules() {
 
 			toolbelt_load_module( $slug, $module );
 
-			if ( in_array( 'css-properties', $module['supports'], true ) ) {
+			if ( isset( $module['supports'] ) && in_array( 'css-properties', $module['supports'], true ) ) {
 				$load_css_properties = true;
 			}
 
