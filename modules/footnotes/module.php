@@ -104,7 +104,7 @@ function toolbelt_footnotes( $data = '' ) {
 
 		$footnotes_markup = array();
 
-		$footnotes_markup[] = '<ol class="footnotes">';
+		$footnotes_markup[] = '<ol class="toolbelt-footnotes">';
 
 		foreach ( $footnotes as $key => $value ) {
 
