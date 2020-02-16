@@ -11,26 +11,13 @@
  * @param string $data The post data to look through.
  * @return string
  */
-function toolbelt_footnotes( $data ) {
-
-	global $post;
-
-	// Ensure post exists.
-	if ( ! $post ) {
-		return $data;
-	}
+function toolbelt_footnotes( $data = '' ) {
 
 	$search_string = '/(' . preg_quote( '((', '/' ) . ')(.*)(' . preg_quote( '))', '/' ) . ')/Us';
 
 	// Regex extraction of all footnotes (or return if there are none).
 	if ( ! preg_match_all( $search_string, $data, $identifiers, PREG_SET_ORDER ) ) {
 		return $data;
-	}
-
-	// Should we display the footnotes or hide them?
-	$display = true;
-	if ( ! is_singular() ) {
-		$display = false;
 	}
 
 	$footnotes = array();
@@ -66,6 +53,7 @@ function toolbelt_footnotes( $data ) {
 		}
 	}
 
+	// Should we display the full page link, or just the anchor link?
 	$use_full_link = false;
 
 	if ( is_feed() ) {
@@ -76,12 +64,26 @@ function toolbelt_footnotes( $data ) {
 		$use_full_link = false;
 	}
 
+	// Get the post/ page url.
+	$permalink = '';
+	$post_id = (int) get_the_ID();
+
+	if ( $use_full_link && $post_id ) {
+		$permalink = get_permalink( $post_id );
+	}
+
+	// Should we display the footnotes or hide them?
+	$display = true;
+	if ( ! is_singular() && $post_id ) {
+		$display = false;
+	}
+
 	// Display identifiers.
 	foreach ( $identifiers as $key => $value ) {
 
-		$id_id = 'identifier_' . $key . '_' . $post->ID;
+		$id_id = 'identifier_' . $key . '_' . $post_id;
 		$id_num = $value['use_footnote'] + 1;
-		$id_href = ( ( $use_full_link ) ? get_permalink( $post->ID ) : '' ) . '#footnote_' . $value['use_footnote'] . '_' . $post->ID;
+		$id_href = $permalink . '#footnote_' . $value['use_footnote'] . '_' . $post_id;
 		$id_title = str_replace( '"', '&quot;', htmlentities( html_entity_decode( wp_strip_all_tags( $value['text'] ), ENT_QUOTES, 'UTF-8' ), ENT_QUOTES, 'UTF-8' ) );
 
 		if ( $display ) {
@@ -114,9 +116,9 @@ function toolbelt_footnotes( $data ) {
 
 				$backlinks[] = sprintf(
 					'(<a href="%1$s#identifier_%2$d_%3$d" class="footnote-link footnote-back-link">&#8617;</a>)',
-					( ( $use_full_link ) ? get_permalink( $post->ID ) : '' ),
+					$permalink,
 					$identifier,
-					(int) $post->ID
+					$post_id
 				);
 
 			}
@@ -136,7 +138,7 @@ function toolbelt_footnotes( $data ) {
 			$footnotes_markup[] = sprintf(
 				'<li id="footnote_%1$d_%2$d">%3$s</li>',
 				(int) $key,
-				$post->ID,
+				$post_id,
 				wp_kses_post( $content )
 			);
 
