@@ -81,15 +81,18 @@ function toolbelt_footnotes( $data = '' ) {
 	// Display identifiers.
 	foreach ( $identifiers as $key => $value ) {
 
-		$id_id = 'identifier_' . $key . '_' . $post_id;
-		$id_num = $value['use_footnote'] + 1;
-		$id_href = $permalink . '#footnote_' . $value['use_footnote'] . '_' . $post_id;
-		$id_title = str_replace( '"', '&quot;', htmlentities( html_entity_decode( wp_strip_all_tags( $value['text'] ), ENT_QUOTES, 'UTF-8' ), ENT_QUOTES, 'UTF-8' ) );
+		$id_replace = '';
 
 		if ( $display ) {
-			$id_replace = '<sup><a href="' . $id_href . '" id="' . $id_id . '" class="footnote-link footnote-identifier-link" title="' . $id_title . '">(' . $id_num . ')</a></sup>';
-		} else {
-			$id_replace = '';
+
+			$id_replace = sprintf(
+				'<sup><a href="%1$s" id="%2$s" class="footnote-link footnote-identifier-link" title="%3$s">(%4$d)</a></sup>',
+				$permalink . '#footnote_' . $value['use_footnote'] . '_' . $post_id,
+				'identifier_' . $key . '_' . $post_id,
+				str_replace( '"', '&quot;', htmlentities( html_entity_decode( wp_strip_all_tags( $value['text'] ), ENT_QUOTES, 'UTF-8' ), ENT_QUOTES, 'UTF-8' ) ),
+				$value['use_footnote'] + 1
+			);
+
 		}
 
 		$data = substr_replace( $data, $id_replace, strpos( $data, $value[0] ), strlen( $value[0] ) );
