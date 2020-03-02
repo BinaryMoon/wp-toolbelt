@@ -1,6 +1,7 @@
 <?php
 /**
  * Database and plugin updates.
+ * And controls cron jobs.
  *
  * @package toolbelt
  */
