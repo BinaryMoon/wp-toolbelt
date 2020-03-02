@@ -6,7 +6,9 @@
  */
 
 /**
+ * Update the blocklist.txt file from Github.
  *
+ * @return void
  */
 function toolbelt_spam_blocker_update_blocklist() {
 
