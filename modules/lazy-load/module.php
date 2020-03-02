@@ -1,6 +1,12 @@
 <?php
 /**
- * Use ative lazy loading.
+ * Use native lazy loading.
+ *
+ * We will delete this once WordPress Core supports lazy loading natively.
+ *
+ * @see https://github.com/WordPress/wp-lazy-loading
+ * @see https://wordpress.org/plugins/wp-lazy-loading/
+ * @see https://make.wordpress.org/core/2020/01/29/lazy-loading-images-in-wordpress-core/
  *
  * @package toolbelt
  */
@@ -12,6 +18,13 @@
  * @return string
  */
 function toolbelt_lazy_load_image( $content ) {
+
+	/**
+	 * Don't do anything if WordPress core lazy loading is available.
+	 */
+	if ( function_exists( 'wp_lazy_loading_enabled' ) ) {
+		return $content;
+	}
 
 	return (string) preg_replace(
 		'/<img /',
@@ -29,6 +42,13 @@ function toolbelt_lazy_load_image( $content ) {
  * @return string
  */
 function toolbelt_lazy_load_iframe( $content ) {
+
+	/**
+	 * Don't do anything if WordPress core lazy loading is available.
+	 */
+	if ( function_exists( 'wp_lazy_loading_enabled' ) ) {
+		return $content;
+	}
 
 	return (string) preg_replace(
 		'/<iframe /',

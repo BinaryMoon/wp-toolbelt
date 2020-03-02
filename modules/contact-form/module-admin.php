@@ -165,12 +165,7 @@ function toolbelt_contact_form_register_block() {
 
 }
 
-
-/**
- * This file is included on init, so we should register the blocks immediately.
- * No need to hook on init.
- */
-toolbelt_contact_form_register_block();
+add_action( 'init', 'toolbelt_contact_form_register_block' );
 
 
 /**

@@ -12,41 +12,10 @@ parameters:
         - %currentWorkingDirectory%/admin/admin.php
         - %currentWorkingDirectory%/admin/updates.php
         # Modules
+        - %currentWorkingDirectory%/modules/admin-tweaks/module.php
         - %currentWorkingDirectory%/modules/breadcrumbs/module.php
         - %currentWorkingDirectory%/modules/cleanup/module.php
         - %currentWorkingDirectory%/modules/cookie-banner/module.php
-        - %currentWorkingDirectory%/modules/disable-comment-urls/module.php
-        - %currentWorkingDirectory%/modules/disable-comment-urls/tools.php
-        - %currentWorkingDirectory%/modules/fast-404/module.php
-        - %currentWorkingDirectory%/modules/featured-attachment/module.php
-        - %currentWorkingDirectory%/modules/heading-anchors/module.php
-        - %currentWorkingDirectory%/modules/infinite-scroll/module.php
-        - %currentWorkingDirectory%/modules/lazy-load/module.php
-        - %currentWorkingDirectory%/modules/spam-blocker/module.php
-        - %currentWorkingDirectory%/modules/projects/module.php
-        - %currentWorkingDirectory%/modules/projects/tools.php
-        - %currentWorkingDirectory%/modules/testimonials/module.php
-        - %currentWorkingDirectory%/modules/testimonials/tools.php
-        - %currentWorkingDirectory%/modules/random-redirect/module.php
-        - %currentWorkingDirectory%/modules/related-posts/module.php
-        - %currentWorkingDirectory%/modules/related-posts/tools.php
-        - %currentWorkingDirectory%/modules/responsive-videos/module.php
-        - %currentWorkingDirectory%/modules/social-menu/module.php
-        - %currentWorkingDirectory%/modules/social-sharing/module.php
-        - %currentWorkingDirectory%/modules/widget-display/module.php
-        - %currentWorkingDirectory%/modules/widget-display/module-admin.php
-        - %currentWorkingDirectory%/modules/widget-display/module-frontend.php
-        - %currentWorkingDirectory%/modules/monetization/module.php
-        - %currentWorkingDirectory%/modules/monetization/settings.php
-        - %currentWorkingDirectory%/modules/stats/module.php
-        - %currentWorkingDirectory%/modules/stats/provider-fathom.php
-        - %currentWorkingDirectory%/modules/stats/provider-simple-analytics.php
-        - %currentWorkingDirectory%/modules/stats/provider-plausible.php
-        - %currentWorkingDirectory%/modules/stats/settings.php
-        - %currentWorkingDirectory%/modules/admin-tweaks/module.php
-        - %currentWorkingDirectory%/modules/markdown/module.php
-        - %currentWorkingDirectory%/modules/gist/module.php
-        - %currentWorkingDirectory%/modules/widows/module.php
         - %currentWorkingDirectory%/modules/contact-form/module.php
         - %currentWorkingDirectory%/modules/contact-form/module-fields.php
         - %currentWorkingDirectory%/modules/contact-form/module-cpt.php
@@ -54,6 +23,39 @@ parameters:
         - %currentWorkingDirectory%/modules/contact-form/module-ajax.php
         - %currentWorkingDirectory%/modules/contact-form/module-admin.php
         - %currentWorkingDirectory%/modules/contact-form/module-submit-form.php
+        - %currentWorkingDirectory%/modules/disable-comment-urls/module.php
+        - %currentWorkingDirectory%/modules/disable-comment-urls/tools.php
+        - %currentWorkingDirectory%/modules/fast-404/module.php
+        - %currentWorkingDirectory%/modules/featured-attachment/module.php
+        - %currentWorkingDirectory%/modules/footnotes/module.php
+        - %currentWorkingDirectory%/modules/gist/module.php
+        - %currentWorkingDirectory%/modules/heading-anchors/module.php
+        - %currentWorkingDirectory%/modules/infinite-scroll/module.php
+        - %currentWorkingDirectory%/modules/lazy-load/module.php
+        - %currentWorkingDirectory%/modules/markdown/module.php
+        - %currentWorkingDirectory%/modules/monetization/module.php
+        - %currentWorkingDirectory%/modules/monetization/settings.php
+        - %currentWorkingDirectory%/modules/projects/module.php
+        - %currentWorkingDirectory%/modules/projects/tools.php
+        - %currentWorkingDirectory%/modules/random-redirect/module.php
+        - %currentWorkingDirectory%/modules/related-posts/module.php
+        - %currentWorkingDirectory%/modules/related-posts/tools.php
+        - %currentWorkingDirectory%/modules/responsive-videos/module.php
+        - %currentWorkingDirectory%/modules/search-redirect/module.php
+        - %currentWorkingDirectory%/modules/stats/module.php
+        - %currentWorkingDirectory%/modules/stats/provider-fathom.php
+        - %currentWorkingDirectory%/modules/stats/provider-simple-analytics.php
+        - %currentWorkingDirectory%/modules/stats/provider-plausible.php
+        - %currentWorkingDirectory%/modules/stats/settings.php
+        - %currentWorkingDirectory%/modules/spam-blocker/module.php
+        - %currentWorkingDirectory%/modules/social-menu/module.php
+        - %currentWorkingDirectory%/modules/social-sharing/module.php
+        - %currentWorkingDirectory%/modules/testimonials/module.php
+        - %currentWorkingDirectory%/modules/testimonials/tools.php
+        - %currentWorkingDirectory%/modules/widget-display/module.php
+        - %currentWorkingDirectory%/modules/widget-display/module-admin.php
+        - %currentWorkingDirectory%/modules/widget-display/module-frontend.php
+        - %currentWorkingDirectory%/modules/widows/module.php
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function [a-zA-Z_]+ invoked with [1-9] parameters?, [0-9\-]+ required\.$#'

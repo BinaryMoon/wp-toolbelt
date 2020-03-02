@@ -36,24 +36,29 @@ Toolbelt has a lot of features. The complete list is below.
 
 * [Admin Tweaks](https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks)
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
+* [Contact Form](https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
 * [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls)
 * [Fast 404](https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404)
 * [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
+* [Footnotes](https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes)
 * [Heading Anchors](https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor)
 * [Infinite Scroll](https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll)
 * [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
+* [Markdown](https://github.com/BinaryMoon/wp-toolbelt/wiki/Markdown)
 * [Monetization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization)
 * [Optimization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization)
 * [Portfolio](https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio)
 * [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
 * [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
 * [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
+* [Search Redirect](https://github.com/BinaryMoon/wp-toolbelt/wiki/Search-Redirect)
 * [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
 * [Spam Blocker](https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker)
 * [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
 * [Stats](https://github.com/BinaryMoon/wp-toolbelt/wiki/Stats)
 * [Testimonials](https://github.com/BinaryMoon/wp-toolbelt/wiki/Testimonials)
+* [Typographic Widows](https://github.com/BinaryMoon/wp-toolbelt/wiki/Typographic-Widows)
 * [Widget Display](https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display)
 
 = Toolbelt is Private =
@@ -117,6 +122,13 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 2.5.2 - 2nd March 2020 =
+* Add new footnotes module that appends footnotes to the bottom of post content.
+* Add a search results redirect if there's only a single result.
+* Add additional cleanup rules for more speed!
+* Only add css properties when a module is active that supports them.
+* Automatically update the spam blocker blocklist once a week.
 
 = 2.5.1 - 17th December 2019 =
 * Fix infinite scroll button. It now hides when we get to the end of the content.
