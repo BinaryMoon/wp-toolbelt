@@ -12,6 +12,11 @@
  */
 
 /**
+ * Cron job.
+ */
+require 'module-cron.php';
+
+/**
  * Inspiration
  *
  * WordPress Zero Spam is based on the ideas outlined in David Walshes spam blocker.
