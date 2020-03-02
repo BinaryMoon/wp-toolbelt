@@ -56,8 +56,8 @@ add_action( 'upgrader_process_complete', 'toolbelt_contact_plugin_de_activation'
 /**
  * Enable WordPress cron for specific modules.
  *
- * @param string     $module The module to load the cron for. If it's not active then quit.
- * @param string|int $cron_duration The duration of the cron job.
+ * @param string $module The module to load the cron for. If it's not active then quit.
+ * @param string $cron_duration The duration of the cron job.
  * @return void
  */
 function toolbelt_enable_cron( $module, $cron_duration = 'daily' ) {
