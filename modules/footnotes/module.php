@@ -13,15 +13,18 @@
  */
 function toolbelt_footnotes( $data = '' ) {
 
+	// Regex to find all footnotes in the post content.
 	$search_string = '/(' . preg_quote( '((', '/' ) . ')(.*)(' . preg_quote( '))', '/' ) . ')/Us';
 
-	// Regex extraction of all footnotes (or return if there are none).
+	// Extract all footnotes or return if there are none.
 	if ( ! preg_match_all( $search_string, $data, $identifiers, PREG_SET_ORDER ) ) {
 		return $data;
 	}
 
+	// Store processed footnote data.
 	$footnotes = array();
 
+	// The number of found footnotes.
 	$identifier_count = count( $identifiers );
 
 	for ( $i = 0; $i < $identifier_count; $i++ ) {
@@ -30,6 +33,7 @@ function toolbelt_footnotes( $data = '' ) {
 
 		// If we're combining identical notes check if we've already got one like this & record keys.
 		$footnote_count = count( $footnotes );
+
 		for ( $j = 0; $j < $footnote_count; $j++ ) {
 
 			if ( $footnotes[ $j ]['text'] === $identifiers[ $i ]['text'] ) {
@@ -42,6 +46,10 @@ function toolbelt_footnotes( $data = '' ) {
 
 		}
 
+		/**
+		 * If the footnote is not already set (is not a duplicate) then save the
+		 * footnote info.
+		 */
 		if ( ! isset( $identifiers[ $i ]['use_footnote'] ) ) {
 
 			// Add footnote and record the key.
@@ -52,6 +60,11 @@ function toolbelt_footnotes( $data = '' ) {
 
 		}
 	}
+
+	/**
+	 * We've processed the footnotes now.
+	 * Next we need to display them.
+	 */
 
 	// Should we display the full page link, or just the anchor link?
 	$use_full_link = false;
@@ -78,7 +91,9 @@ function toolbelt_footnotes( $data = '' ) {
 		$display = false;
 	}
 
-	// Display identifiers.
+	/**
+	 * Display links to footnotes in post content.
+	 */
 	foreach ( $identifiers as $key => $value ) {
 
 		$id_replace = '';
@@ -99,7 +114,9 @@ function toolbelt_footnotes( $data = '' ) {
 
 	}
 
-	// Display footnotes.
+	/**
+	 * Generate footnote markup to display at the end of the post.
+	 */
 	if ( $display ) {
 
 		$footnotes_markup = array();
