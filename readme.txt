@@ -118,7 +118,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.5.3 - 2nd March 2020 =
+= 2.5.2 - 2nd March 2020 =
 * Add new footnotes module that appends footnotes to the bottom of post content.
 * Add a search results redirect if there's only a single result.
 * Add additional cleanup rules for more speed!
