@@ -182,7 +182,7 @@ function toolbelt_breadcrumb_tax_hierarchical( $taxonomy ) {
 	 * If the current taxonomy has a parent taxonomy then let's add them all
 	 * together.
 	 */
-	if ( isset( $current->parent ) && is_int( $current->parent ) ) {
+	if ( ! empty( $current->parent ) && is_int( $current->parent ) ) {
 		$breadcrumbs = array_merge(
 			$breadcrumbs,
 			toolbelt_get_term_parents( $current->parent, $taxonomy )
