@@ -5,6 +5,9 @@
 		display: inline;
 		text-decoration: none;
 		padding: 0.5em;
+		position: absolute;
+		// Shift the link so to offset the padding.
+		transform: translate( -0.25em, -0.5em );
 
 		.device-click & {
 
