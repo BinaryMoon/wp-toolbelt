@@ -1,4 +1,4 @@
-# Copyright (C) 2019 Toolbelt
+# Copyright (C) 2020 Toolbelt
 # This file is distributed under the same license as the Toolbelt package.
 msgid ""
 msgstr ""
@@ -13,247 +13,263 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:104
+#: index.php:120
 msgid "Admin Tweaks"
 msgstr ""
 
-#: index.php:105
+#: index.php:121
 msgid "Tweak styles in the admin to make it more usable."
 msgstr ""
 
-#: index.php:109
+#: index.php:125
 msgid "Breadcrumbs"
 msgstr ""
 
-#: index.php:110
+#: index.php:126
 msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
 msgstr ""
 
-#: index.php:112
+#: index.php:128
 msgid "1 or 2kb of HTML."
 msgstr ""
 
-#: index.php:115
+#: index.php:132
 msgid "Header Cleanup"
 msgstr ""
 
-#: index.php:116
+#: index.php:133
 msgid "Remove unnecessary HTML from the site header."
 msgstr ""
 
-#: index.php:118
+#: index.php:135
 msgid "Minus 5kb of HTML from the page head."
 msgstr ""
 
-#: index.php:121
+#: index.php:138
 msgid "Contact Form"
 msgstr ""
 
-#: index.php:122
+#: index.php:139
 msgid "Create a contact form."
 msgstr ""
 
-#: index.php:125
+#: index.php:142
 msgid "1.2kb of inline CSS, and 12kb of inline JS."
 msgstr ""
 
-#: index.php:128
+#: index.php:145
 msgid "Cookie Banner"
 msgstr ""
 
-#: index.php:129
+#: index.php:146
 msgid "Display a simple banner with a link to your Privacy Policy."
 msgstr ""
 
-#: index.php:132
+#: index.php:149
 msgid "1.2kb of inline JS and CSS."
 msgstr ""
 
-#: index.php:135
+#: index.php:152
 msgid "Disable the Comment URL Field"
 msgstr ""
 
-#: index.php:136
+#: index.php:153
 msgid "Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
-#: index.php:141
+#: index.php:158
 msgid "Fast 404s"
 msgstr ""
 
-#: index.php:142
+#: index.php:159
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:146
+#: index.php:163
 msgid "Featured Attachment"
 msgstr ""
 
-#: index.php:147
+#: index.php:164
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:151
-msgid "Gist Embed Block"
-msgstr ""
-
-#: index.php:152
-msgid "Easily embed Github Gists onto your site."
-msgstr ""
-
-#: index.php:156
-msgid "Heading Anchors"
-msgstr ""
-
-#: index.php:157
-msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
-msgstr ""
-
-#: index.php:159, index.php:205
-msgid "0.2kb of inline CSS."
-msgstr ""
-
-#: index.php:162
-msgid "Infinite Scroll"
-msgstr ""
-
-#: index.php:163
-msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
-msgstr ""
-
-#: index.php:165
-msgid "0.8kb of inline CSS and 1.3kb of inline JS."
-msgstr ""
-
-#: index.php:168
-msgid "Lazy Load images"
+#: index.php:168, modules/footnotes/module.php:124
+msgid "Footnotes"
 msgstr ""
 
 #: index.php:169
-msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
+msgid "Add footnotes to the bottom of the page."
 msgstr ""
 
 #: index.php:173
-msgid "Markdown"
+msgid "Gist Embed Block"
 msgstr ""
 
 #: index.php:174
-msgid "Render Markdown. Uses Github flavor Markdown."
+msgid "Easily embed Github Gists onto your site."
 msgstr ""
 
 #: index.php:178
-msgid "Web Monetization"
+msgid "Heading Anchors"
 msgstr ""
 
 #: index.php:179
-msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
+msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:184, modules/projects/module.php:39
-msgid "Portfolio"
+#: index.php:181, index.php:228
+msgid "0.2kb of inline CSS."
+msgstr ""
+
+#: index.php:184
+msgid "Infinite Scroll"
 msgstr ""
 
 #: index.php:185
-msgid "A portfolio custom post type for your projects."
+msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
-#: index.php:190
-msgid "Random Redirect"
+#: index.php:187
+msgid "0.8kb of inline CSS and 1.3kb of inline JS."
 msgstr ""
 
 #: index.php:191
-msgid "Randomly Redirect to a blog post."
+msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:195, modules/related-posts/module.php:120, modules/related-posts/tools.php:19
-msgid "Related Posts"
+#: index.php:192
+msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
 #: index.php:196
-msgid "Speedy related posts."
+msgid "Markdown"
 msgstr ""
 
-#: index.php:198
-msgid "0.3kb of inline CSS, plus the HTML and images."
+#: index.php:197
+msgid "Render Markdown. Uses Github flavor Markdown."
+msgstr ""
+
+#: index.php:201
+msgid "Web Monetization"
 msgstr ""
 
 #: index.php:202
-msgid "Responsive Videos"
+msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
-#: index.php:203
-msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
+#: index.php:207, modules/projects/module.php:39
+msgid "Portfolio"
 msgstr ""
 
-#: index.php:208, modules/social-menu/module.php:16, modules/social-menu/module.php:35
-msgid "Social Menu"
+#: index.php:208
+msgid "A portfolio custom post type for your projects."
 msgstr ""
 
-#: index.php:209
-msgid "Add a social icons menu. This must be integrated into the theme."
-msgstr ""
-
-#: index.php:211
-msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
+#: index.php:213
+msgid "Random Redirect"
 msgstr ""
 
 #: index.php:214
-msgid "Static Social Sharing"
+msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:215
-msgid "Add social sharing links that use the platforms native sharing system."
+#: index.php:218, modules/related-posts/module.php:120, modules/related-posts/tools.php:19
+msgid "Related Posts"
 msgstr ""
 
-#: index.php:217
-msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
-msgstr ""
-
-#: index.php:220
-msgid "Spam Blocker"
+#: index.php:219
+msgid "Speedy related posts."
 msgstr ""
 
 #: index.php:221
-msgid "Attempt to block spam."
+msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:223
-msgid "0.3kb of inline JS"
+#: index.php:225
+msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:227, modules/stats/settings.php:40
-msgid "Stats"
+#: index.php:226
+msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:228
-msgid "Website statistics and analytics."
+#: index.php:231
+msgid "Search Redirect"
 msgstr ""
 
-#: index.php:233, modules/testimonials/module.php:46
-msgid "Testimonial"
+#: index.php:232
+msgid "If there is a single search result then redirect to the result, rather than displaying a list of results."
 msgstr ""
 
-#: index.php:234
-msgid "A testimonials custom post type."
+#: index.php:236, modules/social-menu/module.php:16, modules/social-menu/module.php:35
+msgid "Social Menu"
 msgstr ""
 
-#: index.php:236
-msgid "0.5kb of inline CSS."
+#: index.php:237
+msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:240
-msgid "Typographic Widows"
+#: index.php:239
+msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:241
-msgid "Fix typographic widows in titles and headings."
+#: index.php:242
+msgid "Static Social Sharing"
+msgstr ""
+
+#: index.php:243
+msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
 #: index.php:245
+msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
+msgstr ""
+
+#: index.php:249
+msgid "Spam Blocker"
+msgstr ""
+
+#: index.php:250
+msgid "Attempt to block spam."
+msgstr ""
+
+#: index.php:252
+msgid "0.3kb of inline JS"
+msgstr ""
+
+#: index.php:256, modules/stats/settings.php:40
+msgid "Stats"
+msgstr ""
+
+#: index.php:257
+msgid "Website statistics and analytics."
+msgstr ""
+
+#: index.php:262, modules/testimonials/module.php:46
+msgid "Testimonial"
+msgstr ""
+
+#: index.php:263
+msgid "A testimonials custom post type."
+msgstr ""
+
+#: index.php:265
+msgid "0.5kb of inline CSS."
+msgstr ""
+
+#: index.php:269
+msgid "Typographic Widows"
+msgstr ""
+
+#: index.php:270
+msgid "Fix typographic widows in titles and headings."
+msgstr ""
+
+#: index.php:274
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:246
+#: index.php:275
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -354,19 +370,19 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:89
+#: modules/contact-form/module-ajax.php:102
 msgid "All"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:97
+#: modules/contact-form/module-ajax.php:110
 msgid "Published"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:110
+#: modules/contact-form/module-ajax.php:123
 msgid "Trash"
 msgstr ""
 
-#: modules/contact-form/module-ajax.php:123, modules/contact-form/module-cpt.php:66, modules/contact-form/module-cpt.php:216
+#: modules/contact-form/module-ajax.php:136, modules/contact-form/module-cpt.php:66, modules/contact-form/module-cpt.php:242
 msgid "Spam"
 msgstr ""
 
@@ -389,34 +405,32 @@ msgid_plural "Spam <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: modules/contact-form/module-cpt.php:130
-msgid "From"
-msgstr ""
-
 #: modules/contact-form/module-cpt.php:131, modules/contact-form/module-fields.php:514, modules/contact-form/module-fields.php:640
 msgid "Message"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:132, modules/contact-form/module-fields.php:506
+#: modules/contact-form/module-cpt.php:132
+msgid "From"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:133, modules/contact-form/module-fields.php:506
 msgid "Date"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:214
+#: modules/contact-form/module-cpt.php:202
+msgid "Show All"
+msgstr ""
+
+#: modules/contact-form/module-cpt.php:240
 msgid "Mark this message as spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:226
+#: modules/contact-form/module-cpt.php:254
 msgid "Mark this message as NOT spam"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:227
+#: modules/contact-form/module-cpt.php:255
 msgid "Not Spam"
-msgstr ""
-
-#. translators: %1$s = date, %2$s = time.
-#: modules/contact-form/module-cpt.php:247
-msgctxt "{$date_format} \a\t {$time_format}"
-msgid "%1$s \a\t %2$s"
 msgstr ""
 
 #: modules/contact-form/module-fields.php:148
@@ -431,7 +445,7 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:361, modules/contact-form/module.php:528
+#: modules/contact-form/module-fields.php:361, modules/contact-form/module-submit-form.php:285
 msgid "Submit"
 msgstr ""
 
@@ -527,19 +541,19 @@ msgstr ""
 msgid "Phone Number"
 msgstr ""
 
-#: modules/contact-form/module.php:215
+#: modules/contact-form/module-submit-form.php:22
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module.php:657, modules/contact-form/module.php:679
+#: modules/contact-form/module-submit-form.php:345, modules/contact-form/module-submit-form.php:369
 msgid "Yes"
 msgstr ""
 
-#: modules/contact-form/module.php:659, modules/contact-form/module.php:679
+#: modules/contact-form/module-submit-form.php:347, modules/contact-form/module-submit-form.php:369
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module.php:708
+#: modules/contact-form/module-submit-form.php:400
 msgid "No value supplied"
 msgstr ""
 
@@ -597,7 +611,7 @@ msgid "Load More"
 msgstr ""
 
 #. translators: %d = page number.
-#: modules/infinite-scroll/module.php:265
+#: modules/infinite-scroll/module.php:260
 msgid "Page %d"
 msgstr ""
 
