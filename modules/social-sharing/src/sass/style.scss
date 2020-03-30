@@ -3,6 +3,7 @@
 	font-size: 1rem;
 	margin-top: calc( var( --toolbelt-spacing ) * 2 );
 	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
+	clear: both;
 
 	a {
 
@@ -14,6 +15,12 @@
 		@media (min-width: 500px) {
 
 			display: inline-flex;
+
+		}
+
+		&:hover {
+
+			color: white;
 
 		}
 

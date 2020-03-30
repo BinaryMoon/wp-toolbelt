@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.3
+Tested up to: 5.4
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -122,6 +122,14 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+
+= 2.5.3 - 21st March 2020 =
+* Add hover colour to social share links so that they are always readable.
+* Ensure the heading anchors don't move the content around.
+* Add title to footnotes links
+* Tweak cookie banner css to ensure the box size doesn't change unexpectedly.
+* Make columns css more robust so that it will work with every theme.
 
 = 2.5.2 - 2nd March 2020 =
 * Add new footnotes module that appends footnotes to the bottom of post content.

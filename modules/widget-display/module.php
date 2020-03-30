@@ -46,7 +46,10 @@ function toolbelt_widget_display( $logic ) {
 	$exclude_tokens = array_filter(
 		$logic_tokens,
 		function( $token ) {
-			return '!' === $token[0];
+			if ( isset( $token[0] ) ) {
+				return '!' === $token[0];
+			}
+			return '!' === $token;
 		}
 	);
 
@@ -65,7 +68,10 @@ function toolbelt_widget_display( $logic ) {
 	$include_tokens = array_filter(
 		$logic_tokens,
 		function( $token ) {
-			return '!' !== $token[0];
+			if ( isset( $token[0] ) ) {
+				return '!' === $token[0];
+			}
+			return '!' === $token;
 		}
 	);
 
