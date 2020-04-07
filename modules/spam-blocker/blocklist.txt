@@ -8,7 +8,10 @@ _albion
 _alviero
 _annonce
 _asshole
+_barata
+_barato
 _bitcoin
+_biz
 _blackjack
 _blahnik
 _bulgar
@@ -48,6 +51,7 @@ _hermes
 _herpes
 _heuer
 _http
+_jord
 _lacoste
 _latisse
 _lesbian
@@ -4459,7 +4463,6 @@ $sixty
 1 addict
 1 appli
 1 casino
-1 download mp3
 1 into $
 1 of the
 1 powerful technique
@@ -6236,6 +6239,7 @@ anchor2
 anchortext
 and additional raise
 and bye.
+and good post
 and shate
 and-shate
 and-special
@@ -6549,6 +6553,7 @@ article content
 article dude
 article fully about
 article he/she
+article i am
 article is fastidious
 article is genuine
 article is perfect
@@ -6568,6 +6573,7 @@ article snatch
 article sub
 article suggest
 article tag
+article to rank
 article to your life
 article writing
 article you write
@@ -6838,10 +6844,12 @@ aulas de manicure
 aulas-de-manicure
 aumentare il seno
 aumentare-il-seno
+auspicious blog
+auspicious post
 auspicious repl
+auspicious site
+auspicious web
 auspicious writ
-auspicious-repl
-auspicious-writ
 australia boot
 australia clearance
 australia jersey
@@ -6866,10 +6874,7 @@ autentica cheap
 autentica hermes
 autentica jord
 autentica ugg
-autentica_cheap
-autentica_hermes
-autentica_jord
-autentica_ugg
+autentica_
 autentica-cheap
 autentica-jord
 autentica-ugg
@@ -6880,10 +6885,6 @@ autenticaugg
 autentico cheap
 autentico hermes
 autentico jord
-autentico_cheap
-autentico_hermes
-autentico_jord
-autentico_ugg
 autentico-cheap
 autentico-jord
 autentico-ugg
@@ -6898,11 +6899,7 @@ authentic cheap
 authentic hermes
 authentic jord
 authentic stephen
-authentic_cheap
-authentic_hermes
-authentic_jord
 authentic_stephen
-authentic_ugg
 authentic-cheap
 authentic-hermes
 authentic-jord
@@ -7356,10 +7353,6 @@ barata online
 barata person
 barata ropa
 barata_
-barata_new
-barata_online
-barata_person
-barata_ropa
 barata-new
 barata-online
 barata-person
@@ -7372,11 +7365,7 @@ baratas new
 baratas online
 baratas person
 baratas ropa
-baratas_new
-baratas_online
-baratas_person
-baratas_ropa
-baratas-new
+baratas_
 baratas-online
 baratas-person
 baratas-ropa
@@ -7388,10 +7377,7 @@ barato new
 barato online
 barato person
 barato ropa
-barato_new
-barato_online
-barato_person
-barato_ropa
+barato_
 barato-new
 barato-online
 barato-person
@@ -7404,10 +7390,7 @@ baratos new
 baratos online
 baratos person
 baratos ropa
-baratos_new
-baratos_online
-baratos_person
-baratos_ropa
+baratos_
 baratos-new
 baratos-online
 baratos-person
@@ -8088,6 +8071,7 @@ biuro-solido
 biz advert
 biz market
 biz news
+biz_
 biz-advert
 biz-market
 biz-news
@@ -8233,6 +8217,7 @@ blog struct
 blog sys
 blog through google
 blog thus
+blog to rank
 blog truly has
 blog using
 blog various
@@ -8346,6 +8331,9 @@ bloggerlove
 bloggers service
 bloggers-service
 bloggers, business
+bloggin ad
+bloggin-ad
+blogging ad
 blogging and site
 blogging glance
 blogging look
@@ -8353,6 +8341,7 @@ blogging service
 blogging user
 blogging viewer
 blogging visit
+blogging-ad
 blogging-glance
 blogging-look
 blogging-service
@@ -8405,6 +8394,7 @@ blogviewer
 blogweb
 blogworld
 bloig
+blokg
 blolg
 blond4u
 blood online
@@ -9701,15 +9691,7 @@ cannabis proceed
 cannabis same
 cannabis seed
 cannabis weed
-cannabis_buy
-cannabis_carry
-cannabis_grow
-cannabis_gum
-cannabis_oil
-cannabis_proceed
-cannabis_same
-cannabis_seed
-cannabis_weed
+cannabis_
 cannabis-buy
 cannabis-carry
 cannabis-grow
@@ -10014,6 +9996,7 @@ cbdcannabis
 cbdcream
 cbdgum
 cbdisolate
+çç
 cc shop
 cc-shop
 ccan visit
@@ -10365,6 +10348,7 @@ chaussureboutique
 chaussurembt
 chaussurenike
 chaussureparis
+chaussures abil
 chaussures adidas
 chaussures boutique
 chaussures christ
@@ -10381,7 +10365,7 @@ chaussures ski
 chaussures sport
 chaussures ugg
 chaussures_
-chaussures- abil
+chaussures-abil
 chaussures-adidas
 chaussures-asic
 chaussures-boutique
@@ -10479,6 +10463,7 @@ cheap nike
 cheap north
 cheap oakley
 cheap online
+cheap pandora
 cheap paper
 cheap pokemon
 cheap price
@@ -11260,7 +11245,10 @@ clotrimazole
 clou replica
 clou-replica
 cloud integration train
+cloud mining
 cloud-integration-train
+cloud-mining
+cloudmining
 clredheel
 clsale
 clshoe
@@ -11457,6 +11445,7 @@ coffeeblogger
 cofoubder
 cohttp
 coin cheat
+coin cloud
 coin foot
 coin fut
 coin game
@@ -11467,6 +11456,7 @@ coin master hack
 coin offering
 coin xbox
 coin-cheat
+coin-cloud
 coin-foot
 coin-fut
 coin-game
@@ -11478,6 +11468,7 @@ coin-master-hack
 coin-offering
 coin-xbox
 coincheat
+coincloud
 coinfoot
 coinfut
 coingame
@@ -11889,6 +11880,7 @@ conversejap
 conversejp
 convey her.
 convey in academy
+convey in college
 conveyancing solicitor
 conveyancing-solicitor
 conydot
@@ -13264,6 +13256,7 @@ dog proprietor
 dog-proprietor
 dog's dog day
 dog’s dog day
+dogecoin
 doggy dan
 doggy-dan
 doggydan
@@ -13323,8 +13316,12 @@ dondash
 done a formidable
 done formidable
 done grateful
+dong phuc dep
+đồng phục đẹp
 dong-max
+dong-phuc-dep
 dongmax
+dongphucdep
 donna donn
 donna-donn
 donnadonn
@@ -13375,6 +13372,9 @@ download futbal
 download gratis
 download intrusion
 download joomla
+download m4a
+download mp3
+download mp4
 download online
 download provide
 download-android
@@ -13390,6 +13390,9 @@ download-futbal
 download-gratis
 download-intrusion
 download-joomla
+download-m4a
+download-mp3
+download-mp4
 download-online
 download-provide
 downloadablegame
@@ -13405,6 +13408,9 @@ downloadfutbal
 downloading online
 downloading-online
 downloadism
+downloadm4a
+downloadmp3
+downloadmp4
 downloads arab
 downloads online
 downloads-arab
@@ -14806,6 +14812,8 @@ famous palmist
 famous social network
 famous-blog
 famous-palmist
+fan hack
+fan-hack
 fanalert
 fanatic shop
 fanatic-shop
@@ -14816,6 +14824,10 @@ fanaticsshop
 fanciful belly
 fanciful-belly
 fancyto
+fanhack
+fans hack
+fans-hack
+fanshack
 fanshome
 fantastic article
 fantastic blog
@@ -14960,7 +14972,6 @@ fast life style
 fast loan
 fast money
 fast quick
-fast_biz
 fast-biz
 fast-bookmark
 fast-cash
@@ -15088,6 +15099,7 @@ fave and share
 fave it
 fave the
 fave this
+fave this link
 fave to
 fave-it
 fave-the
@@ -15754,6 +15766,9 @@ for this web
 for wonderful information
 for yolur
 for your article
+for your blog
+for your page
+for your web
 for_business
 for-business-advert
 for-cheap
@@ -16003,6 +16018,7 @@ free hip hop
 free if you win
 free instagram
 free internation
+free ios
 free itunes gift
 free laranita
 free media pro
@@ -16068,6 +16084,7 @@ free-hemp
 free-hip-hop
 free-instagram
 free-internation
+free-ios
 free-ipad
 free-iphone
 free-ipod
@@ -16809,6 +16826,7 @@ get more webpage
 get more website
 get private
 get snapchat
+get some cash
 get the dangle
 get tik tok fan
 get tinder gold
@@ -16840,6 +16858,7 @@ get-pokego
 get-private
 get-rid-of
 get-sex
+get-some-cash
 get-the-answer
 get-tinder-gold
 get-translate
@@ -17554,6 +17573,7 @@ grea web
 great blog roll
 great blog you
 great blog, keep
+great blog, you
 great blogroll
 great educational post
 great good
@@ -17570,12 +17590,14 @@ great read!
 great sex party
 great site you
 great site, keep
+great site, you
 great trailer program
 great trailer strateg
 great weblog
-great weblog, keep
 great webpage
 great website you
+great website, keep
+great website, you
 great written
 great-blog-roll
 great-blog-you
@@ -17592,7 +17614,7 @@ great-post
 great-publish
 great-sex-party
 great-site-you
-great-weblog-you
+great-weblog
 great-website-you
 great-written
 great}
@@ -17871,6 +17893,7 @@ hack ios
 hack mod
 hack money
 hack online
+hack pokemon
 hack robux
 hack ros
 hack snapchat
@@ -17911,6 +17934,7 @@ hack-money
 hack-my-game
 hack-online
 hack-pass
+hack-pokemon
 hack-robux
 hack-ros
 hack-snapchat
@@ -17938,6 +17962,7 @@ hackfb
 hackgem
 hackinstant
 hackonline
+hackpokemon
 hacks1
 hackthesec
 hacktool
@@ -18347,6 +18372,7 @@ here different
 here itt
 here lol!
 here methotrexate
+here with mates
 here-different
 here-methotrexate
 heremethotrexate
@@ -18501,7 +18527,6 @@ hi, it’s me
 hi, its good
 hi, its me
 hi, yup
-hid_
 hidro-ponik
 hidroponik
 hien nay
@@ -18938,17 +18963,25 @@ hottag
 hottest girl
 hottest info
 hottest nude
+hottest sex
 hottest tech
+hottest trend
 hottest update
 hottest-girl
 hottest-info
 hottest-nude
+hottest-sex
 hottest-tech
+hottest-trend
 hottest-update
 hottestgirl
 hottestinfo
 hottestnude
+hottestsex
+hottesttech
+hottesttrend
 hottestupdate
+hottrend
 hourpayday
 hous insur
 house,cozy
@@ -20823,6 +20856,8 @@ kèo-bóng
 kerja hotel
 kerja-hotel
 kerjahotel
+keto burn
+keto diet item
 keto tone
 keto-burn
 keto-tone
@@ -21256,7 +21291,9 @@ lady shoe for
 lady_top
 lady-porn
 lady-shoe-for
+lady-top
 ladyporn
+ladytop
 lamborghini hover
 lamborghini-hover
 lamictal
@@ -21451,6 +21488,7 @@ leaked1
 leaks-2018
 leaks-2019
 leaks-2020
+learn about keto
 learn face
 learn help
 learn my thought
@@ -21584,6 +21622,7 @@ lesbianbdsm
 lesbianfuck
 lesbianmilf
 lesbianporn
+lesbians_
 lesbianschool
 lesbiansex
 lesbianteen
@@ -21594,6 +21633,7 @@ lesbo porn
 lesbo school
 lesbo sex
 lesbo teen
+lesbo_
 lesbo-bdsm
 lesbo-fuck
 lesbo-milf
@@ -21691,8 +21731,11 @@ like and sub
 like fingers washing
 like google look
 like this blog
+like this link
+like this video
 like this web
 like your blog
+like your video
 like your web
 likes on facebook
 likes on instagram
@@ -22165,6 +22208,7 @@ loteriaexpert
 loteriapro
 loterias pela
 loterias-pela
+lotsanauto
 lottery expert
 lottery kerala
 lottery pro
@@ -22437,10 +22481,13 @@ lо
 l猫
 m http
 m.@
+m4a download
+m4a player
 m4a-download
 m4a-player
 m4a-to-mp3
 m4a2mp3
+m4adownload
 m4aplayer
 m4atomp3
 m88 day
@@ -23632,6 +23679,7 @@ millionhit
 mine day
 mine-day
 minecraft free
+minecraft pe free
 minecraft-free
 minecraftfree
 mineday
@@ -23643,7 +23691,9 @@ mini credit
 mini-credit
 minicredit
 mining cash
+mining legit
 mining-cash
+mining-legit
 mining.cash
 miningcash
 minirin
@@ -24231,17 +24281,22 @@ mówią w internecie
 mowia-w-internecie
 mp-escort
 mp3 music
+mp3 youtube
 mp3-download
 mp3-music
 mp3-player
-mp3.ru
-mp3.su
-mp3la.ru
+mp3-youtube
+mp3download
+mp3la
 mp3music
 mp3player
+mp3youtube
 mp4 sex
+mp4 youtube
 mp4-sex
+mp4-youtube
 mp4sex
+mp4youtube
 mpescort
 mpnth
 mrant sneak
@@ -25257,6 +25312,7 @@ noticias-noticia
 noticias, noticia
 notiuce
 notraty
+notre site web
 nourishment societ
 nourishment treat
 nourishment-societ
@@ -25557,6 +25613,7 @@ of on your blog
 of on your page
 of on your site
 of on your web
+of oof
 of or more product
 of rated film
 of several website
@@ -25959,8 +26016,10 @@ only pokie
 only use internet
 only wanna
 only-deal
+only-fan
 only-poker
 only-pokie
+onlyfan
 onlyway
 onn the
 onn this
@@ -26040,7 +26099,6 @@ order an essay
 order forte
 order generic
 order parafon
-order_type
 order-an-essay
 order-flower
 order-forte
@@ -26369,6 +26427,7 @@ page regularly
 page scrape
 page seo
 page through google
+page to rank
 page truly has
 page-cryptocurrency
 page-link
@@ -27217,14 +27276,20 @@ phục 2020
 phục áo phông
 phuc ao thun
 phục áo thun
+phuc hot
+phuc trend
 phuc-2018
 phuc-2019
 phuc-2020
 phuc-ao-phong
 phuc-ao-thun
+phuc-hot
+phuc-trend
 phuc2018
 phuc2019
 phuc2020
+phuchot
+phuctrend
 phukhoasaigon
 phync
 physician formula
@@ -27449,6 +27514,7 @@ plumbing-service
 plumbingservice
 plus date
 plus dating
+plus grand confort
 plus shapewear
 plus-247
 plus-date
@@ -27904,6 +27970,7 @@ pornpreach
 pornprev
 pornpriva
 porns_
+porns-
 pornscan
 pornsearch
 pornserch
@@ -27963,6 +28030,7 @@ post like your
 post post
 post provides good
 post right here
+post to obtain
 post truly
 post upper
 post writing
@@ -28352,9 +28420,12 @@ pro key
 pro medical
 pro pip
 pro review
+pro_site
 pro-medical
 pro-pip
 pro-review
+pro-site
+pro.site
 pro99
 proactol
 probable profits of
@@ -31632,6 +31703,7 @@ site taste
 site technique
 site theme
 site through google
+site to rank
 site traff
 site truly has
 site uffic
@@ -32824,6 +32896,7 @@ suco detox
 suco-detox
 sucodetox
 sudden i had
+suggest i appear
 suggested article
 suggested blog
 suggested page
@@ -34473,6 +34546,7 @@ topic.real
 topic.thank
 topics.real
 topics.thank
+topiic
 topiramate
 toplist
 topman123
@@ -36546,6 +36620,7 @@ web sitte
 web sute
 web therefore
 web through google
+web to rank
 web user acquire
 web users acquire
 web users;
@@ -37194,6 +37269,7 @@ witgh
 with blog commenting
 with declare
 with imminent post
+with keto diet
 with my blog
 with my page
 with my site
@@ -37352,6 +37428,7 @@ wondering if blog
 wondering which blog
 wondering which weblog
 wondering your situation
+wonderiung
 wonderous kreation
 wonderous-kreation
 wooden-splitting
@@ -37932,6 +38009,7 @@ yjjcw
 yk cheap
 yk-cheap
 ykcheap
+ykurs
 ylur blog
 ylur business
 ylur info
@@ -39485,6 +39563,7 @@ zyvox
 תיקון מזגנים
 أغراس
 اتش دى فيلم
+اقل اسعار
 ال جى
 الأندرويد
 الاستثمار
@@ -39512,6 +39591,9 @@ zyvox
 دورات تدريب
 ساک
 سوپر
+شبكه سنارة
+شبكه سناره
+شركة تنظيف
 شركة نقل
 طارد الحمام
 فقدان الوزن
@@ -39528,10 +39610,14 @@ zyvox
 کیر
 لتحميل
 مدونة
+مدونه سنارة
+مدونه سناره
 مراكز التدريب
 مشاهدة الافلام
 معاهد تدريب
 مقاله و بلاگ
+موقع سنارة
+موقع سناره
 نجار بالدما
 وظائف
 ߋ
@@ -39546,6 +39632,7 @@ zyvox
 เดรสราคาถูก
 ต่างหู
 นพนัน
+บริการดีสุด
 ปลาฟรี
 ป้าย ราคาถูก
 ป้าย-ราคาถูก
@@ -39559,6 +39646,8 @@ zyvox
 รับจำนอง
 รีวิวสินค้า
 เล่นเกมไ
+เว็บแทง
+เว็บไหน
 สถานที่ จัดงานแต่งงาน
 สถานที่-จัดงานแต่งงาน
 สูตรบาคาร่า
