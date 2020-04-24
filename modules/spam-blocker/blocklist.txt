@@ -14,6 +14,7 @@ _bitcoin
 _biz
 _blackjack
 _blahnik
+_btc
 _bulgar
 _buyout
 _bvlgar
@@ -33,6 +34,7 @@ _click
 _clitor
 _crack
 _credit
+_crypto
 _drmarten
 _dunhill
 _e/
@@ -702,7 +704,21 @@ _zapat
 -free-shipping-
 -free-shipping.
 -free-shipping/
--fuck
+-fuck-
+-fuck.
+-fuck/
+-fucked-
+-fucked.
+-fucked/
+-fucker-
+-fucker.
+-fucker/
+-fucking-
+-fucking.
+-fucking/
+-fucks-
+-fucks.
+-fucks/
 -full-movie-
 -fund-
 -fund.
@@ -715,7 +731,6 @@ _zapat
 -gaming/
 -get-free-
 -get-professional-
--gifts-
 -haberlist-
 -haberlist.
 -haberlist/
@@ -1368,6 +1383,7 @@ _zapat
 , .
 , |
 , annd
+, contact.
 ,,
 ,.
 ,"
@@ -1767,6 +1783,21 @@ _zapat
 .freecam
 .freeforum
 .freeoda.co
+.fuck-
+.fuck.
+.fuck/
+.fucked-
+.fucked.
+.fucked/
+.fucker-
+.fucker.
+.fucker/
+.fucking-
+.fucking.
+.fucking/
+.fucks-
+.fucks.
+.fucks/
 .full-design.
 .games.in
 .games.pl
@@ -1949,7 +1980,12 @@ _zapat
 .org/,
 .outlet.biz
 .outlet.co
+.page.link
+.page1.
+.page2.
+.page3.
 .page4.
+.page5.
 .ph,
 .ph/,
 .ph/?
@@ -2367,14 +2403,20 @@ _zapat
 «link»
 «комбо»
 »¿
+»“
+»¥
 (: .
 (:.
 (buzzfeed)
+(instagram)
 (linkedin)
 (no follow)
 (nofollow)
 (reddit)
+(snapchat)
 (stumbleupon)
+(tiktok)
+(twitter)
 )-
 [..
 [/col
@@ -3133,7 +3175,21 @@ _zapat
 /free-shipping/
 /free/
 /freest.at
-/fuck
+/fuck-
+/fuck.
+/fuck/
+/fucked-
+/fucked.
+/fucked/
+/fucker-
+/fucker.
+/fucker/
+/fucking-
+/fucking.
+/fucking/
+/fucks-
+/fucks.
+/fucks/
 /function/
 /functions/
 /futbol-
@@ -3258,6 +3314,7 @@ _zapat
 /http
 /huit.re
 /hyperurl.co
+/hypr.ink
 /hyundai.
 /iapple-
 /iapple.
@@ -4189,12 +4246,14 @@ _zapat
 %u
 ‡a
 ‡o
+©u
 +.-
 +.asp
 +.cfm
 +.htm
 +.jsp
 +.php
+++ ios
 +abercrom
 +account
 +adidas
@@ -4402,6 +4461,7 @@ $sixty
 ¥¢
 ¥³
 ¥ã
+¥c
 ¥é
 ¥è
 ¥ì
@@ -4410,6 +4470,7 @@ $sixty
 €†
 0 casino
 0 into $
+0 jailbreak
 00 pips
 00 preparing
 00 virtual
@@ -4464,6 +4525,7 @@ $sixty
 1 appli
 1 casino
 1 into $
+1 jailbreak
 1 of the
 1 powerful technique
 1-1.
@@ -4516,6 +4578,7 @@ $sixty
 2 appli
 2 casino
 2 into $
+2 jailbreak
 2 powerful technique
 2-buy
 2-casino
@@ -4569,6 +4632,7 @@ $sixty
 2you
 3 casino
 3 into $
+3 jailbreak
 3 powerful technique
 3-casino
 3-easy-way
@@ -4614,6 +4678,7 @@ $sixty
 4 fire
 4 health
 4 into $
+4 jailbreak
 4 powerful technique
 4 purse
 4 quality
@@ -4684,6 +4749,7 @@ $sixty
 4you
 5 casino
 5 into $
+5 jailbreak
 5 powerful technique
 5 sex position
 5-casino
@@ -4704,6 +4770,7 @@ $sixty
 5the-best
 6 casino
 6 into $
+6 jailbreak
 6-casino
 6-easy-way
 6-generic
@@ -4718,6 +4785,7 @@ $sixty
 6the-best
 7 casino
 7 into $
+7 jailbreak
 7-casino
 7-easy-way
 7-generic
@@ -4732,6 +4800,7 @@ $sixty
 7the-best
 8 casino
 8 into $
+8 jailbreak
 8-casino
 8-easy-way
 8-generic
@@ -4746,6 +4815,7 @@ $sixty
 8the-best
 9 casino
 9 into $
+9 jailbreak
 9-casino
 9-easy-way
 9-generic
@@ -4788,11 +4858,15 @@ $sixty
 20折
 20歳
 22ru.
+24 online
 24-7-sport
 24-7sport
+24-online
+24.online
 24h.blog
 24h/24
 24hourwrist
+24online
 ３０％
 ３０＄
 30mg buy
@@ -5137,6 +5211,7 @@ a impressive story
 a impressive web
 a leisure account
 a ll these
+a lot for share
 a lot for sharing
 a lot lots
 a lot this blog
@@ -5354,6 +5429,7 @@ about-your-blog
 about-your-web
 about/date
 abouther
+abouton
 abouttrillion
 abrir uma empresa
 abrir-uma-empresa
@@ -5504,8 +5580,12 @@ acyclovir
 ad crack
 ad live
 ad_flag
+ad_listing
+ad_live
+ad_wiki
 ad-crack
 ad-flag
+ad-listing
 ad-live
 ad-sage
 ad-wiki
@@ -5640,9 +5720,17 @@ adrenaline.us
 ads ad
 ads crack
 ads live
+ads_flag
+ads_listing
+ads_live
+ads_wiki
 ads-ad
 ads-crack
+ads-flag
+ads-listing
 ads-live
+ads-sage
+ads-wiki
 adsages
 adsbygoogle
 adscrack
@@ -5724,11 +5812,19 @@ advantages+of
 advanture game
 adventure gamer
 adventure-gamer
+advert crack
+advert live
 advert market
 advert research
 advert_
+advert-crack
+advert-flag
+advert-listing
+advert-live
 advert-market
 advert-research
+advert-sage
+advert-wiki
 advertise market
 advertise your
 advertise_
@@ -5783,7 +5879,14 @@ advertizing-de-conteúdo
 advertizing-market
 advertizing-method
 advertizing-research
+adverts crack
+adverts live
 adverts_
+adverts-crack
+adverts-flag
+adverts-live
+adverts-sage
+adverts-wiki
 advice for this topic
 advice on this topic
 advice online
@@ -6069,9 +6172,15 @@ allright
 allso visit
 allso-visit
 alltheholi
+allure escort
+allure eskort
+allure-escort
+allure-eskort
 alluring escort
+alluring eskort
 alluring me
 alluring-escort
+alluring-eskort
 alluring-me
 allworkhome
 alone place
@@ -6205,6 +6314,7 @@ anabolic
 anal bead
 anal dildo
 anal escort
+anal eskort
 anal extreme
 anal fuck
 anal hook
@@ -6214,6 +6324,7 @@ anal vibra
 anal-bead
 anal-dildo
 anal-escort
+anal-eskort
 anal-extreme
 anal-fuck
 anal-hook
@@ -6255,11 +6366,13 @@ androbet
 android crack
 android hack
 android ios
+android spoof
 android-crack
 android-hack
 android-ios
 android-m4a
 android-mp3
+android-spoof
 androidclan
 androidhack
 androidm4a
@@ -7321,7 +7434,9 @@ bang-buddy
 bang-gia
 bang-me
 bangalore escort
+bangalore eskort
 bangalore-escort
+bangalore-eskort
 bangbros
 bangbuddy
 bangkok cosplay
@@ -7583,14 +7698,15 @@ beautyhospital
 beautyreport
 becausethe
 become a bring
+become bitcoin
 become buying
 become our consumer
 become-a-success
 become-an-expert
+become-bitcoin
 become-buying
 bed are satisfy
 bee given
-bee-pollen.
 beeday
 beeg friend
 beeg-friend
@@ -7607,10 +7723,13 @@ behelfen-sich-die-medien
 behind-knee
 behindknee
 beijing escort
+beijing eskort
 beijing massage
 beijing-escort
+beijing-eskort
 beijing-massage
 beijingescort
+beijingeskort
 beijingmassage
 being photographer
 being pput
@@ -7868,6 +7987,8 @@ betting-site
 bettingscript
 bettor than
 betweenex
+bezpieczne leczenie
+bezpieczne-leczenie
 bhilt
 bhttp
 bi chong trom
@@ -7889,6 +8010,7 @@ big porn
 big pussy
 big replica
 big site
+big snapchat
 big tits
 big titt
 big-100%
@@ -7900,12 +8022,15 @@ big-pussy
 big-replica
 big-site
 big-smart
+big-snapchat
 big-tits
 big-titt
 big.naturals
 big.site
 bigbling
 bigcock
+bigger snapchat
+bigger-snapchat
 bigporn
 bigpussy
 bigreplica
@@ -8026,6 +8151,7 @@ bitcoin depos
 bitcoin donat
 bitcoin dump
 bitcoin from $
+bitcoin million
 bitcoin mine
 bitcoin mining
 bitcoin per day
@@ -8044,6 +8170,7 @@ bitcoin-declin
 bitcoin-depos
 bitcoin-donat
 bitcoin-dump
+bitcoin-million
 bitcoin-mine
 bitcoin-mining
 bitcoin-per-day
@@ -8060,6 +8187,7 @@ bitcoindeclin
 bitcoindepos
 bitcoindonat
 bitcoindump
+bitcoinmillion
 bitcoinrush
 bitcoins
 bitcointalk
@@ -8214,6 +8342,7 @@ blog service
 blog site
 blog soon
 blog struct
+blog structure
 blog sys
 blog through google
 blog thus
@@ -8331,6 +8460,7 @@ bloggerlove
 bloggers service
 bloggers-service
 bloggers, business
+bloggibg
 bloggin ad
 bloggin-ad
 blogging ad
@@ -8479,12 +8609,16 @@ boiler spare
 boiler-ireland
 boiler-spare
 boilers ireland
+boilers spare
 boilers-ireland
+boilers-spare
 boilerspare
+boilersspare
 bokserki
 bola online
 bola terpercaya
 bola-online
+bola-terpercaya
 bolaonline
 bollywood drug
 bollywood hair
@@ -8499,6 +8633,7 @@ bon copie
 bon-copie
 boncopie
 bone wellness
+bone-wellness
 bonerz
 bong 88
 bong online
@@ -8541,9 +8676,11 @@ book-marked to
 book-marking it
 book-marks
 book-ot-
-bookark it
-bookark you
-bookmakers, bookmaker
+bookark
+bookmaker book
+bookmaker, book
+bookmakers book
+bookmakers, book
 bookmark add
 bookmark it
 bookmark site list
@@ -8552,9 +8689,11 @@ bookmark this
 bookmark web
 bookmark you
 bookmark-add
+bookmark-it
 bookmark-thank
 bookmark-this
 bookmark-web
+bookmark-you
 bookmarkadd
 bookmarked :)
 bookmarked it
@@ -8962,6 +9101,7 @@ btc per day
 btc per week
 btc pro
 btc wallet
+btc_
 btc-per-day
 btc-per-week
 btc-pro
@@ -9247,6 +9387,7 @@ buy blade
 buy canadagoose
 buy cetirizine
 buy cheap
+buy crypto
 buy didrex
 buy discount
 buy dump
@@ -9275,6 +9416,7 @@ buy louis
 buy methotrexate
 buy movie
 buy my thesis
+buy n95
 buy off wish
 buy online
 buy privat
@@ -9305,6 +9447,7 @@ buy-cetirizine
 buy-cheap
 buy-cig
 buy-cock
+buy-crypto
 buy-didrex
 buy-discount
 buy-dump
@@ -9331,6 +9474,7 @@ buy-lol
 buy-louis
 buy-methotrexate
 buy-movie
+buy-n95
 buy-now
 buy-online
 buy-pill
@@ -9368,6 +9512,7 @@ buycetirizine
 buycheap
 buycig
 buycock
+buycrypto
 buyduvet
 buyer emergency
 buyer-emergency
@@ -9410,6 +9555,7 @@ buylikes
 buylouis
 buymethotrexate
 buymovie
+buyn95
 buyonline
 buyout keep
 buyout_
@@ -9877,6 +10023,7 @@ casino-script
 casino-site
 casino-today
 casino-view
+casino-x
 casino.co
 casino1
 casino24
@@ -10733,6 +10880,11 @@ check my page
 check my post
 check my web
 check new post
+check our article
+check our blog
+check our page
+check our site
+check our web
 check out my blog
 check out my page
 check out my site
@@ -10868,6 +11020,7 @@ childs-porn
 childspant
 childsporn
 chilescort
+chileskort
 china cheap
 china dress
 china low
@@ -12093,6 +12246,17 @@ couyld
 cover-whole
 coverages
 coverwhole
+covid self
+covid_19_self
+covid_self
+covid-19 self
+covid-19-self
+covid-self
+covid19 self
+covid19_self
+covid19-self
+covid19self
+covidself
 cozy on perhaps
 cozy resting
 cozy ugg
@@ -12242,17 +12406,31 @@ crush-hack
 crushcandy
 crushhack
 cryp.trade
+crypto btc
 crypto curren
+crypto hack
 crypto moneda
+crypto script
+crypto tab
+crypto_
+crypto-btc
 crypto-curren
+crypto-hack
 crypto-moneda
+crypto-script
+crypto-tab
+crypto/btc
+cryptobtc
 cryptocurrency coin
 cryptocurrency news
 cryptocurrency strat
 cryptocurrency-coin
 cryptocurrency-news
 cryptocurrency-strat
+cryptohack
 cryptomoneda
+cryptoscript
+cryptotab
 crystal hack
 crystal-hack
 crystalhack
@@ -15107,6 +15285,7 @@ fave-this
 fave-to
 favoirite
 favor of blog
+favor of share
 favor of sharing
 favorable article
 favorable blog
@@ -15128,6 +15307,7 @@ favorite-ear
 favorite-just
 favorite-web
 favour of blog
+favour of share
 favour of sharing
 favourable article
 favourable blog
@@ -15666,6 +15846,7 @@ follower pinterest
 follower rank
 follower shop
 follower snapchat
+follower tiktok
 follower twitter
 follower-love
 follower-rank
@@ -15675,6 +15856,7 @@ followers instagram
 followers love
 followers pinterest
 followers snapchat
+followers tiktok
 followers twitter
 followers-love
 followershop
@@ -15707,6 +15889,7 @@ foodcooking
 foodpyramid
 foolproof trick
 foolproof-trick
+foor share
 foor sharing
 foor some
 foor the
@@ -16194,8 +16377,11 @@ freevid
 freeweb
 freexxx
 french escort
+french eskort
 french-escort
+french-eskort
 frenchescort
+frencheskort
 frequent street wear
 frequent streetwear
 frequent-street-wear
@@ -16319,29 +16505,24 @@ fuck pic
 fuck vid
 fuck your
 fuck_
-fuck-
 fuck-buddy
 fuck-escort
 fuck-eskort
 fuckbuddy
 fuckdown
 fucked_
-fucked-
 fucker_
-fucker-
 fuckescort
 fuckeskort
 fuckgoogle
 fuckhard
 fucking_
-fucking-
 fuckmy
 fuckpic
 fucks down
 fucks hard
 fucks your
 fucks_
-fucks-
 fucksdown
 fuckshard
 fucksyour
@@ -16928,6 +17109,7 @@ gift singapore
 gift v buck
 gift-click
 gift-singapore
+gift%20card
 gift4promo
 giftclick
 gifts click
@@ -16949,6 +17131,7 @@ ginzza
 girl blog
 girl eblog
 girl escort
+girl eskort
 girl for the night
 girl gaga
 girl get fuck
@@ -16962,6 +17145,7 @@ girl-blog
 girl-day-dress
 girl-eblog
 girl-escort
+girl-eskort
 girl-gaga
 girl-jap
 girl-jord
@@ -16970,10 +17154,12 @@ girl-pantie
 girl-panty
 girl-spouse
 girl4escort
+girl4eskort
 girlblog
 girldaydress
 girleblog
 girlescort
+girleskort
 girlie spouse
 girlie-spouse
 girliespouse
@@ -16985,21 +17171,28 @@ girlpanty
 girls blog
 girls eblog
 girls escort
+girls eskort
 girls-blog
 girls-day-dress
 girls-eblog
 girls-escort
+girls-eskort
 girls4escort
+girls4eskort
 girlsblog
 girlsdaydress
 girlseblog
 girlsescort
+girlseskort
 girlspouse
 git escort
+git eskort
 git-escort
+git-eskort
 gitano gratis
 gitano-gratis
 gitescort
+giteskort
 giubbino moncler
 giubbino-moncler
 giubbinomoncler
@@ -17454,9 +17647,12 @@ gopgle
 goping to
 gorgeous elegant
 gorgeous escort
+gorgeous eskort
 gorgeous-elegant
 gorgeous-escort
+gorgeous-eskort
 gorgeousescort
+gorgeouseskort
 gosgov
 goshop.
 gossip posted
@@ -17622,12 +17818,32 @@ greatarticle
 greatbet
 greatblog
 greatdoc
+greate article
+greate blog
+greate home
+greate page
+greate post
+greate read
+greate site
+greate web
 greatessay
+greatest article on
+greatest articles on
 greatest available
+greatest blog on
+greatest blogs on
 greatest doc
 greatest knowledge broker
 greatest new
 greatest option
+greatest page on
+greatest pages on
+greatest site on
+greatest sites on
+greatest weblog on
+greatest weblogs on
+greatest website on
+greatest websites on
 greatest-available
 greatest-doc
 greatest-new
@@ -17896,7 +18112,9 @@ hack online
 hack pokemon
 hack robux
 hack ros
+hack script
 hack snapchat
+hack tiktok
 hack tool
 hack twitter
 hack unlimit
@@ -17937,8 +18155,10 @@ hack-pass
 hack-pokemon
 hack-robux
 hack-ros
+hack-script
 hack-snapchat
 hack-the-sec
+hack-tiktok
 hack-tool
 hack-twitter
 hack-unlimit
@@ -17964,6 +18184,7 @@ hackinstant
 hackonline
 hackpokemon
 hacks1
+hackscript
 hackthesec
 hacktool
 hackxyz
@@ -19359,6 +19580,7 @@ in blog commenting
 in delicious
 in gogle
 in light up
+in logo ladi
 in paying which
 in this blog
 in this site
@@ -19374,6 +19596,7 @@ in-delicious
 in-disguise
 in-gogle
 in-google
+in-logo-ladi
 in-skilled
 in-you-tube
 in-your-instagram
@@ -19681,6 +19904,8 @@ insta-cheat
 insta-fuck
 insta-kink
 insta-sex
+instacart shopper
+instacart-shopper
 instacheat
 instafab
 instafuck
@@ -19693,6 +19918,7 @@ instagram monetiz
 instagram money
 instagram privado
 instagram private
+instagram shop
 instagram story view
 instagram trick
 instagram-follow
@@ -19704,6 +19930,7 @@ instagram-monetiz
 instagram-money
 instagram-privado
 instagram-private
+instagram-shop
 instagram-story-view
 instagram-trick
 instagramfollow
@@ -19935,6 +20162,8 @@ investors.za
 invoice manker
 invoice-manker
 inzest
+ios spoof
+ios-spoof
 ip.ideal
 ipad tablet
 ipad-1
@@ -20076,8 +20305,11 @@ issues you're speak
 issues you’re speak
 issuesing
 istanbul escort
+istanbul eskort
 istanbul-escort
+istanbul-eskort
 istanbulescort
+istanbuleskort
 istnieje oficjalna
 istnieje-oficjalna
 isto blog
@@ -20550,6 +20782,8 @@ join-super
 joinsuper
 joint-pain
 jointpain
+joker casino
+joker-casino
 joker123
 jokerfull
 joma jewelery
@@ -20771,7 +21005,11 @@ kaepernickyouth
 kaffee-maschine
 kaffeemaschine
 kali escort
+kali eskort
 kali-escort
+kali-eskort
+kaliescort
+kalieskort
 kamagra
 kamera 4k
 kamera-4k
@@ -20883,6 +21121,10 @@ kham nam
 khám nam
 kham-nam
 khám-nam
+khau trang
+khẩu trang
+khau-trang
+khautrang
 khttp
 khumbu north
 khumbu-north
@@ -21076,6 +21318,8 @@ kommissionen-tager
 kompanii
 komputer
 konkurs
+konopiami indyjskimi
+konopiami-indyjskimi
 konsalting
 konstenlos sex
 konstenlos-sex
@@ -21740,6 +21984,7 @@ like your web
 likes on facebook
 likes on instagram
 likes on snapchat
+likes on tiktok
 likes on twitter
 likewise pick
 likewise-pick
@@ -21989,8 +22234,12 @@ login.php
 login.vc
 loginwidget
 logo precyz
+logo thuong
+logo thương
 logo-precyz
+logo-thuong
 logo-umum
+logothuong
 logotipo gratis
 logotipo grátis
 logotipo gratuito
@@ -22381,6 +22630,8 @@ lpgn-moldova
 lpgn-product
 ltongealp
 ltonser
+lub cbd
+lub thc
 lublin.
 lublina.
 luck jers
@@ -22542,8 +22793,6 @@ magasinchemise
 magasinhollis
 magasinlongchamp
 magasinrobe
-magazine/page1
-magazine/page2
 magicmoncler
 magister kesehatan
 magister-kesehatan
@@ -22793,7 +23042,11 @@ manning jers
 manning-jers
 manningjers
 manor escort
+manor eskort
 manor-escort
+manor-eskort
+manorescort
+manoreskort
 manseeking
 mansion 88
 mansion-88
@@ -23104,8 +23357,11 @@ mayari birkenstock
 mayari-birkenstock
 mayaribirkenstock
 mayin escort
+mayin eskort
 mayin-escort
+mayin-eskort
 mayinescort
+mayineskort
 mayy think
 mbt ayakkab
 mbt baridi
@@ -23595,8 +23851,11 @@ mi-na-komentarz
 mi40 review
 mi40-review
 miami escort
+miami eskort
 miami-escort
+miami-eskort
 miamiescort
+miamieskort
 michael-kors
 michaelkors
 michaelvoday
@@ -23712,8 +23971,12 @@ minutes a villa
 mir gefallen
 mir-gefallen
 miracle disc
+miracle online
 miracle-disc
+miracle-online
 miracledisc
+miracles online
+miracles-online
 mirapex
 mirror femme
 mirror-femme
@@ -24279,7 +24542,10 @@ moviezone
 mowia w internecie
 mówią w internecie
 mowia-w-internecie
+mp escort
+mp eskort
 mp-escort
+mp-eskort
 mp3 music
 mp3 youtube
 mp3-download
@@ -24298,6 +24564,7 @@ mp4-youtube
 mp4sex
 mp4youtube
 mpescort
+mpeskort
 mpnth
 mrant sneak
 mrant-sneak
@@ -24745,6 +25012,7 @@ nang-mui
 nâng-mũi
 nanogold
 naproxen
+narkologicheskaya
 naruto hottest
 naruto-hottest
 nashivki leibly
@@ -24912,7 +25180,9 @@ neverstopgo
 nevertheless just
 nevertheless-just
 nevler escort
+nevler eskort
 nevler-escort
+nevler-eskort
 new buzz
 new design are given
 new gucci
@@ -25438,6 +25708,7 @@ o¯
 ø¯
 o¨
 ø¨
+º©
 o±
 ø±
 o| a
@@ -25753,6 +26024,8 @@ old/dress
 old|
 omalizumab
 on board battery
+on da chia se
+ơn đã chia sẻ
 on few click
 on premises data
 on these article
@@ -25780,6 +26053,7 @@ on website
 on your blog
 on your weblog
 on your webpage
+on-da-chia-se
 on-line certif
 on-line degree
 on-line test
@@ -26422,6 +26696,7 @@ page link
 page on facebook
 page on instagram
 page on snapchat
+page on tiktok
 page on twitter
 page regularly
 page scrape
@@ -26434,6 +26709,7 @@ page-link
 page-on-facebook
 page-on-instagram
 page-on-snapchat
+page-on-tiktok
 page-on-twitter
 page-regularly
 page-scrape
@@ -27276,6 +27552,8 @@ phục 2020
 phục áo phông
 phuc ao thun
 phục áo thun
+phuc bon mua
+phục bon mua
 phuc hot
 phuc trend
 phuc-2018
@@ -27283,11 +27561,13 @@ phuc-2019
 phuc-2020
 phuc-ao-phong
 phuc-ao-thun
+phuc-bon-mua
 phuc-hot
 phuc-trend
 phuc2018
 phuc2019
 phuc2020
+phucbonmua
 phuchot
 phuctrend
 phukhoasaigon
@@ -27416,6 +27696,8 @@ plaesure
 plagorism
 plain profit
 plain-profit
+plan eartique
+plan-eartique
 plansare
 plarusee
 plastic ambalaje
@@ -27976,7 +28258,9 @@ pornsearch
 pornserch
 pornsex
 pornsi escort
+pornsi eskort
 pornsi-escort
+pornsi-eskort
 pornsite
 pornstack
 pornstar
@@ -28457,12 +28741,16 @@ producer excellent
 producer-excellent
 producing provider
 producing-provider
+product cbd
 product hermes
+product thc
 product-hermes
 product-sale
 product/product
 producthermes
 production of e-mail
+products cbd
+products thc
 products/product
 produit hermes
 produit-hermes
@@ -28473,6 +28761,14 @@ produk-kerajinan
 produk/alat
 produk/produk
 produkc
+produkt cbd
+produkt thc
+produkt z cbd
+produkt z thc
+produkty cbd
+produkty thc
+produkty z cbd
+produkty z thc
 produtos natura
 produtos-natura
 profesjonal
@@ -28709,9 +29005,12 @@ przysiegly
 ps4xbox
 pscoupon
 psn code
+psn gift
 psn hack
 psn-code
+psn-gift
 psn-hack
+psn%20gift
 psori nano
 psori-nano
 psorinano
@@ -28791,6 +29090,7 @@ pumasverige
 punch punch
 punching cutting
 punhisment
+punishment upon
 pupil loan
 pupil-loan
 puppy hating dan
@@ -29307,8 +29607,15 @@ recommend for your site
 recommend for your web
 recommend internet
 recommend this blog
+recommend this site
+recommend this weblog
+recommend this website
 recommend-internet
+recommend-this-article
 recommend-this-blog
+recommend-this-page
+recommend-this-site
+recommend-this-web
 recommendation for your art
 recommendation for your blog
 recommendation for your page
@@ -30066,6 +30373,7 @@ ruou dep
 rượu đẹp
 ruou-dep
 ruproshop
+russia.ru
 russian mis
 russian mr
 russian ms
@@ -30640,6 +30948,7 @@ seekingmen
 seekingwom
 seeming vexation
 seeming-vexation
+seen in this article
 seen in this your
 seg-board
 segboard
@@ -31159,12 +31468,15 @@ shag.ru
 shame on google
 shanghai date
 shanghai escort
+shanghai eskort
 shanghai massage
 shanghai-date
 shanghai-escort
+shanghai-eskort
 shanghai-massage
 shanghaidate
 shanghaiescort
+shanghaieskort
 shanghaimassage
 shanrig
 shapewear body
@@ -31497,10 +31809,12 @@ shopnfl
 shopnow
 shopof
 shoponline
+shopper job
+shopper-job
 shopping blog
 shopping getaway
 shopping harmony
-shopping online
+shopping job
 shopping site
 shopping ugg
 shopping web
@@ -31508,7 +31822,7 @@ shopping-blog
 shopping-getaway
 shopping-harmony
 shopping-ind
-shopping-online
+shopping-job
 shopping-site
 shopping-tupina
 shopping-ugg
@@ -31767,6 +32081,7 @@ sitemizi-ziyaret
 siteoffic
 sites and blogs
 sites luke
+sites on the internet
 sites really nice
 sites-and-blogs
 sites24
@@ -31986,14 +32301,17 @@ snapchat intro
 snapchat monetiz
 snapchat money
 snapchat privado
+snapchat score
 snapchat you tube
 snapchat youtube
 snapchat-intro
 snapchat-monetiz
 snapchat-money
 snapchat-privado
+snapchat-score
 snapchat-you-tube
 snapchat-youtube
+snapchat++
 snatch your
 sndly nahark
 sndly-nahark
@@ -32222,6 +32540,7 @@ somedias
 somee one
 somente download
 somente-download
+someonethat
 someplace within the sentence
 son copain
 son-copain
@@ -32351,6 +32670,14 @@ spo.r.t
 sponsoring secret
 sponsoring-secret
 sponsoringsecret
+spoof android
+spoof ios
+spoof-android
+spoof-ios
+spoofing android
+spoofing ios
+spoofing-android
+spoofing-ios
 sport akcesoria
 sport detik
 sport ditik
@@ -32399,14 +32726,14 @@ sporty akcesoria
 sporty-akcesoria
 spot poker
 spot-poker
+spotify ++
 spotify download
 spotify-download
 spotify.asp
 spotify.htm
 spotify.jsp
 spotify.php
-spotify++ 2020
-spotify++ ios
+spotify++
 spotpoker
 spotykam blog
 spotykam post
@@ -33299,8 +33626,11 @@ talkwithcustomer
 talkwithwebsite
 tallking
 talya escort
+talya eskort
 talya-escort
+talya-eskort
 talyaescort
+talyaeskort
 tamers cheat
 tamers hack
 tamers-cheat
@@ -33641,6 +33971,7 @@ thank regarding
 thank you admin
 thank you babe
 thank you for posting
+thank you for share
 thank you for sharing
 thanks ,
 thanks admin
@@ -33769,6 +34100,7 @@ the web users
 the website offer
 the writing compan
 the writing service
+the youtuber
 the_best
 the-benefit-of
 the-benefits-of
@@ -33795,6 +34127,7 @@ the-seo
 the-sexting
 the-top-site
 the-very-best-
+the-youtuber
 theattempt
 theaverage
 thebest
@@ -33870,6 +34203,7 @@ they-loophole
 they've relating
 they’ve relating
 theyll
+theyoutuber
 theywe
 thezenshark
 thhat in
@@ -34073,6 +34407,7 @@ thousand %
 thousand%
 thportfol
 three %
+thriloed
 thrity
 throat blow
 throat niece
@@ -34179,6 +34514,19 @@ tijuanahotel
 tik tok fan
 tik-tok-fan
 tiki-index
+tiktok advert
+tiktok fan
+tiktok intro
+tiktok monetiz
+tiktok money
+tiktok privado
+tiktok-advert
+tiktok-fan
+tiktok-hack
+tiktok-intro
+tiktok-monetiz
+tiktok-money
+tiktok-privado
 tiktokfan
 till today
 till-today
@@ -34672,6 +35020,8 @@ trang cong
 trang dep
 trang đẹp
 trang hot
+trang in logo
+tràng in logo
 trang manly
 trang y te
 trang y tế
@@ -34679,6 +35029,7 @@ trang-chu
 trang-cong
 trang-dep
 trang-hot
+trang-in-logo
 trang-manly
 trang-y-te
 trangcong
@@ -34870,12 +35221,14 @@ twitter intro
 twitter monetiz
 twitter money
 twitter privado
+twitter shop
 twitter-advert
 twitter-hack
 twitter-intro
 twitter-monetiz
 twitter-money
 twitter-privado
+twitter-shop
 two %
 twoj blog
 twój blog
@@ -35290,6 +35643,10 @@ undetected-aimbot
 une moncler
 une-moncler
 unemoncler
+ung buou
+ung bướu
+ung-buou
+ungbuou
 unhas decoradas
 unhas-decoradas
 uni#que#
@@ -35454,8 +35811,11 @@ urbainfotbal
 urbainfutbal
 urdu or urdu
 urfa escort
+urfa eskort
 urfa-escort
+urfa-eskort
 urfaescort
+urfaeskort
 urgent custom
 urine strip
 urine-strip
@@ -36033,8 +36393,8 @@ videosex
 videosporn
 vidéosporn
 videosport
-videostar++ 2020
-videostar++ ios
+videostar ++
+videostar++
 videosview
 vidéosview
 videosvue
@@ -36055,7 +36415,11 @@ videoyoutube
 vidéoyoutube
 vidios
 vids and info
+vien hung
+viện hưng
+vien-hung
 viencare
+vienhung
 vietnam-visa
 vietnamvisa
 vietthanhbien
@@ -36152,10 +36516,13 @@ viramune
 virgin porn
 virgin-porn
 virginporn
+virtual credit
 virtual funds
 virtual sex
+virtual-credit
 virtual-funds
 virtual-sex
+virtualcredit
 virtualsex
 virus answer
 virus hoax
@@ -36539,7 +36906,7 @@ waterprrof
 waterweight
 wating for you
 way of amateur
-way of blogging
+way of blog
 way your design
 way-to-enjoy
 wayfarer barata
@@ -37431,8 +37798,18 @@ wondering your situation
 wonderiung
 wonderous kreation
 wonderous-kreation
+woo game
+woo house
+woo sex
+woo site
+woo-game
+woo-house
+woo-sex
+woo-site
 wooden-splitting
 woodgundy.us
+woogame
+woohouse
 woolrich amster
 woolrich arctic
 woolrich bliz
@@ -37515,12 +37892,8 @@ woolrichwool
 woori casino
 woori-casino
 wooricasino
-woowoo-house
-woowoo-sex
-woowoo-site
-woowoohouse
-woowoosex
-woowoosite
+woosex
+woosite
 wor.t.h
 wor.th
 wordpress web
@@ -37528,8 +37901,11 @@ wordpress-web
 wordpressweb
 words eartique
 words essay
+words in your article
 words in your blog
 words in your content
+words in your page
+words in your post
 words in your web
 words-eartique
 words-essay
@@ -38602,7 +38978,9 @@ zlinks
 złote
 zmedicin
 zmir escort
+zmir eskort
 zmir-escort
+zmir-eskort
 zobacz wiecej
 zobacz więcej
 zobacz-wiecej
@@ -38912,6 +39290,7 @@ zyvox
 загородный дом
 загородный-дом
 заказ
+закладку
 заправка картридж
 заправка-картридж
 заработ
@@ -39089,6 +39468,7 @@ zyvox
 направления роста
 направления-роста
 наркозависи
+наркологическая
 наркотиков
 наркотичес
 начинающих алматы
