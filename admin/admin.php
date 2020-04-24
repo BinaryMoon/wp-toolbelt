@@ -74,7 +74,7 @@ function toolbelt_admin_menu() {
 		'manage_options',
 		'toolbelt-modules',
 		'toolbelt_admin_page',
-		'dashicons-hammer',
+		'dashicons-hammer'
 	);
 
 	// Replace default Modules page with a different title.
