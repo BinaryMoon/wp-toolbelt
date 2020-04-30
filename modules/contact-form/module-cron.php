@@ -2,7 +2,7 @@
 /**
  * Contact Form Cron Jobs.
  *
- * @package wp-toolbelt
+ * @package toolbelt
  */
 
 /**

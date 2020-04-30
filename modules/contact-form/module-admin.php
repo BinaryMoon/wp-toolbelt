@@ -2,7 +2,7 @@
 /**
  * Editor settings for the contact form block.
  *
- * @package wp-toolbelt
+ * @package toolbelt
  */
 
 /**

@@ -2,7 +2,7 @@
 /**
  * Fix typographic widows.
  *
- * @package wp-toolbelt
+ * @package toolbelt
  */
 
 /**
