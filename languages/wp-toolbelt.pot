@@ -281,72 +281,72 @@ msgstr ""
 msgid "Leave a review &rsaquo;"
 msgstr ""
 
-#: admin/admin.php:26, admin/admin.php:94
+#: admin/admin.php:26, admin/admin.php:84
 msgid "Modules"
 msgstr ""
 
-#: admin/admin.php:34, admin/admin.php:106, admin/admin.php:184
+#: admin/admin.php:34, admin/admin.php:96, admin/admin.php:174
 msgid "Settings"
 msgstr ""
 
-#: admin/admin.php:44, admin/admin.php:120
+#: admin/admin.php:44, admin/admin.php:110
 msgid "Processes"
 msgstr ""
 
 #. translators: plugin name
-#: admin/admin.php:82, admin/admin.php:83
+#: admin/admin.php:72, admin/admin.php:73
 msgid "Toolbelt"
 msgstr ""
 
-#: admin/admin.php:93, admin/screen-modules.php:59
+#: admin/admin.php:83, admin/screen-modules.php:59
 msgid "Toolbelt Modules"
 msgstr ""
 
-#: admin/admin.php:105, admin/screen-settings.php:17
+#: admin/admin.php:95, admin/screen-settings.php:17
 msgid "Toolbelt Settings"
 msgstr ""
 
-#: admin/admin.php:119, admin/screen-tools.php:19
+#: admin/admin.php:109, admin/screen-tools.php:19
 msgid "Toolbelt Processes"
 msgstr ""
 
-#: admin/admin.php:162, admin/screen-modules.php:80
+#: admin/admin.php:152, admin/screen-modules.php:80
 msgid "Module"
 msgstr ""
 
-#: admin/admin.php:168
+#: admin/admin.php:158
 msgid "Experimental"
 msgstr ""
 
-#: admin/admin.php:177
+#: admin/admin.php:167
 msgid "Full GDPR support requires developer integration. See documentation for more details."
 msgstr ""
 
-#: admin/admin.php:182
+#: admin/admin.php:172
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:187
+#: admin/admin.php:177
 msgid "Tools"
 msgstr ""
 
-#: admin/admin.php:193, admin/screen-modules.php:83
+#: admin/admin.php:183, admin/screen-modules.php:83
 msgid "Page Impact"
 msgstr ""
 
-#: admin/admin.php:327
+#: admin/admin.php:317
 msgid "Settings Saved"
 msgstr ""
 
-#: admin/admin.php:355
+#: admin/admin.php:345
 msgid "Toolbelt settings saved."
 msgstr ""
 
-#: admin/admin.php:371
+#: admin/admin.php:361
 msgid "Success"
 msgstr ""
 
-#: admin/admin.php:372
+#: admin/admin.php:362
 msgid "Error"
 msgstr ""
 
