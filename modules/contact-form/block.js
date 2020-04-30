@@ -373,7 +373,7 @@
 
   var childBlocks = [{
     name: 'field-text',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Text', 'wp-toolbelt'),
       description: __('When you need just a small amount of text, add a text input.', 'wp-toolbelt'),
       icon: renderMaterialIcon(createElement(Path, {
@@ -383,7 +383,7 @@
     })
   }, {
     name: 'field-name',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Name', 'wp-toolbelt'),
       description: __('Introductions are important. Add an input for folks to add their name.', 'wp-toolbelt'),
       icon: renderMaterialIcon(createElement(Path, {
@@ -393,7 +393,7 @@
     })
   }, {
     name: 'field-subject',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Subject', 'wp-toolbelt'),
       description: __('What is the message about?', 'wp-toolbelt'),
       icon: 'email',
@@ -401,11 +401,11 @@
     })
   }, {
     name: 'field-email',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Email', 'wp-toolbelt'),
       keywords: [__('e-mail', 'wp-toolbelt'), __('mail', 'wp-toolbelt'), 'email'],
       description: __('Want to reply to folks? Add an email address input.', 'wp-toolbelt'),
-      attributes: Object.assign({}, AttributeDefaults, {
+      attributes: Object.assign(Object.assign({}, AttributeDefaults), {}, {
         placeholder: {
           type: 'string',
           "default": 'name@domain.com'
@@ -418,11 +418,11 @@
     })
   }, {
     name: 'field-url',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Website', 'wp-toolbelt'),
       keywords: ['url', __('internet page', 'wp-toolbelt'), 'link'],
       description: __('Add an address input for a website.', 'wp-toolbelt'),
-      attributes: Object.assign({}, AttributeDefaults, {
+      attributes: Object.assign(Object.assign({}, AttributeDefaults), {}, {
         placeholder: {
           type: 'string',
           "default": 'https://domain.com'
@@ -435,7 +435,7 @@
     })
   }, {
     name: 'field-date',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Date Picker', 'wp-toolbelt'),
       keywords: [__('Calendar', 'wp-toolbelt'), __('day month year', 'block search term', 'wp-toolbelt')],
       description: __('The best way to set a date. Add a date picker.', 'wp-toolbelt'),
@@ -446,7 +446,7 @@
     })
   }, {
     name: 'field-telephone',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Telephone', 'wp-toolbelt'),
       keywords: [__('Phone', 'wp-toolbelt'), __('Cellular phone', 'wp-toolbelt'), __('Mobile', 'wp-toolbelt')],
       description: __('Add a phone number input.', 'wp-toolbelt'),
@@ -457,7 +457,7 @@
     })
   }, {
     name: 'field-textarea',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Message', 'wp-toolbelt'),
       keywords: [__('Textarea', 'wp-toolbelt'), 'textarea', __('Multiline text', 'wp-toolbelt')],
       description: __('Let folks speak their mind. This text box is great for longer responses.', 'wp-toolbelt'),
@@ -478,7 +478,7 @@
     })
   }, {
     name: 'field-checkbox',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Checkbox', 'wp-toolbelt'),
       keywords: [__('Confirm', 'wp-toolbelt'), __('Accept', 'wp-toolbelt')],
       description: __('Add a single checkbox.', 'wp-toolbelt'),
@@ -497,7 +497,7 @@
           id: props.attributes.id
         });
       },
-      attributes: Object.assign({}, FieldDefaults.attributes, {
+      attributes: Object.assign(Object.assign({}, FieldDefaults.attributes), {}, {
         label: {
           type: 'string',
           "default": ''
@@ -506,7 +506,7 @@
     })
   }, {
     name: 'field-checkbox-multiple',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Checkbox Group', 'wp-toolbelt'),
       keywords: [__('Choose Multiple', 'wp-toolbelt'), __('Option', 'wp-toolbelt')],
       description: __('People love options. Add several checkbox items.', 'wp-toolbelt'),
@@ -515,7 +515,7 @@
       })),
       edit: editMultiField('checkbox'),
       transforms: MultiFieldTransforms,
-      attributes: Object.assign({}, FieldDefaults.attributes, {
+      attributes: Object.assign(Object.assign({}, FieldDefaults.attributes), {}, {
         label: {
           type: 'string',
           "default": __('Select several', 'wp-toolbelt')
@@ -524,7 +524,7 @@
     })
   }, {
     name: 'field-radio',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Radio', 'wp-toolbelt'),
       keywords: [__('Choose', 'wp-toolbelt'), __('Select', 'wp-toolbelt'), __('Option', 'wp-toolbelt')],
       description: __('Inspired by radios, only one radio item can be selected at a time. Add several radio button items.', 'wp-toolbelt'),
@@ -537,7 +537,7 @@
       }))),
       edit: editMultiField('radio'),
       transforms: MultiFieldTransforms,
-      attributes: Object.assign({}, FieldDefaults.attributes, {
+      attributes: Object.assign(Object.assign({}, FieldDefaults.attributes), {}, {
         label: {
           type: 'string',
           "default": __('Select one', 'wp-toolbelt')
@@ -546,7 +546,7 @@
     })
   }, {
     name: 'field-select',
-    settings: Object.assign({}, FieldDefaults, {
+    settings: Object.assign(Object.assign({}, FieldDefaults), {}, {
       title: __('Select', 'wp-toolbelt'),
       keywords: [__('Choose', 'wp-toolbelt'), __('Dropdown', 'wp-toolbelt'), __('Option', 'wp-toolbelt')],
       description: __('Compact, but powerful. Add a select box with several items.', 'wp-toolbelt'),
@@ -555,7 +555,7 @@
       })),
       edit: editMultiField('select'),
       transforms: MultiFieldTransforms,
-      attributes: Object.assign({}, FieldDefaults.attributes, {
+      attributes: Object.assign(Object.assign({}, FieldDefaults.attributes), {}, {
         label: {
           type: 'string',
           "default": __('Select one', 'wp-toolbelt')
