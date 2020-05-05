@@ -14,7 +14,6 @@ function process_scripts( source = './modules/**/src/js/**/*.js' ) {
 			rename(
 				path => {
 					path.dirname = path.dirname.replace( 'src/js', '' );
-					path.dirname = path.dirname.replace( 'src/block', '' );
 					path.extname = '.min.js';
 				}
 			)

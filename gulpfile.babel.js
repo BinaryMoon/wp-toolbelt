@@ -21,11 +21,7 @@ import {
 } from './gulp/script';
 
 import {
-	block_markdown,
-	block_testimonials,
-	block_projects,
-	block_contact_form,
-	block_gist
+	process_block_scripts
 } from './gulp/script-block';
 
 import update_blocklist from './gulp/blocklist';
@@ -46,7 +42,6 @@ import {
 export const buildTranslations = translate;
 export const buildZip = compress;
 export const buildblocklist = update_blocklist;
-export const buildContact = block_contact_form;
 export const buildStats = parallel( jetpack_stats, toolbelt_stats );
 
 export const build = series(
@@ -58,12 +53,7 @@ export const build = series(
 
 		// Build Scripts.
 		process_module_scripts,
-
-		block_testimonials,
-		block_projects,
-		block_markdown,
-		block_contact_form,
-		block_gist,
+		process_block_scripts,
 
 		// Other.
 		translate,
@@ -94,15 +84,7 @@ export const watchFiles = function( done ) {
 			'./modules/*/src/block/*.js',
 			'./modules/*/src/block/**/*.js'
 		],
-		series(
-			parallel(
-				block_testimonials,
-				block_projects,
-				block_markdown,
-				block_contact_form,
-				block_gist
-			)
-		)
+		process_block_scripts,
 	);
 
 	watch(
