@@ -187,6 +187,11 @@ function toolbelt_get_modules() {
 			'weight' => esc_html__( '0.8kb of inline CSS and 1.3kb of inline JS.', 'wp-toolbelt' ),
 			'supports' => array( 'css-properties' ),
 		),
+		'layout-grid' => array(
+			'name' => esc_html__( 'Layout Grid', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Display content in carefully curated columns.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid',
+		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
