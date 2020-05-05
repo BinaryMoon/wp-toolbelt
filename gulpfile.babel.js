@@ -17,9 +17,7 @@ import {
 } from './gulp/sass';
 
 import {
-	scripts_cookieBanner,
-	scripts_infiniteScroll,
-	scripts_spam, scripts_contact_form
+	process_module_scripts
 } from './gulp/script';
 
 import {
@@ -59,10 +57,8 @@ export const build = series(
 		process_global_styles,
 
 		// Build Scripts.
-		scripts_cookieBanner,
-		scripts_infiniteScroll,
-		scripts_spam,
-		scripts_contact_form,
+		process_module_scripts,
+
 		block_testimonials,
 		block_projects,
 		block_markdown,
@@ -90,12 +86,7 @@ export const watchFiles = function( done ) {
 
 	watch(
 		[ './modules/*/src/js/*.js' ],
-		parallel(
-			scripts_infiniteScroll,
-			scripts_cookieBanner,
-			scripts_spam,
-			scripts_contact_form
-		)
+		process_module_scripts
 	);
 
 	watch(
