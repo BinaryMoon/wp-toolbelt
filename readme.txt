@@ -100,7 +100,9 @@ Toolbelt is built with developers in mind. It has a collection of hooks and filt
 
 = Why does WordFence (and other WAF's) flag this file as a vulnerability?
 
-The file `/wp-toolbelt/modules/spam-blocker/blocklist.txt` is used by the spam blocker to check against comments. It is regularly updated. As such it contains lots of spammy words, and constantly changes. Both things that could trigger a vulnerability warning.
+The file `/wp-toolbelt/modules/spam-blocker/blocklist.txt` is used by the spam blocker to check comments for spam phrases. It is regularly updated.
+
+As such it contains lots of spammy words, and constantly changes. Both things that could trigger a vulnerability warning.
 
 The best thing to do is mark this file (and only this file) as 'Ignore Always'. This will stop you from getting warnings for this one file whilst monitoring the rest of the plugin for suspicious changes.
 
