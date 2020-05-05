@@ -8,6 +8,8 @@
 		position: absolute;
 		// Shift the link so to offset the padding.
 		transform: translate( -0.25em, -0.5em );
+		// Don't select when highlighting.
+		user-select: none;
 
 		.device-click & {
 
