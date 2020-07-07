@@ -177,6 +177,17 @@ function toolbelt_social_networks() {
 			'label' => esc_html_x( 'Save this', 'Wallabag button label', 'wp-toolbelt' ),
 			'url' => 'https://app.wallabag.it/bookmarklet?url=%s',
 		),
+		'reddit' => array(
+			'title' => esc_html__( 'Share on Reddit', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Reddit button label', 'wp-toolbelt' ),
+			'url' => 'https://reddit.com/submit?url=%s'
+		),
+		'email' => array(
+			'title' => esc_html__( 'Send via Email', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Send this', 'Email button label', 'wp-toolbelt' ),
+			'url' => ' mailto:somebody@example.com?body=%s'
+		),
+
 	);
 
 	return $networks;
