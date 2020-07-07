@@ -167,6 +167,16 @@ function toolbelt_social_networks() {
 			'label' => esc_html_x( 'Pin this', 'Pinterest button label', 'wp-toolbelt' ),
 			'url' => 'https://pinterest.com/pin/create/button/?url=%s',
 		),
+		'pocket' => array(
+			'title' => esc_html__( 'Save to Pocket', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Save this', 'Pocket button label', 'wp-toolbelt' ),
+			'url' => 'https://getpocket.com/save?url=%s',
+		),
+		'wallabag' => array(
+			'title' => esc_html__( 'Save to Wallabag', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Save this', 'Wallabag button label', 'wp-toolbelt' ),
+			'url' => 'https://app.wallabag.it/bookmarklet?url=%s',
+		),
 	);
 
 	return $networks;
