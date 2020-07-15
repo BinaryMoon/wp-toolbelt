@@ -50,7 +50,7 @@ function toolbelt_contact_cpt() {
 		)
 	);
 
-	// Add to REST API post type whitelist.
+	// Add to REST API post type allowed list.
 	add_filter(
 		'rest_api_allowed_post_types',
 		function( $post_types ) {

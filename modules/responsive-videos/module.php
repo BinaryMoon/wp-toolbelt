@@ -114,7 +114,7 @@ function toolbelt_responsive_video_maybe_wrap_oembed( $html, $url = null ) {
 	/**
 	 * OEmbed Video Providers.
 	 *
-	 * A whitelist of oEmbed video provider Regex patterns to check against
+	 * An allowed list of oEmbed video provider Regex patterns to check against
 	 * before wrapping the output.
 	 */
 	$video_patterns = apply_filters(
