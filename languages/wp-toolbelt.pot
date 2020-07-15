@@ -545,11 +545,11 @@ msgstr ""
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:347
+#: modules/contact-form/module-submit-form.php:347, modules/contact-form/module-submit-form.php:369
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:345
+#: modules/contact-form/module-submit-form.php:345, modules/contact-form/module-submit-form.php:369
 msgid "Yes"
 msgstr ""
 
