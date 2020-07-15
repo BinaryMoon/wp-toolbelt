@@ -66,16 +66,6 @@ function toolbelt_admin_menu() {
 		return;
 	}
 
-	$icon = file_get_contents( TOOLBELT_PATH . 'assets/svg/menu-icon.svg' );
-
-	/**
-	 * Generate the base64 encoded icon string.
-	 */
-	$icon_data = '';
-	if ( is_string( $icon ) ) {
-		$icon_data = 'data:image/svg+xml;base64,' . base64_encode( $icon );
-	}
-
 	// Add top level Toolbelt menu.
 	add_menu_page(
 		/* translators: plugin name */
@@ -84,7 +74,7 @@ function toolbelt_admin_menu() {
 		'manage_options',
 		'toolbelt-modules',
 		'toolbelt_admin_page',
-		$icon_data
+		'dashicons-hammer'
 	);
 
 	// Replace default Modules page with a different title.

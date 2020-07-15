@@ -2,7 +2,7 @@
 /**
  * Spam blocker Cron Jobs.
  *
- * @package wp-toolbelt
+ * @package toolbelt
  */
 
 /**

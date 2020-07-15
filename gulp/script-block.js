@@ -9,10 +9,10 @@ const babel = require( 'gulp-babel' );
 const include = require( 'gulp-include' );
 
 
-function process_scripts( slug ) {
+function process_scripts() {
 
-	const destination = './modules/' + slug + '/';
-	const source = './modules/' + slug + '/src/block/block.js';
+	const destination = './modules/';
+	const source = './modules/**/src/block/block.js';
 
 	return src( source )
 		.pipe(
@@ -27,43 +27,32 @@ function process_scripts( slug ) {
 		.pipe(
 			babel()
 		)
-		.pipe( rename( 'block.js' ) )
+		.pipe(
+			rename(
+				path => {
+					path.dirname = path.dirname.replace( 'src/block', '' );
+					path.basename = 'block';
+				}
+			)
+		)
 		.pipe( dest( destination ) )
 		.pipe(
 			uglify()
 		)
-		.pipe( rename( 'block.min.js' ) )
+		.pipe(
+			rename(
+				path => {
+					path.extname = '.min.js';
+				}
+			)
+		)
 		.pipe( dest( destination ) )
 		.pipe( size() );
 
 }
 
-export function block_markdown() {
+export function process_block_scripts() {
 
-	return process_scripts( 'markdown' );
-
-}
-
-export function block_testimonials() {
-
-	return process_scripts( 'testimonials' );
-
-}
-
-export function block_projects() {
-
-	return process_scripts( 'projects' );
-
-}
-
-export function block_contact_form() {
-
-	return process_scripts( 'contact-form' );
-
-}
-
-export function block_gist() {
-
-	return process_scripts( 'gist' );
+	return process_scripts();
 
 }

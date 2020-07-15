@@ -289,6 +289,10 @@ function toolbelt_get_modules() {
  */
 function toolbelt_css_properties() {
 
+	if ( toolbelt_is_amp_page() ) {
+		return;
+	}
+
 	$properties = array(
 		'toolbelt-spacing' => '1rem',
 	);
@@ -321,6 +325,10 @@ function toolbelt_css_properties() {
 function toolbelt_styles( $module, $name = 'style' ) {
 
 	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
+		return;
+	}
+
+	if ( toolbelt_is_amp_page() ) {
 		return;
 	}
 
@@ -514,5 +522,21 @@ function toolbelt_register_block_category() {
 	}
 
 	add_filter( 'block_categories', 'toolbelt_block_category', 10, 2 );
+
+}
+
+
+/**
+ * If is AMP page.
+ *
+ * @return boolean
+ */
+function toolbelt_is_amp_page() {
+
+	if ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+		return true;
+	}
+
+	return false;
 
 }

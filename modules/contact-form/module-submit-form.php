@@ -2,7 +2,7 @@
 /**
  * Submit form settings.
  *
- * @package wp-toolbelt
+ * @package toolbelt
  */
 
 /**

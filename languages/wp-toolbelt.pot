@@ -281,72 +281,72 @@ msgstr ""
 msgid "Leave a review &rsaquo;"
 msgstr ""
 
-#: admin/admin.php:26, admin/admin.php:94
+#: admin/admin.php:26, admin/admin.php:84
 msgid "Modules"
 msgstr ""
 
-#: admin/admin.php:34, admin/admin.php:106, admin/admin.php:184
+#: admin/admin.php:34, admin/admin.php:96, admin/admin.php:174
 msgid "Settings"
 msgstr ""
 
-#: admin/admin.php:44, admin/admin.php:120
+#: admin/admin.php:44, admin/admin.php:110
 msgid "Processes"
 msgstr ""
 
 #. translators: plugin name
-#: admin/admin.php:82, admin/admin.php:83
+#: admin/admin.php:72, admin/admin.php:73
 msgid "Toolbelt"
 msgstr ""
 
-#: admin/admin.php:93, admin/screen-modules.php:59
+#: admin/admin.php:83, admin/screen-modules.php:59
 msgid "Toolbelt Modules"
 msgstr ""
 
-#: admin/admin.php:105, admin/screen-settings.php:17
+#: admin/admin.php:95, admin/screen-settings.php:17
 msgid "Toolbelt Settings"
 msgstr ""
 
-#: admin/admin.php:119, admin/screen-tools.php:19
+#: admin/admin.php:109, admin/screen-tools.php:19
 msgid "Toolbelt Processes"
 msgstr ""
 
-#: admin/admin.php:162, admin/screen-modules.php:80
+#: admin/admin.php:152, admin/screen-modules.php:80
 msgid "Module"
 msgstr ""
 
-#: admin/admin.php:168
+#: admin/admin.php:158
 msgid "Experimental"
 msgstr ""
 
-#: admin/admin.php:177
+#: admin/admin.php:167
 msgid "Full GDPR support requires developer integration. See documentation for more details."
 msgstr ""
 
-#: admin/admin.php:182
+#: admin/admin.php:172
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:187
+#: admin/admin.php:177
 msgid "Tools"
 msgstr ""
 
-#: admin/admin.php:193, admin/screen-modules.php:83
+#: admin/admin.php:183, admin/screen-modules.php:83
 msgid "Page Impact"
 msgstr ""
 
-#: admin/admin.php:327
+#: admin/admin.php:317
 msgid "Settings Saved"
 msgstr ""
 
-#: admin/admin.php:355
+#: admin/admin.php:345
 msgid "Toolbelt settings saved."
 msgstr ""
 
-#: admin/admin.php:371
+#: admin/admin.php:361
 msgid "Success"
 msgstr ""
 
-#: admin/admin.php:372
+#: admin/admin.php:362
 msgid "Error"
 msgstr ""
 
@@ -545,12 +545,12 @@ msgstr ""
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:345, modules/contact-form/module-submit-form.php:369
-msgid "Yes"
-msgstr ""
-
 #: modules/contact-form/module-submit-form.php:347, modules/contact-form/module-submit-form.php:369
 msgid "No"
+msgstr ""
+
+#: modules/contact-form/module-submit-form.php:345, modules/contact-form/module-submit-form.php:369
+msgid "Yes"
 msgstr ""
 
 #: modules/contact-form/module-submit-form.php:400
@@ -850,49 +850,85 @@ msgstr ""
 msgid "Related Posts cache cleared."
 msgstr ""
 
-#: modules/social-sharing/module.php:136
+#: modules/social-sharing/module.php:151
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:137
+#: modules/social-sharing/module.php:152
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:141
+#: modules/social-sharing/module.php:156
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:142
+#: modules/social-sharing/module.php:157
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:146
+#: modules/social-sharing/module.php:161
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:147
+#: modules/social-sharing/module.php:162
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:161
+#: modules/social-sharing/module.php:176
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:162
+#: modules/social-sharing/module.php:177
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:166
+#: modules/social-sharing/module.php:181
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:167
+#: modules/social-sharing/module.php:182
 msgctxt "Pinterest button label"
 msgid "Pin this"
+msgstr ""
+
+#: modules/social-sharing/module.php:186
+msgid "Save to Pocket"
+msgstr ""
+
+#: modules/social-sharing/module.php:187
+msgctxt "Pocket button label"
+msgid "Save this"
+msgstr ""
+
+#: modules/social-sharing/module.php:191
+msgid "Save to Wallabag"
+msgstr ""
+
+#: modules/social-sharing/module.php:192
+msgctxt "Wallabag button label"
+msgid "Save this"
+msgstr ""
+
+#: modules/social-sharing/module.php:196
+msgid "Share on Reddit"
+msgstr ""
+
+#: modules/social-sharing/module.php:197
+msgctxt "Reddit button label"
+msgid "Share this"
+msgstr ""
+
+#: modules/social-sharing/module.php:201
+msgid "Send via Email"
+msgstr ""
+
+#: modules/social-sharing/module.php:202
+msgctxt "Email button label"
+msgid "Send this"
 msgstr ""
 
 #: modules/stats/module.php:111

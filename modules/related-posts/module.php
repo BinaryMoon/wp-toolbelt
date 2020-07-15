@@ -117,7 +117,7 @@ function toolbelt_related_posts_get() {
 function toolbelt_related_posts_html( $related_posts ) {
 
 	$html = '<section class="toolbelt-related-posts">';
-	$html .= '<h3>' . esc_html__( 'Related Posts', 'wp-toolbelt' ) . '</h3>';
+	$html .= '<h3 class="toolbelt-heading toolbelt-heading-related-posts">' . esc_html__( 'Related Posts', 'wp-toolbelt' ) . '</h3>';
 	$html .= '<div class="toolbelt-cols-2">';
 
 	foreach ( $related_posts as $related ) {

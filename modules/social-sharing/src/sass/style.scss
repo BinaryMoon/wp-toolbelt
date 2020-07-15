@@ -1,22 +1,19 @@
 .toolbelt-social-share {
 
 	clear: both;
-	display: grid;
 	font-size: 1rem;
-	grid-template-columns: repeat(4, 25%);
+	display: grid;
+	gap: calc( var( --toolbelt-spacing ) / 4 );
+	grid-template-columns: repeat( auto-fit, minmax( 11rem, 1fr ) );
 	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
 	margin-top: calc( var( --toolbelt-spacing ) * 2 );
 
 	a {
 
-		padding: calc( var( --toolbelt-spacing ) / 2 ) var( --toolbelt-spacing );
+		padding: calc( var( --toolbelt-spacing ) / 4 ) var( --toolbelt-spacing );
 		color: white;
 		align-items: center;
-
-		@media (min-width: 500px) {
-
-
-		}
+		display: inline-block;
 
 		&:hover {
 
@@ -98,7 +95,7 @@
 
 	.toolbelt_reddit {
 
-		background-color: red;
+		background-color: #ff4500;
 
 	}
 

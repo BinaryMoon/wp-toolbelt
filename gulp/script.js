@@ -7,50 +7,30 @@ const size = require( 'gulp-filesize' );
 const rename = require( 'gulp-rename' );
 const babel = require( 'gulp-babel' );
 
-function process_scripts( slug ) {
-
-	const destination = './modules/' + slug + '/';
-	const source = './modules/' + slug + '/src/js/**.js';
+function process_scripts( source = './modules/**/src/js/**/*.js' ) {
 
 	return src( source )
+		.pipe(
+			rename(
+				path => {
+					path.dirname = path.dirname.replace( 'src/js', '' );
+					path.extname = '.min.js';
+				}
+			)
+		)
 		.pipe(
 			babel()
 		)
 		.pipe(
 			uglify()
 		)
-		.pipe(
-			rename(
-				( path ) => {
-					path.basename += '.min';
-				}
-			)
-		)
-		.pipe( dest( destination ) )
+		.pipe( dest( './modules/' ) )
 		.pipe( size() );
 
 }
 
-export function scripts_cookieBanner() {
+export function process_module_scripts() {
 
-	return process_scripts( 'cookie-banner' );
-
-}
-
-export function scripts_infiniteScroll() {
-
-	return process_scripts( 'infinite-scroll' );
-
-}
-
-export function scripts_spam() {
-
-	return process_scripts( 'spam-blocker' );
-
-}
-
-export function scripts_contact_form() {
-
-	return process_scripts( 'contact-form' );
+	return process_scripts();
 
 }

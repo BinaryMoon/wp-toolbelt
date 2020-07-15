@@ -2,7 +2,7 @@
 /**
  * Github Gist Block.
  *
- * @package wp-tololbelt
+ * @package toolbelt
  */
 
 /**

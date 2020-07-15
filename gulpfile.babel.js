@@ -12,27 +12,16 @@ import {
 
 import {
 	process_global_styles,
-	styles_cookie, styles_social,
-	styles_related_posts, styles_social_menu,
-	styles_breadcrumbs, styles_videos,
-	styles_heading_links, styles_infinite_scroll,
-	styles_testimonials, styles_admin_tweaks,
-	styles_portfolio, styles_block_contact,
-	styles_contact
+	process_module_styles,
+	process_block_styles
 } from './gulp/sass';
 
 import {
-	scripts_cookieBanner,
-	scripts_infiniteScroll,
-	scripts_spam, scripts_contact_form
+	process_module_scripts
 } from './gulp/script';
 
 import {
-	block_markdown,
-	block_testimonials,
-	block_projects,
-	block_contact_form,
-	block_gist
+	process_block_scripts
 } from './gulp/script-block';
 
 import update_blocklist from './gulp/blocklist';
@@ -46,40 +35,27 @@ import {
 	toolbelt_stats
 } from './gulp/stats';
 
+
 /**
  * Export Gulp tasks.
  */
 export const buildTranslations = translate;
 export const buildZip = compress;
 export const buildblocklist = update_blocklist;
-export const buildContact = block_contact_form;
 export const buildStats = parallel( jetpack_stats, toolbelt_stats );
 
 export const build = series(
 	parallel(
-		styles_cookie,
-		styles_social,
-		styles_related_posts,
-		styles_social_menu,
-		styles_breadcrumbs,
-		styles_videos,
-		styles_heading_links,
-		styles_infinite_scroll,
-		styles_admin_tweaks,
-		styles_portfolio,
-		styles_testimonials,
-		styles_block_contact,
-		styles_contact,
-		scripts_cookieBanner,
-		scripts_infiniteScroll,
-		scripts_spam,
-		scripts_contact_form,
+		// Build Styles.
+		process_module_styles,
+		process_block_styles,
 		process_global_styles,
-		block_testimonials,
-		block_projects,
-		block_markdown,
-		block_contact_form,
-		block_gist,
+
+		// Build Scripts.
+		process_module_scripts,
+		process_block_scripts,
+
+		// Other.
 		translate,
 		update_blocklist
 	),
@@ -90,37 +66,17 @@ export const watchFiles = function( done ) {
 
 	watch(
 		'./modules/*/src/sass/*.scss',
-		parallel(
-			styles_cookie,
-			styles_contact,
-			styles_social,
-			styles_related_posts,
-			styles_breadcrumbs,
-			styles_social_menu,
-			styles_heading_links,
-			styles_videos,
-			styles_infinite_scroll,
-			styles_admin_tweaks,
-			styles_testimonials,
-			styles_portfolio
-		)
+		process_module_styles
 	);
 
 	watch(
 		'./modules/*/src/block/*.scss',
-		parallel(
-			styles_block_contact
-		)
+		process_block_styles
 	);
 
 	watch(
 		[ './modules/*/src/js/*.js' ],
-		parallel(
-			scripts_infiniteScroll,
-			scripts_cookieBanner,
-			scripts_spam,
-			scripts_contact_form
-		)
+		process_module_scripts
 	);
 
 	watch(
@@ -128,15 +84,7 @@ export const watchFiles = function( done ) {
 			'./modules/*/src/block/*.js',
 			'./modules/*/src/block/**/*.js'
 		],
-		series(
-			parallel(
-				block_testimonials,
-				block_projects,
-				block_markdown,
-				block_contact_form,
-				block_gist
-			)
-		)
+		process_block_scripts,
 	);
 
 	watch(

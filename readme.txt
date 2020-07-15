@@ -98,6 +98,14 @@ Toolbelt is built with developers in mind. It has a collection of hooks and filt
 
 == FAQ ==
 
+= Why does WordFence (and other WAF's) flag this file as a vulnerability?
+
+The file `/wp-toolbelt/modules/spam-blocker/blocklist.txt` is used by the spam blocker to check comments for spam phrases. It is regularly updated.
+
+As such it contains lots of spammy words, and constantly changes. Both things that could trigger a vulnerability warning.
+
+The best thing to do is mark this file (and only this file) as 'Ignore Always'. This will stop you from getting warnings for this one file whilst monitoring the rest of the plugin for suspicious changes.
+
 = Why one plugin and not separate plugins? =
 
 I am making this because it's something I want to use. I like the simplicity of installing Jetpack and letting it do it's thing. But it's not designed for speed or elegance, so I am trying to address that with my own plugin.
@@ -123,13 +131,14 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-
-= 2.5.3 - 21st March 2020 =
+= 2.5.3 - 15th July 2020 =
 * Add hover colour to social share links so that they are always readable.
 * Ensure the heading anchors don't move the content around.
-* Add title to footnotes links
+* Add title to footnotes links.
 * Tweak cookie banner css to ensure the box size doesn't change unexpectedly.
 * Make columns css more robust so that it will work with every theme.
+* Add basic support for the WordPress AMP plugin so that it doesn't output custom CSS on AMP pages.
+* Add support for more social sharing sites (Reddit, Pocket, Wallabag, and send by email).
 
 = 2.5.2 - 2nd March 2020 =
 * Add new footnotes module that appends footnotes to the bottom of post content.
