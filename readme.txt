@@ -139,6 +139,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Make columns css more robust so that it will work with every theme.
 * Add basic support for the WordPress AMP plugin so that it doesn't output custom CSS on AMP pages.
 * Add support for more social sharing sites (Reddit, Pocket, Wallabag, and send by email).
+* Add scroll margin top support for heading anchors.
 
 = 2.5.2 - 2nd March 2020 =
 * Add new footnotes module that appends footnotes to the bottom of post content.
