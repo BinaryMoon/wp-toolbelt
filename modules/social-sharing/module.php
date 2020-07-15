@@ -15,6 +15,7 @@ if ( is_admin() ) {
  * Add social sharing buttons to the post content.
  *
  * @param string $content The post content to append the sharing option to.
+ *
  * @return string The post content with the sharing options appended.
  */
 function toolbelt_social_sharing( $content ) {
@@ -42,7 +43,7 @@ function toolbelt_social_sharing( $content ) {
 	 * By default will return if it's not a blog post.
 	 * You can change this with the filter.
 	 */
-	if ( ! apply_filters( 'toolbelt_display_social_sharing', true ) ) {
+	if ( ! apply_filters( 'toolbelt_display_social_sharing', TRUE ) ) {
 		return $content;
 	}
 
@@ -68,8 +69,8 @@ function toolbelt_social_sharing( $content ) {
 		if ( is_array( $server ) ) {
 
 			$https = 'http';
-			if ( isset( $server['HTTPS'] ) ) {
-				if ( 'on' === $server['HTTPS'] ) {
+			if ( isset( $server[ 'HTTPS' ] ) ) {
+				if ( 'on' === $server[ 'HTTPS' ] ) {
 					$https = 'https';
 				}
 			}
@@ -78,8 +79,8 @@ function toolbelt_social_sharing( $content ) {
 			 * Ignore input sanitization since the generated url will be escaped
 			 * immediately after.
 			 */
-			if ( isset( $server['HTTP_HOST'] ) && isset( $server['REQUEST_URI'] ) ) {
-				$canonical = $https . '://' . $server['HTTP_HOST'] . $server['REQUEST_URI']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			if ( isset( $server[ 'HTTP_HOST' ] ) && isset( $server[ 'REQUEST_URI' ] ) ) {
+				$canonical = $https . '://' . $server[ 'HTTP_HOST' ] . $server[ 'REQUEST_URI' ]; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			}
 		}
 	}
@@ -105,14 +106,14 @@ function toolbelt_social_sharing( $content ) {
 
 	foreach ( $networks as $slug => $network ) {
 
-		$url = sprintf( $network['url'], rawurlencode( $canonical ) );
+		$url  = sprintf( $network[ 'url' ], rawurlencode( $canonical ) );
 		$html .= sprintf(
 			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank">%4$s %5$s</a>' . "\n",
 			esc_url( $url ),
-			esc_attr( $network['title'] ),
+			esc_attr( $network[ 'title' ] ),
 			'toolbelt_' . esc_attr( $slug ),
 			file_get_contents( TOOLBELT_PATH . 'svg/' . $slug . '.svg' ),
-			esc_html( $network['label'] )
+			esc_html( $network[ 'label' ] )
 		);
 
 	}
@@ -131,21 +132,35 @@ add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
  */
 function toolbelt_social_networks() {
 
+	$_default_networks = array(
+		'facebook',
+		'twitter',
+		'linkedin',
+		'whatsapp',
+		'pinterest',
+		'pocket',
+		'wallabag',
+		'reddit',
+		'email',
+	);
+
+	$desired_networks = apply_filters( 'wp_toolbelt_social_networks', $_default_networks );
+
 	$networks = array(
-		'facebook' => array(
+		'facebook'  => array(
 			'title' => esc_html__( 'Share on Facebook', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'Facebook button label', 'wp-toolbelt' ),
-			'url' => 'https://facebook.com/sharer/sharer.php?u=%s',
+			'url'   => 'https://facebook.com/sharer/sharer.php?u=%s',
 		),
-		'twitter' => array(
+		'twitter'   => array(
 			'title' => esc_html__( 'Tweet on Twitter', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Tweet this', 'Twitter button label', 'wp-toolbelt' ),
-			'url' => 'https://twitter.com/intent/tweet?url=%s',
+			'url'   => 'https://twitter.com/intent/tweet?url=%s',
 		),
-		'linkedin' => array(
+		'linkedin'  => array(
 			'title' => esc_html__( 'Share on LinkedIn', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'LinkedIn button label', 'wp-toolbelt' ),
-			'url' => 'https://www.linkedin.com/shareArticle?mini=true&url=%s',
+			'url'   => 'https://www.linkedin.com/shareArticle?mini=true&url=%s',
 		),
 		/**
 		 * Share Whatsapp
@@ -157,39 +172,47 @@ function toolbelt_social_networks() {
 		 * The docs can be seen here:
 		 * https://faq.whatsapp.com/en/android/26000030/
 		 */
-		'whatsapp' => array(
+		'whatsapp'  => array(
 			'title' => esc_html__( 'Share on WhatsApp', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'WhatsApp button label', 'wp-toolbelt' ),
-			'url' => 'https://api.whatsapp.com/send?text=%s',
+			'url'   => 'https://api.whatsapp.com/send?text=%s',
 		),
 		'pinterest' => array(
 			'title' => esc_html__( 'Pin on Pinterest', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Pin this', 'Pinterest button label', 'wp-toolbelt' ),
-			'url' => 'https://pinterest.com/pin/create/button/?url=%s',
+			'url'   => 'https://pinterest.com/pin/create/button/?url=%s',
 		),
-		'pocket' => array(
+		'pocket'    => array(
 			'title' => esc_html__( 'Save to Pocket', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Save this', 'Pocket button label', 'wp-toolbelt' ),
-			'url' => 'https://getpocket.com/save?url=%s',
+			'url'   => 'https://getpocket.com/save?url=%s',
 		),
-		'wallabag' => array(
+		'wallabag'  => array(
 			'title' => esc_html__( 'Save to Wallabag', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Save this', 'Wallabag button label', 'wp-toolbelt' ),
-			'url' => 'https://app.wallabag.it/bookmarklet?url=%s',
+			'url'   => 'https://app.wallabag.it/bookmarklet?url=%s',
 		),
-		'reddit' => array(
+		'reddit'    => array(
 			'title' => esc_html__( 'Share on Reddit', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'Reddit button label', 'wp-toolbelt' ),
-			'url' => 'https://reddit.com/submit?url=%s'
+			'url'   => 'https://reddit.com/submit?url=%s',
 		),
-		'email' => array(
+		'email'     => array(
 			'title' => esc_html__( 'Send via Email', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Send this', 'Email button label', 'wp-toolbelt' ),
-			'url' => ' mailto:somebody@example.com?body=%s'
+			'url'   => ' mailto:somebody@example.com?body=%s',
 		),
 
 	);
 
-	return $networks;
+	$output = array();
+
+	foreach ( $desired_networks as $item ) {
+		if ( array_key_exists( $item, $networks ) ) {
+			$output[ $item ] = $networks[ $item ];
+		}
+	}
+
+	return $output;
 
 }
