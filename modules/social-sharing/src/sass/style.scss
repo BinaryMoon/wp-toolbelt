@@ -1,8 +1,8 @@
 .toolbelt-social-share {
 
 	clear: both;
-	display: grid;
 	font-size: 1rem;
+	display: grid;
 	grid-template-columns: repeat(4, 25%);
 	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
 	margin-top: calc( var( --toolbelt-spacing ) * 2 );
@@ -12,6 +12,7 @@
 		padding: calc( var( --toolbelt-spacing ) / 2 ) var( --toolbelt-spacing );
 		color: white;
 		align-items: center;
+		display: inline-block;
 
 		@media (min-width: 500px) {
 
@@ -98,7 +99,7 @@
 
 	.toolbelt_reddit {
 
-		background-color: red;
+		background-color: #ff4500;
 
 	}
 
