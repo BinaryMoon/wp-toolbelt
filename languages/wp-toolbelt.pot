@@ -850,49 +850,85 @@ msgstr ""
 msgid "Related Posts cache cleared."
 msgstr ""
 
-#: modules/social-sharing/module.php:136
+#: modules/social-sharing/module.php:151
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:137
+#: modules/social-sharing/module.php:152
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:141
+#: modules/social-sharing/module.php:156
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:142
+#: modules/social-sharing/module.php:157
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:146
+#: modules/social-sharing/module.php:161
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:147
+#: modules/social-sharing/module.php:162
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:161
+#: modules/social-sharing/module.php:176
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:162
+#: modules/social-sharing/module.php:177
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:166
+#: modules/social-sharing/module.php:181
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:167
+#: modules/social-sharing/module.php:182
 msgctxt "Pinterest button label"
 msgid "Pin this"
+msgstr ""
+
+#: modules/social-sharing/module.php:186
+msgid "Save to Pocket"
+msgstr ""
+
+#: modules/social-sharing/module.php:187
+msgctxt "Pocket button label"
+msgid "Save this"
+msgstr ""
+
+#: modules/social-sharing/module.php:191
+msgid "Save to Wallabag"
+msgstr ""
+
+#: modules/social-sharing/module.php:192
+msgctxt "Wallabag button label"
+msgid "Save this"
+msgstr ""
+
+#: modules/social-sharing/module.php:196
+msgid "Share on Reddit"
+msgstr ""
+
+#: modules/social-sharing/module.php:197
+msgctxt "Reddit button label"
+msgid "Share this"
+msgstr ""
+
+#: modules/social-sharing/module.php:201
+msgid "Send via Email"
+msgstr ""
+
+#: modules/social-sharing/module.php:202
+msgctxt "Email button label"
+msgid "Send this"
 msgstr ""
 
 #: modules/stats/module.php:111
