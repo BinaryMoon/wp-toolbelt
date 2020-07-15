@@ -131,13 +131,14 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.5.3 - 7th April 2020 =
+= 2.5.3 - 15th July 2020 =
 * Add hover colour to social share links so that they are always readable.
 * Ensure the heading anchors don't move the content around.
-* Add title to footnotes links
+* Add title to footnotes links.
 * Tweak cookie banner css to ensure the box size doesn't change unexpectedly.
 * Make columns css more robust so that it will work with every theme.
 * Add basic support for the WordPress AMP plugin so that it doesn't output custom CSS on AMP pages.
+* Add support for more social sharing sites (Reddit, Pocket, Wallabag, and send by email).
 
 = 2.5.2 - 2nd March 2020 =
 * Add new footnotes module that appends footnotes to the bottom of post content.
