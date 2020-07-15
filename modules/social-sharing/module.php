@@ -134,7 +134,7 @@ function toolbelt_social_networks() {
 
 	$_default_networks = 'facebook|twitter|linkedin|whatsapp|pinterest|pocket|wallabag|email';
 
-	$desired_networks = explode( '|', apply_filter( 'wp_toolbelt_social_networks', $_default_networks ) );
+	$desired_networks = explode( '|', apply_filters( 'wp_toolbelt_social_networks', $_default_networks ) );
 
 	$networks = array(
 		'facebook'  => array(
