@@ -43,7 +43,7 @@ function toolbelt_social_sharing( $content ) {
 	 * By default will return if it's not a blog post.
 	 * You can change this with the filter.
 	 */
-	if ( ! apply_filters( 'toolbelt_display_social_sharing', TRUE ) ) {
+	if ( ! apply_filters( 'toolbelt_display_social_sharing', true ) ) {
 		return $content;
 	}
 
@@ -69,8 +69,8 @@ function toolbelt_social_sharing( $content ) {
 		if ( is_array( $server ) ) {
 
 			$https = 'http';
-			if ( isset( $server[ 'HTTPS' ] ) ) {
-				if ( 'on' === $server[ 'HTTPS' ] ) {
+			if ( isset( $server['HTTPS'] ) ) {
+				if ( 'on' === $server['HTTPS'] ) {
 					$https = 'https';
 				}
 			}
@@ -79,8 +79,8 @@ function toolbelt_social_sharing( $content ) {
 			 * Ignore input sanitization since the generated url will be escaped
 			 * immediately after.
 			 */
-			if ( isset( $server[ 'HTTP_HOST' ] ) && isset( $server[ 'REQUEST_URI' ] ) ) {
-				$canonical = $https . '://' . $server[ 'HTTP_HOST' ] . $server[ 'REQUEST_URI' ]; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			if ( isset( $server['HTTP_HOST'] ) && isset( $server['REQUEST_URI'] ) ) {
+				$canonical = $https . '://' . $server['HTTP_HOST'] . $server['REQUEST_URI']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			}
 		}
 	}
@@ -106,14 +106,14 @@ function toolbelt_social_sharing( $content ) {
 
 	foreach ( $networks as $slug => $network ) {
 
-		$url  = sprintf( $network[ 'url' ], rawurlencode( $canonical ) );
+		$url  = sprintf( $network['url'], rawurlencode( $canonical ) );
 		$html .= sprintf(
 			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank">%4$s %5$s</a>' . "\n",
 			esc_url( $url ),
-			esc_attr( $network[ 'title' ] ),
+			esc_attr( $network['title'] ),
 			'toolbelt_' . esc_attr( $slug ),
 			file_get_contents( TOOLBELT_PATH . 'svg/' . $slug . '.svg' ),
-			esc_html( $network[ 'label' ] )
+			esc_html( $network['label'] )
 		);
 
 	}
