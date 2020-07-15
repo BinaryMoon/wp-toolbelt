@@ -131,6 +131,10 @@ add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
  */
 function toolbelt_social_networks() {
 
+	$_default_networks = 'facebook|twitter|linkedin|whatsapp|pinterest|pocket|wallabag|email';
+
+	$desired_networks = explode( '|', apply_filter( 'wp_toolbelt_social_networks', $_default_networks ) );
+
 	$networks = array(
 		'facebook' => array(
 			'title' => esc_html__( 'Share on Facebook', 'wp-toolbelt' ),
@@ -190,6 +194,14 @@ function toolbelt_social_networks() {
 
 	);
 
-	return $networks;
+	$output = array();
+
+	foreach( $desired_networks as $item ) {
+		if( array_key_exists( $item, $networks ) ) {
+			$output[$item] = $networks[$item];
+		}
+	}
+
+	return $output;
 
 }
