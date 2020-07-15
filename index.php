@@ -295,6 +295,7 @@ function toolbelt_css_properties() {
 
 	$properties = array(
 		'toolbelt-spacing' => '1rem',
+		'toolbelt-scroll-margin-top' => '45px',
 	);
 
 	$properties = apply_filters(
