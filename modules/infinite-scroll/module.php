@@ -37,9 +37,9 @@ function toolbelt_is_footer() {
 
 ?>
 <script>
-toolbelt_is.permalink = '<?php echo esc_url( home_url( $permalink ) ); ?>';
-toolbelt_is.route = '<?php echo esc_url( home_url( '/wp-json/wp-toolbelt/v1/infinite-scroll/' ) ); ?>';
-toolbelt_is.page = <?php echo (int) $current_page; ?>;
+	toolbelt_is.permalink = '<?php echo esc_url( home_url( $permalink ) ); ?>';
+	toolbelt_is.route = '<?php echo esc_url( home_url( '/wp-json/wp-toolbelt/v1/infinite-scroll/' ) ); ?>';
+	toolbelt_is.page = <?php echo (int) $current_page; ?>;
 </script>
 <?php
 
@@ -257,7 +257,7 @@ function toolbelt_is_rest_response( $data ) {
 
 		// Add page number before inserting posts.
 		// translators: %d = page number.
-		$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
+		$results['html'] .= '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
 
 		ob_start();
 
