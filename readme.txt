@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
