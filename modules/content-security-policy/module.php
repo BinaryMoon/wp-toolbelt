@@ -28,9 +28,10 @@ function toolbelt_csp_headers() {
 
 	if ( false == $_csp_cache ) { // Only rebuild if cache is empty
 		if ( true == $admin_policy['report-only'] ) {
-			// Testing mode is report only mode, or 'production mode'
+			// Testing mode
 			$csp_string = "Content-Security-Policy-Report-Only";
 		} else {
+			// Enforce mode
 			$csp_string = "Content-Security-Policy";
 		}
 
