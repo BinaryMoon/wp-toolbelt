@@ -148,6 +148,13 @@ function toolbelt_get_modules() {
 			'supports' => array( 'gdpr-hard-mode', 'css-properties' ),
 			'weight' => esc_html__( '1.2kb of inline JS and CSS.', 'wp-toolbelt' ),
 		),
+		'content-security-policy' => array(
+			'name'        => esc_html__( 'Content Security Policy Headers', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Inject a content security policy header into your page responses', 'wp-toolbelt' ),
+			'docs'        => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/CSP-Header',
+			'supports'    => array( 'experimental' ),
+			'weight'      => esc_html__( 'Roughly 1kb of header properties', 'wp-toolbelt' )
+		),
 		'disable-comment-urls' => array(
 			'name' => esc_html__( 'Disable the Comment URL Field', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes.', 'wp-toolbelt' ),
