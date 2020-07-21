@@ -131,6 +131,9 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 2.5.4 - 21st July 2020 =
+* Remove `wp_` prefix from social network filter.
+
 = 2.5.3 - 15th July 2020 =
 * Add hover colour to social share links so that they are always readable.
 * Ensure the heading anchors don't move the content around.
