@@ -28,7 +28,7 @@ function toolbelt_csp_headers() {
 
 	if ( false == $_csp_cache ) { // Only rebuild if cache is empty
 		if ( true == $admin_policy['report-only'] ) {
-			// Testing for report only mode, or 'production mode'
+			// Testing mode is report only mode, or 'production mode'
 			$csp_string = "Content-Security-Policy-Report-Only";
 		} else {
 			$csp_string = "Content-Security-Policy";
@@ -56,6 +56,7 @@ function toolbelt_csp_headers() {
 
 		$csp_string = trim( $csp_string );
 
+		// Stuff it into the cache
 		wp_cache_set(
 			'csp-cache',
 			$csp_string,
@@ -63,8 +64,10 @@ function toolbelt_csp_headers() {
 			3600 // One hour
 		);
 
+		// Send the header
 		header( $csp_string );
 	} else {
+		// Send the cached header
 		header( $_csp_cache );
 	}
 }
