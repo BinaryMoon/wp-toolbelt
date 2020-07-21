@@ -144,7 +144,7 @@ function toolbelt_social_networks() {
 		'email',
 	);
 
-	$desired_networks = apply_filters( 'toolbelt_social_networks', $default_networks );
+	$desired_networks = apply_filters( 'toolbelt_social_networks', $_default_networks );
 
 	$networks = array(
 		'facebook'  => array(
