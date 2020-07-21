@@ -26,8 +26,9 @@ function toolbelt_csp_headers() {
 
 	$admin_policy = apply_filters( 'toolbelt_csp_policy', $default_options );
 
-	if ( false == $_csp_cache ) {
+	if ( false == $_csp_cache ) { // Only rebuild if cache is empty
 		if ( true == $admin_policy['report-only'] ) {
+			// Testing for report only mode, or 'production mode'
 			$csp_string = "Content-Security-Policy-Report-Only";
 		} else {
 			$csp_string = "Content-Security-Policy";
@@ -35,11 +36,19 @@ function toolbelt_csp_headers() {
 
 		foreach ( $admin_policy as $rule => $setting ) {
 			if ( is_array( $setting ) ) {
+				// If we have a more complex rule, or one with multiple
+				// properties, build it a piece at a time
+
 				$csp_string .= $rule;
 				foreach ( $setting as $option ) {
-					$csp_string .= " {$item}";
+					// Add the property to the rule
+					$csp_string .= " {$option}";
 				}
+			} else if ( true == $setting ) {
+				// Boolean values don't have any properties
+				$csp_string .= "${rule}";
 			} else {
+				// Simpler k=>v properties
 				$csp_string .= "{$rule} {$setting}";
 			}
 			$csp_string .= "; "; // separator
