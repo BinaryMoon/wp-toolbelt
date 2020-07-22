@@ -38,6 +38,7 @@ Toolbelt has a lot of features. The complete list is below.
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Contact Form](https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
+* [CSP Header](https://github.com/BinaryMoon/wp-toolbelt/wiki/CSP-Header)
 * [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls)
 * [Fast 404](https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404)
 * [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
@@ -131,7 +132,8 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.5.4 - 21st July 2020 =
+= 2.6 - 22nd July 2020 =
+* Add CSP (Content Security Policy) module.
 * Remove `wp_` prefix from social network filter.
 
 = 2.5.3 - 15th July 2020 =
