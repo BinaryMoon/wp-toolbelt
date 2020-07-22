@@ -153,7 +153,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Inject a content security policy header into your page responses', 'wp-toolbelt' ),
 			'docs'        => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/CSP-Header',
 			'supports'    => array( 'experimental' ),
-			'weight'      => esc_html__( 'Roughly 1kb of header properties', 'wp-toolbelt' )
+			'weight'      => esc_html__( 'Roughly 1kb of header properties', 'wp-toolbelt' ),
 		),
 		'disable-comment-urls' => array(
 			'name' => esc_html__( 'Disable the Comment URL Field', 'wp-toolbelt' ),
