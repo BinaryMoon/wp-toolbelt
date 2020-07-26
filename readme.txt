@@ -29,6 +29,7 @@ Some of the Toolbelt modules include blocks to make working with the generated c
 * **Projects Grid** - to list a collection of projects. These can be filtered by project category.
 * **Testimonials Grid** - to list a group of testimonials. Great for showing off! :)
 * **Markdown** - for those who like a simpler writing experience.
+* **Breadcrumbs** - for full site editing.
 
 = All Features =
 
