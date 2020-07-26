@@ -396,7 +396,7 @@ function toolbelt_testimonials_register_block() {
 				),
 				'align' => array(
 					'default' => '',
-					'enum' => array( 'wide', 'full' ),
+					'enum' => array( '', 'wide', 'full' ),
 					'type' => 'string',
 				),
 			),
