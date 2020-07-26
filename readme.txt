@@ -138,6 +138,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 * Add a breadcrumbs block (for full site editing).
 * Add social share settings for an easy way to turn on/ off the different sharing sites.
 * Add more social share sites! Instapaper, Flipboard, Tumblr, HackerNews, and Evernote.
+* Add 'rel=nofollow' to social sharing links.
 * Remove `wp_` prefix from social network filter.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
