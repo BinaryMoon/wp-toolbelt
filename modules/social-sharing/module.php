@@ -178,11 +178,40 @@ function toolbelt_social_networks_get() {
 			'title' => esc_html__( 'Save to Wallabag', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Save this', 'Wallabag button label', 'wp-toolbelt' ),
 			'url'   => 'https://app.wallabag.it/bookmarklet?url=%s',
+		'instapaper' => array(
+			'title' => esc_html__( 'Save to Instapaper', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Save this', 'Instapaper button label', 'wp-toolbelt' ),
+			'url'   => 'http://www.instapaper.com/edit?url=%s',
+			'color' => '000000',
 		),
 		'reddit'    => array(
 			'title' => esc_html__( 'Share on Reddit', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'Reddit button label', 'wp-toolbelt' ),
 			'url'   => 'https://reddit.com/submit?url=%s',
+		),
+		'tumblr' => array(
+			'title' => esc_html__( 'Share on Tumblr', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Tumblr button label', 'wp-toolbelt' ),
+			'url'   => 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=%s',
+			'color' => '35465c',
+		),
+		'hackernews' => array(
+			'title' => esc_html__( 'Share on HackerNews', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'HackerNews button label', 'wp-toolbelt' ),
+			'url'   => 'https://news.ycombinator.com/submitlink?u=%s',
+			'color' => 'ff4000',
+		),
+		'evernote' => array(
+			'title' => esc_html__( 'Share on Evernote', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Evernote button label', 'wp-toolbelt' ),
+			'url'   => 'https://www.evernote.com/clip.action?url=%s',
+			'color' => '2dbe60',
+		),
+		'flipboard' => array(
+			'title' => esc_html( 'Share on Flipboard', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Flipboard button label', 'wp-toolbelt' ),
+			'url'   => 'https://share.flipboard.com/bookmarklet/popout?v=2&url=%s',
+			'color' => 'e12828',
 		),
 		'email'     => array(
 			'title' => esc_html__( 'Send via Email', 'wp-toolbelt' ),
