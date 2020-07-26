@@ -13,11 +13,18 @@
 		padding: calc( var( --toolbelt-spacing ) / 4 ) var( --toolbelt-spacing );
 		color: white;
 		align-items: center;
-		display: inline-block;
+		display: flex;
+		text-decoration: none;
 
 		&:hover {
 
 			color: white;
+
+			span {
+
+				text-decoration: underline;
+
+			}
 
 		}
 
