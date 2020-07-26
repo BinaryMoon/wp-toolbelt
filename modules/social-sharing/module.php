@@ -107,17 +107,20 @@ function toolbelt_social_sharing( $content ) {
 	foreach ( $networks as $slug => $network ) {
 
 		$url  = sprintf( $network['url'], rawurlencode( $canonical ) );
+
 		// Load icon.
 		$svg = file_get_contents( TOOLBELT_PATH . 'svg/' . $slug . '.svg' );
 		$svg = str_replace( '<svg', '<svg aria-hidden="true" role="img"', $svg );
 
+		// Generate HTML.
 		$html .= sprintf(
-			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank">%4$s %5$s</a>' . "\n",
+			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank" style="background-color:#%6$s">%4$s <span>%5$s</span></a>' . "\n",
 			esc_url( $url ),
 			esc_attr( $network['title'] ),
 			'toolbelt_' . esc_attr( $slug ),
-			esc_html( $network['label'] )
 			$svg,
+			esc_html( $network['label'] ),
+			esc_attr( $network['color'] )
 		);
 
 	}
@@ -131,6 +134,8 @@ add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
 
 /**
  * Get the list of social networks and their properties.
+ *
+ * @see https://github.com/bradvin/social-share-urls
  *
  * @return array
  */
