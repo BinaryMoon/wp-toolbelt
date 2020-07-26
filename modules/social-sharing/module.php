@@ -126,27 +126,13 @@ add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
 
 
 /**
- * Get a list of social networks and their sharing links.
+ * Get the list of social networks and their properties.
  *
- * @return array<mixed>
+ * @return array
  */
-function toolbelt_social_networks() {
+function toolbelt_social_networks_get() {
 
-	$_default_networks = array(
-		'facebook',
-		'twitter',
-		'linkedin',
-		'whatsapp',
-		'pinterest',
-		'pocket',
-		'wallabag',
-		'reddit',
-		'email',
-	);
-
-	$desired_networks = apply_filters( 'toolbelt_social_networks', $_default_networks );
-
-	$networks = array(
+	return array(
 		'facebook'  => array(
 			'title' => esc_html__( 'Share on Facebook', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'Facebook button label', 'wp-toolbelt' ),
@@ -204,6 +190,32 @@ function toolbelt_social_networks() {
 		),
 
 	);
+
+}
+
+
+/**
+ * Get a list of social networks and their sharing links.
+ *
+ * @return array<mixed>
+ */
+function toolbelt_social_networks() {
+
+	$_default_networks = array(
+		'facebook',
+		'twitter',
+		'linkedin',
+		'whatsapp',
+		'pinterest',
+		'pocket',
+		'wallabag',
+		'reddit',
+		'email',
+	);
+
+	$desired_networks = apply_filters( 'toolbelt_social_networks', $_default_networks );
+
+	$networks = toolbelt_social_networks_get();
 
 	$output = array();
 

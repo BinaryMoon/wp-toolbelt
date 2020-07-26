@@ -250,7 +250,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Add social sharing links that use the platforms native sharing system.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing',
 			'weight' => esc_html__( '4.1kb of inline SVG icons, and 0.7kb of inline CSS.', 'wp-toolbelt' ),
-			'supports' => array( 'css-properties' ),
+			'supports' => array( 'css-properties', 'settings' ),
 		),
 		'spam-blocker' => array(
 			'name' => esc_html__( 'Spam Blocker', 'wp-toolbelt' ),
