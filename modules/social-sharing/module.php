@@ -107,13 +107,17 @@ function toolbelt_social_sharing( $content ) {
 	foreach ( $networks as $slug => $network ) {
 
 		$url  = sprintf( $network['url'], rawurlencode( $canonical ) );
+		// Load icon.
+		$svg = file_get_contents( TOOLBELT_PATH . 'svg/' . $slug . '.svg' );
+		$svg = str_replace( '<svg', '<svg aria-hidden="true" role="img"', $svg );
+
 		$html .= sprintf(
 			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank">%4$s %5$s</a>' . "\n",
 			esc_url( $url ),
 			esc_attr( $network['title'] ),
 			'toolbelt_' . esc_attr( $slug ),
-			file_get_contents( TOOLBELT_PATH . 'svg/' . $slug . '.svg' ),
 			esc_html( $network['label'] )
+			$svg,
 		);
 
 	}
