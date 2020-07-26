@@ -114,7 +114,7 @@ function toolbelt_social_sharing( $content ) {
 
 		// Generate HTML.
 		$html .= sprintf(
-			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank" style="background-color:#%6$s">%4$s <span>%5$s</span></a>' . "\n",
+			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank" rel="nofollow" style="background-color:#%6$s">%4$s <span>%5$s</span></a>' . "\n",
 			esc_url( $url ),
 			esc_attr( $network['title'] ),
 			'toolbelt_' . esc_attr( $slug ),
