@@ -51,6 +51,7 @@ function toolbelt_social_sharing_fields() {
 				<?php checked( $network['enabled'] ); ?>
 			/>
 			<?php echo esc_html( $network['title'] ); ?>
+			<?php if ( isset( $network['note'] ) ) { echo '<small>(' . esc_html( $network['note'] ) . ')</small>'; } ?>
 		</label>
 		<br/>
 <?php
@@ -92,28 +93,3 @@ function toolbelt_social_sharing_settings( $settings ) {
 
 add_filter( 'toolbelt_save_settings', 'toolbelt_social_sharing_settings' );
 
-
-/**
- * Set default social sharing options.
- *
- * @param array $value The default settings option.
- * @return array
- */
-function toolbelt_social_sharing_default_settings( $value ) {
-
-	if ( ! isset( $value['social-sharing']) ) {
-		$value['social-sharing'] = implode(
-			'|',
-			array(
-				'facebook',
-				'twitter',
-				'email',
-			)
-		);
-	}
-
-	return $value;
-
-}
-
-add_filter( 'option_toolbelt_settings', 'toolbelt_social_sharing_default_settings' );

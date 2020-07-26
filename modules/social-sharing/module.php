@@ -162,6 +162,7 @@ function toolbelt_social_networks_get() {
 			'title' => esc_html__( 'Share on WhatsApp', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'WhatsApp button label', 'wp-toolbelt' ),
 			'url'   => 'https://api.whatsapp.com/send?text=%s',
+			'note'  => esc_html__( 'Only shown on mobile', 'wp-toolbelt' ),
 		),
 		'pinterest' => array(
 			'title' => esc_html__( 'Pin on Pinterest', 'wp-toolbelt' ),
@@ -201,19 +202,13 @@ function toolbelt_social_networks_get() {
  */
 function toolbelt_social_networks() {
 
-	$_default_networks = array(
-		'facebook',
-		'twitter',
-		'linkedin',
-		'whatsapp',
-		'pinterest',
-		'pocket',
-		'wallabag',
-		'reddit',
-		'email',
-	);
+	// Get the plugin settings.
+	$settings = get_option( 'toolbelt_settings', array() );
 
-	$desired_networks = apply_filters( 'toolbelt_social_networks', $_default_networks );
+	// Turn the list of networks into an array.
+	$enabled_networks = explode( '|', $settings['social-sharing'] );
+
+	$desired_networks = apply_filters( 'toolbelt_social_networks', $enabled_networks );
 
 	$networks = toolbelt_social_networks_get();
 
@@ -228,3 +223,30 @@ function toolbelt_social_networks() {
 	return $output;
 
 }
+
+
+/**
+ * Set default social sharing options.
+ *
+ * @param array $value The default settings option.
+ * @return array
+ */
+function toolbelt_social_sharing_default_settings( $value ) {
+
+	if ( ! isset( $value['social-sharing']) ) {
+		$value['social-sharing'] = implode(
+			'|',
+			array(
+				'facebook',
+				'twitter',
+				'email',
+			)
+		);
+	}
+
+	return $value;
+
+}
+
+add_filter( 'option_toolbelt_settings', 'toolbelt_social_sharing_default_settings' );
+
