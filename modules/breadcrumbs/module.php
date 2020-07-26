@@ -5,12 +5,6 @@
  * @package toolbelt
  */
 
-// Don't display in the WordPress admin.
-if ( is_admin() ) {
-	return;
-}
-
-
 /**
  * A function to display breadcrumbs on a category or single post/ page.
  * Should work for all post types.
@@ -30,6 +24,11 @@ function toolbelt_breadcrumbs() {
 
 	// Quit on the homepage.
 	if ( is_front_page() ) {
+		return;
+	}
+
+	// There's at least one breadcrumb block so no need to display them twice.
+	if ( has_block( 'toolbelt/breadcrumbs' ) ) {
 		return;
 	}
 
@@ -94,9 +93,10 @@ function toolbelt_breadcrumb_get( $type ) {
  * Generate the breadcrumb html.
  *
  * @param array<mixed> $breadcrumbs List of breadcrumbs to display as html.
+ * @param array        $attrs HTML attribubtes.
  * @return string
  */
-function toolbelt_breadcrumb_html( $breadcrumbs ) {
+function toolbelt_breadcrumb_html( $breadcrumbs, $attrs = array() ) {
 
 	$html = '';
 
@@ -113,7 +113,12 @@ function toolbelt_breadcrumb_html( $breadcrumbs ) {
 		}
 	}
 
-	return '<ol class="entry-breadcrumbs toolbelt-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">' . $html . '</ol>';
+	$class = '';
+	if ( $attrs['align'] && ! empty( $attrs['align'] ) ) {
+		$class = 'align' . $attrs['align'];
+	}
+
+	return '<ol class="entry-breadcrumbs toolbelt-breadcrumbs ' . esc_attr( $class ) . '" itemscope itemtype="https://schema.org/BreadcrumbList">' . $html . '</ol>';
 
 }
 
@@ -342,3 +347,120 @@ function toolbelt_breadcrumb_item( $title ) {
 	);
 
 }
+
+
+/**
+ * Display breadcrumbs block.
+ *
+ * @param array $attrs Block attributes.
+ * @return string
+ */
+function toolbelt_breadcrumb_render_block( $attrs ) {
+
+	if ( is_front_page() ) {
+		return;
+	}
+
+	$breadcrumb_type = array(
+		'post',
+		'page',
+	);
+
+	$breadcrumbs = toolbelt_breadcrumb_get( $breadcrumb_type );
+
+	return toolbelt_breadcrumb_html( $breadcrumbs, $attrs );
+
+}
+
+
+/**
+ * Register a Breadcrumbs block.
+ *
+ * @return void
+ */
+function toolbelt_breadcrumb_register_block() {
+
+	// Skip block registration if Gutenberg is not enabled.
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
+
+	$block_js = dirname( __FILE__ ) . '/block.min.js';
+	$block_name = 'toolbelt-breadcrumb-block';
+
+	wp_register_script(
+		$block_name,
+		plugins_url( 'block.min.js', __FILE__ ),
+		array(
+			'wp-blocks',
+			'wp-i18n',
+			'wp-element',
+			'wp-components',
+		),
+		'1.0',
+		true
+	);
+
+	register_block_type(
+		'toolbelt/breadcrumbs',
+		array(
+			'editor_script' => $block_name,
+			'render_callback' => 'toolbelt_breadcrumb_render_block',
+			'attributes' => array(
+				'align' => array(
+					'default' => '',
+					'enum' => array( '', 'wide', 'full' ),
+					'type' => 'string',
+				),
+			),
+		)
+	);
+
+}
+
+add_action( 'init', 'toolbelt_breadcrumb_register_block' );
+
+
+/**
+ * Include the Portfolio styles in the editor.
+ *
+ * @return void
+ */
+function toolbelt_breadcrumb_editor_styles() {
+
+	toolbelt_styles( 'breadcrumbs' );
+
+?>
+	<style>
+		.editor-styles-wrapper ol.toolbelt-breadcrumbs {
+			padding: 0;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	</style>
+<?php
+
+}
+
+add_action( 'admin_head', 'toolbelt_breadcrumb_editor_styles' );
+
+
+/**
+ * Include the potfolio styles if the current post uses the breadcrumbs block.
+ *
+ * @return void
+ */
+function toolbelt_breadcrumb_content_styles() {
+
+	if ( ! has_block( 'toolbelt/breadcrumbs' ) ) {
+		return;
+	}
+
+	toolbelt_styles( 'breadcrumbs' );
+
+}
+
+add_action( 'wp_print_styles', 'toolbelt_breadcrumb_content_styles' );
+
+toolbelt_register_block_category();
+
