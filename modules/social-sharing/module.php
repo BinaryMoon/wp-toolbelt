@@ -281,7 +281,7 @@ function toolbelt_social_networks() {
  */
 function toolbelt_social_sharing_default_settings( $value ) {
 
-	if ( ! isset( $value['social-sharing']) ) {
+	if ( ! isset( $value['social-sharing'] ) ) {
 		$value['social-sharing'] = implode(
 			'|',
 			array(

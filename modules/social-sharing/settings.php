@@ -50,8 +50,13 @@ function toolbelt_social_sharing_fields() {
 				value="<?php echo esc_attr( $key ); ?>"
 				<?php checked( $network['enabled'] ); ?>
 			/>
-			<?php echo esc_html( $network['title'] ); ?>
-			<?php if ( isset( $network['note'] ) ) { echo '<small>(' . esc_html( $network['note'] ) . ')</small>'; } ?>
+<?php
+		echo esc_html( $network['title'] );
+
+		if ( isset( $network['note'] ) ) {
+			echo '<small>(' . esc_html( $network['note'] ) . ')</small>';
+		}
+?>
 		</label>
 		<br/>
 <?php
