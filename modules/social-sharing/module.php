@@ -137,16 +137,19 @@ function toolbelt_social_networks_get() {
 			'title' => esc_html__( 'Share on Facebook', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'Facebook button label', 'wp-toolbelt' ),
 			'url'   => 'https://facebook.com/sharer/sharer.php?u=%s',
+			'color' => '3b5998',
 		),
 		'twitter'   => array(
 			'title' => esc_html__( 'Tweet on Twitter', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Tweet this', 'Twitter button label', 'wp-toolbelt' ),
 			'url'   => 'https://twitter.com/intent/tweet?url=%s',
+			'color' => '1da1f2',
 		),
 		'linkedin'  => array(
 			'title' => esc_html__( 'Share on LinkedIn', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'LinkedIn button label', 'wp-toolbelt' ),
 			'url'   => 'https://www.linkedin.com/shareArticle?mini=true&url=%s',
+			'color' => '0077b5',
 		),
 		/**
 		 * Share Whatsapp
@@ -163,21 +166,26 @@ function toolbelt_social_networks_get() {
 			'label' => esc_html_x( 'Share this', 'WhatsApp button label', 'wp-toolbelt' ),
 			'url'   => 'https://api.whatsapp.com/send?text=%s',
 			'note'  => esc_html__( 'Only shown on mobile', 'wp-toolbelt' ),
+			'color' => '075e54',
 		),
 		'pinterest' => array(
 			'title' => esc_html__( 'Pin on Pinterest', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Pin this', 'Pinterest button label', 'wp-toolbelt' ),
 			'url'   => 'https://pinterest.com/pin/create/button/?url=%s',
+			'color' => 'bd081c',
 		),
 		'pocket'    => array(
 			'title' => esc_html__( 'Save to Pocket', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Save this', 'Pocket button label', 'wp-toolbelt' ),
 			'url'   => 'https://getpocket.com/save?url=%s',
+			'color' => 'ef4056',
 		),
 		'wallabag'  => array(
 			'title' => esc_html__( 'Save to Wallabag', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Save this', 'Wallabag button label', 'wp-toolbelt' ),
 			'url'   => 'https://app.wallabag.it/bookmarklet?url=%s',
+			'color' => '26a69a',
+		),
 		'instapaper' => array(
 			'title' => esc_html__( 'Save to Instapaper', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Save this', 'Instapaper button label', 'wp-toolbelt' ),
@@ -188,6 +196,7 @@ function toolbelt_social_networks_get() {
 			'title' => esc_html__( 'Share on Reddit', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'Reddit button label', 'wp-toolbelt' ),
 			'url'   => 'https://reddit.com/submit?url=%s',
+			'color' => 'ff4500',
 		),
 		'tumblr' => array(
 			'title' => esc_html__( 'Share on Tumblr', 'wp-toolbelt' ),
@@ -217,6 +226,7 @@ function toolbelt_social_networks_get() {
 			'title' => esc_html__( 'Send via Email', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Send this', 'Email button label', 'wp-toolbelt' ),
 			'url'   => ' mailto:somebody@example.com?body=%s',
+			'color' => '483d8b',
 		),
 
 	);
