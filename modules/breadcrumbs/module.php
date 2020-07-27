@@ -93,7 +93,7 @@ function toolbelt_breadcrumb_get( $type ) {
  * Generate the breadcrumb html.
  *
  * @param array<mixed> $breadcrumbs List of breadcrumbs to display as html.
- * @param array        $attrs HTML attribubtes.
+ * @param array<mixed> $attrs HTML attributes.
  * @return string
  */
 function toolbelt_breadcrumb_html( $breadcrumbs, $attrs = array() ) {
@@ -352,8 +352,8 @@ function toolbelt_breadcrumb_item( $title ) {
 /**
  * Display breadcrumbs block.
  *
- * @param array $attrs Block attributes.
- * @return string
+ * @param array<mixed> $attrs Block attributes.
+ * @return string|void
  */
 function toolbelt_breadcrumb_render_block( $attrs ) {
 

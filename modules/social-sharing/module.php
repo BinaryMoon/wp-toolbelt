@@ -137,7 +137,7 @@ add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
  *
  * @see https://github.com/bradvin/social-share-urls
  *
- * @return array
+ * @return array<mixed>
  */
 function toolbelt_social_networks_get() {
 
@@ -226,7 +226,7 @@ function toolbelt_social_networks_get() {
 			'color' => '2dbe60',
 		),
 		'flipboard' => array(
-			'title' => esc_html( 'Share on Flipboard', 'wp-toolbelt' ),
+			'title' => esc_html__( 'Share on Flipboard', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'Flipboard button label', 'wp-toolbelt' ),
 			'url'   => 'https://share.flipboard.com/bookmarklet/popout?v=2&url=%s',
 			'color' => 'e12828',
@@ -276,8 +276,8 @@ function toolbelt_social_networks() {
 /**
  * Set default social sharing options.
  *
- * @param array $value The default settings option.
- * @return array
+ * @param array<mixed> $value The default settings option.
+ * @return array<mixed>
  */
 function toolbelt_social_sharing_default_settings( $value ) {
 
