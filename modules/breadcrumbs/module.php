@@ -114,7 +114,7 @@ function toolbelt_breadcrumb_html( $breadcrumbs, $attrs = array() ) {
 	}
 
 	$class = '';
-	if ( $attrs['align'] && ! empty( $attrs['align'] ) ) {
+	if ( isset( $attrs['align'] ) ) {
 		$class = 'align' . $attrs['align'];
 	}
 
