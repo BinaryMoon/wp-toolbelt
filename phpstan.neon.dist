@@ -9,3 +9,5 @@ parameters:
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function [a-zA-Z_]+ invoked with [1-9] parameters?, [0-9\-]+ required\.$#'
+    bootstrapFiles:
+	    - index.php
