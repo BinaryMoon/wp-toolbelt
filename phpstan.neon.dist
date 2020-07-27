@@ -4,11 +4,8 @@ includes:
 parameters:
     level: max
     paths:
-        - /
         - modules
         - admin
-    excludes_analyse:
-        - vendor
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function [a-zA-Z_]+ invoked with [1-9] parameters?, [0-9\-]+ required\.$#'
