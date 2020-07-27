@@ -31,6 +31,7 @@ To ensure the plugin is as privacy focused as possible it:
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Contact Form](https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
+* [CSP Header](https://github.com/BinaryMoon/wp-toolbelt/wiki/CSP-Header)
 * [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls)
 * [Fast 404](https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404)
 * [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)

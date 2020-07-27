@@ -1467,6 +1467,7 @@ _zapat
 ?mbt
 ?mulberry
 ?nike
+?option=com_
 ?p_
 ?p-
 ?p=404
@@ -3663,6 +3664,7 @@ _zapat
 /outils
 /outlet/
 /ow.ly
+/owl.li
 /owtf.co.uk
 /p-laid-
 /p/
@@ -3837,6 +3839,11 @@ _zapat
 /retina247/
 /ri.ms
 /rih.co
+/rk.php?go
+/rk.php?http
+/rk.php?link
+/rk.php?q
+/rk.php?url
 /rlu.ru
 /roulette-
 /roulette.
@@ -4517,6 +4524,7 @@ $sixty
 0day
 0generic
 0gram.ru
+0http
 00mail
 00mg buy
 00mg cheap
@@ -5578,6 +5586,7 @@ actually dont
 actually dowsing
 actually excellent
 actually fruitful
+actually have to have
 actually many sort
 actually medicine
 actually quickly becoming
@@ -9860,6 +9869,7 @@ can bbe
 can be a need
 can be foud
 can bee give
+can deeply study
 can-help-you
 can?t
 can''t
@@ -10416,6 +10426,9 @@ cervejas-de-mais
 cetirizine online
 cetirizine-online
 cetirizineonline
+cfd trade
+cfd-trade
+cfdtrade
 cgi-bin
 cgibin
 cgsaleca
@@ -12696,11 +12709,17 @@ customwheel
 cut menthol
 cut-menthol
 cute bodycon
+cute escort
+cute eskort
 cute hipster
 cute shapewear
 cute-bodycon
+cute-escort
+cute-eskort
 cute-hipster
 cute-shapewear
+cuteescort
+cuteeskort
 cutting-machine
 cuttingmachine
 cuurent
@@ -13046,6 +13065,8 @@ delivers-result
 deliversresult
 delivery philippine
 delivery-philippine
+delta-marketing
+deltamarketing
 deltasone
 dem gay
 đệm gây
@@ -14180,6 +14201,9 @@ ekologiczne-logo
 ekorting
 ekskluzywne zestaw
 ekskluzywne-zestaw
+ekspedisi murah
+ekspedisi-murah
+ekspedisimurah
 ekstensywne pracochlonne
 ekstensywne pracochłonne
 ekstensywne-pracochlonne
@@ -14567,6 +14591,7 @@ escort-girl
 escort-google
 escort-hizmet
 escort-ilan
+escort-in-dubai
 escort-izmi
 escort-kocael
 escort-picture
@@ -14582,6 +14607,7 @@ escortedge
 escortfuck
 escortgirl
 escortilan
+escortindubai
 escortizmi
 escortkocael
 escortpicture
@@ -14598,6 +14624,7 @@ escorts-bayan
 escorts-edge
 escorts-girl
 escorts-ilan
+escorts-in-dubai
 escorts-porn
 escorts-sant
 escorts-zone
@@ -14608,6 +14635,7 @@ escortsedge
 escortservice
 escortsgirl
 escortsilan
+escortsindubai
 escortsite
 escortsporn
 escortss
@@ -14639,6 +14667,7 @@ eskort-edge
 eskort-fuck
 eskort-girl
 eskort-hizmet
+eskort-in-dubai
 eskort-istanbul
 eskort-picture
 eskort-porn
@@ -14649,6 +14678,7 @@ eskortblog
 eskortedge
 eskortfuck
 eskortgirl
+eskortindubai
 eskortistanbul
 eskortpicture
 eskortporn
@@ -14659,10 +14689,12 @@ eskorts sant
 eskorts_
 eskorts-edge
 eskorts-girl
+eskorts-in-dubai
 eskorts-porn
 eskorts-sant
 eskortsedge
 eskortsgirl
+eskortsindubai
 eskortsite
 eskortsporn
 espana online
@@ -16197,6 +16229,7 @@ forex + bitcoin
 forex + btc
 forex + crypto
 forex $
+forex cfd
 forex dual
 forex forum
 forex halal
@@ -16211,6 +16244,7 @@ forex robot
 forex sign
 forex wealth
 forex_
+forex-cfd
 forex-dual
 forex-forum
 forex-halal
@@ -16225,6 +16259,7 @@ forex-robot
 forex-sign
 forex-valu
 forex-wealth
+forexcfd
 forexdual
 forexforum
 forexmaster
@@ -18077,6 +18112,8 @@ great site, stick
 great site, you
 great trailer program
 great trailer strateg
+great web page
+great web site
 great weblog
 great webpage
 great website you
@@ -19996,8 +20033,14 @@ index-css
 index-old
 indexcss
 indexold
+indian escort
+indian eskort
 indian sex
+indian-escort
+indian-eskort
 indian-sex
+indianescort
+indianeskort
 indiansex
 indicators.co
 indited subject
@@ -20584,6 +20627,12 @@ irresistible-site
 irresistible-web
 is as nicely
 is goping
+is great article
+is great blog
+is great post
+is great weblog
+is great webpage
+is great website
 is merely good to
 is my blog
 is my page
@@ -21277,6 +21326,7 @@ just wanna
 just-book-mark
 just-cetirizine
 just-wanna
+justcan do
 justcetirizine
 justcloud
 justificar prova
@@ -21504,8 +21554,11 @@ kids-baby
 kids-nike
 kids-ugg
 kidsnike
+kik fuck
 kik xxx
+kik-fuck
 kik-xxx
+kikfuck
 kikxxx
 killer blog
 killer headline
@@ -21648,6 +21701,7 @@ knowledgebroker
 knowledgebusiness
 known blog
 known-blog
+knowso much
 kobe ont
 kobe-ont
 kobe-shoe
@@ -25014,6 +25068,7 @@ mrantsneak
 msgnum
 mua ban xe
 mua-ban-xe
+much approximately
 much big names
 much clear idea
 much for the content
@@ -27758,6 +27813,7 @@ people about the subject
 people about the topic
 people about this subject
 people about this topic
+people can deeply
 people for the subject
 people for the topic
 people for this subject
@@ -29321,6 +29377,7 @@ proficiency-symbol
 proficiency-technique
 profil/blog
 profil/profil
+profile;u
 profile/blog
 profile/profil
 profiles/blog
@@ -30576,6 +30633,7 @@ resumesexpert
 retail-store
 retailstore
 retal firm
+retention of urine
 retin-a
 retina-247
 retro jord
@@ -35860,6 +35918,14 @@ u.@
 ùˆ
 u4nba
 ua-eqt-sup
+uae escort
+uae eskort
+uae-escort
+uae-eskort
+uaeescort
+uaeeskort
+uaepearl
+uaewomensclub
 uau incrivel
 uau incrível
 uau uau
@@ -37679,8 +37745,10 @@ webfarm
 webhostapp
 weblink
 weblog every once
+weblog link
 weblog post
 weblog thank
+weblog-link
 weblog. thank
 weblogg
 weblogto
@@ -37707,6 +37775,7 @@ webpage for any
 webpage from
 webpage is loading
 webpage it is
+webpage link
 webpage on regular
 webpage post
 webpage thank
@@ -37716,6 +37785,7 @@ webpage you
 webpage-for-any
 webpage-from
 webpage-is-loading
+webpage-link
 webpage-visit
 webpage-you
 webpage;
@@ -38180,10 +38250,16 @@ wihesd
 wii-healthy
 wiihealthy
 wiith
+wiki suc khoe
+wiki sức khỏe
+wiki suck
+wiki-suc-khoe
+wiki-suck
 wiki/%
 wiki/index
 wiki/u%
 wiki/user
+wikisuck
 wikka.asp
 wikka.cfm
 wikka.htm
@@ -40615,8 +40691,11 @@ zyvox
 מאפרת מקצועית
 מתקין מזגנים
 תיקון מזגנים
+آموزش شرط
 أغراس
 اتش دى فيلم
+اثر انگشت
+اثرانگشت
 افضل شركه
 اقل اسعار
 ال جى
@@ -40648,6 +40727,7 @@ zyvox
 سوپر
 شبكه سنارة
 شبكه سناره
+شرط بندی
 شركة تنظيف
 شركة نقل
 شوف سبور

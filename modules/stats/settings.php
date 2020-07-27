@@ -107,7 +107,7 @@ add_action( 'toolbelt_module_settings_fields', 'toolbelt_stats_fields' );
 
 
 /**
- * Filter the monetization settings so that they can be saved.
+ * Filter the stats settings so that they can be saved.
  *
  * @param array<string> $settings The existing settings.
  * @return array<string>

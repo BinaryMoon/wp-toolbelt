@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -29,6 +29,7 @@ Some of the Toolbelt modules include blocks to make working with the generated c
 * **Projects Grid** - to list a collection of projects. These can be filtered by project category.
 * **Testimonials Grid** - to list a group of testimonials. Great for showing off! :)
 * **Markdown** - for those who like a simpler writing experience.
+* **Breadcrumbs** - for full site editing.
 
 = All Features =
 
@@ -38,6 +39,7 @@ Toolbelt has a lot of features. The complete list is below.
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Contact Form](https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
+* [CSP Header](https://github.com/BinaryMoon/wp-toolbelt/wiki/CSP-Header)
 * [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls)
 * [Fast 404](https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404)
 * [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
@@ -131,45 +133,12 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.5.3 - 15th July 2020 =
-* Add hover colour to social share links so that they are always readable.
-* Ensure the heading anchors don't move the content around.
-* Add title to footnotes links.
-* Tweak cookie banner css to ensure the box size doesn't change unexpectedly.
-* Make columns css more robust so that it will work with every theme.
-* Add basic support for the WordPress AMP plugin so that it doesn't output custom CSS on AMP pages.
-* Add support for more social sharing sites (Reddit, Pocket, Wallabag, and send by email).
-* Add scroll margin top support for heading anchors.
-
-= 2.5.2 - 2nd March 2020 =
-* Add new footnotes module that appends footnotes to the bottom of post content.
-* Add a search results redirect if there's only a single result.
-* Add additional cleanup rules for more speed!
-* Only add css properties when a module is active that supports them.
-* Automatically update the spam blocker blocklist once a week.
-
-= 2.5.1 - 17th December 2019 =
-* Fix infinite scroll button. It now hides when we get to the end of the content.
-* Update blocklist.
-
-= 2.5 - 14th December 2019 =
-* Added a simple Gist block.
-* Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
-* Add new pagechild and 404 display rules to the widget visibility module.
-* Add a contact form 'subject' field which we can use to override the default contact form subject.
-* Add a custom post type for saving contact form submissions. The feedback gets deleted regularly so that we don't store user data unnecessarily.
-* Add contact form custom subject line modifications.
-* Stop sending contact form messages that get flagged as spam. They are still saved to the database and readable through the admin.
-* Add fix for typographic widows.
-* Add list and blockquote as internal block types for the contact form block.
-* Ensure the contact form submit button stays in the right place! :)
-* Fix issue with settings link appearing when it shouldn't.
-* Fix: Only include contact form validation rules when there is a contact form on the page
-* Make GDPR requirements of cookie banner clearer.
-* Improve module selector design.
-* Make the admin style tweaks show in the customizer (most important for the button improvements).
-* Simplify portfolio and testimonial block code a little.
-* Rename blacklist to blocklist. Language matters!
-
+= 2.6 - 22nd July 2020 =
+* Add CSP (Content Security Policy) module.
+* Add a breadcrumbs block (for full site editing).
+* Add social share settings for an easy way to turn on/ off the different sharing sites.
+* Add more social share sites! Instapaper, Flipboard, Tumblr, HackerNews, and Evernote.
+* Add 'rel=nofollow' to social sharing links.
+* Remove `wp_` prefix from social network filter.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
