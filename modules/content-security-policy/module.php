@@ -37,10 +37,10 @@ function toolbelt_csp_headers() {
 
 		if ( true === $admin_policy['report-only'] ) {
 			// Testing mode.
-			$csp_string = 'Content-Security-Policy-Report-Only';
+			$csp_string = 'Content-Security-Policy-Report-Only: ';
 		} else {
 			// Enforce mode.
-			$csp_string = 'Content-Security-Policy';
+			$csp_string = 'Content-Security-Policy: ';
 		}
 
 		foreach ( $admin_policy as $rule => $setting ) {
