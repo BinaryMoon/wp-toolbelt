@@ -353,12 +353,12 @@ function toolbelt_breadcrumb_item( $title ) {
  * Display breadcrumbs block.
  *
  * @param array<mixed> $attrs Block attributes.
- * @return string|void
+ * @return string|false
  */
 function toolbelt_breadcrumb_render_block( $attrs ) {
 
 	if ( is_front_page() ) {
-		return;
+		return false;
 	}
 
 	$breadcrumb_type = array(

@@ -110,7 +110,10 @@ function toolbelt_social_sharing( $content ) {
 
 		// Load icon.
 		$svg = file_get_contents( TOOLBELT_PATH . 'svg/' . $slug . '.svg' );
-		$svg = str_replace( '<svg', '<svg aria-hidden="true" role="img"', $svg );
+
+		if ( $svg ) {
+			$svg = str_replace( '<svg', '<svg aria-hidden="true" role="img"', $svg );
+		}
 
 		// Generate HTML.
 		$html .= sprintf(
