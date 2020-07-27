@@ -4,6 +4,7 @@ includes:
 parameters:
     level: max
     paths:
+        - %currentWorkingDirectory%/
         - %currentWorkingDirectory%/modules/
         - %currentWorkingDirectory%/admin/
     ignoreErrors:
