@@ -98,4 +98,4 @@ function toolbelt_csp_headers() {
 
 }
 
-add_filter( 'send_headers', 'toolbelt_csp_headers' );
+add_action( 'send_headers', 'toolbelt_csp_headers' );
