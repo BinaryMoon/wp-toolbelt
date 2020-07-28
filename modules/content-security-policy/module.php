@@ -51,6 +51,8 @@ function toolbelt_csp_headers() {
 
 	}
 
+	unset( $admin_policy['report-only'] );
+
 	foreach ( $admin_policy as $rule => $setting ) {
 
 		if ( is_array( $setting ) ) {
