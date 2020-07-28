@@ -18,16 +18,23 @@ if ( is_admin() ) {
 function toolbelt_csp_headers() {
 
 	$default_options = array(
-		'default-src'               => array(
+		'default-src' => array(
 			'*',
+			"'unsafe-inline'",
 		),
 		'upgrade-insecure-requests' => true,
-		'block-all-mixed-content'   => true,
-		'style-src'                 => array( '*', "'nonce-" . esc_attr( TOOLBELT_NONCE ) . "'" ),
-		'script-src'                 => array( '*', "'nonce-" . esc_attr( TOOLBELT_NONCE ) . "'" ),
-		'report-only'               => false,
-		'report-uri'                => '',
-		'report-to'                 => '', // New for CSP level 3 https://www.w3.org/TR/CSP/#changes-from-level-2.
+		'block-all-mixed-content' => true,
+		'font-src' => array(
+			"'self'",
+			'data:',
+		),
+		'img-src' => array(
+			'*',
+			'data:',
+		),
+		'report-only' => false,
+		'report-uri' => '',
+		'report-to' => '', // New for CSP level 3 https://www.w3.org/TR/CSP/#changes-from-level-2.
 	);
 
 	$admin_policy = apply_filters( 'toolbelt_csp_policy', $default_options );
