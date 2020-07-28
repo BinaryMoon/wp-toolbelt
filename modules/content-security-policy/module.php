@@ -6,7 +6,7 @@
  */
 
 // Don't display in the WordPress admin.
-if ( is_admin() ) {
+if ( is_admin() || is_customize_preview() ) {
 	return;
 }
 
@@ -17,17 +17,23 @@ if ( is_admin() ) {
  */
 function toolbelt_csp_headers() {
 
+	// script-src 'self' 'unsafe-inline' https://cdn.shortpixel.ai https://gc.zgo.at; style-src 'self' 'unsafe-inline';
+	// font-src 'self' data:; img-src 'self' data: https:; report-uri https://degruchy.report-uri.com/r/d/csp/enforce; repo
+	// rt-to https://degruchy.report-uri.com/r/d/csp/enforce; upgrade-insecure-requests;;
+
+	// block-all-mixed-content
+
 	$default_options = array(
-		'default-src'               => array(
+		'default-src' => array(
 			'*',
+			"'nonce-" . esc_attr( TOOLBELT_NONCE ) . "'",
+			"'unsafe-inline'",
 		),
 		'upgrade-insecure-requests' => true,
-		'block-all-mixed-content'   => true,
-		'style-src'                 => array( '*', "'nonce-" . esc_attr( TOOLBELT_NONCE ) . "'" ),
-		'script-src'                 => array( '*', "'nonce-" . esc_attr( TOOLBELT_NONCE ) . "'" ),
-		'report-only'               => false,
-		'report-uri'                => '',
-		'report-to'                 => '', // New for CSP level 3 https://www.w3.org/TR/CSP/#changes-from-level-2.
+		'block-all-mixed-content' => true,
+		'report-only' => true,
+		'report-uri' => '',
+		'report-to' => '', // New for CSP level 3 https://www.w3.org/TR/CSP/#changes-from-level-2.
 	);
 
 	$admin_policy = apply_filters( 'toolbelt_csp_policy', $default_options );
@@ -43,6 +49,8 @@ function toolbelt_csp_headers() {
 		$csp_string = 'Content-Security-Policy: ';
 
 	}
+
+	unset( $default_options['report-only'] );
 
 	foreach ( $admin_policy as $rule => $setting ) {
 
