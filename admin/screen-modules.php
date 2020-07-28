@@ -21,6 +21,8 @@ do_action( 'toolbelt_module_settings' );
 	.wrap { max-width: 600px; margin: 0 auto; }
 	.experimental { color: red; }
 	p.gdpr-hard-mode { color: grey; font-weight: bold; }
+	p.warning { color: red; }
+	p.warning strong { background: red; color: white; border-radius: 2px; padding: 0.1em 0.4em; margin-inline-end: 0.4em; }
 </style>
 
 <script>
