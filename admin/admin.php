@@ -163,8 +163,16 @@ function toolbelt_field( $slug, array $module ) {
 			<p><?php echo esc_html( $module['description'] ); ?></p>
 
 <?php
-	if ( isset( $module['supports'] ) && in_array( 'gdpr-hard-mode', $module['supports'], true ) ) {
-		echo '<p class="gdpr-hard-mode">' . esc_html__( 'Full GDPR support requires developer integration. See documentation for more details.', 'wp-toolbelt' ) . '</p>';
+	if ( isset( $module['supports'] ) ) {
+
+		if ( in_array( 'gdpr-hard-mode', $module['supports'], true ) ) {
+			echo '<p class="gdpr-hard-mode">' . esc_html__( 'Full GDPR support requires developer integration. See documentation for more details.', 'wp-toolbelt' ) . '</p>';
+		}
+
+		if ( in_array( 'warning', $module['supports'], true ) ) {
+			echo '<p class="warning"><strong>' . esc_html__( 'Warning' ) . '</strong>' . esc_html__( 'This module could break things. Only enable it if you know what you are doing. See documentation for more details.', 'wp-toolbelt' ) . '</p>';
+		}
+
 	}
 ?>
 
