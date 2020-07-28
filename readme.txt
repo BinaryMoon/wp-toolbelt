@@ -133,6 +133,13 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
+= 2.6.2 - 27th July 2020 =
+* Address CSP issues.
+* Minor bug fixes.
+
+= 2.6.1 - 27th July 2020 =
+* Disable CSP - it's not ready for prime time yet.
+
 = 2.6 - 27th July 2020 =
 * Add CSP (Content Security Policy) module.
 * Add a breadcrumbs block (for full site editing).
