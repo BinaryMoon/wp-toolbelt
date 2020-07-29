@@ -34,7 +34,9 @@ function toolbelt_csp_headers() {
 		),
 		'report-only' => false,
 		'report-uri' => '',
-		'report-to' => '', // New for CSP level 3 https://www.w3.org/TR/CSP/#changes-from-level-2.
+
+		// New for CSP level 3 https://www.w3.org/TR/CSP/#changes-from-level-2.
+		'report-to' => '',
 	);
 
 	$admin_policy = apply_filters( 'toolbelt_csp_policy', $default_options );
@@ -87,8 +89,6 @@ function toolbelt_csp_headers() {
 	}
 
 	$csp_string = trim( $csp_string );
-
-	// var_dump( $csp_string );
 
 	// Send the header.
 	header( $csp_string );
