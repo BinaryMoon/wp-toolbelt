@@ -297,7 +297,7 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
-#: admin/admin.php:34, admin/admin.php:96, admin/admin.php:174
+#: admin/admin.php:34, admin/admin.php:96, admin/admin.php:182
 msgid "Settings"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr ""
 msgid "Toolbelt"
 msgstr ""
 
-#: admin/admin.php:83, admin/screen-modules.php:59
+#: admin/admin.php:83, admin/screen-modules.php:61
 msgid "Toolbelt Modules"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgstr ""
 msgid "Toolbelt Processes"
 msgstr ""
 
-#: admin/admin.php:152, admin/screen-modules.php:80
+#: admin/admin.php:152, admin/screen-modules.php:82
 msgid "Module"
 msgstr ""
 
@@ -330,47 +330,51 @@ msgstr ""
 msgid "Experimental"
 msgstr ""
 
-#: admin/admin.php:167
+#: admin/admin.php:169
 msgid "Full GDPR support requires developer integration. See documentation for more details."
 msgstr ""
 
-#: admin/admin.php:172
+#: admin/admin.php:173
+msgid "This module could break things. Only enable it if you know what you are doing. See documentation for more details."
+msgstr ""
+
+#: admin/admin.php:180
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:177
+#: admin/admin.php:185
 msgid "Tools"
 msgstr ""
 
-#: admin/admin.php:183, admin/screen-modules.php:83
+#: admin/admin.php:191, admin/screen-modules.php:85
 msgid "Page Impact"
 msgstr ""
 
-#: admin/admin.php:317
+#: admin/admin.php:325
 msgid "Settings Saved"
 msgstr ""
 
-#: admin/admin.php:345
+#: admin/admin.php:353
 msgid "Toolbelt settings saved."
 msgstr ""
 
-#: admin/admin.php:361
+#: admin/admin.php:369
 msgid "Success"
 msgstr ""
 
-#: admin/admin.php:362
+#: admin/admin.php:370
 msgid "Error"
 msgstr ""
 
-#: admin/screen-modules.php:66
+#: admin/screen-modules.php:68
 msgid "Search for Modules"
 msgstr ""
 
-#: admin/screen-modules.php:67
+#: admin/screen-modules.php:69
 msgid "Search for Modules..."
 msgstr ""
 
-#: admin/screen-modules.php:71, admin/screen-modules.php:103
+#: admin/screen-modules.php:73, admin/screen-modules.php:105
 msgid "Save Modules"
 msgstr ""
 
