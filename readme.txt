@@ -133,11 +133,12 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 2.6.2 - 27th July 2020 =
+= 2.6.2 - 12th August 2020 =
 * Address CSP issues.
 * Minor bug fixes.
 * Simplify social menu icon css.
 * Update Infinite Scroll so that it has it's own theme support feature 'toolbelt-infinite-scroll'. Can still use 'infinite-scroll' as used in Jetpack.
+* Update Infinite Scroll to focus first loaded article after new page of content loads (improves accessibility).
 
 = 2.6.1 - 27th July 2020 =
 * Disable CSP - it's not ready for prime time yet.
