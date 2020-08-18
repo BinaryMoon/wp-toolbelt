@@ -121,6 +121,12 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Tweak styles in the admin to make it more usable.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks',
 		),
+		'avatars' => array(
+			'name' => esc_html__( 'Avatars', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A privacy focused replaced for Gravatar.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Avatars',
+			'supports' => array( 'experimental' ),
+		),
 		'breadcrumbs' => array(
 			'name' => esc_html__( 'Breadcrumbs', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info.', 'wp-toolbelt' ),
