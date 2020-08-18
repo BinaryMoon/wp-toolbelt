@@ -415,10 +415,10 @@ function toolbelt_global_styles( $module ) {
  * @param string $module The module slug.
  * @return void|null
  */
-function toolbelt_scripts( $module ) {
+function toolbelt_scripts( $module, $file = 'script' ) {
 
 	// Output scripts.
-	$path = TOOLBELT_PATH . 'modules/' . $module . '/script.min.js';
+	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $file . '.min.js';
 
 	if ( in_array( $path, get_included_files(), true ) ) {
 		return;
