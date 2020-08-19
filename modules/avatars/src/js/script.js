@@ -50,6 +50,8 @@
 		const stringVal = ( id ) => {
 
 			hashIndex++;
+			// Make the counter loop in case we need more numbers than the id allows.
+			hashIndex = hashIndex % id.length;
 
 			return id[ hashIndex ].charCodeAt( 0 );
 

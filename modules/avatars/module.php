@@ -15,14 +15,8 @@
  */
 function toolbelt_avatar_html( $html, $id_or_email, $args ) {
 
-	/**
-	 * The hash is already md5'd.
-	 *
-	 * I am adding an extra key and md5'ing again to slow down dictionary
-	 * lookups. I know it's not foolproof but hopefully it will be enough to
-	 * stop opportunists.
-	 */
-	$email_hash = md5( toolbelt_avatar_email_hash( $id_or_email ) . 'pixelAvatar' );
+	$email_hash = toolbelt_avatar_email_hash( $id_or_email );
+	$email_hash = substr( $email_hash, 15 );
 
 	$class = '';
 	if ( $args['class'] ) {
