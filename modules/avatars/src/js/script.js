@@ -218,10 +218,11 @@
 		const addMouth = ( id, data ) => {
 
 			const mouth = getParts( id, 'mouth' );
+			const colour = getColor( id, 60, 30 );
 
-			data[ 6 ][ 4 ] = 1 === mouth[ 0 ] ? 'white' : data[ 6 ][ 4 ];
-			data[ 6 ][ 5 ] = 1 === mouth[ 1 ] ? 'white' : data[ 6 ][ 5 ];
-			data[ 6 ][ 6 ] = 1 === mouth[ 2 ] ? 'white' : data[ 6 ][ 6 ];
+			data[ 6 ][ 4 ] = 1 === mouth[ 0 ] ? colour[ 0 ] : data[ 6 ][ 4 ];
+			data[ 6 ][ 5 ] = 1 === mouth[ 1 ] ? colour[ 0 ] : data[ 6 ][ 5 ];
+			data[ 6 ][ 6 ] = 1 === mouth[ 2 ] ? colour[ 0 ] : data[ 6 ][ 6 ];
 
 			return data;
 
