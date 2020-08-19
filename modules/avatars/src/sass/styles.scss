@@ -1,5 +1,8 @@
 canvas.avatar {
+
 	max-width: 100%;
+	image-rendering: pixelated;
+
 }
 
 #wpadminbar #wp-admin-bar-my-account.with-avatar>.ab-empty-item canvas,
@@ -9,5 +12,14 @@ canvas.avatar {
 	height: 16px;
 	margin-top: -4px;
 	margin-inline-start: 6px;
+
+}
+
+.column-author canvas, .column-comment .comment-author canvas, .column-username canvas {
+
+	float: left;
+	margin-right: 10px;
+	margin-top: 1px;
+	max-width: 32px;
 
 }

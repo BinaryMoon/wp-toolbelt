@@ -55,6 +55,7 @@ function toolbelt_avatar_footer() {
 }
 
 add_action( 'wp_footer', 'toolbelt_avatar_footer' );
+add_action( 'admin_footer', 'toolbelt_avatar_footer' );
 
 
 /**
