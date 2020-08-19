@@ -191,7 +191,7 @@
 			 * to 60.
 			 * This will push the colour range to the middle of the hue spectrum.
 			 */
-			const colour = getColor( id, 40, 65, 290, 60 );
+			const colour = getColor( id, 40, 65, 'skin' );
 
 			const face = getParts( id, 'face' );
 
