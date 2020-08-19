@@ -84,29 +84,11 @@
 		 * @param {int} rangeOffset The amount to offset the start of the hue range.
 		 * @return {array}
 		 */
-		const getColor = ( id, sat, light, range = 360, rangeOffset = 0 ) => {
+		const getColor = ( id, sat, light, paletteId = 'all' ) => {
 
-			/**
-			 * I need to multiply the letter id (stringVal()) by a number so
-			 * that the number is larger than 360, else we won't see the full
-			 * range of possible colours.
-			 *
-			 * There's no logic to using Pi. I just thought it was a nice number
-			 * to use. It could be replaced with anything.
-			 */
-			let hue = Math.round( 3.14159265 * stringVal( id ) );
-
-			/**
-			 * Use the modulo operator to clamp the hue value between 0 and
-			 * `range`.
-			 */
-			hue = hue % range;
-
-			/**
-			 * Add the rangeOffset to the hue. This allows us to exclude colours
-			 * from the start of the hue circle.
-			 */
-			hue += rangeOffset;
+			const palette = pixelParts.palette[ paletteId ];
+			const index = stringVal( id ) % palette.length;
+			const hue = palette[ index ];
 
 			return [
 				`hsl(${hue}, ${sat}%, ${light}%)`,
