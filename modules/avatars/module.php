@@ -106,7 +106,7 @@ function toolbelt_avatar_email_hash( $id_or_email ) {
 		if ( ! empty( $id_or_email->user_id ) ) {
 			$user = get_user_by( 'id', (int) $id_or_email->user_id );
 		}
-		if ( ( ! $user || is_wp_error( $user ) ) && ! empty( $id_or_email->comment_author_email ) ) {
+		if ( ! $user && ! empty( $id_or_email->comment_author_email ) ) {
 			$email = $id_or_email->comment_author_email;
 		}
 	}
