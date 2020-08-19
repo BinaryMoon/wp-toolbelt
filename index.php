@@ -419,6 +419,7 @@ function toolbelt_global_styles( $module ) {
  * Inline the module script.
  *
  * @param string $module The module slug.
+ * @param string $file Optional filename to include. Defaults to 'script'.
  * @return void|null
  */
 function toolbelt_scripts( $module, $file = 'script' ) {
