@@ -163,7 +163,7 @@
 		 */
 		const addBackground = ( id, data ) => {
 
-			const colour = getColor( id, 80, 87 );
+			const colour = getColor( id, 85, 85 );
 
 			for ( let y = 0; y < height; y++ ) {
 				for ( let x = 0; x < width; x++ ) {
