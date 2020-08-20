@@ -133,22 +133,12 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 2.6.2 - 12th August 2020 =
-* Address CSP issues.
-* Minor bug fixes.
-* Simplify social menu icon css.
+= 2.7 - 20th August 2020 =
+* Add custom avatars as a Gravatar replacement.
+* Address CSP issues and re-enable the module.
 * Update Infinite Scroll so that it has it's own theme support feature 'toolbelt-infinite-scroll'. Can still use 'infinite-scroll' as used in Jetpack.
 * Update Infinite Scroll to focus first loaded article after new page of content loads (improves accessibility).
-
-= 2.6.1 - 27th July 2020 =
-* Disable CSP - it's not ready for prime time yet.
-
-= 2.6 - 27th July 2020 =
-* Add CSP (Content Security Policy) module.
-* Add a breadcrumbs block (for full site editing).
-* Add social share settings for an easy way to turn on/ off the different sharing sites.
-* Add more social share sites! Instapaper, Flipboard, Tumblr, HackerNews, and Evernote.
-* Add 'rel=nofollow' to social sharing links.
-* Remove `wp_` prefix from social network filter.
+* Simplify social menu icon css.
+* Minor bug fixes.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
