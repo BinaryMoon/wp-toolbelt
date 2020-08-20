@@ -1,3 +1,13 @@
+= 2.6.1 - 27th July 2020 =
+* Disable CSP - it's not ready for prime time yet.
+
+= 2.6 - 27th July 2020 =
+* Add CSP (Content Security Policy) module.
+* Add a breadcrumbs block (for full site editing).
+* Add social share settings for an easy way to turn on/ off the different sharing sites.
+* Add more social share sites! Instapaper, Flipboard, Tumblr, HackerNews, and Evernote.
+* Add 'rel=nofollow' to social sharing links.
+* Remove `wp_` prefix from social network filter.
 
 = 2.5.3 - 15th July 2020 =
 * Add hover colour to social share links so that they are always readable.
