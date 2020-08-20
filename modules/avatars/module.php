@@ -16,7 +16,7 @@
 function toolbelt_avatar_html( $html, $id_or_email, $args ) {
 
 	$email_hash = toolbelt_avatar_email_hash( $id_or_email );
-	$email_hash = substr( $email_hash, 15 );
+	$email_hash = substr( $email_hash, 0, 15 );
 
 	$class = '';
 	if ( $args['class'] ) {
