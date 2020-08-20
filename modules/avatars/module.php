@@ -49,6 +49,10 @@ function toolbelt_avatar_footer() {
 	toolbelt_scripts( 'avatars' );
 	toolbelt_styles( 'avatars' );
 
+	if ( is_admin() ) {
+		toolbelt_styles( 'avatars', 'admin' );
+	}
+
 ?>
 	<script>pixelGen.generateAllAvatars( '.toolbeltPixelAvatar' );</script>
 <?php
