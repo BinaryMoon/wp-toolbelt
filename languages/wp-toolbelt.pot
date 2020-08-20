@@ -22,266 +22,278 @@ msgid "Tweak styles in the admin to make it more usable."
 msgstr ""
 
 #: index.php:125
-msgid "Breadcrumbs"
+msgid "Avatars"
 msgstr ""
 
 #: index.php:126
-msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
+msgid "A privacy focused replaced for Gravatar."
 msgstr ""
 
 #: index.php:128
-msgid "1 or 2kb of HTML."
+msgid "5kb of Javascript, but it removes all Gravatar images so should be an improvement overall"
 msgstr ""
 
 #: index.php:132
-msgid "Header Cleanup"
+msgid "Breadcrumbs"
 msgstr ""
 
 #: index.php:133
-msgid "Remove unnecessary HTML from the site header."
+msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
 msgstr ""
 
 #: index.php:135
-msgid "Minus 5kb of HTML from the page head."
-msgstr ""
-
-#: index.php:138
-msgid "Contact Form"
+msgid "1 or 2kb of HTML."
 msgstr ""
 
 #: index.php:139
-msgid "Create a contact form."
+msgid "Header Cleanup"
+msgstr ""
+
+#: index.php:140
+msgid "Remove unnecessary HTML from the site header."
 msgstr ""
 
 #: index.php:142
-msgid "1.2kb of inline CSS, and 12kb of inline JS."
+msgid "Minus 5kb of HTML from the page head."
 msgstr ""
 
 #: index.php:145
-msgid "Cookie Banner"
+msgid "Contact Form"
 msgstr ""
 
 #: index.php:146
-msgid "Display a simple banner with a link to your Privacy Policy."
+msgid "Create a contact form."
 msgstr ""
 
 #: index.php:149
-msgid "1.2kb of inline JS and CSS."
+msgid "1.2kb of inline CSS, and 12kb of inline JS."
 msgstr ""
 
 #: index.php:152
-msgid "Content Security Policy Headers"
+msgid "Cookie Banner"
 msgstr ""
 
 #: index.php:153
-msgid "Inject a content security policy header into your page responses"
+msgid "Display a simple banner with a link to your Privacy Policy."
 msgstr ""
 
 #: index.php:156
-msgid "Roughly 1kb of header properties."
+msgid "1.2kb of inline JS and CSS."
 msgstr ""
 
 #: index.php:159
-msgid "Disable the Comment URL Field"
+msgid "Content Security Policy Headers"
 msgstr ""
 
 #: index.php:160
-msgid "Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes."
+msgid "Inject a content security policy header into your page responses"
 msgstr ""
 
-#: index.php:165
-msgid "Fast 404s"
+#: index.php:163
+msgid "Roughly 1kb of header properties."
 msgstr ""
 
 #: index.php:166
+msgid "Disable the Comment URL Field"
+msgstr ""
+
+#: index.php:167
+msgid "Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes."
+msgstr ""
+
+#: index.php:172
+msgid "Fast 404s"
+msgstr ""
+
+#: index.php:173
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:170
+#: index.php:177
 msgid "Featured Attachment"
 msgstr ""
 
-#: index.php:171
+#: index.php:178
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:175, modules/footnotes/module.php:124
+#: index.php:182, modules/footnotes/module.php:124
 msgid "Footnotes"
 msgstr ""
 
-#: index.php:176
+#: index.php:183
 msgid "Add footnotes to the bottom of the page."
 msgstr ""
 
-#: index.php:180
+#: index.php:187
 msgid "Gist Embed Block"
 msgstr ""
 
-#: index.php:181
+#: index.php:188
 msgid "Easily embed Github Gists onto your site."
 msgstr ""
 
-#: index.php:185
+#: index.php:192
 msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:186
+#: index.php:193
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:188, index.php:235
+#: index.php:195, index.php:242
 msgid "0.2kb of inline CSS."
 msgstr ""
 
-#: index.php:191
+#: index.php:198
 msgid "Infinite Scroll"
 msgstr ""
 
-#: index.php:192
+#: index.php:199
 msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
-#: index.php:194
+#: index.php:201
 msgid "0.8kb of inline CSS and 1.3kb of inline JS."
 msgstr ""
 
-#: index.php:198
+#: index.php:205
 msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:199
+#: index.php:206
 msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
-#: index.php:203
+#: index.php:210
 msgid "Markdown"
 msgstr ""
 
-#: index.php:204
+#: index.php:211
 msgid "Render Markdown. Uses Github flavor Markdown."
 msgstr ""
 
-#: index.php:208
+#: index.php:215
 msgid "Web Monetization"
 msgstr ""
 
-#: index.php:209
+#: index.php:216
 msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
-#: index.php:214, modules/projects/module.php:39
+#: index.php:221, modules/projects/module.php:39
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:215
+#: index.php:222
 msgid "A portfolio custom post type for your projects."
 msgstr ""
 
-#: index.php:220
+#: index.php:227
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:221
+#: index.php:228
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:225, modules/related-posts/module.php:120, modules/related-posts/tools.php:19
+#: index.php:232, modules/related-posts/module.php:120, modules/related-posts/tools.php:19
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:226
+#: index.php:233
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:228
+#: index.php:235
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:232
+#: index.php:239
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:233
+#: index.php:240
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:238
+#: index.php:245
 msgid "Search Redirect"
 msgstr ""
 
-#: index.php:239
+#: index.php:246
 msgid "If there is a single search result then redirect to the result, rather than displaying a list of results."
 msgstr ""
 
-#: index.php:243, modules/social-menu/module.php:16, modules/social-menu/module.php:35
+#: index.php:250, modules/social-menu/module.php:16, modules/social-menu/module.php:35
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:244
+#: index.php:251
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:246
+#: index.php:253
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:249
+#: index.php:256
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:250
+#: index.php:257
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:252
+#: index.php:259
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:256
+#: index.php:263
 msgid "Spam Blocker"
 msgstr ""
 
-#: index.php:257
+#: index.php:264
 msgid "Attempt to block spam."
 msgstr ""
 
-#: index.php:259
+#: index.php:266
 msgid "0.3kb of inline JS"
 msgstr ""
 
-#: index.php:263, modules/stats/settings.php:40
+#: index.php:270, modules/stats/settings.php:40
 msgid "Stats"
 msgstr ""
 
-#: index.php:264
+#: index.php:271
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:269, modules/testimonials/module.php:46
+#: index.php:276, modules/testimonials/module.php:46
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:270
+#: index.php:277
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:272
+#: index.php:279
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:276
+#: index.php:283
 msgid "Typographic Widows"
 msgstr ""
 
-#: index.php:277
+#: index.php:284
 msgid "Fix typographic widows in titles and headings."
 msgstr ""
 
-#: index.php:281
+#: index.php:288
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:282
+#: index.php:289
 msgid "Control which pages widgets appear on."
 msgstr ""
 
