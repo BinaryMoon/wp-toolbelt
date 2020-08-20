@@ -333,10 +333,10 @@ function toolbelt_css_properties() {
  * Inline the module css.
  *
  * @param string $module The module slug.
- * @param string $name The folder name for the style to include.
+ * @param string $file The file name for the style to include.
  * @return void
  */
-function toolbelt_styles( $module, $name = 'style' ) {
+function toolbelt_styles( $module, $file = 'style' ) {
 
 	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
 		return;
@@ -352,7 +352,7 @@ function toolbelt_styles( $module, $name = 'style' ) {
 		return;
 	}
 
-	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $name . '.min.css';
+	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $file . '.min.css';
 
 	if ( in_array( $path, get_included_files(), true ) ) {
 		return;
