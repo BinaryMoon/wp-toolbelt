@@ -113,12 +113,22 @@ function toolbelt_breadcrumb_html( $breadcrumbs, $attrs = array() ) {
 		}
 	}
 
-	$class = '';
-	if ( $attrs['align'] && ! empty( $attrs['align'] ) ) {
-		$class = 'align' . $attrs['align'];
+	$class = array(
+		'entry-breadcumbs',
+		'toolbelt-breadcrumbs',
+	);
+
+	if ( isset( $attrs['align'] ) ) {
+		$class[] = 'align' . $attrs['align'];
 	}
 
-	return '<ol class="entry-breadcrumbs toolbelt-breadcrumbs ' . esc_attr( $class ) . '" itemscope itemtype="https://schema.org/BreadcrumbList">' . $html . '</ol>';
+	$classes = apply_filters( 'toolbelt_breacrumb_css_class', $class );
+
+	return sprintf(
+		'<ol class="%1$s" itemscope itemtype="https://schema.org/BreadcrumbList">%2$s</ol>',
+		esc_attr( implode( ' ', $classes ) ),
+		$html
+	);
 
 }
 

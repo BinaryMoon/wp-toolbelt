@@ -47,6 +47,10 @@ var toolbelt_is = ( function() {
 				var response = JSON.parse( request.response );
 				var el = document.querySelectorAll( '.toolbelt-infinite-scroll-wrapper' )[ 0 ];
 
+				/**
+				 * If the infinite scroll wrapper exists, and there's some
+				 * infinite scroll results html, then insert it into the page.
+				 */
 				if ( el && response.html ) {
 					el.insertAdjacentHTML( 'beforebegin', response.html );
 				}
@@ -56,11 +60,21 @@ var toolbelt_is = ( function() {
 					document.body.classList.add( 'toolbelt-infinite-scroll-end' );
 				}
 
+				// Display the load more button.
 				var button = document.querySelector( '.toolbelt-infinite-scroll-wrapper button' );
 				button.style.display = 'inline';
 
+				// Hide the loading spinner.
 				var spinner = document.querySelector( '.toolbelt-infinite-scroll-wrapper .toolbelt-spinner' );
 				spinner.style.display = 'none';
+
+				// Focus the first of the loaded articles.
+				var last_header = document.querySelector( '.toolbelt-divider:last-of-type + article' );
+				if ( last_header ) {
+					// Without a tabIndex articles can not be focused.
+					last_header.tabIndex = -1;
+					last_header.focus();
+				}
 
 				/**
 				 * Update the page url to signify the loading of the page, and

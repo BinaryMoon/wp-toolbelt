@@ -1,0 +1,15 @@
+
+.column-author canvas,
+.column-comment .comment-author canvas,
+.column-username canvas {
+
+	float: left;
+	margin-right: 10px;
+	margin-top: 1px;
+	max-width: 32px;
+
+}
+
+#activity-widget #the-comment-list .avatar {
+	width: 50px;
+}

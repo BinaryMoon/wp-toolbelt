@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 2.5.3
+ * Version: 2.7
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '2.5.0' );
+define( 'TOOLBELT_VERSION', '2.7' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TOOLBELT_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
@@ -121,6 +121,13 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Tweak styles in the admin to make it more usable.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks',
 		),
+		'avatars' => array(
+			'name' => esc_html__( 'Avatars', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A privacy focused replaced for Gravatar.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Avatars',
+			'weight' => esc_html__( '5kb of Javascript, but it removes all Gravatar images so should be an improvement overall', 'wp-toolbelt' ),
+			'supports' => array( 'experimental' ),
+		),
 		'breadcrumbs' => array(
 			'name' => esc_html__( 'Breadcrumbs', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info.', 'wp-toolbelt' ),
@@ -152,7 +159,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Content Security Policy Headers', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Inject a content security policy header into your page responses', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/CSP-Header',
-			'supports' => array( 'experimental' ),
+			'supports' => array( 'experimental', 'warning' ),
 			'weight' => esc_html__( 'Roughly 1kb of header properties.', 'wp-toolbelt' ),
 		),
 		'disable-comment-urls' => array(
@@ -327,10 +334,10 @@ function toolbelt_css_properties() {
  * Inline the module css.
  *
  * @param string $module The module slug.
- * @param string $name The folder name for the style to include.
+ * @param string $file The file name for the style to include.
  * @return void
  */
-function toolbelt_styles( $module, $name = 'style' ) {
+function toolbelt_styles( $module, $file = 'style' ) {
 
 	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
 		return;
@@ -346,7 +353,7 @@ function toolbelt_styles( $module, $name = 'style' ) {
 		return;
 	}
 
-	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $name . '.min.css';
+	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $file . '.min.css';
 
 	if ( in_array( $path, get_included_files(), true ) ) {
 		return;
@@ -413,12 +420,13 @@ function toolbelt_global_styles( $module ) {
  * Inline the module script.
  *
  * @param string $module The module slug.
+ * @param string $file Optional filename to include. Defaults to 'script'.
  * @return void|null
  */
-function toolbelt_scripts( $module ) {
+function toolbelt_scripts( $module, $file = 'script' ) {
 
 	// Output scripts.
-	$path = TOOLBELT_PATH . 'modules/' . $module . '/script.min.js';
+	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $file . '.min.js';
 
 	if ( in_array( $path, get_included_files(), true ) ) {
 		return;

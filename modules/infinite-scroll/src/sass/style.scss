@@ -8,7 +8,8 @@
 
 	.toolbelt-infinite-scroll-wrapper {
 
-		padding: calc( var( --toolbelt-spacing ) * 2 ) 0;
+		padding-top: calc( var( --toolbelt-spacing ) * 2 );
+		padding-bottom: calc( var( --toolbelt-spacing ) * 2 );
 		display: block;
 		width: 100%;
 

@@ -1,0 +1,16 @@
+canvas.avatar {
+
+	max-width: 100%;
+	image-rendering: pixelated;
+
+}
+
+#wpadminbar #wp-admin-bar-my-account.with-avatar>.ab-empty-item canvas,
+#wpadminbar #wp-admin-bar-my-account.with-avatar>a canvas {
+
+	width: 16px;
+	height: 16px;
+	margin-top: -4px;
+	margin-inline-start: 6px;
+
+}

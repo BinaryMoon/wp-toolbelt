@@ -136,11 +136,24 @@ add_action(
 	}
 );
 
-
 // Remove devicepx.
 add_action(
 	'wp_enqueue_scripts',
 	function() {
 		wp_dequeue_script( 'devicepx' );
+	}
+);
+
+// Remove hidden Jetpack stuff.
+add_filter(
+	'jetpack_tools_to_include',
+	function( $tools ) {
+		// Unset Jetpack Geo-location functionality.
+		$id = array_search( 'geo-location.php', $tools, true );
+		if ( $id ) {
+			unset( $tools[ $id ] );
+		}
+
+		return $tools;
 	}
 );

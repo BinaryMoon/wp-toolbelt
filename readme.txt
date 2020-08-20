@@ -69,7 +69,7 @@ Every week there's a new story about Facebook tracking people inappropriately, o
 
 To ensure Toolbelt is as privacy focused as possible it:
 
-* Does not phone out. No data is shared with third parties.
+* Does not phone out. **No data is shared with third parties**.
 * Does not use standard social sharing javascripts (loaded from social networks servers).
 * Does not track your usage of the plugin.
 * Does not add generator comments, or secret promotional comments to your site html.
@@ -78,12 +78,12 @@ To ensure Toolbelt is as privacy focused as possible it:
 
 Slow websites make me sad. I don't want to add anything to Toolbelt that will impact site load speed. My Google Pagespeed score should not move from 100.
 
-Why? Faster sites are shown to increase conversions and time on site. Google loves fast sites and improves their search rankings. In addition fast sites are great for places with slower internet, and use less resources to generate the page. So many benefits!
+Why? Faster sites are shown to increase conversions and time on site. Google loves fast sites and improves their search rankings. In addition fast sites are great for people with slower internet access, or on mobile data, and use less resources to generate the page. So many benefits!
 
 To be fast Toolbelt:
 
 * Doesn't use jQuery or any other javascript framework. All javascript is vanilla js, and minified.
-* Minifies all assets (JS and CSS)
+* Minifies all assets (JS and CSS).
 * Loads all assets inline. They are already small, and loading them directly on the page means there are no server requests.
 * Only loads things when they are needed. JS and CSS are only loaded for activated modules.
 * Very few options. There's one main database option, an array that stores what modules are active. And another that stores settings for some modules.
@@ -110,9 +110,9 @@ The best thing to do is mark this file (and only this file) as 'Ignore Always'. 
 
 = Why one plugin and not separate plugins? =
 
-I am making this because it's something I want to use. I like the simplicity of installing Jetpack and letting it do it's thing. But it's not designed for speed or elegance, so I am trying to address that with my own plugin.
+I am making this because it's something I want to use. I like the simplicity of installing Jetpack and letting it do it's thing. But Jetpack is not designed for speed or elegance, so I am trying to address that with my own plugin.
 
-I am making the theme as developer friendly as I can. Things can be tweaked using WordPress filters, and I will add more of these as I go.
+I am making the plugin as developer friendly as I can. Things can be tweaked using WordPress filters, and I will add more of these as I go.
 
 = Do you have any documentation? =
 
@@ -124,7 +124,7 @@ Yes please! You can [submit issues](https://github.com/BinaryMoon/wp-toolbelt/is
 
 = What features will you add next? =
 
-I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably just add things as I need them.
+I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/binarymoon)), but mostly I'll add things as I need them.
 
 == Installation ==
 
@@ -133,12 +133,12 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.6 - 22nd July 2020 =
-* Add CSP (Content Security Policy) module.
-* Add a breadcrumbs block (for full site editing).
-* Add social share settings for an easy way to turn on/ off the different sharing sites.
-* Add more social share sites! Instapaper, Flipboard, Tumblr, HackerNews, and Evernote.
-* Add 'rel=nofollow' to social sharing links.
-* Remove `wp_` prefix from social network filter.
+= 2.7 - 20th August 2020 =
+* Add custom avatars as a Gravatar replacement.
+* Address CSP issues and re-enable the module.
+* Update Infinite Scroll so that it has it's own theme support feature 'toolbelt-infinite-scroll'. Can still use 'infinite-scroll' as used in Jetpack.
+* Update Infinite Scroll to focus first loaded article after new page of content loads (improves accessibility).
+* Simplify social menu icon css.
+* Minor bug fixes.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
