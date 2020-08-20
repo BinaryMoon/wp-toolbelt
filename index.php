@@ -125,6 +125,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Avatars', 'wp-toolbelt' ),
 			'description' => esc_html__( 'A privacy focused replaced for Gravatar.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Avatars',
+			'weight' => esc_html__( '5kb of Javascript, but it removes all Gravatar images so should be an improvement overall', 'wp-toolbelt' ),
 			'supports' => array( 'experimental' ),
 		),
 		'breadcrumbs' => array(
