@@ -36,6 +36,7 @@ Some of the Toolbelt modules include blocks to make working with the generated c
 Toolbelt has a lot of features. The complete list is below.
 
 * [Admin Tweaks](https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks)
+* [Avatars](https://github.com/BinaryMoon/wp-toolbelt/wiki/Avatars)
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Contact Form](https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
