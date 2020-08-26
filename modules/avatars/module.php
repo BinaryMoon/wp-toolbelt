@@ -15,6 +15,10 @@
  */
 function toolbelt_avatar_html( $html, $id_or_email, $args ) {
 
+	if ( isset( $args['force_default'] ) && $args['force_default'] ) {
+		return $html;
+	}
+
 	$email_hash = toolbelt_avatar_email_hash( $id_or_email );
 	$email_hash = substr( $email_hash, 0, 15 );
 
