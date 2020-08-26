@@ -155,7 +155,7 @@ function toolbelt_contact_field_multi( $type, array $atts ) {
 		'contact-form'
 	);
 
-	if ( count( $atts['options'] ) <= 0 ) {
+	if ( array() === $atts['options'] ) {
 		return '';
 	}
 
