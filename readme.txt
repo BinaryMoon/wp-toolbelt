@@ -54,6 +54,7 @@ Toolbelt has a lot of features. The complete list is below.
 * [Portfolio](https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio)
 * [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
 * [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
+* [Remove IP Addresses](https://github.com/BinaryMoon/wp-toolbelt/wiki/Remove-IP-Addresses)
 * [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
 * [Search Redirect](https://github.com/BinaryMoon/wp-toolbelt/wiki/Search-Redirect)
 * [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
@@ -133,6 +134,10 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 2.7.1 - 25th August 2020 =
+* Add 'Remove IP Addresses' module.
+* Ensure the default avatars display correctly in the discussion settings.
 
 = 2.7 - 20th August 2020 =
 * Add custom avatars as a Gravatar replacement.

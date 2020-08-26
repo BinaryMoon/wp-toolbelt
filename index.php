@@ -241,6 +241,11 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
 			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
 		),
+		'remove-ips' => array(
+			'name' => esc_html__( 'Remove IP Addresses', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Stop WordPress from storing IP addresses for users who comment on your site.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Remove-IP-Addresses',
+		),
 		'search-redirect' => array(
 			'name' => esc_html__( 'Search Redirect', 'wp-toolbelt' ),
 			'description' => esc_html__( 'If there is a single search result then redirect to the result, rather than displaying a list of results.', 'wp-toolbelt' ),
