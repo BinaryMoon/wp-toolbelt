@@ -63,8 +63,16 @@ function toolbelt_avatar_footer() {
 
 }
 
-add_action( 'wp_footer', 'toolbelt_avatar_footer' );
-add_action( 'admin_footer', 'toolbelt_avatar_footer' );
+/**
+ * We need to add a really (really) big priority here so we can make sure this
+ * loads after the admin bar has been displayed.
+ *
+ * This isn't a problem if the theme supports `wp_body_open` but if it doesn't
+ * then the admin bar gets added to the footer with a high priority and we need
+ * to load after.
+ */
+add_action( 'wp_footer', 'toolbelt_avatar_footer', 999999 );
+add_action( 'admin_footer', 'toolbelt_avatar_footer', 999999 );
 
 
 /**
