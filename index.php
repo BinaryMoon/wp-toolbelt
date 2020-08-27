@@ -266,6 +266,11 @@ function toolbelt_get_modules() {
 			'weight' => esc_html__( '0.3kb of inline JS', 'wp-toolbelt' ),
 			'supports' => array( 'experimental' ),
 		),
+		'star-rating' => array(
+			'name' => esc_html__( 'Star Ratings', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Rate movies, books, videos, difficulty, whatever.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Star-Ratings',
+		),
 		'stats' => array(
 			'name' => esc_html__( 'Stats', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Website statistics and analytics.', 'wp-toolbelt' ),
