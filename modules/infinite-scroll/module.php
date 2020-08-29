@@ -37,9 +37,9 @@ function toolbelt_is_footer() {
 
 ?>
 <script>
-toolbelt_is.permalink = '<?php echo esc_url( home_url( $permalink ) ); ?>';
-toolbelt_is.route = '<?php echo esc_url( home_url( '/wp-json/wp-toolbelt/v1/infinite-scroll/' ) ); ?>';
-toolbelt_is.page = <?php echo (int) $current_page; ?>;
+	toolbelt_is.permalink = '<?php echo esc_url( home_url( $permalink ) ); ?>';
+	toolbelt_is.route = '<?php echo esc_url( home_url( '/wp-json/wp-toolbelt/v1/infinite-scroll/' ) ); ?>';
+	toolbelt_is.page = <?php echo (int) $current_page; ?>;
 </script>
 <?php
 
@@ -143,7 +143,7 @@ function toolbelt_is_class( $classes ) {
  */
 function toolbelt_is_active() {
 
-	if ( ! current_theme_supports( 'infinite-scroll' ) ) {
+	if ( ! current_theme_supports( 'infinite-scroll' ) && ! current_theme_supports( 'toolbelt-infinite-scroll' ) ) {
 		return false;
 	}
 
@@ -210,8 +210,22 @@ function toolbelt_is_rest_response( $data ) {
 	$callback = 'toolbelt_is_render';
 	$page = isset( $data['page'] ) ? (int) $data['page'] : 1;
 
-	// Get Infinite Scroll properties.
-	$settings = get_theme_support( 'infinite-scroll' );
+	/**
+	 * Get Infinite Scroll properties.
+	 *
+	 * Defaults to Toolbelt settings, and if they are not available uses
+	 * `infinite-scroll` which is Jetpacks keyword. This allows themes with
+	 * Jetpack IS support to work.
+	 */
+	$settings = get_theme_support( 'toolbelt-infinite-scroll' );
+	if ( ! $settings ) {
+		$settings = get_theme_support( 'infinite-scroll' );
+	}
+
+	if ( isset( $settings[0]['render'] ) ) {
+		$callback = $settings[0]['render'];
+	}
+
 	if ( isset( $settings[0]['render'] ) ) {
 		$callback = $settings[0]['render'];
 	}
@@ -257,7 +271,7 @@ function toolbelt_is_rest_response( $data ) {
 
 		// Add page number before inserting posts.
 		// translators: %d = page number.
-		$results['html'] = '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
+		$results['html'] .= '<h6 class="toolbelt-divider">' . sprintf( esc_html__( 'Page %d', 'wp-toolbelt' ), $page ) . '</h6>';
 
 		ob_start();
 

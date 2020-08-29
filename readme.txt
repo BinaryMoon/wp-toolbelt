@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -29,6 +29,7 @@ Some of the Toolbelt modules include blocks to make working with the generated c
 * **Projects Grid** - to list a collection of projects. These can be filtered by project category.
 * **Testimonials Grid** - to list a group of testimonials. Great for showing off! :)
 * **Markdown** - for those who like a simpler writing experience.
+* **Breadcrumbs** - for full site editing.
 
 = All Features =
 
@@ -38,6 +39,7 @@ Toolbelt has a lot of features. The complete list is below.
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Contact Form](https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
+* [CSP Header](https://github.com/BinaryMoon/wp-toolbelt/wiki/CSP-Header)
 * [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls)
 * [Fast 404](https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404)
 * [Featured Attachments](https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment)
@@ -67,7 +69,7 @@ Every week there's a new story about Facebook tracking people inappropriately, o
 
 To ensure Toolbelt is as privacy focused as possible it:
 
-* Does not phone out. No data is shared with third parties.
+* Does not phone out. **No data is shared with third parties**.
 * Does not use standard social sharing javascripts (loaded from social networks servers).
 * Does not track your usage of the plugin.
 * Does not add generator comments, or secret promotional comments to your site html.
@@ -76,12 +78,12 @@ To ensure Toolbelt is as privacy focused as possible it:
 
 Slow websites make me sad. I don't want to add anything to Toolbelt that will impact site load speed. My Google Pagespeed score should not move from 100.
 
-Why? Faster sites are shown to increase conversions and time on site. Google loves fast sites and improves their search rankings. In addition fast sites are great for places with slower internet, and use less resources to generate the page. So many benefits!
+Why? Faster sites are shown to increase conversions and time on site. Google loves fast sites and improves their search rankings. In addition fast sites are great for people with slower internet access, or on mobile data, and use less resources to generate the page. So many benefits!
 
 To be fast Toolbelt:
 
 * Doesn't use jQuery or any other javascript framework. All javascript is vanilla js, and minified.
-* Minifies all assets (JS and CSS)
+* Minifies all assets (JS and CSS).
 * Loads all assets inline. They are already small, and loading them directly on the page means there are no server requests.
 * Only loads things when they are needed. JS and CSS are only loaded for activated modules.
 * Very few options. There's one main database option, an array that stores what modules are active. And another that stores settings for some modules.
@@ -108,9 +110,9 @@ The best thing to do is mark this file (and only this file) as 'Ignore Always'. 
 
 = Why one plugin and not separate plugins? =
 
-I am making this because it's something I want to use. I like the simplicity of installing Jetpack and letting it do it's thing. But it's not designed for speed or elegance, so I am trying to address that with my own plugin.
+I am making this because it's something I want to use. I like the simplicity of installing Jetpack and letting it do it's thing. But Jetpack is not designed for speed or elegance, so I am trying to address that with my own plugin.
 
-I am making the theme as developer friendly as I can. Things can be tweaked using WordPress filters, and I will add more of these as I go.
+I am making the plugin as developer friendly as I can. Things can be tweaked using WordPress filters, and I will add more of these as I go.
 
 = Do you have any documentation? =
 
@@ -122,7 +124,7 @@ Yes please! You can [submit issues](https://github.com/BinaryMoon/wp-toolbelt/is
 
 = What features will you add next? =
 
-I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably just add things as I need them.
+I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/binarymoon)), but mostly I'll add things as I need them.
 
 == Installation ==
 
@@ -131,43 +133,7 @@ I don't know. I'm open to suggestions (ping me on Twitter), but I'll probably ju
 
 == Changelog ==
 
-= 2.5.3 - 7th April 2020 =
-* Add hover colour to social share links so that they are always readable.
-* Ensure the heading anchors don't move the content around.
-* Add title to footnotes links
-* Tweak cookie banner css to ensure the box size doesn't change unexpectedly.
-* Make columns css more robust so that it will work with every theme.
-* Add basic support for the WordPress AMP plugin so that it doesn't output custom CSS on AMP pages.
-
-= 2.5.2 - 2nd March 2020 =
-* Add new footnotes module that appends footnotes to the bottom of post content.
-* Add a search results redirect if there's only a single result.
-* Add additional cleanup rules for more speed!
-* Only add css properties when a module is active that supports them.
-* Automatically update the spam blocker blocklist once a week.
-
-= 2.5.1 - 17th December 2019 =
-* Fix infinite scroll button. It now hides when we get to the end of the content.
-* Update blocklist.
-
-= 2.5 - 14th December 2019 =
-* Added a simple Gist block.
-* Refactor widget visibility module. You may need to change your display rules. Check the documentation for more info. https://github.com/BinaryMoon/wp-toolbelt/wiki/Widget-Display
-* Add new pagechild and 404 display rules to the widget visibility module.
-* Add a contact form 'subject' field which we can use to override the default contact form subject.
-* Add a custom post type for saving contact form submissions. The feedback gets deleted regularly so that we don't store user data unnecessarily.
-* Add contact form custom subject line modifications.
-* Stop sending contact form messages that get flagged as spam. They are still saved to the database and readable through the admin.
-* Add fix for typographic widows.
-* Add list and blockquote as internal block types for the contact form block.
-* Ensure the contact form submit button stays in the right place! :)
-* Fix issue with settings link appearing when it shouldn't.
-* Fix: Only include contact form validation rules when there is a contact form on the page
-* Make GDPR requirements of cookie banner clearer.
-* Improve module selector design.
-* Make the admin style tweaks show in the customizer (most important for the button improvements).
-* Simplify portfolio and testimonial block code a little.
-* Rename blacklist to blocklist. Language matters!
-
+= 2.8 - 30th August 2020 =
+* Add Star Rating block.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)

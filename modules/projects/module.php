@@ -262,7 +262,7 @@ function toolbelt_portfolio_enqueue_admin_styles( $hook ) {
 			'@media screen and (max-width: 360px) { .column-thumbnail{ display:none; } }',
 		);
 
-		wp_add_inline_style( 'wp-admin', implode( $styles, ' ' ) );
+		wp_add_inline_style( 'wp-admin', implode( ' ', $styles ) );
 
 	}
 
@@ -580,7 +580,7 @@ function toolbelt_portfolio_register_block() {
 				),
 				'align' => array(
 					'default' => '',
-					'enum' => array( 'wide', 'full' ),
+					'enum' => array( '', 'wide', 'full' ),
 					'type' => 'string',
 				),
 				'categories' => array(

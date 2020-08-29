@@ -6,10 +6,13 @@ const uglify = require( 'gulp-uglify' );
 const size = require( 'gulp-filesize' );
 const rename = require( 'gulp-rename' );
 const babel = require( 'gulp-babel' );
+const plumber = require( 'gulp-plumber' );
+
 
 function process_scripts( source = './modules/**/src/js/**/*.js' ) {
 
 	return src( source )
+		.pipe( plumber() )
 		.pipe(
 			rename(
 				path => {

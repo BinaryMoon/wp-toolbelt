@@ -1,26 +1,30 @@
 .toolbelt-social-share {
 
-	font-size: 1rem;
-	margin-top: calc( var( --toolbelt-spacing ) * 2 );
-	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
 	clear: both;
+	font-size: 1rem;
+	display: grid;
+	gap: calc( var( --toolbelt-spacing ) / 4 );
+	grid-template-columns: repeat( auto-fit, minmax( 11rem, 1fr ) );
+	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
+	margin-top: calc( var( --toolbelt-spacing ) * 2 );
 
 	a {
 
-		display: flex;
-		padding: calc( var( --toolbelt-spacing ) / 2 ) var( --toolbelt-spacing );
+		padding: calc( var( --toolbelt-spacing ) / 4 ) var( --toolbelt-spacing );
 		color: white;
 		align-items: center;
-
-		@media (min-width: 500px) {
-
-			display: inline-flex;
-
-		}
+		display: flex;
+		text-decoration: none;
 
 		&:hover {
 
 			color: white;
+
+			span {
+
+				text-decoration: underline;
+
+			}
 
 		}
 
@@ -28,7 +32,7 @@
 
 	svg {
 
-		margin: 0 calc( var( --toolbelt-spacing ) / 2 ) 0 0;
+		margin-inline-end: calc( var( --toolbelt-spacing ) / 2 );
 		height: 1.5rem;
 		width: 1.5rem;
 		vertical-align: middle;
@@ -42,39 +46,13 @@
 
 	}
 
-	.toolbelt_facebook {
-
-		background-color:#3b5998;
-
-	}
-
-	.toolbelt_twitter {
-
-		background-color:#1da1f2;
-
-	}
-
-	.toolbelt_linkedin {
-
-		background-color:#0077b5;
-
-	}
-
 	.toolbelt_whatsapp {
-
-		background-color:#075e54;
 
 		@media (min-width: 500px) {
 
 			display: none;
 
 		}
-
-	}
-
-	.toolbelt_pinterest {
-
-		background-color:#bd081c;
 
 	}
 

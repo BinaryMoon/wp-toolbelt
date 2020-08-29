@@ -22,254 +22,286 @@ msgid "Tweak styles in the admin to make it more usable."
 msgstr ""
 
 #: index.php:125
-msgid "Breadcrumbs"
+msgid "Avatars"
 msgstr ""
 
 #: index.php:126
-msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
+msgid "A privacy focused replaced for Gravatar."
 msgstr ""
 
 #: index.php:128
-msgid "1 or 2kb of HTML."
+msgid "5kb of Javascript, but it removes all Gravatar images so should be an improvement overall"
 msgstr ""
 
 #: index.php:132
-msgid "Header Cleanup"
+msgid "Breadcrumbs"
 msgstr ""
 
 #: index.php:133
-msgid "Remove unnecessary HTML from the site header."
+msgid "Simple, fast, breadcrumbs. Requires support from the theme to display. See docs for more info."
 msgstr ""
 
 #: index.php:135
-msgid "Minus 5kb of HTML from the page head."
-msgstr ""
-
-#: index.php:138
-msgid "Contact Form"
+msgid "1 or 2kb of HTML."
 msgstr ""
 
 #: index.php:139
-msgid "Create a contact form."
+msgid "Header Cleanup"
+msgstr ""
+
+#: index.php:140
+msgid "Remove unnecessary HTML from the site header."
 msgstr ""
 
 #: index.php:142
-msgid "1.2kb of inline CSS, and 12kb of inline JS."
+msgid "Minus 5kb of HTML from the page head."
 msgstr ""
 
 #: index.php:145
-msgid "Cookie Banner"
+msgid "Contact Form"
 msgstr ""
 
 #: index.php:146
-msgid "Display a simple banner with a link to your Privacy Policy."
+msgid "Create a contact form."
 msgstr ""
 
 #: index.php:149
-msgid "1.2kb of inline JS and CSS."
+msgid "1.2kb of inline CSS, and 12kb of inline JS."
 msgstr ""
 
 #: index.php:152
-msgid "Disable the Comment URL Field"
+msgid "Cookie Banner"
 msgstr ""
 
 #: index.php:153
-msgid "Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes."
+msgid "Display a simple banner with a link to your Privacy Policy."
 msgstr ""
 
-#: index.php:158
-msgid "Fast 404s"
+#: index.php:156
+msgid "1.2kb of inline JS and CSS."
 msgstr ""
 
 #: index.php:159
-msgid "Disable 404 pages for static files like images."
+msgid "Content Security Policy Headers"
+msgstr ""
+
+#: index.php:160
+msgid "Inject a content security policy header into your page responses"
 msgstr ""
 
 #: index.php:163
-msgid "Featured Attachment"
+msgid "Roughly 1kb of header properties."
 msgstr ""
 
-#: index.php:164
-msgid "If there is no featured image for a post then use the first image attachment instead."
+#: index.php:166
+msgid "Disable the Comment URL Field"
 msgstr ""
 
-#: index.php:168, modules/footnotes/module.php:124
-msgid "Footnotes"
+#: index.php:167
+msgid "Remove the URL field from comment forms. This may only work on the core comment form, and not on custom ones added to themes."
 msgstr ""
 
-#: index.php:169
-msgid "Add footnotes to the bottom of the page."
+#: index.php:172
+msgid "Fast 404s"
 msgstr ""
 
 #: index.php:173
-msgid "Gist Embed Block"
+msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:174
-msgid "Easily embed Github Gists onto your site."
+#: index.php:177
+msgid "Featured Attachment"
 msgstr ""
 
 #: index.php:178
-msgid "Heading Anchors"
+msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:179
-msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
+#: index.php:182, modules/footnotes/module.php:124
+msgid "Footnotes"
 msgstr ""
 
-#: index.php:181, index.php:228
-msgid "0.2kb of inline CSS."
-msgstr ""
-
-#: index.php:184
-msgid "Infinite Scroll"
-msgstr ""
-
-#: index.php:185
-msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
+#: index.php:183
+msgid "Add footnotes to the bottom of the page."
 msgstr ""
 
 #: index.php:187
-msgid "0.8kb of inline CSS and 1.3kb of inline JS."
+msgid "Gist Embed Block"
 msgstr ""
 
-#: index.php:191
-msgid "Lazy Load images"
+#: index.php:188
+msgid "Easily embed Github Gists onto your site."
 msgstr ""
 
 #: index.php:192
-msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
+msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:196
-msgid "Markdown"
+#: index.php:193
+msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:197
-msgid "Render Markdown. Uses Github flavor Markdown."
+#: index.php:195, index.php:242
+msgid "0.2kb of inline CSS."
+msgstr ""
+
+#: index.php:198
+msgid "Infinite Scroll"
+msgstr ""
+
+#: index.php:199
+msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
 #: index.php:201
+msgid "0.8kb of inline CSS and 1.3kb of inline JS."
+msgstr ""
+
+#: index.php:205
+msgid "Lazy Load images"
+msgstr ""
+
+#: index.php:206
+msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
+msgstr ""
+
+#: index.php:210
+msgid "Markdown"
+msgstr ""
+
+#: index.php:211
+msgid "Render Markdown. Uses Github flavor Markdown."
+msgstr ""
+
+#: index.php:215
 msgid "Web Monetization"
 msgstr ""
 
-#: index.php:202
+#: index.php:216
 msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
-#: index.php:207, modules/projects/module.php:39
+#: index.php:221, modules/projects/module.php:39
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:208
+#: index.php:222
 msgid "A portfolio custom post type for your projects."
 msgstr ""
 
-#: index.php:213
+#: index.php:227
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:214
+#: index.php:228
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:218, modules/related-posts/module.php:120, modules/related-posts/tools.php:19
+#: index.php:232, modules/related-posts/module.php:120, modules/related-posts/tools.php:19
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:219
+#: index.php:233
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:221
+#: index.php:235
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:225
+#: index.php:239
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:226
+#: index.php:240
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:231
+#: index.php:245
 msgid "Search Redirect"
 msgstr ""
 
-#: index.php:232
+#: index.php:246
 msgid "If there is a single search result then redirect to the result, rather than displaying a list of results."
 msgstr ""
 
-#: index.php:236, modules/social-menu/module.php:16, modules/social-menu/module.php:35
+#: index.php:250, modules/social-menu/module.php:16, modules/social-menu/module.php:35
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:237
+#: index.php:251
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:239
+#: index.php:253
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:242
+#: index.php:256
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:243
+#: index.php:257
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:245
+#: index.php:259
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:249
+#: index.php:263
 msgid "Spam Blocker"
 msgstr ""
 
-#: index.php:250
+#: index.php:264
 msgid "Attempt to block spam."
 msgstr ""
 
-#: index.php:252
+#: index.php:266
 msgid "0.3kb of inline JS"
 msgstr ""
 
-#: index.php:256, modules/stats/settings.php:40
+#: index.php:270
+msgid "Star Ratings"
+msgstr ""
+
+#: index.php:271
+msgid "Rate movies, books, videos, difficulty, whatever."
+msgstr ""
+
+#: index.php:275, modules/stats/settings.php:40
 msgid "Stats"
 msgstr ""
 
-#: index.php:257
+#: index.php:276
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:262, modules/testimonials/module.php:46
+#: index.php:281, modules/testimonials/module.php:46
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:263
+#: index.php:282
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:265
+#: index.php:284
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:269
+#: index.php:288
 msgid "Typographic Widows"
 msgstr ""
 
-#: index.php:270
+#: index.php:289
 msgid "Fix typographic widows in titles and headings."
 msgstr ""
 
-#: index.php:274
+#: index.php:293
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:275
+#: index.php:294
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -285,7 +317,7 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
-#: admin/admin.php:34, admin/admin.php:96, admin/admin.php:174
+#: admin/admin.php:34, admin/admin.php:96, admin/admin.php:182
 msgid "Settings"
 msgstr ""
 
@@ -298,7 +330,7 @@ msgstr ""
 msgid "Toolbelt"
 msgstr ""
 
-#: admin/admin.php:83, admin/screen-modules.php:59
+#: admin/admin.php:83, admin/screen-modules.php:61
 msgid "Toolbelt Modules"
 msgstr ""
 
@@ -310,7 +342,7 @@ msgstr ""
 msgid "Toolbelt Processes"
 msgstr ""
 
-#: admin/admin.php:152, admin/screen-modules.php:80
+#: admin/admin.php:152, admin/screen-modules.php:82
 msgid "Module"
 msgstr ""
 
@@ -318,47 +350,51 @@ msgstr ""
 msgid "Experimental"
 msgstr ""
 
-#: admin/admin.php:167
+#: admin/admin.php:169
 msgid "Full GDPR support requires developer integration. See documentation for more details."
 msgstr ""
 
-#: admin/admin.php:172
+#: admin/admin.php:173
+msgid "This module could break things. Only enable it if you know what you are doing. See documentation for more details."
+msgstr ""
+
+#: admin/admin.php:180
 msgid "Documentation"
 msgstr ""
 
-#: admin/admin.php:177
+#: admin/admin.php:185
 msgid "Tools"
 msgstr ""
 
-#: admin/admin.php:183, admin/screen-modules.php:83
+#: admin/admin.php:191, admin/screen-modules.php:85
 msgid "Page Impact"
 msgstr ""
 
-#: admin/admin.php:317
+#: admin/admin.php:325
 msgid "Settings Saved"
 msgstr ""
 
-#: admin/admin.php:345
+#: admin/admin.php:353
 msgid "Toolbelt settings saved."
 msgstr ""
 
-#: admin/admin.php:361
+#: admin/admin.php:369
 msgid "Success"
 msgstr ""
 
-#: admin/admin.php:362
+#: admin/admin.php:370
 msgid "Error"
 msgstr ""
 
-#: admin/screen-modules.php:66
+#: admin/screen-modules.php:68
 msgid "Search for Modules"
 msgstr ""
 
-#: admin/screen-modules.php:67
+#: admin/screen-modules.php:69
 msgid "Search for Modules..."
 msgstr ""
 
-#: admin/screen-modules.php:71, admin/screen-modules.php:103
+#: admin/screen-modules.php:73, admin/screen-modules.php:105
 msgid "Save Modules"
 msgstr ""
 
@@ -366,7 +402,7 @@ msgstr ""
 msgid "Save Settings"
 msgstr ""
 
-#: modules/breadcrumbs/module.php:70
+#: modules/breadcrumbs/module.php:69
 msgid "Home"
 msgstr ""
 
@@ -545,11 +581,11 @@ msgstr ""
 msgid "Contact Form timed out"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:347
+#: modules/contact-form/module-submit-form.php:347, modules/contact-form/module-submit-form.php:369
 msgid "No"
 msgstr ""
 
-#: modules/contact-form/module-submit-form.php:345
+#: modules/contact-form/module-submit-form.php:345, modules/contact-form/module-submit-form.php:369
 msgid "Yes"
 msgstr ""
 
@@ -611,7 +647,7 @@ msgid "Load More"
 msgstr ""
 
 #. translators: %d = page number.
-#: modules/infinite-scroll/module.php:260
+#: modules/infinite-scroll/module.php:274
 msgid "Page %d"
 msgstr ""
 
@@ -850,49 +886,155 @@ msgstr ""
 msgid "Related Posts cache cleared."
 msgstr ""
 
-#: modules/social-sharing/module.php:136
+#: modules/social-sharing/module.php:149
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:137
+#: modules/social-sharing/module.php:150
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:141
+#: modules/social-sharing/module.php:155
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:142
+#: modules/social-sharing/module.php:156
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:146
+#: modules/social-sharing/module.php:161
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:147
+#: modules/social-sharing/module.php:162
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:161
+#: modules/social-sharing/module.php:177
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:162
+#: modules/social-sharing/module.php:178
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:166
+#: modules/social-sharing/module.php:180
+msgid "Only shown on mobile"
+msgstr ""
+
+#: modules/social-sharing/module.php:184
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:167
+#: modules/social-sharing/module.php:185
 msgctxt "Pinterest button label"
 msgid "Pin this"
+msgstr ""
+
+#: modules/social-sharing/module.php:190
+msgid "Save to Pocket"
+msgstr ""
+
+#: modules/social-sharing/module.php:191
+msgctxt "Pocket button label"
+msgid "Save this"
+msgstr ""
+
+#: modules/social-sharing/module.php:196
+msgid "Save to Wallabag"
+msgstr ""
+
+#: modules/social-sharing/module.php:197
+msgctxt "Wallabag button label"
+msgid "Save this"
+msgstr ""
+
+#: modules/social-sharing/module.php:202
+msgid "Save to Instapaper"
+msgstr ""
+
+#: modules/social-sharing/module.php:203
+msgctxt "Instapaper button label"
+msgid "Save this"
+msgstr ""
+
+#: modules/social-sharing/module.php:208
+msgid "Share on Reddit"
+msgstr ""
+
+#: modules/social-sharing/module.php:209
+msgctxt "Reddit button label"
+msgid "Share this"
+msgstr ""
+
+#: modules/social-sharing/module.php:214
+msgid "Share on Tumblr"
+msgstr ""
+
+#: modules/social-sharing/module.php:215
+msgctxt "Tumblr button label"
+msgid "Share this"
+msgstr ""
+
+#: modules/social-sharing/module.php:220
+msgid "Share on HackerNews"
+msgstr ""
+
+#: modules/social-sharing/module.php:221
+msgctxt "HackerNews button label"
+msgid "Share this"
+msgstr ""
+
+#: modules/social-sharing/module.php:226
+msgid "Share on Evernote"
+msgstr ""
+
+#: modules/social-sharing/module.php:227
+msgctxt "Evernote button label"
+msgid "Share this"
+msgstr ""
+
+#: modules/social-sharing/module.php:232
+msgid "Share on Flipboard"
+msgstr ""
+
+#: modules/social-sharing/module.php:233
+msgctxt "Flipboard button label"
+msgid "Share this"
+msgstr ""
+
+#: modules/social-sharing/module.php:238
+msgid "Send via Email"
+msgstr ""
+
+#: modules/social-sharing/module.php:239
+msgctxt "Email button label"
+msgid "Send this"
+msgstr ""
+
+#: modules/social-sharing/settings.php:27
+msgid "Social Sharing"
+msgstr ""
+
+#: modules/social-sharing/settings.php:33
+msgid "Buttons"
+msgstr ""
+
+#: modules/social-sharing/settings.php:69
+msgid "Note: To hide all social buttons disable the module in the module settings."
+msgstr ""
+
+#. translators: %1$s is awarded rating score, %2$s is the best possible rating.
+#: modules/star-rating/module-render.php:22
+msgid "Rating %1$s out of %2$s"
+msgstr ""
+
+#: modules/star-rating/module-render.php:40
+msgid "Search for content with this rating."
 msgstr ""
 
 #: modules/stats/module.php:111

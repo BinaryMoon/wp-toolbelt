@@ -15,6 +15,7 @@ if ( is_admin() ) {
  * Add social sharing buttons to the post content.
  *
  * @param string $content The post content to append the sharing option to.
+ *
  * @return string The post content with the sharing options appended.
  */
 function toolbelt_social_sharing( $content ) {
@@ -105,14 +106,24 @@ function toolbelt_social_sharing( $content ) {
 
 	foreach ( $networks as $slug => $network ) {
 
-		$url = sprintf( $network['url'], rawurlencode( $canonical ) );
+		$url  = sprintf( $network['url'], rawurlencode( $canonical ) );
+
+		// Load icon.
+		$svg = file_get_contents( TOOLBELT_PATH . 'svg/' . $slug . '.svg' );
+
+		if ( $svg ) {
+			$svg = str_replace( '<svg', '<svg aria-hidden="true" role="img"', $svg );
+		}
+
+		// Generate HTML.
 		$html .= sprintf(
-			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank">%4$s %5$s</a>' . "\n",
+			'<a href="%1$s" title="%2$s" class="%3$s" target="_blank" rel="nofollow" style="background-color:#%6$s">%4$s <span>%5$s</span></a>' . "\n",
 			esc_url( $url ),
 			esc_attr( $network['title'] ),
 			'toolbelt_' . esc_attr( $slug ),
-			file_get_contents( TOOLBELT_PATH . 'svg/' . $slug . '.svg' ),
-			esc_html( $network['label'] )
+			$svg,
+			esc_html( $network['label'] ),
+			esc_attr( $network['color'] )
 		);
 
 	}
@@ -125,27 +136,32 @@ add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
 
 
 /**
- * Get a list of social networks and their sharing links.
+ * Get the list of social networks and their properties.
+ *
+ * @see https://github.com/bradvin/social-share-urls
  *
  * @return array<mixed>
  */
-function toolbelt_social_networks() {
+function toolbelt_social_networks_get() {
 
-	$networks = array(
-		'facebook' => array(
+	return array(
+		'facebook'  => array(
 			'title' => esc_html__( 'Share on Facebook', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'Facebook button label', 'wp-toolbelt' ),
-			'url' => 'https://facebook.com/sharer/sharer.php?u=%s',
+			'url'   => 'https://facebook.com/sharer/sharer.php?u=%s',
+			'color' => '3b5998',
 		),
-		'twitter' => array(
+		'twitter'   => array(
 			'title' => esc_html__( 'Tweet on Twitter', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Tweet this', 'Twitter button label', 'wp-toolbelt' ),
-			'url' => 'https://twitter.com/intent/tweet?url=%s',
+			'url'   => 'https://twitter.com/intent/tweet?url=%s',
+			'color' => '1da1f2',
 		),
-		'linkedin' => array(
+		'linkedin'  => array(
 			'title' => esc_html__( 'Share on LinkedIn', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'LinkedIn button label', 'wp-toolbelt' ),
-			'url' => 'https://www.linkedin.com/shareArticle?mini=true&url=%s',
+			'url'   => 'https://www.linkedin.com/shareArticle?mini=true&url=%s',
+			'color' => '0077b5',
 		),
 		/**
 		 * Share Whatsapp
@@ -157,18 +173,131 @@ function toolbelt_social_networks() {
 		 * The docs can be seen here:
 		 * https://faq.whatsapp.com/en/android/26000030/
 		 */
-		'whatsapp' => array(
+		'whatsapp'  => array(
 			'title' => esc_html__( 'Share on WhatsApp', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Share this', 'WhatsApp button label', 'wp-toolbelt' ),
-			'url' => 'https://api.whatsapp.com/send?text=%s',
+			'url'   => 'https://api.whatsapp.com/send?text=%s',
+			'note'  => esc_html__( 'Only shown on mobile', 'wp-toolbelt' ),
+			'color' => '075e54',
 		),
 		'pinterest' => array(
 			'title' => esc_html__( 'Pin on Pinterest', 'wp-toolbelt' ),
 			'label' => esc_html_x( 'Pin this', 'Pinterest button label', 'wp-toolbelt' ),
-			'url' => 'https://pinterest.com/pin/create/button/?url=%s',
+			'url'   => 'https://pinterest.com/pin/create/button/?url=%s',
+			'color' => 'bd081c',
 		),
+		'pocket'    => array(
+			'title' => esc_html__( 'Save to Pocket', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Save this', 'Pocket button label', 'wp-toolbelt' ),
+			'url'   => 'https://getpocket.com/save?url=%s',
+			'color' => 'ef4056',
+		),
+		'wallabag'  => array(
+			'title' => esc_html__( 'Save to Wallabag', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Save this', 'Wallabag button label', 'wp-toolbelt' ),
+			'url'   => 'https://app.wallabag.it/bookmarklet?url=%s',
+			'color' => '26a69a',
+		),
+		'instapaper' => array(
+			'title' => esc_html__( 'Save to Instapaper', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Save this', 'Instapaper button label', 'wp-toolbelt' ),
+			'url'   => 'http://www.instapaper.com/edit?url=%s',
+			'color' => '000000',
+		),
+		'reddit'    => array(
+			'title' => esc_html__( 'Share on Reddit', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Reddit button label', 'wp-toolbelt' ),
+			'url'   => 'https://reddit.com/submit?url=%s',
+			'color' => 'ff4500',
+		),
+		'tumblr' => array(
+			'title' => esc_html__( 'Share on Tumblr', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Tumblr button label', 'wp-toolbelt' ),
+			'url'   => 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=%s',
+			'color' => '35465c',
+		),
+		'hackernews' => array(
+			'title' => esc_html__( 'Share on HackerNews', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'HackerNews button label', 'wp-toolbelt' ),
+			'url'   => 'https://news.ycombinator.com/submitlink?u=%s',
+			'color' => 'ff4000',
+		),
+		'evernote' => array(
+			'title' => esc_html__( 'Share on Evernote', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Evernote button label', 'wp-toolbelt' ),
+			'url'   => 'https://www.evernote.com/clip.action?url=%s',
+			'color' => '2dbe60',
+		),
+		'flipboard' => array(
+			'title' => esc_html__( 'Share on Flipboard', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Share this', 'Flipboard button label', 'wp-toolbelt' ),
+			'url'   => 'https://share.flipboard.com/bookmarklet/popout?v=2&url=%s',
+			'color' => 'e12828',
+		),
+		'email'     => array(
+			'title' => esc_html__( 'Send via Email', 'wp-toolbelt' ),
+			'label' => esc_html_x( 'Send this', 'Email button label', 'wp-toolbelt' ),
+			'url'   => ' mailto:somebody@example.com?body=%s',
+			'color' => '483d8b',
+		),
+
 	);
 
-	return $networks;
+}
+
+
+/**
+ * Get a list of social networks and their sharing links.
+ *
+ * @return array<mixed>
+ */
+function toolbelt_social_networks() {
+
+	// Get the plugin settings.
+	$settings = get_option( 'toolbelt_settings', array() );
+
+	// Turn the list of networks into an array.
+	$enabled_networks = explode( '|', $settings['social-sharing'] );
+
+	$desired_networks = apply_filters( 'toolbelt_social_networks', $enabled_networks );
+
+	$networks = toolbelt_social_networks_get();
+
+	$output = array();
+
+	foreach ( $desired_networks as $item ) {
+		if ( array_key_exists( $item, $networks ) ) {
+			$output[ $item ] = $networks[ $item ];
+		}
+	}
+
+	return $output;
 
 }
+
+
+/**
+ * Set default social sharing options.
+ *
+ * @param array<mixed> $value The default settings option.
+ * @return array<mixed>
+ */
+function toolbelt_social_sharing_default_settings( $value ) {
+
+	if ( ! isset( $value['social-sharing'] ) ) {
+		$value['social-sharing'] = implode(
+			'|',
+			array(
+				'facebook',
+				'twitter',
+				'email',
+			)
+		);
+	}
+
+	return $value;
+
+}
+
+add_filter( 'option_toolbelt_settings', 'toolbelt_social_sharing_default_settings' );
+
