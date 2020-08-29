@@ -5,10 +5,8 @@
  * @package toolbelt
  */
 
-
-
 /**
- * Register a Portfolio block.
+ * Register a Star Rating block.
  *
  * @return void
  */
@@ -35,51 +33,33 @@ function toolbelt_star_rating_register_block() {
 		true
 	);
 
-	/**
-	 * Only generate the classes in the admin. Technically we only need it on
-	 * the post edit page.
-	 */
-	if ( is_admin() ) {
-
-		wp_add_inline_script(
-			$block_name,
-			'var toolbelt_portfolio_categories = ' . toolbelt_portfolio_type_list() . ';',
-			'before'
-		);
-
-	}
-
 	register_block_type(
-		'toolbelt/portfolio',
+		'toolbelt/star-rating',
 		array(
-			'editor_script' => 'toolbelt-portfolio-block',
-			'render_callback' => 'toolbelt_portfolio_shortcode',
+			'render_callback' => 'toolbelt_star_rating_render_block',
+			'editor_script' => 'toolbelt-star-rating',
 			'attributes' => array(
-				'rows' => array(
-					'default' => 2,
-					'type' => 'int',
+				'rating'      => array(
+					'type'    => 'number',
+					'default' => 1,
 				),
-				'columns' => array(
-					'default' => 2,
-					'type' => 'int',
+				'maxRating'   => array(
+					'type'    => 'number',
+					'default' => 5,
 				),
-				'orderby' => array(
-					'default' => 'date',
-					'enum' => array( 'date', 'rand' ),
+				'color'       => array(
 					'type' => 'string',
 				),
-				'align' => array(
-					'default' => '',
-					'enum' => array( '', 'wide', 'full' ),
+				'ratingStyle' => array(
+					'type'    => 'string',
+					'default' => 'star',
+				),
+				'className'   => array(
 					'type' => 'string',
 				),
-				'categories' => array(
-					'default' => array(),
-					'type' => 'string',
-				),
-				'showExcerpt' => array(
-					'default' => true,
-					'type' => 'boolean',
+				'align'       => array(
+					'type'    => 'string',
+					'default' => 'left',
 				),
 			),
 		)
@@ -92,3 +72,49 @@ function toolbelt_star_rating_register_block() {
  * after since it tries to load the post taxonomies.
  */
 add_action( 'init', 'toolbelt_star_rating_register_block', 12 );
+
+
+/**
+ * Include the Star Rating form editor styles.
+ *
+ * @return void
+ */
+function toolbelt_star_rating_editor_styles() {
+
+	toolbelt_styles_editor( 'star-rating' );
+
+}
+
+add_action( 'admin_head', 'toolbelt_star_rating_editor_styles' );
+
+
+/**
+ * Include the star rating styles if the current post uses the star rating block.
+ *
+ * @return void
+ */
+function toolbelt_star_rating_styles() {
+
+	global $post;
+
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	if ( has_block( 'toolbelt/star-rating' ) ) {
+		toolbelt_styles( 'star-rating' );
+	}
+
+}
+
+add_action( 'wp_print_styles', 'toolbelt_star_rating_styles' );
+
+
+/**
+ * Include the ratings renderer on the frontend only.
+ * On the backend we use JS to render the stars.
+ */
+if ( ! is_admin() ) {
+	require 'module-render.php';
+}
+

@@ -1,0 +1,30 @@
+@mixin star-properties() {
+
+	margin-right: calc( var( --toolbelt-spacing) / 4 );
+
+	.is-rating-unfilled {
+
+		fill-opacity: 0.33;
+
+	}
+
+	svg {
+
+		max-width: none;
+
+	}
+
+	span {
+
+		width: 12px;
+		overflow: hidden;
+
+		&:nth-child(2) svg {
+
+			margin-inline-start: -12px;
+
+		}
+
+	}
+
+}
