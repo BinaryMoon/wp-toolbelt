@@ -31,12 +31,13 @@ function toolbelt_star_rating_render_block( $attributes ) {
 	);
 
 	return sprintf(
-		'<a href="%5$s" class="%1$s" style="text-align:%4$s" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">%2$s%3$s</a>',
+		'<a href="%5$s" title="%6$s" class="%1$s" style="text-align:%4$s" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">%2$s%3$s</a>',
 		esc_attr( 'wp-block-toolbelt-star-rating ' . $classname ),
 		toolbelt_star_rating_get_symbols( $attributes ),
 		$rating_value,
 		( isset( $attributes['align'] ) ) ? esc_attr( $attributes['align'] ) : '',
-		esc_url( site_url( '/?s=' . rawurlencode( $rating_text ) ) )
+		esc_url( site_url( '/?s=' . rawurlencode( $rating_text ) ) ),
+		esc_attr__( 'Search for content with this rating.', 'wp-toolbelt' )
 	);
 
 }
