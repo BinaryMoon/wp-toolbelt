@@ -24,16 +24,6 @@ function process_styles( path = './modules/*/src/sass/**/*.scss', basename = 'st
 
 	return src( path )
 		.pipe(
-			rename(
-				path => {
-					path.dirname = path.dirname.replace( 'src/sass', '' );
-					path.dirname = path.dirname.replace( 'src/block', '' );
-					path.basename = basename;
-					path.extname = '.min.css';
-				}
-			)
-		)
-		.pipe(
 			sass( sass_properties ).on( 'error', sass.logError )
 		)
 		.pipe(
@@ -46,6 +36,16 @@ function process_styles( path = './modules/*/src/sass/**/*.scss', basename = 'st
 		)
 		.pipe(
 			cleancss( { level: 2 } )
+		)
+		.pipe(
+			rename(
+				path => {
+					path.dirname = path.dirname.replace( 'src/sass', '' );
+					path.dirname = path.dirname.replace( 'src/block', '' );
+					path.basename = basename;
+					path.extname = '.min.css';
+				}
+			)
 		)
 		.pipe( dest( './modules' ) )
 		.pipe( size() );

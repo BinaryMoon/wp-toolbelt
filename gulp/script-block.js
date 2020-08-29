@@ -7,6 +7,7 @@ const uglify = require( 'gulp-uglify' );
 const size = require( 'gulp-filesize' );
 const babel = require( 'gulp-babel' );
 const include = require( 'gulp-include' );
+const plumber = require( 'gulp-plumber' );
 
 
 function process_scripts() {
@@ -15,6 +16,7 @@ function process_scripts() {
 	const source = './modules/**/src/block/block.js';
 
 	return src( source )
+		.pipe( plumber() )
 		.pipe(
 			include(
 				{

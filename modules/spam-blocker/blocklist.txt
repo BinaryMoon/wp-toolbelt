@@ -1210,6 +1210,9 @@ _zapat
 -sigarety-
 -sigarety.
 -sigarety/
+-signbook-
+-signbook.
+-signbook/
 -sims-3.
 -sims-3/
 -skque-
@@ -1472,6 +1475,7 @@ _zapat
 ?p-
 ?p=404
 ?pandora
+?popup
 ?prada
 ?ray
 ?scarpe
@@ -1487,8 +1491,6 @@ _zapat
 ?twid
 ?u_
 ?u-
-?utm_source=
-?utm_term=
 ?youtube
 . ?i
 .-0
@@ -2223,6 +2225,9 @@ _zapat
 .show-score-
 .show-score.
 .show-score/
+.signbook-
+.signbook.
+.signbook/
 .simpsite.
 .sirenos.in
 .skque-
@@ -2630,6 +2635,7 @@ _zapat
 /300-500.
 /400-500.
 /a-
+/a&gt
 /a#
 /abc-
 /abc.
@@ -3904,6 +3910,9 @@ _zapat
 /sigareta.
 /sigarety-
 /sigarety.
+/signbook-
+/signbook.
+/signbook/
 /sims-3.
 /sinsaku
 /site/
@@ -7009,7 +7018,9 @@ audio song
 audio-song
 auf dem markt
 auf dich ->
+auf meinem news
 auf-dem-markt
+auf-meinem-news
 aufsatz hilfe
 aufsatz-hilfe
 aufsatzhilfe
@@ -8223,6 +8234,7 @@ bitcoin buy
 bitcoin casino
 bitcoin cassino
 bitcoin code
+bitcoin crypto
 bitcoin declin
 bitcoin depos
 bitcoin donat
@@ -8243,6 +8255,7 @@ bitcoin-buy
 bitcoin-casino
 bitcoin-cassino
 bitcoin-code
+bitcoin-crypto
 bitcoin-declin
 bitcoin-depos
 bitcoin-donat
@@ -8260,6 +8273,7 @@ bitcoinadd
 bitcoinbuy
 bitcoincas
 bitcoincode
+bitcoincrypto
 bitcoindeclin
 bitcoindepos
 bitcoindonat
@@ -8444,6 +8458,7 @@ blog writer
 blog you write
 blog zaslu
 blog zasłu
+blog_comente
 blog-0
 blog-1
 blog-2
@@ -8454,6 +8469,7 @@ blog-blog
 blog-center
 blog-centre
 blog-coin
+blog-comente
 blog-de-forma
 blog-diaria
 blog-diária
@@ -8587,6 +8603,7 @@ blogrtui.ru
 blogs article
 blogs like every
 blogs on the web
+blogs online
 blogs post
 blogs service
 blogs to read
@@ -9424,9 +9441,11 @@ busienss
 business catalyst
 business collect
 business empire
+business formation
 business know
 business online world
 business seo
+business setup
 business train
 business-a2review
 business-boss
@@ -9436,6 +9455,7 @@ business-daily
 business-empire
 business-finder
 business-first
+business-formation
 business-in
 business-intel
 business-know
@@ -9445,6 +9465,7 @@ business-net
 business-network
 business-profile
 business-seo
+business-setup
 business-train
 business’ status
 business’s status
@@ -11838,6 +11859,8 @@ collection-moncler
 collectionceline
 collectioneffort
 collectionmoncler
+collections-shops
+collections-supply
 collegasintekst
 college persuasive
 college-essays
@@ -12037,9 +12060,11 @@ como-trabalhar
 como-utilizar
 companies-a2review
 company coach
+company formation
 company ppc
 company-a2review
 company-coach
+company-formation
 company-ppc
 companycoach
 comparable preceding
@@ -12576,6 +12601,9 @@ crush-hack
 crushcandy
 crushhack
 cryp.trade
+crypto + bitcoin
+crypto + btc
+crypto + forex
 crypto btc
 crypto curren
 crypto hack
@@ -14190,6 +14218,7 @@ egypt-jers
 egyptjers
 ehttp
 eight %
+eine seite widmen
 einkommen
 ejaculate help
 ejaculate pharm
@@ -14357,6 +14386,9 @@ energeticpost
 energy net advert
 energy-net-advert
 eneugh
+enfejar game
+enfejar-game
+enfejargame
 eng private
 eng-faq
 eng-index
@@ -16075,6 +16107,7 @@ flirt fever
 flirt-fever
 flirtfever
 flixya
+flo-wiki
 floating-board
 floatingboard
 floridaflee
@@ -16786,6 +16819,8 @@ frozencloth
 frozendress
 frozenheart
 fruitful design
+fruitful in favor
+fruitful in favour
 fruitful-design
 fruta planta
 frutaplanta
@@ -17116,6 +17151,10 @@ garena-free
 garenafree
 garlic health
 garlic-health
+garota de goias
+garota de goiás
+garotas de goias
+garotas de goiás
 gas boiler replace
 gas-boiler-replace
 gasboilerreplace
@@ -17995,6 +18034,7 @@ gotcu-ibne
 gotowkowa
 gotowkowe
 gotten the therap
+gotten very good thing
 gowatchs
 gown love
 gown online
@@ -18095,6 +18135,7 @@ great arguments, exact
 great arguments, great
 great arguments. exact
 great arguments. great
+great article and
 great article continue
 great article exact
 great article great
@@ -18105,6 +18146,7 @@ great article, great
 great article, stick
 great article. exact
 great article. great
+great blog and
 great blog continue
 great blog exact
 great blog great
@@ -18127,6 +18169,7 @@ great homepage
 great keep
 great online
 great operates
+great page and
 great page continue
 great page you
 great page, continue
@@ -18137,6 +18180,7 @@ great publish
 great read:
 great read!
 great sex party
+great site and
 great site continue
 great site keep
 great site stick
@@ -18152,6 +18196,7 @@ great web page
 great web site
 great weblog
 great webpage
+great website and
 great website continue
 great website exact
 great website great
@@ -19749,6 +19794,8 @@ hо
 i aam
 i aint
 i blog often
+i bookmark and
+i bookmarked and
 i conceive you
 i dugg
 i eally
@@ -19770,14 +19817,20 @@ i.g.o.r
 i.g.or
 i.go.r
 i''ll
+i'd bookmark and
 i'd care to find
 i'd hump to
+i'll bookmark and
+i'm bookmarking and
 i'm will soon
 i'mnot
 i'v got
 i’’ll
+i’d bookmark and
 i’d care to find
 i’d hump to
+i’ll bookmark and
+i’m bookmarking and
 i’m will soon
 i’mnot
 i’v got
@@ -21898,6 +21951,7 @@ krossoverov
 ku42.
 kugelbahn
 kult und genuss
+kulturtasche habe
 kunjungi kami
 kunjungi web
 kunjungi-kami
@@ -23333,6 +23387,7 @@ main.jsp
 main.php
 main/main
 mainlongchamp
+mainostoimisto hinta
 mains lancel
 mains-lancel
 mains.asp
@@ -24114,8 +24169,11 @@ mejores-booster
 melatonin
 melhor preco
 melhor preço
+melhor servico
+melhor serviço
 melhor-preco
 melhor-preço
+melhor-servico
 melhores metodos
 melhores métodos
 melhores-metodos
@@ -24979,6 +25037,7 @@ mortgage.php
 mortgagecalc
 most competitively
 most high-need
+most useful site
 most well-liked
 most-competitively
 mostaffordable
@@ -26008,6 +26067,12 @@ niña modelo
 nina-modelo
 ninamodelo
 nine %
+ninfa gyn
+ninfa-gyn
+ninfagyn
+ninfas gyn
+ninfas-gyn
+ninfasgyn
 ninfetas
 ninja sword
 ninja-sword
@@ -26826,6 +26891,7 @@ onlineshop
 onlinestore
 onlinezapatilla
 onlpy
+only + free
 only poker
 only pokie
 only use internet
@@ -26863,6 +26929,7 @@ ooobag
 ooobrand
 ooowatch
 openair
+openning
 operated respir
 operated-respir
 operationms
@@ -32476,6 +32543,7 @@ shoppingharmony
 shoppingonline
 shoppingsite
 shoppingugg
+shops-collections
 shopshoe
 shopthai
 shoptoyou
@@ -32745,6 +32813,7 @@ siteoffic
 sites and blogs
 sites luke
 sites on the internet
+sites online
 sites really nice
 sites-and-blogs
 sites24
@@ -36619,6 +36688,8 @@ utilize warranty
 utilize-portal
 utilized use
 utilized-use
+utm_source
+utm_term
 utorrent
 uugg
 uuse
@@ -39197,11 +39268,14 @@ yo.u.r
 yodick
 yoga for beginner
 yoga gypsy
+yoga kissen
 yoga out
 yoga-for-beginner
 yoga-gypsy
+yoga-kissen
 yoga-out
 yogagypsy
+yogakissen
 yogaout
 yoigucci
 yokur blog
@@ -40763,6 +40837,7 @@ zyvox
 اتش دى فيلم
 اثر انگشت
 اثرانگشت
+از وبلاگ
 افضل شركه
 اقل اسعار
 ال جى
@@ -40773,6 +40848,7 @@ zyvox
 العقاري
 القضيب
 ايفون مجانية
+بازی انفجار
 بهاء و کيفيت
 بهاء-و-کيفيت
 بهترین
@@ -40826,6 +40902,7 @@ zyvox
 موقع سنارة
 موقع سناره
 نجار بالدما
+وبلاگ نویسان
 وظائف
 ߋ
 ขาย

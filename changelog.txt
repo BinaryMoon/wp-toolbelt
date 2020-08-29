@@ -1,3 +1,11 @@
+= 2.7 - 20th August 2020 =
+* Add custom avatars as a Gravatar replacement.
+* Address CSP issues and re-enable the module.
+* Update Infinite Scroll so that it has it's own theme support feature 'toolbelt-infinite-scroll'. Can still use 'infinite-scroll' as used in Jetpack.
+* Update Infinite Scroll to focus first loaded article after new page of content loads (improves accessibility).
+* Simplify social menu icon css.
+* Minor bug fixes.
+
 = 2.6.1 - 27th July 2020 =
 * Disable CSP - it's not ready for prime time yet.
 

@@ -1,0 +1,26 @@
+@import '../sass/_shared';
+
+// Editor styles
+.wp-block-toolbelt-star-rating {
+
+	margin-bottom: var( --toolbelt-spacing );
+	line-height: 0;
+	stroke-width: 0;
+
+	.toolbelt-ratings-button {
+
+		display: inline-flex;
+
+		&:focus {
+
+			box-shadow: 0 0 0 1px currentColor;
+			// Provide focus style for Windows 10 High Contrast mode.
+			outline: 2px solid transparent;
+
+		}
+
+		@include star-properties();
+
+	}
+
+}

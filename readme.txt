@@ -133,12 +133,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 2.7 - 20th August 2020 =
-* Add custom avatars as a Gravatar replacement.
-* Address CSP issues and re-enable the module.
-* Update Infinite Scroll so that it has it's own theme support feature 'toolbelt-infinite-scroll'. Can still use 'infinite-scroll' as used in Jetpack.
-* Update Infinite Scroll to focus first loaded article after new page of content loads (improves accessibility).
-* Simplify social menu icon css.
-* Minor bug fixes.
+= 2.8 - 30th August 2020 =
+* Add Star Rating block.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
