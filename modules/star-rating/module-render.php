@@ -100,16 +100,17 @@ function toolbelt_star_rating_get_symbol_high_fidelity( $attributes, $pos ) {
  * Returns an itemprop and content for rating symbols
  *
  * @param integer $position The position of the symbol.
- * @param string  $max_rating The maximum symbol score.
+ * @param integer $max_rating The maximum symbol score.
  * @return string
  */
 function toolbelt_star_rating_get_schema_for_symbol( $position, $max_rating ) {
 
 	$schema = '';
+
 	if ( 1 === $position ) {
 		$schema = 'itemprop="worstRating" content="0.5"';
 	} elseif ( $max_rating === $position ) {
-		$schema = 'itemprop="bestRating" content="' . esc_attr( $max_rating ) . '"';
+		$schema = 'itemprop="bestRating" content="' . esc_attr( (string) $max_rating ) . '"';
 	}
 
 	return $schema;
@@ -120,7 +121,7 @@ function toolbelt_star_rating_get_schema_for_symbol( $position, $max_rating ) {
 /**
  * Returns the symbol for the block.
  *
- * @param array<string> $attributes Array containing the block attributes.
+ * @param array<string|int> $attributes Array containing the block attributes.
  * @return string
  */
 function toolbelt_star_rating_get_symbols( $attributes ) {
@@ -133,7 +134,7 @@ function toolbelt_star_rating_get_symbols( $attributes ) {
 	for ( $pos = 1; $pos <= $attributes['maxRating']; $pos++ ) {
 		$symbols_hifi[] = sprintf(
 			'<span style="display: none;" %1$s>%2$s</span>',
-			toolbelt_star_rating_get_schema_for_symbol( $pos, $attributes['maxRating'] ),
+			toolbelt_star_rating_get_schema_for_symbol( $pos, (int) $attributes['maxRating'] ),
 			toolbelt_star_rating_get_symbol_high_fidelity( $attributes, $pos )
 		);
 	}
