@@ -261,39 +261,47 @@ msgstr ""
 msgid "0.3kb of inline JS"
 msgstr ""
 
-#: index.php:270, modules/stats/settings.php:40
-msgid "Stats"
+#: index.php:270
+msgid "Star Ratings"
 msgstr ""
 
 #: index.php:271
+msgid "Rate movies, books, videos, difficulty, whatever."
+msgstr ""
+
+#: index.php:275, modules/stats/settings.php:40
+msgid "Stats"
+msgstr ""
+
+#: index.php:276
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:276, modules/testimonials/module.php:46
+#: index.php:281, modules/testimonials/module.php:46
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:277
+#: index.php:282
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:279
+#: index.php:284
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:283
+#: index.php:288
 msgid "Typographic Widows"
 msgstr ""
 
-#: index.php:284
+#: index.php:289
 msgid "Fix typographic widows in titles and headings."
 msgstr ""
 
-#: index.php:288
+#: index.php:293
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:289
+#: index.php:294
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -1018,6 +1026,15 @@ msgstr ""
 
 #: modules/social-sharing/settings.php:69
 msgid "Note: To hide all social buttons disable the module in the module settings."
+msgstr ""
+
+#. translators: %1$s is awarded rating score, %2$s is the best possible rating.
+#: modules/star-rating/module-render.php:22
+msgid "Rating %1$s out of %2$s"
+msgstr ""
+
+#: modules/star-rating/module-render.php:40
+msgid "Search for content with this rating."
 msgstr ""
 
 #: modules/stats/module.php:111
