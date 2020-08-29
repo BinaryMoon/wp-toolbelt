@@ -89,7 +89,10 @@ function toolbelt_star_rating_get_symbol_high_fidelity( $attributes, $pos ) {
 	$classname_whole = ( $attributes['rating'] >= ( $pos - 0.5 ) ) ? '' : 'is-rating-unfilled';
 	$classname_half = ( $attributes['rating'] >= $pos ) ? '' : 'is-rating-unfilled';
 
-	$color = empty( $attributes['color'] ) ? 'currentColor' : esc_attr( $attributes['color'] );
+	$color = 'currentColor';
+	if ( ! empty( $attributes['color'] ) ) {
+		$color = esc_attr( (string) $attributes['color'] );
+	}
 
 	return toolbelt_star_rating_star_get_symbol_high_fidelity( $classname_whole, $classname_half, $color );
 
