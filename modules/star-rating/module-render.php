@@ -80,8 +80,8 @@ ELO;
 /**
  * Returns the high fidelity symbol for the block.
  *
- * @param array<string> $attributes Array containing the block attributes.
- * @param integer       $pos Value to render whole and half symbols.
+ * @param array<int|string> $attributes Array containing the block attributes.
+ * @param integer           $pos Value to render whole and half symbols.
  * @return string
  */
 function toolbelt_star_rating_get_symbol_high_fidelity( $attributes, $pos ) {
