@@ -30,12 +30,6 @@ const gridEdit = function( props ) {
 			columns: 5,
 			icon: icons.fiveEqual
 		},
-		{
-			name: __( '6 Columns', 'toolbelt' ),
-			key: 'six-column',
-			columns: 6,
-			icon: icons.sixEqual
-		}
 	];
 
 	if ( !columns ) {

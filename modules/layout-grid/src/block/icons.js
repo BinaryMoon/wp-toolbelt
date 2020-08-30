@@ -193,26 +193,6 @@ const icons = {
 		</svg>
 	),
 
-	/* Five columns - 16/16/16/16/16. */
-	sixEqual: (
-		<svg
-			viewBox="0 0 60 30"
-			height="26"
-			xmlns="http://www.w3.org/2000/svg"
-			fillRule="evenodd"
-			clipRule="evenodd"
-			strokeLinejoin="round"
-			strokeMiterlimit="1.414"
-		>
-			<rect x="0" y="0" width="7" height="30" fill="#6d6a6f" />
-			<rect x="10.330" y="0" width="7" height="30" fill="#6d6a6f" />
-			<rect x="20.660" y="0" width="7" height="30" fill="#6d6a6f" />
-			<rect x="30.990" y="0" width="7" height="30" fill="#6d6a6f" />
-			<rect x="41.320" y="0" width="7" height="30" fill="#6d6a6f" />
-			<rect x="51.650" y="0" width="7" height="30" fill="#6d6a6f" />
-		</svg>
-	),
-
 	/* Block icon. */
 	blockIcon: (
 		<svg
