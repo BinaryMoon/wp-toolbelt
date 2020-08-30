@@ -179,10 +179,7 @@
       }
     }, range(1, rating + 1).map(function (position) {
       return createElement("span", {
-        key: position,
-        style: {
-          color: color
-        }
+        key: position
       }, fallbackSymbol);
     }), createElement("span", {
       "class": "screen-reader-text"
