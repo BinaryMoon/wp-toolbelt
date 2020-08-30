@@ -380,9 +380,10 @@ function toolbelt_styles( $module, $file = 'style' ) {
  * Load the block editor styles.
  *
  * @param string $module The module to load.
+ * @param string $file The file to load. Defaults to block.css.
  * @return void|null
  */
-function toolbelt_styles_editor( $module ) {
+function toolbelt_styles_editor( $module, $file = 'block' ) {
 
 	$screen = get_current_screen();
 
@@ -390,7 +391,7 @@ function toolbelt_styles_editor( $module ) {
 		return;
 	}
 
-	toolbelt_styles( $module, 'block' );
+	toolbelt_styles( $module, $file );
 
 }
 
