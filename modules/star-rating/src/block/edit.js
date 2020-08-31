@@ -23,7 +23,14 @@ const edit = ( props ) => {
 
 	const { className, setAttributes, attributes: { align, color, rating, maxRating } } = props;
 
-	const setNewMaxRating = newMaxRating => setAttributes( { maxRating: newMaxRating } );
+	const setNewMaxRating = newMaxRating => {
+		setAttributes(
+			{
+				rating: Math.min( rating, newMaxRating ),
+				maxRating: newMaxRating
+			}
+		);
+	}
 
 	const setNewColor = newColor => setAttributes( { color: newColor } );
 

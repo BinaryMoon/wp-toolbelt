@@ -82,7 +82,8 @@
         maxRating = _props$attributes.maxRating;
 
     var setNewMaxRating = function setNewMaxRating(newMaxRating) {
-      return setAttributes({
+      setAttributes({
+        rating: Math.min(rating, newMaxRating),
         maxRating: newMaxRating
       });
     };
