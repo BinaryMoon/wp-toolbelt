@@ -1,16 +1,8 @@
 .wp-block-toolbelt-layout-grid {
 
-	> .block-editor-inner-blocks {
-
-		> .block-editor-block-list__layout {
-
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-gap: var( --toolbelt-spacing );
-
-		}
-
-	}
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: var( --toolbelt-spacing );
 
 	.wp-block-column {
 
@@ -28,7 +20,7 @@
 
 @mixin toolbelt-grid-columns( $columns, $layout, $design ) {
 
-	.toolbelt-grid-layout-#{$columns}-#{$layout} > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	.toolbelt-grid-layout-#{$columns}-#{$layout} {
 
 		grid-template-columns: $design;
 
@@ -53,33 +45,3 @@
 
 
 
-
-//
-.toolbelt-grid-buttongroup {
-
-	display: grid;
-	grid-gap: 8px;
-	grid-template-columns: 1fr 1fr 1fr;
-
-	.toolbelt-grid-button {
-
-		height: auto;
-		width: 100%;
-		padding: 8px;
-		text-align: center;
-
-		&.toolbelt-selected {
-
-			border: 1px solid currentColor;
-
-		}
-
-		svg {
-
-			margin: 0 auto;
-
-		}
-
-	}
-
-}

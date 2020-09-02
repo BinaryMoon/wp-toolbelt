@@ -13,15 +13,24 @@ const getColumnsTemplate = ( columns ) => {
 
 const getWrapperClass = ( props ) => {
 
-	const { columns, textColor, backgroundColor } = props.attributes;
+	const { columns, layout, textColor, backgroundColor } = props.attributes;
 
 	let className = [
 		'wp-block-toolbelt-layout-grid',
 	];
 
+	let grid_column = 2;
+	let grid_layout = 0;
+
 	if ( columns ) {
-		className.push( `toolbelt-grid-${columns}` );
+		grid_column = columns;
 	}
+
+	if ( layout ) {
+		grid_layout = layout;
+	}
+
+	className.push( `toolbelt-grid-layout-${grid_column}-${grid_layout}` );
 
 	if ( backgroundColor ) {
 		className.push( 'has-background' );

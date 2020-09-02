@@ -54,4 +54,22 @@ function toolbelt_layout_admin_styles() {
 add_action( 'admin_head', 'toolbelt_layout_admin_styles' );
 
 
+/**
+ * Add layout grid styles to header.
+ *
+ * @return void
+ */
+function toolbelt_layout_head() {
+
+	if ( ! is_single() ) {
+		return;
+	}
+
+	toolbelt_styles( 'layout-grid' );
+
+}
+
+add_filter( 'wp_head', 'toolbelt_layout_head' );
+
+
 toolbelt_register_block_category();

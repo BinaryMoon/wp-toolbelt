@@ -19,41 +19,37 @@ const gridInspector = ( props ) => {
 						className="toolbelt-column-select-panel"
 					>
 						<p>{__( 'Column Layout', 'wp-toolbelt' )}</p>
-						<ButtonGroup
-							aria-label={__( 'Column Layout', 'wp-toolbelt' )}
+
+						<div
+							className="toolbelt-grid-buttongroup"
 						>
 							{
 								layouts.map(
 									( { name, icon }, index ) => {
-
+										let class_name = 'toolbelt-grid-button';
+										if ( index === layout ) {
+											class_name += ' toolbelt-selected';
+										}
 										return (
-											<Tooltip
-												text={name}
+											<Button
 												key={'col' + index}
-											>
-												<Button
-													key={'col' + index}
-													className="toolbelt-grid-column-selector"
-													isSmall
-													onClick={
-														() => {
-															setAttributes( { layout: index } );
-															this.setState( { selectLayout: false } );
-														}
+												className={class_name}
+												isSmall
+												data-index={index}
+												onClick={
+													() => {
+														setAttributes( { layout: index } );
+														//this.setState( { selectLayout: false } );
 													}
-												>
-													{icon}
-												</Button>
-											</Tooltip>
+												}
+											>
+												{icon}
+											</Button>
 										);
-
 									}
 								)
 							}
-						</ButtonGroup>
-						<p className="description">
-							{__( 'Change the layout of your columns.', 'wp-toolbelt' )}
-						</p>
+						</div>
 					</PanelBody>
 				)
 			}

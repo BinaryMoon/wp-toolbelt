@@ -1,8 +1,6 @@
 "use strict";
 
 (function () {
-  var _this = this;
-
   var registerBlockType = wp.blocks.registerBlockType;
   var _wp$element = wp.element,
       createElement = _wp$element.createElement,
@@ -400,12 +398,15 @@
      * 2 column layouts.
      */
     2: [{
+      // 0.
       name: __('2 Columns - 50/50', 'wp-toolbelt'),
       icon: icons.twoEqual
     }, {
+      // 1.
       name: __('2 Columns - 75/25', 'wp-toolbelt'),
       icon: icons.twoLeftWide
     }, {
+      // 2.
       name: __('2 Columns - 25/75', 'wp-toolbelt'),
       icon: icons.twoRightWide
     }],
@@ -414,15 +415,19 @@
      * 3 column layouts.
      */
     3: [{
+      // 0.
       name: __('3 Columns - 33/33/33', 'wp-toolbelt'),
       icon: icons.threeEqual
     }, {
+      // 1.
       name: __('3 Columns - 25/50/25', 'wp-toolbelt'),
       icon: icons.threeWideCenter
     }, {
+      // 2.
       name: __('3 Columns - 50/25/25', 'wp-toolbelt'),
       icon: icons.threeWideLeft
     }, {
+      // 3.
       name: __('3 Columns - 25/25/50', 'wp-toolbelt'),
       icon: icons.threeWideRight
     }],
@@ -431,12 +436,15 @@
      * 4 column layouts.
      */
     4: [{
+      // 0.
       name: __('4 Columns - 25/25/25/25', 'wp-toolbelt'),
       icon: icons.fourEqual
     }, {
+      // 1.
       name: __('4 Columns - 40/20/20/20', 'wp-toolbelt'),
       icon: icons.fourLeft
     }, {
+      // 2.
       name: __('4 Columns - 20/20/20/40', 'wp-toolbelt'),
       icon: icons.fourRight
     }],
@@ -467,31 +475,29 @@
       title: __('General', 'wp-toolbelt'),
       initialOpen: true,
       className: "toolbelt-column-select-panel"
-    }, createElement("p", null, __('Column Layout', 'wp-toolbelt')), createElement(ButtonGroup, {
-      "aria-label": __('Column Layout', 'wp-toolbelt')
+    }, createElement("p", null, __('Column Layout', 'wp-toolbelt')), createElement("div", {
+      className: "toolbelt-grid-buttongroup"
     }, layouts.map(function (_ref, index) {
       var name = _ref.name,
           icon = _ref.icon;
-      return createElement(Tooltip, {
-        text: name,
-        key: 'col' + index
-      }, createElement(Button, {
+      var class_name = 'toolbelt-grid-button';
+
+      if (index === layout) {
+        class_name += ' toolbelt-selected';
+      }
+
+      return createElement(Button, {
         key: 'col' + index,
-        className: "toolbelt-grid-column-selector",
+        className: class_name,
         isSmall: true,
+        "data-index": index,
         onClick: function onClick() {
           setAttributes({
             layout: index
-          });
-
-          _this.setState({
-            selectLayout: false
-          });
+          }); //this.setState( { selectLayout: false } );
         }
-      }, icon));
-    })), createElement("p", {
-      className: "description"
-    }, __('Change the layout of your columns.', 'wp-toolbelt'))), createElement(PanelColorSettings, {
+      }, icon);
+    }))), createElement(PanelColorSettings, {
       title: __('Color Settings', 'wp-toolbelt'),
       initialOpen: false,
       colorSettings: [{
@@ -528,13 +534,22 @@
   var getWrapperClass = function getWrapperClass(props) {
     var _props$attributes = props.attributes,
         columns = _props$attributes.columns,
+        layout = _props$attributes.layout,
         textColor = _props$attributes.textColor,
         backgroundColor = _props$attributes.backgroundColor;
     var className = ['wp-block-toolbelt-layout-grid'];
+    var grid_column = 2;
+    var grid_layout = 0;
 
     if (columns) {
-      className.push("toolbelt-grid-".concat(columns));
+      grid_column = columns;
     }
+
+    if (layout) {
+      grid_layout = layout;
+    }
+
+    className.push("toolbelt-grid-layout-".concat(grid_column, "-").concat(grid_layout));
 
     if (backgroundColor) {
       className.push('has-background');
