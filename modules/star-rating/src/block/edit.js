@@ -33,8 +33,6 @@ const edit = ( props ) => {
 		);
 	}
 
-	const setNewColor = newColor => setAttributes( { color: newColor } );
-
 	const setNewRating = newRating => {
 
 		/**
@@ -99,7 +97,7 @@ const edit = ( props ) => {
 				colorSettings={[
 					{
 						value: color,
-						onChange: setNewColor,
+						onChange: ( newColor ) => setAttributes( { color: newColor } ),
 						label: __( 'Color', 'wp-toolbelt' ),
 					},
 				]}

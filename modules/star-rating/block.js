@@ -88,12 +88,6 @@
       });
     };
 
-    var setNewColor = function setNewColor(newColor) {
-      return setAttributes({
-        color: newColor
-      });
-    };
-
     var setNewRating = function setNewRating(newRating) {
       /**
        * If the same star is clicked more than once then we make it a half
@@ -152,7 +146,11 @@
       initialOpen: true,
       colorSettings: [{
         value: color,
-        onChange: setNewColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            color: newColor
+          });
+        },
         label: __('Color', 'wp-toolbelt')
       }]
     }))];
