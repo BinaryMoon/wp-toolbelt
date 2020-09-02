@@ -201,6 +201,11 @@ function toolbelt_get_modules() {
 			'weight' => esc_html__( '0.8kb of inline CSS and 1.3kb of inline JS.', 'wp-toolbelt' ),
 			'supports' => array( 'css-properties' ),
 		),
+		'layout-grid' => array(
+			'name' => esc_html__( 'Layout Grid', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Display content in carefully curated columns.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid',
+		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers.', 'wp-toolbelt' ),
@@ -375,9 +380,10 @@ function toolbelt_styles( $module, $file = 'style' ) {
  * Load the block editor styles.
  *
  * @param string $module The module to load.
+ * @param string $file The file to load. Defaults to block.css.
  * @return void|null
  */
-function toolbelt_styles_editor( $module ) {
+function toolbelt_styles_editor( $module, $file = 'block' ) {
 
 	$screen = get_current_screen();
 
@@ -385,7 +391,7 @@ function toolbelt_styles_editor( $module ) {
 		return;
 	}
 
-	toolbelt_styles( $module, 'block' );
+	toolbelt_styles( $module, $file );
 
 }
 

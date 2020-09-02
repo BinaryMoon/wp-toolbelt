@@ -16,11 +16,13 @@ const save = ( props ) => {
 
 	return (
 		<figure className={className} style={{ textAlign: align }}>
-			{range( 1, rating + 1 ).map( position => (
-				<span key={position} style={{ color }}>
-					{fallbackSymbol}
-				</span>
-			) )}
+			{range( 1, rating + 1 ).map(
+				position => (
+					<span key={position}>
+						{fallbackSymbol}
+					</span>
+				)
+			)}
 			<span class="screen-reader-text">{rating_text}</span>
 		</figure>
 	);

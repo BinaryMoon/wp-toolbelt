@@ -75,21 +75,16 @@
   var edit = function edit(props) {
     var className = props.className,
         setAttributes = props.setAttributes,
-        _props$attributes = props.attributes,
-        align = _props$attributes.align,
-        color = _props$attributes.color,
-        rating = _props$attributes.rating,
-        maxRating = _props$attributes.maxRating;
+        attributes = props.attributes;
+    var align = attributes.align,
+        color = attributes.color,
+        rating = attributes.rating,
+        maxRating = attributes.maxRating;
 
     var setNewMaxRating = function setNewMaxRating(newMaxRating) {
-      return setAttributes({
+      setAttributes({
+        rating: Math.min(rating, newMaxRating),
         maxRating: newMaxRating
-      });
-    };
-
-    var setNewColor = function setNewColor(newColor) {
-      return setAttributes({
-        color: newColor
       });
     };
 
@@ -146,15 +141,19 @@
       onChange: setNewMaxRating,
       min: 2,
       max: 10
-    }), createElement(PanelColorSettings, {
+    })), createElement(PanelColorSettings, {
       title: __('Color Settings', 'wp-toolbelt'),
       initialOpen: true,
       colorSettings: [{
         value: color,
-        onChange: setNewColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            color: newColor
+          });
+        },
         label: __('Color', 'wp-toolbelt')
       }]
-    })))];
+    }))];
   };
   /**
    * Save the data.
@@ -165,11 +164,11 @@
 
   var save = function save(props) {
     var className = props.className,
-        _props$attributes2 = props.attributes,
-        align = _props$attributes2.align,
-        rating = _props$attributes2.rating,
-        maxRating = _props$attributes2.maxRating,
-        color = _props$attributes2.color;
+        _props$attributes = props.attributes,
+        align = _props$attributes.align,
+        rating = _props$attributes.rating,
+        maxRating = _props$attributes.maxRating,
+        color = _props$attributes.color;
     var fallbackSymbol = '⭐';
     var rating_text = sprintf(__('Rating %d out of %d', 'wp-toolbelt'), rating, maxRating);
     return createElement("figure", {
@@ -179,10 +178,7 @@
       }
     }, range(1, rating + 1).map(function (position) {
       return createElement("span", {
-        key: position,
-        style: {
-          color: color
-        }
+        key: position
       }, fallbackSymbol);
     }), createElement("span", {
       "class": "screen-reader-text"

@@ -21,11 +21,17 @@ const Rating = ( { id, setRating, children } ) => {
 
 const edit = ( props ) => {
 
-	const { className, setAttributes, attributes: { align, color, rating, maxRating } } = props;
+	const { className, setAttributes, attributes } = props;
+	const { align, color, rating, maxRating } = attributes;
 
-	const setNewMaxRating = newMaxRating => setAttributes( { maxRating: newMaxRating } );
-
-	const setNewColor = newColor => setAttributes( { color: newColor } );
+	const setNewMaxRating = newMaxRating => {
+		setAttributes(
+			{
+				rating: Math.min( rating, newMaxRating ),
+				maxRating: newMaxRating
+			}
+		);
+	}
 
 	const setNewRating = newRating => {
 
@@ -74,7 +80,9 @@ const edit = ( props ) => {
 			) )}
 		</div>,
 		<InspectorControls>
-			<PanelBody title={__( 'Settings', 'wp-toolbelt' )}>
+			<PanelBody
+				title={__( 'Settings', 'wp-toolbelt' )}
+			>
 				<RangeControl
 					label={__( 'Highest rating', 'wp-toolbelt' )}
 					value={maxRating}
@@ -82,18 +90,18 @@ const edit = ( props ) => {
 					min={2}
 					max={10}
 				/>
-				<PanelColorSettings
-					title={__( 'Color Settings', 'wp-toolbelt' )}
-					initialOpen
-					colorSettings={[
-						{
-							value: color,
-							onChange: setNewColor,
-							label: __( 'Color', 'wp-toolbelt' ),
-						},
-					]}
-				/>
 			</PanelBody>
+			<PanelColorSettings
+				title={__( 'Color Settings', 'wp-toolbelt' )}
+				initialOpen
+				colorSettings={[
+					{
+						value: color,
+						onChange: ( newColor ) => setAttributes( { color: newColor } ),
+						label: __( 'Color', 'wp-toolbelt' ),
+					},
+				]}
+			/>
 		</InspectorControls>
 	];
 
