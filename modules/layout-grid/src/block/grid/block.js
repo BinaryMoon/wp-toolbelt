@@ -18,7 +18,13 @@ registerBlockType(
 			columns: {
 				type: 'int',
 			},
-			pattern: {
+			layout: {
+				type: 'int',
+			},
+			backgroundColor: {
+				type: 'string',
+			},
+			textColor: {
 				type: 'string',
 			},
 		},
@@ -27,12 +33,8 @@ registerBlockType(
 			align: [ 'full', 'wide' ],
 		},
 
-		save() {
-		},
+		save: gridSave,
 
-		/**
-		 * Edit the settings.
-		 */
 		edit: gridEdit,
 
 	}

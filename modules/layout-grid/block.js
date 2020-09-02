@@ -1,6 +1,8 @@
 "use strict";
 
 (function () {
+  var _this = this;
+
   var registerBlockType = wp.blocks.registerBlockType;
   var _wp$element = wp.element,
       createElement = _wp$element.createElement,
@@ -15,9 +17,19 @@
       Button = _wp$components.Button,
       Tooltip = _wp$components.Tooltip,
       Path = _wp$components.Path,
-      SVG = _wp$components.SVG;
+      SVG = _wp$components.SVG,
+      PanelBody = _wp$components.PanelBody,
+      RangeControl = _wp$components.RangeControl,
+      ToggleControl = _wp$components.ToggleControl,
+      SelectControl = _wp$components.SelectControl;
   var __ = wp.i18n.__;
-  var BlockIcon = wp.blockEditor.BlockIcon;
+  var _wp$blockEditor = wp.blockEditor,
+      BlockIcon = _wp$blockEditor.BlockIcon,
+      InnerBlocks = _wp$blockEditor.InnerBlocks,
+      InspectorControls = _wp$blockEditor.InspectorControls,
+      PanelColorSettings = _wp$blockEditor.PanelColorSettings,
+      ContrastChecker = _wp$blockEditor.ContrastChecker,
+      withColors = _wp$blockEditor.withColors;
   /**
    * Column layout icons.
    */
@@ -354,53 +366,6 @@
       fill: "#6d6a6f"
     })),
 
-    /* Five columns - 16/16/16/16/16. */
-    sixEqual: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
-      x: "0",
-      y: "0",
-      width: "7",
-      height: "30",
-      fill: "#6d6a6f"
-    }), createElement("rect", {
-      x: "10.330",
-      y: "0",
-      width: "7",
-      height: "30",
-      fill: "#6d6a6f"
-    }), createElement("rect", {
-      x: "20.660",
-      y: "0",
-      width: "7",
-      height: "30",
-      fill: "#6d6a6f"
-    }), createElement("rect", {
-      x: "30.990",
-      y: "0",
-      width: "7",
-      height: "30",
-      fill: "#6d6a6f"
-    }), createElement("rect", {
-      x: "41.320",
-      y: "0",
-      width: "7",
-      height: "30",
-      fill: "#6d6a6f"
-    }), createElement("rect", {
-      x: "51.650",
-      y: "0",
-      width: "7",
-      height: "30",
-      fill: "#6d6a6f"
-    })),
-
     /* Block icon. */
     blockIcon: createElement("svg", {
       viewBox: "0 0 60 34",
@@ -431,87 +396,166 @@
     }))
   };
   var columnLayouts = {
-    /* 2 column layouts. */
+    /**
+     * 2 column layouts.
+     */
     2: [{
-      name: __('2 Columns - 50/50', 'atomic-blocks'),
-      key: 'ab-2-col-equal',
-      col: 2,
+      name: __('2 Columns - 50/50', 'wp-toolbelt'),
       icon: icons.twoEqual
     }, {
-      name: __('2 Columns - 75/25', 'atomic-blocks'),
-      key: 'ab-2-col-wideleft',
-      col: 2,
+      name: __('2 Columns - 75/25', 'wp-toolbelt'),
       icon: icons.twoLeftWide
     }, {
-      name: __('2 Columns - 25/75', 'atomic-blocks'),
-      key: 'ab-2-col-wideright',
-      col: 2,
+      name: __('2 Columns - 25/75', 'wp-toolbelt'),
       icon: icons.twoRightWide
     }],
 
-    /* 3 column layouts. */
+    /**
+     * 3 column layouts.
+     */
     3: [{
-      name: __('3 Columns - 33/33/33', 'atomic-blocks'),
-      key: 'ab-3-col-equal',
-      col: 3,
+      name: __('3 Columns - 33/33/33', 'wp-toolbelt'),
       icon: icons.threeEqual
     }, {
-      name: __('3 Columns - 25/50/25', 'atomic-blocks'),
-      key: 'ab-3-col-widecenter',
-      col: 3,
+      name: __('3 Columns - 25/50/25', 'wp-toolbelt'),
       icon: icons.threeWideCenter
     }, {
-      name: __('3 Columns - 50/25/25', 'atomic-blocks'),
-      key: 'ab-3-col-wideleft',
-      col: 3,
+      name: __('3 Columns - 50/25/25', 'wp-toolbelt'),
       icon: icons.threeWideLeft
     }, {
-      name: __('3 Columns - 25/25/50', 'atomic-blocks'),
-      key: 'ab-3-col-wideright',
-      col: 3,
+      name: __('3 Columns - 25/25/50', 'wp-toolbelt'),
       icon: icons.threeWideRight
     }],
 
-    /* 4 column layouts. */
+    /**
+     * 4 column layouts.
+     */
     4: [{
-      name: __('4 Columns - 25/25/25/25', 'atomic-blocks'),
-      key: 'ab-4-col-equal',
-      col: 4,
+      name: __('4 Columns - 25/25/25/25', 'wp-toolbelt'),
       icon: icons.fourEqual
     }, {
-      name: __('4 Columns - 40/20/20/20', 'atomic-blocks'),
-      key: 'ab-4-col-wideleft',
-      col: 4,
+      name: __('4 Columns - 40/20/20/20', 'wp-toolbelt'),
       icon: icons.fourLeft
     }, {
-      name: __('4 Columns - 20/20/20/40', 'atomic-blocks'),
-      key: 'ab-4-col-wideright',
-      col: 4,
+      name: __('4 Columns - 20/20/20/40', 'wp-toolbelt'),
       icon: icons.fourRight
     }],
 
-    /* 5 column layouts. */
+    /**
+     * 5 column layouts.
+     */
     5: [{
-      name: __('5 Columns', 'atomic-blocks'),
-      key: 'ab-5-col-equal',
-      col: 5,
+      name: __('5 Columns', 'wp-toolbelt'),
       icon: icons.fiveEqual
-    }],
-
-    /* 6 column layouts. */
-    6: [{
-      name: __('6 Columns', 'atomic-blocks'),
-      key: 'ab-6-col-equal',
-      col: 6,
-      icon: icons.sixEqual
     }]
+  };
+
+  var gridInspector = function gridInspector(props) {
+    var attributes = props.attributes,
+        setAttributes = props.setAttributes;
+    var columns = attributes.columns,
+        layout = attributes.layout,
+        textColor = attributes.textColor,
+        backgroundColor = attributes.backgroundColor;
+    var layouts = [];
+
+    if (columnLayouts[columns]) {
+      layouts = columnLayouts[columns];
+    }
+
+    return createElement(InspectorControls, null, layouts && createElement(PanelBody, {
+      title: __('General', 'wp-toolbelt'),
+      initialOpen: true,
+      className: "toolbelt-column-select-panel"
+    }, createElement("p", null, __('Column Layout', 'wp-toolbelt')), createElement(ButtonGroup, {
+      "aria-label": __('Column Layout', 'wp-toolbelt')
+    }, layouts.map(function (_ref, index) {
+      var name = _ref.name,
+          icon = _ref.icon;
+      return createElement(Tooltip, {
+        text: name,
+        key: 'col' + index
+      }, createElement(Button, {
+        key: 'col' + index,
+        className: "toolbelt-grid-column-selector",
+        isSmall: true,
+        onClick: function onClick() {
+          setAttributes({
+            layout: index
+          });
+
+          _this.setState({
+            selectLayout: false
+          });
+        }
+      }, icon));
+    })), createElement("p", {
+      className: "description"
+    }, __('Change the layout of your columns.', 'wp-toolbelt'))), createElement(PanelColorSettings, {
+      title: __('Color Settings', 'wp-toolbelt'),
+      initialOpen: false,
+      colorSettings: [{
+        value: textColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            textColor: newColor
+          });
+        },
+        label: __('Text Color', 'wp-toolbelt')
+      }, {
+        value: backgroundColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            backgroundColor: newColor
+          });
+        },
+        label: __('Background Color', 'wp-toolbelt')
+      }]
+    }));
+  };
+
+  var getColumnsTemplate = function getColumnsTemplate(columns) {
+    var index = -1;
+    var result = Array(columns);
+
+    while (++index < columns) {
+      result[index] = ['core/column'];
+    }
+
+    return result;
+  };
+
+  var getWrapperClass = function getWrapperClass(props) {
+    var _props$attributes = props.attributes,
+        columns = _props$attributes.columns,
+        textColor = _props$attributes.textColor,
+        backgroundColor = _props$attributes.backgroundColor;
+    var className = ['wp-block-toolbelt-layout-grid'];
+
+    if (columns) {
+      className.push("toolbelt-grid-".concat(columns));
+    }
+
+    if (backgroundColor) {
+      className.push('has-background');
+    }
+
+    if (textColor) {
+      className.push('has-text-color');
+    }
+
+    return className.join(' ');
   };
 
   var gridEdit = function gridEdit(props) {
     var attributes = props.attributes,
         setAttributes = props.setAttributes;
-    var columns = attributes.columns;
+    var columns = attributes.columns,
+        layout = attributes.layout,
+        textColor = attributes.textColor,
+        backgroundColor = attributes.backgroundColor;
     var ALLOWED_BLOCKS = ['core/column'];
+    console.log(attributes);
     var columnOptions = [{
       name: __('2 Columns', 'toolbelt'),
       key: 'two-column',
@@ -532,11 +576,6 @@
       key: 'five-column',
       columns: 5,
       icon: icons.fiveEqual
-    }, {
-      name: __('6 Columns', 'toolbelt'),
-      key: 'six-column',
-      columns: 6,
-      icon: icons.sixEqual
     }];
 
     if (!columns) {
@@ -549,11 +588,11 @@
       }, createElement(ButtonGroup, {
         "aria-label": __('Select Number of Columns', 'toolbelt'),
         className: "toolbelt-column-selector-group"
-      }, columnOptions.map(function (_ref) {
-        var name = _ref.name,
-            key = _ref.key,
-            icon = _ref.icon,
-            columns = _ref.columns;
+      }, columnOptions.map(function (_ref2) {
+        var name = _ref2.name,
+            key = _ref2.key,
+            icon = _ref2.icon,
+            columns = _ref2.columns;
         return createElement(Tooltip, {
           text: name,
           key: key
@@ -569,10 +608,30 @@
     }
 
     return [createElement("div", {
-      className: className ? className : undefined
+      className: getWrapperClass(props),
+      style: {
+        backgroundColor: backgroundColor,
+        color: textColor
+      }
     }, createElement(InnerBlocks, {
-      allowedBlocks: ALLOWED_BLOCKS
-    }))];
+      template: getColumnsTemplate(columns),
+      templateLock: "all",
+      allowedBlocks: ALLOWED_BLOCKS,
+      orientation: "horizontal"
+    })), gridInspector(props)];
+  };
+
+  var gridSave = function gridSave(props) {
+    var attributes = props.attributes;
+    var backgroundColor = attributes.backgroundColor,
+        textColor = attributes.textColor;
+    return createElement("div", {
+      className: getWrapperClass(props),
+      style: {
+        backgroundColor: backgroundColor,
+        color: textColor
+      }
+    }, createElement(InnerBlocks.Content, null));
   }; //
 
 
@@ -586,41 +645,20 @@
       columns: {
         type: 'int'
       },
-      pattern: {
+      layout: {
+        type: 'int'
+      },
+      backgroundColor: {
+        type: 'string'
+      },
+      textColor: {
         type: 'string'
       }
     },
     supports: {
       align: ['full', 'wide']
     },
-    save: function save() {},
-
-    /**
-     * Edit the settings.
-     */
+    save: gridSave,
     edit: gridEdit
-  });
-  registerBlockType('toolbelt/layout-column', {
-    title: __('Layout Grid Column', 'wp-toolbelt'),
-    description: __('Flexible content display', 'wp-toolbelt'),
-    keywords: [__('toolbelt', 'wp-toolbelt'), __('layout grid columns', 'wp-toolbelt')],
-    icon: 'table',
-    category: 'wp-toolbelt',
-    parent: ['toolbelt/layout-grid'],
-    attributes: {},
-    save: function save() {},
-
-    /**
-     * Edit the settings.
-     */
-    edit: function edit(props) {
-      var attributes = props.attributes,
-          setAttributes = props.setAttributes,
-          instanceId = props.instanceId;
-      var url = attributes.url;
-      return createElement("div", {
-        className: "toolbelt-layout-column"
-      });
-    }
   });
 })();

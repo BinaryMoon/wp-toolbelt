@@ -2,7 +2,12 @@
 	function() {
 
 		const { registerBlockType } = wp.blocks;
-		const { createElement, Fragment, Component, RawHTML } = wp.element;
+		const {
+			createElement,
+			Fragment,
+			Component,
+			RawHTML
+		} = wp.element;
 		const {
 			ExternalLink,
 			Placeholder,
@@ -11,18 +16,30 @@
 			Button,
 			Tooltip,
 			Path,
-			SVG
+			SVG,
+			PanelBody,
+			RangeControl,
+			ToggleControl,
+			SelectControl,
 		} = wp.components;
 		const { __ } = wp.i18n;
-		const { BlockIcon } = wp.blockEditor;
+		const {
+			BlockIcon,
+			InnerBlocks,
+			InspectorControls,
+			PanelColorSettings,
+			ContrastChecker,
+			withColors,
+		} = wp.blockEditor;
 
 		//=require ./icons.js
-
 		//=require ./grid/column-layouts.js
-		//=require ./grid/edit.js
-		//=require ./grid/block.js
+		//=require ./grid/inspector.js
 
-		//=require ./columns/block.js
+		//=require ./grid/edit.js
+		//=require ./grid/save.js
+
+		//=require ./grid/block.js
 
 	}
 )();
