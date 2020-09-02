@@ -44,9 +44,6 @@ add_action( 'enqueue_block_editor_assets', 'toolbelt_layout_register_block' );
  */
 function toolbelt_layout_admin_styles() {
 
-	// toolbelt_global_styles( 'columns' );
-	// toolbelt_global_styles( 'blocks' );
-	// toolbelt_styles( 'projects' );
 	toolbelt_styles_editor( 'layout-grid' );
 
 }

@@ -1,3 +1,10 @@
+
+/**
+ * Create the React code for the inspector functionality.
+ *
+ * @param {array} props The block properties.
+ * @param {array}
+ */
 const gridInspector = ( props ) => {
 
 	const { attributes, setAttributes } = props;

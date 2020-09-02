@@ -457,6 +457,12 @@
       icon: icons.fiveEqual
     }]
   };
+  /**
+   * Create the React code for the inspector functionality.
+   *
+   * @param {array} props The block properties.
+   * @param {array}
+   */
 
   var gridInspector = function gridInspector(props) {
     var attributes = props.attributes,
@@ -519,6 +525,13 @@
       }]
     }));
   };
+  /**
+   * Generate the html for the block template.
+   *
+   * @param {int} columns The number of columns.
+   * @return {string}
+   */
+
 
   var getColumnsTemplate = function getColumnsTemplate(columns) {
     var index = -1;
@@ -530,6 +543,13 @@
 
     return result;
   };
+  /**
+   * Get the class list for the layout grid wrapper.
+   *
+   * @param {array} props The list of block properties.
+   * @return {string}
+   */
+
 
   var getWrapperClass = function getWrapperClass(props) {
     var _props$attributes = props.attributes,
@@ -561,6 +581,13 @@
 
     return className.join(' ');
   };
+  /**
+   * Create the React code for the editing functionality.
+   *
+   * @param {array} props The block properties.
+   * @param {array}
+   */
+
 
   var gridEdit = function gridEdit(props) {
     var attributes = props.attributes,
@@ -635,6 +662,13 @@
       orientation: "horizontal"
     })), gridInspector(props)];
   };
+  /**
+   * The saved html for the grid layout.
+   *
+   * @param {array} props The block properties.
+   * @param {string}
+   */
+
 
   var gridSave = function gridSave(props) {
     var attributes = props.attributes;

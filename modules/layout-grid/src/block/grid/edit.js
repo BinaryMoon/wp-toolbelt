@@ -1,3 +1,10 @@
+
+/**
+ * Generate the html for the block template.
+ *
+ * @param {int} columns The number of columns.
+ * @return {string}
+ */
 const getColumnsTemplate = ( columns ) => {
 
 	let index = -1;
@@ -11,6 +18,13 @@ const getColumnsTemplate = ( columns ) => {
 
 };
 
+
+/**
+ * Get the class list for the layout grid wrapper.
+ *
+ * @param {array} props The list of block properties.
+ * @return {string}
+ */
 const getWrapperClass = ( props ) => {
 
 	const { columns, layout, textColor, backgroundColor } = props.attributes;
@@ -44,6 +58,12 @@ const getWrapperClass = ( props ) => {
 
 };
 
+/**
+ * Create the React code for the editing functionality.
+ *
+ * @param {array} props The block properties.
+ * @param {array}
+ */
 const gridEdit = function( props ) {
 
 	const { attributes, setAttributes } = props;

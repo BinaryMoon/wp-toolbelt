@@ -1,3 +1,9 @@
+/**
+ * The saved html for the grid layout.
+ *
+ * @param {array} props The block properties.
+ * @param {string}
+ */
 const gridSave = ( props ) => {
 
 	const { attributes } = props;
