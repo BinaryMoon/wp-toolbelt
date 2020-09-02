@@ -3,9 +3,7 @@
 	const { registerBlockType } = wp.blocks;
 	const { createElement } = wp.element;
 	const { InspectorControls } = wp.blockEditor;
-	const {
-		PanelBody,
-	} = wp.components;
+	const { PanelBody } = wp.components;
 	const ServerSideRender = wp.serverSideRender;
 	const { __, _x } = wp.i18n;
 
