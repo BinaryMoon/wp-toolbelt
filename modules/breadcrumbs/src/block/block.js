@@ -7,12 +7,14 @@
 	const ServerSideRender = wp.serverSideRender;
 	const { __, _x } = wp.i18n;
 
+	//=require ./icon.js
+
 	registerBlockType(
 		'toolbelt/breadcrumbs',
 		{
 			title: __( 'TB Breadcumbs', 'wp-toolbelt' ),
 
-			icon: 'menu-alt2',
+			icon,
 
 			description: __( 'Display breadcrumbs for the current page.', 'wp-toolbelt' ),
 
