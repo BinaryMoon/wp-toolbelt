@@ -138,5 +138,6 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 = 2.8 - 30th August 2020 =
 * Add Star Rating block.
 * Add Layout Grid block.
+* Add TB prefix to all blocks. Inspired by: https://wptavern.com/wordpress-plugin-authors-should-avoid-confusing-users-when-naming-blocks
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
