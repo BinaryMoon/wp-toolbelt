@@ -10,7 +10,7 @@
       __ = _wp$i18n.__,
       _x = _wp$i18n._x;
   registerBlockType('toolbelt/breadcrumbs', {
-    title: __('Breadcumbs', 'wp-toolbelt'),
+    title: __('TB Breadcumbs', 'wp-toolbelt'),
     icon: 'menu-alt2',
     description: __('Display breadcrumbs for the current page.', 'wp-toolbelt'),
     category: 'wp-toolbelt',

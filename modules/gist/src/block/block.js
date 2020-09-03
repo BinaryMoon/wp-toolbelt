@@ -22,7 +22,7 @@
 		'toolbelt/gist',
 		{
 
-			title: __( 'Gist', 'wp-toolbelt' ),
+			title: __( 'TB Gist', 'wp-toolbelt' ),
 
 			description: __( 'Display Github Gists', 'wp-toolbelt' ),
 

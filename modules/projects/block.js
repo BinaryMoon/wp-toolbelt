@@ -15,7 +15,7 @@
       __ = _wp$i18n.__,
       _x = _wp$i18n._x;
   registerBlockType('toolbelt/portfolio', {
-    title: __('Portfolio', 'wp-toolbelt'),
+    title: __('TB Portfolio', 'wp-toolbelt'),
     icon: 'portfolio',
     description: __('Display a grid of Toolbelt Projects.', 'wp-toolbelt'),
     category: 'wp-toolbelt',

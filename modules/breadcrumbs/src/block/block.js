@@ -10,7 +10,7 @@
 	registerBlockType(
 		'toolbelt/breadcrumbs',
 		{
-			title: __( 'Breadcumbs', 'wp-toolbelt' ),
+			title: __( 'TB Breadcumbs', 'wp-toolbelt' ),
 
 			icon: 'menu-alt2',
 
