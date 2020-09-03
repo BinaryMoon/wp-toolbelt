@@ -222,6 +222,11 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization',
 			'supports' => array( 'settings' ),
 		),
+		'post-listing' => array(
+			'name' => esc_html__( 'Post Listing', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Display blog posts and other content in a block.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Post-Listing',
+		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
 			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
