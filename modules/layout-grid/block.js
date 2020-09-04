@@ -5,8 +5,7 @@
   var _wp$element = wp.element,
       createElement = _wp$element.createElement,
       Fragment = _wp$element.Fragment,
-      Component = _wp$element.Component,
-      RawHTML = _wp$element.RawHTML;
+      Component = _wp$element.Component;
   var _wp$components = wp.components,
       ExternalLink = _wp$components.ExternalLink,
       Placeholder = _wp$components.Placeholder,
@@ -26,8 +25,7 @@
       InnerBlocks = _wp$blockEditor.InnerBlocks,
       InspectorControls = _wp$blockEditor.InspectorControls,
       PanelColorSettings = _wp$blockEditor.PanelColorSettings,
-      ContrastChecker = _wp$blockEditor.ContrastChecker,
-      withColors = _wp$blockEditor.withColors;
+      ContrastChecker = _wp$blockEditor.ContrastChecker;
   /**
    * Column layout icons.
    */
@@ -597,7 +595,6 @@
         textColor = attributes.textColor,
         backgroundColor = attributes.backgroundColor;
     var ALLOWED_BLOCKS = ['core/column'];
-    console.log(attributes);
     var columnOptions = [{
       name: __('2 Columns', 'toolbelt'),
       key: 'two-column',
@@ -658,8 +655,7 @@
     }, createElement(InnerBlocks, {
       template: getColumnsTemplate(columns),
       templateLock: "all",
-      allowedBlocks: ALLOWED_BLOCKS,
-      orientation: "horizontal"
+      allowedBlocks: ALLOWED_BLOCKS
     })), gridInspector(props)];
   };
   /**

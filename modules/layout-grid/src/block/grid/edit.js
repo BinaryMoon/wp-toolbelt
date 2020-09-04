@@ -70,8 +70,6 @@ const gridEdit = function( props ) {
 	const { columns, layout, textColor, backgroundColor } = attributes;
 	const ALLOWED_BLOCKS = [ 'core/column' ];
 
-	console.log( attributes );
-
 	const columnOptions = [
 		{
 			name: __( '2 Columns', 'toolbelt' ),
@@ -143,7 +141,6 @@ const gridEdit = function( props ) {
 				template={getColumnsTemplate( columns )}
 				templateLock="all"
 				allowedBlocks={ALLOWED_BLOCKS}
-				orientation="horizontal"
 			/>
 		</div>,
 		gridInspector( props )
