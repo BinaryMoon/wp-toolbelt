@@ -3,6 +3,7 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: var( --toolbelt-spacing );
+	grid-auto-flow: dense;
 
 	.wp-block-column {
 
@@ -18,7 +19,7 @@
 
 }
 
-@mixin toolbelt-grid-columns( $columns, $layout, $design ) {
+@mixin toolbelt-grid-columns( $columns, $layout, $design, $first_position: false ) {
 
 	.toolbelt-grid-layout-#{$columns}-#{$layout} {
 
@@ -26,22 +27,58 @@
 
 	}
 
+	@if $first_position != false {
+
+		.toolbelt-grid-layout-#{$columns}-#{$layout} :nth-child( 1 ) {
+
+			grid-column: $first_position;
+
+		}
+
+	}
+
 }
 
-@media screen and ( min-width: 600px ) {
+@media only screen and ( min-width: 600px ) {
+
+	[class*=toolbelt-grid-layout] {
+
+		grid-template-columns: 1fr 1fr;
+
+	}
+
+}
+
+@media only screen and ( min-width: 600px ) and ( max-width: 899px ) {
+
+	[class*=toolbelt-grid-layout-3],
+	[class*=toolbelt-grid-layout-5] {
+
+		:nth-child(1) {
+
+			grid-column: 1 / -1;
+
+		}
+
+	}
+
+}
+
+
+@media screen and ( min-width: 900px ) {
 
 	@include toolbelt-grid-columns( 2, 0, 1fr 1fr );
 	@include toolbelt-grid-columns( 2, 1, 3fr 1fr );
-	@include toolbelt-grid-columns( 2, 2, 1fr 3fr );
+	@include toolbelt-grid-columns( 2, 2, 1fr 3fr, 2 );
 
 	@include toolbelt-grid-columns( 3, 0, 1fr 1fr 1fr );
-	@include toolbelt-grid-columns( 3, 1, 1fr 2fr 1fr );
+	@include toolbelt-grid-columns( 3, 1, 1fr 2fr 1fr, 2 );
 	@include toolbelt-grid-columns( 3, 2, 2fr 1fr 1fr );
-	@include toolbelt-grid-columns( 3, 3, 1fr 1fr 2fr );
+	@include toolbelt-grid-columns( 3, 3, 1fr 1fr 2fr, 3 );
 
 	@include toolbelt-grid-columns( 4, 0, 1fr 1fr 1fr 1fr );
 	@include toolbelt-grid-columns( 4, 1, 2fr 1fr 1fr 1fr );
-	@include toolbelt-grid-columns( 4, 2, 1fr 1fr 1fr 2fr );
+	@include toolbelt-grid-columns( 4, 2, 1fr 1fr 1fr 2fr, 4 );
 
 	@include toolbelt-grid-columns( 5, 0, 1fr 1fr 1fr 1fr );
 
