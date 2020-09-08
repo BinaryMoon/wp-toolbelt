@@ -251,6 +251,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'If there is a single search result then redirect to the result, rather than displaying a list of results.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Search-Redirect',
 		),
+		'slider' => array(
+			'name' => esc_html__( 'Simple Slider', 'wp-toolbelt' ),
+			'description' => esc_html__( 'An Accessible horizontal slider.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Slider',
+		),
 		'social-menu' => array(
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add a social icons menu. This must be integrated into the theme.', 'wp-toolbelt' ),
