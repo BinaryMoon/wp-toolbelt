@@ -45,15 +45,16 @@
 
 	@if $first_position != false {
 
-		.toolbelt-grid-layout-#{$columns}-#{$layout} > .block-editor-inner-blocks > .block-editor-block-list__layout :nth-child( 1 ) {
+		.toolbelt-grid-layout-#{$columns}-#{$layout} > .block-editor-inner-blocks > .block-editor-block-list__layout > :nth-child( 1 ) {
 
-			order: $first_position;
+			grid-column: $first_position;
 
 		}
 
 	}
 
 }
+
 
 @include toolbelt-grid-columns( 2, 0, 1fr 1fr );
 @include toolbelt-grid-columns( 2, 1, 3fr 1fr );
@@ -69,7 +70,6 @@
 @include toolbelt-grid-columns( 4, 2, 1fr 1fr 1fr 2fr, 4 );
 
 @include toolbelt-grid-columns( 5, 0, 1fr 1fr 1fr 1fr );
-
 
 
 

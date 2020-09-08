@@ -29,7 +29,7 @@
 
 	@if $first_position != false {
 
-		.toolbelt-grid-layout-#{$columns}-#{$layout} :nth-child( 1 ) {
+		.toolbelt-grid-layout-#{$columns}-#{$layout} > :nth-child( 1 ) {
 
 			grid-column: $first_position;
 
@@ -54,7 +54,7 @@
 	[class*=toolbelt-grid-layout-3],
 	[class*=toolbelt-grid-layout-5] {
 
-		:nth-child(1) {
+		> :nth-child(1) {
 
 			grid-column: 1 / -1;
 
