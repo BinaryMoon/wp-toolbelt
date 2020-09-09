@@ -22,6 +22,7 @@ const slideEdit = ( props ) => {
 				<TextControl
 					placeholder="https://"
 					value={link}
+					onChange={value => setAttributes( { link: value } )}
 				/>
 			</PanelBody>
 		</InspectorControls>,
