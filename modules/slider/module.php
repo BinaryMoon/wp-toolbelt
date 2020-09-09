@@ -59,4 +59,22 @@ function toolbelt_slider_admin_styles() {
 add_action( 'admin_head', 'toolbelt_slider_admin_styles' );
 
 
+/**
+ * Add Slider styles to header.
+ *
+ * @return void
+ */
+function toolbelt_slider_head() {
+
+	if ( ! has_block( 'toolbelt/slider' ) ) {
+		return;
+	}
+
+	toolbelt_styles( 'slider' );
+
+}
+
+add_filter( 'wp_head', 'toolbelt_slider_head' );
+
+
 toolbelt_register_block_category();
