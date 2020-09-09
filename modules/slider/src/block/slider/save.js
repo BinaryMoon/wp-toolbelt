@@ -4,9 +4,11 @@ const sliderSave = ( props ) => {
 	const { backgroundColor, textColor } = attributes;
 
 	return (
-		<section className={getSliderClass( props )} style={{ backgroundColor, color: textColor }}>
-			<InnerBlocks.Content />
-		</section>
+		<div className={getSliderClass( props )} style={{ backgroundColor, color: textColor }}>
+			<ul>
+				<InnerBlocks.Content />
+			</ul>
+		</div>
 	);
 
 };

@@ -4,9 +4,14 @@ const slideSave = ( props ) => {
 	const { title, description, link } = attributes;
 
 	return (
-		<a className={getSlideClass( props )} href="{link}">
+		<li>
 			{
-				title && (
+				title && link && (
+					<h3><a href="{link}">{title}</a></h3>
+				)
+			}
+			{
+				title && !link && (
 					<h3>{title}</h3>
 				)
 			}
@@ -15,7 +20,7 @@ const slideSave = ( props ) => {
 					<p>{description}</p>
 				)
 			}
-		</a>
+		</li>
 	);
 
 };
