@@ -12,7 +12,9 @@
 			ExternalLink,
 			Path,
 			Rect,
-			SVG
+			TextControl,
+			PanelBody,
+			SVG,
 		} = wp.components;
 		const { __ } = wp.i18n;
 		const {
@@ -20,6 +22,7 @@
 			InnerBlocks,
 			InspectorControls,
 			PanelColorSettings,
+			RichText,
 			ContrastChecker,
 		} = wp.blockEditor;
 
