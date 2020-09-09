@@ -11,6 +11,8 @@
       ExternalLink = _wp$components.ExternalLink,
       Path = _wp$components.Path,
       Rect = _wp$components.Rect,
+      TextControl = _wp$components.TextControl,
+      PanelBody = _wp$components.PanelBody,
       SVG = _wp$components.SVG;
   var __ = wp.i18n.__;
   var _wp$blockEditor = wp.blockEditor,
@@ -18,19 +20,17 @@
       InnerBlocks = _wp$blockEditor.InnerBlocks,
       InspectorControls = _wp$blockEditor.InspectorControls,
       PanelColorSettings = _wp$blockEditor.PanelColorSettings,
+      RichText = _wp$blockEditor.RichText,
       ContrastChecker = _wp$blockEditor.ContrastChecker;
 
   var slideSave = function slideSave(props) {
     var attributes = props.attributes;
-    var backgroundColor = attributes.backgroundColor,
-        textColor = attributes.textColor;
-    return createElement("section", {
-      className: getSlideClass(props),
-      style: {
-        backgroundColor: backgroundColor,
-        color: textColor
-      }
-    });
+    var title = attributes.title,
+        description = attributes.description,
+        link = attributes.link;
+    return createElement("li", null, title && link && createElement("h3", null, createElement("a", {
+      href: "{link}"
+    }, title)), title && !link && createElement("h3", null, title), description && createElement("p", null, description));
   };
 
   var getSlideClass = function getSlideClass(props) {
@@ -39,18 +39,42 @@
   };
 
   var slideEdit = function slideEdit(props) {
-    var attributes = props.attributes;
-    var backgroundColor = attributes.backgroundColor,
-        textColor = attributes.textColor;
-    return [createElement("div", {
-      className: getSlideClass(props)
-    }, createElement("a", {
-      style: {
-        backgroundColor: backgroundColor,
-        color: textColor
+    var attributes = props.attributes,
+        isSelected = props.isSelected,
+        setAttributes = props.setAttributes;
+    var description = attributes.description,
+        title = attributes.title,
+        link = attributes.link;
+    return [createElement(InspectorControls, null, createElement(PanelBody, {
+      title: __('Link URL', 'wp-toolbelt'),
+      initialOpen: true
+    }, createElement(TextControl, {
+      placeholder: "https://",
+      value: link,
+      onChange: function onChange(value) {
+        return setAttributes({
+          link: value
+        });
       }
-    })) // gridInspector( props )
-    ];
+    }))), createElement("div", {
+      className: getSlideClass(props)
+    }, isSelected && createElement(Fragment, null, createElement("h3", null, createElement(RichText, {
+      value: title,
+      placeholder: __('Title', 'wp-toolbelt'),
+      onChange: function onChange(value) {
+        return setAttributes({
+          title: value
+        });
+      }
+    })), createElement("p", null, createElement(RichText, {
+      value: description,
+      placeholder: __('Description', 'wp-toolbelt'),
+      onChange: function onChange(value) {
+        return setAttributes({
+          description: value
+        });
+      }
+    }))), !isSelected && title && createElement("h3", null, title), !isSelected && description && createElement("p", null, description))];
   };
 
   registerBlockType('toolbelt/slide', {
@@ -75,10 +99,13 @@
       }))
     },
     attributes: {
-      backgroundColor: {
+      title: {
         type: 'string'
       },
-      textColor: {
+      description: {
+        type: 'string'
+      },
+      link: {
         type: 'string'
       }
     },
@@ -98,13 +125,13 @@
     var attributes = props.attributes;
     var backgroundColor = attributes.backgroundColor,
         textColor = attributes.textColor;
-    return createElement("section", {
+    return createElement("div", {
       className: getSliderClass(props),
       style: {
         backgroundColor: backgroundColor,
         color: textColor
       }
-    }, createElement(InnerBlocks.Content, null));
+    }, createElement("ul", null, createElement(InnerBlocks.Content, null)));
   };
 
   var getSliderClass = function getSliderClass(props) {
@@ -123,13 +150,16 @@
       style: {
         backgroundColor: backgroundColor,
         color: textColor
-      }
+      },
+      role: "group"
     }, createElement(InnerBlocks, {
       template: SLIDER_TEMPLATE,
       allowedBlocks: ALLOWED_BLOCKS,
-      orientation: "horizontal"
-    })) // gridInspector( props )
-    ];
+      orientation: "horizontal",
+      renderAppender: function renderAppender() {
+        return createElement(InnerBlocks.ButtonBlockAppender, null);
+      }
+    }))];
   };
 
   registerBlockType('toolbelt/slider', {
