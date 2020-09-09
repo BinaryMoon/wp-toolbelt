@@ -16,14 +16,18 @@ const sliderEdit = ( props ) => {
 	const SLIDER_TEMPLATE = [ [ 'toolbelt/slide' ] ];
 
 	return [
-		<div className={getSliderClass( props )} style={{ backgroundColor, color: textColor }}>
+		<div className={getSliderClass( props )} style={{ backgroundColor, color: textColor }} role="group">
 			<InnerBlocks
 				template={SLIDER_TEMPLATE}
 				allowedBlocks={ALLOWED_BLOCKS}
 				orientation="horizontal"
+				renderAppender={
+					() => (
+						<InnerBlocks.ButtonBlockAppender />
+					)
+				}
 			/>
 		</div>
-		// gridInspector( props )
 	];
 
 };
