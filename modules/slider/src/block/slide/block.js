@@ -32,12 +32,15 @@ registerBlockType(
 		},
 
 		attributes: {
-			backgroundColor: {
+			title: {
 				type: 'string',
 			},
-			textColor: {
+			description: {
 				type: 'string',
 			},
+			link: {
+				type: 'string',
+			}
 		},
 
 		/**
