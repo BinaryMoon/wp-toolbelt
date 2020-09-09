@@ -32,14 +32,14 @@ const slideEdit = ( props ) => {
 						<h3>
 							<RichText
 								value={title}
-								placeholder={__( 'Slide Title', 'wp-toolbelt' )}
+								placeholder={__( 'Title', 'wp-toolbelt' )}
 								onChange={value => setAttributes( { title: value } )}
 							/>
 						</h3>
 						<p>
 							<RichText
 								value={description}
-								placeholder={__( 'Slide Description', 'wp-toolbelt' )}
+								placeholder={__( 'Description', 'wp-toolbelt' )}
 								onChange={value => setAttributes( { description: value } )}
 							/>
 						</p>
