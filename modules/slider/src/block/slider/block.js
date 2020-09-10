@@ -40,12 +40,9 @@ registerBlockType(
 			columnWidth: {
 				type: 'int',
 			},
-			backgroundColor: {
+			textAlignment: {
 				type: 'string',
-			},
-			textColor: {
-				type: 'string',
-			},
+			}
 		},
 
 		supports: {
