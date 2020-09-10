@@ -9,6 +9,7 @@
 		} = wp.element;
 		const {
 			Button,
+			ButtonGroup,
 			ExternalLink,
 			IconButton,
 			PanelBody,

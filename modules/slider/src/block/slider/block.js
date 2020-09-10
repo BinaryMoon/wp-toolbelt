@@ -42,7 +42,11 @@ registerBlockType(
 			},
 			textAlignment: {
 				type: 'string',
-			}
+			},
+			slideWidth: {
+				type: 'string',
+				default: 'M',
+			},
 		},
 
 		supports: {
