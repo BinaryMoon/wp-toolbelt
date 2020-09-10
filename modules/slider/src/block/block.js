@@ -3,29 +3,31 @@
 
 		const { registerBlockType } = wp.blocks;
 		const {
+			Component,
 			createElement,
 			Fragment,
-			Component,
-			RawHTML
 		} = wp.element;
 		const {
+			Button,
 			ExternalLink,
+			IconButton,
+			PanelBody,
 			Path,
 			Rect,
-			TextControl,
-			PanelBody,
-			Button,
 			ResponsiveWrapper,
 			SVG,
+			TextControl,
 		} = wp.components;
 		const { __ } = wp.i18n;
 		const {
+			AlignmentToolbar,
+			BlockControls,
 			BlockIcon,
+			ContrastChecker,
 			InnerBlocks,
 			InspectorControls,
 			PanelColorSettings,
 			RichText,
-			ContrastChecker,
 			MediaUpload,
 			MediaUploadCheck,
 		} = wp.blockEditor;

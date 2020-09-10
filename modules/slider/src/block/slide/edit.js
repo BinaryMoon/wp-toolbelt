@@ -43,6 +43,25 @@ const slideEdit = ( props ) => {
 	};
 
 	return [
+		<BlockControls>
+			<MediaUploadCheck>
+				<MediaUpload
+					title={__( 'Upload image', 'wp-toolbelt' )}
+					value={attributes.mediaId}
+					onSelect={onSelectMedia}
+					allowedTypes={[ 'image' ]}
+					render={
+						( { open } ) => (
+							<IconButton
+								onClick={open}
+								icon="format-image"
+								label={__( 'Choose image', 'wp-toolbelt' )}
+							/>
+						)
+					}
+				/>
+			</MediaUploadCheck>
+		</BlockControls>,
 		<InspectorControls>
 			<PanelBody
 				title={__( 'Link URL', 'wp-toolbelt' )}
