@@ -14,6 +14,8 @@
 			Rect,
 			TextControl,
 			PanelBody,
+			Button,
+			ResponsiveWrapper,
 			SVG,
 		} = wp.components;
 		const { __ } = wp.i18n;
@@ -24,7 +26,10 @@
 			PanelColorSettings,
 			RichText,
 			ContrastChecker,
+			MediaUpload,
+			MediaUploadCheck,
 		} = wp.blockEditor;
+		const { withSelect } = wp.data;
 
 		//=require ./slide/block.js
 		//=require ./slider/block.js

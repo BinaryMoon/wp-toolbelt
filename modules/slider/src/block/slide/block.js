@@ -40,7 +40,15 @@ registerBlockType(
 			},
 			link: {
 				type: 'string',
-			}
+			},
+			mediaId: {
+				type: 'number',
+				default: 0
+			},
+			mediaUrl: {
+				type: 'string',
+				default: ''
+			},
 		},
 
 		/**
@@ -51,7 +59,13 @@ registerBlockType(
 		/**
 		 * Edit the settings.
 		 */
-		edit: slideEdit,
+		edit: withSelect(
+			( select, props ) => {
+				return {
+					media: props.attributes.mediaId ? select( 'core' ).getMedia( props.attributes.mediaId ) : undefined
+				};
+			}
+		)( slideEdit ),
 
 	}
 );

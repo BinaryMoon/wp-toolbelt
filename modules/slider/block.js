@@ -13,6 +13,8 @@
       Rect = _wp$components.Rect,
       TextControl = _wp$components.TextControl,
       PanelBody = _wp$components.PanelBody,
+      Button = _wp$components.Button,
+      ResponsiveWrapper = _wp$components.ResponsiveWrapper,
       SVG = _wp$components.SVG;
   var __ = wp.i18n.__;
   var _wp$blockEditor = wp.blockEditor,
@@ -21,7 +23,10 @@
       InspectorControls = _wp$blockEditor.InspectorControls,
       PanelColorSettings = _wp$blockEditor.PanelColorSettings,
       RichText = _wp$blockEditor.RichText,
-      ContrastChecker = _wp$blockEditor.ContrastChecker;
+      ContrastChecker = _wp$blockEditor.ContrastChecker,
+      MediaUpload = _wp$blockEditor.MediaUpload,
+      MediaUploadCheck = _wp$blockEditor.MediaUploadCheck;
+  var withSelect = wp.data.withSelect;
 
   var slideSave = function slideSave(props) {
     var attributes = props.attributes;
@@ -45,6 +50,24 @@
     var description = attributes.description,
         title = attributes.title,
         link = attributes.link;
+
+    var removeMedia = function removeMedia() {
+      props.setAttributes({
+        mediaId: 0,
+        mediaUrl: ''
+      });
+    };
+
+    var onSelectMedia = function onSelectMedia(media) {
+      props.setAttributes({
+        mediaId: media.id,
+        mediaUrl: media.url
+      });
+    };
+
+    var blockStyle = {
+      backgroundImage: attributes.mediaUrl != '' ? 'url("' + attributes.mediaUrl + '")' : 'none'
+    };
     return [createElement(InspectorControls, null, createElement(PanelBody, {
       title: __('Link URL', 'wp-toolbelt'),
       initialOpen: true
@@ -56,8 +79,32 @@
           link: value
         });
       }
-    }))), createElement("div", {
-      className: getSlideClass(props)
+    })), createElement(PanelBody, {
+      title: __('Background Image', 'wp-toolbelt'),
+      initialOpen: true
+    }, createElement(MediaUploadCheck, null, createElement(MediaUpload, {
+      onSelect: onSelectMedia,
+      value: attributes.mediaId,
+      allowedTypes: ['image'],
+      render: function render(_ref) {
+        var open = _ref.open;
+        return createElement(Button, {
+          className: attributes.mediaId === 0 ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview',
+          onClick: open
+        }, attributes.mediaId === 0 && __('Choose an image', 'wp-toolbelt'), props.media !== undefined && createElement(ResponsiveWrapper, {
+          naturalWidth: props.media.media_details.width,
+          naturalHeight: props.media.media_details.height
+        }, createElement("img", {
+          src: props.media.source_url
+        })));
+      }
+    })), attributes.mediaId !== 0 && createElement(MediaUploadCheck, null, createElement(Button, {
+      onClick: removeMedia,
+      isLink: true,
+      isDestructive: true
+    }, __('Remove image', 'wp-toolbelt'))))), createElement("div", {
+      className: getSlideClass(props),
+      style: blockStyle
     }, isSelected && createElement(Fragment, null, createElement("h3", null, createElement(RichText, {
       value: title,
       placeholder: __('Title', 'wp-toolbelt'),
@@ -107,6 +154,14 @@
       },
       link: {
         type: 'string'
+      },
+      mediaId: {
+        type: 'number',
+        "default": 0
+      },
+      mediaUrl: {
+        type: 'string',
+        "default": ''
       }
     },
 
@@ -118,7 +173,11 @@
     /**
      * Edit the settings.
      */
-    edit: slideEdit
+    edit: withSelect(function (select, props) {
+      return {
+        media: props.attributes.mediaId ? select('core').getMedia(props.attributes.mediaId) : undefined
+      };
+    })(slideEdit)
   });
 
   var sliderSave = function sliderSave(props) {
