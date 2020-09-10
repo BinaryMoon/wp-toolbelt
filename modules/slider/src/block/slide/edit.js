@@ -12,28 +12,34 @@ const slideEdit = ( props ) => {
 
 	const { attributes, isSelected, setAttributes } = props;
 	const { description, title, link } = attributes;
-
+	const hasBackground = attributes.mediaId > 0;
 
 	const removeMedia = () => {
-		props.setAttributes(
+
+		setAttributes(
 			{
 				mediaId: 0,
 				mediaUrl: ''
 			}
 		);
+
 	}
 
 	const onSelectMedia = ( media ) => {
-		props.setAttributes(
+
+		setAttributes(
 			{
 				mediaId: media.id,
 				mediaUrl: media.url
 			}
 		);
+
 	}
 
 	const blockStyle = {
+
 		backgroundImage: attributes.mediaUrl != '' ? 'url("' + attributes.mediaUrl + '")' : 'none'
+
 	};
 
 	return [
@@ -60,10 +66,12 @@ const slideEdit = ( props ) => {
 						render={
 							( { open } ) => (
 								<Button
-									className={attributes.mediaId === 0 ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview'}
+									className={!hasBackground ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview'}
 									onClick={open}
 								>
-									{attributes.mediaId === 0 && __( 'Choose an image', 'wp-toolbelt' )}
+									{
+										!hasBackground && __( 'Choose an image', 'wp-toolbelt' )
+									}
 									{
 										props.media !== undefined && (
 											<ResponsiveWrapper
@@ -80,9 +88,13 @@ const slideEdit = ( props ) => {
 					/>
 				</MediaUploadCheck>
 				{
-					attributes.mediaId !== 0 && (
+					hasBackground && (
 						<MediaUploadCheck>
-							<Button onClick={removeMedia} isLink isDestructive>{__( 'Remove image', 'wp-toolbelt' )}</Button>
+							<Button
+								onClick={removeMedia} isLink isDestructive
+							>
+								{__( 'Remove image', 'wp-toolbelt' )}
+							</Button>
 						</MediaUploadCheck>
 					)
 				}
