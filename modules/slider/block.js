@@ -3,27 +3,29 @@
 (function () {
   var registerBlockType = wp.blocks.registerBlockType;
   var _wp$element = wp.element,
-      createElement = _wp$element.createElement,
-      Fragment = _wp$element.Fragment,
       Component = _wp$element.Component,
-      RawHTML = _wp$element.RawHTML;
+      createElement = _wp$element.createElement,
+      Fragment = _wp$element.Fragment;
   var _wp$components = wp.components,
+      Button = _wp$components.Button,
       ExternalLink = _wp$components.ExternalLink,
+      IconButton = _wp$components.IconButton,
+      PanelBody = _wp$components.PanelBody,
       Path = _wp$components.Path,
       Rect = _wp$components.Rect,
-      TextControl = _wp$components.TextControl,
-      PanelBody = _wp$components.PanelBody,
-      Button = _wp$components.Button,
       ResponsiveWrapper = _wp$components.ResponsiveWrapper,
-      SVG = _wp$components.SVG;
+      SVG = _wp$components.SVG,
+      TextControl = _wp$components.TextControl;
   var __ = wp.i18n.__;
   var _wp$blockEditor = wp.blockEditor,
+      AlignmentToolbar = _wp$blockEditor.AlignmentToolbar,
+      BlockControls = _wp$blockEditor.BlockControls,
       BlockIcon = _wp$blockEditor.BlockIcon,
+      ContrastChecker = _wp$blockEditor.ContrastChecker,
       InnerBlocks = _wp$blockEditor.InnerBlocks,
       InspectorControls = _wp$blockEditor.InspectorControls,
       PanelColorSettings = _wp$blockEditor.PanelColorSettings,
       RichText = _wp$blockEditor.RichText,
-      ContrastChecker = _wp$blockEditor.ContrastChecker,
       MediaUpload = _wp$blockEditor.MediaUpload,
       MediaUploadCheck = _wp$blockEditor.MediaUploadCheck;
   var withSelect = wp.data.withSelect;
@@ -50,16 +52,17 @@
     var description = attributes.description,
         title = attributes.title,
         link = attributes.link;
+    var hasBackground = attributes.mediaId > 0;
 
     var removeMedia = function removeMedia() {
-      props.setAttributes({
+      setAttributes({
         mediaId: 0,
         mediaUrl: ''
       });
     };
 
     var onSelectMedia = function onSelectMedia(media) {
-      props.setAttributes({
+      setAttributes({
         mediaId: media.id,
         mediaUrl: media.url
       });
@@ -68,7 +71,20 @@
     var blockStyle = {
       backgroundImage: attributes.mediaUrl != '' ? 'url("' + attributes.mediaUrl + '")' : 'none'
     };
-    return [createElement(InspectorControls, null, createElement(PanelBody, {
+    return [createElement(BlockControls, null, createElement(MediaUploadCheck, null, createElement(MediaUpload, {
+      title: __('Upload image', 'wp-toolbelt'),
+      value: attributes.mediaId,
+      onSelect: onSelectMedia,
+      allowedTypes: ['image'],
+      render: function render(_ref) {
+        var open = _ref.open;
+        return createElement(IconButton, {
+          onClick: open,
+          icon: "format-image",
+          label: __('Choose image', 'wp-toolbelt')
+        });
+      }
+    }))), createElement(InspectorControls, null, createElement(PanelBody, {
       title: __('Link URL', 'wp-toolbelt'),
       initialOpen: true
     }, createElement(TextControl, {
@@ -86,19 +102,19 @@
       onSelect: onSelectMedia,
       value: attributes.mediaId,
       allowedTypes: ['image'],
-      render: function render(_ref) {
-        var open = _ref.open;
+      render: function render(_ref2) {
+        var open = _ref2.open;
         return createElement(Button, {
-          className: attributes.mediaId === 0 ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview',
+          className: !hasBackground ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview',
           onClick: open
-        }, attributes.mediaId === 0 && __('Choose an image', 'wp-toolbelt'), props.media !== undefined && createElement(ResponsiveWrapper, {
+        }, !hasBackground && __('Choose an image', 'wp-toolbelt'), props.media !== undefined && createElement(ResponsiveWrapper, {
           naturalWidth: props.media.media_details.width,
           naturalHeight: props.media.media_details.height
         }, createElement("img", {
           src: props.media.source_url
         })));
       }
-    })), attributes.mediaId !== 0 && createElement(MediaUploadCheck, null, createElement(Button, {
+    })), hasBackground && createElement(MediaUploadCheck, null, createElement(Button, {
       onClick: removeMedia,
       isLink: true,
       isDestructive: true
@@ -194,22 +210,31 @@
   };
 
   var getSliderClass = function getSliderClass(props) {
+    var attributes = props.attributes;
     var classNames = ['toolbelt-block-slider'];
+
+    if (attributes.textAlignment) {
+      classNames.push("has-text-align-".concat(attributes.textAlignment));
+    }
+
     return classNames.join(' ');
   };
 
   var sliderEdit = function sliderEdit(props) {
-    var attributes = props.attributes;
-    var backgroundColor = attributes.backgroundColor,
-        textColor = attributes.textColor;
+    var attributes = props.attributes,
+        setAttributes = props.setAttributes;
+    var textAlignment = attributes.textAlignment;
     var ALLOWED_BLOCKS = ['toolbelt/slide'];
     var SLIDER_TEMPLATE = [['toolbelt/slide']];
-    return [createElement("div", {
+    return [createElement(BlockControls, null, createElement(AlignmentToolbar, {
+      value: textAlignment,
+      onChange: function onChange(value) {
+        return setAttributes({
+          textAlignment: value
+        });
+      }
+    })), createElement("div", {
       className: getSliderClass(props),
-      style: {
-        backgroundColor: backgroundColor,
-        color: textColor
-      },
       role: "group"
     }, createElement(InnerBlocks, {
       template: SLIDER_TEMPLATE,
@@ -247,10 +272,7 @@
       columnWidth: {
         type: 'int'
       },
-      backgroundColor: {
-        type: 'string'
-      },
-      textColor: {
+      textAlignment: {
         type: 'string'
       }
     },
