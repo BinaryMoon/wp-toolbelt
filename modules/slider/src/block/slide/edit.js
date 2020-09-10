@@ -110,7 +110,9 @@ const slideEdit = ( props ) => {
 					hasBackground && (
 						<MediaUploadCheck>
 							<Button
-								onClick={removeMedia} isLink isDestructive
+								onClick={removeMedia}
+								isLink
+								isDestructive
 							>
 								{__( 'Remove image', 'wp-toolbelt' )}
 							</Button>
