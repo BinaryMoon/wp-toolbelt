@@ -1,10 +1,10 @@
 const sliderSave = ( props ) => {
 
 	const { attributes } = props;
-	const { backgroundColor, textColor } = attributes;
+	// const { } = attributes;
 
 	return (
-		<div className={getSliderClass( props )} style={{ backgroundColor, color: textColor }}>
+		<div className={getSliderClass( props )}>
 			<ul>
 				<InnerBlocks.Content />
 			</ul>
