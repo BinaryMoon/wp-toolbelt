@@ -8,6 +8,15 @@ const getSlideClass = ( props ) => {
 
 };
 
+
+const getSlideBackground = ( attributes ) => {
+
+	return {
+		backgroundImage: attributes.mediaUrl != '' ? `url("${attributes.mediaUrl}")` : 'none'
+	};
+
+}
+
 const slideEdit = ( props ) => {
 
 	const { attributes, isSelected, setAttributes } = props;
@@ -36,11 +45,7 @@ const slideEdit = ( props ) => {
 
 	}
 
-	const blockStyle = {
-
-		backgroundImage: attributes.mediaUrl != '' ? 'url("' + attributes.mediaUrl + '")' : 'none'
-
-	};
+	const background = getSlideBackground( attributes );
 
 	return [
 		<BlockControls>
@@ -121,7 +126,7 @@ const slideEdit = ( props ) => {
 				}
 			</PanelBody>
 		</InspectorControls>,
-		<div className={getSlideClass( props )} style={blockStyle}>
+		<div className={getSlideClass( props )} style={background}>
 			{
 				isSelected && (
 					<>
