@@ -8,6 +8,7 @@
       Fragment = _wp$element.Fragment;
   var _wp$components = wp.components,
       Button = _wp$components.Button,
+      ButtonGroup = _wp$components.ButtonGroup,
       ExternalLink = _wp$components.ExternalLink,
       IconButton = _wp$components.IconButton,
       PanelBody = _wp$components.PanelBody,
@@ -35,14 +36,27 @@
     var title = attributes.title,
         description = attributes.description,
         link = attributes.link;
-    return createElement("li", null, title && link && createElement("h3", null, createElement("a", {
+    var background = getSlideBackground(attributes);
+    return createElement("li", {
+      style: background
+    }, title && link && createElement("h3", {
+      "class": "toolbelt-skip-anchor"
+    }, createElement("a", {
       href: "{link}"
-    }, title)), title && !link && createElement("h3", null, title), description && createElement("p", null, description));
+    }, title)), title && !link && createElement("h3", {
+      "class": "toolbelt-skip-anchor"
+    }, title), description && createElement("p", null, description));
   };
 
   var getSlideClass = function getSlideClass(props) {
     var classNames = ['toolbelt-block-slide'];
     return classNames.join(' ');
+  };
+
+  var getSlideBackground = function getSlideBackground(attributes) {
+    return {
+      backgroundImage: attributes.mediaUrl != '' ? "url(\"".concat(attributes.mediaUrl, "\")") : 'none'
+    };
   };
 
   var slideEdit = function slideEdit(props) {
@@ -68,9 +82,7 @@
       });
     };
 
-    var blockStyle = {
-      backgroundImage: attributes.mediaUrl != '' ? 'url("' + attributes.mediaUrl + '")' : 'none'
-    };
+    var background = getSlideBackground(attributes);
     return [createElement(BlockControls, null, createElement(MediaUploadCheck, null, createElement(MediaUpload, {
       title: __('Upload image', 'wp-toolbelt'),
       value: attributes.mediaId,
@@ -120,7 +132,7 @@
       isDestructive: true
     }, __('Remove image', 'wp-toolbelt'))))), createElement("div", {
       className: getSlideClass(props),
-      style: blockStyle
+      style: background
     }, isSelected && createElement(Fragment, null, createElement("h3", null, createElement(RichText, {
       value: title,
       placeholder: __('Title', 'wp-toolbelt'),
@@ -197,15 +209,10 @@
   });
 
   var sliderSave = function sliderSave(props) {
-    var attributes = props.attributes;
-    var backgroundColor = attributes.backgroundColor,
-        textColor = attributes.textColor;
+    var attributes = props.attributes; // const { } = attributes;
+
     return createElement("div", {
-      className: getSliderClass(props),
-      style: {
-        backgroundColor: backgroundColor,
-        color: textColor
-      }
+      className: getSliderClass(props)
     }, createElement("ul", null, createElement(InnerBlocks.Content, null)));
   };
 
@@ -217,23 +224,44 @@
       classNames.push("has-text-align-".concat(attributes.textAlignment));
     }
 
+    if (attributes.slideWidth) {
+      classNames.push("toolbelt-block-slide-width-".concat(attributes.slideWidth.toLowerCase()));
+    }
+
     return classNames.join(' ');
   };
 
   var sliderEdit = function sliderEdit(props) {
     var attributes = props.attributes,
         setAttributes = props.setAttributes;
-    var textAlignment = attributes.textAlignment;
+    var textAlignment = attributes.textAlignment,
+        slideWidth = attributes.slideWidth;
     var ALLOWED_BLOCKS = ['toolbelt/slide'];
     var SLIDER_TEMPLATE = [['toolbelt/slide']];
     return [createElement(BlockControls, null, createElement(AlignmentToolbar, {
       value: textAlignment,
+      label: __('Slide Width', 'wp-toolbelt'),
       onChange: function onChange(value) {
         return setAttributes({
           textAlignment: value
         });
       }
-    })), createElement("div", {
+    })), createElement(InspectorControls, null, createElement(PanelBody, {
+      title: __('Slider Settings', 'wp-toolbelt'),
+      initialOpen: true
+    }, createElement(ButtonGroup, {
+      label: __('Slide Width', 'wp-toolbelt')
+    }, createElement("p", null, __('Slide Width', 'wp-toolbelt')), ['S', 'M', 'L', 'XL'].map(function (size) {
+      return createElement(Button, {
+        onClick: function onClick() {
+          return setAttributes({
+            slideWidth: size
+          });
+        },
+        value: size,
+        isPrimary: size === slideWidth
+      }, size);
+    })))), createElement("div", {
       className: getSliderClass(props),
       role: "group"
     }, createElement(InnerBlocks, {
@@ -274,6 +302,10 @@
       },
       textAlignment: {
         type: 'string'
+      },
+      slideWidth: {
+        type: 'string',
+        "default": 'M'
       }
     },
     supports: {
