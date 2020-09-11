@@ -8,12 +8,12 @@ const slideSave = ( props ) => {
 		<li style={background}>
 			{
 				title && link && (
-					<h3><a href="{link}">{title}</a></h3>
+					<h3 class="toolbelt-skip-anchor"><a href="{link}">{title}</a></h3>
 				)
 			}
 			{
 				title && !link && (
-					<h3>{title}</h3>
+					<h3 class="toolbelt-skip-anchor">{title}</h3>
 				)
 			}
 			{
