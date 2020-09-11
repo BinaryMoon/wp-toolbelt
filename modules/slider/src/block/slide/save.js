@@ -1,11 +1,17 @@
+/**
+ * HTML for the generated slide.
+ *
+ * @param {array} props The slider properties.
+ * @return {string}
+ */
 const slideSave = ( props ) => {
 
-	const { attributes } = props;
+	const { attributes, className } = props;
 	const { title, description, link } = attributes;
 	const background = getSlideBackground( attributes );
 
 	return (
-		<li style={background}>
+		<li style={background} class={className}>
 			{
 				title && link && (
 					<h3 class="toolbelt-skip-anchor"><a href="{link}">{title}</a></h3>

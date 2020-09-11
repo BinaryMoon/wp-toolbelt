@@ -1,3 +1,10 @@
+
+/**
+ * Get the classes for the slider.
+ *
+ * @param {array} props The slider properties.
+ * @return {string}
+ */
 const getSliderClass = ( props ) => {
 
 	const { attributes } = props;
@@ -18,6 +25,12 @@ const getSliderClass = ( props ) => {
 
 };
 
+/**
+ * HTML used to edit the slider.
+ *
+ * @param {array} props The slider properties.
+ * @return {array}
+ */
 const sliderEdit = ( props ) => {
 
 	const { attributes, setAttributes } = props;

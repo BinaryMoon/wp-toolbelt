@@ -1,3 +1,9 @@
+/**
+ * Get slide class names.
+ *
+ * @param {array} props The slider properties.
+ * @return {string}
+ */
 const getSlideClass = ( props ) => {
 
 	let classNames = [
@@ -8,7 +14,12 @@ const getSlideClass = ( props ) => {
 
 };
 
-
+/**
+ * Get slide background styles.
+ *
+ * @param {array} attributes The slider attributes.
+ * @return {string}
+ */
 const getSlideBackground = ( attributes ) => {
 
 	return {
@@ -17,12 +28,23 @@ const getSlideBackground = ( attributes ) => {
 
 }
 
+/**
+ * HTML for editing the slide properties.
+ *
+ * @param {array} props The slider properties.
+ * @return {string}
+ */
 const slideEdit = ( props ) => {
 
 	const { attributes, isSelected, setAttributes } = props;
 	const { description, title, link } = attributes;
 	const hasBackground = attributes.mediaId > 0;
 
+	/**
+	 * Remove the slide background image.
+	 *
+	 * @return {void}
+	 */
 	const removeMedia = () => {
 
 		setAttributes(
@@ -34,6 +56,12 @@ const slideEdit = ( props ) => {
 
 	}
 
+	/**
+	 * Store the background image properties.
+	 *
+	 * @param {array} media The image properties.
+	 * @return {void}
+	 */
 	const onSelectMedia = ( media ) => {
 
 		setAttributes(
