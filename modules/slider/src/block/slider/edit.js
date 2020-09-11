@@ -7,10 +7,11 @@
  */
 const getSliderClass = ( props ) => {
 
-	const { attributes } = props;
+	const { attributes, className } = props;
 
 	let classNames = [
 		'toolbelt-block-slider',
+		className,
 	];
 
 	if ( attributes.textAlignment ) {

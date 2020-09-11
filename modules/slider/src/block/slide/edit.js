@@ -6,8 +6,11 @@
  */
 const getSlideClass = ( props ) => {
 
+	const { className } = props;
+
 	let classNames = [
 		'toolbelt-block-slide',
+		className,
 	];
 
 	return classNames.join( ' ' );
