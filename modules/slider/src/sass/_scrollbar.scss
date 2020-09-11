@@ -1,0 +1,15 @@
+
+	&::-webkit-scrollbar {
+
+		width: 1rem;
+		height: 1rem;
+		background-color: black;
+
+	}
+
+	&::-webkit-scrollbar-thumb {
+
+		background: white;
+		border: 2px solid black;
+
+	}

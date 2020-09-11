@@ -15,81 +15,8 @@
 
 	}
 
-	&::-webkit-scrollbar {
-
-		width: 1rem;
-		height: 1rem;
-		background-color: black;
-
-	}
-
-	&::-webkit-scrollbar-thumb {
-
-		background: white;
-		border: 2px solid black;
-
-	}
+	@import "_scrollbar";
 
 }
 
-.wp-block-toolbelt-slide {
-
-	margin: 0 calc( var( --toolbelt-spacing ) / 2 );
-	width: 15rem;
-	height: 15rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	background: black center;
-	background-size: cover;
-	color: white;
-	padding: var( --toolbelt-spacing );
-	position: relative;
-
-	a,
-	> * {
-
-		margin: 0 !important;
-		color: currentColor;
-		z-index: 2;
-
-	}
-
-	a:after {
-
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-
-	}
-
-	.toolbelt-block-slide-width-s & {
-		width: 10rem;
-	}
-	.toolbelt-block-slide-width-m & {
-		width: 15rem;
-	}
-	.toolbelt-block-slide-width-l & {
-		width: 20rem;
-	}
-	.toolbelt-block-slide-width-xl & {
-		width: 25rem;
-	}
-
-	&:before {
-
-		content: '';
-		background: rgba(black,0.6);
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 1;
-
-	}
-
-}
+@import "_slide";
