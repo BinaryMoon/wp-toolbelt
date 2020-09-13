@@ -2,7 +2,6 @@
 
 	min-height: 8rem;
 	position: relative;
-	background: #f5f5f5;
 	overflow-x: scroll;
 	overflow-y: hidden;
 
@@ -12,6 +11,20 @@
 		width: fit-content;
 		display: flex;
 		padding: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+
+	&.is-style-padding {
+
+		padding: var( --toolbelt-spacing );
+
+	}
+
+	&.is-style-border {
+
+		padding: var( --toolbelt-spacing );
+		border: 1px solid currentColor;
 
 	}
 

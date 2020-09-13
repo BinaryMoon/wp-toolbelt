@@ -3,16 +3,29 @@
 	// We need the min-height for when there's no content.
 	min-height: 8rem;
 	position: relative;
-	background: #f5f5f5;
 	overflow-x: scroll;
 	overflow-y: hidden;
+	padding-bottom: var( --toolbelt-spacing );
+	margin-bottom: var( --toolbelt-spacing );
+
+	&.is-style-padding {
+
+		padding: var( --toolbelt-spacing );
+
+	}
+
+	&.is-style-border {
+
+		padding: var( --toolbelt-spacing );
+		border: 1px solid currentColor;
+
+	}
 
 	> .block-editor-inner-blocks {
 
 		> .block-editor-block-list__layout {
 
 			display: flex;
-			padding: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) / 2 );
 			width: fit-content;
 
 			.block-list-appender {

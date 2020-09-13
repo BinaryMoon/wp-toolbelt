@@ -27,6 +27,22 @@ registerBlockType(
 			)
 		},
 
+		styles: [
+			{
+				name: 'normal',
+				label: __( 'Simple', 'wp-toolbelt' ),
+				isDefault: true,
+			},
+			{
+				name: 'padding',
+				label: __( 'With padding', 'wp-toolbelt' ),
+			},
+			{
+				name: 'border',
+				label: __( 'With border', 'wp-toolbelt' ),
+			}
+		],
+
 		category: 'wp-toolbelt',
 
 		attributes: {
