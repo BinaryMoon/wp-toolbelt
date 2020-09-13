@@ -550,12 +550,13 @@
 
 
   var getWrapperClass = function getWrapperClass(props) {
-    var _props$attributes = props.attributes,
-        columns = _props$attributes.columns,
-        layout = _props$attributes.layout,
-        textColor = _props$attributes.textColor,
-        backgroundColor = _props$attributes.backgroundColor;
-    var className = ['wp-block-toolbelt-layout-grid'];
+    var attributes = props.attributes,
+        className = props.className;
+    var columns = attributes.columns,
+        layout = attributes.layout,
+        textColor = attributes.textColor,
+        backgroundColor = attributes.backgroundColor;
+    var classNames = ['wp-block-toolbelt-layout-grid', className];
     var grid_column = 2;
     var grid_layout = 0;
 
@@ -567,17 +568,17 @@
       grid_layout = layout;
     }
 
-    className.push("toolbelt-grid-layout-".concat(grid_column, "-").concat(grid_layout));
+    classNames.push("toolbelt-grid-layout-".concat(grid_column, "-").concat(grid_layout));
 
     if (backgroundColor) {
-      className.push('has-background');
+      classNames.push('has-background');
     }
 
     if (textColor) {
-      className.push('has-text-color');
+      classNames.push('has-text-color');
     }
 
-    return className.join(' ');
+    return classNames.join(' ');
   };
   /**
    * Create the React code for the editing functionality.
