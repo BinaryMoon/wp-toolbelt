@@ -118,9 +118,15 @@
 
 
     var onSelectMedia = function onSelectMedia(media) {
+      var imageUrl = media.url;
+
+      if (media.sizes && media.sizes.medium) {
+        imageUrl = media.sizes.medium.url;
+      }
+
       setAttributes({
         mediaId: media.id,
-        mediaUrl: media.url
+        mediaUrl: imageUrl
       });
     };
 
