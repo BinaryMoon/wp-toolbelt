@@ -1,14 +1,14 @@
 
-	&::-webkit-scrollbar {
+&::-webkit-scrollbar {
 
-		width: 1rem;
-		height: 1rem;
+	width: 1rem;
+	height: 1rem;
 	background-color: var( --toolbelt-color-mid );
 
-	}
+}
 
-	&::-webkit-scrollbar-thumb {
+&::-webkit-scrollbar-thumb {
 
 	background: var( --toolbelt-color-dark );
 
-	}
+}
