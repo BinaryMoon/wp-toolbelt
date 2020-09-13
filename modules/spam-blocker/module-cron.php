@@ -12,7 +12,7 @@
  */
 function toolbelt_spam_blocker_update_blocklist() {
 
-	// Load the blacklist.
+	// Load the blocklist.
 	$response = wp_remote_get(
 		'https://raw.githubusercontent.com/splorp/wordpress-comment-blacklist/master/blacklist.txt'
 	);

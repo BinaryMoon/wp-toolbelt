@@ -58,7 +58,7 @@ add_action( 'admin_head', 'toolbelt_layout_admin_styles' );
  */
 function toolbelt_layout_head() {
 
-	if ( ! is_single() ) {
+	if ( ! has_block( 'toolbelt/layout-grid' ) ) {
 		return;
 	}
 
