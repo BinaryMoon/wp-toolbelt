@@ -326,7 +326,7 @@ function toolbelt_css_properties() {
 		'toolbelt-spacing' => '1rem',
 		'toolbelt-scroll-margin-top' => '45px',
 		'toolbelt-color-dark' => 'black',
-		'toolbelt-color-mid' => 'grey',
+		'toolbelt-color-mid' => 'lightgrey',
 		'toolbelt-color-light' => 'white',
 	);
 
