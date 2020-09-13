@@ -3,13 +3,12 @@
 
 		width: 1rem;
 		height: 1rem;
-		background-color: black;
+	background-color: var( --toolbelt-color-mid );
 
 	}
 
 	&::-webkit-scrollbar-thumb {
 
-		background: white;
-		border: 2px solid black;
+	background: var( --toolbelt-color-dark );
 
 	}
