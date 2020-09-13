@@ -25,8 +25,8 @@
 
 	strong {
 
-		background: white;
-		color: black;
+		background: var( --toolbelt-color-light );
+		color: var( --toolbelt-color-dark );
 
 	}
 
@@ -38,8 +38,8 @@
 
 	button {
 
-		background: black;
-		color: white;
+		background: var( --toolbelt-color-dark );
+		color: var( --toolbelt-color-light );
 
 		&:hover {
 

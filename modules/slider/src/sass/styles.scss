@@ -1,0 +1,35 @@
+.wp-block-toolbelt-slider {
+
+	min-height: 8rem;
+	position: relative;
+	overflow-x: scroll;
+	overflow-y: hidden;
+
+	ul {
+
+		margin: 0;
+		width: fit-content;
+		display: flex;
+		padding: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+
+	&.is-style-padding {
+
+		padding: var( --toolbelt-spacing );
+
+	}
+
+	&.is-style-border {
+
+		padding: var( --toolbelt-spacing );
+		border: 1px solid currentColor;
+
+	}
+
+	@import "_scrollbar";
+
+}
+
+@import "_slide";

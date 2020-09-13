@@ -27,10 +27,13 @@ const getColumnsTemplate = ( columns ) => {
  */
 const getWrapperClass = ( props ) => {
 
-	const { columns, layout, textColor, backgroundColor } = props.attributes;
+	const { attributes, className } = props;
 
-	let className = [
+	const { columns, layout, textColor, backgroundColor } = attributes;
+
+	let classNames = [
 		'wp-block-toolbelt-layout-grid',
+		className,
 	];
 
 	let grid_column = 2;
@@ -44,17 +47,17 @@ const getWrapperClass = ( props ) => {
 		grid_layout = layout;
 	}
 
-	className.push( `toolbelt-grid-layout-${grid_column}-${grid_layout}` );
+	classNames.push( `toolbelt-grid-layout-${grid_column}-${grid_layout}` );
 
 	if ( backgroundColor ) {
-		className.push( 'has-background' );
+		classNames.push( 'has-background' );
 	}
 
 	if ( textColor ) {
-		className.push( 'has-text-color' );
+		classNames.push( 'has-text-color' );
 	}
 
-	return className.join( ' ' );
+	return classNames.join( ' ' );
 
 };
 
@@ -69,8 +72,6 @@ const gridEdit = function( props ) {
 	const { attributes, setAttributes } = props;
 	const { columns, layout, textColor, backgroundColor } = attributes;
 	const ALLOWED_BLOCKS = [ 'core/column' ];
-
-	console.log( attributes );
 
 	const columnOptions = [
 		{
@@ -143,7 +144,6 @@ const gridEdit = function( props ) {
 				template={getColumnsTemplate( columns )}
 				templateLock="all"
 				allowedBlocks={ALLOWED_BLOCKS}
-				orientation="horizontal"
 			/>
 		</div>,
 		gridInspector( props )

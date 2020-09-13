@@ -5,8 +5,7 @@
   var _wp$element = wp.element,
       createElement = _wp$element.createElement,
       Fragment = _wp$element.Fragment,
-      Component = _wp$element.Component,
-      RawHTML = _wp$element.RawHTML;
+      Component = _wp$element.Component;
   var _wp$components = wp.components,
       ExternalLink = _wp$components.ExternalLink,
       Placeholder = _wp$components.Placeholder,
@@ -26,8 +25,7 @@
       InnerBlocks = _wp$blockEditor.InnerBlocks,
       InspectorControls = _wp$blockEditor.InspectorControls,
       PanelColorSettings = _wp$blockEditor.PanelColorSettings,
-      ContrastChecker = _wp$blockEditor.ContrastChecker,
-      withColors = _wp$blockEditor.withColors;
+      ContrastChecker = _wp$blockEditor.ContrastChecker;
   /**
    * Column layout icons.
    */
@@ -552,12 +550,13 @@
 
 
   var getWrapperClass = function getWrapperClass(props) {
-    var _props$attributes = props.attributes,
-        columns = _props$attributes.columns,
-        layout = _props$attributes.layout,
-        textColor = _props$attributes.textColor,
-        backgroundColor = _props$attributes.backgroundColor;
-    var className = ['wp-block-toolbelt-layout-grid'];
+    var attributes = props.attributes,
+        className = props.className;
+    var columns = attributes.columns,
+        layout = attributes.layout,
+        textColor = attributes.textColor,
+        backgroundColor = attributes.backgroundColor;
+    var classNames = ['wp-block-toolbelt-layout-grid', className];
     var grid_column = 2;
     var grid_layout = 0;
 
@@ -569,17 +568,17 @@
       grid_layout = layout;
     }
 
-    className.push("toolbelt-grid-layout-".concat(grid_column, "-").concat(grid_layout));
+    classNames.push("toolbelt-grid-layout-".concat(grid_column, "-").concat(grid_layout));
 
     if (backgroundColor) {
-      className.push('has-background');
+      classNames.push('has-background');
     }
 
     if (textColor) {
-      className.push('has-text-color');
+      classNames.push('has-text-color');
     }
 
-    return className.join(' ');
+    return classNames.join(' ');
   };
   /**
    * Create the React code for the editing functionality.
@@ -597,7 +596,6 @@
         textColor = attributes.textColor,
         backgroundColor = attributes.backgroundColor;
     var ALLOWED_BLOCKS = ['core/column'];
-    console.log(attributes);
     var columnOptions = [{
       name: __('2 Columns', 'toolbelt'),
       key: 'two-column',
@@ -658,8 +656,7 @@
     }, createElement(InnerBlocks, {
       template: getColumnsTemplate(columns),
       templateLock: "all",
-      allowedBlocks: ALLOWED_BLOCKS,
-      orientation: "horizontal"
+      allowedBlocks: ALLOWED_BLOCKS
     })), gridInspector(props)];
   };
   /**

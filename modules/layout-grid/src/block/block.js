@@ -6,7 +6,6 @@
 			createElement,
 			Fragment,
 			Component,
-			RawHTML
 		} = wp.element;
 		const {
 			ExternalLink,
@@ -29,7 +28,6 @@
 			InspectorControls,
 			PanelColorSettings,
 			ContrastChecker,
-			withColors,
 		} = wp.blockEditor;
 
 		//=require ./icons.js
