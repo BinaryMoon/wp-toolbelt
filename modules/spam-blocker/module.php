@@ -125,6 +125,18 @@ function toolbelt_spam_check_comments( $approved, $comment ) {
 		$approved = 'spam';
 	}
 
+	/**
+	 * Check number of times a url is shared. No legitimate comment should need
+	 * more than 4 urls.
+	 */
+	$url_count = 0;
+	$url_count += substr_count( $comment['comment_content'], 'http://' );
+	$url_count += substr_count( $comment['comment_content'], 'https://' );
+	$url_count += substr_count( $comment['comment_content'], 'ftp://' );
+	if ( $url_count >= 4 ) {
+		return 'spam';
+	}
+
 	return $approved;
 
 }
