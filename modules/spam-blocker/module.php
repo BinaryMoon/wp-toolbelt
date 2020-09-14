@@ -7,6 +7,7 @@
  * 2. Comment blocklist (https://github.com/splorp/wordpress-comment-blacklist).
  * 3. Key Honeypot (check for altered key).
  * 4. Javascript checker (https://davidwalsh.name/wordpress-comment-spam).
+ * 5. Check how many urls are included in the content.
  *
  * @package toolbelt
  */
@@ -19,7 +20,8 @@ require 'module-cron.php';
 /**
  * Inspiration
  *
- * WordPress Zero Spam is based on the ideas outlined in David Walshes spam blocker.
+ * WordPress Zero Spam is based on the ideas outlined in David Walshes spam
+ * blocker.
  *
  * @link https://github.com/bmarshall511/wordpress-zero-spam
  */
@@ -106,7 +108,7 @@ function toolbelt_spam_check_comments( $approved, $comment ) {
 	 */
 	$toolbelt_url = filter_input( INPUT_POST, 'toolbelt-url' );
 	if ( null !== $toolbelt_url && strlen( $toolbelt_url ) > 0 ) {
-		$approved = 'spam';
+		return 'spam';
 	}
 
 	/**
@@ -114,15 +116,16 @@ function toolbelt_spam_check_comments( $approved, $comment ) {
 	 */
 	$toolbelt_key = filter_input( INPUT_POST, 'toolbelt-key' );
 	if ( null !== $toolbelt_key && TOOLBELT_SPAM_KEY !== $toolbelt_key ) {
-		$approved = 'spam';
+		return 'spam';
 	}
 
 	/**
-	 * If the check field does not exist then it's spam (or a user has javascript disabled).
+	 * If the check field does not exist then it's spam (or a user has
+	 * javascript disabled).
 	 */
 	$toolbelt_check = filter_input( INPUT_POST, 'toolbelt-check' );
 	if ( '1' !== $toolbelt_check ) {
-		$approved = 'spam';
+		return 'spam';
 	}
 
 	/**
