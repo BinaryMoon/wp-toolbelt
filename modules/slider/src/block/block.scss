@@ -8,6 +8,21 @@
 	padding-bottom: var( --toolbelt-spacing );
 	margin-bottom: var( --toolbelt-spacing );
 
+	&.is-style-normal {
+
+		.block-editor-block-list__layout {
+
+			> :first-child .toolbelt-block-slide {
+				margin-inline-start: 0;
+			}
+			> :last-child .toolbelt-block-slide {
+				margin-inline-end: 0;
+			}
+
+		}
+
+	}
+
 	&.is-style-padding {
 
 		padding: var( --toolbelt-spacing );

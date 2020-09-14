@@ -4,16 +4,32 @@
 	position: relative;
 	overflow-x: scroll;
 	overflow-y: hidden;
+	padding-bottom: var( --toolbelt-spacing );
+	margin-bottom: var( --toolbelt-spacing );
 
 	ul {
 
 		margin: 0;
+		padding: 0;
 		width: fit-content;
 		display: flex;
-		padding: var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) / 2 );
 
 	}
 
+	&.is-style-normal {
+
+		ul {
+
+			> :first-child {
+				margin-inline-start: 0;
+			}
+			> :last-child {
+				margin-inline-end: 0;
+			}
+
+		}
+
+	}
 
 	&.is-style-padding {
 
