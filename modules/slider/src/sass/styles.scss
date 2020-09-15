@@ -44,6 +44,16 @@
 
 	}
 
+	&.is-style-cosy {
+
+		.wp-block-toolbelt-slide {
+
+			margin: 0;
+
+		}
+
+	}
+
 	@import "_scrollbar";
 
 }

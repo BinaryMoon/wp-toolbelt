@@ -374,6 +374,9 @@
     }, {
       name: 'border',
       label: __('With border', 'wp-toolbelt')
+    }, {
+      name: 'cosy',
+      label: __('No margin', 'wp-toolbelt')
     }],
     category: 'wp-toolbelt',
     attributes: {
