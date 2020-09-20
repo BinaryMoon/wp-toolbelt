@@ -6,6 +6,7 @@
       createElement = _wp$element.createElement,
       Fragment = _wp$element.Fragment,
       Component = _wp$element.Component;
+  var useSelect = wp.data.useSelect;
   var _wp$components = wp.components,
       ExternalLink = _wp$components.ExternalLink,
       Placeholder = _wp$components.Placeholder,
@@ -154,6 +155,64 @@
       x: "50",
       y: "0",
       width: "11",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Three column - 25/50/25. */
+    threeWideCenterSmallLeft: createElement("svg", {
+      viewBox: "0 0 60 30",
+      height: "26",
+      xmlns: "http://www.w3.org/2000/svg",
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      strokeLinejoin: "round",
+      strokeMiterlimit: "1.414"
+    }, createElement("rect", {
+      x: "0",
+      y: "0",
+      width: "8",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "12",
+      y: "0",
+      width: "25",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "41",
+      y: "0",
+      width: "17",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Three column - 25/50/25. */
+    threeWideCenterSmallCenter: createElement("svg", {
+      viewBox: "0 0 60 30",
+      height: "26",
+      xmlns: "http://www.w3.org/2000/svg",
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      strokeLinejoin: "round",
+      strokeMiterlimit: "1.414"
+    }, createElement("rect", {
+      x: "0",
+      y: "0",
+      width: "25",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "29",
+      y: "0",
+      width: "8",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "41",
+      y: "0",
+      width: "17",
       height: "30",
       fill: "#6d6a6f"
     })),
@@ -391,6 +450,63 @@
       fill: "#6d6a6f"
     }))
   };
+  /**
+   * HTML for the generated column.
+   *
+   * @param {array} props The layout properties.
+   * @return {string}
+   */
+
+  var colSave = function colSave(props) {
+    return createElement("div", null, createElement(InnerBlocks.Content, null));
+  };
+  /**
+   * HTML for editing the column properties.
+   *
+   * @param {array} props The layout properties.
+   * @return {string}
+   */
+
+
+  var colEdit = function colEdit(props) {
+    var className = props.className,
+        clientId = props.clientId;
+    var hasChildBlocks = useSelect(function (select) {
+      var blockCount = select('core/editor').getBlocksByClientId(clientId)[0].innerBlocks.length;
+      return blockCount > 0;
+    }, [clientId]);
+    return [createElement("div", {
+      className: className
+    }, createElement(InnerBlocks, {
+      templateLock: false,
+      renderAppender: hasChildBlocks ? undefined : function () {
+        return createElement(InnerBlocks.ButtonBlockAppender, null);
+      }
+    }))];
+  };
+
+  registerBlockType('toolbelt/column', {
+    title: __('TB Column', 'wp-toolbelt'),
+    description: __('Columns for your layout.', 'wp-toolbelt'),
+    parent: ['toolbelt/layout-grid'],
+    icon: {
+      src: createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "60",
+        height: "60",
+        viewBox: "0 0 60 60"
+      }, createElement("rect", {
+        width: "40",
+        height: "40",
+        x: "10",
+        y: "10",
+        fill: "#000000",
+        "fill-rule": "evenodd"
+      }))
+    },
+    save: colSave,
+    edit: colEdit
+  });
   var columnLayouts = {
     /**
      * 2 column layouts.
@@ -428,6 +544,14 @@
       // 3.
       name: __('3 Columns - 25/25/50', 'wp-toolbelt'),
       icon: icons.threeWideRight
+    }, {
+      // 4.
+      name: __('3 Columns - 15/50/35', 'wp-toolbelt'),
+      icon: icons.threeWideCenterSmallLeft
+    }, {
+      // 5.
+      name: __('3 Columns - 50/15/35', 'wp-toolbelt'),
+      icon: icons.threeWideCenterSmallCenter
     }],
 
     /**
@@ -476,10 +600,10 @@
     }
 
     return createElement(InspectorControls, null, layouts && createElement(PanelBody, {
-      title: __('General', 'wp-toolbelt'),
+      title: __('Column Layout', 'wp-toolbelt'),
       initialOpen: true,
       className: "toolbelt-column-select-panel"
-    }, createElement("p", null, __('Column Layout', 'wp-toolbelt')), createElement("div", {
+    }, createElement("div", {
       className: "toolbelt-grid-buttongroup"
     }, layouts.map(function (_ref, index) {
       var name = _ref.name,
@@ -495,10 +619,11 @@
         className: class_name,
         isSmall: true,
         "data-index": index,
+        title: name,
         onClick: function onClick() {
           setAttributes({
             layout: index
-          }); //this.setState( { selectLayout: false } );
+          });
         }
       }, icon);
     }))), createElement(PanelColorSettings, {
@@ -536,7 +661,7 @@
     var result = Array(columns);
 
     while (++index < columns) {
-      result[index] = ['core/column'];
+      result[index] = ['toolbelt/column'];
     }
 
     return result;
@@ -592,10 +717,9 @@
     var attributes = props.attributes,
         setAttributes = props.setAttributes;
     var columns = attributes.columns,
-        layout = attributes.layout,
         textColor = attributes.textColor,
         backgroundColor = attributes.backgroundColor;
-    var ALLOWED_BLOCKS = ['core/column'];
+    var ALLOWED_BLOCKS = ['toolbelt/column'];
     var columnOptions = [{
       name: __('2 Columns', 'toolbelt'),
       key: 'two-column',
@@ -678,8 +802,7 @@
         color: textColor
       }
     }, createElement(InnerBlocks.Content, null));
-  }; //
-
+  };
 
   registerBlockType('toolbelt/layout-grid', {
     title: __('TB Layout Grid', 'wp-toolbelt'),
