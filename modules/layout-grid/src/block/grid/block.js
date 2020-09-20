@@ -1,5 +1,9 @@
 
-//
+//=require ./column-layouts.js
+//=require ./inspector.js
+//=require ./edit.js
+//=require ./save.js
+
 registerBlockType(
 	'toolbelt/layout-grid',
 	{

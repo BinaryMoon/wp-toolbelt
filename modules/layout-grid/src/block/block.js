@@ -31,11 +31,8 @@
 		} = wp.blockEditor;
 
 		//=require ./icons.js
-		//=require ./grid/column-layouts.js
-		//=require ./grid/inspector.js
 
-		//=require ./grid/edit.js
-		//=require ./grid/save.js
+		//=require ./column/block.js
 
 		//=require ./grid/block.js
 
