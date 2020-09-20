@@ -66,14 +66,8 @@ registerBlockType(
 			align: [ 'full', 'wide' ],
 		},
 
-		/**
-		 * Save the formatted markdown content.
-		 */
 		save: sliderSave,
 
-		/**
-		 * Edit the settings.
-		 */
 		edit: sliderEdit,
 
 	}

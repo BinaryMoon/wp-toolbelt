@@ -41,14 +41,8 @@ registerBlockType(
 			},
 		},
 
-		/**
-		 * Save the formatted markdown content.
-		 */
 		save: slideSave,
 
-		/**
-		 * Edit the settings.
-		 */
 		edit: withSelect(
 			( select, props ) => {
 				return {

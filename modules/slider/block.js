@@ -238,15 +238,7 @@
         "default": ''
       }
     },
-
-    /**
-     * Save the formatted markdown content.
-     */
     save: slideSave,
-
-    /**
-     * Edit the settings.
-     */
     edit: withSelect(function (select, props) {
       return {
         media: props.attributes.mediaId ? select('core').getMedia(props.attributes.mediaId) : undefined
@@ -394,15 +386,7 @@
     supports: {
       align: ['full', 'wide']
     },
-
-    /**
-     * Save the formatted markdown content.
-     */
     save: sliderSave,
-
-    /**
-     * Edit the settings.
-     */
     edit: sliderEdit
   });
 })();
