@@ -9,11 +9,18 @@
 			grid-gap: var( --toolbelt-spacing );
 			grid-auto-flow: dense;
 
+			> .wp-block {
+
+				margin: 0;
+				width: 100%;
+
+			}
+
 		}
 
 	}
 
-	.wp-block-column {
+	.toolbelt-block-column {
 
 		margin: 0 !important;
 

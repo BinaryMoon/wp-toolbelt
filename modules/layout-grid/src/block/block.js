@@ -8,6 +8,9 @@
 			Component,
 		} = wp.element;
 		const {
+			useSelect
+		} = wp.data;
+		const {
 			ExternalLink,
 			Placeholder,
 			TextControl,

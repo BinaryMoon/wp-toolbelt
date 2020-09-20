@@ -11,7 +11,7 @@ const getColumnsTemplate = ( columns ) => {
 	let result = Array( columns );
 
 	while ( ++index < columns ) {
-		result[ index ] = [ 'core/column' ];
+		result[ index ] = [ 'toolbelt/column' ];
 	}
 
 	return result;
@@ -71,7 +71,7 @@ const gridEdit = function( props ) {
 
 	const { attributes, setAttributes } = props;
 	const { columns, layout, textColor, backgroundColor } = attributes;
-	const ALLOWED_BLOCKS = [ 'core/column' ];
+	const ALLOWED_BLOCKS = [ 'toolbelt/column' ];
 
 	const columnOptions = [
 		{
