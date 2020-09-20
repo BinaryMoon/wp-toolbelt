@@ -70,7 +70,7 @@ const getWrapperClass = ( props ) => {
 const gridEdit = function( props ) {
 
 	const { attributes, setAttributes } = props;
-	const { columns, layout, textColor, backgroundColor } = attributes;
+	const { columns, textColor, backgroundColor } = attributes;
 	const ALLOWED_BLOCKS = [ 'toolbelt/column' ];
 
 	const columnOptions = [
