@@ -64,6 +64,8 @@
 @include toolbelt-grid-columns( 3, 1, 1fr 2fr 1fr, 2 );
 @include toolbelt-grid-columns( 3, 2, 2fr 1fr 1fr );
 @include toolbelt-grid-columns( 3, 3, 1fr 1fr 2fr, 3 );
+@include toolbelt-grid-columns( 3, 4, 1.6fr 4.9fr 3.3fr, 2 );
+@include toolbelt-grid-columns( 3, 5, 4.9fr 1.6fr 3.3fr );
 
 @include toolbelt-grid-columns( 4, 0, 1fr 1fr 1fr 1fr );
 @include toolbelt-grid-columns( 4, 1, 2fr 1fr 1fr 1fr );

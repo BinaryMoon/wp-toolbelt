@@ -86,6 +86,40 @@ const icons = {
 		</svg>
 	),
 
+	/* Three column - 25/50/25. */
+	threeWideCenterSmallLeft: (
+		<svg
+			viewBox="0 0 60 30"
+			height="26"
+			xmlns="http://www.w3.org/2000/svg"
+			fillRule="evenodd"
+			clipRule="evenodd"
+			strokeLinejoin="round"
+			strokeMiterlimit="1.414"
+		>
+			<rect x="0" y="0" width="8" height="30" fill="#6d6a6f" />
+			<rect x="12" y="0" width="25" height="30" fill="#6d6a6f" />
+			<rect x="41" y="0" width="17" height="30" fill="#6d6a6f" />
+		</svg>
+	),
+
+	/* Three column - 25/50/25. */
+	threeWideCenterSmallCenter: (
+		<svg
+			viewBox="0 0 60 30"
+			height="26"
+			xmlns="http://www.w3.org/2000/svg"
+			fillRule="evenodd"
+			clipRule="evenodd"
+			strokeLinejoin="round"
+			strokeMiterlimit="1.414"
+		>
+			<rect x="0" y="0" width="25" height="30" fill="#6d6a6f" />
+			<rect x="29" y="0" width="8" height="30" fill="#6d6a6f" />
+			<rect x="41" y="0" width="17" height="30" fill="#6d6a6f" />
+		</svg>
+	),
+
 	/* Three column - 50/25/25. */
 	threeWideLeft: (
 		<svg

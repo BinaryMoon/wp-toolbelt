@@ -38,6 +38,14 @@ const columnLayouts = {
 			name: __( '3 Columns - 25/25/50', 'wp-toolbelt' ),
 			icon: icons.threeWideRight,
 		},
+		{ // 4.
+			name: __( '3 Columns - 15/50/35', 'wp-toolbelt' ),
+			icon: icons.threeWideCenterSmallLeft,
+		},
+		{ // 5.
+			name: __( '3 Columns - 50/15/35', 'wp-toolbelt' ),
+			icon: icons.threeWideCenterSmallCenter,
+		},
 	],
 
 	/**
