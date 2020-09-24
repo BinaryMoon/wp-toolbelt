@@ -13,6 +13,18 @@ registerBlockType(
 
 		parent: [ 'toolbelt/layout-grid' ],
 
+		styles: [
+			{
+				name: 'normal',
+				label: __( 'Default', 'wp-toolbelt' ),
+				isDefault: true,
+			},
+			{
+				name: 'border-top',
+				label: __( 'Border Top', 'wp-toolbelt' ),
+			},
+		],
+
 		icon: {
 			src: (
 				<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">

@@ -18,6 +18,18 @@ registerBlockType(
 
 		category: 'wp-toolbelt',
 
+		styles: [
+			{
+				name: 'normal',
+				label: __( 'Default', 'wp-toolbelt' ),
+				isDefault: true,
+			},
+			{
+				name: 'padded',
+				label: __( 'Has Padding', 'wp-toolbelt' ),
+			},
+		],
+
 		attributes: {
 			columns: {
 				type: 'int',

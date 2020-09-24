@@ -5,13 +5,20 @@
 	grid-gap: var( --toolbelt-spacing );
 	grid-auto-flow: dense;
 
-	.toolbelt-block-column {
+	.wp-block-toolbelt-column {
 
 		margin: 0 !important;
 
+		&.is-style-border-top {
+
+			border-top: var( --toolbelt-border-width ) solid currentColor;
+			padding-top: var( --toolbelt-spacing );
+
+		}
+
 	}
 
-	&.has-background {
+	&.is-style-padded {
 
 		padding: var( --toolbelt-spacing );
 

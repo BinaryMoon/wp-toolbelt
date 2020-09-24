@@ -20,7 +20,7 @@
 
 	}
 
-	.toolbelt-block-column {
+	.wp-block-toolbelt-column {
 
 		margin: 0 !important;
 
@@ -32,11 +32,35 @@
 
 		}
 
+		&.is-style-border-top {
+
+			.block-editor-inner-blocks {
+
+				border-top: var( --toolbelt-border-width ) solid currentColor;
+				padding-top: var( --toolbelt-spacing );
+
+			}
+
+		}
+
+		// This is needed on the backend. The theme should take care of it on the frontend.
+		// https://github.com/studiopress/atomic-blocks/blob/c1913f677a2ab7ce6df63457b5dfca064c1ca045/src/blocks/block-column-inner/styles/editor.scss#L319
+		.wp-block-image,
+		.wp-block-image .components-resizable-box__container {
+
+			max-width: 100% !important;
+
+		}
+
 	}
 
-	&.has-background {
+	&.is-style-padded {
 
-		padding: var( --toolbelt-spacing );
+		.block-editor-inner-blocks {
+
+			padding: var( --toolbelt-spacing );
+
+		}
 
 	}
 
