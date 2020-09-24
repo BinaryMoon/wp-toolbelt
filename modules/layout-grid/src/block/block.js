@@ -8,7 +8,7 @@
 			Component,
 		} = wp.element;
 		const {
-			useSelect
+			select
 		} = wp.data;
 		const {
 			ExternalLink,

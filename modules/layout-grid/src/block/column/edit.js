@@ -9,13 +9,16 @@ const colEdit = ( props ) => {
 
 	const { className, clientId } = props;
 
-	const hasChildBlocks = useSelect(
-		( select ) => {
-			const blockCount = select( 'core/editor' ).getBlocksByClientId( clientId )[ 0 ].innerBlocks.length;
-			return blockCount > 0;
-		},
-		[ clientId ]
-	);
+	// Count the innerblocks.
+	// https://stackoverflow.com/questions/53345956/gutenberg-custom-block-add-elements-by-innerblocks-length
+	const blocks = select( 'core/editor' ).getBlocksByClientId( clientId )[ 0 ];
+	let blockCount = 0;
+
+	if ( blocks ) {
+		blockCount = blocks.innerBlocks.length;
+	}
+
+	const hasChildBlocks = blockCount > 0;
 
 	return [
 		<div className={className}>
