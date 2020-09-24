@@ -6,7 +6,7 @@
       createElement = _wp$element.createElement,
       Fragment = _wp$element.Fragment,
       Component = _wp$element.Component;
-  var useSelect = wp.data.useSelect;
+  var select = wp.data.select;
   var _wp$components = wp.components,
       ExternalLink = _wp$components.ExternalLink,
       Placeholder = _wp$components.Placeholder,
@@ -470,11 +470,17 @@
 
   var colEdit = function colEdit(props) {
     var className = props.className,
-        clientId = props.clientId;
-    var hasChildBlocks = useSelect(function (select) {
-      var blockCount = select('core/editor').getBlocksByClientId(clientId)[0].innerBlocks.length;
-      return blockCount > 0;
-    }, [clientId]);
+        clientId = props.clientId; // Count the innerblocks.
+    // https://stackoverflow.com/questions/53345956/gutenberg-custom-block-add-elements-by-innerblocks-length
+
+    var blocks = select('core/editor').getBlocksByClientId(clientId)[0];
+    var blockCount = 0;
+
+    if (blocks) {
+      blockCount = blocks.innerBlocks.length;
+    }
+
+    var hasChildBlocks = blockCount > 0;
     return [createElement("div", {
       className: className
     }, createElement(InnerBlocks, {
@@ -489,6 +495,14 @@
     title: __('TB Column', 'wp-toolbelt'),
     description: __('Columns for your layout.', 'wp-toolbelt'),
     parent: ['toolbelt/layout-grid'],
+    styles: [{
+      name: 'normal',
+      label: __('Default', 'wp-toolbelt'),
+      isDefault: true
+    }, {
+      name: 'border-top',
+      label: __('Border Top', 'wp-toolbelt')
+    }],
     icon: {
       src: createElement("svg", {
         xmlns: "http://www.w3.org/2000/svg",
@@ -810,6 +824,14 @@
     keywords: [__('toolbelt', 'wp-toolbelt'), __('layout grid columns', 'wp-toolbelt')],
     icon: 'editor-table',
     category: 'wp-toolbelt',
+    styles: [{
+      name: 'normal',
+      label: __('Default', 'wp-toolbelt'),
+      isDefault: true
+    }, {
+      name: 'padded',
+      label: __('Has Padding', 'wp-toolbelt')
+    }],
     attributes: {
       columns: {
         type: 'int'
