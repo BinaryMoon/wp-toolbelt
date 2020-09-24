@@ -330,6 +330,8 @@ function toolbelt_css_properties() {
 	$properties = array(
 		'toolbelt-spacing' => '1rem',
 		'toolbelt-scroll-margin-top' => '45px',
+		'toolbelt-border-width' => '0.25rem',
+		'toolbelt-border-radius' => '0.1rem',
 		'toolbelt-color-dark' => 'black',
 		'toolbelt-color-mid' => 'lightgrey',
 		'toolbelt-color-light' => 'white',

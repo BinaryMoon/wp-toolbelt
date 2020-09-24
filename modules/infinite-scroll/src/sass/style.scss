@@ -34,7 +34,7 @@
 			width: 2rem;
 			display: inline-block;
 			border-radius: 2rem;
-			border: 0.2rem solid transparent;
+			border: var( --toolbelt-border-width ) solid transparent;
 			border-top-color: currentColor;
 			border-bottom-color: currentColor;
 			animation: toolbelt-spinner 1s ease infinite;
