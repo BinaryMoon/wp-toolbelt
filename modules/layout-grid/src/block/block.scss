@@ -5,14 +5,16 @@
 		> .block-editor-block-list__layout {
 
 			display: grid;
-			grid-template-columns: 1fr;
-			grid-gap: var( --toolbelt-spacing );
+			grid-template-columns: 100%;
+			margin: 0 calc( var( --toolbelt-spacing ) * -1 );
 			grid-auto-flow: dense;
+			row-gap: var( --toolbelt-spacing );
 
 			> .wp-block {
 
 				margin: 0;
 				width: 100%;
+				max-width: none;
 
 			}
 
@@ -22,7 +24,7 @@
 
 	.wp-block-toolbelt-column {
 
-		margin: 0 !important;
+		margin: 0 var( --toolbelt-spacing ) !important;
 
 		// This removes the empty div that is appearing when .wp-block-columns are selected.
 		// Without this the divs will be placed into the grid shifting the content around.
@@ -34,7 +36,7 @@
 
 		&.is-style-border-top {
 
-			.block-editor-inner-blocks {
+			> .block-editor-inner-blocks {
 
 				border-top: var( --toolbelt-border-width ) solid currentColor;
 				padding-top: var( --toolbelt-spacing );
@@ -62,7 +64,7 @@
 
 	&.is-style-padded {
 
-		.block-editor-inner-blocks {
+		> .block-editor-inner-blocks {
 
 			padding: var( --toolbelt-spacing );
 

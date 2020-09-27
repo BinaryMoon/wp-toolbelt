@@ -1,13 +1,15 @@
 .wp-block-toolbelt-layout-grid {
 
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-gap: var( --toolbelt-spacing );
+	grid-template-columns: 100%;
 	grid-auto-flow: dense;
+	row-gap: var( --toolbelt-spacing );
+	margin: 0 calc( var( --toolbelt-spacing ) * -1 );
 
 	.wp-block-toolbelt-column {
 
-		margin: 0 !important;
+		margin: 0 var( --toolbelt-spacing );
+		max-width: none;
 
 		&.is-style-border-top {
 
