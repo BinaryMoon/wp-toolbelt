@@ -18,6 +18,12 @@
 
 		}
 
+		&.is-style-padded {
+
+			padding: var( --toolbelt-spacing );
+
+		}
+
 		> :first-child {
 
 			margin-top: 0;

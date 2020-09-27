@@ -23,6 +23,10 @@ registerBlockType(
 				name: 'border-top',
 				label: __( 'Border Top', 'wp-toolbelt' ),
 			},
+			{
+				name: 'padded',
+				label: __( 'Has Padding', 'wp-toolbelt' ),
+			},
 		],
 
 		icon: {

@@ -45,6 +45,16 @@
 
 		}
 
+		&.is-style-padded {
+
+			> .block-editor-inner-blocks {
+
+				padding: 0 var( --toolbelt-spacing );
+
+			}
+
+		}
+
 		// This is needed on the backend. The theme should take care of it on the frontend.
 		// https://github.com/studiopress/atomic-blocks/blob/c1913f677a2ab7ce6df63457b5dfca064c1ca045/src/blocks/block-column-inner/styles/editor.scss#L319
 		.wp-block-image,
