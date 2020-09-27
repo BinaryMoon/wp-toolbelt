@@ -92,12 +92,6 @@ const gridEdit = function( props ) {
 			columns: 4,
 			icon: icons.fourEqual
 		},
-		{
-			name: __( '5 Columns', 'toolbelt' ),
-			key: 'five-column',
-			columns: 5,
-			icon: icons.fiveEqual
-		},
 	];
 
 	if ( !columns ) {

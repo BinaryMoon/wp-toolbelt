@@ -172,7 +172,7 @@ const icons = {
 		</svg>
 	),
 
-	/* Four column - 40/20/20/20. */
+	/* Four column - 50/16/16/16. */
 	fourLeft: (
 		<svg
 			viewBox="0 0 60 30"
@@ -183,10 +183,10 @@ const icons = {
 			strokeLinejoin="round"
 			strokeMiterlimit="1.414"
 		>
-			<rect x="0" y="0" width="21" height="30" fill="#6d6a6f" />
-			<rect x="25" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="38" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="51" y="0" width="9" height="30" fill="#6d6a6f" />
+			<rect x="0" y="0" width="24" height="30" fill="#6d6a6f" />
+			<rect x="28" y="0" width="7" height="30" fill="#6d6a6f" />
+			<rect x="39" y="0" width="7" height="30" fill="#6d6a6f" />
+			<rect x="50" y="0" width="7" height="30" fill="#6d6a6f" />
 		</svg>
 	),
 
@@ -201,15 +201,15 @@ const icons = {
 			strokeLinejoin="round"
 			strokeMiterlimit="1.414"
 		>
-			<rect x="0" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="12.800" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="25.600" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="38.400" y="0" width="21" height="30" fill="#6d6a6f" />
+			<rect x="0" y="0" width="7" height="30" fill="#6d6a6f" />
+			<rect x="11" y="0" width="7" height="30" fill="#6d6a6f" />
+			<rect x="22" y="0" width="7" height="30" fill="#6d6a6f" />
+			<rect x="33" y="0" width="24" height="30" fill="#6d6a6f" />
 		</svg>
 	),
 
-	/* Five columns - 20/20/20/20/20. */
-	fiveEqual: (
+	/* Four column - 16/33/33/16. */
+	fourCenter: (
 		<svg
 			viewBox="0 0 60 30"
 			height="26"
@@ -219,13 +219,31 @@ const icons = {
 			strokeLinejoin="round"
 			strokeMiterlimit="1.414"
 		>
-			<rect x="0" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="12.400" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="24.800" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="37.200" y="0" width="9" height="30" fill="#6d6a6f" />
-			<rect x="49.600" y="0" width="9" height="30" fill="#6d6a6f" />
+			<rect x="0" y="0" width="7" height="30" fill="#6d6a6f" />
+			<rect x="11" y="0" width="15" height="30" fill="#6d6a6f" />
+			<rect x="30" y="0" width="15" height="30" fill="#6d6a6f" />
+			<rect x="49" y="0" width="7" height="30" fill="#6d6a6f" />
 		</svg>
 	),
+
+	/* Four column - 33/16/16/33. */
+	fourOutside: (
+		<svg
+			viewBox="0 0 60 30"
+			height="26"
+			xmlns="http://www.w3.org/2000/svg"
+			fillRule="evenodd"
+			clipRule="evenodd"
+			strokeLinejoin="round"
+			strokeMiterlimit="1.414"
+		>
+			<rect x="0" y="0" width="15" height="30" fill="#6d6a6f" />
+			<rect x="19" y="0" width="7" height="30" fill="#6d6a6f" />
+			<rect x="30" y="0" width="7" height="30" fill="#6d6a6f" />
+			<rect x="41" y="0" width="15" height="30" fill="#6d6a6f" />
+		</svg>
+	),
+
 
 	/* Block icon. */
 	blockIcon: (

@@ -39,11 +39,11 @@ const columnLayouts = {
 			icon: icons.threeWideRight,
 		},
 		{ // 4.
-			name: __( '3 Columns - 15/50/35', 'wp-toolbelt' ),
+			name: __( '3 Columns - 16/50/33', 'wp-toolbelt' ),
 			icon: icons.threeWideCenterSmallLeft,
 		},
 		{ // 5.
-			name: __( '3 Columns - 50/15/35', 'wp-toolbelt' ),
+			name: __( '3 Columns - 16/15/33', 'wp-toolbelt' ),
 			icon: icons.threeWideCenterSmallCenter,
 		},
 	],
@@ -64,15 +64,13 @@ const columnLayouts = {
 			name: __( '4 Columns - 20/20/20/40', 'wp-toolbelt' ),
 			icon: icons.fourRight,
 		},
-	],
-
-	/**
-	 * 5 column layouts.
-	 */
-	5: [
-		{
-			name: __( '5 Columns', 'wp-toolbelt' ),
-			icon: icons.fiveEqual,
+		{ // 3.
+			name: __( '4 Columns - 16/33/33/16', 'wp-toolbelt' ),
+			icon: icons.fourOutside,
+		},
+		{ // 4.
+			name: __( '4 Columns - 33/16/16/33', 'wp-toolbelt' ),
+			icon: icons.fourCenter,
 		},
 	],
 

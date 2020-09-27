@@ -80,22 +80,22 @@
 
 @media screen and ( min-width: 900px ) {
 
-	@include toolbelt-grid-columns( 2, 0, 1fr 1fr );
-	@include toolbelt-grid-columns( 2, 1, 3fr 1fr );
-	@include toolbelt-grid-columns( 2, 2, 1fr 3fr, 2 );
+	@include toolbelt-grid-columns( 2, 0, 50% 50% ); // 6/12 6/12
+	@include toolbelt-grid-columns( 2, 1, 75% 25% ); // 9/12 3/12
+	@include toolbelt-grid-columns( 2, 2, 25% 75%, 2 ); // 3/12 9/12
 
-	@include toolbelt-grid-columns( 3, 0, 1fr 1fr 1fr );
-	@include toolbelt-grid-columns( 3, 1, 1fr 2fr 1fr, 2 );
-	@include toolbelt-grid-columns( 3, 2, 2fr 1fr 1fr );
-	@include toolbelt-grid-columns( 3, 3, 1fr 1fr 2fr, 3 );
-	@include toolbelt-grid-columns( 3, 4, 1.6fr 4.9fr 3.3fr, 2 );
-	@include toolbelt-grid-columns( 3, 5, 4.9fr 1.6fr 3.3fr );
+	@include toolbelt-grid-columns( 3, 0, 33.33% 33.33% 33.33% ); // 4/12 4/12 4/12
+	@include toolbelt-grid-columns( 3, 1, 25% 50% 25%, 2 ); // 3/12 6/12 3/12
+	@include toolbelt-grid-columns( 3, 2, 50% 25% 25% ); // 6/12 3/12 3/12
+	@include toolbelt-grid-columns( 3, 3, 25% 25% 50%, 3 ); // 3/12 3/12 6/12
+	@include toolbelt-grid-columns( 3, 4, 16.66% 50% 33.33%, 2 ); // 2/12 6/12 4/12
+	@include toolbelt-grid-columns( 3, 5, 50% 16.66% 33.33% ); // 6/12 2/12 4/12
 
-	@include toolbelt-grid-columns( 4, 0, 1fr 1fr 1fr 1fr );
-	@include toolbelt-grid-columns( 4, 1, 2fr 1fr 1fr 1fr );
-	@include toolbelt-grid-columns( 4, 2, 1fr 1fr 1fr 2fr, 4 );
-
-	@include toolbelt-grid-columns( 5, 0, 1fr 1fr 1fr 1fr );
+	@include toolbelt-grid-columns( 4, 0, 25% 25% 25% 25% ); // 3/12 3/12 3/12 3/12
+	@include toolbelt-grid-columns( 4, 1, 50% 16.66% 16.66% 16.66% ); // 6/12 2/12 2/12 2/12
+	@include toolbelt-grid-columns( 4, 2, 16.66% 16.66% 16.66% 50%, 4 ); // 2/12 2/12 2/12 6/12
+	@include toolbelt-grid-columns( 4, 3, 33.33% 16.66% 16.66% 33.33% ); // 4/12 2/12 2/12 4/12
+	@include toolbelt-grid-columns( 4, 4, 16.66% 33.33% 33.33% 16.66%, 2 ); // 2/12 4/12 4/12 2/12
 
 }
 
