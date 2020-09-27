@@ -310,7 +310,7 @@
       fill: "#6d6a6f"
     })),
 
-    /* Four column - 40/20/20/20. */
+    /* Four column - 50/16/16/16. */
     fourLeft: createElement("svg", {
       viewBox: "0 0 60 30",
       height: "26",
@@ -322,25 +322,25 @@
     }, createElement("rect", {
       x: "0",
       y: "0",
-      width: "21",
+      width: "24",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "25",
+      x: "28",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "38",
+      x: "39",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "51",
+      x: "50",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     })),
@@ -357,31 +357,31 @@
     }, createElement("rect", {
       x: "0",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "12.800",
+      x: "11",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "25.600",
+      x: "22",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "38.400",
+      x: "33",
       y: "0",
-      width: "21",
+      width: "24",
       height: "30",
       fill: "#6d6a6f"
     })),
 
-    /* Five columns - 20/20/20/20/20. */
-    fiveEqual: createElement("svg", {
+    /* Four column - 16/33/33/16. */
+    fourCenter: createElement("svg", {
       viewBox: "0 0 60 30",
       height: "26",
       xmlns: "http://www.w3.org/2000/svg",
@@ -392,31 +392,60 @@
     }, createElement("rect", {
       x: "0",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "12.400",
+      x: "11",
       y: "0",
-      width: "9",
+      width: "15",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "24.800",
+      x: "30",
       y: "0",
-      width: "9",
+      width: "15",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "37.200",
+      x: "49",
       y: "0",
-      width: "9",
+      width: "7",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Four column - 33/16/16/33. */
+    fourOutside: createElement("svg", {
+      viewBox: "0 0 60 30",
+      height: "26",
+      xmlns: "http://www.w3.org/2000/svg",
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      strokeLinejoin: "round",
+      strokeMiterlimit: "1.414"
+    }, createElement("rect", {
+      x: "0",
+      y: "0",
+      width: "15",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "49.600",
+      x: "19",
       y: "0",
-      width: "9",
+      width: "7",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "30",
+      y: "0",
+      width: "7",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "41",
+      y: "0",
+      width: "15",
       height: "30",
       fill: "#6d6a6f"
     })),
@@ -502,6 +531,9 @@
     }, {
       name: 'border-top',
       label: __('Border Top', 'wp-toolbelt')
+    }, {
+      name: 'padded',
+      label: __('Has Padding', 'wp-toolbelt')
     }],
     icon: {
       src: createElement("svg", {
@@ -560,11 +592,11 @@
       icon: icons.threeWideRight
     }, {
       // 4.
-      name: __('3 Columns - 15/50/35', 'wp-toolbelt'),
+      name: __('3 Columns - 16/50/33', 'wp-toolbelt'),
       icon: icons.threeWideCenterSmallLeft
     }, {
       // 5.
-      name: __('3 Columns - 50/15/35', 'wp-toolbelt'),
+      name: __('3 Columns - 16/15/33', 'wp-toolbelt'),
       icon: icons.threeWideCenterSmallCenter
     }],
 
@@ -583,14 +615,14 @@
       // 2.
       name: __('4 Columns - 20/20/20/40', 'wp-toolbelt'),
       icon: icons.fourRight
-    }],
-
-    /**
-     * 5 column layouts.
-     */
-    5: [{
-      name: __('5 Columns', 'wp-toolbelt'),
-      icon: icons.fiveEqual
+    }, {
+      // 3.
+      name: __('4 Columns - 16/33/33/16', 'wp-toolbelt'),
+      icon: icons.fourOutside
+    }, {
+      // 4.
+      name: __('4 Columns - 33/16/16/33', 'wp-toolbelt'),
+      icon: icons.fourCenter
     }]
   };
   /**
@@ -749,11 +781,6 @@
       key: 'four-column',
       columns: 4,
       icon: icons.fourEqual
-    }, {
-      name: __('5 Columns', 'toolbelt'),
-      key: 'five-column',
-      columns: 5,
-      icon: icons.fiveEqual
     }];
 
     if (!columns) {
