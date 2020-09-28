@@ -6,35 +6,78 @@
 	row-gap: var( --toolbelt-spacing );
 	margin: 0 calc( var( --toolbelt-spacing ) * -1 );
 
-	.wp-block-toolbelt-column {
+	&.is-style-padded {
 
-		margin: 0 var( --toolbelt-spacing );
-		max-width: none;
+		padding: var( --toolbelt-spacing );
 
-		&.is-style-border-top {
+	}
 
-			border-top: var( --toolbelt-border-width ) solid currentColor;
-			padding-top: var( --toolbelt-spacing );
+}
 
-		}
+.wp-block-toolbelt-column {
 
-		&.is-style-padded {
+	margin: 0 var( --toolbelt-spacing );
+	max-width: none;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
 
-			padding: var( --toolbelt-spacing );
+	&.is-style-border-top {
 
-		}
-
-		> :first-child {
-
-			margin-top: 0;
-
-		}
+		border-top: var( --toolbelt-border-width ) solid currentColor;
+		padding-top: var( --toolbelt-spacing );
 
 	}
 
 	&.is-style-padded {
 
 		padding: var( --toolbelt-spacing );
+
+	}
+
+	> :first-child {
+
+		margin-top: 0;
+
+	}
+
+	> :last-child {
+
+		margin-bottom: 0;
+
+	}
+
+}
+
+.toolbelt-column-align {
+
+	// default;
+	&-top {
+
+
+
+	}
+
+	&-middle {
+
+		justify-content: center;
+
+	}
+
+	&-bottom {
+
+		justify-content: flex-end;
+
+	}
+
+	&-space-between {
+
+		justify-content: space-between;
+
+		> * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 
 	}
 

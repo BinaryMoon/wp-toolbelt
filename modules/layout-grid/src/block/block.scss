@@ -22,6 +22,32 @@
 
 	}
 
+	[data-type="toolbelt/column"] {
+
+		display: flex;
+		align-items: stretch;
+
+	}
+
+	.wp-block-toolbelt-column,
+	.wp-block-toolbelt-column > .block-editor-inner-blocks,
+	.wp-block-toolbelt-column > .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		height: 100%;
+		width: 100%;
+
+		> * {
+
+			margin-left: 0;
+			margin-right: 0;
+
+		}
+
+	}
+
 	.wp-block-toolbelt-column {
 
 		margin: 0 var( --toolbelt-spacing ) !important;
@@ -50,6 +76,47 @@
 			> .block-editor-inner-blocks {
 
 				padding: var( --toolbelt-spacing );
+
+			}
+
+		}
+
+		&.toolbelt-column-align {
+
+			// default;
+			&-top {
+
+
+
+			}
+
+			&-middle {
+
+				> .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+					justify-content: center;
+
+				}
+
+			}
+
+			&-bottom {
+
+				> .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+					justify-content: flex-end;
+
+				}
+
+			}
+
+			&-space-between {
+
+				> .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+					justify-content: space-between;
+
+				}
 
 			}
 
@@ -124,7 +191,10 @@
 
 
 
-//
+/**
+ * This is for the block inspector button group that's used to display the
+ * different column layouts.
+ */
 .toolbelt-grid-buttongroup {
 
 	display: grid;
