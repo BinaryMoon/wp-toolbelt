@@ -17,6 +17,7 @@
       Path = _wp$components.Path,
       SVG = _wp$components.SVG,
       PanelBody = _wp$components.PanelBody,
+      RadioControl = _wp$components.RadioControl,
       RangeControl = _wp$components.RangeControl,
       ToggleControl = _wp$components.ToggleControl,
       SelectControl = _wp$components.SelectControl;
@@ -487,7 +488,32 @@
    */
 
   var colSave = function colSave(props) {
-    return createElement("div", null, createElement(InnerBlocks.Content, null));
+    return createElement("div", {
+      className: getColClass(props)
+    }, createElement(InnerBlocks.Content, null));
+  };
+  /**
+   * Get the column classes.
+   *
+   * @param {array} props The layout properties.
+   * @return {string}
+   */
+
+
+  var getColClass = function getColClass(props) {
+    var className = props.className,
+        attributes = props.attributes;
+    var alignment = attributes.alignment;
+    var classes = ['toolbelt-column-align-' + alignment];
+    var newClassName = className;
+
+    if (newClassName === undefined || newClassName === 'undefined') {
+      newClassName = '';
+    }
+
+    newClassName = newClassName + ' ' + classes.join(' ');
+    newClassName = newClassName.replace('undefined', '');
+    return newClassName;
   };
   /**
    * HTML for editing the column properties.
@@ -499,7 +525,10 @@
 
   var colEdit = function colEdit(props) {
     var className = props.className,
-        clientId = props.clientId; // Count the innerblocks.
+        clientId = props.clientId,
+        attributes = props.attributes,
+        setAttributes = props.setAttributes;
+    var alignment = attributes.alignment; // Count the innerblocks.
     // https://stackoverflow.com/questions/53345956/gutenberg-custom-block-add-elements-by-innerblocks-length
 
     var blocks = select('core/editor').getBlocksByClientId(clientId)[0];
@@ -510,8 +539,32 @@
     }
 
     var hasChildBlocks = blockCount > 0;
-    return [createElement("div", {
-      className: className
+    return [createElement(InspectorControls, null, createElement(PanelBody, {
+      title: __('Column Layout', 'wp-toolbelt'),
+      initialOpen: true
+    }, createElement(RadioControl, {
+      label: __('Alignment', 'wp-toolbelt'),
+      selected: alignment,
+      options: [{
+        label: __('Top', 'wp-toolbelt'),
+        value: 'top'
+      }, {
+        label: __('Middle', 'wp-toolbelt'),
+        value: 'middle'
+      }, {
+        label: __('Bottom', 'wp-toolbelt'),
+        value: 'bottom'
+      }, {
+        label: __('Space Between', 'wp-toolbelt'),
+        value: 'space-between'
+      }],
+      onChange: function onChange(newAlignment) {
+        return setAttributes({
+          'alignment': newAlignment
+        });
+      }
+    }))), createElement("div", {
+      className: getColClass(props)
     }, createElement(InnerBlocks, {
       templateLock: false,
       renderAppender: hasChildBlocks ? undefined : function () {
@@ -535,6 +588,12 @@
       name: 'padded',
       label: __('Has Padding', 'wp-toolbelt')
     }],
+    attributes: {
+      alignment: {
+        type: 'string',
+        "default": 'top'
+      }
+    },
     icon: {
       src: createElement("svg", {
         xmlns: "http://www.w3.org/2000/svg",
