@@ -20,6 +20,7 @@
 			Path,
 			SVG,
 			PanelBody,
+			RadioControl,
 			RangeControl,
 			ToggleControl,
 			SelectControl,
