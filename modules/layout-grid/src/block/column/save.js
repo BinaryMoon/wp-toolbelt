@@ -7,7 +7,7 @@
 const colSave = ( props ) => {
 
 	return (
-		<div>
+		<div className={getColClass( props )}>
 			<InnerBlocks.Content />
 		</div>
 	);
