@@ -32,86 +32,93 @@
    * Column layout icons.
    */
 
+  var iconHeader = {
+    viewBox: '0 0 60 30',
+    height: '26',
+    xmlns: 'http://www.w3.org/2000/svg',
+    fillRule: 'evenodd',
+    clipRule: 'evenodd',
+    strokeLinejoin: 'round',
+    strokeMiterlimit: '1.414'
+  };
   var icons = {
     /* Two columns - 50/50. */
-    twoEqual: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
-      x: "33",
+    twoEqual: createElement("svg", iconHeader, createElement("rect", {
+      x: "32",
       y: "0",
-      width: "29",
+      width: "28",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
       x: "0",
       y: "0",
-      width: "29",
+      width: "28",
       height: "30",
       fill: "#6d6a6f"
     })),
 
     /* Two columns - 75/25. */
-    twoLeftWide: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
-      x: "43",
+    twoLeftWide: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
       y: "0",
-      width: "16",
+      width: "42",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "0",
+      x: "46",
       y: "0",
-      width: "39",
+      width: "14",
       height: "30",
       fill: "#6d6a6f"
     })),
 
     /* Two columns - 25/75. */
-    twoRightWide: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
-      x: "20",
+    twoRightWide: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
       y: "0",
-      width: "39",
+      width: "14",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
+      x: "18",
+      y: "0",
+      width: "42",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Two columns - 75/25. */
+    twoLeftWideThird: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
-      width: "16",
+      width: "37",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "41",
+      y: "0",
+      width: "18",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Two columns - 25/75. */
+    twoRightWideThird: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
+      y: "0",
+      width: "18",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "22",
+      y: "0",
+      width: "37",
       height: "30",
       fill: "#6d6a6f"
     })),
 
     /* Three columns - 33/33/33. */
-    threeEqual: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeEqual: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "17.500",
@@ -132,15 +139,7 @@
     })),
 
     /* Three column - 25/50/25. */
-    threeWideCenter: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeWideCenter: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "11",
@@ -161,15 +160,7 @@
     })),
 
     /* Three column - 25/50/25. */
-    threeWideCenterSmallLeft: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeWideCenterSmallLeft: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "8",
@@ -190,15 +181,7 @@
     })),
 
     /* Three column - 25/50/25. */
-    threeWideCenterSmallCenter: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeWideCenterSmallCenter: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "25",
@@ -219,15 +202,7 @@
     })),
 
     /* Three column - 50/25/25. */
-    threeWideLeft: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeWideLeft: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "30",
@@ -248,15 +223,7 @@
     })),
 
     /* Three column - 25/25/50. */
-    threeWideRight: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeWideRight: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "11",
@@ -277,15 +244,7 @@
     })),
 
     /* Four column - 25/25/25/25. */
-    fourEqual: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    fourEqual: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "12",
@@ -312,15 +271,7 @@
     })),
 
     /* Four column - 50/16/16/16. */
-    fourLeft: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    fourLeft: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "24",
@@ -347,15 +298,7 @@
     })),
 
     /* Four column - 20/20/20/40. */
-    fourRight: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    fourRight: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "7",
@@ -382,15 +325,7 @@
     })),
 
     /* Four column - 16/33/33/16. */
-    fourCenter: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    fourCenter: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "7",
@@ -417,15 +352,7 @@
     })),
 
     /* Four column - 33/16/16/33. */
-    fourOutside: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    fourOutside: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "15",
@@ -528,8 +455,15 @@
         clientId = props.clientId,
         attributes = props.attributes,
         setAttributes = props.setAttributes;
-    var alignment = attributes.alignment; // Count the innerblocks.
-    // https://stackoverflow.com/questions/53345956/gutenberg-custom-block-add-elements-by-innerblocks-length
+    var alignment = attributes.alignment;
+    /**
+     * Count the innerblocks.
+     *
+     * We use this to decide whether or not to display the large 'add block'
+     * button on internal content.
+     *
+     * @see https://stackoverflow.com/questions/53345956/gutenberg-custom-block-add-elements-by-innerblocks-length
+     */
 
     var blocks = select('core/editor').getBlocksByClientId(clientId)[0];
     var blockCount = 0;
@@ -628,6 +562,14 @@
       // 2.
       name: __('2 Columns - 25/75', 'wp-toolbelt'),
       icon: icons.twoRightWide
+    }, {
+      // 3.
+      name: __('2 Columns - 66/33', 'wp-toolbelt'),
+      icon: icons.twoLeftWideThird
+    }, {
+      // 4.
+      name: __('2 Columns - 33/66', 'wp-toolbelt'),
+      icon: icons.twoRightWideThird
     }],
 
     /**
@@ -677,11 +619,11 @@
     }, {
       // 3.
       name: __('4 Columns - 16/33/33/16', 'wp-toolbelt'),
-      icon: icons.fourOutside
+      icon: icons.fourCenter
     }, {
       // 4.
       name: __('4 Columns - 33/16/16/33', 'wp-toolbelt'),
-      icon: icons.fourCenter
+      icon: icons.fourOutside
     }]
   };
   /**

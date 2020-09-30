@@ -151,7 +151,7 @@
 
 }
 
-@mixin toolbelt-grid-columns( $columns, $layout, $design, $first_position: false ) {
+@mixin toolbelt-grid-columns( $columns, $layout, $design, $first_position: false, $second_position: false ) {
 
 	.toolbelt-grid-layout-#{$columns}-#{$layout} > .block-editor-inner-blocks > .block-editor-block-list__layout {
 
@@ -169,12 +169,24 @@
 
 	}
 
+	@if $second_position != false {
+
+		.toolbelt-grid-layout-#{$columns}-#{$layout} > .block-editor-inner-blocks > .block-editor-block-list__layout > :nth-child( 2 ) {
+
+			grid-column: $second_position;
+
+		}
+
+	}
+
 }
 
 
 @include toolbelt-grid-columns( 2, 0, 50% 50% ); // 6/12 6/12
 @include toolbelt-grid-columns( 2, 1, 75% 25% ); // 9/12 3/12
 @include toolbelt-grid-columns( 2, 2, 25% 75%, 2 ); // 3/12 9/12
+@include toolbelt-grid-columns( 2, 3, 66.66% 33.33% ); // 8/12 4/12
+@include toolbelt-grid-columns( 2, 4, 33.33% 66.66%, 2 ); // 4/12 8/12
 
 @include toolbelt-grid-columns( 3, 0, 33.33% 33.33% 33.33% ); // 4/12 4/12 4/12
 @include toolbelt-grid-columns( 3, 1, 25% 50% 25%, 2 ); // 3/12 6/12 3/12
@@ -186,8 +198,8 @@
 @include toolbelt-grid-columns( 4, 0, 25% 25% 25% 25% ); // 3/12 3/12 3/12 3/12
 @include toolbelt-grid-columns( 4, 1, 50% 16.66% 16.66% 16.66% ); // 6/12 2/12 2/12 2/12
 @include toolbelt-grid-columns( 4, 2, 16.66% 16.66% 16.66% 50%, 4 ); // 2/12 2/12 2/12 6/12
-@include toolbelt-grid-columns( 4, 3, 33.33% 16.66% 16.66% 33.33% ); // 4/12 2/12 2/12 4/12
-@include toolbelt-grid-columns( 4, 4, 16.66% 33.33% 33.33% 16.66%, 2 ); // 2/12 4/12 4/12 2/12
+@include toolbelt-grid-columns( 4, 3, 16.66% 33.33% 33.33% 16.66%, 2, 3 ); // 2/12 4/12 4/12 2/12
+@include toolbelt-grid-columns( 4, 4, 33.33% 16.66% 16.66% 33.33%, false, 4 ); // 4/12 2/12 2/12 4/12
 
 
 

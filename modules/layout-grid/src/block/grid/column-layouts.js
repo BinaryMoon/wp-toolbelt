@@ -16,6 +16,14 @@ const columnLayouts = {
 			name: __( '2 Columns - 25/75', 'wp-toolbelt' ),
 			icon: icons.twoRightWide,
 		},
+		{ // 3.
+			name: __( '2 Columns - 66/33', 'wp-toolbelt' ),
+			icon: icons.twoLeftWideThird,
+		},
+		{ // 4.
+			name: __( '2 Columns - 33/66', 'wp-toolbelt' ),
+			icon: icons.twoRightWideThird,
+		},
 	],
 
 	/**
@@ -66,11 +74,11 @@ const columnLayouts = {
 		},
 		{ // 3.
 			name: __( '4 Columns - 16/33/33/16', 'wp-toolbelt' ),
-			icon: icons.fourOutside,
+			icon: icons.fourCenter,
 		},
 		{ // 4.
 			name: __( '4 Columns - 33/16/16/33', 'wp-toolbelt' ),
-			icon: icons.fourCenter,
+			icon: icons.fourOutside,
 		},
 	],
 
