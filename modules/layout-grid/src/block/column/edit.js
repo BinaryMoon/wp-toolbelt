@@ -8,7 +8,6 @@
 const getColClass = ( props ) => {
 
 	const { className, attributes } = props;
-
 	const { alignment } = attributes;
 
 	let classes = [
@@ -41,8 +40,14 @@ const colEdit = ( props ) => {
 
 	const { alignment } = attributes;
 
-	// Count the innerblocks.
-	// https://stackoverflow.com/questions/53345956/gutenberg-custom-block-add-elements-by-innerblocks-length
+	/**
+	 * Count the innerblocks.
+	 *
+	 * We use this to decide whether or not to display the large 'add block'
+	 * button on internal content.
+	 *
+	 * @see https://stackoverflow.com/questions/53345956/gutenberg-custom-block-add-elements-by-innerblocks-length
+	 */
 	const blocks = select( 'core/editor' ).getBlocksByClientId( clientId )[ 0 ];
 	let blockCount = 0;
 
