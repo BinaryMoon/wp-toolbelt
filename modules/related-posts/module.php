@@ -5,12 +5,6 @@
  * @package toolbelt
  */
 
-// Don't display in the WordPress admin.
-if ( is_admin() ) {
-	return;
-}
-
-
 /**
  * A unique string to use for the transient.
  * Cache gets invalidated when a new version of Toolbelt is published.
@@ -26,6 +20,11 @@ define( 'TOOLBELT_RELATED_POST_TRANSIENT', 'toolbelt_related_post_' . TOOLBELT_V
  * @return string
  */
 function toolbelt_related_posts( $content ) {
+
+	// The content has a related posts block so no need to add this as well.
+	if ( has_block( 'toolbelt/related-posts' ) ) {
+		return $content;
+	}
 
 	/**
 	 * An option to disable the automatic output of the related posts.
@@ -100,12 +99,39 @@ function toolbelt_related_posts_get() {
 	shuffle( $related_posts );
 	$related_posts = array_slice( $related_posts, 0, apply_filters( 'toolbelt_related_posts_count', 2 ) );
 
-	toolbelt_global_styles( 'columns' );
-	toolbelt_styles( 'related-posts' );
-
 	return toolbelt_related_posts_html( $related_posts );
 
 }
+
+
+function toolbelt_related_styles() {
+
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	toolbelt_global_styles( 'columns' );
+	toolbelt_styles( 'related-posts' );
+
+}
+
+add_action( 'wp_print_styles', 'toolbelt_related_styles' );
+
+
+/**
+ * Display admin styles for editor block.
+ *
+ * @return void
+ */
+function toolbelt_related_admin_styles() {
+
+	toolbelt_global_styles( 'columns' );
+	toolbelt_styles( 'related-posts' );
+	toolbelt_styles_editor( 'related-posts' );
+
+}
+
+add_action( 'admin_head', 'toolbelt_related_admin_styles' );
 
 
 /**
@@ -123,7 +149,7 @@ function toolbelt_related_posts_html( $related_posts ) {
 	foreach ( $related_posts as $related ) {
 
 		$html .= sprintf(
-			'<a href="%1$s">%2$s<h4>%3$s</h4></a>',
+			'<article>%2$s<h4 class="toolbelt-skip-anchor"><a href="%1$s">%3$s</a></h4></article>',
 			esc_url( $related['url'] ),
 			$related['image'],
 			esc_html( $related['title'] )
@@ -280,3 +306,64 @@ function toolbelt_related_posts_add() {
 	return $post_info;
 
 }
+
+
+/**
+ *
+ */
+function toolbelt_related_render_block( $attrs ) {
+
+	return toolbelt_related_posts_get();
+
+}
+
+
+/**
+ * Register a Breadcrumbs block.
+ *
+ * @return void
+ */
+function toolbelt_related_register_block() {
+
+	// Skip block registration if Gutenberg is not enabled.
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
+
+	$block_js = dirname( __FILE__ ) . '/block.min.js';
+	$block_name = 'toolbelt-related-posts-block';
+
+	wp_register_script(
+		$block_name,
+		plugins_url( 'block.min.js', __FILE__ ),
+		array(
+			'wp-blocks',
+			'wp-i18n',
+			'wp-element',
+			'wp-components',
+		),
+		'1.0',
+		true
+	);
+
+	register_block_type(
+		'toolbelt/related-posts',
+		array(
+			'editor_script' => $block_name,
+			'render_callback' => 'toolbelt_related_render_block',
+			'attributes' => array(
+				'align' => array(
+					'default' => '',
+					'enum' => array( '', 'wide', 'full' ),
+					'type' => 'string',
+				),
+			),
+		)
+	);
+
+}
+
+add_action( 'init', 'toolbelt_related_register_block' );
+
+toolbelt_register_block_category();
+
