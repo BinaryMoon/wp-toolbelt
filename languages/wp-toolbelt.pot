@@ -205,7 +205,7 @@ msgstr ""
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:237, modules/related-posts/module.php:120, modules/related-posts/tools.php:19
+#: index.php:237, modules/related-posts/module.php:146, modules/related-posts/tools.php:19
 msgid "Related Posts"
 msgstr ""
 
