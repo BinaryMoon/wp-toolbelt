@@ -104,9 +104,14 @@ function toolbelt_related_posts_get() {
 }
 
 
+/**
+ * Add post styles for related posts.
+ *
+ * @return void
+ */
 function toolbelt_related_styles() {
 
-	if ( ! is_singular() ) {
+	if ( ! is_singular() && ! has_block( 'toolbelt/related-posts' ) ) {
 		return;
 	}
 
@@ -309,7 +314,10 @@ function toolbelt_related_posts_add() {
 
 
 /**
+ * Related posts block render callback.
  *
+ * @param array $attrs The block attributes.
+ * @return string
  */
 function toolbelt_related_render_block( $attrs ) {
 
