@@ -137,12 +137,13 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 = 2.8 - 13th September 2020 =
 * Add Star Rating block.
+* Add Slider block.
 * Add Layout Grid block.
 * Add Related Posts block.
 * Add TB prefix to all blocks. Inspired by: https://wptavern.com/wordpress-plugin-authors-should-avoid-confusing-users-when-naming-blocks
 * Add icon to breadcrumbs block.
-* Add Slider block.
 * Add additional social icons.
+* Update Related Posts html to be more semantic & accessible. May require some tweaks to custom styles applied to the module.
 * Change CSS colours to use custom properties for simpler, and more consistent, changes.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
