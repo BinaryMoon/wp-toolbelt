@@ -38,7 +38,7 @@
 		"gulp-sass": "^4.1.0",
 		"gulp-sloc": "^1.0.4",
 		"gulp-uglify": "^3.0.2",
-		"gulp-wp-pot": "^2.4.3",
+		"gulp-wp-pot": "^2.5.0",
 		"gulp-zip": "^5.0.2",
 		"jshint": "^2.12.0",
 		"lodash.template": "^4.5.0"
