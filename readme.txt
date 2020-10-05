@@ -135,7 +135,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 2.8 - 13th September 2020 =
+= 3.0 - 5th October 2020 =
 * Add Star Rating block.
 * Add Slider block.
 * Add Layout Grid block.
@@ -144,6 +144,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 * Add icon to breadcrumbs block.
 * Add additional social icons.
 * Update Related Posts html to be more semantic & accessible. May require some tweaks to custom styles applied to the module.
+* Update Avatars css so that it loads earlier to avoid flashes of unstyled content. Also compressed avatars admin CSS.
 * Change CSS colours to use custom properties for simpler, and more consistent, changes.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)
