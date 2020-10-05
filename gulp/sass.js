@@ -20,7 +20,7 @@ const sass_properties = {
 /**
  * Build SASS files.
  */
-function process_styles( path = './modules/*/src/sass/**/*.scss', basename = 'style' ) {
+function process_styles( path = './modules/*/src/sass/**/*.scss' ) {
 
 	return src( path )
 		.pipe(
@@ -42,7 +42,6 @@ function process_styles( path = './modules/*/src/sass/**/*.scss', basename = 'st
 				path => {
 					path.dirname = path.dirname.replace( 'src/sass', '' );
 					path.dirname = path.dirname.replace( 'src/block', '' );
-					path.basename = basename;
 					path.extname = '.min.css';
 				}
 			)
