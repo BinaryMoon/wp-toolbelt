@@ -42,7 +42,23 @@ add_filter( 'pre_get_avatar', 'toolbelt_avatar_html', 10, 3 );
 
 
 /**
- * Output scripts and styles in the footer.
+ * Output styles in the header.
+ *
+ * This avoids any flashes of unstyled content.
+ *
+ * @return void
+ */
+function toolbelt_avatar_header() {
+
+	toolbelt_styles( 'avatars' );
+
+}
+
+add_action( 'wp_print_styles', 'toolbelt_avatar_header' );
+add_action( 'admin_head', 'toolbelt_avatar_header' );
+
+/**
+ * Output scripts in the footer.
  * This needs to go on every page since `get_avatar` could be called anywhere.
  *
  * @return void
@@ -51,7 +67,6 @@ function toolbelt_avatar_footer() {
 
 	toolbelt_scripts( 'avatars', 'parts' );
 	toolbelt_scripts( 'avatars' );
-	toolbelt_styles( 'avatars' );
 
 	if ( is_admin() ) {
 		toolbelt_styles( 'avatars', 'admin' );
@@ -62,6 +77,7 @@ function toolbelt_avatar_footer() {
 <?php
 
 }
+
 
 /**
  * We need to add a really (really) big priority here so we can make sure this
