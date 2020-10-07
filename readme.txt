@@ -143,6 +143,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 * Add TB prefix to all blocks. Inspired by: https://wptavern.com/wordpress-plugin-authors-should-avoid-confusing-users-when-naming-blocks
 * Add icon to breadcrumbs block.
 * Add additional social icons.
+* Remove links from server rendered blocks so they can't be clicked by accident when editing content.
 * Update Related Posts html to be more semantic & accessible. May require some tweaks to custom styles applied to the module.
 * Update Avatars css so that it loads earlier to avoid flashes of unstyled content. Also compressed avatars admin CSS.
 * Change CSS colours to use custom properties for simpler, and more consistent, changes.
