@@ -587,3 +587,18 @@ function toolbelt_is_amp_page() {
 	return false;
 
 }
+
+
+/**
+ * If is REST request.
+ *
+ * This is bit of a hacky way of doing things but it seems to work and there's
+ * no official method.
+ *
+ * @return boolean
+ */
+function toolbelt_is_rest_request() {
+
+	return is_null( $GLOBALS['wp_query']->query );
+
+}
