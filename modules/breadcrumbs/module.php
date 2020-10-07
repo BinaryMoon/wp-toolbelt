@@ -378,7 +378,12 @@ function toolbelt_breadcrumb_render_block( $attrs ) {
 
 	$breadcrumbs = toolbelt_breadcrumb_get( $breadcrumb_type );
 
-	return toolbelt_breadcrumb_html( $breadcrumbs, $attrs );
+	$html = toolbelt_breadcrumb_html( $breadcrumbs, $attrs );
+	if ( toolbelt_is_rest_request() ) {
+		$html = preg_replace( '/href="(.*?)"/i', '#', $html );
+	}
+
+	return $html;
 
 }
 

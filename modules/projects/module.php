@@ -366,12 +366,31 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 
 }
 
-
 /**
  * Step aside for Jetpack (or other) portfolio shortcodes.
  */
 if ( ! shortcode_exists( 'portfolio' ) ) {
 	add_shortcode( 'portfolio', 'toolbelt_portfolio_shortcode' );
+}
+
+
+/**
+ * Render the portfolio block.
+ * This function also removes hrefs from links so that they can't be clicked by
+ * accident.
+ *
+ * @param array $attrs The block attributes.
+ * @return string
+ */
+function toolbelt_portfolio_render_block( $attrs ) {
+
+	$html = toolbelt_portfolio_shortcode( $attrs );
+	if ( toolbelt_is_rest_request() ) {
+		$html = preg_replace( '/href="(.*?)"/i', '#', $html );
+	}
+
+	return $html;
+
 }
 
 
@@ -563,7 +582,7 @@ function toolbelt_portfolio_register_block() {
 		'toolbelt/portfolio',
 		array(
 			'editor_script' => 'toolbelt-portfolio-block',
-			'render_callback' => 'toolbelt_portfolio_shortcode',
+			'render_callback' => 'toolbelt_portfolio_render_block',
 			'attributes' => array(
 				'rows' => array(
 					'default' => 2,

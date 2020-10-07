@@ -321,7 +321,12 @@ function toolbelt_related_posts_add() {
  */
 function toolbelt_related_render_block( $attrs ) {
 
-	return toolbelt_related_posts_get();
+	$html = toolbelt_related_posts_get();
+	if ( toolbelt_is_rest_request() ) {
+		$html = preg_replace( '/href="(.*?)"/i', '#', $html );
+	}
+
+	return $html;
 
 }
 
