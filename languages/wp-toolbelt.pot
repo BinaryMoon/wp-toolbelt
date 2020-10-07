@@ -141,7 +141,7 @@ msgstr ""
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:195, index.php:252
+#: index.php:195, index.php:257
 msgid "0.2kb of inline CSS."
 msgstr ""
 
@@ -190,150 +190,158 @@ msgid "Adds the web monetization meta tag. This allows you to get paid for your 
 msgstr ""
 
 #: index.php:226
-msgid "Advanced Latest Posts"
+msgid "Website Embeds"
 msgstr ""
 
 #: index.php:227
-msgid "Like built in Latest Posts block, but with more options to make something interesting."
+msgid "Add support for more OEmbed websites."
 msgstr ""
 
-#: index.php:231, modules/projects/module.php:39
-msgid "Portfolio"
+#: index.php:231
+msgid "Advanced Latest Posts"
 msgstr ""
 
 #: index.php:232
-msgid "A portfolio custom post type for your projects."
+msgid "Like built in Latest Posts block, but with more options to make something interesting."
+msgstr ""
+
+#: index.php:236, modules/projects/module.php:39
+msgid "Portfolio"
 msgstr ""
 
 #: index.php:237
+msgid "A portfolio custom post type for your projects."
+msgstr ""
+
+#: index.php:242
 msgid "Random Redirect"
 msgstr ""
 
-#: index.php:238
+#: index.php:243
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:242, modules/related-posts/module.php:151, modules/related-posts/tools.php:19
+#: index.php:247, modules/related-posts/module.php:151, modules/related-posts/tools.php:19
 msgid "Related Posts"
 msgstr ""
 
-#: index.php:243
+#: index.php:248
 msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:245
+#: index.php:250
 msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
-#: index.php:249
+#: index.php:254
 msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:250
+#: index.php:255
 msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
-#: index.php:255
+#: index.php:260
 msgid "Remove IP Addresses"
 msgstr ""
 
-#: index.php:256
+#: index.php:261
 msgid "Stop WordPress from storing IP addresses for users who comment on your site."
 msgstr ""
 
-#: index.php:260
+#: index.php:265
 msgid "Search Redirect"
 msgstr ""
 
-#: index.php:261
+#: index.php:266
 msgid "If there is a single search result then redirect to the result, rather than displaying a list of results."
 msgstr ""
 
-#: index.php:265
+#: index.php:270
 msgid "Simple Slider"
 msgstr ""
 
-#: index.php:266
+#: index.php:271
 msgid "An Accessible horizontal slider."
 msgstr ""
 
-#: index.php:270, modules/social-menu/module.php:16, modules/social-menu/module.php:35
+#: index.php:275, modules/social-menu/module.php:16, modules/social-menu/module.php:35
 msgid "Social Menu"
 msgstr ""
 
-#: index.php:271
+#: index.php:276
 msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:273
+#: index.php:278
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:276
+#: index.php:281
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:277
+#: index.php:282
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:279
+#: index.php:284
 msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:283
+#: index.php:288
 msgid "Spam Blocker"
 msgstr ""
 
-#: index.php:284
+#: index.php:289
 msgid "Attempt to block spam."
 msgstr ""
 
-#: index.php:286
+#: index.php:291
 msgid "0.3kb of inline JS"
 msgstr ""
 
-#: index.php:290
+#: index.php:295
 msgid "Star Ratings"
 msgstr ""
 
-#: index.php:291
+#: index.php:296
 msgid "Rate movies, books, videos, difficulty, whatever."
 msgstr ""
 
-#: index.php:295, modules/stats/settings.php:40
+#: index.php:300, modules/stats/settings.php:40
 msgid "Stats"
 msgstr ""
 
-#: index.php:296
+#: index.php:301
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:301, modules/testimonials/module.php:46
+#: index.php:306, modules/testimonials/module.php:46
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:302
+#: index.php:307
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:304
+#: index.php:309
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:308
+#: index.php:313
 msgid "Typographic Widows"
 msgstr ""
 
-#: index.php:309
+#: index.php:314
 msgid "Fix typographic widows in titles and headings."
 msgstr ""
 
-#: index.php:313
+#: index.php:318
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:314
+#: index.php:319
 msgid "Control which pages widgets appear on."
 msgstr ""
 
