@@ -197,14 +197,6 @@ msgstr ""
 msgid "Add support for more OEmbed websites."
 msgstr ""
 
-#: index.php:231
-msgid "Advanced Latest Posts"
-msgstr ""
-
-#: index.php:232
-msgid "Like built in Latest Posts block, but with more options to make something interesting."
-msgstr ""
-
 #: index.php:236, modules/projects/module.php:39
 msgid "Portfolio"
 msgstr ""
@@ -258,90 +250,98 @@ msgid "If there is a single search result then redirect to the result, rather th
 msgstr ""
 
 #: index.php:270
-msgid "Simple Slider"
+msgid "Sitemap"
 msgstr ""
 
 #: index.php:271
-msgid "An Accessible horizontal slider."
-msgstr ""
-
-#: index.php:275, modules/social-menu/module.php:16, modules/social-menu/module.php:35
-msgid "Social Menu"
+msgid "A simple sitemap to embed on your page."
 msgstr ""
 
 #: index.php:276
-msgid "Add a social icons menu. This must be integrated into the theme."
+msgid "Simple Slider"
 msgstr ""
 
-#: index.php:278
-msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
+#: index.php:277
+msgid "An Accessible horizontal slider."
 msgstr ""
 
-#: index.php:281
-msgid "Static Social Sharing"
+#: index.php:281, modules/social-menu/module.php:16, modules/social-menu/module.php:35
+msgid "Social Menu"
 msgstr ""
 
 #: index.php:282
-msgid "Add social sharing links that use the platforms native sharing system."
+msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
 #: index.php:284
-msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
+msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
+msgstr ""
+
+#: index.php:287
+msgid "Static Social Sharing"
 msgstr ""
 
 #: index.php:288
+msgid "Add social sharing links that use the platforms native sharing system."
+msgstr ""
+
+#: index.php:290
+msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
+msgstr ""
+
+#: index.php:294
 msgid "Spam Blocker"
 msgstr ""
 
-#: index.php:289
+#: index.php:295
 msgid "Attempt to block spam."
 msgstr ""
 
-#: index.php:291
+#: index.php:297
 msgid "0.3kb of inline JS"
 msgstr ""
 
-#: index.php:295
+#: index.php:301
 msgid "Star Ratings"
 msgstr ""
 
-#: index.php:296
+#: index.php:302
 msgid "Rate movies, books, videos, difficulty, whatever."
 msgstr ""
 
-#: index.php:300, modules/stats/settings.php:40
+#: index.php:306, modules/stats/settings.php:40
 msgid "Stats"
 msgstr ""
 
-#: index.php:301
+#: index.php:307
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:306, modules/testimonials/module.php:46
+#: index.php:312, modules/testimonials/module.php:46
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:307
+#: index.php:313
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:309
+#: index.php:315
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:313
+#: index.php:319
 msgid "Typographic Widows"
 msgstr ""
 
-#: index.php:314
+#: index.php:320
 msgid "Fix typographic widows in titles and headings."
 msgstr ""
 
-#: index.php:318
+#: index.php:324
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:319
+#: index.php:325
 msgid "Control which pages widgets appear on."
 msgstr ""
 
