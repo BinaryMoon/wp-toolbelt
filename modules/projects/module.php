@@ -385,9 +385,7 @@ if ( ! shortcode_exists( 'portfolio' ) ) {
 function toolbelt_portfolio_render_block( $attrs ) {
 
 	$html = toolbelt_portfolio_shortcode( $attrs );
-	if ( toolbelt_is_rest_request() ) {
-		$html = preg_replace( '/href="(.*?)"/i', '#', $html );
-	}
+	$html = toolbelt_strip_href( $html );
 
 	return $html;
 

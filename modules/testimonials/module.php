@@ -419,9 +419,7 @@ add_action( 'init', 'toolbelt_testimonials_register_block' );
 function toolbelt_testimonials_render_block( $attrs ) {
 
 	$html = toolbelt_testimonials_shortcode( $attrs );
-	if ( toolbelt_is_rest_request() ) {
-		$html = preg_replace( '/href="(.*?)"/i', '#', $html );
-	}
+	$html = toolbelt_strip_href( $html );
 
 	return $html;
 

@@ -614,3 +614,27 @@ function toolbelt_is_rest_request() {
 	return is_null( $GLOBALS['wp_query']->query );
 
 }
+
+
+/**
+ * Remove href values from links.
+ * Allows blocks to be displayed in the block editor without their links.
+ *
+ * @param string $html The html to edit.
+ * @return string
+ */
+function toolbelt_strip_href( $html ) {
+
+	if ( toolbelt_is_rest_request() ) {
+
+		$html = preg_replace( '/href="(.*?)"/i', '#', $html );
+
+		if ( ! $html ) {
+			$html = '';
+		}
+
+	}
+
+	return $html;
+
+}

@@ -322,9 +322,7 @@ function toolbelt_related_posts_add() {
 function toolbelt_related_render_block( $attrs ) {
 
 	$html = toolbelt_related_posts_get();
-	if ( toolbelt_is_rest_request() ) {
-		$html = preg_replace( '/href="(.*?)"/i', '#', $html );
-	}
+	$html = toolbelt_strip_href( $html );
 
 	return $html;
 
