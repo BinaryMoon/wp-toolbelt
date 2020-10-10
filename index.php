@@ -611,7 +611,7 @@ function toolbelt_is_amp_page() {
  */
 function toolbelt_is_rest_request() {
 
-	return is_null( $GLOBALS['wp_query']->query );
+	return defined( 'REST_REQUEST' ) && REST_REQUEST;
 
 }
 
