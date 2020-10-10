@@ -380,7 +380,7 @@ if ( ! shortcode_exists( 'portfolio' ) ) {
  * accident.
  *
  * @param array<mixed> $attrs The block attributes.
- * @return string|null
+ * @return string
  */
 function toolbelt_portfolio_render_block( $attrs ) {
 
