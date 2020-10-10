@@ -75,6 +75,7 @@ wp_oembed_add_provider( '#https?://codepen.io/([^/]+)/pen/([^/]+)/?#', 'https://
  * Flat.io
  *
  * Example URL: https://flat.io/score/5a5268ed41396318cbd7772c-string-quartet-for-rainy-days
+ *
  * @see https://flat.io
  * @see https://flat.io/developers/docs/embed/oembed.html
  */
@@ -120,6 +121,7 @@ wp_oembed_add_provider( '!https?://(www\.)?ted.com/talks/[a-zA-Z\-\_]+\.html!i',
  * Mixcloud
  *
  * Example URL: http://www.mixcloud.com/oembed/?url=http://www.mixcloud.com/MalibuRum/play-6-kissy-sellouts-winter-sun-house-party-mix/
+ *
  * @see https://mixcloud.com
  */
 wp_oembed_add_provider( '#https?://(?:www\.)?mixcloud\.com/\S*#i', 'https://www.mixcloud.com/oembed', true );

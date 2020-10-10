@@ -413,7 +413,7 @@ add_action( 'init', 'toolbelt_testimonials_register_block' );
  * This function also removes hrefs from links so that they can't be clicked by
  * accident.
  *
- * @param array $attrs The block attributes.
+ * @param array<mixed> $attrs The block attributes.
  * @return string
  */
 function toolbelt_testimonials_render_block( $attrs ) {

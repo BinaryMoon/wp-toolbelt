@@ -379,8 +379,8 @@ if ( ! shortcode_exists( 'portfolio' ) ) {
  * This function also removes hrefs from links so that they can't be clicked by
  * accident.
  *
- * @param array $attrs The block attributes.
- * @return string
+ * @param array<mixed> $attrs The block attributes.
+ * @return string|null
  */
 function toolbelt_portfolio_render_block( $attrs ) {
 
