@@ -50,7 +50,7 @@
     }, title && link && createElement("h3", {
       "class": "toolbelt-skip-anchor"
     }, createElement("a", {
-      href: "{link}"
+      href: link
     }, title)), title && !link && createElement("h3", {
       "class": "toolbelt-skip-anchor"
     }, title), description && createElement("p", null, description));

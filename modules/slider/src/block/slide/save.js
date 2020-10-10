@@ -14,7 +14,7 @@ const slideSave = ( props ) => {
 		<li style={background} class={className}>
 			{
 				title && link && (
-					<h3 class="toolbelt-skip-anchor"><a href="{link}">{title}</a></h3>
+					<h3 class="toolbelt-skip-anchor"><a href={link}>{title}</a></h3>
 				)
 			}
 			{
