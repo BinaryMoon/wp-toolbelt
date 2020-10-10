@@ -136,9 +136,10 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 == Changelog ==
 
 = 3.0 - 5th October 2020 =
-* Add Star Rating block.
-* Add Slider block.
-* Add Layout Grid block.
+* New: Layout Grid block.
+* New: Star Rating block.
+* New: Slider block.
+* New: OEmbed providers module.
 * Add Related Posts block.
 * Add TB prefix to all blocks. Inspired by: https://wptavern.com/wordpress-plugin-authors-should-avoid-confusing-users-when-naming-blocks
 * Add icon to breadcrumbs block.
