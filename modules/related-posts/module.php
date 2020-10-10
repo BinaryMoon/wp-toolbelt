@@ -316,7 +316,7 @@ function toolbelt_related_posts_add() {
 /**
  * Related posts block render callback.
  *
- * @param array $attrs The block attributes.
+ * @param array<mixed> $attrs The block attributes.
  * @return string
  */
 function toolbelt_related_render_block( $attrs ) {
