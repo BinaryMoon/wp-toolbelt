@@ -266,7 +266,6 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'A simple sitemap to embed on your page.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Sitemap',
 		),
-
 		'slider' => array(
 			'name' => esc_html__( 'Simple Slider', 'wp-toolbelt' ),
 			'description' => esc_html__( 'An Accessible horizontal slider.', 'wp-toolbelt' ),
