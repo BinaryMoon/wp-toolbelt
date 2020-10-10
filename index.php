@@ -328,6 +328,10 @@ function toolbelt_get_modules() {
  */
 function toolbelt_css_properties() {
 
+	if ( toolbelt_is_rest_request() ) {
+		return;
+	}
+
 	if ( toolbelt_is_amp_page() ) {
 		return;
 	}
@@ -370,6 +374,10 @@ function toolbelt_css_properties() {
 function toolbelt_styles( $module, $file = 'style' ) {
 
 	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
+		return;
+	}
+
+	if ( toolbelt_is_rest_request() ) {
 		return;
 	}
 
@@ -455,6 +463,10 @@ function toolbelt_global_styles( $module ) {
  * @return void|null
  */
 function toolbelt_scripts( $module, $file = 'script' ) {
+
+	if ( toolbelt_is_rest_request() ) {
+		return;
+	}
 
 	// Output scripts.
 	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $file . '.min.js';
