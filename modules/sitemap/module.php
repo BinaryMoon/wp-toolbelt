@@ -72,35 +72,47 @@ function toolbelt_sitemap_render( $attrs ) {
 	// Categories.
 	if ( isset( $attrs['categories'] ) && $attrs['categories'] ) {
 
-		$html .= sprintf(
-			'<h2 class="toolbelt-heading">%1$s</h2><ul class="toolbelt-sitemap-categories">%2$s</ul>',
-			esc_html__( 'Categories', 'wp-toolbelt' ),
-			wp_list_categories(
-				array(
-					'title_li' => null,
-					'hide_title_if_empty' => true,
-					'echo' => false,
-				)
+		$categories = wp_list_categories(
+			array(
+				'title_li' => null,
+				'hide_title_if_empty' => true,
+				'echo' => false,
 			)
 		);
+
+		if ( is_string( $categories ) ) {
+
+			$html .= sprintf(
+				'<h2 class="toolbelt-heading">%1$s</h2><ul class="toolbelt-sitemap-categories">%2$s</ul>',
+				esc_html__( 'Categories', 'wp-toolbelt' ),
+				$catgories
+			);
+
+		}
 
 	}
 
 	// Pages.
 	if ( isset( $attrs['pages'] ) && $attrs['pages'] ) {
 
-		$html .= sprintf(
-			'<h2 class="toolbelt-heading">%1$s</h2><ul class="toolbelt-sitemap-pages">%2$s</ul>',
-			esc_html__( 'Pages', 'wp-toolbelt' ),
-			wp_list_pages(
-				array(
-					'title_li' => null,
-					'exclude' => get_option( 'page_on_front' ),
-					'echo' => false,
-					'item_spacing' => 'discard',
-				)
+		$pages = wp_list_pages(
+			array(
+				'title_li' => null,
+				'exclude' => get_option( 'page_on_front' ),
+				'echo' => false,
+				'item_spacing' => 'discard',
 			)
 		);
+
+		if ( is_string( $pages ) ) {
+
+			$html .= sprintf(
+				'<h2 class="toolbelt-heading">%1$s</h2><ul class="toolbelt-sitemap-pages">%2$s</ul>',
+				esc_html__( 'Pages', 'wp-toolbelt' ),
+				$pages
+			);
+
+		}
 
 	}
 
@@ -131,7 +143,7 @@ function toolbelt_sitemap_posts() {
 		array(
 			'post_type' => 'post',
 			'post_status' => 'publish',
-			'posts_per_page'=> -1,
+			'posts_per_page' => -1,
 		)
 	);
 
@@ -143,17 +155,20 @@ function toolbelt_sitemap_posts() {
 
 			$query->the_post();
 
-			$html .= sprintf(
-				'<li><a href="%2$s">%1$s</a></li>',
-				esc_html( get_the_title() ),
-				esc_url( get_the_permalink() )
-			);
+			$title = get_the_title();
+			$url = get_the_permalink();
+
+			if ( $title && $url ) {
+
+				$html .= sprintf(
+					'<li><a href="%2$s">%1$s</a></li>',
+					esc_html( $title ),
+					esc_url( $url )
+				);
+
+			}
 
 		}
-
-	} else {
-
-		$html .= '<p>' . esc_html_e( 'No posts.', 'wp-toolbelt' ) . '</p>';
 
 	}
 
