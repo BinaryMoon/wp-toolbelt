@@ -119,11 +119,34 @@ function toolbelt_sitemap_render( $attrs ) {
 	// Posts.
 	if ( isset( $attrs['posts'] ) && $attrs['posts'] ) {
 
-		$html .= sprintf(
-			'<h2 class="toolbelt-heading">%1$s</h2><ul class="toolbelt-sitemap-posts">%2$s</ul>',
-			esc_html__( 'Posts', 'wp-toolbelt' ),
-			toolbelt_sitemap_posts()
-		);
+		$posts = toolbelt_sitemap_posts();
+
+		if ( is_string( $posts ) ) {
+
+			$html .= sprintf(
+				'<h2 class="toolbelt-heading toolbelt-heading__sitemap">%1$s</h2>%2$s',
+				esc_html__( 'Posts', 'wp-toolbelt' ),
+				$posts
+			);
+
+		}
+
+	}
+
+	// Portfolio.
+	if ( isset( $attrs['portfolio'] ) && $attrs['portfolio'] ) {
+
+		$projects = toolbelt_sitemap_portfolio();
+
+		if ( is_string( $projects ) ) {
+
+			$html .= sprintf(
+				'<h2 class="toolbelt-heading toolbelt-heading__sitemap">%1$s</h2>%2$s',
+				esc_html__( 'Portfolio', 'wp-toolbelt' ),
+				$projects
+			);
+
+		}
 
 	}
 
