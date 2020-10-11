@@ -85,7 +85,7 @@ function toolbelt_sitemap_render( $attrs ) {
 			$html .= sprintf(
 				'<h2 class="toolbelt-heading">%1$s</h2><ul class="toolbelt-sitemap-categories">%2$s</ul>',
 				esc_html__( 'Categories', 'wp-toolbelt' ),
-				$catgories
+				$categories
 			);
 
 		}
