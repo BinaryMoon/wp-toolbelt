@@ -50,6 +50,10 @@ function toolbelt_sitemap_register_block() {
 					'default' => true,
 					'type' => 'boolean',
 				),
+				'portfolio' => array(
+					'default' => true,
+					'type' => 'boolean',
+				),
 			),
 		)
 	);
@@ -83,7 +87,7 @@ function toolbelt_sitemap_render( $attrs ) {
 		if ( is_string( $categories ) ) {
 
 			$html .= sprintf(
-				'<h2 class="toolbelt-heading">%1$s</h2><ul class="toolbelt-sitemap-categories">%2$s</ul>',
+				'<h2 class="toolbelt-heading toolbelt-heading__sitemap">%1$s</h2><ul class="toolbelt-sitemap-categories">%2$s</ul>',
 				esc_html__( 'Categories', 'wp-toolbelt' ),
 				$categories
 			);
@@ -107,7 +111,7 @@ function toolbelt_sitemap_render( $attrs ) {
 		if ( is_string( $pages ) ) {
 
 			$html .= sprintf(
-				'<h2 class="toolbelt-heading">%1$s</h2><ul class="toolbelt-sitemap-pages">%2$s</ul>',
+				'<h2 class="toolbelt-heading toolbelt-heading__sitemap">%1$s</h2><ul class="toolbelt-sitemap-pages">%2$s</ul>',
 				esc_html__( 'Pages', 'wp-toolbelt' ),
 				$pages
 			);
@@ -171,6 +175,8 @@ function toolbelt_sitemap_posts() {
 	);
 
 	$html = '';
+	$prev_year = null;
+	$this_year = null;
 
 	if ( $query->have_posts() ) {
 
@@ -178,20 +184,89 @@ function toolbelt_sitemap_posts() {
 
 			$query->the_post();
 
-			$title = get_the_title();
-			$url = get_the_permalink();
+			$this_year = get_the_date( 'Y' );
+			$post_title = get_the_title();
+			$post_url = get_the_permalink();
 
-			if ( $title && $url ) {
+			if ( $prev_year !== $this_year ) {
+
+				// Year boundary.
+				if ( ! is_null( $prev_year ) ) {
+					// A list is already open, close it first.
+					$html .= '</ul>';
+				}
+
+				$html .= sprintf(
+					'<h3 class="toolbelt-heading toolbelt-heading__sitemap-year">%1$d</h3><ul>',
+					$this_year
+				);
+
+			}
+
+			if ( $post_title && $post_url ) {
 
 				$html .= sprintf(
 					'<li><a href="%2$s">%1$s</a></li>',
-					esc_html( $title ),
-					esc_url( $url )
+					esc_html( $post_title ),
+					esc_url( $post_url )
+				);
+
+			}
+
+			$prev_year = $this_year;
+
+		}
+
+		$html .= '</ul>';
+
+	}
+
+	wp_reset_postdata();
+
+	return $html;
+
+}
+
+
+/**
+ * Get a list of the public portfolio projects.
+ *
+ * @return string
+ */
+function toolbelt_sitemap_portfolio() {
+
+	$query = new WP_Query(
+		array(
+			'post_type' => 'toolbelt-portfolio',
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+		)
+	);
+
+	$html = '<ul>';
+
+	if ( $query->have_posts() ) {
+
+		while ( $query->have_posts() ) {
+
+			$query->the_post();
+
+			$post_title = get_the_title();
+			$post_url = get_the_permalink();
+
+			if ( $post_title && $post_url ) {
+
+				$html .= sprintf(
+					'<li><a href="%2$s">%1$s</a></li>',
+					esc_html( $post_title ),
+					esc_url( $post_url )
 				);
 
 			}
 
 		}
+
+		$html .= '</ul>';
 
 	}
 

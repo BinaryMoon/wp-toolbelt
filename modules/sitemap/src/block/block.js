@@ -42,6 +42,10 @@
 					default: true,
 					type: 'boolean',
 				},
+				portfolio: {
+					default: true,
+					type: 'boolean',
+				}
 			},
 
 			save() {
@@ -54,7 +58,7 @@
 			edit( props ) {
 
 				const { attributes, setAttributes } = props;
-				const { categories, pages, posts } = attributes;
+				const { categories, pages, posts, portfolio } = attributes;
 
 				return [
 					<ServerSideRender
@@ -80,6 +84,12 @@
 								label={__( 'Posts', 'wp-toolbelt' )}
 								checked={posts}
 								onChange={( val ) => { setAttributes( { posts: val } ) }}
+							/>
+							<CheckboxControl
+								label={__( 'Portfolio', 'wp-toolbelt' )}
+								checked={portfolio}
+								onChange={( val ) => { setAttributes( { portfolio: val } ) }}
+								help={__( 'Needs the Portfolio Module to be enabled.', 'wp-toolbelt' )}
 							/>
 						</PanelBody>
 					</InspectorControls>,

@@ -35,6 +35,10 @@
       categories: {
         "default": true,
         type: 'boolean'
+      },
+      portfolio: {
+        "default": true,
+        type: 'boolean'
       }
     },
     save: function save() {
@@ -49,7 +53,8 @@
           setAttributes = props.setAttributes;
       var categories = attributes.categories,
           pages = attributes.pages,
-          posts = attributes.posts;
+          posts = attributes.posts,
+          portfolio = attributes.portfolio;
       return [createElement(ServerSideRender, {
         block: "toolbelt/sitemap",
         attributes: props.attributes
@@ -80,6 +85,15 @@
             posts: val
           });
         }
+      }), createElement(CheckboxControl, {
+        label: __('Portfolio', 'wp-toolbelt'),
+        checked: portfolio,
+        onChange: function onChange(val) {
+          setAttributes({
+            portfolio: val
+          });
+        },
+        help: __('Needs the Portfolio Module to be enabled.', 'wp-toolbelt')
       })))];
     }
   });
