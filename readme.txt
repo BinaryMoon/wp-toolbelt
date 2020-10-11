@@ -135,7 +135,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 3.0 - 5th October 2020 =
+= 3.0 - 11th October 2020 =
 * New: Layout Grid block.
 * New: Star Rating block.
 * New: Slider block.
@@ -145,6 +145,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 * Add TB prefix to all blocks. Inspired by: https://wptavern.com/wordpress-plugin-authors-should-avoid-confusing-users-when-naming-blocks
 * Add icon to breadcrumbs block.
 * Add additional social icons.
+* Add relatedLink schema to Related Posts.
 * Remove links from server rendered blocks so they can't be clicked by accident when editing content.
 * Update Related Posts html to be more semantic & accessible. May require some tweaks to custom styles applied to the module.
 * Update Avatars css so that it loads earlier to avoid flashes of unstyled content. Also compressed avatars admin CSS.
