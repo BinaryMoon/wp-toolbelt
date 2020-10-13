@@ -23,7 +23,7 @@
 
 			description: __( 'Display your Sitemap', 'wp-toolbelt' ),
 
-			keywords: [ __( 'toolbelt', 'wp-toolbelt' ), __( 'sitemap', 'wp-toolbelt' ) ],
+			keywords: [ __( 'toolbelt', 'wp-toolbelt' ), __( 'sitemap archive', 'wp-toolbelt' ) ],
 
 			icon: 'networking',
 

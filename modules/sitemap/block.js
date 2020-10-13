@@ -20,7 +20,7 @@
   registerBlockType('toolbelt/sitemap', {
     title: __('TB Sitemap', 'wp-toolbelt'),
     description: __('Display your Sitemap', 'wp-toolbelt'),
-    keywords: [__('toolbelt', 'wp-toolbelt'), __('sitemap', 'wp-toolbelt')],
+    keywords: [__('toolbelt', 'wp-toolbelt'), __('sitemap archive', 'wp-toolbelt')],
     icon: 'networking',
     category: 'wp-toolbelt',
     attributes: {
