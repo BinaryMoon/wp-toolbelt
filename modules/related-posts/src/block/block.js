@@ -9,8 +9,6 @@
 
 	//=require ./icon.js
 
-	console.log( 'related posts' );
-
 	registerBlockType(
 		'toolbelt/related-posts',
 		{

@@ -26,7 +26,6 @@
       d: "M50,15 L58,30 L50,45 L34,45 L42,30 L34,15 L50,15 Z"
     })))
   };
-  console.log('related posts');
   registerBlockType('toolbelt/related-posts', {
     title: __('TB Related Posts', 'wp-toolbelt'),
     icon: icon,
