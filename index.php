@@ -227,6 +227,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Add support for more OEmbed websites.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/OEmbed',
 		),
+		'post-category' => array(
+			'name' => esc_html__( 'Post Category', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Category summaries for magazine or newspaper style homepages.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Post-Category',
+		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
 			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
