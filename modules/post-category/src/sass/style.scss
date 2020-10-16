@@ -1,0 +1,50 @@
+.wp-block-toolbelt-post-category {
+
+	article {
+
+		margin-bottom: var( --toolbelt-spacing );
+
+	}
+
+	h2 {
+
+		margin-top: 0;
+		margin-bottom: calc( var( --toolbelt-spacing ) );
+
+	}
+
+	h3 {
+
+		margin-top: 0;
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+	p {
+
+		margin-top: 0;
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+}
+
+// Small image left aligned.
+.toolbelt-post-category-layout-3 {
+
+	display: grid;
+	grid-template-columns: calc( var( --toolbelt-spacing ) * 5 ) 1fr;
+	gap: 0 calc( var( --toolbelt-spacing ) );
+
+	> * {
+		grid-column: 2;
+	}
+
+	img {
+
+		grid-column: 1;
+		grid-row: 1 / 5;
+
+	}
+
+}

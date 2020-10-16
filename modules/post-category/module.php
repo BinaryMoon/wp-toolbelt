@@ -86,6 +86,7 @@ add_action( 'init', 'toolbelt_post_category_register_block' );
  */
 function toolbelt_post_category_render( $attrs ) {
 
+	toolbelt_styles( 'post-category' );
 	$posts = toolbelt_post_category_get_posts( $attrs['category'], $attrs['count'] );
 
 	if ( empty( $posts ) ) {
