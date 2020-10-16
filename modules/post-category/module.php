@@ -65,6 +65,10 @@ function toolbelt_post_category_register_block() {
 					'default' => '1',
 					'type' => 'string',
 				),
+				'layout_first' => array(
+					'default' => '1',
+					'type' => 'string',
+				),
 			),
 		)
 	);
@@ -91,6 +95,14 @@ function toolbelt_post_category_render( $attrs ) {
 	$html = '';
 
 	$html .= toolbelt_post_category_heading( $attrs['category'] );
+
+	// Add intro post if applicable.
+	if ( '1' !== $attrs['layout_first'] ) {
+		$first_post = array_shift( $posts );
+		$html .= toolbelt_post_category_layout_list( array( $first_post ), $attrs['layout_first'] );
+	}
+
+	// Add all the others.
 	$html .= toolbelt_post_category_layout_list( $posts, $attrs['layout'] );
 
 	return '<section>' . $html . '</section>';

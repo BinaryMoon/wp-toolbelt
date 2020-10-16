@@ -20,16 +20,29 @@
       BlockIcon = _wp$blockEditor.BlockIcon,
       InspectorControls = _wp$blockEditor.InspectorControls;
   var layouts = [{
-    label: 'list',
-    value: '1'
-  }, {
-    label: 'large image',
+    label: __('Large Image', 'wp-toolbelt'),
     value: '2'
   }, {
-    label: 'small image',
+    label: __('Small Image', 'wp-toolbelt'),
     value: '3'
   }, {
-    label: 'excerpt',
+    label: __('Excerpt', 'wp-toolbelt'),
+    value: '4'
+  }, {
+    label: __('List', 'wp-toolbelt'),
+    value: '1'
+  }];
+  var layouts_first = [{
+    label: __('None', 'wp-toolbelt'),
+    value: '1'
+  }, {
+    label: __('Large Image', 'wp-toolbelt'),
+    value: '2'
+  }, {
+    label: __('Small Image', 'wp-toolbelt'),
+    value: '3'
+  }, {
+    label: __('Excerpt', 'wp-toolbelt'),
     value: '4'
   }];
   registerBlockType('toolbelt/post-category', {
@@ -48,6 +61,10 @@
         type: 'int'
       },
       layout: {
+        "default": '1',
+        type: 'string'
+      },
+      layout_first: {
         "default": '1',
         type: 'string'
       }
@@ -72,7 +89,8 @@
           setAttributes = props.setAttributes;
       var category = attributes.category,
           count = attributes.count,
-          layout = attributes.layout;
+          layout = attributes.layout,
+          layout_first = attributes.layout_first;
       return [createElement(ServerSideRender, {
         block: "toolbelt/post-category",
         attributes: props.attributes
@@ -107,6 +125,16 @@
           });
         },
         selected: layout
+      }), createElement(RadioControl, {
+        label: __('First Post Layout', 'wp-toolbelt'),
+        options: layouts_first,
+        onChange: function onChange(new_layout) {
+          setAttributes({
+            layout_first: new_layout
+          });
+        },
+        selected: layout_first,
+        description: __('Use this to make the first post in the block stand out a bit', 'wp-toolbelt')
       })))];
     }
   });

@@ -20,19 +20,38 @@
 
 	const layouts = [
 		{
-			label: 'list',
-			value: '1',
-		},
-		{
-			label: 'large image',
+			label: __( 'Large Image', 'wp-toolbelt' ),
 			value: '2',
 		},
 		{
-			label: 'small image',
+			label: __( 'Small Image', 'wp-toolbelt' ),
 			value: '3',
 		},
 		{
-			label: 'excerpt',
+			label: __( 'Excerpt', 'wp-toolbelt' ),
+			value: '4',
+		},
+		{
+			label: __( 'List', 'wp-toolbelt' ),
+			value: '1',
+		},
+	];
+
+	const layouts_first = [
+		{
+			label: __( 'None', 'wp-toolbelt' ),
+			value: '1',
+		},
+		{
+			label: __( 'Large Image', 'wp-toolbelt' ),
+			value: '2',
+		},
+		{
+			label: __( 'Small Image', 'wp-toolbelt' ),
+			value: '3',
+		},
+		{
+			label: __( 'Excerpt', 'wp-toolbelt' ),
 			value: '4',
 		},
 	];
@@ -64,6 +83,10 @@
 					default: '1',
 					type: 'string',
 				},
+				layout_first: {
+					default: '1',
+					type: 'string',
+				},
 			},
 
 			styles: [
@@ -88,7 +111,7 @@
 			edit( props ) {
 
 				const { attributes, setAttributes } = props;
-				const { category, count, layout } = attributes;
+				const { category, count, layout, layout_first } = attributes;
 
 				return [
 					<ServerSideRender
@@ -118,6 +141,13 @@
 								options={layouts}
 								onChange={( new_layout ) => { setAttributes( { layout: new_layout } ) }}
 								selected={layout}
+							/>
+							<RadioControl
+								label={__( 'First Post Layout', 'wp-toolbelt' )}
+								options={layouts_first}
+								onChange={( new_layout ) => { setAttributes( { layout_first: new_layout } ) }}
+								selected={layout_first}
+								description={__( 'Use this to make the first post in the block stand out a bit', 'wp-toolbelt' )}
 							/>
 						</PanelBody>
 					</InspectorControls>,
