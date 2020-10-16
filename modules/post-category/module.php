@@ -87,6 +87,8 @@ add_action( 'init', 'toolbelt_post_category_register_block' );
 function toolbelt_post_category_render( $attrs ) {
 
 	toolbelt_styles( 'post-category' );
+
+	// Load the posts as an array so that we can output them in different ways.
 	$posts = toolbelt_post_category_get_posts( $attrs['category'], $attrs['count'] );
 
 	if ( empty( $posts ) ) {
@@ -95,6 +97,7 @@ function toolbelt_post_category_render( $attrs ) {
 
 	$html = '';
 
+	// Add heading.
 	$html .= toolbelt_post_category_heading( $attrs['category'] );
 
 	// Add intro post if applicable.
@@ -111,7 +114,13 @@ function toolbelt_post_category_render( $attrs ) {
 }
 
 
-
+/**
+ * Generate the html for the specified posts.
+ *
+ * @param array<mixed> $posts List of post data to use.
+ * @param string       $layout The layout id.
+ * @return string
+ */
 function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 
 	$class = sprintf(
@@ -119,16 +128,19 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 		$layout
 	);
 
+	$html = '';
+
 	switch ( $layout ) {
 
-		// Title and excerpt.
-		case '4':
+		// Large image.
+		case '2':
 
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s"><h3><a href="%2$s" rel="bookmark">%3$s</a></h3>%4$s<p>%5$s</p></li>',
+					'<article class="%1$s">%2$s<h3 class="has-normal-font-size"><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></article>',
 					esc_attr( $class ),
+					get_the_post_thumbnail( $p['id'], 'medium' ),
 					esc_url( $p['url'] ),
 					esc_html( $p['title'] ),
 					toolbelt_post_category_post_meta( $p ),
@@ -145,7 +157,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s">%2$s<h3><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></li>',
+					'<article class="%1$s">%2$s<h3 class="has-normal-font-size"><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></article>',
 					esc_attr( $class ),
 					get_the_post_thumbnail( $p['id'], 'thumbnail' ),
 					esc_url( $p['url'] ),
@@ -158,15 +170,14 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 
 			break;
 
-		// Large image.
-		case '2':
+		// Title and excerpt.
+		case '4':
 
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s">%2$s<h3><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></li>',
+					'<article class="%1$s"><h3 class="has-normal-font-size"><a href="%2$s" rel="bookmark">%3$s</a></h3>%4$s<p>%5$s</p></article>',
 					esc_attr( $class ),
-					get_the_post_thumbnail( $p['id'], 'medium' ),
 					esc_url( $p['url'] ),
 					esc_html( $p['title'] ),
 					toolbelt_post_category_post_meta( $p ),
@@ -177,6 +188,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 
 			break;
 
+		// Default, also option 1.
 		default:
 
 			$html = '<ul>';
@@ -184,7 +196,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<li><h3><a href="%1$s" rel="bookmark">%2$s</a></h3></li>',
+					'<li><h3 class="has-normal-font-size"><a href="%1$s" rel="bookmark">%2$s</a></h3></li>',
 					esc_url( $p['url'] ),
 					esc_html( $p['title'] )
 				);
@@ -202,6 +214,12 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 }
 
 
+/**
+ * Generate post meta data (author and date) for the specified post.
+ *
+ * @param array<mixed> $post The post data.
+ * @return string
+ */
 function toolbelt_post_category_post_meta( $post ) {
 
 	// Author.
@@ -237,6 +255,7 @@ function toolbelt_post_category_post_meta( $post ) {
 	);
 
 }
+
 
 /**
  * Get a list of the public portfolio projects.
