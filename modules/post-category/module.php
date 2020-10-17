@@ -330,6 +330,10 @@ function toolbelt_post_category_heading( $category_id ) {
 		return $html;
 	}
 
+	if ( ! $category ) {
+		return;
+	}
+
 	$html .= sprintf(
 		'<h2 class="toolbelt-heading toolbelt-heading-post-category-h2 has-normal-font-size"><a href="%1$s">%2$s</a></h2>',
 		esc_url( get_category_link( $category->term_id ) ),
@@ -364,7 +368,7 @@ function toolbelt_post_categories_list() {
 
 	$categories[] = array(
 		'value' => '-1',
-		'label' => esc_html__( 'All Categories', 'wp-toolbelt' )
+		'label' => esc_html__( 'All Categories', 'wp-toolbelt' ),
 	);
 
 	if ( is_array( $terms ) ) {
