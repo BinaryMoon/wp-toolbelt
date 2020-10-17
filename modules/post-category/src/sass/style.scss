@@ -1,5 +1,8 @@
 .wp-block-toolbelt-post-category {
 
+	margin-top: var( --toolbelt-spacing );
+	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
+
 	article {
 
 		margin-bottom: var( --toolbelt-spacing );
@@ -24,6 +27,19 @@
 
 		margin-top: 0;
 		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+	&.is-style-border-top {
+
+		h2 {
+
+			border-top: var( --toolbelt-border-width ) solid currentColor;
+			border-bottom: 1px solid currentColor;
+			padding-top: calc( var( --toolbelt-spacing ) / 4 );
+			padding-bottom: calc( var( --toolbelt-spacing ) / 4 );
+
+		}
 
 	}
 
