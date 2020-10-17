@@ -330,8 +330,8 @@ function toolbelt_post_category_heading( $category_id ) {
 		return $html;
 	}
 
-	if ( ! $category ) {
-		return;
+	if ( ! $category || is_array( $category ) ) {
+		return '';
 	}
 
 	$html .= sprintf(
