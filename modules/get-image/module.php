@@ -9,11 +9,11 @@
  * Fill empty post thumbnails with images from the first attachment added to a
  * post.
  *
- * @param string  $html Current html for thumbnail image.
- * @param integer $post_id ID for specified post.
- * @param integer $thumbnail_id ID for thumbnail image.
- * @param string  $size expected Thumbnail size.
- * @param array   $attr Image attributes.
+ * @param string              $html Current html for thumbnail image.
+ * @param integer             $post_id ID for specified post.
+ * @param integer             $thumbnail_id ID for thumbnail image.
+ * @param string              $size expected Thumbnail size.
+ * @param array<mixed>|string $attr Image attributes.
  * @return string
  */
 function toolbelt_get_image_thumbnail_html( $html, $post_id, $thumbnail_id, $size = '', $attr = array() ) {
