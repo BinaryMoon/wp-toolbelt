@@ -183,6 +183,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Add footnotes to the bottom of the page.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes',
 		),
+		'get-image' => array(
+			'name' => esc_html__( 'Fallback Featured Images', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Try to find a suitable image if no featured image is set.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Get-Image',
+		),
 		'gist' => array(
 			'name' => esc_html__( 'Gist Embed Block', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Easily embed Github Gists onto your site.', 'wp-toolbelt' ),
