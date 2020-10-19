@@ -52,9 +52,12 @@ function toolbelt_get_image_thumbnail_html( $html, $post_id, $thumbnail_id, $siz
 	 */
 	$image_class = array(
 		'wp-post-image',
-		'attachment-' . $size,
-		'size-' . $size,
 	);
+
+	if ( is_string( $size ) ) {
+		$image_class[] = 'attachment-' . $size;
+		$image_class[] = 'size-' . $size;
+	}
 
 	/**
 	 * Get the first attached image and use that as the featured image.
