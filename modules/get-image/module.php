@@ -12,7 +12,7 @@
  * @param string              $html Current html for thumbnail image.
  * @param integer             $post_id ID for specified post.
  * @param integer             $thumbnail_id ID for thumbnail image.
- * @param string              $size expected Thumbnail size.
+ * @param string|array<int>   $size expected Thumbnail size.
  * @param array<mixed>|string $attr Image attributes.
  * @return string
  */
@@ -107,7 +107,7 @@ function toolbelt_get_image_thumbnail_html( $html, $post_id, $thumbnail_id, $siz
 	 */
 	if ( $image_url ) {
 
-		if ( ! empty( $attr['class'] ) ) {
+		if ( is_array( $attr ) && ! empty( $attr['class'] ) ) {
 			$image_class[] = $attr['class'];
 		}
 
