@@ -58,11 +58,13 @@ add_action( 'admin_head', 'toolbelt_layout_admin_styles' );
  */
 function toolbelt_layout_head() {
 
-	if ( ! has_block( 'toolbelt/layout-grid' ) ) {
-		return;
+	if ( has_block( 'toolbelt/layout-grid' ) ) {
+		toolbelt_styles( 'layout-grid' );
 	}
 
-	toolbelt_styles( 'layout-grid' );
+	// $classes = preg_match_all( '/toolbelt-grid-layout-\d-\d/', get_the_content(), $matches );
+
+	// var_dump( $matches[0] );
 
 }
 

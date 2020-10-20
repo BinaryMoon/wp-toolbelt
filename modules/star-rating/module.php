@@ -97,10 +97,6 @@ function toolbelt_star_rating_styles() {
 
 	global $post;
 
-	if ( ! is_singular() ) {
-		return;
-	}
-
 	if ( has_block( 'toolbelt/star-rating' ) ) {
 		toolbelt_styles( 'star-rating' );
 	}

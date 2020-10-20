@@ -465,11 +465,9 @@ add_action( 'admin_head', 'toolbelt_breadcrumb_editor_styles' );
  */
 function toolbelt_breadcrumb_content_styles() {
 
-	if ( ! has_block( 'toolbelt/breadcrumbs' ) ) {
-		return;
+	if ( has_block( 'toolbelt/breadcrumbs' ) ) {
+		toolbelt_styles( 'breadcrumbs' );
 	}
-
-	toolbelt_styles( 'breadcrumbs' );
 
 }
 

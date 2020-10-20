@@ -111,12 +111,10 @@ function toolbelt_related_posts_get() {
  */
 function toolbelt_related_styles() {
 
-	if ( ! is_singular() && ! has_block( 'toolbelt/related-posts' ) ) {
-		return;
+	if ( has_block( 'toolbelt/related-posts' ) ) {
+		toolbelt_global_styles( 'columns' );
+		toolbelt_styles( 'related-posts' );
 	}
-
-	toolbelt_global_styles( 'columns' );
-	toolbelt_styles( 'related-posts' );
 
 }
 

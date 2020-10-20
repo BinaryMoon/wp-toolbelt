@@ -505,10 +505,6 @@ function toolbelt_portfolio_styles() {
 
 	global $post;
 
-	if ( ! is_singular() ) {
-		return;
-	}
-
 	if ( has_shortcode( $post->post_content, 'portfolio' ) || has_block( 'toolbelt/portfolio' ) ) {
 		toolbelt_global_styles( 'columns' );
 		toolbelt_styles( 'projects' );

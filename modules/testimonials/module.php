@@ -318,10 +318,6 @@ function toolbelt_testimonials_styles() {
 
 	global $post;
 
-	if ( ! is_singular() ) {
-		return;
-	}
-
 	if ( has_shortcode( $post->post_content, 'testimonials' ) || has_block( 'toolbelt/testimonials' ) ) {
 		toolbelt_global_styles( 'columns' );
 		toolbelt_styles( 'testimonials' );

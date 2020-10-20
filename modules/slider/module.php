@@ -66,11 +66,9 @@ add_action( 'admin_head', 'toolbelt_slider_admin_styles' );
  */
 function toolbelt_slider_head() {
 
-	if ( ! has_block( 'toolbelt/slider' ) ) {
-		return;
+	if ( has_block( 'toolbelt/slider' ) ) {
+		toolbelt_styles( 'slider' );
 	}
-
-	toolbelt_styles( 'slider' );
 
 }
 
