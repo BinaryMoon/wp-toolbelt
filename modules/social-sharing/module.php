@@ -2,6 +2,9 @@
 /**
  * Social sharing links.
  *
+ * Uses links that point to sharing urls, rather than embedding sharing widgets
+ * into the page. This is a) quicker, and b) more private.
+ *
  * @package toolbelt
  */
 
@@ -104,6 +107,12 @@ function toolbelt_social_sharing( $content ) {
 	// Display a list of social networks.
 	$networks = toolbelt_social_networks();
 
+	// Add support for social sharing API.
+	$html .= sprintf(
+		'<button class="toolbelt_share-api">%1$s</button>',
+		esc_html__( 'Share', 'toolbelt' )
+	);
+
 	foreach ( $networks as $slug => $network ) {
 
 		$url  = sprintf( $network['url'], rawurlencode( $canonical ) );
@@ -133,6 +142,21 @@ function toolbelt_social_sharing( $content ) {
 }
 
 add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
+
+
+/**
+ * Add script for social sharing API to the footer.
+ *
+ * @see https://css-tricks.com/on-the-web-share-api/
+ * @return void
+ */
+function toolbelt_social_scripts() {
+
+	toolbelt_scripts( 'social-sharing' );
+
+}
+
+add_action( 'wp_footer', 'toolbelt_social_scripts' );
 
 
 /**
@@ -240,7 +264,6 @@ function toolbelt_social_networks_get() {
 			'url'   => ' mailto:somebody@example.com?body=%s',
 			'color' => '483d8b',
 		),
-
 	);
 
 }
