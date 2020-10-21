@@ -323,4 +323,3 @@ function toolbelt_social_sharing_default_settings( $value ) {
 }
 
 add_filter( 'option_toolbelt_settings', 'toolbelt_social_sharing_default_settings' );
-
