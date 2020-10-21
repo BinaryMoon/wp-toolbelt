@@ -229,7 +229,7 @@ msgstr ""
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:252, modules/related-posts/module.php:151, modules/related-posts/tools.php:19
+#: index.php:252, modules/related-posts/module.php:149, modules/related-posts/tools.php:19
 msgid "Related Posts"
 msgstr ""
 
@@ -719,7 +719,7 @@ msgstr ""
 msgid "Web Monetization Documentation"
 msgstr ""
 
-#: modules/post-category/module.php:371
+#: modules/post-category/module.php:401
 msgid "All Categories"
 msgstr ""
 
@@ -958,132 +958,132 @@ msgstr ""
 msgid "Posts"
 msgstr ""
 
-#: modules/social-sharing/module.php:149
+#: modules/social-sharing/module.php:202
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:150
+#: modules/social-sharing/module.php:203
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:155
+#: modules/social-sharing/module.php:208
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:156
+#: modules/social-sharing/module.php:209
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:161
+#: modules/social-sharing/module.php:214
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:162
+#: modules/social-sharing/module.php:215
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:177
+#: modules/social-sharing/module.php:230
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:178
+#: modules/social-sharing/module.php:231
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:180
+#: modules/social-sharing/module.php:233
 msgid "Only shown on mobile"
 msgstr ""
 
-#: modules/social-sharing/module.php:184
+#: modules/social-sharing/module.php:237
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:185
+#: modules/social-sharing/module.php:238
 msgctxt "Pinterest button label"
 msgid "Pin this"
 msgstr ""
 
-#: modules/social-sharing/module.php:190
+#: modules/social-sharing/module.php:243
 msgid "Save to Pocket"
 msgstr ""
 
-#: modules/social-sharing/module.php:191
+#: modules/social-sharing/module.php:244
 msgctxt "Pocket button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:196
+#: modules/social-sharing/module.php:249
 msgid "Save to Wallabag"
 msgstr ""
 
-#: modules/social-sharing/module.php:197
+#: modules/social-sharing/module.php:250
 msgctxt "Wallabag button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:202
+#: modules/social-sharing/module.php:255
 msgid "Save to Instapaper"
 msgstr ""
 
-#: modules/social-sharing/module.php:203
+#: modules/social-sharing/module.php:256
 msgctxt "Instapaper button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:208
+#: modules/social-sharing/module.php:261
 msgid "Share on Reddit"
 msgstr ""
 
-#: modules/social-sharing/module.php:209
+#: modules/social-sharing/module.php:262
 msgctxt "Reddit button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:214
+#: modules/social-sharing/module.php:267
 msgid "Share on Tumblr"
 msgstr ""
 
-#: modules/social-sharing/module.php:215
+#: modules/social-sharing/module.php:268
 msgctxt "Tumblr button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:220
+#: modules/social-sharing/module.php:273
 msgid "Share on HackerNews"
 msgstr ""
 
-#: modules/social-sharing/module.php:221
+#: modules/social-sharing/module.php:274
 msgctxt "HackerNews button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:226
+#: modules/social-sharing/module.php:279
 msgid "Share on Evernote"
 msgstr ""
 
-#: modules/social-sharing/module.php:227
+#: modules/social-sharing/module.php:280
 msgctxt "Evernote button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:232
+#: modules/social-sharing/module.php:285
 msgid "Share on Flipboard"
 msgstr ""
 
-#: modules/social-sharing/module.php:233
+#: modules/social-sharing/module.php:286
 msgctxt "Flipboard button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:238
+#: modules/social-sharing/module.php:291
 msgid "Send via Email"
 msgstr ""
 
-#: modules/social-sharing/module.php:239
+#: modules/social-sharing/module.php:292
 msgctxt "Email button label"
 msgid "Send this"
 msgstr ""
