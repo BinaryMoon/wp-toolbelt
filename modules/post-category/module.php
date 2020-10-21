@@ -86,8 +86,6 @@ add_action( 'init', 'toolbelt_post_category_register_block' );
  */
 function toolbelt_post_category_render( $attrs ) {
 
-	toolbelt_styles( 'post-category' );
-
 	// Load the posts as an array so that we can output them in different ways.
 	$posts = toolbelt_post_category_get_posts( $attrs['category'], $attrs['count'] );
 
@@ -138,7 +136,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s">%2$s<h3 class="has-normal-font-size"><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></article>',
+					'<article class="%1$s">%2$s<h3 class="has-normal-font-size has-regular-font-size"><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></article>',
 					esc_attr( $class ),
 					get_the_post_thumbnail( $p['id'], 'medium' ),
 					esc_url( $p['url'] ),
@@ -157,7 +155,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s">%2$s<h3 class="has-normal-font-size"><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></article>',
+					'<article class="%1$s">%2$s<h3 class="has-normal-font-size has-regular-font-size"><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></article>',
 					esc_attr( $class ),
 					get_the_post_thumbnail( $p['id'], 'thumbnail' ),
 					esc_url( $p['url'] ),
@@ -176,7 +174,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s"><h3 class="has-normal-font-size"><a href="%2$s" rel="bookmark">%3$s</a></h3>%4$s<p>%5$s</p></article>',
+					'<article class="%1$s"><h3 class="has-normal-font-size has-regular-font-size"><a href="%2$s" rel="bookmark">%3$s</a></h3>%4$s<p>%5$s</p></article>',
 					esc_attr( $class ),
 					esc_url( $p['url'] ),
 					esc_html( $p['title'] ),
@@ -196,7 +194,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<li><h3 class="has-normal-font-size"><a href="%1$s" rel="bookmark">%2$s</a></h3></li>',
+					'<li><h3 class="has-normal-font-size has-regular-font-size"><a href="%1$s" rel="bookmark">%2$s</a></h3></li>',
 					esc_url( $p['url'] ),
 					esc_html( $p['title'] )
 				);
@@ -335,7 +333,7 @@ function toolbelt_post_category_heading( $category_id ) {
 	}
 
 	$html .= sprintf(
-		'<h2 class="toolbelt-heading toolbelt-heading-post-category-h2 has-normal-font-size"><a href="%1$s">%2$s</a></h2>',
+		'<h2 class="toolbelt-heading toolbelt-heading-post-category-h2 has-normal-font-size has-regular-font-size"><a href="%1$s">%2$s</a></h2>',
 		esc_url( get_category_link( $category->term_id ) ),
 		esc_html( $category->name )
 	);
@@ -343,6 +341,38 @@ function toolbelt_post_category_heading( $category_id ) {
 	return $html;
 
 }
+
+
+/**
+ * Display admin styles for editor block.
+ *
+ * @return void
+ */
+function toolbelt_post_category_admin_styles() {
+
+	toolbelt_styles_editor( 'post-category' );
+
+}
+
+add_action( 'admin_head', 'toolbelt_post_category_admin_styles' );
+
+
+/**
+ * Display styles on the front-end.
+ *
+ * @return void
+ */
+function toolbelt_post_category_styles() {
+
+	if ( ! has_block( 'toolbelt/post-category' ) ) {
+		return;
+	}
+
+	toolbelt_styles( 'post-category' );
+
+}
+
+add_action( 'wp_print_styles', 'toolbelt_post_category_styles' );
 
 
 /**
