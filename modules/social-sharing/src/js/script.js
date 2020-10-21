@@ -19,20 +19,16 @@
 		() => {
 			const title = document.querySelector( 'title' ).textContent;
 			const permalink = document.querySelector( 'link[rel="canonical"]' ).getAttribute( 'href' );
-			const $description = document.querySelector( 'meta[name="description"]' );
 
-			let text = '';
-			if ( $description ) {
-				text = $description.getAttribute( 'content' );
-			}
+			const props = {
+				title,
+				text: toolbelt_social_share_description,
+				url: permalink
+			};
 
-			navigator.share(
-				{
-					title,
-					text,
-					url: permalink
-				}
-			);
+			console.log( props );
+
+			navigator.share( props );
 		}
 	);
 

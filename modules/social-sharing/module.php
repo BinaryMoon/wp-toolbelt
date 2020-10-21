@@ -107,6 +107,9 @@ function toolbelt_social_sharing( $content ) {
 	// Display a list of social networks.
 	$networks = toolbelt_social_networks();
 
+	// Generate the sharing info.
+	$html .= toolbelt_social_share_info( $content );
+
 	// Add support for social sharing API.
 	$html .= sprintf(
 		'<button class="toolbelt_share-api">%1$s</button>',
@@ -157,6 +160,32 @@ function toolbelt_social_scripts() {
 }
 
 add_action( 'wp_footer', 'toolbelt_social_scripts' );
+
+
+/**
+ * Generate a description based on the content.
+ *
+ * Ideally we would use get_the_excerpt for this but for some weird reason this
+ * creates an infinite loop in some situtations and I am too tired to work out
+ * why. Maybe one day I will solve it but for now I quite like this solution.
+ *
+ * @param string $content The post content.
+ * @return string
+ */
+function toolbelt_social_share_info( $content ) {
+
+	// Only display first 140 characters of excerpt.
+	$content = wp_strip_all_tags( $content );
+	$content = substr( $content, 0, 140 );
+	// Restrict to whole words and add an ellipse.
+	$content = substr( $content, 0, strrpos( $content, ' ' ) ) . '...';
+
+	return sprintf(
+		'<script>var toolbelt_social_share_description = "%1$s";</script>',
+		esc_html( $content )
+	);
+
+}
 
 
 /**
