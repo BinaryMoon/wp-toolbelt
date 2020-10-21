@@ -65,7 +65,7 @@ export const build = series(
 export const watchFiles = function( done ) {
 
 	watch(
-		'./modules/*/src/sass/*.scss',
+		'./modules/*/src/sass/**/*.scss',
 		process_module_styles
 	);
 
