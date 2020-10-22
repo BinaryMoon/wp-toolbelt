@@ -59,7 +59,7 @@ function toolbelt_post_category_register_block() {
 				),
 				'count' => array(
 					'default' => 10,
-					'type' => 'int',
+					'type' => 'integer',
 				),
 				'layout' => array(
 					'default' => '1',
@@ -107,7 +107,19 @@ function toolbelt_post_category_render( $attrs ) {
 	// Add all the others.
 	$html .= toolbelt_post_category_layout_list( $posts, $attrs['layout'] );
 
-	return '<section>' . $html . '</section>';
+	$block_class = array(
+		'wp-block-toolbelt-post-category',
+	);
+
+	if ( $attrs['className'] ) {
+		$block_class[] = $attrs['className'];
+	}
+
+	return sprintf(
+		'<section class="%1$s">%2$s</section>',
+		esc_attr( implode( ' ', $block_class ) ),
+		$html
+	);
 
 }
 
