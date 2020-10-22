@@ -1,0 +1,7 @@
+@import "../mixins.scss";
+
+@media screen and ( min-width: 900px ) {
+
+	@include toolbelt-grid-columns( 2, 0, 50% 50% ); // 6/12 6/12
+
+}

@@ -62,9 +62,21 @@ function toolbelt_layout_head() {
 		toolbelt_styles( 'layout-grid' );
 	}
 
-	// $classes = preg_match_all( '/toolbelt-grid-layout-\d-\d/', get_the_content(), $matches );
+	/**
+	 * Grab a list of all the layout-grid blocks so that we can load their css.
+	 *
+	 * This saves us from having to put all of the css in a single file reducing
+	 * the download size.
+	 */
+	$classes = preg_match_all( '/toolbelt-grid-layout-\d-\d/', get_the_content(), $matches );
 
-	// var_dump( $matches[0] );
+	foreach ( $matches[0] as $layout ) {
+		$file = sprintf(
+			'layouts/layout-%1$s',
+			str_replace( 'toolbelt-grid-layout-', '', $layout )
+		);
+		toolbelt_styles( 'layout-grid', $file );
+	}
 
 }
 
