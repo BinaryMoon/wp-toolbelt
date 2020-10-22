@@ -177,8 +177,12 @@ function toolbelt_social_share_info( $content ) {
 	// Only display first 140 characters of excerpt.
 	$content = wp_strip_all_tags( $content );
 	$content = substr( $content, 0, 140 );
+
 	// Restrict to whole words and add an ellipse.
-	$content = substr( $content, 0, strrpos( $content, ' ' ) ) . '...';
+	$cutoff = strrpos( $content, ' ' );
+	if ( $cutoff ) {
+		$content = substr( $content, 0, $cutoff ) . '...';
+	}
 
 	return sprintf(
 		'<script>var toolbelt_social_share_description = "%1$s";</script>',
