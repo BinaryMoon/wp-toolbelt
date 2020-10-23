@@ -150,6 +150,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 * Add relatedLink schema to Related Posts.
 * Remove Noto Serif editor front from being loaded. It's a potential privacy issue and is loaded everywhere.
 * Remove links from server rendered blocks so they can't be clicked by accident when editing content.
+* Fix: Improve Infinite Scroll behaviour when a static page is used.
 * Update Related Posts html to be more semantic & accessible. May require some tweaks to custom styles applied to the module.
 * Update Avatars css so that it loads earlier to avoid flashes of unstyled content. Also compressed avatars admin CSS.
 * Change CSS colours to use custom properties for simpler, and more consistent, changes.
