@@ -703,7 +703,7 @@ msgid "Load More"
 msgstr ""
 
 #. translators: %d = page number.
-#: modules/infinite-scroll/module.php:274
+#: modules/infinite-scroll/module.php:276
 msgid "Page %d"
 msgstr ""
 
