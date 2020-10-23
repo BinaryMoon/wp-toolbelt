@@ -115,11 +115,14 @@ function toolbelt_post_category_render( $attrs ) {
 		$block_class[] = $attrs['className'];
 	}
 
-	return sprintf(
+	// Combine the html into a single string.
+	$html = sprintf(
 		'<section class="%1$s">%2$s</section>',
 		esc_attr( implode( ' ', $block_class ) ),
 		$html
 	);
+
+	return toolbelt_strip_href( $html );
 
 }
 
