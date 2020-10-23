@@ -719,7 +719,7 @@ msgstr ""
 msgid "Web Monetization Documentation"
 msgstr ""
 
-#: modules/post-category/module.php:413
+#: modules/post-category/module.php:416
 msgid "All Categories"
 msgstr ""
 
