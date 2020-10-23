@@ -7,7 +7,13 @@
 	article {
 
 		padding: 0;
-		margin-bottom: var( --toolbelt-spacing );
+		margin-bottom: calc( var( --toolbelt-spacing ) * 1.5 );
+
+		*:last-child {
+
+			margin-bottom: 0;
+
+		}
 
 	}
 
@@ -20,7 +26,7 @@
 
 	h3 {
 
-		margin: 0 0 calc( var( --toolbelt-spacing ) / 2 ) 0;
+		margin: 0;
 
 	}
 
@@ -41,6 +47,37 @@
 			padding-bottom: calc( var( --toolbelt-spacing ) / 4 );
 
 		}
+
+	}
+
+	.toolbelt-post-meta {
+
+		.multi-author-false & {
+
+			.author {
+
+				display: none;
+
+			}
+
+		}
+
+		> * {
+
+			margin-inline-end: calc( var( --toolbelt-spacing ) / 2 );
+
+		}
+
+	}
+
+}
+
+// Large image at the top.
+.toolbelt-post-category-layout-2 {
+
+	img {
+
+		margin-bottom: calc( var( --toolbelt-spacing ) / 4 );
 
 	}
 
