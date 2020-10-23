@@ -653,3 +653,24 @@ function toolbelt_strip_href( $html ) {
 	return $html;
 
 }
+
+
+/**
+ * Add additional classes to the body.
+ *
+ * @param array<string> $classes List of classes.
+ * @return array<string>
+ */
+function toolbelt_body_class( $classes ) {
+
+	if ( is_multi_author() ) {
+		$classes[] = 'multi-author-true';
+	} else {
+		$classes[] = 'multi-author-false';
+	}
+
+	return $classes;
+
+}
+
+add_filter( 'body_class', 'toolbelt_body_class' );
