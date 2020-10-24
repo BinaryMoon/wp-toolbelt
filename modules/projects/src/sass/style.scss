@@ -9,16 +9,21 @@
 
 	.thumbnail {
 
-		margin-bottom: calc( var( --toolbelt-spacing ) / 4 );
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
 		display: block;
 
 	}
 
-	h2 {
+	h3 {
 
-		margin-top: 0;
 		clear: both;
-		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+		margin: 0;
+
+	}
+
+	.toolbelt-post-meta {
+
+		margin: 0 0 calc( var( --toolbelt-spacing ) / 2 );
 
 	}
 
