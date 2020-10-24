@@ -436,6 +436,16 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 			$projects->the_post();
 
 			/**
+			 * Store the post id.
+			 * If no post then continue.
+			 */
+			$post_id = get_the_ID();
+
+			if ( ! $post_id ) {
+				continue;
+			}
+
+			/**
 			 * Must reset the excerpt no matter what.
 			 * Otherwise we could end up displaying the wrong excerpt (from the
 			 * previous project), or there could be an undefined variable error.
@@ -478,7 +488,7 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 				get_the_post_thumbnail( null, 'medium' ),
 				esc_url( $permalink ),
 				get_the_title(),
-				toolbelt_portfolio_category( get_the_ID() ),
+				toolbelt_portfolio_category( $post_id ),
 				$excerpt
 			);
 
@@ -508,9 +518,16 @@ function toolbelt_portfolio_category( $post_id ) {
 		return '';
 	}
 
+	$term_link = get_term_link( $terms[0] );
+
+	// Problem with the term link so quit.
+	if ( is_wp_error( $term_link ) ) {
+		return '';
+	}
+
 	return sprintf(
 		'<p class="toolbelt-post-meta has-small-font-size"><a href="%1$s">%2$s</a></p>',
-		esc_url( get_term_link( $terms[0] ) ),
+		esc_url( $term_link ),
 		esc_html( $terms[0]->name )
 	);
 
