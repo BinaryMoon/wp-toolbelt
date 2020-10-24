@@ -1,1 +1,1 @@
-.toolbelt-portfolio .toolbelt-project{padding:var(--toolbelt-spacing)}.toolbelt-portfolio .thumbnail{margin-bottom:calc(var(--toolbelt-spacing)/ 2);display:block}.toolbelt-portfolio h2{margin-top:0;clear:both}
+.toolbelt-portfolio .toolbelt-project{padding:0 var(--toolbelt-spacing);margin-bottom:calc(var(--toolbelt-spacing) * 1.5)}.toolbelt-portfolio .thumbnail{margin-bottom:calc(var(--toolbelt-spacing)/ 4);display:block}.toolbelt-portfolio h2{margin-top:0;clear:both;margin-bottom:calc(var(--toolbelt-spacing)/ 2)}

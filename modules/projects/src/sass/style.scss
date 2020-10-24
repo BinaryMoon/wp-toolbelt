@@ -2,13 +2,14 @@
 
 	.toolbelt-project {
 
-		padding: var( --toolbelt-spacing );
+		padding: 0 var( --toolbelt-spacing );
+		margin-bottom: calc( var( --toolbelt-spacing ) * 1.5 );
 
 	}
 
 	.thumbnail {
 
-		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+		margin-bottom: calc( var( --toolbelt-spacing ) / 4 );
 		display: block;
 
 	}
@@ -17,6 +18,7 @@
 
 		margin-top: 0;
 		clear: both;
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
 
 	}
 
