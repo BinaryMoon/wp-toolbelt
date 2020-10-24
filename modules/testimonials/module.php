@@ -379,11 +379,11 @@ function toolbelt_testimonials_register_block() {
 			'attributes' => array(
 				'rows' => array(
 					'default' => 2,
-					'type' => 'int',
+					'type' => 'integer',
 				),
 				'columns' => array(
 					'default' => 2,
-					'type' => 'int',
+					'type' => 'integer',
 				),
 				'orderby' => array(
 					'default' => 'date',
