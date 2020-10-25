@@ -210,6 +210,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Layout Grid', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display content in carefully curated columns.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid',
+			'weight' => esc_html__( '1.4kb of inline CSS plus 100bytes of CSS per layout used.', 'wp-toolbelt' ),
 		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
@@ -236,6 +237,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Post Category', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Category summaries for magazine or newspaper style homepages.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Post-Category',
+			'weight' => esc_html__( '1kb of inline CSS.', 'wp-toolbelt' ),
 		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
@@ -280,6 +282,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Simple Slider', 'wp-toolbelt' ),
 			'description' => esc_html__( 'An Accessible horizontal slider.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Slider',
+			'weight' => esc_html__( '1.8kb of inline CSS.', 'wp-toolbelt' ),
 		),
 		'social-menu' => array(
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
@@ -291,20 +294,21 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Static Social Sharing', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add social sharing links that use the platforms native sharing system.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing',
-			'weight' => esc_html__( '4.1kb of inline SVG icons, and 0.7kb of inline CSS.', 'wp-toolbelt' ),
+			'weight' => esc_html__( '1kb of inline CSS, and 0.4kb of inline JS. Plus roughly 0.6kb to 1kb per social network icon.', 'wp-toolbelt' ),
 			'supports' => array( 'css-properties', 'settings' ),
 		),
 		'spam-blocker' => array(
 			'name' => esc_html__( 'Spam Blocker', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Attempt to block spam.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker',
-			'weight' => esc_html__( '0.3kb of inline JS', 'wp-toolbelt' ),
+			'weight' => esc_html__( '0.3kb of inline JS.', 'wp-toolbelt' ),
 			'supports' => array( 'experimental' ),
 		),
 		'star-rating' => array(
 			'name' => esc_html__( 'Star Ratings', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Rate movies, books, videos, difficulty, whatever.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Star-Ratings',
+			'weight' => esc_html__( '0.7kb of inline CSS.', 'wp-toolbelt' ),
 		),
 		'stats' => array(
 			'name' => esc_html__( 'Stats', 'wp-toolbelt' ),
