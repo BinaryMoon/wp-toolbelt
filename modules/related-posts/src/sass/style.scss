@@ -4,8 +4,8 @@
 
 	article {
 
-		padding: var( --toolbelt-spacing );
-		padding-top: 0;
+		padding: 0 var( --toolbelt-spacing );
+		margin-bottom: calc( var( --toolbelt-spacing ) * 1.5 );
 		position: relative;
 
 	}
