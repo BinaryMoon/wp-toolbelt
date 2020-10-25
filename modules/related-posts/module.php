@@ -111,10 +111,12 @@ function toolbelt_related_posts_get() {
  */
 function toolbelt_related_styles() {
 
-	if ( has_block( 'toolbelt/related-posts' ) ) {
-		toolbelt_global_styles( 'columns' );
-		toolbelt_styles( 'related-posts' );
-	}
+	/**
+	 * Don't check for the blocks since related posts could be appended to
+	 * the_content or called directly from a function.
+	 */
+	toolbelt_global_styles( 'columns' );
+	toolbelt_styles( 'related-posts' );
 
 }
 
