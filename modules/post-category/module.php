@@ -215,7 +215,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 					esc_attr( $class ),
 					esc_url( $p['url'] ),
 					esc_html( $p['title'] ),
-					toolbelt_post_category_post_meta( $p ),
+					toolbelt_post_category_post_meta( $p )
 				);
 
 			}
