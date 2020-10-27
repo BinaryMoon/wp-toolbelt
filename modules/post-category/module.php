@@ -69,6 +69,10 @@ function toolbelt_post_category_register_block() {
 					'default' => '1',
 					'type' => 'string',
 				),
+				'className' => array(
+					'default' => '',
+					'type' => 'string',
+				),
 			),
 		)
 	);
