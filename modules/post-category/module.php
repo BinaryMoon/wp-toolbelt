@@ -155,7 +155,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s">%2$s<h3 class="has-normal-font-size has-regular-font-size toolbelt-skip-anchor"><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></article>',
+					'<article class="%1$s">%2$s%5$s<h3 class="toolbelt-skip-anchor"><a href="%3$s" rel="bookmark">%4$s</a></h3><p>%6$s</p></article>',
 					esc_attr( $class ),
 					get_the_post_thumbnail( $p['id'], 'medium' ),
 					esc_url( $p['url'] ),
@@ -174,7 +174,7 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s">%2$s<h3 class="has-normal-font-size has-regular-font-size toolbelt-skip-anchor"><a href="%3$s" rel="bookmark">%4$s</a></h3>%5$s<p>%6$s</p></article>',
+					'<article class="%1$s">%2$s%5$s<h3 class="toolbelt-skip-anchor"><a href="%3$s" rel="bookmark">%4$s</a></h3><p>%6$s</p></article>',
 					esc_attr( $class ),
 					get_the_post_thumbnail( $p['id'], 'thumbnail' ),
 					esc_url( $p['url'] ),
@@ -193,12 +193,29 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 			foreach ( $posts as $p ) {
 
 				$html .= sprintf(
-					'<article class="%1$s"><h3 class="toolbelt-skip-anchor"><a href="%2$s" rel="bookmark">%3$s</a></h3>%4$s<p>%5$s</p></article>',
+					'<article class="%1$s">%4$s<h3 class="toolbelt-skip-anchor"><a href="%2$s" rel="bookmark">%3$s</a></h3><p>%5$s</p></article>',
 					esc_attr( $class ),
 					esc_url( $p['url'] ),
 					esc_html( $p['title'] ),
 					toolbelt_post_category_post_meta( $p ),
 					$p['excerpt']
+				);
+
+			}
+
+			break;
+
+		// Title only.
+		case '5':
+
+			foreach ( $posts as $p ) {
+
+				$html .= sprintf(
+					'<article class="%1$s">%4$s<h3 class="toolbelt-skip-anchor"><a href="%2$s" rel="bookmark">%3$s</a></h3></article>',
+					esc_attr( $class ),
+					esc_url( $p['url'] ),
+					esc_html( $p['title'] ),
+					toolbelt_post_category_post_meta( $p ),
 				);
 
 			}
