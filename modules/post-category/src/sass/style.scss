@@ -26,7 +26,7 @@
 
 	h3 {
 
-		margin: 0;
+		margin: 0 0 calc( var( --toolbelt-spacing ) / 2 ) 0;
 
 	}
 
@@ -51,6 +51,8 @@
 	}
 
 	.toolbelt-post-meta {
+
+		margin: 0;
 
 		.multi-author-false & {
 
@@ -77,7 +79,7 @@
 
 	img {
 
-		margin-bottom: calc( var( --toolbelt-spacing ) / 4 );
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
 
 	}
 
