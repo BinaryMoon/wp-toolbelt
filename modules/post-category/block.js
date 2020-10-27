@@ -29,6 +29,9 @@
     label: __('Excerpt', 'wp-toolbelt'),
     value: '4'
   }, {
+    label: __('Title only', 'wp-toolbelt'),
+    value: '5'
+  }, {
     label: __('List', 'wp-toolbelt'),
     value: '1'
   }];
@@ -44,6 +47,9 @@
   }, {
     label: __('Excerpt', 'wp-toolbelt'),
     value: '4'
+  }, {
+    label: __('Title only', 'wp-toolbelt'),
+    value: '5'
   }];
   registerBlockType('toolbelt/post-category', {
     title: __('TB Post Category', 'wp-toolbelt'),
