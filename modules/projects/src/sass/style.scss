@@ -17,13 +17,13 @@
 	h3 {
 
 		clear: both;
-		margin: 0;
+		margin: 0 0 calc( var( --toolbelt-spacing ) / 2 );
 
 	}
 
 	.toolbelt-post-meta {
 
-		margin: 0 0 calc( var( --toolbelt-spacing ) / 2 );
+		margin: 0;
 
 	}
 

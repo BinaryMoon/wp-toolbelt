@@ -482,8 +482,9 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 			$projects_list[] = sprintf(
 				'<div class="toolbelt-project">
 					<a href="%2$s" class="thumbnail">%1$s</a>
+					%4$s
 					<h3 class="toolbelt-skip-anchor"><a href="%2$s">%3$s</a></h3>
-					%4$s %5$s
+					%5$s
 				</div>',
 				get_the_post_thumbnail( null, 'medium' ),
 				esc_url( $permalink ),
