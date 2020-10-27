@@ -5,7 +5,7 @@
 	overflow-x: scroll;
 	overflow-y: hidden;
 	padding-bottom: var( --toolbelt-spacing );
-	margin-bottom: var( --toolbelt-spacing );
+	margin-bottom: calc( var( --toolbelt-spacing ) * 1.5 );
 
 	ul {
 
