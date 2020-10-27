@@ -23,6 +23,14 @@ if ( is_admin() ) {
  */
 function toolbelt_social_sharing( $content ) {
 
+	/**
+	 * Only add social sharing links to the_content and not content passed
+	 * through get_the_excerpt.
+	 */
+	if ( doing_filter( 'get_the_excerpt' ) ) {
+		return $content;
+	}
+
 	$post_types = apply_filters(
 		'toolbelt_social_sharing_post_types',
 		array( 'post' )
