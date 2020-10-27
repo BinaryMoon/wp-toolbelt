@@ -21,6 +21,13 @@ define( 'TOOLBELT_RELATED_POST_TRANSIENT', 'toolbelt_related_post_' . TOOLBELT_V
  */
 function toolbelt_related_posts( $content ) {
 
+	/**
+	 * Don't attach related posts to the_excerpt.
+	 */
+	if ( doing_filter( 'get_the_excerpt' ) ) {
+		return $content;
+	}
+
 	// The content has a related posts block so no need to add this as well.
 	if ( has_block( 'toolbelt/related-posts' ) ) {
 		return $content;
