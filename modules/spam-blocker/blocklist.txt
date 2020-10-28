@@ -4099,6 +4099,7 @@ _zapat
 /url?http
 /url?link
 /url?q
+/url?sa
 /url?url
 /url.php?go
 /url.php?http
@@ -6564,6 +6565,7 @@ apg apartment
 apg no fee
 apg-apartment
 apg-no-fee
+app full download
 app growth education
 app hacked
 app money free
@@ -6636,6 +6638,7 @@ appropriate-vitamin
 approximately my
 approximately this topic
 approximately-my
+apps full download
 appyourself
 apr.i.l
 aquaman-full
@@ -8540,6 +8543,7 @@ blog/online
 blog/owner
 blog/post
 blog/view
+blog/web
 blog0
 blog1
 blog2
@@ -8615,9 +8619,21 @@ blogs-to-read
 blogs-trick
 blogs-various
 blogs.bl
+blogs}
+blogs/blog
+blogs/comment
 blogs/entry
+blogs/index
 blogs/item
+blogs/lala
+blogs/online
+blogs/owner
 blogs/post
+blogs/view
+blogs/web
+blogs0
+blogs1
+blogs2
 blogsite
 blogsoon
 blogspot have
@@ -9416,6 +9432,7 @@ bursa birlik
 bursa escort
 bursa eskort
 bursa kiz
+bursa masoz
 bursa sandal
 bursa site
 bursa-bayan
@@ -9423,6 +9440,7 @@ bursa-birlik
 bursa-escort
 bursa-eskort
 bursa-kiz
+bursa-masoz
 bursa-sandal
 bursa-site
 bursabayan
@@ -9434,6 +9452,7 @@ bursada-eskort
 bursaescort
 bursaeskort
 bursakiz
+bursamasoz
 bursasite
 bursted out laugh
 busca sexo
@@ -15096,6 +15115,8 @@ eyeglass-sale
 eyeglasses sale
 eyeglasses-sale
 eyeglasssale
+eyelash extension
+eyelash-extension
 eyeporn
 eyes porn
 eyes-porn
@@ -16062,6 +16083,8 @@ firma.php
 firme sprzata
 firme-sprzata
 firmenadressen
+firming lotion
+firming-lotion
 first loan
 first time pay
 first-class news
@@ -16925,6 +16948,7 @@ fulgor fantastic
 fulgor fantástic
 fulgor-fantastic
 fulgor-fantástic
+full download page
 full length motion
 full length movie
 full length-motion
@@ -23612,6 +23636,7 @@ man fetish
 man gaga
 man in uk
 man online
+man porn
 man seeking man
 man uga fast
 man-cheap
@@ -23621,6 +23646,7 @@ man-fetish
 man-gaga
 man-in-uk
 man-online
+man-porn
 man-seeking-man
 mana-efficient
 manage/new
@@ -23668,6 +23694,7 @@ manor-escort
 manor-eskort
 manorescort
 manoreskort
+manporn
 manseeking
 mansion 88
 mansion-88
@@ -24143,6 +24170,7 @@ mcqueen-silk
 mcqueenclub
 mcqueendress
 mcqueensilk
+me also comment
 me greatly
 me haha
 me out loads
@@ -24337,6 +24365,7 @@ men makeup
 men mbt
 men mizuno
 men nike
+men porn
 men seeking men
 men timber
 men want online
@@ -24355,6 +24384,7 @@ men-makeup
 men-mbt
 men-mizuno
 men-nike
+men-porn
 men-seeking-men
 men-sneaker
 men-timber
@@ -24372,6 +24402,7 @@ meninuk
 menmbt
 menmizuno
 mennike
+menporn
 mens barbour
 mens bathrobe
 mens bcbg
@@ -25149,6 +25180,7 @@ mortgagecalc
 most competitively
 most high-need
 most useful site
+most visited android
 most well-liked
 most-competitively
 mostaffordable
@@ -25667,6 +25699,7 @@ nailupon
 najlepsze
 najsłynniejszym
 najtaniej
+naked ass
 naked chic
 naked girl
 naked hair
@@ -25675,6 +25708,7 @@ naked selfie
 naked sex
 naked teen
 naked top
+naked-ass
 naked-chic
 naked-girl
 naked-hair
@@ -25683,6 +25717,7 @@ naked-sex
 naked-teen
 naked-top
 naked.top
+nakedass
 nakedselfie
 nakedsex
 nakedteen
@@ -26379,12 +26414,14 @@ nulled corp
 nulled free
 nulled mafia
 nulled null
+nulled open
 nulled perf
 nulled team
 nulled-corp
 nulled-free
 nulled-mafia
 nulled-null
+nulled-open
 nulled-perf
 nulled-team
 nulled.cr
@@ -26392,6 +26429,7 @@ nulledcorp
 nulledfree
 nulledmafia
 nullednull
+nulledopen
 nulledperf
 nulledteam
 number of or more
@@ -28215,11 +28253,14 @@ phần-mềm
 pharm_
 pharm.
 pharma canad
+pharma euro
 pharma from
 pharma_
 pharma-canad
+pharma-euro
 pharma-from
 pharma.
+pharmacanad
 pharmacies canad
 pharmacies from
 pharmacies-canad
@@ -28239,6 +28280,7 @@ pharmacy-without
 pharmacy24
 pharmacyat
 pharmacyonline
+pharmaeuro
 pharmancies_
 pharmaun
 pharmi
@@ -29965,6 +30007,7 @@ pussy-fuck
 pussy-lick
 pussy-porn
 pussy-wet
+pussycum
 pussyfuck
 pussylick
 pussyporn
@@ -30277,6 +30320,7 @@ reach their pursuit
 reach-me-down
 reach-profit
 react consequent
+read a blog
 read everthing
 read it fully
 read of your article
@@ -32295,6 +32339,7 @@ sexy-gyrl
 sexy-lad
 sexy-meid
 sexy-moment
+sexy-naked
 sexy-sex
 sexy-shoe-store
 sexy-teen
@@ -32321,6 +32366,7 @@ sexygirl
 sexygyrl
 sexylad
 sexymoment
+sexynaked
 sexysex
 sexyteen
 sexyvirgin
@@ -34731,6 +34777,7 @@ teen cam
 teen female
 teen lesb
 teen porn
+teen pussy
 teen sex
 teen virgin
 teen webcam
@@ -34739,6 +34786,7 @@ teen-female
 teen-her
 teen-lesb
 teen-porn
+teen-pussy
 teen-sex
 teen-virgin
 teen-webcam
@@ -34752,6 +34800,7 @@ teenher
 teeniepant
 teenlesb
 teenporn
+teenpussy
 teens cam
 teens porn
 teens webcam
@@ -37568,6 +37617,7 @@ visit-web
 visitant
 visitar blog
 visitar-blog
+visited android app
 visited blog
 visited homepage
 visited mmy
