@@ -150,6 +150,7 @@ function toolbelt_contact_field_multi( $type, array $atts ) {
 			'required' => false,
 			'description' => '',
 			'options' => null,
+			'layout' => 'vertical',
 		),
 		$atts,
 		'contact-form'
@@ -185,7 +186,13 @@ function toolbelt_contact_field_multi( $type, array $atts ) {
 
 	}
 
-	return toolbelt_contact_field_wrap_fieldset( $atts['label'], $atts['required'], $atts['description'], $html );
+	$item_html = sprintf(
+		'<div class="toolbelt-multi-layout-%2$s">%1$s</div>',
+		$html,
+		esc_attr( $atts[ 'layout' ] )
+	);
+
+	return toolbelt_contact_field_wrap_fieldset( $atts['label'], $atts['required'], $atts['description'], $item_html );
 
 }
 

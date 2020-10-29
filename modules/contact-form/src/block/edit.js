@@ -24,7 +24,7 @@ const ALLOWED_BLOCKS = [
 const edit = ( props ) => {
 
 	const { attributes, setAttributes } = props;
-	const { subject, to, submitButtonText, messageConfirmation } = attributes;
+	const { subject, to, submitButtonText, messageConfirmation, layout } = attributes;
 
 	const form_settings = [
 		<TextControl
@@ -47,6 +47,11 @@ const edit = ( props ) => {
 			)}
 		</p>
 	];
+
+	let template = layout;
+	if ( !formTemplate[ layout ] ) {
+		template = 'default';
+	}
 
 	return [
 		<InspectorControls>
@@ -98,26 +103,7 @@ const edit = ( props ) => {
 			<InnerBlocks
 				allowedBlocks={ALLOWED_BLOCKS}
 				templateLock={false}
-				template={[
-					[
-						'toolbelt/field-name',
-						{
-							required: true,
-							label: __( 'Name', 'wp-toolbelt' ),
-						},
-					],
-					[
-						'toolbelt/field-email',
-						{
-							required: true,
-							label: __( 'Email Address', 'wp-toolbelt' ),
-						},
-					],
-					[
-						'toolbelt/field-textarea',
-						{}
-					],
-				]}
+				template={formTemplate[ template ]}
 			/>
 
 			<button disabled>{submitButtonText}</button>

@@ -44,6 +44,13 @@
 
 	}
 
+	&-layout-horizontal {
+
+		display: flex;
+		flex-wrap: wrap;
+
+	}
+
 }
 
 .toolbelt-field-multiple-select {

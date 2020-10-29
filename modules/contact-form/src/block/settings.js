@@ -6,6 +6,100 @@ const renderMaterialIcon = svg => (
 	</SVG>
 );
 
+const getFormTemplate = () => {
+
+};
+
+const formTemplate = {
+	default: [
+		[
+			'toolbelt/field-name',
+			{
+				required: true,
+				label: __( 'Name', 'wp-toolbelt' ),
+			},
+		],
+		[
+			'toolbelt/field-email',
+			{
+				required: true,
+				label: __( 'Email Address', 'wp-toolbelt' ),
+			},
+		],
+		[
+			'toolbelt/field-textarea',
+			{
+				label: __( 'Message', 'wp-toolbelt' ),
+			}
+		],
+	],
+	feedback: [
+		[
+			'toolbelt/field-radio',
+			{
+				label: __( 'Feedback Type', 'wp-toolbelt' ),
+				options: [
+					__( 'Comment', 'wp-toolbelt' ),
+					__( 'Feedback', 'wp-toolbelt' ),
+					__( 'Question', 'wp-toolbelt' ),
+				],
+			}
+		],
+		[
+			'toolbelt/field-textarea',
+			{
+				label: __( 'Message', 'wp-toolbelt' ),
+			}
+		],
+		[
+			'toolbelt/field-name',
+			{
+				required: true,
+				label: __( 'Name', 'wp-toolbelt' ),
+			},
+		],
+		[
+			'toolbelt/field-email',
+			{
+				required: true,
+				label: __( 'Email Address', 'wp-toolbelt' ),
+			},
+		],
+	],
+	nps: [
+		[
+			'toolbelt/field-radio',
+			{
+				label: __( 'How likely is it that you would recommend our company/product/service to a friend or colleague?', 'wp-toolbelt' ),
+				description: __( '0 = least likely, 10 = most likely', 'wp-toolbelt' ),
+				options: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+				require: true,
+				layout: 'horizontal',
+			}
+		],
+		[
+			'toolbelt/field-textarea',
+			{
+				label: __( 'Why?', 'wp-toolbelt' ),
+			}
+		],
+		[
+			'toolbelt/field-name',
+			{
+				required: true,
+				label: __( 'Name', 'wp-toolbelt' ),
+			},
+		],
+		[
+			'toolbelt/field-email',
+			{
+				required: true,
+				label: __( 'Email Address', 'wp-toolbelt' ),
+			},
+		],
+	]
+};
+
 const settings = {
 
 	title: __( 'TB Contact Form', 'wp-toolbelt' ),
@@ -44,8 +138,16 @@ const settings = {
 			type: 'string',
 			default: '',
 		},
+		layout: {
+			type: 'string',
+			default: '',
+		}
 	},
 
+	/**
+	 * We save the form data here.
+	 * The actual html is generated in module-fields.php.
+	 */
 	save: () => <InnerBlocks.Content />,
 
 	edit,
@@ -221,6 +323,7 @@ const editMultiField = type => props => (
 		type={type}
 		isSelected={props.isSelected}
 		id={props.attributes.id}
+		layout={props.attributes.layout}
 	/>
 
 );
@@ -237,6 +340,7 @@ const childBlocks = [
 			edit: editField( 'text' ),
 		},
 	},
+
 	{
 		name: 'field-name',
 		settings: {
@@ -252,6 +356,7 @@ const childBlocks = [
 			edit: editField( 'text' ),
 		},
 	},
+
 	{
 		name: 'field-subject',
 		settings: {
@@ -265,6 +370,7 @@ const childBlocks = [
 			edit: editField( 'text' ),
 		},
 	},
+
 	{
 		name: 'field-email',
 		settings: {
@@ -323,6 +429,7 @@ const childBlocks = [
 			edit: editField( 'text' ),
 		},
 	},
+
 	{
 		name: 'field-telephone',
 		settings: {
@@ -340,6 +447,7 @@ const childBlocks = [
 			edit: editField( 'tel' ),
 		},
 	},
+
 	{
 		name: 'field-textarea',
 		settings: {
@@ -364,6 +472,7 @@ const childBlocks = [
 			),
 		},
 	},
+
 	{
 		name: 'field-checkbox',
 		settings: {
@@ -394,6 +503,7 @@ const childBlocks = [
 			},
 		},
 	},
+
 	{
 		name: 'field-checkbox-multiple',
 		settings: {
@@ -408,6 +518,10 @@ const childBlocks = [
 			transforms: MultiFieldTransforms,
 			attributes: {
 				...FieldDefaults.attributes,
+				layout: {
+					type: 'string',
+					default: 'vertical',
+				},
 				label: {
 					type: 'string',
 					default: __( 'Select several', 'wp-toolbelt' ),
@@ -415,6 +529,7 @@ const childBlocks = [
 			},
 		},
 	},
+
 	{
 		name: 'field-radio',
 		settings: {
@@ -435,6 +550,10 @@ const childBlocks = [
 			transforms: MultiFieldTransforms,
 			attributes: {
 				...FieldDefaults.attributes,
+				layout: {
+					type: 'string',
+					default: 'vertical',
+				},
 				label: {
 					type: 'string',
 					default: __( 'Select one', 'wp-toolbelt' ),
@@ -442,6 +561,7 @@ const childBlocks = [
 			},
 		},
 	},
+
 	{
 		name: 'field-select',
 		settings: {
