@@ -1,3 +1,9 @@
+// A dodgy hack to fix a layout bug in th editor. Hopefully I'll be able to
+// remove this at some stage.
+.edit-post-layout .interface-interface-skeleton__editor {
+	max-width: 100%;
+}
+
 .toolbelt-block-slider {
 
 	// We need the min-height for when there's no content.
@@ -15,6 +21,7 @@
 			> :first-child .toolbelt-block-slide {
 				margin-inline-start: 0;
 			}
+
 			> :last-child .toolbelt-block-slide {
 				margin-inline-end: 0;
 			}

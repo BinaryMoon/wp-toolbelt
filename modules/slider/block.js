@@ -254,7 +254,10 @@
 
   var sliderSave = function sliderSave(props) {
     return createElement("div", {
-      className: getSliderClass(props)
+      className: getSliderClass(props),
+      role: "region",
+      "aria-label": __('slider', 'wp-toolbelt'),
+      tabindex: "0"
     }, createElement("ul", null, createElement(InnerBlocks.Content, null)));
   };
   /**
