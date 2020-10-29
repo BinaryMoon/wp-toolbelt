@@ -25,9 +25,9 @@
   var _wp$components = wp.components,
       BaseControl = _wp$components.BaseControl,
       Button = _wp$components.Button,
-      IconButton = _wp$components.IconButton,
       Icon = _wp$components.Icon,
       PanelBody = _wp$components.PanelBody,
+      RadioControl = _wp$components.RadioControl,
       Placeholder = _wp$components.Placeholder,
       SelectControl = _wp$components.SelectControl,
       TextareaControl = _wp$components.TextareaControl,
@@ -37,6 +37,11 @@
       Rect = _wp$components.Rect,
       SVG = _wp$components.SVG,
       Circle = _wp$components.Circle;
+  /**
+   * The block edit properties.
+   * This is for the parent block.
+   */
+
   /**
    * External dependencies
    */
@@ -57,7 +62,8 @@
     var subject = attributes.subject,
         to = attributes.to,
         submitButtonText = attributes.submitButtonText,
-        messageConfirmation = attributes.messageConfirmation;
+        messageConfirmation = attributes.messageConfirmation,
+        layout = attributes.layout;
     var form_settings = [createElement(TextControl, {
       label: __('Email address', 'wp-toolbelt'),
       value: to,
@@ -80,6 +86,12 @@
     }), createElement("p", {
       className: "toolbelt-contact-description"
     }, __('(If you leave these blank, notifications will go to the author with the post or page title as the subject line.)', 'wp-toolbelt'))];
+    var template = layout;
+
+    if (!formTemplate[layout]) {
+      template = 'default';
+    }
+
     return [createElement(InspectorControls, null, createElement(PanelBody, {
       title: __('Email Feedback Settings', 'wp-toolbelt'),
       initialOpen: true
@@ -108,17 +120,15 @@
     }, createElement("form", null, form_settings)), createElement(InnerBlocks, {
       allowedBlocks: ALLOWED_BLOCKS,
       templateLock: false,
-      template: [['toolbelt/field-name', {
-        required: true,
-        label: __('Name', 'wp-toolbelt')
-      }], ['toolbelt/field-email', {
-        required: true,
-        label: __('Email Address', 'wp-toolbelt')
-      }], ['toolbelt/field-textarea', {}]]
+      template: formTemplate[template]
     }), createElement("button", {
       disabled: true
     }, submitButtonText))];
   };
+  /**
+   * The block settings.
+   */
+
 
   var renderMaterialIcon = function renderMaterialIcon(svg) {
     return createElement(SVG, {
@@ -132,6 +142,46 @@
     }), svg);
   };
 
+  var getFormTemplate = function getFormTemplate() {};
+
+  var formTemplate = {
+    "default": [['toolbelt/field-name', {
+      required: true,
+      label: __('Name', 'wp-toolbelt')
+    }], ['toolbelt/field-email', {
+      required: true,
+      label: __('Email Address', 'wp-toolbelt')
+    }], ['toolbelt/field-textarea', {
+      label: __('Message', 'wp-toolbelt')
+    }]],
+    feedback: [['toolbelt/field-radio', {
+      label: __('Feedback Type', 'wp-toolbelt'),
+      options: [__('Comment', 'wp-toolbelt'), __('Feedback', 'wp-toolbelt'), __('Question', 'wp-toolbelt')]
+    }], ['toolbelt/field-textarea', {
+      label: __('Message', 'wp-toolbelt')
+    }], ['toolbelt/field-name', {
+      required: true,
+      label: __('Name', 'wp-toolbelt')
+    }], ['toolbelt/field-email', {
+      required: true,
+      label: __('Email Address', 'wp-toolbelt')
+    }]],
+    nps: [['toolbelt/field-radio', {
+      label: __('How likely is it that you would recommend our company/product/service to a friend or colleague?', 'wp-toolbelt'),
+      description: __('0 = least likely, 10 = most likely', 'wp-toolbelt'),
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      require: true,
+      layout: 'horizontal'
+    }], ['toolbelt/field-textarea', {
+      label: __('Why?', 'wp-toolbelt')
+    }], ['toolbelt/field-name', {
+      required: true,
+      label: __('Name', 'wp-toolbelt')
+    }], ['toolbelt/field-email', {
+      required: true,
+      label: __('Email Address', 'wp-toolbelt')
+    }]]
+  };
   var settings = {
     title: __('TB Contact Form', 'wp-toolbelt'),
     description: __('Use the form builder to create your own forms.', 'wp-toolbelt'),
@@ -158,8 +208,17 @@
       messageConfirmation: {
         type: 'string',
         "default": ''
+      },
+      layout: {
+        type: 'string',
+        "default": ''
       }
     },
+
+    /**
+     * We save the form data here.
+     * The actual html is generated in module-fields.php.
+     */
     save: function save() {
       return createElement(InnerBlocks.Content, null);
     },
@@ -366,7 +425,8 @@
         setAttributes: props.setAttributes,
         type: type,
         isSelected: props.isSelected,
-        id: props.attributes.id
+        id: props.attributes.id,
+        layout: props.attributes.layout
       });
     };
   };
@@ -516,6 +576,10 @@
       edit: editMultiField('checkbox'),
       transforms: MultiFieldTransforms,
       attributes: Object.assign({}, FieldDefaults.attributes, {
+        layout: {
+          type: 'string',
+          "default": 'vertical'
+        },
         label: {
           type: 'string',
           "default": __('Select several', 'wp-toolbelt')
@@ -538,6 +602,10 @@
       edit: editMultiField('radio'),
       transforms: MultiFieldTransforms,
       attributes: Object.assign({}, FieldDefaults.attributes, {
+        layout: {
+          type: 'string',
+          "default": 'vertical'
+        },
         label: {
           type: 'string',
           "default": __('Select one', 'wp-toolbelt')
@@ -563,6 +631,10 @@
       })
     })
   }];
+  /**
+   * The individual form components.
+   */
+
   /**
    * Toolbelt Field Checkbox
    *
@@ -801,6 +873,7 @@
         isSelected = _ref16.isSelected,
         setAttributes = _ref16.setAttributes,
         options = _ref16.options,
+        layout = _ref16.layout,
         type = _ref16.type;
 
     /**
@@ -841,6 +914,10 @@
       });
       setInFocus(options.length);
     };
+    /**
+     * Add an option.
+     */
+
 
     var updateOption = function updateOption(index, value) {
       if (!index && index !== 0) {
@@ -854,6 +931,10 @@
       });
       setInFocus(index);
     };
+    /**
+     * Remove an option.
+     */
+
 
     var deleteOption = function deleteOption(index) {
       var optionsList = options.slice(0);
@@ -881,6 +962,12 @@
       }
     };
 
+    var itemLayout = layout;
+
+    if (!layout) {
+      itemLayout = 'vertical';
+    }
+
     return createElement(Fragment, null, createElement(ToolbeltFieldLabel, {
       required: required,
       label: label,
@@ -888,7 +975,7 @@
       setAttributes: setAttributes,
       isSelected: isSelected
     }), createElement("ol", {
-      className: "toolbelt-field-multiple toolbelt-field-multiple-".concat(type),
+      className: "toolbelt-field-multiple toolbelt-field-multiple-".concat(type, " toolbelt-field-multiple-layout-").concat(itemLayout),
       id: "toolbelt-field-multiple-".concat(instanceId)
     }, options.map(function (option, index) {
       return createElement(ToolbeltMultiOption, {
@@ -902,7 +989,7 @@
         deleteOption: deleteOption,
         keyPress: keyPress
       });
-    })), isSelected && createElement(IconButton, {
+    })), isSelected && createElement(Button, {
       className: "toolbelt-field-multiple__add-option",
       icon: "insert",
       label: __('Insert option', 'wp-toolbelt'),
@@ -917,17 +1004,25 @@
           label: value
         });
       }
+    }), (type === 'radio' || type === 'checkbox') && createElement(RadioControl, {
+      label: __('Layout', 'wp-toolbelt'),
+      options: [{
+        label: __('Vertical', 'wp-toolbelt'),
+        value: 'vertical'
+      }, {
+        label: __('Horizontal', 'wp-toolbelt'),
+        value: 'horizontal'
+      }],
+      onChange: function onChange(new_layout) {
+        setAttributes({
+          layout: new_layout
+        });
+      },
+      selected: itemLayout
     }))));
   }
   /**
-   * Toolbelt Multi Options
-   *
-   * A field used to display multiple input types. It supports radio, checkbox,
-   * and select elements.
-   *
-   * This is the wrapper component that holds the list of elements that will be
-   * displayed. This component includes the main label, and the required flag, and
-   * a repeater with the list of children.
+   * Toolbelt Option element.
    */
 
 
@@ -968,7 +1063,7 @@
       onKeyDown: function onKeyDown(event) {
         keyPress(event, index);
       }
-    }), createElement(IconButton, {
+    }), createElement(Button, {
       className: "toolbelt-option-remove",
       icon: "trash",
       label: __('Remove option', 'jetpack'),
@@ -981,6 +1076,20 @@
   }
 
   registerBlockType('toolbelt/contact-form', settings);
+  wp.blocks.registerBlockVariation('toolbelt/contact-form', {
+    name: 'feedback',
+    title: __('TB Feedback Form', 'wp-toolbelt'),
+    attributes: {
+      layout: 'feedback'
+    }
+  });
+  wp.blocks.registerBlockVariation('toolbelt/contact-form', {
+    name: 'nps',
+    title: __('TB Net Promoter Score (NPS) Form', 'wp-toolbelt'),
+    attributes: {
+      layout: 'nps'
+    }
+  });
   childBlocks.forEach(function (childBlock) {
     return registerBlockType("toolbelt/".concat(childBlock.name), childBlock.settings);
   });
