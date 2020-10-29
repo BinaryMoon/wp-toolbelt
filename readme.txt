@@ -143,6 +143,8 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 * New: Sitemap block.
 * New: Fallback Featured Images module. Attempts to find featured images when there aren't any assigned.
 * New: Make use of social sharing API in supported browsers.
+* New: Predefined contact form variants. A feedback form and a net promoter score form.
+* Add New horizontal multi-element contact form component layout to allow for more space efficient layout of forms.
 * Add Related Posts block.
 * Add TB prefix to all blocks. Inspired by: https://wptavern.com/wordpress-plugin-authors-should-avoid-confusing-users-when-naming-blocks
 * Add icon to breadcrumbs block.
