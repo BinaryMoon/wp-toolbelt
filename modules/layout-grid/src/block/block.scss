@@ -5,17 +5,57 @@
 		> .block-editor-block-list__layout {
 
 			display: grid;
-			grid-template-columns: 1fr;
-			grid-gap: var( --toolbelt-spacing );
+			grid-template-columns: 100%;
+			margin: 0 calc( var( --toolbelt-spacing ) * -1 );
 			grid-auto-flow: dense;
+			row-gap: var( --toolbelt-spacing );
+
+			> .wp-block {
+
+				margin: 0;
+				width: 100%;
+				max-width: none;
+
+			}
+
+			* > {
+
+			}
 
 		}
 
 	}
 
-	.wp-block-column {
+	[data-type="toolbelt/column"] {
 
-		margin: 0 !important;
+		display: flex;
+		align-items: stretch;
+
+	}
+
+	.wp-block-toolbelt-column,
+	.wp-block-toolbelt-column > .block-editor-inner-blocks,
+	.wp-block-toolbelt-column > .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		height: 100%;
+		width: 100%;
+
+		> * {
+
+			margin-left: 0;
+			margin-right: 0;
+			max-width: none;
+
+		}
+
+	}
+
+	.wp-block-toolbelt-column {
+
+		margin: 0 var( --toolbelt-spacing ) !important;
 
 		// This removes the empty div that is appearing when .wp-block-columns are selected.
 		// Without this the divs will be placed into the grid shifting the content around.
@@ -25,17 +65,98 @@
 
 		}
 
+		&.is-style-border-top {
+
+			> .block-editor-inner-blocks {
+
+				border-top: var( --toolbelt-border-width ) solid currentColor;
+				padding-top: var( --toolbelt-spacing );
+
+			}
+
+		}
+
+		&.is-style-padded {
+
+			> .block-editor-inner-blocks {
+
+				padding: var( --toolbelt-spacing );
+
+			}
+
+		}
+
+		&.toolbelt-column-align {
+
+			// default;
+			&-top {
+
+
+
+			}
+
+			&-middle {
+
+				> .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+					justify-content: center;
+
+				}
+
+			}
+
+			&-bottom {
+
+				> .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+					justify-content: flex-end;
+
+				}
+
+			}
+
+			&-space-between {
+
+				> .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+					justify-content: space-between;
+
+				}
+
+			}
+
+		}
+
+		// This is needed on the backend. The theme should take care of it on the frontend.
+		// https://github.com/studiopress/atomic-blocks/blob/c1913f677a2ab7ce6df63457b5dfca064c1ca045/src/blocks/block-column-inner/styles/editor.scss#L319
+		.wp-block-image,
+		.wp-block-image .components-resizable-box__container {
+
+			max-width: 100% !important;
+
+		}
+
+		> :first-child {
+
+			margin-top: 0;
+
+		}
+
 	}
 
-	&.has-background {
+	&.is-style-padded {
 
-		padding: var( --toolbelt-spacing );
+		> .block-editor-inner-blocks {
+
+			padding: var( --toolbelt-spacing );
+
+		}
 
 	}
 
 }
 
-@mixin toolbelt-grid-columns( $columns, $layout, $design, $first_position: false ) {
+@mixin toolbelt-grid-columns( $columns, $layout, $design, $first_position: false, $second_position: false ) {
 
 	.toolbelt-grid-layout-#{$columns}-#{$layout} > .block-editor-inner-blocks > .block-editor-block-list__layout {
 
@@ -53,27 +174,44 @@
 
 	}
 
+	@if $second_position != false {
+
+		.toolbelt-grid-layout-#{$columns}-#{$layout} > .block-editor-inner-blocks > .block-editor-block-list__layout > :nth-child( 2 ) {
+
+			grid-column: $second_position;
+
+		}
+
+	}
+
 }
 
 
-@include toolbelt-grid-columns( 2, 0, 1fr 1fr );
-@include toolbelt-grid-columns( 2, 1, 3fr 1fr );
-@include toolbelt-grid-columns( 2, 2, 1fr 3fr, 2 );
+@include toolbelt-grid-columns( 2, 0, 50% 50% ); // 6/12 6/12
+@include toolbelt-grid-columns( 2, 1, 75% 25% ); // 9/12 3/12
+@include toolbelt-grid-columns( 2, 2, 25% 75%, 2 ); // 3/12 9/12
+@include toolbelt-grid-columns( 2, 3, 66.66% 33.33% ); // 8/12 4/12
+@include toolbelt-grid-columns( 2, 4, 33.33% 66.66%, 2 ); // 4/12 8/12
 
-@include toolbelt-grid-columns( 3, 0, 1fr 1fr 1fr );
-@include toolbelt-grid-columns( 3, 1, 1fr 2fr 1fr, 2 );
-@include toolbelt-grid-columns( 3, 2, 2fr 1fr 1fr );
-@include toolbelt-grid-columns( 3, 3, 1fr 1fr 2fr, 3 );
+@include toolbelt-grid-columns( 3, 0, 33.33% 33.33% 33.33% ); // 4/12 4/12 4/12
+@include toolbelt-grid-columns( 3, 1, 25% 50% 25%, 2 ); // 3/12 6/12 3/12
+@include toolbelt-grid-columns( 3, 2, 50% 25% 25% ); // 6/12 3/12 3/12
+@include toolbelt-grid-columns( 3, 3, 25% 25% 50%, 3 ); // 3/12 3/12 6/12
+@include toolbelt-grid-columns( 3, 4, 16.66% 50% 33.33%, 2 ); // 2/12 6/12 4/12
+@include toolbelt-grid-columns( 3, 5, 50% 16.66% 33.33% ); // 6/12 2/12 4/12
 
-@include toolbelt-grid-columns( 4, 0, 1fr 1fr 1fr 1fr );
-@include toolbelt-grid-columns( 4, 1, 2fr 1fr 1fr 1fr );
-@include toolbelt-grid-columns( 4, 2, 1fr 1fr 1fr 2fr, 4 );
+@include toolbelt-grid-columns( 4, 0, 25% 25% 25% 25% ); // 3/12 3/12 3/12 3/12
+@include toolbelt-grid-columns( 4, 1, 50% 16.66% 16.66% 16.66% ); // 6/12 2/12 2/12 2/12
+@include toolbelt-grid-columns( 4, 2, 16.66% 16.66% 16.66% 50%, 4 ); // 2/12 2/12 2/12 6/12
+@include toolbelt-grid-columns( 4, 3, 16.66% 33.33% 33.33% 16.66%, 2, 3 ); // 2/12 4/12 4/12 2/12
+@include toolbelt-grid-columns( 4, 4, 33.33% 16.66% 16.66% 33.33%, false, 4 ); // 4/12 2/12 2/12 4/12
 
-@include toolbelt-grid-columns( 5, 0, 1fr 1fr 1fr 1fr );
 
 
-
-//
+/**
+ * This is for the block inspector button group that's used to display the
+ * different column layouts.
+ */
 .toolbelt-grid-buttongroup {
 
 	display: grid;

@@ -153,6 +153,7 @@ function toolbelt_is_active() {
 	 * Simplifies the code massively.
 	 */
 	return is_home();
+
 }
 
 
@@ -246,6 +247,7 @@ function toolbelt_is_rest_response( $data ) {
 	$GLOBALS['wp_query'] = new WP_Query( // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		array(
 			'paged' => $page,
+			'post_type' => 'post',
 		)
 	);
 

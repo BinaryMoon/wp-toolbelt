@@ -39,26 +39,26 @@ function toolbelt_star_rating_register_block() {
 			'render_callback' => 'toolbelt_star_rating_render_block',
 			'editor_script' => 'toolbelt-star-rating',
 			'attributes' => array(
-				'rating'      => array(
-					'type'    => 'number',
+				'rating' => array(
+					'type' => 'number',
 					'default' => 1,
 				),
-				'maxRating'   => array(
-					'type'    => 'number',
+				'maxRating' => array(
+					'type' => 'number',
 					'default' => 5,
 				),
-				'color'       => array(
+				'color' => array(
 					'type' => 'string',
 				),
 				'ratingStyle' => array(
-					'type'    => 'string',
+					'type' => 'string',
 					'default' => 'star',
 				),
-				'className'   => array(
+				'className' => array(
 					'type' => 'string',
 				),
-				'align'       => array(
-					'type'    => 'string',
+				'align' => array(
+					'type' => 'string',
 					'default' => 'left',
 				),
 			),
@@ -96,10 +96,6 @@ add_action( 'admin_head', 'toolbelt_star_rating_editor_styles' );
 function toolbelt_star_rating_styles() {
 
 	global $post;
-
-	if ( ! is_singular() ) {
-		return;
-	}
 
 	if ( has_block( 'toolbelt/star-rating' ) ) {
 		toolbelt_styles( 'star-rating' );

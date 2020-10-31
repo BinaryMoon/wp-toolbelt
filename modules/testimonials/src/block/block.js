@@ -10,7 +10,7 @@
 	registerBlockType(
 		'toolbelt/testimonials',
 		{
-			title: __( 'Testimonials', 'wp-toolbelt' ),
+			title: __( 'TB Testimonials', 'wp-toolbelt' ),
 
 			icon: 'testimonial',
 

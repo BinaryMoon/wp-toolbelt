@@ -15,6 +15,10 @@
  */
 function toolbelt_avatar_html( $html, $id_or_email, $args ) {
 
+	if ( isset( $args['force_default'] ) && $args['force_default'] ) {
+		return $html;
+	}
+
 	$email_hash = toolbelt_avatar_email_hash( $id_or_email );
 	$email_hash = substr( $email_hash, 0, 15 );
 
@@ -38,7 +42,23 @@ add_filter( 'pre_get_avatar', 'toolbelt_avatar_html', 10, 3 );
 
 
 /**
- * Output scripts and styles in the footer.
+ * Output styles in the header.
+ *
+ * This avoids any flashes of unstyled content.
+ *
+ * @return void
+ */
+function toolbelt_avatar_header() {
+
+	toolbelt_styles( 'avatars' );
+
+}
+
+add_action( 'wp_print_styles', 'toolbelt_avatar_header' );
+add_action( 'admin_head', 'toolbelt_avatar_header' );
+
+/**
+ * Output scripts in the footer.
  * This needs to go on every page since `get_avatar` could be called anywhere.
  *
  * @return void
@@ -47,7 +67,6 @@ function toolbelt_avatar_footer() {
 
 	toolbelt_scripts( 'avatars', 'parts' );
 	toolbelt_scripts( 'avatars' );
-	toolbelt_styles( 'avatars' );
 
 	if ( is_admin() ) {
 		toolbelt_styles( 'avatars', 'admin' );
@@ -59,8 +78,17 @@ function toolbelt_avatar_footer() {
 
 }
 
-add_action( 'wp_footer', 'toolbelt_avatar_footer' );
-add_action( 'admin_footer', 'toolbelt_avatar_footer' );
+
+/**
+ * We need to add a really (really) big priority here so we can make sure this
+ * loads after the admin bar has been displayed.
+ *
+ * This isn't a problem if the theme supports `wp_body_open` but if it doesn't
+ * then the admin bar gets added to the footer with a high priority and we need
+ * to load after.
+ */
+add_action( 'wp_footer', 'toolbelt_avatar_footer', 999999 );
+add_action( 'admin_footer', 'toolbelt_avatar_footer', 999999 );
 
 
 /**

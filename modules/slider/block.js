@@ -50,7 +50,7 @@
     }, title && link && createElement("h3", {
       "class": "toolbelt-skip-anchor"
     }, createElement("a", {
-      href: "{link}"
+      href: link
     }, title)), title && !link && createElement("h3", {
       "class": "toolbelt-skip-anchor"
     }, title), description && createElement("p", null, description));
@@ -118,9 +118,15 @@
 
 
     var onSelectMedia = function onSelectMedia(media) {
+      var imageUrl = media.url;
+
+      if (media.sizes && media.sizes.medium) {
+        imageUrl = media.sizes.medium.url;
+      }
+
       setAttributes({
         mediaId: media.id,
-        mediaUrl: media.url
+        mediaUrl: imageUrl
       });
     };
 
@@ -232,15 +238,7 @@
         "default": ''
       }
     },
-
-    /**
-     * Save the formatted markdown content.
-     */
     save: slideSave,
-
-    /**
-     * Edit the settings.
-     */
     edit: withSelect(function (select, props) {
       return {
         media: props.attributes.mediaId ? select('core').getMedia(props.attributes.mediaId) : undefined
@@ -256,7 +254,10 @@
 
   var sliderSave = function sliderSave(props) {
     return createElement("div", {
-      className: getSliderClass(props)
+      className: getSliderClass(props),
+      role: "region",
+      "aria-label": __('slider', 'wp-toolbelt'),
+      tabindex: "0"
     }, createElement("ul", null, createElement(InnerBlocks.Content, null)));
   };
   /**
@@ -368,6 +369,9 @@
     }, {
       name: 'border',
       label: __('With border', 'wp-toolbelt')
+    }, {
+      name: 'cosy',
+      label: __('No margin', 'wp-toolbelt')
     }],
     category: 'wp-toolbelt',
     attributes: {
@@ -385,15 +389,7 @@
     supports: {
       align: ['full', 'wide']
     },
-
-    /**
-     * Save the formatted markdown content.
-     */
     save: sliderSave,
-
-    /**
-     * Edit the settings.
-     */
     edit: sliderEdit
   });
 })();

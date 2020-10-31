@@ -20,7 +20,7 @@
   var exampleDescription = __('Markdown is a text formatting syntax that is converted into HTML. You can _emphasize_ text or **make it strong** with just a few characters.', 'wp-toolbelt');
 
   registerBlockType('toolbelt/markdown', {
-    title: __('Markdown', 'wp-toolbelt'),
+    title: __('TB Markdown', 'wp-toolbelt'),
     description: createElement(Fragment, null, createElement("p", null, __('Use regular characters and punctuation to style text, links, and lists.', 'wp-toolbelt')), createElement(ExternalLink, {
       href: "https://en.support.wordpress.com/markdown-quick-reference/"
     }, __('Support reference', 'wp-toolbelt'))),

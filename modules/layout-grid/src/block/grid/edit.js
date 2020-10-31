@@ -11,7 +11,7 @@ const getColumnsTemplate = ( columns ) => {
 	let result = Array( columns );
 
 	while ( ++index < columns ) {
-		result[ index ] = [ 'core/column' ];
+		result[ index ] = [ 'toolbelt/column' ];
 	}
 
 	return result;
@@ -70,8 +70,8 @@ const getWrapperClass = ( props ) => {
 const gridEdit = function( props ) {
 
 	const { attributes, setAttributes } = props;
-	const { columns, layout, textColor, backgroundColor } = attributes;
-	const ALLOWED_BLOCKS = [ 'core/column' ];
+	const { columns, textColor, backgroundColor } = attributes;
+	const ALLOWED_BLOCKS = [ 'toolbelt/column' ];
 
 	const columnOptions = [
 		{
@@ -91,12 +91,6 @@ const gridEdit = function( props ) {
 			key: 'four-column',
 			columns: 4,
 			icon: icons.fourEqual
-		},
-		{
-			name: __( '5 Columns', 'toolbelt' ),
-			key: 'five-column',
-			columns: 5,
-			icon: icons.fiveEqual
 		},
 	];
 

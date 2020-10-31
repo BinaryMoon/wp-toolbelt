@@ -318,7 +318,7 @@ function toolbelt_testimonials_styles() {
 
 	global $post;
 
-	if ( ! is_singular() ) {
+	if ( ! isset( $post->post_content ) ) {
 		return;
 	}
 
@@ -379,15 +379,15 @@ function toolbelt_testimonials_register_block() {
 		'toolbelt/testimonials',
 		array(
 			'editor_script' => 'toolbelt-testimonials-block',
-			'render_callback' => 'toolbelt_testimonials_shortcode',
+			'render_callback' => 'toolbelt_testimonials_render_block',
 			'attributes' => array(
 				'rows' => array(
 					'default' => 2,
-					'type' => 'int',
+					'type' => 'integer',
 				),
 				'columns' => array(
 					'default' => 2,
-					'type' => 'int',
+					'type' => 'integer',
 				),
 				'orderby' => array(
 					'default' => 'date',
@@ -406,5 +406,24 @@ function toolbelt_testimonials_register_block() {
 }
 
 add_action( 'init', 'toolbelt_testimonials_register_block' );
+
+
+/**
+ * Render the testimonials block.
+ * This function also removes hrefs from links so that they can't be clicked by
+ * accident.
+ *
+ * @param array<mixed> $attrs The block attributes.
+ * @return string
+ */
+function toolbelt_testimonials_render_block( $attrs ) {
+
+	$html = toolbelt_testimonials_shortcode( $attrs );
+	$html = toolbelt_strip_href( $html );
+
+	return $html;
+
+}
+
 
 toolbelt_register_block_category();

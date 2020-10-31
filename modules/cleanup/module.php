@@ -157,3 +157,14 @@ add_filter(
 		return $tools;
 	}
 );
+
+add_filter( 'jetpack_just_in_time_msgs', '__return_false' );
+
+// Remove noto editor font.
+add_action(
+	'wp_print_scripts',
+	function() {
+		wp_dequeue_script( 'wp-editor-font' );
+	},
+	11
+);

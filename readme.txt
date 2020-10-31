@@ -36,6 +36,7 @@ Some of the Toolbelt modules include blocks to make working with the generated c
 Toolbelt has a lot of features. The complete list is below.
 
 * [Admin Tweaks](https://github.com/BinaryMoon/wp-toolbelt/wiki/Admin-Tweaks)
+* [Avatars](https://github.com/BinaryMoon/wp-toolbelt/wiki/Avatars)
 * [Breadcrumbs](https://github.com/BinaryMoon/wp-toolbelt/wiki/Breadcrumbs)
 * [Contact Form](https://github.com/BinaryMoon/wp-toolbelt/wiki/Contact-Form)
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
@@ -53,6 +54,7 @@ Toolbelt has a lot of features. The complete list is below.
 * [Portfolio](https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio)
 * [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
 * [Related Posts](https://github.com/BinaryMoon/wp-toolbelt/wiki/Related-Posts)
+* [Remove IP Addresses](https://github.com/BinaryMoon/wp-toolbelt/wiki/Remove-IP-Addresses)
 * [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
 * [Search Redirect](https://github.com/BinaryMoon/wp-toolbelt/wiki/Search-Redirect)
 * [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
@@ -133,10 +135,28 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 2.8 - 30th August 2020 =
-* Add Star Rating block.
-* Add Slider block.
-* Add layout block.
+= 3.0 - 11th October 2020 =
+* New: Layout Grid block.
+* New: Star Rating block.
+* New: Slider block.
+* New: OEmbed providers module.
+* New: Sitemap block.
+* New: Fallback Featured Images module. Attempts to find featured images when there aren't any assigned.
+* New: Make use of social sharing API in supported browsers.
+* New: Predefined contact form variants. A feedback form and a net promoter score form.
+* Add New horizontal multi-element contact form component layout to allow for more space efficient layout of forms.
+* Add Related Posts block.
+* Add TB prefix to all blocks. Inspired by: https://wptavern.com/wordpress-plugin-authors-should-avoid-confusing-users-when-naming-blocks
+* Add icon to breadcrumbs block.
+* Add additional social icons.
+* Add relatedLink schema to Related Posts.
+* Add individual project categories to portfolio block output.
+* Remove Noto Serif editor font from being loaded. It's a potential privacy issue and is loaded everywhere.
+* Remove links from server rendered blocks so they can't be clicked by accident when editing content.
+* Fix: Improve Infinite Scroll behaviour when a static page is used.
+* Update Related Posts html to be more semantic & accessible. May require some tweaks to custom styles applied to the module.
+* Update Avatars css so that it loads earlier to avoid flashes of unstyled content. Also compressed avatars admin CSS.
+* Update Only output social sharing links on the_content and not on the_excerpt.
 * Change CSS colours to use custom properties for simpler, and more consistent, changes.
 
 [Changelog for all versions](https://github.com/BinaryMoon/wp-toolbelt/blob/master/changelog.txt)

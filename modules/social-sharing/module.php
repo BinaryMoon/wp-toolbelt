@@ -2,6 +2,9 @@
 /**
  * Social sharing links.
  *
+ * Uses links that point to sharing urls, rather than embedding sharing widgets
+ * into the page. This is a) quicker, and b) more private.
+ *
  * @package toolbelt
  */
 
@@ -19,6 +22,14 @@ if ( is_admin() ) {
  * @return string The post content with the sharing options appended.
  */
 function toolbelt_social_sharing( $content ) {
+
+	/**
+	 * Only add social sharing links to the_content and not content passed
+	 * through get_the_excerpt.
+	 */
+	if ( doing_filter( 'get_the_excerpt' ) ) {
+		return $content;
+	}
 
 	$post_types = apply_filters(
 		'toolbelt_social_sharing_post_types',
@@ -104,6 +115,15 @@ function toolbelt_social_sharing( $content ) {
 	// Display a list of social networks.
 	$networks = toolbelt_social_networks();
 
+	// Generate the sharing info.
+	$html .= toolbelt_social_share_info( $content );
+
+	// Add support for social sharing API.
+	$html .= sprintf(
+		'<button class="toolbelt_share-api">%1$s</button>',
+		esc_html__( 'Share', 'toolbelt' )
+	);
+
 	foreach ( $networks as $slug => $network ) {
 
 		$url  = sprintf( $network['url'], rawurlencode( $canonical ) );
@@ -133,6 +153,51 @@ function toolbelt_social_sharing( $content ) {
 }
 
 add_filter( 'the_content', 'toolbelt_social_sharing', 99 );
+
+
+/**
+ * Add script for social sharing API to the footer.
+ *
+ * @see https://css-tricks.com/on-the-web-share-api/
+ * @return void
+ */
+function toolbelt_social_scripts() {
+
+	toolbelt_scripts( 'social-sharing' );
+
+}
+
+add_action( 'wp_footer', 'toolbelt_social_scripts' );
+
+
+/**
+ * Generate a description based on the content.
+ *
+ * Ideally we would use get_the_excerpt for this but for some weird reason this
+ * creates an infinite loop in some situtations and I am too tired to work out
+ * why. Maybe one day I will solve it but for now I quite like this solution.
+ *
+ * @param string $content The post content.
+ * @return string
+ */
+function toolbelt_social_share_info( $content ) {
+
+	// Only display first 140 characters of excerpt.
+	$content = wp_strip_all_tags( $content );
+	$content = substr( $content, 0, 140 );
+
+	// Restrict to whole words and add an ellipse.
+	$cutoff = strrpos( $content, ' ' );
+	if ( $cutoff ) {
+		$content = substr( $content, 0, $cutoff ) . '...';
+	}
+
+	return sprintf(
+		'<script>var toolbelt_social_share_description = "%1$s";</script>',
+		esc_html( $content )
+	);
+
+}
 
 
 /**
@@ -240,7 +305,6 @@ function toolbelt_social_networks_get() {
 			'url'   => ' mailto:somebody@example.com?body=%s',
 			'color' => '483d8b',
 		),
-
 	);
 
 }
@@ -300,4 +364,3 @@ function toolbelt_social_sharing_default_settings( $value ) {
 }
 
 add_filter( 'option_toolbelt_settings', 'toolbelt_social_sharing_default_settings' );
-

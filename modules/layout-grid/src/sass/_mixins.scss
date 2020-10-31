@@ -1,0 +1,29 @@
+@mixin toolbelt-grid-columns( $columns, $layout, $design, $first_position: false, $second_position: false ) {
+
+	.toolbelt-grid-layout-#{$columns}-#{$layout} {
+
+		grid-template-columns: $design;
+
+	}
+
+	@if $first_position != false {
+
+		.toolbelt-grid-layout-#{$columns}-#{$layout} > :nth-child( 1 ) {
+
+			grid-column: $first_position;
+
+		}
+
+	}
+
+	@if $second_position != false {
+
+		.toolbelt-grid-layout-#{$columns}-#{$layout} > :nth-child( 2 ) {
+
+			grid-column: $second_position;
+
+		}
+
+	}
+
+}

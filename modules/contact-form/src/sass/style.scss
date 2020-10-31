@@ -1,5 +1,7 @@
 .toolbelt-contact-form {
 
+	margin-bottom: calc( var( --toolbelt-spacing ) * 1.5 );
+
 	label,
 	fieldset {
 
@@ -42,6 +44,21 @@
 		font-weight: normal;
 		font-style: italic;
 		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+	.toolbelt-multi-layout-horizontal {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		label {
+
+			display: inline;
+			width: auto;
+			margin-inline-end: calc( var( --toolbelt-spacing ) );
+
+		}
 
 	}
 

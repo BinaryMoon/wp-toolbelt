@@ -1,10 +1,14 @@
 
-//
+//=require ./column-layouts.js
+//=require ./inspector.js
+//=require ./edit.js
+//=require ./save.js
+
 registerBlockType(
 	'toolbelt/layout-grid',
 	{
 
-		title: __( 'Layout Grid', 'wp-toolbelt' ),
+		title: __( 'TB Layout Grid', 'wp-toolbelt' ),
 
 		description: __( 'Flexible content display', 'wp-toolbelt' ),
 
@@ -13,6 +17,18 @@ registerBlockType(
 		icon: 'editor-table',
 
 		category: 'wp-toolbelt',
+
+		styles: [
+			{
+				name: 'normal',
+				label: __( 'Default', 'wp-toolbelt' ),
+				isDefault: true,
+			},
+			{
+				name: 'padded',
+				label: __( 'Has Padding', 'wp-toolbelt' ),
+			},
+		],
 
 		attributes: {
 			columns: {

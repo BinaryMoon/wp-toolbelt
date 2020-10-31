@@ -8,6 +8,9 @@
 			Component,
 		} = wp.element;
 		const {
+			select
+		} = wp.data;
+		const {
 			ExternalLink,
 			Placeholder,
 			TextControl,
@@ -17,6 +20,7 @@
 			Path,
 			SVG,
 			PanelBody,
+			RadioControl,
 			RangeControl,
 			ToggleControl,
 			SelectControl,
@@ -31,11 +35,8 @@
 		} = wp.blockEditor;
 
 		//=require ./icons.js
-		//=require ./grid/column-layouts.js
-		//=require ./grid/inspector.js
 
-		//=require ./grid/edit.js
-		//=require ./grid/save.js
+		//=require ./column/block.js
 
 		//=require ./grid/block.js
 

@@ -366,12 +366,29 @@ function toolbelt_portfolio_shortcode( $attrs ) {
 
 }
 
-
 /**
  * Step aside for Jetpack (or other) portfolio shortcodes.
  */
 if ( ! shortcode_exists( 'portfolio' ) ) {
 	add_shortcode( 'portfolio', 'toolbelt_portfolio_shortcode' );
+}
+
+
+/**
+ * Render the portfolio block.
+ * This function also removes hrefs from links so that they can't be clicked by
+ * accident.
+ *
+ * @param array<mixed> $attrs The block attributes.
+ * @return string
+ */
+function toolbelt_portfolio_render_block( $attrs ) {
+
+	$html = toolbelt_portfolio_shortcode( $attrs );
+	$html = toolbelt_strip_href( $html );
+
+	return $html;
+
 }
 
 
@@ -392,15 +409,6 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 	if ( (int) $count < 1 ) {
 		$count = 1;
 	}
-
-	/**
-	 * The html template for displaying a single testimonial.
-	 */
-	$html = '<div class="toolbelt-project">
-	<a href="%2$s" class="thumbnail">%1$s</a>
-	<h2 class="toolbelt-skip-anchor"><a href="%2$s">%3$s</a></h2>
-	%4$s
-	</div>';
 
 	$properties = array(
 		'post_type' => TOOLBELT_PORTFOLIO_CUSTOM_POST_TYPE,
@@ -426,6 +434,16 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 		while ( $projects->have_posts() ) {
 
 			$projects->the_post();
+
+			/**
+			 * Store the post id.
+			 * If no post then continue.
+			 */
+			$post_id = get_the_ID();
+
+			if ( ! $post_id ) {
+				continue;
+			}
 
 			/**
 			 * Must reset the excerpt no matter what.
@@ -462,10 +480,16 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 			 * 4. Excerpt.
 			 */
 			$projects_list[] = sprintf(
-				$html,
+				'<div class="toolbelt-project">
+					<a href="%2$s" class="thumbnail">%1$s</a>
+					%4$s
+					<h3 class="toolbelt-skip-anchor"><a href="%2$s">%3$s</a></h3>
+					%5$s
+				</div>',
 				get_the_post_thumbnail( null, 'medium' ),
 				esc_url( $permalink ),
 				get_the_title(),
+				toolbelt_portfolio_category( $post_id ),
 				$excerpt
 			);
 
@@ -480,6 +504,38 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 
 
 /**
+ * Get the portfolio category for display in the block.
+ * Returns nothing if there's no category found.
+ *
+ * @param int $post_id The post id to find the category for.
+ * @return string
+ */
+function toolbelt_portfolio_category( $post_id ) {
+
+	$terms = wp_get_post_terms( $post_id, TOOLBELT_PORTFOLIO_CUSTOM_TAXONOMY_TYPE );
+
+	// Make sure the term exists and has some results.
+	if ( is_wp_error( $terms ) || empty( $terms ) ) {
+		return '';
+	}
+
+	$term_link = get_term_link( $terms[0] );
+
+	// Problem with the term link so quit.
+	if ( is_wp_error( $term_link ) ) {
+		return '';
+	}
+
+	return sprintf(
+		'<p class="toolbelt-post-meta has-small-font-size"><a href="%1$s">%2$s</a></p>',
+		esc_url( $term_link ),
+		esc_html( $terms[0]->name )
+	);
+
+}
+
+
+/**
  * Include the potfolio styles if the current post uses the portfolio shortcode.
  *
  * @return void
@@ -488,7 +544,7 @@ function toolbelt_portfolio_styles() {
 
 	global $post;
 
-	if ( ! is_singular() ) {
+	if ( ! isset( $post->post_content ) ) {
 		return;
 	}
 
@@ -563,15 +619,15 @@ function toolbelt_portfolio_register_block() {
 		'toolbelt/portfolio',
 		array(
 			'editor_script' => 'toolbelt-portfolio-block',
-			'render_callback' => 'toolbelt_portfolio_shortcode',
+			'render_callback' => 'toolbelt_portfolio_render_block',
 			'attributes' => array(
 				'rows' => array(
 					'default' => 2,
-					'type' => 'int',
+					'type' => 'integer',
 				),
 				'columns' => array(
 					'default' => 2,
-					'type' => 'int',
+					'type' => 'integer',
 				),
 				'orderby' => array(
 					'default' => 'date',

@@ -8,6 +8,12 @@
 	margin-bottom: calc( var( --toolbelt-spacing ) * 2 );
 	margin-top: calc( var( --toolbelt-spacing ) * 2 );
 
+	.toolbelt_share-api {
+
+		display: none;
+
+	}
+
 	a {
 
 		padding: calc( var( --toolbelt-spacing ) / 4 ) var( --toolbelt-spacing );
@@ -25,6 +31,22 @@
 				text-decoration: underline;
 
 			}
+
+		}
+
+	}
+
+	.toolbelt-social-share-api-enabled & {
+
+		.toolbelt_share-api {
+
+			display: inline;
+
+		}
+
+		a {
+
+			display: none;
 
 		}
 

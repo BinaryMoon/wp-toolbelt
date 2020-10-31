@@ -21,12 +21,10 @@ const gridInspector = ( props ) => {
 			{
 				( layouts ) && (
 					<PanelBody
-						title={__( 'General', 'wp-toolbelt' )}
+						title={__( 'Column Layout', 'wp-toolbelt' )}
 						initialOpen={true}
 						className="toolbelt-column-select-panel"
 					>
-						<p>{__( 'Column Layout', 'wp-toolbelt' )}</p>
-
 						<div
 							className="toolbelt-grid-buttongroup"
 						>
@@ -43,10 +41,10 @@ const gridInspector = ( props ) => {
 												className={class_name}
 												isSmall
 												data-index={index}
+												title={name}
 												onClick={
 													() => {
 														setAttributes( { layout: index } );
-														//this.setState( { selectLayout: false } );
 													}
 												}
 											>

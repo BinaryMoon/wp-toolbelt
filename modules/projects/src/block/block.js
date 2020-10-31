@@ -16,7 +16,7 @@
 	registerBlockType(
 		'toolbelt/portfolio',
 		{
-			title: __( 'Portfolio', 'wp-toolbelt' ),
+			title: __( 'TB Portfolio', 'wp-toolbelt' ),
 
 			icon: 'portfolio',
 

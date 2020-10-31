@@ -16,7 +16,7 @@
 		'toolbelt/markdown',
 		{
 
-			title: __( 'Markdown', 'wp-toolbelt' ),
+			title: __( 'TB Markdown', 'wp-toolbelt' ),
 
 			description: (
 				<Fragment>

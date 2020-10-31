@@ -128,6 +128,8 @@ function toolbelt_gist_render( $attrs ) {
 
 	}
 
+	toolbelt_styles( 'gist' );
+
 	return sprintf(
 		'<div class="%2$s"><script src="%1$s"></script></div>', // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
 		esc_url( $url ),

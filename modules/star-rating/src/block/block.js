@@ -40,7 +40,7 @@
 		registerBlockType(
 			'toolbelt/star-rating',
 			{
-				title: __( 'Star Rating', 'wp-toolbelt' ),
+				title: __( 'TB Star Rating', 'wp-toolbelt' ),
 
 				icon: StarIcon,
 

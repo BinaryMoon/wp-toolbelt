@@ -6,9 +6,103 @@ const renderMaterialIcon = svg => (
 	</SVG>
 );
 
+const getFormTemplate = () => {
+
+};
+
+const formTemplate = {
+	default: [
+		[
+			'toolbelt/field-name',
+			{
+				required: true,
+				label: __( 'Name', 'wp-toolbelt' ),
+			},
+		],
+		[
+			'toolbelt/field-email',
+			{
+				required: true,
+				label: __( 'Email Address', 'wp-toolbelt' ),
+			},
+		],
+		[
+			'toolbelt/field-textarea',
+			{
+				label: __( 'Message', 'wp-toolbelt' ),
+			}
+		],
+	],
+	feedback: [
+		[
+			'toolbelt/field-radio',
+			{
+				label: __( 'Feedback Type', 'wp-toolbelt' ),
+				options: [
+					__( 'Comment', 'wp-toolbelt' ),
+					__( 'Feedback', 'wp-toolbelt' ),
+					__( 'Question', 'wp-toolbelt' ),
+				],
+			}
+		],
+		[
+			'toolbelt/field-textarea',
+			{
+				label: __( 'Message', 'wp-toolbelt' ),
+			}
+		],
+		[
+			'toolbelt/field-name',
+			{
+				required: true,
+				label: __( 'Name', 'wp-toolbelt' ),
+			},
+		],
+		[
+			'toolbelt/field-email',
+			{
+				required: true,
+				label: __( 'Email Address', 'wp-toolbelt' ),
+			},
+		],
+	],
+	nps: [
+		[
+			'toolbelt/field-radio',
+			{
+				label: __( 'How likely is it that you would recommend our company/product/service to a friend or colleague?', 'wp-toolbelt' ),
+				description: __( '0 = least likely, 10 = most likely', 'wp-toolbelt' ),
+				options: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+				require: true,
+				layout: 'horizontal',
+			}
+		],
+		[
+			'toolbelt/field-textarea',
+			{
+				label: __( 'Why?', 'wp-toolbelt' ),
+			}
+		],
+		[
+			'toolbelt/field-name',
+			{
+				required: true,
+				label: __( 'Name', 'wp-toolbelt' ),
+			},
+		],
+		[
+			'toolbelt/field-email',
+			{
+				required: true,
+				label: __( 'Email Address', 'wp-toolbelt' ),
+			},
+		],
+	]
+};
+
 const settings = {
 
-	title: __( 'Contact Form', 'wp-toolbelt' ),
+	title: __( 'TB Contact Form', 'wp-toolbelt' ),
 
 	description: __( 'Use the form builder to create your own forms.', 'wp-toolbelt' ),
 
@@ -44,8 +138,16 @@ const settings = {
 			type: 'string',
 			default: '',
 		},
+		layout: {
+			type: 'string',
+			default: '',
+		}
 	},
 
+	/**
+	 * We save the form data here.
+	 * The actual html is generated in module-fields.php.
+	 */
 	save: () => <InnerBlocks.Content />,
 
 	edit,
@@ -221,6 +323,7 @@ const editMultiField = type => props => (
 		type={type}
 		isSelected={props.isSelected}
 		id={props.attributes.id}
+		layout={props.attributes.layout}
 	/>
 
 );
@@ -231,17 +334,18 @@ const childBlocks = [
 		name: 'field-text',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Text', 'wp-toolbelt' ),
+			title: __( 'TB Text', 'wp-toolbelt' ),
 			description: __( 'When you need just a small amount of text, add a text input.', 'wp-toolbelt' ),
 			icon: renderMaterialIcon( <Path d="M4 9h16v2H4V9zm0 4h10v2H4v-2z" /> ),
 			edit: editField( 'text' ),
 		},
 	},
+
 	{
 		name: 'field-name',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Name', 'wp-toolbelt' ),
+			title: __( 'TB Name', 'wp-toolbelt' ),
 			description: __(
 				'Introductions are important. Add an input for folks to add their name.',
 				'wp-toolbelt'
@@ -252,11 +356,12 @@ const childBlocks = [
 			edit: editField( 'text' ),
 		},
 	},
+
 	{
 		name: 'field-subject',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Subject', 'wp-toolbelt' ),
+			title: __( 'TB Subject', 'wp-toolbelt' ),
 			description: __(
 				'What is the message about?',
 				'wp-toolbelt'
@@ -265,11 +370,12 @@ const childBlocks = [
 			edit: editField( 'text' ),
 		},
 	},
+
 	{
 		name: 'field-email',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Email', 'wp-toolbelt' ),
+			title: __( 'TB Email', 'wp-toolbelt' ),
 			keywords: [ __( 'e-mail', 'wp-toolbelt' ), __( 'mail', 'wp-toolbelt' ), 'email' ],
 			description: __( 'Want to reply to folks? Add an email address input.', 'wp-toolbelt' ),
 			attributes: {
@@ -290,7 +396,7 @@ const childBlocks = [
 		name: 'field-url',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Website', 'wp-toolbelt' ),
+			title: __( 'TB Website', 'wp-toolbelt' ),
 			keywords: [ 'url', __( 'internet page', 'wp-toolbelt' ), 'link' ],
 			description: __( 'Add an address input for a website.', 'wp-toolbelt' ),
 			attributes: {
@@ -311,7 +417,7 @@ const childBlocks = [
 		name: 'field-date',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Date Picker', 'wp-toolbelt' ),
+			title: __( 'TB Date Picker', 'wp-toolbelt' ),
 			keywords: [
 				__( 'Calendar', 'wp-toolbelt' ),
 				__( 'day month year', 'block search term', 'wp-toolbelt' ),
@@ -323,11 +429,12 @@ const childBlocks = [
 			edit: editField( 'text' ),
 		},
 	},
+
 	{
 		name: 'field-telephone',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Telephone', 'wp-toolbelt' ),
+			title: __( 'TB Telephone', 'wp-toolbelt' ),
 			keywords: [
 				__( 'Phone', 'wp-toolbelt' ),
 				__( 'Cellular phone', 'wp-toolbelt' ),
@@ -340,11 +447,12 @@ const childBlocks = [
 			edit: editField( 'tel' ),
 		},
 	},
+
 	{
 		name: 'field-textarea',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Message', 'wp-toolbelt' ),
+			title: __( 'TB Message', 'wp-toolbelt' ),
 			keywords: [ __( 'Textarea', 'wp-toolbelt' ), 'textarea', __( 'Multiline text', 'wp-toolbelt' ) ],
 			description: __(
 				'Let folks speak their mind. This text box is great for longer responses.',
@@ -364,11 +472,12 @@ const childBlocks = [
 			),
 		},
 	},
+
 	{
 		name: 'field-checkbox',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Checkbox', 'wp-toolbelt' ),
+			title: __( 'TB Checkbox', 'wp-toolbelt' ),
 			keywords: [ __( 'Confirm', 'wp-toolbelt' ), __( 'Accept', 'wp-toolbelt' ) ],
 			description: __( 'Add a single checkbox.', 'wp-toolbelt' ),
 			icon: renderMaterialIcon(
@@ -394,11 +503,12 @@ const childBlocks = [
 			},
 		},
 	},
+
 	{
 		name: 'field-checkbox-multiple',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Checkbox Group', 'wp-toolbelt' ),
+			title: __( 'TB Checkbox Group', 'wp-toolbelt' ),
 			keywords: [ __( 'Choose Multiple', 'wp-toolbelt' ), __( 'Option', 'wp-toolbelt' ) ],
 			description: __( 'People love options. Add several checkbox items.', 'wp-toolbelt' ),
 			icon: renderMaterialIcon(
@@ -408,6 +518,10 @@ const childBlocks = [
 			transforms: MultiFieldTransforms,
 			attributes: {
 				...FieldDefaults.attributes,
+				layout: {
+					type: 'string',
+					default: 'vertical',
+				},
 				label: {
 					type: 'string',
 					default: __( 'Select several', 'wp-toolbelt' ),
@@ -415,11 +529,12 @@ const childBlocks = [
 			},
 		},
 	},
+
 	{
 		name: 'field-radio',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Radio', 'wp-toolbelt' ),
+			title: __( 'TB Radio', 'wp-toolbelt' ),
 			keywords: [ __( 'Choose', 'wp-toolbelt' ), __( 'Select', 'wp-toolbelt' ), __( 'Option', 'wp-toolbelt' ) ],
 			description: __(
 				'Inspired by radios, only one radio item can be selected at a time. Add several radio button items.',
@@ -435,6 +550,10 @@ const childBlocks = [
 			transforms: MultiFieldTransforms,
 			attributes: {
 				...FieldDefaults.attributes,
+				layout: {
+					type: 'string',
+					default: 'vertical',
+				},
 				label: {
 					type: 'string',
 					default: __( 'Select one', 'wp-toolbelt' ),
@@ -442,11 +561,12 @@ const childBlocks = [
 			},
 		},
 	},
+
 	{
 		name: 'field-select',
 		settings: {
 			...FieldDefaults,
-			title: __( 'Select', 'wp-toolbelt' ),
+			title: __( 'TB Select', 'wp-toolbelt' ),
 			keywords: [
 				__( 'Choose', 'wp-toolbelt' ),
 				__( 'Dropdown', 'wp-toolbelt' ),

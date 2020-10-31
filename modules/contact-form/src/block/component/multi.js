@@ -13,6 +13,7 @@ function ToolbeltFieldMultiple(
 		isSelected,
 		setAttributes,
 		options,
+		layout,
 		type
 	}
 ) {
@@ -56,7 +57,9 @@ function ToolbeltFieldMultiple(
 
 	};
 
-
+	/**
+	 * Add an option.
+	 */
 	const updateOption = ( index, value ) => {
 
 		if ( !index && index !== 0 ) {
@@ -70,6 +73,9 @@ function ToolbeltFieldMultiple(
 
 	};
 
+	/**
+	 * Remove an option.
+	 */
 	const deleteOption = ( index ) => {
 
 		const optionsList = options.slice( 0 );
@@ -102,6 +108,11 @@ function ToolbeltFieldMultiple(
 
 	};
 
+	let itemLayout = layout;
+	if ( !layout ) {
+		itemLayout = 'vertical';
+	}
+
 	return (
 		<Fragment>
 
@@ -114,7 +125,7 @@ function ToolbeltFieldMultiple(
 			/>
 
 			<ol
-				className={`toolbelt-field-multiple toolbelt-field-multiple-${type}`}
+				className={`toolbelt-field-multiple toolbelt-field-multiple-${type} toolbelt-field-multiple-layout-${itemLayout}`}
 				id={`toolbelt-field-multiple-${instanceId}`}
 			>
 
@@ -140,14 +151,14 @@ function ToolbeltFieldMultiple(
 
 			{isSelected && (
 
-				<IconButton
+				<Button
 					className="toolbelt-field-multiple__add-option"
 					icon="insert"
 					label={__( 'Insert option', 'wp-toolbelt' )}
 					onClick={addNewOption}
 				>
 					{__( 'Add option', 'wp-toolbelt' )}
-				</IconButton>
+				</Button>
 
 			)}
 
@@ -159,6 +170,24 @@ function ToolbeltFieldMultiple(
 						value={label}
 						onChange={value => setAttributes( { label: value } )}
 					/>
+
+					{( type === 'radio' || type === 'checkbox' ) && (
+						<RadioControl
+							label={__( 'Layout', 'wp-toolbelt' )}
+							options={[
+								{
+									label: __( 'Vertical', 'wp-toolbelt' ),
+									value: 'vertical',
+								},
+								{
+									label: __( 'Horizontal', 'wp-toolbelt' ),
+									value: 'horizontal',
+								},
+							]}
+							onChange={( new_layout ) => { setAttributes( { layout: new_layout } ) }}
+							selected={itemLayout}
+						/>
+					)}
 
 				</PanelBody>
 			</InspectorControls>

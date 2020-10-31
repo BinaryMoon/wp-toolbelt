@@ -16,6 +16,14 @@ const columnLayouts = {
 			name: __( '2 Columns - 25/75', 'wp-toolbelt' ),
 			icon: icons.twoRightWide,
 		},
+		{ // 3.
+			name: __( '2 Columns - 66/33', 'wp-toolbelt' ),
+			icon: icons.twoLeftWideThird,
+		},
+		{ // 4.
+			name: __( '2 Columns - 33/66', 'wp-toolbelt' ),
+			icon: icons.twoRightWideThird,
+		},
 	],
 
 	/**
@@ -38,6 +46,14 @@ const columnLayouts = {
 			name: __( '3 Columns - 25/25/50', 'wp-toolbelt' ),
 			icon: icons.threeWideRight,
 		},
+		{ // 4.
+			name: __( '3 Columns - 16/50/33', 'wp-toolbelt' ),
+			icon: icons.threeWideCenterSmallLeft,
+		},
+		{ // 5.
+			name: __( '3 Columns - 16/15/33', 'wp-toolbelt' ),
+			icon: icons.threeWideCenterSmallCenter,
+		},
 	],
 
 	/**
@@ -56,15 +72,13 @@ const columnLayouts = {
 			name: __( '4 Columns - 20/20/20/40', 'wp-toolbelt' ),
 			icon: icons.fourRight,
 		},
-	],
-
-	/**
-	 * 5 column layouts.
-	 */
-	5: [
-		{
-			name: __( '5 Columns', 'wp-toolbelt' ),
-			icon: icons.fiveEqual,
+		{ // 3.
+			name: __( '4 Columns - 16/33/33/16', 'wp-toolbelt' ),
+			icon: icons.fourCenter,
+		},
+		{ // 4.
+			name: __( '4 Columns - 33/16/16/33', 'wp-toolbelt' ),
+			icon: icons.fourOutside,
 		},
 	],
 

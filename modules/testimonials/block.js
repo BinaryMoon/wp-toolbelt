@@ -11,7 +11,7 @@
   var ServerSideRender = wp.serverSideRender;
   var __ = wp.i18n.__;
   registerBlockType('toolbelt/testimonials', {
-    title: __('Testimonials', 'wp-toolbelt'),
+    title: __('TB Testimonials', 'wp-toolbelt'),
     icon: 'testimonial',
     description: __('Display a grid of Toolbelt Testimonials.', 'wp-toolbelt'),
     keywords: [__('toolbelt', 'wp-toolbelt')],

@@ -183,6 +183,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Add footnotes to the bottom of the page.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes',
 		),
+		'get-image' => array(
+			'name' => esc_html__( 'Fallback Featured Images', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Try to find a suitable image if no featured image is set.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Get-Image',
+		),
 		'gist' => array(
 			'name' => esc_html__( 'Gist Embed Block', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Easily embed Github Gists onto your site.', 'wp-toolbelt' ),
@@ -205,6 +210,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Layout Grid', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display content in carefully curated columns.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid',
+			'weight' => esc_html__( '1.4kb of inline CSS plus 100bytes of CSS per layout used.', 'wp-toolbelt' ),
 		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
@@ -221,6 +227,17 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization',
 			'supports' => array( 'settings' ),
+		),
+		'oembed' => array(
+			'name' => esc_html__( 'Website Embeds', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Add support for more OEmbed websites.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/OEmbed',
+		),
+		'post-category' => array(
+			'name' => esc_html__( 'Post Category', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Category summaries for magazine or newspaper style homepages.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Post-Category',
+			'weight' => esc_html__( '1kb of inline CSS.', 'wp-toolbelt' ),
 		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
@@ -246,15 +263,26 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos',
 			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
 		),
+		'remove-ips' => array(
+			'name' => esc_html__( 'Remove IP Addresses', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Stop WordPress from storing IP addresses for users who comment on your site.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Remove-IP-Addresses',
+		),
 		'search-redirect' => array(
 			'name' => esc_html__( 'Search Redirect', 'wp-toolbelt' ),
 			'description' => esc_html__( 'If there is a single search result then redirect to the result, rather than displaying a list of results.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Search-Redirect',
 		),
+		'sitemap' => array(
+			'name' => esc_html__( 'Sitemap', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A simple sitemap to embed on your page.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Sitemap',
+		),
 		'slider' => array(
 			'name' => esc_html__( 'Simple Slider', 'wp-toolbelt' ),
 			'description' => esc_html__( 'An Accessible horizontal slider.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Slider',
+			'weight' => esc_html__( '1.8kb of inline CSS.', 'wp-toolbelt' ),
 		),
 		'social-menu' => array(
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
@@ -266,20 +294,21 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Static Social Sharing', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add social sharing links that use the platforms native sharing system.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing',
-			'weight' => esc_html__( '4.1kb of inline SVG icons, and 0.7kb of inline CSS.', 'wp-toolbelt' ),
+			'weight' => esc_html__( '1kb of inline CSS, and 0.4kb of inline JS. Plus roughly 0.6kb to 1kb per social network icon.', 'wp-toolbelt' ),
 			'supports' => array( 'css-properties', 'settings' ),
 		),
 		'spam-blocker' => array(
 			'name' => esc_html__( 'Spam Blocker', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Attempt to block spam.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker',
-			'weight' => esc_html__( '0.3kb of inline JS', 'wp-toolbelt' ),
+			'weight' => esc_html__( '0.3kb of inline JS.', 'wp-toolbelt' ),
 			'supports' => array( 'experimental' ),
 		),
 		'star-rating' => array(
 			'name' => esc_html__( 'Star Ratings', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Rate movies, books, videos, difficulty, whatever.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Star-Ratings',
+			'weight' => esc_html__( '0.7kb of inline CSS.', 'wp-toolbelt' ),
 		),
 		'stats' => array(
 			'name' => esc_html__( 'Stats', 'wp-toolbelt' ),
@@ -318,6 +347,10 @@ function toolbelt_get_modules() {
  */
 function toolbelt_css_properties() {
 
+	if ( toolbelt_is_rest_request() ) {
+		return;
+	}
+
 	if ( toolbelt_is_amp_page() ) {
 		return;
 	}
@@ -325,6 +358,8 @@ function toolbelt_css_properties() {
 	$properties = array(
 		'toolbelt-spacing' => '1rem',
 		'toolbelt-scroll-margin-top' => '45px',
+		'toolbelt-border-width' => '0.25rem',
+		'toolbelt-border-radius' => '0.1rem',
 		'toolbelt-color-dark' => 'black',
 		'toolbelt-color-mid' => 'lightgrey',
 		'toolbelt-color-light' => 'white',
@@ -358,6 +393,10 @@ function toolbelt_css_properties() {
 function toolbelt_styles( $module, $file = 'style' ) {
 
 	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
+		return;
+	}
+
+	if ( toolbelt_is_rest_request() ) {
 		return;
 	}
 
@@ -443,6 +482,10 @@ function toolbelt_global_styles( $module ) {
  * @return void|null
  */
 function toolbelt_scripts( $module, $file = 'script' ) {
+
+	if ( toolbelt_is_rest_request() ) {
+		return;
+	}
 
 	// Output scripts.
 	$path = TOOLBELT_PATH . 'modules/' . $module . '/' . $file . '.min.js';
@@ -575,3 +618,63 @@ function toolbelt_is_amp_page() {
 	return false;
 
 }
+
+
+/**
+ * If is REST request.
+ *
+ * This is bit of a hacky way of doing things but it seems to work and there's
+ * no official method.
+ *
+ * @return boolean
+ */
+function toolbelt_is_rest_request() {
+
+	return defined( 'REST_REQUEST' ) && REST_REQUEST;
+
+}
+
+
+/**
+ * Remove href values from links.
+ * Allows blocks to be displayed in the block editor without their links.
+ *
+ * @param string $html The html to edit.
+ * @return string
+ */
+function toolbelt_strip_href( $html ) {
+
+	if ( toolbelt_is_rest_request() ) {
+
+		$html = preg_replace( '/href="(.*?)"/i', '#', $html );
+
+		if ( ! $html ) {
+			$html = '';
+		}
+
+	}
+
+	return $html;
+
+}
+
+
+/**
+ * Add additional classes to the body.
+ *
+ * @param array<string> $classes List of classes.
+ * @return array<string>
+ */
+function toolbelt_body_class( $classes ) {
+
+	if ( is_multi_author() ) {
+		$classes[] = 'multi-author-true';
+	} else {
+		$classes[] = 'multi-author-false';
+	}
+
+	return $classes;
+
+}
+
+add_filter( 'body_class', 'toolbelt_body_class' );

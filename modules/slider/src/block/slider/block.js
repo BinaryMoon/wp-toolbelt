@@ -40,7 +40,11 @@ registerBlockType(
 			{
 				name: 'border',
 				label: __( 'With border', 'wp-toolbelt' ),
-			}
+			},
+			{
+				name: 'cosy',
+				label: __( 'No margin', 'wp-toolbelt' ),
+			},
 		],
 
 		category: 'wp-toolbelt',
@@ -62,14 +66,8 @@ registerBlockType(
 			align: [ 'full', 'wide' ],
 		},
 
-		/**
-		 * Save the formatted markdown content.
-		 */
 		save: sliderSave,
 
-		/**
-		 * Edit the settings.
-		 */
 		edit: sliderEdit,
 
 	}

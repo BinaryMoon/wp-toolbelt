@@ -378,7 +378,10 @@ function toolbelt_breadcrumb_render_block( $attrs ) {
 
 	$breadcrumbs = toolbelt_breadcrumb_get( $breadcrumb_type );
 
-	return toolbelt_breadcrumb_html( $breadcrumbs, $attrs );
+	$html = toolbelt_breadcrumb_html( $breadcrumbs, $attrs );
+	$html = toolbelt_strip_href( $html );
+
+	return $html;
 
 }
 
@@ -462,11 +465,9 @@ add_action( 'admin_head', 'toolbelt_breadcrumb_editor_styles' );
  */
 function toolbelt_breadcrumb_content_styles() {
 
-	if ( ! has_block( 'toolbelt/breadcrumbs' ) ) {
-		return;
+	if ( has_block( 'toolbelt/breadcrumbs' ) ) {
+		toolbelt_styles( 'breadcrumbs' );
 	}
-
-	toolbelt_styles( 'breadcrumbs' );
 
 }
 

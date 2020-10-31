@@ -344,12 +344,10 @@ function toolbelt_contact_get_block_attribute( $blocks, $attribute = '', $defaul
  */
 function toolbelt_contact_form_styles() {
 
-	if ( ! has_block( 'toolbelt/contact-form' ) ) {
-		return;
+	if ( has_block( 'toolbelt/contact-form' ) ) {
+		toolbelt_styles( 'contact-form' );
+		toolbelt_global_script( 'bouncer.polyfills.min' );
 	}
-
-	toolbelt_styles( 'contact-form' );
-	toolbelt_global_script( 'bouncer.polyfills.min' );
 
 }
 
@@ -363,11 +361,9 @@ add_action( 'wp_print_styles', 'toolbelt_contact_form_styles' );
  */
 function toolbelt_contact_form_script() {
 
-	if ( ! has_block( 'toolbelt/contact-form' ) ) {
-		return;
+	if ( has_block( 'toolbelt/contact-form' ) ) {
+		toolbelt_scripts( 'contact-form' );
 	}
-
-	toolbelt_scripts( 'contact-form' );
 
 }
 

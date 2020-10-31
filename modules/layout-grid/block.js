@@ -6,6 +6,7 @@
       createElement = _wp$element.createElement,
       Fragment = _wp$element.Fragment,
       Component = _wp$element.Component;
+  var select = wp.data.select;
   var _wp$components = wp.components,
       ExternalLink = _wp$components.ExternalLink,
       Placeholder = _wp$components.Placeholder,
@@ -16,6 +17,7 @@
       Path = _wp$components.Path,
       SVG = _wp$components.SVG,
       PanelBody = _wp$components.PanelBody,
+      RadioControl = _wp$components.RadioControl,
       RangeControl = _wp$components.RangeControl,
       ToggleControl = _wp$components.ToggleControl,
       SelectControl = _wp$components.SelectControl;
@@ -30,86 +32,93 @@
    * Column layout icons.
    */
 
+  var iconHeader = {
+    viewBox: '0 0 60 30',
+    height: '26',
+    xmlns: 'http://www.w3.org/2000/svg',
+    fillRule: 'evenodd',
+    clipRule: 'evenodd',
+    strokeLinejoin: 'round',
+    strokeMiterlimit: '1.414'
+  };
   var icons = {
     /* Two columns - 50/50. */
-    twoEqual: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
-      x: "33",
+    twoEqual: createElement("svg", iconHeader, createElement("rect", {
+      x: "32",
       y: "0",
-      width: "29",
+      width: "28",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
       x: "0",
       y: "0",
-      width: "29",
+      width: "28",
       height: "30",
       fill: "#6d6a6f"
     })),
 
     /* Two columns - 75/25. */
-    twoLeftWide: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
-      x: "43",
+    twoLeftWide: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
       y: "0",
-      width: "16",
+      width: "42",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "0",
+      x: "46",
       y: "0",
-      width: "39",
+      width: "14",
       height: "30",
       fill: "#6d6a6f"
     })),
 
     /* Two columns - 25/75. */
-    twoRightWide: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
-      x: "20",
+    twoRightWide: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
       y: "0",
-      width: "39",
+      width: "14",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
+      x: "18",
+      y: "0",
+      width: "42",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Two columns - 75/25. */
+    twoLeftWideThird: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
-      width: "16",
+      width: "37",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "41",
+      y: "0",
+      width: "18",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Two columns - 25/75. */
+    twoRightWideThird: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
+      y: "0",
+      width: "18",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "22",
+      y: "0",
+      width: "37",
       height: "30",
       fill: "#6d6a6f"
     })),
 
     /* Three columns - 33/33/33. */
-    threeEqual: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeEqual: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "17.500",
@@ -130,15 +139,7 @@
     })),
 
     /* Three column - 25/50/25. */
-    threeWideCenter: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeWideCenter: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "11",
@@ -158,16 +159,50 @@
       fill: "#6d6a6f"
     })),
 
+    /* Three column - 25/50/25. */
+    threeWideCenterSmallLeft: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
+      y: "0",
+      width: "8",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "12",
+      y: "0",
+      width: "25",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "41",
+      y: "0",
+      width: "17",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Three column - 25/50/25. */
+    threeWideCenterSmallCenter: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
+      y: "0",
+      width: "25",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "29",
+      y: "0",
+      width: "8",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "41",
+      y: "0",
+      width: "17",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
     /* Three column - 50/25/25. */
-    threeWideLeft: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeWideLeft: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "30",
@@ -188,15 +223,7 @@
     })),
 
     /* Three column - 25/25/50. */
-    threeWideRight: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    threeWideRight: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "11",
@@ -217,15 +244,7 @@
     })),
 
     /* Four column - 25/25/25/25. */
-    fourEqual: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    fourEqual: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
       width: "12",
@@ -251,113 +270,110 @@
       fill: "#6d6a6f"
     })),
 
-    /* Four column - 40/20/20/20. */
-    fourLeft: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    /* Four column - 50/16/16/16. */
+    fourLeft: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
-      width: "21",
+      width: "24",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "25",
+      x: "28",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "38",
+      x: "39",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "51",
+      x: "50",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     })),
 
     /* Four column - 20/20/20/40. */
-    fourRight: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    fourRight: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "12.800",
+      x: "11",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "25.600",
+      x: "22",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "38.400",
+      x: "33",
       y: "0",
-      width: "21",
+      width: "24",
       height: "30",
       fill: "#6d6a6f"
     })),
 
-    /* Five columns - 20/20/20/20/20. */
-    fiveEqual: createElement("svg", {
-      viewBox: "0 0 60 30",
-      height: "26",
-      xmlns: "http://www.w3.org/2000/svg",
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: "1.414"
-    }, createElement("rect", {
+    /* Four column - 16/33/33/16. */
+    fourCenter: createElement("svg", iconHeader, createElement("rect", {
       x: "0",
       y: "0",
-      width: "9",
+      width: "7",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "12.400",
+      x: "11",
       y: "0",
-      width: "9",
+      width: "15",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "24.800",
+      x: "30",
       y: "0",
-      width: "9",
+      width: "15",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "37.200",
+      x: "49",
       y: "0",
-      width: "9",
+      width: "7",
+      height: "30",
+      fill: "#6d6a6f"
+    })),
+
+    /* Four column - 33/16/16/33. */
+    fourOutside: createElement("svg", iconHeader, createElement("rect", {
+      x: "0",
+      y: "0",
+      width: "15",
       height: "30",
       fill: "#6d6a6f"
     }), createElement("rect", {
-      x: "49.600",
+      x: "19",
       y: "0",
-      width: "9",
+      width: "7",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "30",
+      y: "0",
+      width: "7",
+      height: "30",
+      fill: "#6d6a6f"
+    }), createElement("rect", {
+      x: "41",
+      y: "0",
+      width: "15",
       height: "30",
       fill: "#6d6a6f"
     })),
@@ -391,6 +407,145 @@
       fill: "#6d6a6f"
     }))
   };
+  /**
+   * HTML for the generated column.
+   *
+   * @param {array} props The layout properties.
+   * @return {string}
+   */
+
+  var colSave = function colSave(props) {
+    return createElement("div", {
+      className: getColClass(props)
+    }, createElement(InnerBlocks.Content, null));
+  };
+  /**
+   * Get the column classes.
+   *
+   * @param {array} props The layout properties.
+   * @return {string}
+   */
+
+
+  var getColClass = function getColClass(props) {
+    var className = props.className,
+        attributes = props.attributes;
+    var alignment = attributes.alignment;
+    var classes = ['toolbelt-column-align-' + alignment];
+    var newClassName = className;
+
+    if (newClassName === undefined || newClassName === 'undefined') {
+      newClassName = '';
+    }
+
+    newClassName = newClassName + ' ' + classes.join(' ');
+    newClassName = newClassName.replace('undefined', '');
+    return newClassName;
+  };
+  /**
+   * HTML for editing the column properties.
+   *
+   * @param {array} props The layout properties.
+   * @return {string}
+   */
+
+
+  var colEdit = function colEdit(props) {
+    var className = props.className,
+        clientId = props.clientId,
+        attributes = props.attributes,
+        setAttributes = props.setAttributes;
+    var alignment = attributes.alignment;
+    /**
+     * Count the innerblocks.
+     *
+     * We use this to decide whether or not to display the large 'add block'
+     * button on internal content.
+     *
+     * @see https://stackoverflow.com/questions/53345956/gutenberg-custom-block-add-elements-by-innerblocks-length
+     */
+
+    var blocks = select('core/editor').getBlocksByClientId(clientId)[0];
+    var blockCount = 0;
+
+    if (blocks) {
+      blockCount = blocks.innerBlocks.length;
+    }
+
+    var hasChildBlocks = blockCount > 0;
+    return [createElement(InspectorControls, null, createElement(PanelBody, {
+      title: __('Column Layout', 'wp-toolbelt'),
+      initialOpen: true
+    }, createElement(RadioControl, {
+      label: __('Alignment', 'wp-toolbelt'),
+      selected: alignment,
+      options: [{
+        label: __('Top', 'wp-toolbelt'),
+        value: 'top'
+      }, {
+        label: __('Middle', 'wp-toolbelt'),
+        value: 'middle'
+      }, {
+        label: __('Bottom', 'wp-toolbelt'),
+        value: 'bottom'
+      }, {
+        label: __('Space Between', 'wp-toolbelt'),
+        value: 'space-between'
+      }],
+      onChange: function onChange(newAlignment) {
+        return setAttributes({
+          'alignment': newAlignment
+        });
+      }
+    }))), createElement("div", {
+      className: getColClass(props)
+    }, createElement(InnerBlocks, {
+      templateLock: false,
+      renderAppender: hasChildBlocks ? undefined : function () {
+        return createElement(InnerBlocks.ButtonBlockAppender, null);
+      }
+    }))];
+  };
+
+  registerBlockType('toolbelt/column', {
+    title: __('TB Column', 'wp-toolbelt'),
+    description: __('Columns for your layout.', 'wp-toolbelt'),
+    parent: ['toolbelt/layout-grid'],
+    styles: [{
+      name: 'normal',
+      label: __('Default', 'wp-toolbelt'),
+      isDefault: true
+    }, {
+      name: 'border-top',
+      label: __('Border Top', 'wp-toolbelt')
+    }, {
+      name: 'padded',
+      label: __('Has Padding', 'wp-toolbelt')
+    }],
+    attributes: {
+      alignment: {
+        type: 'string',
+        "default": 'top'
+      }
+    },
+    icon: {
+      src: createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "60",
+        height: "60",
+        viewBox: "0 0 60 60"
+      }, createElement("rect", {
+        width: "40",
+        height: "40",
+        x: "10",
+        y: "10",
+        fill: "#000000",
+        "fill-rule": "evenodd"
+      }))
+    },
+    save: colSave,
+    edit: colEdit
+  });
   var columnLayouts = {
     /**
      * 2 column layouts.
@@ -407,6 +562,14 @@
       // 2.
       name: __('2 Columns - 25/75', 'wp-toolbelt'),
       icon: icons.twoRightWide
+    }, {
+      // 3.
+      name: __('2 Columns - 66/33', 'wp-toolbelt'),
+      icon: icons.twoLeftWideThird
+    }, {
+      // 4.
+      name: __('2 Columns - 33/66', 'wp-toolbelt'),
+      icon: icons.twoRightWideThird
     }],
 
     /**
@@ -428,6 +591,14 @@
       // 3.
       name: __('3 Columns - 25/25/50', 'wp-toolbelt'),
       icon: icons.threeWideRight
+    }, {
+      // 4.
+      name: __('3 Columns - 16/50/33', 'wp-toolbelt'),
+      icon: icons.threeWideCenterSmallLeft
+    }, {
+      // 5.
+      name: __('3 Columns - 16/15/33', 'wp-toolbelt'),
+      icon: icons.threeWideCenterSmallCenter
     }],
 
     /**
@@ -445,14 +616,14 @@
       // 2.
       name: __('4 Columns - 20/20/20/40', 'wp-toolbelt'),
       icon: icons.fourRight
-    }],
-
-    /**
-     * 5 column layouts.
-     */
-    5: [{
-      name: __('5 Columns', 'wp-toolbelt'),
-      icon: icons.fiveEqual
+    }, {
+      // 3.
+      name: __('4 Columns - 16/33/33/16', 'wp-toolbelt'),
+      icon: icons.fourCenter
+    }, {
+      // 4.
+      name: __('4 Columns - 33/16/16/33', 'wp-toolbelt'),
+      icon: icons.fourOutside
     }]
   };
   /**
@@ -476,10 +647,10 @@
     }
 
     return createElement(InspectorControls, null, layouts && createElement(PanelBody, {
-      title: __('General', 'wp-toolbelt'),
+      title: __('Column Layout', 'wp-toolbelt'),
       initialOpen: true,
       className: "toolbelt-column-select-panel"
-    }, createElement("p", null, __('Column Layout', 'wp-toolbelt')), createElement("div", {
+    }, createElement("div", {
       className: "toolbelt-grid-buttongroup"
     }, layouts.map(function (_ref, index) {
       var name = _ref.name,
@@ -495,10 +666,11 @@
         className: class_name,
         isSmall: true,
         "data-index": index,
+        title: name,
         onClick: function onClick() {
           setAttributes({
             layout: index
-          }); //this.setState( { selectLayout: false } );
+          });
         }
       }, icon);
     }))), createElement(PanelColorSettings, {
@@ -536,7 +708,7 @@
     var result = Array(columns);
 
     while (++index < columns) {
-      result[index] = ['core/column'];
+      result[index] = ['toolbelt/column'];
     }
 
     return result;
@@ -592,10 +764,9 @@
     var attributes = props.attributes,
         setAttributes = props.setAttributes;
     var columns = attributes.columns,
-        layout = attributes.layout,
         textColor = attributes.textColor,
         backgroundColor = attributes.backgroundColor;
-    var ALLOWED_BLOCKS = ['core/column'];
+    var ALLOWED_BLOCKS = ['toolbelt/column'];
     var columnOptions = [{
       name: __('2 Columns', 'toolbelt'),
       key: 'two-column',
@@ -611,11 +782,6 @@
       key: 'four-column',
       columns: 4,
       icon: icons.fourEqual
-    }, {
-      name: __('5 Columns', 'toolbelt'),
-      key: 'five-column',
-      columns: 5,
-      icon: icons.fiveEqual
     }];
 
     if (!columns) {
@@ -678,15 +844,22 @@
         color: textColor
       }
     }, createElement(InnerBlocks.Content, null));
-  }; //
-
+  };
 
   registerBlockType('toolbelt/layout-grid', {
-    title: __('Layout Grid', 'wp-toolbelt'),
+    title: __('TB Layout Grid', 'wp-toolbelt'),
     description: __('Flexible content display', 'wp-toolbelt'),
     keywords: [__('toolbelt', 'wp-toolbelt'), __('layout grid columns', 'wp-toolbelt')],
     icon: 'editor-table',
     category: 'wp-toolbelt',
+    styles: [{
+      name: 'normal',
+      label: __('Default', 'wp-toolbelt'),
+      isDefault: true
+    }, {
+      name: 'padded',
+      label: __('Has Padding', 'wp-toolbelt')
+    }],
     attributes: {
       columns: {
         type: 'int'

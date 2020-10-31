@@ -1,0 +1,30 @@
+.toolbelt-portfolio {
+
+	.toolbelt-project {
+
+		padding: 0 var( --toolbelt-spacing );
+		margin-bottom: calc( var( --toolbelt-spacing ) * 1.5 );
+
+	}
+
+	.thumbnail {
+
+		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+		display: block;
+
+	}
+
+	h3 {
+
+		clear: both;
+		margin: 0 0 calc( var( --toolbelt-spacing ) / 2 );
+
+	}
+
+	.toolbelt-post-meta {
+
+		margin: 0;
+
+	}
+
+}

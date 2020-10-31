@@ -126,198 +126,254 @@ msgid "Add footnotes to the bottom of the page."
 msgstr ""
 
 #: index.php:187
-msgid "Gist Embed Block"
+msgid "Fallback Featured Images"
 msgstr ""
 
 #: index.php:188
-msgid "Easily embed Github Gists onto your site."
+msgid "Try to find a suitable image if no featured image is set."
 msgstr ""
 
 #: index.php:192
-msgid "Heading Anchors"
+msgid "Gist Embed Block"
 msgstr ""
 
 #: index.php:193
-msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
+msgid "Easily embed Github Gists onto your site."
 msgstr ""
 
-#: index.php:195, index.php:247
-msgid "0.2kb of inline CSS."
+#: index.php:197
+msgid "Heading Anchors"
 msgstr ""
 
 #: index.php:198
+msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
+msgstr ""
+
+#: index.php:200, index.php:264
+msgid "0.2kb of inline CSS."
+msgstr ""
+
+#: index.php:203
 msgid "Infinite Scroll"
 msgstr ""
 
-#: index.php:199
+#: index.php:204
 msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
-#: index.php:201
+#: index.php:206
 msgid "0.8kb of inline CSS and 1.3kb of inline JS."
 msgstr ""
 
-#: index.php:205
+#: index.php:210
 msgid "Layout Grid"
 msgstr ""
 
-#: index.php:206
+#: index.php:211
 msgid "Display content in carefully curated columns."
 msgstr ""
 
-#: index.php:210
-msgid "Lazy Load images"
-msgstr ""
-
-#: index.php:211
-msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
-msgstr ""
-
-#: index.php:215
-msgid "Markdown"
+#: index.php:213
+msgid "1.4kb of inline CSS plus 100bytes of CSS per layout used."
 msgstr ""
 
 #: index.php:216
-msgid "Render Markdown. Uses Github flavor Markdown."
+msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:220
-msgid "Web Monetization"
+#: index.php:217
+msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
 #: index.php:221
-msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
+msgid "Markdown"
 msgstr ""
 
-#: index.php:226, modules/projects/module.php:39
-msgid "Portfolio"
+#: index.php:222
+msgid "Render Markdown. Uses Github flavor Markdown."
+msgstr ""
+
+#: index.php:226
+msgid "Web Monetization"
 msgstr ""
 
 #: index.php:227
-msgid "A portfolio custom post type for your projects."
+msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
 #: index.php:232
-msgid "Random Redirect"
+msgid "Website Embeds"
 msgstr ""
 
 #: index.php:233
-msgid "Randomly Redirect to a blog post."
+msgid "Add support for more OEmbed websites."
 msgstr ""
 
-#: index.php:237, modules/related-posts/module.php:120, modules/related-posts/tools.php:19
-msgid "Related Posts"
+#: index.php:237
+msgid "Post Category"
 msgstr ""
 
 #: index.php:238
-msgid "Speedy related posts."
+msgid "Category summaries for magazine or newspaper style homepages."
 msgstr ""
 
 #: index.php:240
-msgid "0.3kb of inline CSS, plus the HTML and images."
+msgid "1kb of inline CSS."
+msgstr ""
+
+#: index.php:243, modules/projects/module.php:39, modules/sitemap/module.php:149
+msgid "Portfolio"
 msgstr ""
 
 #: index.php:244
-msgid "Responsive Videos"
+msgid "A portfolio custom post type for your projects."
 msgstr ""
 
-#: index.php:245
-msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
+#: index.php:249
+msgid "Random Redirect"
 msgstr ""
 
 #: index.php:250
-msgid "Search Redirect"
+msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:251
-msgid "If there is a single search result then redirect to the result, rather than displaying a list of results."
+#: index.php:254, modules/related-posts/module.php:151, modules/related-posts/tools.php:19
+msgid "Related Posts"
 msgstr ""
 
 #: index.php:255
-msgid "Simple Slider"
+msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:256
-msgid "An Accessible horizontal slider."
-msgstr ""
-
-#: index.php:260, modules/social-menu/module.php:16, modules/social-menu/module.php:35
-msgid "Social Menu"
+#: index.php:257
+msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
 #: index.php:261
-msgid "Add a social icons menu. This must be integrated into the theme."
+msgid "Responsive Videos"
 msgstr ""
 
-#: index.php:263
-msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
-msgstr ""
-
-#: index.php:266
-msgid "Static Social Sharing"
+#: index.php:262
+msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
 #: index.php:267
-msgid "Add social sharing links that use the platforms native sharing system."
+msgid "Remove IP Addresses"
 msgstr ""
 
-#: index.php:269
-msgid "4.1kb of inline SVG icons, and 0.7kb of inline CSS."
+#: index.php:268
+msgid "Stop WordPress from storing IP addresses for users who comment on your site."
+msgstr ""
+
+#: index.php:272
+msgid "Search Redirect"
 msgstr ""
 
 #: index.php:273
-msgid "Spam Blocker"
+msgid "If there is a single search result then redirect to the result, rather than displaying a list of results."
 msgstr ""
 
-#: index.php:274
-msgid "Attempt to block spam."
+#: index.php:277
+msgid "Sitemap"
 msgstr ""
 
-#: index.php:276
-msgid "0.3kb of inline JS"
+#: index.php:278
+msgid "A simple sitemap to embed on your page."
 msgstr ""
 
-#: index.php:280
-msgid "Star Ratings"
+#: index.php:282
+msgid "Simple Slider"
 msgstr ""
 
-#: index.php:281
-msgid "Rate movies, books, videos, difficulty, whatever."
+#: index.php:283
+msgid "An Accessible horizontal slider."
 msgstr ""
 
-#: index.php:285, modules/stats/settings.php:40
-msgid "Stats"
+#: index.php:285
+msgid "1.8kb of inline CSS."
 msgstr ""
 
-#: index.php:286
-msgid "Website statistics and analytics."
+#: index.php:288, modules/social-menu/module.php:16, modules/social-menu/module.php:35
+msgid "Social Menu"
 msgstr ""
 
-#: index.php:291, modules/testimonials/module.php:46
-msgid "Testimonial"
+#: index.php:289
+msgid "Add a social icons menu. This must be integrated into the theme."
 msgstr ""
 
-#: index.php:292
-msgid "A testimonials custom post type."
+#: index.php:291
+msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
 #: index.php:294
-msgid "0.5kb of inline CSS."
+msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:298
-msgid "Typographic Widows"
+#: index.php:295
+msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:299
-msgid "Fix typographic widows in titles and headings."
+#: index.php:297
+msgid "1kb of inline CSS, and 0.4kb of inline JS. Plus roughly 0.6kb to 1kb per social network icon."
 msgstr ""
 
-#: index.php:303
-msgid "Widget Display"
+#: index.php:301
+msgid "Spam Blocker"
+msgstr ""
+
+#: index.php:302
+msgid "Attempt to block spam."
 msgstr ""
 
 #: index.php:304
+msgid "0.3kb of inline JS."
+msgstr ""
+
+#: index.php:308
+msgid "Star Ratings"
+msgstr ""
+
+#: index.php:309
+msgid "Rate movies, books, videos, difficulty, whatever."
+msgstr ""
+
+#: index.php:311
+msgid "0.7kb of inline CSS."
+msgstr ""
+
+#: index.php:314, modules/stats/settings.php:40
+msgid "Stats"
+msgstr ""
+
+#: index.php:315
+msgid "Website statistics and analytics."
+msgstr ""
+
+#: index.php:320, modules/testimonials/module.php:46
+msgid "Testimonial"
+msgstr ""
+
+#: index.php:321
+msgid "A testimonials custom post type."
+msgstr ""
+
+#: index.php:323
+msgid "0.5kb of inline CSS."
+msgstr ""
+
+#: index.php:327
+msgid "Typographic Widows"
+msgstr ""
+
+#: index.php:328
+msgid "Fix typographic widows in titles and headings."
+msgstr ""
+
+#: index.php:332
+msgid "Widget Display"
+msgstr ""
+
+#: index.php:333
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -663,7 +719,7 @@ msgid "Load More"
 msgstr ""
 
 #. translators: %d = page number.
-#: modules/infinite-scroll/module.php:274
+#: modules/infinite-scroll/module.php:276
 msgid "Page %d"
 msgstr ""
 
@@ -677,6 +733,10 @@ msgstr ""
 
 #: modules/monetization/settings.php:36
 msgid "Web Monetization Documentation"
+msgstr ""
+
+#: modules/post-category/module.php:433
+msgid "All Categories"
 msgstr ""
 
 #: modules/projects/module.php:37, modules/projects/tools.php:18
@@ -902,132 +962,144 @@ msgstr ""
 msgid "Related Posts cache cleared."
 msgstr ""
 
-#: modules/social-sharing/module.php:149
+#: modules/sitemap/module.php:91
+msgid "Categories"
+msgstr ""
+
+#: modules/sitemap/module.php:115
+msgid "Pages"
+msgstr ""
+
+#: modules/sitemap/module.php:132
+msgid "Posts"
+msgstr ""
+
+#: modules/social-sharing/module.php:206
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:150
+#: modules/social-sharing/module.php:207
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:155
+#: modules/social-sharing/module.php:212
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:156
+#: modules/social-sharing/module.php:213
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:161
+#: modules/social-sharing/module.php:218
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:162
+#: modules/social-sharing/module.php:219
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:177
+#: modules/social-sharing/module.php:234
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:178
+#: modules/social-sharing/module.php:235
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:180
+#: modules/social-sharing/module.php:237
 msgid "Only shown on mobile"
 msgstr ""
 
-#: modules/social-sharing/module.php:184
+#: modules/social-sharing/module.php:241
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:185
+#: modules/social-sharing/module.php:242
 msgctxt "Pinterest button label"
 msgid "Pin this"
 msgstr ""
 
-#: modules/social-sharing/module.php:190
+#: modules/social-sharing/module.php:247
 msgid "Save to Pocket"
 msgstr ""
 
-#: modules/social-sharing/module.php:191
+#: modules/social-sharing/module.php:248
 msgctxt "Pocket button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:196
+#: modules/social-sharing/module.php:253
 msgid "Save to Wallabag"
 msgstr ""
 
-#: modules/social-sharing/module.php:197
+#: modules/social-sharing/module.php:254
 msgctxt "Wallabag button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:202
+#: modules/social-sharing/module.php:259
 msgid "Save to Instapaper"
 msgstr ""
 
-#: modules/social-sharing/module.php:203
+#: modules/social-sharing/module.php:260
 msgctxt "Instapaper button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:208
+#: modules/social-sharing/module.php:265
 msgid "Share on Reddit"
 msgstr ""
 
-#: modules/social-sharing/module.php:209
+#: modules/social-sharing/module.php:266
 msgctxt "Reddit button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:214
+#: modules/social-sharing/module.php:271
 msgid "Share on Tumblr"
 msgstr ""
 
-#: modules/social-sharing/module.php:215
+#: modules/social-sharing/module.php:272
 msgctxt "Tumblr button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:220
+#: modules/social-sharing/module.php:277
 msgid "Share on HackerNews"
 msgstr ""
 
-#: modules/social-sharing/module.php:221
+#: modules/social-sharing/module.php:278
 msgctxt "HackerNews button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:226
+#: modules/social-sharing/module.php:283
 msgid "Share on Evernote"
 msgstr ""
 
-#: modules/social-sharing/module.php:227
+#: modules/social-sharing/module.php:284
 msgctxt "Evernote button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:232
+#: modules/social-sharing/module.php:289
 msgid "Share on Flipboard"
 msgstr ""
 
-#: modules/social-sharing/module.php:233
+#: modules/social-sharing/module.php:290
 msgctxt "Flipboard button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:238
+#: modules/social-sharing/module.php:295
 msgid "Send via Email"
 msgstr ""
 
-#: modules/social-sharing/module.php:239
+#: modules/social-sharing/module.php:296
 msgctxt "Email button label"
 msgid "Send this"
 msgstr ""

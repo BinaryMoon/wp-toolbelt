@@ -8,7 +8,7 @@
 const sliderSave = ( props ) => {
 
 	return (
-		<div className={getSliderClass( props )}>
+		<div className={getSliderClass( props )} role="region" aria-label={__( 'slider', 'wp-toolbelt' )} tabindex="0">
 			<ul>
 				<InnerBlocks.Content />
 			</ul>

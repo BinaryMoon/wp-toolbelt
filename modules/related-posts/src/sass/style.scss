@@ -2,14 +2,11 @@
 
 	clear: both;
 
-	div {
+	article {
 
-		a {
-
-			padding: var( --toolbelt-spacing );
-			padding-top: 0;
-
-		}
+		padding: 0 var( --toolbelt-spacing );
+		margin-bottom: calc( var( --toolbelt-spacing ) * 1.5 );
+		position: relative;
 
 	}
 
@@ -23,12 +20,24 @@
 	h4 {
 
 		margin: 0;
+		word-wrap: break-word;
 
 	}
 
 	a {
 
 		display: block;
+
+		&:before {
+
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+		}
 
 	}
 

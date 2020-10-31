@@ -286,7 +286,7 @@ function toolbelt_widget_display_check_token( $token = '' ) {
 	 */
 	if ( 'posttaxonomy' === $key ) {
 
-		if ( is_singular() && is_array( $properties ) && count( $properties ) >= 1 ) {
+		if ( is_singular() && is_array( $properties ) && ! empty( $properties ) ) {
 
 			$taxonomy = (string) $properties[0];
 			$terms = array_slice( $properties, 1 );
