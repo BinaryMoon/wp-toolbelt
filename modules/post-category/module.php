@@ -154,10 +154,19 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 
 			foreach ( $posts as $p ) {
 
+				$image = get_the_post_thumbnail( $p['id'], 'medium' );
+
+				if ( $image ) {
+					$image = sprintf(
+						'<div class="toolbelt-featured-image">%1$s</div>',
+						$image
+					);
+				}
+
 				$html .= sprintf(
 					'<article class="%1$s">%2$s%5$s<h3 class="toolbelt-skip-anchor"><a href="%3$s" rel="bookmark">%4$s</a></h3><p>%6$s</p></article>',
 					esc_attr( $class ),
-					get_the_post_thumbnail( $p['id'], 'medium' ),
+					$image,
 					esc_url( $p['url'] ),
 					esc_html( $p['title'] ),
 					toolbelt_post_category_post_meta( $p ),
@@ -386,6 +395,7 @@ function toolbelt_post_category_heading( $category_id ) {
  */
 function toolbelt_post_category_admin_styles() {
 
+	toolbelt_global_styles( 'featured-images' );
 	toolbelt_styles_editor( 'post-category' );
 
 }
@@ -404,6 +414,7 @@ function toolbelt_post_category_styles() {
 		return;
 	}
 
+	toolbelt_global_styles( 'featured-images' );
 	toolbelt_styles( 'post-category' );
 
 }
