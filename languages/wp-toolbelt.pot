@@ -237,7 +237,7 @@ msgstr ""
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:254, modules/related-posts/module.php:151, modules/related-posts/tools.php:19
+#: index.php:254, modules/related-posts/module.php:158, modules/related-posts/tools.php:19
 msgid "Related Posts"
 msgstr ""
 
@@ -513,7 +513,7 @@ msgid_plural "Spam <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: modules/contact-form/module-cpt.php:131, modules/contact-form/module-fields.php:514, modules/contact-form/module-fields.php:640
+#: modules/contact-form/module-cpt.php:131, modules/contact-form/module-fields.php:521, modules/contact-form/module-fields.php:647
 msgid "Message"
 msgstr ""
 
@@ -521,7 +521,7 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-#: modules/contact-form/module-cpt.php:133, modules/contact-form/module-fields.php:506
+#: modules/contact-form/module-cpt.php:133, modules/contact-form/module-fields.php:513
 msgid "Date"
 msgstr ""
 
@@ -545,107 +545,107 @@ msgstr ""
 msgid "Select several"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:220
+#: modules/contact-form/module-fields.php:227
 msgid "Select one"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:274, modules/contact-form/module-fields.php:305
+#: modules/contact-form/module-fields.php:281, modules/contact-form/module-fields.php:312
 msgid "Optional"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:361, modules/contact-form/module-submit-form.php:285
+#: modules/contact-form/module-fields.php:368, modules/contact-form/module-submit-form.php:285
 msgid "Submit"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:395
+#: modules/contact-form/module-fields.php:402
 msgid "Message Sent"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:435
+#: modules/contact-form/module-fields.php:442
 msgid "This field is required."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:436, modules/contact-form/module-fields.php:437
+#: modules/contact-form/module-fields.php:443, modules/contact-form/module-fields.php:444
 msgid "Please select a value."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:438
+#: modules/contact-form/module-fields.php:445
 msgid "Please select at least one value."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:439
+#: modules/contact-form/module-fields.php:446
 msgid "Please fill out this field."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:442
+#: modules/contact-form/module-fields.php:449
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:443
+#: modules/contact-form/module-fields.php:450
 msgid "Please enter a URL."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:444
+#: modules/contact-form/module-fields.php:451
 msgid "Please enter a number"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:445
+#: modules/contact-form/module-fields.php:452
 msgid "Please match the following format: #rrggbb"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:446
+#: modules/contact-form/module-fields.php:453
 msgid "Please use the YYYY-MM-DD format"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:447
+#: modules/contact-form/module-fields.php:454
 msgid "Please use the 24-hour time format. Ex. 23:00"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:448
+#: modules/contact-form/module-fields.php:455
 msgid "Please use the YYYY-MM format"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:449
+#: modules/contact-form/module-fields.php:456
 msgid "Please match the requested format."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:452
+#: modules/contact-form/module-fields.php:459
 msgid "Please select a value that is no more than {max}."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:453
+#: modules/contact-form/module-fields.php:460
 msgid "Please select a value that is no less than {min}."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:456
+#: modules/contact-form/module-fields.php:463
 msgid "Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:457
+#: modules/contact-form/module-fields.php:464
 msgid "Please lengthen this text to {minLength} characters or more. You are currently using {length} characters."
 msgstr ""
 
-#: modules/contact-form/module-fields.php:485
+#: modules/contact-form/module-fields.php:492
 msgid "Text"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:488
+#: modules/contact-form/module-fields.php:495
 msgid "Name"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:492
+#: modules/contact-form/module-fields.php:499
 msgid "Subject"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:496
+#: modules/contact-form/module-fields.php:503
 msgid "Email"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:501
+#: modules/contact-form/module-fields.php:508
 msgid "Website"
 msgstr ""
 
-#: modules/contact-form/module-fields.php:510
+#: modules/contact-form/module-fields.php:517
 msgid "Phone Number"
 msgstr ""
 
@@ -735,7 +735,7 @@ msgstr ""
 msgid "Web Monetization Documentation"
 msgstr ""
 
-#: modules/post-category/module.php:433
+#: modules/post-category/module.php:437
 msgid "All Categories"
 msgstr ""
 
@@ -974,132 +974,132 @@ msgstr ""
 msgid "Posts"
 msgstr ""
 
-#: modules/social-sharing/module.php:206
+#: modules/social-sharing/module.php:214
 msgid "Share on Facebook"
 msgstr ""
 
-#: modules/social-sharing/module.php:207
+#: modules/social-sharing/module.php:215
 msgctxt "Facebook button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:212
+#: modules/social-sharing/module.php:220
 msgid "Tweet on Twitter"
 msgstr ""
 
-#: modules/social-sharing/module.php:213
+#: modules/social-sharing/module.php:221
 msgctxt "Twitter button label"
 msgid "Tweet this"
 msgstr ""
 
-#: modules/social-sharing/module.php:218
+#: modules/social-sharing/module.php:226
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: modules/social-sharing/module.php:219
+#: modules/social-sharing/module.php:227
 msgctxt "LinkedIn button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:234
+#: modules/social-sharing/module.php:242
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: modules/social-sharing/module.php:235
+#: modules/social-sharing/module.php:243
 msgctxt "WhatsApp button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:237
+#: modules/social-sharing/module.php:245
 msgid "Only shown on mobile"
 msgstr ""
 
-#: modules/social-sharing/module.php:241
+#: modules/social-sharing/module.php:249
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: modules/social-sharing/module.php:242
+#: modules/social-sharing/module.php:250
 msgctxt "Pinterest button label"
 msgid "Pin this"
 msgstr ""
 
-#: modules/social-sharing/module.php:247
+#: modules/social-sharing/module.php:255
 msgid "Save to Pocket"
 msgstr ""
 
-#: modules/social-sharing/module.php:248
+#: modules/social-sharing/module.php:256
 msgctxt "Pocket button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:253
+#: modules/social-sharing/module.php:261
 msgid "Save to Wallabag"
 msgstr ""
 
-#: modules/social-sharing/module.php:254
+#: modules/social-sharing/module.php:262
 msgctxt "Wallabag button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:259
+#: modules/social-sharing/module.php:267
 msgid "Save to Instapaper"
 msgstr ""
 
-#: modules/social-sharing/module.php:260
+#: modules/social-sharing/module.php:268
 msgctxt "Instapaper button label"
 msgid "Save this"
 msgstr ""
 
-#: modules/social-sharing/module.php:265
+#: modules/social-sharing/module.php:273
 msgid "Share on Reddit"
 msgstr ""
 
-#: modules/social-sharing/module.php:266
+#: modules/social-sharing/module.php:274
 msgctxt "Reddit button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:271
+#: modules/social-sharing/module.php:279
 msgid "Share on Tumblr"
 msgstr ""
 
-#: modules/social-sharing/module.php:272
+#: modules/social-sharing/module.php:280
 msgctxt "Tumblr button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:277
+#: modules/social-sharing/module.php:285
 msgid "Share on HackerNews"
 msgstr ""
 
-#: modules/social-sharing/module.php:278
+#: modules/social-sharing/module.php:286
 msgctxt "HackerNews button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:283
+#: modules/social-sharing/module.php:291
 msgid "Share on Evernote"
 msgstr ""
 
-#: modules/social-sharing/module.php:284
+#: modules/social-sharing/module.php:292
 msgctxt "Evernote button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:289
+#: modules/social-sharing/module.php:297
 msgid "Share on Flipboard"
 msgstr ""
 
-#: modules/social-sharing/module.php:290
+#: modules/social-sharing/module.php:298
 msgctxt "Flipboard button label"
 msgid "Share this"
 msgstr ""
 
-#: modules/social-sharing/module.php:295
+#: modules/social-sharing/module.php:303
 msgid "Send via Email"
 msgstr ""
 
-#: modules/social-sharing/module.php:296
+#: modules/social-sharing/module.php:304
 msgctxt "Email button label"
 msgid "Send this"
 msgstr ""
