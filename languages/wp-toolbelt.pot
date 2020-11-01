@@ -237,7 +237,7 @@ msgstr ""
 msgid "Randomly Redirect to a blog post."
 msgstr ""
 
-#: index.php:254, modules/related-posts/module.php:158, modules/related-posts/tools.php:19
+#: index.php:254, modules/related-posts/module.php:159, modules/related-posts/tools.php:19
 msgid "Related Posts"
 msgstr ""
 
@@ -735,7 +735,7 @@ msgstr ""
 msgid "Web Monetization Documentation"
 msgstr ""
 
-#: modules/post-category/module.php:437
+#: modules/post-category/module.php:448
 msgid "All Categories"
 msgstr ""
 
