@@ -26,10 +26,15 @@ Toolbelt has been featured on The WordPress Tavern in [an interview with me](htt
 Some of the Toolbelt modules include blocks to make working with the generated content easier. The available blocks are:
 
 * **Contact Form** - The simplest way to have people get in touch. Works with the spam module.
+* **Post Categories** - A category content list for magazine and newspaper themes.
+* **Simple Slider** - A fast, CSS powered slider. No JavaScript and easy to edit.
 * **Projects Grid** - to list a collection of projects. These can be filtered by project category.
 * **Testimonials Grid** - to list a group of testimonials. Great for showing off! :)
 * **Markdown** - for those who like a simpler writing experience.
+* **Sitemap** - Easily list all posts, pages, Categories and Projects.
+* **Star Rating** - Rate things with a simple visual interface.
 * **Breadcrumbs** - for full site editing.
+* **Related posts** - for full site editing.
 
 = All Features =
 
@@ -73,7 +78,7 @@ Toolbelt has a lot of features. The complete list is below.
 
 = Toolbelt is Private =
 
-Every week there's a new story about Facebook tracking people inappropriately, or selling user details. Or some security breach that leaks users passwords or credit card info. Privacy is a big topic and frankly, it's scary how much big corporations like Google, Facebook, and Twitter know.
+Every week there's a new story about Facebook (or Google, or Amazon, or whoever) tracking people inappropriately, or selling user details. Or some security breach that leaks users passwords or credit card info. Privacy is a big topic and frankly, it's scary how much big corporations like Google, Facebook, and Twitter know.
 
 To ensure Toolbelt is as privacy focused as possible it:
 
