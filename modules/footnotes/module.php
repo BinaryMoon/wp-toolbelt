@@ -121,7 +121,7 @@ function toolbelt_footnotes( $data = '' ) {
 
 		$footnotes_markup = array();
 
-		$footnotes_markup[] = '<h3 class="toolbelt-heading toolbelt-heading-footnotes">' . esc_html__( 'Footnotes', 'wp-toolbelt' ) . '</h3>';
+		$footnotes_markup[] = '<h3 class="toolbelt-heading toolbelt-heading-footnotes has-normal-font-size has-regular-font-size">' . esc_html__( 'Footnotes', 'wp-toolbelt' ) . '</h3>';
 
 		$footnotes_markup[] = '<ol class="toolbelt-footnotes">';
 

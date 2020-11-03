@@ -34,6 +34,7 @@
 
 		margin-top: 0;
 		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
+		max-width: 55ch;
 
 	}
 
@@ -69,17 +70,6 @@
 			margin-inline-end: calc( var( --toolbelt-spacing ) / 2 );
 
 		}
-
-	}
-
-}
-
-// Large image at the top.
-.toolbelt-post-category-layout-2 {
-
-	img {
-
-		margin-bottom: calc( var( --toolbelt-spacing ) / 2 );
 
 	}
 

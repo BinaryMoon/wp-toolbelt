@@ -4,7 +4,7 @@
 	grid-template-columns: 100%;
 	grid-auto-flow: dense;
 	row-gap: var( --toolbelt-spacing );
-	margin: 0 calc( var( --toolbelt-spacing ) * -1 );
+	margin: 0 calc( var( --toolbelt-spacing ) * -1 ) var( --toolbelt-spacing ) calc( var( --toolbelt-spacing ) * -1 );
 
 	&.is-style-padded {
 
@@ -44,6 +44,12 @@
 	> :last-child {
 
 		margin-bottom: 0;
+
+	}
+
+	&:empty {
+
+		display: none;
 
 	}
 
@@ -88,6 +94,16 @@
 	[class*=toolbelt-grid-layout] {
 
 		grid-template-columns: 1fr 1fr;
+
+	}
+
+	.wp-block-toolbelt-column {
+
+		&:empty {
+
+			display: initial;
+
+		}
 
 	}
 

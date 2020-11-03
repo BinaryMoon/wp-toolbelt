@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '2.7' );
+define( 'TOOLBELT_VERSION', '3.0' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TOOLBELT_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );

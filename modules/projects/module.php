@@ -481,7 +481,7 @@ function toolbelt_portfolio_get_html( $count = 2, $order_by = 'date', $categorie
 			 */
 			$projects_list[] = sprintf(
 				'<div class="toolbelt-project">
-					<a href="%2$s" class="thumbnail">%1$s</a>
+					<a href="%2$s" class="thumbnail toolbelt-featured-image">%1$s</a>
 					%4$s
 					<h3 class="toolbelt-skip-anchor"><a href="%2$s">%3$s</a></h3>
 					%5$s
@@ -549,6 +549,8 @@ function toolbelt_portfolio_styles() {
 	}
 
 	if ( has_shortcode( $post->post_content, 'portfolio' ) || has_block( 'toolbelt/portfolio' ) ) {
+
+		toolbelt_global_styles( 'featured-images' );
 		toolbelt_global_styles( 'columns' );
 		toolbelt_styles( 'projects' );
 	}
@@ -565,8 +567,9 @@ add_action( 'wp_print_styles', 'toolbelt_portfolio_styles' );
  */
 function toolbelt_portfolio_editor_styles() {
 
+	toolbelt_global_styles( 'featured-images' );
 	toolbelt_global_styles( 'columns' );
-	toolbelt_styles( 'projects' );
+	toolbelt_styles_editor( 'projects' );
 
 }
 

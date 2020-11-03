@@ -48,8 +48,10 @@ Toolbelt has a lot of features. The complete list is below.
 * [Heading Anchors](https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor)
 * [Infinite Scroll](https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll)
 * [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
+* [Layout Grid](https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid)
 * [Markdown](https://github.com/BinaryMoon/wp-toolbelt/wiki/Markdown)
 * [Monetization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Monetization)
+* [OEmbed](https://github.com/BinaryMoon/wp-toolbelt/wiki/OEmbed)
 * [Optimization](https://github.com/BinaryMoon/wp-toolbelt/wiki/Optimization)
 * [Portfolio](https://github.com/BinaryMoon/wp-toolbelt/wiki/Portfolio)
 * [Random Redirection](https://github.com/BinaryMoon/wp-toolbelt/wiki/Random-Redirect)
@@ -57,6 +59,8 @@ Toolbelt has a lot of features. The complete list is below.
 * [Remove IP Addresses](https://github.com/BinaryMoon/wp-toolbelt/wiki/Remove-IP-Addresses)
 * [Responsive Videos](https://github.com/BinaryMoon/wp-toolbelt/wiki/Responsive-Videos)
 * [Search Redirect](https://github.com/BinaryMoon/wp-toolbelt/wiki/Search-Redirect)
+* [Sitemap](https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Sitemap)
+* [Slider](https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Slider)
 * [Social Menu](https://github.com/BinaryMoon/wp-toolbelt/wiki/Social-Menu)
 * [Spam Blocker](https://github.com/BinaryMoon/wp-toolbelt/wiki/Spam-Blocker)
 * [Static Social Sharing](https://github.com/BinaryMoon/wp-toolbelt/wiki/Static-Social-Sharing)
@@ -144,6 +148,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 * New: Fallback Featured Images module. Attempts to find featured images when there aren't any assigned.
 * New: Make use of social sharing API in supported browsers.
 * New: Predefined contact form variants. A feedback form and a net promoter score form.
+* Add Featured Image global styles for some consistent featured images.
 * Add New horizontal multi-element contact form component layout to allow for more space efficient layout of forms.
 * Add Related Posts block.
 * Add TB prefix to all blocks. Inspired by: https://wptavern.com/wordpress-plugin-authors-should-avoid-confusing-users-when-naming-blocks
