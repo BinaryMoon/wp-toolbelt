@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 2.7
+ * Version: 3.0
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
