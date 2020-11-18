@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -145,6 +145,9 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 3.1 - 18th November 2020 =
+* Add support for search and 404 redirect filter.
 
 = 3.0 - 11th October 2020 =
 * New: Layout Grid block.
