@@ -377,12 +377,20 @@ msgstr ""
 msgid "Control which pages widgets appear on."
 msgstr ""
 
-#: admin/admin-credits.php:21
+#: admin/admin-credits.php:25
 msgid "Toolbelt is a free plugin. If you find it useful then a review on wordpress.org would be most appreciated!"
 msgstr ""
 
-#: admin/admin-credits.php:22
+#: admin/admin-credits.php:26
 msgid "Leave a review &rsaquo;"
+msgstr ""
+
+#: admin/admin-credits.php:30
+msgid "Join us on Github"
+msgstr ""
+
+#: admin/admin-credits.php:32
+msgid "Read the docs"
 msgstr ""
 
 #: admin/admin.php:26, admin/admin.php:84
@@ -710,7 +718,7 @@ msgstr ""
 msgid "Comment Author URLs deleted."
 msgstr ""
 
-#: modules/fast-404/module.php:61
+#: modules/fast-404/module.php:63
 msgid "404 error - file does not exist"
 msgstr ""
 
