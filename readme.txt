@@ -146,7 +146,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 3.1 - 18th November 2020 =
+= 3.1 - 21st November 2020 =
 * Add support for search and 404 redirect filter.
 
 = 3.0 - 11th October 2020 =
