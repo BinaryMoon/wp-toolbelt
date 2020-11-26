@@ -146,6 +146,9 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
+= 3.1.1 - 26th November 2020 =
+* Add styles to footnotes to ensure scrolled links are readable and not hidden by the WP admin bar.
+
 = 3.1 - 21st November 2020 =
 * Add support for search and 404 redirect filter.
 
