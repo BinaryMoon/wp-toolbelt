@@ -117,7 +117,7 @@ msgstr ""
 msgid "If there is no featured image for a post then use the first image attachment instead."
 msgstr ""
 
-#: index.php:182, modules/footnotes/module.php:124
+#: index.php:182, modules/footnotes/module.php:127
 msgid "Footnotes"
 msgstr ""
 
