@@ -21,6 +21,9 @@ function toolbelt_footnotes( $data = '' ) {
 		return $data;
 	}
 
+	// Include styles.
+	toolbelt_styles( 'footnotes' );
+
 	// Store processed footnote data.
 	$footnotes = array();
 
@@ -137,7 +140,7 @@ function toolbelt_footnotes( $data = '' ) {
 			foreach ( $value['identifiers'] as $identifier ) {
 
 				$backlinks[] = sprintf(
-					'(<a href="%1$s#identifier_%2$d_%3$d" class="footnote-link footnote-back-link">&#8617;</a>)',
+					'(<a href="%1$s#identifier_%2$d_%3$d" class="footnote-link footnote-link-back">&#8617;</a>)',
 					$permalink,
 					$identifier,
 					$post_id
@@ -148,7 +151,7 @@ function toolbelt_footnotes( $data = '' ) {
 			if ( count( $backlinks ) > 0 ) {
 
 				$content = $content . ' ' . sprintf(
-					'<span class="backlink-container">%1$s</span>',
+					'<span>%1$s</span>',
 					implode( ' ', $backlinks )
 				);
 
@@ -158,7 +161,7 @@ function toolbelt_footnotes( $data = '' ) {
 			 * Generate the actual footnote.
 			 */
 			$footnotes_markup[] = sprintf(
-				'<li id="footnote_%1$d_%2$d">%3$s</li>',
+				'<li id="footnote_%1$d_%2$d" class="footnotes-link-back-container">%3$s</li>',
 				(int) $key,
 				$post_id,
 				wp_kses_post( $content )
