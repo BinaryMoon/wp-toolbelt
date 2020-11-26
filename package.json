@@ -18,10 +18,10 @@
 	"author": "",
 	"license": "GPL-2.0-or-later",
 	"devDependencies": {
-		"@babel/core": "^7.12.3",
+		"@babel/core": "^7.12.9",
 		"@babel/plugin-proposal-class-properties": "^7.12.1",
 		"@babel/plugin-proposal-object-rest-spread": "^7.12.1",
-		"@babel/preset-env": "^7.12.1",
+		"@babel/preset-env": "^7.12.7",
 		"@babel/register": "^7.12.1",
 		"@wordpress/babel-preset-default": "^4.19.0",
 		"gulp": "^4.0.2",
