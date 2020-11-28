@@ -239,6 +239,12 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Post-Category',
 			'weight' => esc_html__( '1kb of inline CSS.', 'wp-toolbelt' ),
 		),
+		'private-embeds' => array(
+			'name' => esc_html__( 'Iframe Privacy Shield', 'wp-toolbelt' ),
+			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Iframe-Privacy-Shield',
+			'weight' => esc_html__( '0.3kb of inline JS and 0.4kb of inline CSS,', 'wp-toolbelt' ),
+		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
 			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
