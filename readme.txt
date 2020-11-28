@@ -52,6 +52,7 @@ Toolbelt has a lot of features. The complete list is below.
 * [Footnotes](https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes)
 * [Get Image](https://github.com/BinaryMoon/wp-toolbelt/wiki/Get-Image)
 * [Heading Anchors](https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor)
+* [Iframe Privacy Shield](https://github.com/BinaryMoon/wp-toolbelt/wiki/Iframe-Privacy-Shield)
 * [Infinite Scroll](https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll)
 * [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
 * [Layout Grid](https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid)
@@ -146,7 +147,10 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 3.1.1 - 26th November 2020 =
+= 3.2 - 28th November 2020 =
+* New: Iframe Privacy Shield. Prevents iframes from post content, from being loaded without user consent.
+* Fix: Don't force responsive video size on videos that have an aspect ratio.
+* Add: Heading anchors now include h5 & h6.
 * Add styles to footnotes to ensure scrolled links are readable and not hidden by the WP admin bar.
 
 = 3.1 - 21st November 2020 =
