@@ -20,9 +20,11 @@ button.toolbelt-embed-shield {
 
 	}
 
-	strong, small {
+	strong,
+	small {
 
 		display: block;
+		pointer-events: none;
 
 	}
 
