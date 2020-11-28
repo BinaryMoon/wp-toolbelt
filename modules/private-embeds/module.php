@@ -40,7 +40,10 @@ function toolbelt_embed_privacy_shield( $html ) {
 	 */
 	libxml_use_internal_errors( true );
 	$dom = new DOMDocument();
-	$dom->loadHTML( $html );
+	/**
+	 * Include the <?xml version?> to ensure text encodes properly.
+	 */
+	$dom->loadHTML( '<?xml version="1.0" encoding="UTF-8"?>' . $html );
 
 	// Get the iframe and it's properties.
 	$iframe = $dom->getElementsByTagName( 'iframe' );
