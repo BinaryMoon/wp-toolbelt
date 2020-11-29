@@ -28,6 +28,10 @@ add_filter( 'the_content', 'toolbelt_embed_youtube', 99 );
  */
 function toolbelt_embed_privacy_shield( $html ) {
 
+	if ( is_admin() || toolbelt_is_rest_request() ) {
+		return $html;
+	}
+
 	if ( ! strpos( $html, 'iframe' ) ) {
 		return $html;
 	}
