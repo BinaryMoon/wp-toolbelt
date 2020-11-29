@@ -196,9 +196,11 @@ function toolbelt_social_share_info( $content ) {
 	}
 
 	// Restrict to whole words and add an ellipse.
-	$cutoff = strrpos( $content, ' ' );
-	if ( $cutoff ) {
-		$content = substr( $content, 0, $cutoff ) . '...';
+	if ( $content ) {
+		$cutoff = strrpos( $content, ' ' );
+		if ( $cutoff ) {
+			$content = substr( $content, 0, $cutoff ) . '...';
+		}
 	}
 
 	return sprintf(
