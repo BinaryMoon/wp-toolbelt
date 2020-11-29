@@ -153,6 +153,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 * Fix: Social share description so that social sharing works better on mobile.
 * Add: Heading anchors now include h5 & h6.
 * Add styles to footnotes to ensure scrolled links are readable and not hidden by the WP admin bar.
+* Change: Disable autolinking urls in Markdown blocks. Normal markdown links still work.
 
 = 3.1 - 21st November 2020 =
 * Add support for search and 404 redirect filter.
