@@ -184,6 +184,8 @@ function toolbelt_social_share_info( $content ) {
 
 	// Only display first 140 characters of excerpt.
 	$content = wp_strip_all_tags( $content );
+	$content = str_replace( array( "\r", "\n" ), ' ', $content );
+	$content = preg_replace( '!\s+!', ' ', $content );
 	$content = substr( $content, 0, 140 );
 
 	// Restrict to whole words and add an ellipse.
@@ -194,7 +196,7 @@ function toolbelt_social_share_info( $content ) {
 
 	return sprintf(
 		'<script>var toolbelt_social_share_description = "%1$s";</script>',
-		esc_html( $content )
+		esc_html( trim( $content ) )
 	);
 
 }
