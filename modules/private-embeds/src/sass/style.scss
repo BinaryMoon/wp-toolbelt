@@ -1,18 +1,21 @@
 button.toolbelt-embed-shield {
 
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	min-height: 5rem;
-
 	background: var( --toolbelt-color-dark );
 	color: var( --toolbelt-color-light );
 	box-shadow: none;
 	border: none;
+
+	.wp-block-embed & {
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+
+	}
 
 	&:hover {
 
