@@ -1001,8 +1001,6 @@ _zapat
 -online-8-
 -online-9-
 -online-free-
--online.
--online/
 -order-at-
 -oulu
 -outlet.
@@ -1426,25 +1424,34 @@ _zapat
 :usuario
 ！
 ! ,
-! !
 ! .
 ! this blog
 ! this post
 ! this site
 ! this web
 !--
+!,!
+!,?
 !,i
-!! you
+!,y
 !!}
 !!\
 !?'
 !?’
 !..
+!.i
+!.y
 ![]
 !}
 !@#
 ? relevant!
 ? thanks !
+?,!
+?,?
+?,i
+?,y
+?.i
+?.y
 ?/pag
 ?|
 ?a=stats
@@ -1496,6 +1503,7 @@ _zapat
 .-1
 .,
 ….
+…mumbai
 ..a
 .()
 .[]
@@ -3545,6 +3553,24 @@ _zapat
 /maillot-
 /maillot.
 /maillot/
+/mainframe.asp?go
+/mainframe.asp?http
+/mainframe.asp?link
+/mainframe.asp?q
+/mainframe.asp?sa
+/mainframe.asp?url
+/mainframe.jsp?go
+/mainframe.jsp?http
+/mainframe.jsp?link
+/mainframe.jsp?q
+/mainframe.jsp?sa
+/mainframe.jsp?url
+/mainframe.php?go
+/mainframe.php?http
+/mainframe.php?link
+/mainframe.php?q
+/mainframe.php?sa
+/mainframe.php?url
 /malware-
 /malware.
 /malware/
@@ -3666,9 +3692,6 @@ _zapat
 /ok9.
 /om-oss/
 /onip.it
-/online-
-/online.
-/online/
 /ooindex.
 /open.
 /orderpage
@@ -4210,6 +4233,7 @@ _zapat
 /xe/
 /xml/
 /xmlrpc/
+/xtl.jp
 /xurl.es
 /xxs.yt
 /ya.
@@ -5977,6 +6001,7 @@ affiliate blog
 affiliate bonus
 affiliate click
 affiliate commission
+affiliate funnel
 affiliate link
 affiliate ppc
 affiliate review
@@ -5984,12 +6009,14 @@ affiliate-blog
 affiliate-bonus
 affiliate-click
 affiliate-commission
+affiliate-funnel
 affiliate-link
 affiliate-ppc
 affiliate-review
 affiliateblog
 affiliatebonus
 affiliateclick
+affiliatefunnel
 affiliatelink
 affiliateppc
 affiliatereview
@@ -6473,7 +6500,9 @@ angleina jolie
 angleina-jolie
 anh lam bai
 anh làm bài
+anh online
 anh-lam-bai
+anh-online
 anilinovyye kraski
 anilinovyye-kraski
 animal porn
@@ -6527,9 +6556,11 @@ answered my problem
 answered the problem
 answered this problem
 answertraff
+anti anxious
 anti getting
 anti psori
 anti-aging
+anti-anxious
 anti-getting
 anti-psori
 antiage
@@ -6544,6 +6575,8 @@ anus live
 anus online
 anus-live
 anus-online
+anxiousness comp
+anxiousness-comp
 any certain?
 any oof
 any plugin to protect
@@ -7024,8 +7057,11 @@ atricky
 attack attack
 attantion
 attention grabber
+attention message
+attention to this message
 attention wonderful
 attention-grabber
+attention-message
 attention-wonderful
 attorney seo
 attorney-seo
@@ -7033,6 +7069,8 @@ attraction market
 attraction-market
 attractive sex
 attractive-sex
+audience engagement
+audience-engagement
 audio song
 audio-song
 auf dem markt
@@ -7789,10 +7827,13 @@ beautifully vibrant result
 beautifully-vibrant-result
 beautifulwom
 beauty hospital
+beauty luxury
 beauty report
 beauty-hospital
+beauty-luxury
 beauty-report
 beautyhospital
+beautyluxury
 beautyreport
 bebek porn
 bebek-porn
@@ -9088,11 +9129,15 @@ boy fetish
 boy pantie
 boy panty
 boy-fetish
+boy-fuck
 boy-pantie
 boy-panty
 boyfetish
+boyfuck
 boypantie
 boypanty
+boys-fuck
+boysfuck
 bracelet manchette
 bracelet replic
 bracelet shop
@@ -10228,6 +10273,7 @@ casinos-today
 casinoscript
 casinosite
 casinoview
+casinox
 casolete plastic
 casolete-plastic
 casoleteplastic
@@ -12299,6 +12345,7 @@ cool article
 cool blog
 cool post
 cool share
+cool site which
 cool stuff to buy
 cool thx!
 cool-article
@@ -13339,6 +13386,14 @@ details necessities
 details though
 details-necessities
 details-though
+detective extrem
+detective privado
+detective-extrem
+detective-privado
+detectives extrem
+detectives privado
+detectives-extrem
+detectives-privado
 detektiv
 detik sport
 detik-sport
@@ -15961,6 +16016,7 @@ filestube
 film erotic
 film it would also
 film izle
+film makinesi
 film porn
 film semi
 film song download
@@ -15968,11 +16024,13 @@ film streaming complet
 film x
 film-erotic
 film-izle
+film-makinesi
 film-porn
 film-semi
 film-song-download
 film-streaming-complet
 film-x
+filmakinesi
 filmerotic
 filmizle
 filmporn
@@ -16430,6 +16488,7 @@ forexsign
 forexvalu
 forexwealth
 forfree
+forgetful particular
 forgucci
 forhandlere
 forinteract
@@ -16940,6 +16999,7 @@ fruta planta
 frutaplanta
 fsdfds
 fsdfsd
+fu*ck
 fuck buddy
 fuck cash
 fuck down
@@ -17072,8 +17132,10 @@ furlacandy
 furlahand
 furlaout
 furlasac
+furnishing establishment
 furnishing top
 furnishing-top
+furnishings establishment
 furnishings top
 furnishings-top
 furnishingsale
@@ -17608,6 +17670,7 @@ girl escort
 girl eskort
 girl fetish
 girl for the night
+girl fuck
 girl gaga
 girl get fuck
 girl jap
@@ -17624,6 +17687,7 @@ girl-eblog
 girl-escort
 girl-eskort
 girl-fetish
+girl-fuck
 girl-gaga
 girl-jap
 girl-jord
@@ -17641,6 +17705,7 @@ girleblog
 girlescort
 girleskort
 girlfetish
+girlfuck
 girlie spouse
 girlie-spouse
 girliespouse
@@ -17655,6 +17720,7 @@ girls blog
 girls eblog
 girls escort
 girls eskort
+girls fuck
 girls-beaut
 girls-blog
 girls-day-dress
@@ -17662,6 +17728,7 @@ girls-eblog
 girls-escort
 girls-eskort
 girls-for-dubai
+girls-fuck
 girls-in-dubai
 girls4escort
 girls4eskort
@@ -17672,6 +17739,7 @@ girlseblog
 girlsescort
 girlseskort
 girlsfordubai
+girlsfuck
 girlsindubai
 girlspouse
 git escort
@@ -18976,6 +19044,7 @@ have movies clip
 have remarked some
 have remarked these
 have remarked this
+have seern
 have thhe
 have understand
 have-understand
@@ -18984,6 +19053,8 @@ havegive
 havegone
 haven't review past
 haven’t review past
+havfe seen
+havfe seern
 havin so
 havingg
 havve a
@@ -19344,6 +19415,7 @@ hgher
 hghsup
 hhave to
 hhttp
+hi … thought
 hi dear
 hi hi
 hi it's good
@@ -19984,6 +20056,7 @@ i conceive you
 i dugg
 i eally
 i http
+i like your quality
 i needs
 i not to mention
 i porn
@@ -21167,6 +21240,7 @@ japan monster
 japan mont
 japan new
 japan online
+japan porn
 japan swarovsk
 japan-1
 japan-converse
@@ -21177,6 +21251,7 @@ japan-monster
 japan-mont
 japan-new
 japan-online
+japan-porn
 japan-swarovsk
 japanconverse
 japandrmarten
@@ -21184,22 +21259,26 @@ japanese converse
 japanese dr
 japanese marc
 japanese mont
+japanese porn
 japanese swarovsk
 japanese-converse
 japanese-dr
 japanese-marc
 japanese-mont
+japanese-porn
 japanese-swarovsk
 japaneseconverse
 japanesedrmarten
 japanesemarcjacobs
 japanesemontblanc
+japaneseporn
 japaneseswarovsk
 japanmarcjacobs
 japanmonster
 japanmontblanc
 japannew
 japanonline
+japanporn
 japanswarovsk
 japon kumon
 japon-kumon
@@ -22970,6 +23049,17 @@ lol-smurf
 lol. p.s.
 lol. ps
 lolita clip
+lolita girl
+lolita sex
+lolita vid
+lolita-clip
+lolita-girl
+lolita-sex
+lolita-vid
+lolitaclip
+lolitagirl
+lolitasex
+lolitavid
 london genuine
 london-genuine
 londongenuine
@@ -26714,6 +26804,7 @@ of activity life
 of asthma sign
 of awesome info
 of certainly
+of course this post
 of deemed
 of deficiency of
 of dollars each
@@ -26980,6 +27071,7 @@ online gefunden
 online gratis
 online gry
 online heel
+online hn
 online internet
 online journ
 online loan
@@ -27050,6 +27142,7 @@ online-gratis
 online-gry
 online-guide-of
 online-heel
+online-hn
 online-internet
 online-invest
 online-journ
@@ -29289,6 +29382,12 @@ poto-therapy
 pototherapy
 pound demise
 pounds demise
+pov porn
+pov sex
+pov-porn
+pov-sex
+povporn
+povsex
 powder bene
 powder review
 powder-bene
@@ -29928,6 +30027,7 @@ proxy free
 proxy-free
 proxyfree
 prozac-
+prue fair
 prywatne
 przeglosuje
 przepisane
@@ -30257,6 +30357,7 @@ quited in
 quitge like
 quotes saying
 quotes-saying
+quwlity
 qux
 qvc
 qᥙ
@@ -30404,6 +30505,7 @@ react consequent
 read a blog
 read everthing
 read it fully
+read it with pleasure
 read of your article
 read of your blog
 read of your content
@@ -30529,6 +30631,7 @@ recent seo
 recent-seo
 recentseo
 recephalexin
+reception of this email
 reciclable
 recipe michelin
 recipe paleo
@@ -31018,6 +31121,8 @@ resumeexpert
 resumes expert
 resumes-expert
 resumesexpert
+resurge review
+resurge-review
 retail-store
 retail-where
 retailstore
@@ -31686,6 +31791,9 @@ sáo trúc
 sáo-trúc
 saotruc
 sap-ui5
+saperne di piu qui
+saperne di più qui
+saperne-di-piu-qui
 sappige vrouw
 sappige-vrouw
 sapui5
@@ -32254,6 +32362,7 @@ sex mama
 sex mount
 sex movie
 sex mp
+sex naked
 sex papa
 sex pc
 sex porn
@@ -32307,6 +32416,7 @@ sex-mama
 sex-mount
 sex-movie
 sex-mp
+sex-naked
 sex-papa
 sex-pc
 sex-porn
@@ -32360,6 +32470,7 @@ sexmama
 sexmount
 sexmovie
 sexmp
+sexnaked
 sexo amador
 sexo brutal
 sexo mon
@@ -34694,6 +34805,7 @@ taionline
 tak tak tak
 takako ajasin
 takako-ajasin
+take a appear
 take a in the
 take an expense
 take angry
@@ -35015,6 +35127,7 @@ term-paper-service
 terminal for pharm
 terminal-for-pharm
 terminaly
+termination of your domain
 termopane
 termstrackback
 termtrackback
@@ -39917,6 +40030,7 @@ yourblog
 yourbudget
 yourcredit
 yourdick
+yourdomainboth
 yourdui
 youre better
 youre bettor
@@ -41302,6 +41416,7 @@ zyvox
 เว็บไหน
 สถานที่ จัดงานแต่งงาน
 สถานที่-จัดงานแต่งงาน
+สล็อต
 สูตรบาคาร่า
 เสื้อผ้าคนอ้วน
 เสื้อผ้าไซส์ใหญ่
@@ -41365,6 +41480,8 @@ zyvox
 アウトレット
 アディゼロ
 アディダス
+アナル 肛交
+アナル肛交
 アバクロ
 アメリカン エキスプレス
 アメリカン·エキスプレス
