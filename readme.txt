@@ -147,13 +147,14 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 3.2 - 28th November 2020 =
+= 3.2 - 16th December 2020 =
 * New: Iframe Privacy Shield. Prevents iframes from post content, from being loaded without user consent.
 * Fix: Don't force responsive video size on videos that have an aspect ratio.
 * Fix: Social share description so that social sharing works better on mobile.
 * Add: Heading anchors now include h5 & h6.
 * Add styles to footnotes to ensure scrolled links are readable and not hidden by the WP admin bar.
 * Change: Disable autolinking urls in Markdown blocks. Normal markdown links still work.
+* Fix: Correct spam blocking to make it use the custom block list properly.
 
 = 3.1 - 21st November 2020 =
 * Add support for search and 404 redirect filter.
