@@ -186,7 +186,10 @@ add_filter( 'toolbelt_contact_form_spam', 'toolbelt_spam_check' );
  */
 function toolbelt_spam_blocklist_check( $content ) {
 
-	$mod_keys = trim( get_option( 'blacklist_keys' ) );
+	$mod_keys = '';
+	$mod_keys .= trim( get_option( 'blacklist_keys' ) );
+	$mod_keys .= trim( get_option( 'disallowed_keys' ) );
+
 	if ( empty( $mod_keys ) ) {
 		return false;
 	}
@@ -214,7 +217,7 @@ function toolbelt_spam_blocklist_check( $content ) {
 		$word = preg_quote( $word, '#' );
 
 		$pattern = "#$word#i";
-		if ( preg_match( $pattern, $content ) ) {
+		if ( preg_match( $pattern, $comment_without_html ) ) {
 			return true;
 		}
 	}
@@ -264,4 +267,5 @@ function toolbelt_spam_blocklist( $blocklist ) {
 
 }
 
-add_filter( 'option_blocklist_keys', 'toolbelt_spam_blocklist' );
+add_filter( 'option_blacklist_keys', 'toolbelt_spam_blocklist' );
+add_filter( 'option_disallowed_keys', 'toolbelt_spam_blocklist' );
