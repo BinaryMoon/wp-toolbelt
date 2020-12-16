@@ -104,10 +104,10 @@ add_action( 'admin_footer', 'toolbelt_avatar_footer', 999999 );
 function toolbelt_avatar_email_hash( $id_or_email ) {
 
 	$email_hash = '';
-	$user       = false;
-	$email      = false;
+	$user = false;
+	$email = false;
 
-	if ( is_object( $id_or_email ) && isset( $id_or_email->comment_ID ) ) {
+	if ( $id_or_email instanceof WP_Comment ) {
 		$id_or_email = get_comment( $id_or_email );
 	}
 
