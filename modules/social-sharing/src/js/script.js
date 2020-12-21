@@ -26,9 +26,9 @@
 				url: permalink
 			};
 
-			console.log( props );
-
-			navigator.share( props );
+			try {
+				navigator.share( props );
+			} catch ( err ) { }
 		}
 	);
 

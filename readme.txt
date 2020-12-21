@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -52,6 +52,7 @@ Toolbelt has a lot of features. The complete list is below.
 * [Footnotes](https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes)
 * [Get Image](https://github.com/BinaryMoon/wp-toolbelt/wiki/Get-Image)
 * [Heading Anchors](https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor)
+* [Iframe Privacy Shield](https://github.com/BinaryMoon/wp-toolbelt/wiki/Iframe-Privacy-Shield)
 * [Infinite Scroll](https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll)
 * [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
 * [Layout Grid](https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid)
@@ -145,6 +146,18 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 3.2 - 16th December 2020 =
+* New: Iframe Privacy Shield. Prevents iframes from post content, from being loaded without user consent.
+* Fix: Don't force responsive video size on videos that have an aspect ratio.
+* Fix: Social share description so that social sharing works better on mobile.
+* Add: Heading anchors now include h5 & h6.
+* Add styles to footnotes to ensure scrolled links are readable and not hidden by the WP admin bar.
+* Change: Disable autolinking urls in Markdown blocks. Normal markdown links still work.
+* Fix: Correct spam blocking to make it use the custom block list properly.
+
+= 3.1 - 21st November 2020 =
+* Add support for search and 404 redirect filter.
 
 = 3.0 - 11th October 2020 =
 * New: Layout Grid block.

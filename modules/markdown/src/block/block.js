@@ -12,6 +12,41 @@
 		'wp-toolbelt'
 	);
 
+	/**
+	 * Setup a new renderer that does not autolink urls.
+	 */
+	var render = new marked.Renderer();
+	render.link = function( href, title, text ) {
+		console.log( this.options, href, title, text );
+
+		if ( this.options.sanitize ) {
+			try {
+				var prot = decodeURIComponent( unescape( href ) )
+					.replace( /[^\w:]/g, '' )
+					.toLowerCase();
+			} catch ( e ) {
+				return "";
+			}
+			if ( prot.indexOf( 'javascript:' ) === 0 || prot.indexOf( 'vbscript:' ) === 0 || prot.indexOf( 'data:' ) === 0 ) {
+				return "";
+			}
+		}
+
+		// Return the url without linking it if it's not got any properties.
+		if ( href === text && title == null ) {
+			return href;
+		}
+
+		// Put together the real url.
+		var out = '<a href="' + href + '"';
+		if ( title ) {
+			out += ' title="' + title + '"';
+		}
+		out += '>' + text + '</a>';
+		return out;
+
+	};
+
 	registerBlockType(
 		'toolbelt/markdown',
 		{
@@ -71,7 +106,7 @@
 
 				return (
 					<RawHTML className={className}>
-						{source.length ? marked( source ) : ''}
+						{source.length ? marked( source, { renderer: render } ) : ''}
 					</RawHTML>
 				);
 
@@ -116,7 +151,7 @@
 				if ( !isSelected && !isEmpty() ) {
 					return (
 						<RawHTML className={className}>
-							{source.length ? marked( source ) : ''}
+							{source.length ? marked( source, { renderer: render } ) : ''}
 						</RawHTML>
 					)
 				}

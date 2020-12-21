@@ -23,6 +23,8 @@ function toolbelt_404_response() {
 
 	if ( ! empty( $wp->request ) ) {
 
+		toolbelt_404_redirect( $wp->request );
+
 		$file_extension = strtolower( pathinfo( $wp->request, PATHINFO_EXTENSION ) );
 
 	}
@@ -66,3 +68,37 @@ function toolbelt_404_response() {
 }
 
 add_action( 'wp', 'toolbelt_404_response' );
+
+
+/**
+ * Check for file redirects.
+ *
+ * @param string $term The term to search for.
+ * @return void
+ */
+function toolbelt_404_redirect( $term = '' ) {
+
+	$term = trim( strtolower( $term ) );
+
+	if ( ! $term ) {
+		return;
+	}
+
+	$redirects = apply_filters( 'toolbelt_404_redirect', array() );
+
+	if ( ! empty( $redirects ) ) {
+
+		foreach ( $redirects as $r ) {
+
+			if ( $term === $r['term'] ) {
+
+				wp_safe_redirect( $r['url'] );
+				exit;
+
+			}
+
+		}
+
+	}
+
+}

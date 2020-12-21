@@ -39,6 +39,7 @@ To ensure the plugin is as privacy focused as possible it:
 * [Footnotes](https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes)
 * [Get Image](https://github.com/BinaryMoon/wp-toolbelt/wiki/Get-Image)
 * [Heading Anchors](https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor)
+* [Iframe Privacy Shield](https://github.com/BinaryMoon/wp-toolbelt/wiki/Iframe-Privacy-Shield)
 * [Infinite Scroll](https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll)
 * [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
 * [Layout Grid](https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid)

@@ -29,13 +29,12 @@ function toolbelt_heading_anchors( $content ) {
 	$doc = new DOMDocument();
 
 	/**
-	 * DOMDocument::loadHTML does not really support HTML5 so I am silencing the
-	 * errors it may generate based on content it doesn't understand.
+	 * Load the html into the DOMDocument object.
 	 *
-	 * Not ideal but there doesn't seem to be a nice way to work around this
-	 * beside using a different library, and I would rather not do that.
+	 * Uses libxml_use_internal_errors(true) to prevent HTML5 errors from being displayed.
 	 */
-	$dom_content = @$doc->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES' ) ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+	libxml_use_internal_errors( true );
+	$dom_content = $doc->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES' ) ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
 
 	if ( false === $dom_content ) {
 
@@ -47,6 +46,8 @@ function toolbelt_heading_anchors( $content ) {
 	$doc = toolbelt_heading_ids( $doc, 'h2' );
 	$doc = toolbelt_heading_ids( $doc, 'h3' );
 	$doc = toolbelt_heading_ids( $doc, 'h4' );
+	$doc = toolbelt_heading_ids( $doc, 'h5' );
+	$doc = toolbelt_heading_ids( $doc, 'h6' );
 
 	toolbelt_styles( 'heading-anchors' );
 

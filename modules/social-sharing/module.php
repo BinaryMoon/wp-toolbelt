@@ -182,8 +182,19 @@ add_action( 'wp_footer', 'toolbelt_social_scripts' );
  */
 function toolbelt_social_share_info( $content ) {
 
-	// Only display first 140 characters of excerpt.
-	$content = wp_strip_all_tags( $content );
+	/**
+	 * Strip whitespace and other html elements that should not be used.
+	 */
+	$content = trim( wp_strip_all_tags( $content ) );
+	// Remove new lines.
+	$content = str_replace( array( "\r", "\n" ), ' ', $content );
+	// Remove duplicate spaces.
+	$content = preg_replace( '!\s+!', ' ', $content );
+
+	if ( null === $content ) {
+		$content = '';
+	}
+	// Just the last 140 characters.
 	$content = substr( $content, 0, 140 );
 
 	// Restrict to whole words and add an ellipse.
