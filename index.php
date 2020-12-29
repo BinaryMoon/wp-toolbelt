@@ -206,6 +206,11 @@ function toolbelt_get_modules() {
 			'weight' => esc_html__( '0.8kb of inline CSS and 1.3kb of inline JS.', 'wp-toolbelt' ),
 			'supports' => array( 'css-properties' ),
 		),
+		'jetpack-dev-mode' => array(
+			'name' => esc_html__( 'Jetpack Dev Mode', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Use Jetpack Dev mode so that you do not have to connect to wordpress.com. This disables features that rely on wordpress.com but allows the rest.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Jetpack-Dev-Mode',
+		),
 		'layout-grid' => array(
 			'name' => esc_html__( 'Layout Grid', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display content in carefully curated columns.', 'wp-toolbelt' ),
