@@ -1399,6 +1399,7 @@ _zapat
 ,death note
 ,great job
 ,iq science
+,seo
 ､､
 ;; http
 ;&#x
@@ -4233,6 +4234,7 @@ _zapat
 /xe/
 /xml/
 /xmlrpc/
+/xor.tw
 /xtl.jp
 /xurl.es
 /xxs.yt
@@ -4262,6 +4264,7 @@ _zapat
 /zlatehory/
 /zo.ee
 /zozo.
+/zpr.io
 /zumba-
 /zumba.
 /zzb.bz
@@ -5222,17 +5225,6 @@ $sixty
 1337 seo
 1337-seo
 1337seo
-2018 longchamp
-2018 popular
-2018 prospect
-2018 seo
-2018-longchamp
-2018-popular
-2018-prospect
-2018-seo
-2018baby
-2018longchamp
-2018x.
 2019 longchamp
 2019 popular
 2019 prospect
@@ -5255,6 +5247,17 @@ $sixty
 2020baby
 2020longchamp
 2020x.
+2021 longchamp
+2021 popular
+2021 prospect
+2021 seo
+2021-longchamp
+2021-popular
+2021-prospect
+2021-seo
+2021baby
+2021longchamp
+2021x.
 10000$
 100000$
 1000000$
@@ -5436,14 +5439,21 @@ aall my
 aall-my
 aam happy
 aand also
+aand feel
 aand let
+aand that
 aand the
+aand this
 aand us
 aand we
 aand you
 aany better
+aare also
 aare feel
+aare king
+aare you
 aat least
+aat the
 aat this
 abalroar dentro
 abalroar-dentro
@@ -6281,6 +6291,7 @@ alphahoverboard
 alprazolam
 alsao you
 also am a blog
+also assistance
 also bbe
 also eable
 also make comment
@@ -7071,6 +7082,7 @@ attractive sex
 attractive-sex
 audience engagement
 audience-engagement
+audijence
 audio song
 audio-song
 auf dem markt
@@ -7856,6 +7868,7 @@ beegfriend
 beenpaid
 before long find
 before-purchas
+beggun
 beginner blog
 beginner-blog
 behavioral-interview-question
@@ -8016,6 +8029,7 @@ best-phone
 best-places-botox
 best-porn
 best-priced
+best-probiotic
 best-prostate
 best-sandal
 best-seller-bag
@@ -8078,6 +8092,7 @@ bestpayment
 bestphone
 bestpricebuy
 bestpricesbuy
+bestprobiotic
 bestsalesell
 bestsellerbag
 bestsellersbag
@@ -8637,6 +8652,7 @@ blogging ad
 blogging and site
 blogging glance
 blogging look
+blogging myself
 blogging service
 blogging user
 blogging viewer
@@ -10069,6 +10085,8 @@ cannabisgrow
 cannabisoil
 cannabisseed
 cant believe
+cap website
+cập website
 capabilities also
 capabilities-also
 capable of effortless
@@ -10230,6 +10248,7 @@ casino partic
 casino phish
 casino script
 casino site
+casino slot
 casino today
 casino view
 casino_
@@ -10250,6 +10269,7 @@ casino-partic
 casino-phish
 casino-script
 casino-site
+casino-slot
 casino-today
 casino-view
 casino-x
@@ -10272,6 +10292,7 @@ casinos-
 casinos-today
 casinoscript
 casinosite
+casinoslot
 casinoview
 casinox
 casolete plastic
@@ -11578,6 +11599,7 @@ click bank
 click buy now
 click comp
 click for more
+click fraud
 click here
 click now
 click on secure
@@ -11612,6 +11634,7 @@ click-bank
 click-buy-now
 click-comp
 click-for-more
+click-fraud
 click-here
 click-now
 click-on-secure
@@ -11626,6 +11649,7 @@ clickaffiliate
 clickbank
 clickcomp
 clickforu
+clickfraud
 clicking it
 clicking world
 clicking-world
@@ -12198,6 +12222,7 @@ compiltaion
 component blog
 component-blog
 component/blog
+composed subject material
 composing a article
 composing a blog
 composing a essay
@@ -13122,6 +13147,7 @@ daytona acier
 daytona-acier
 daytonaacier
 daytrad
+dazzling insight to
 dɑ
 ddaadd
 ddavp
@@ -13136,6 +13162,7 @@ de-contacto
 de-luxe
 de-site
 de-tivi
+dead composed subject
 deal benefit
 deal of problem
 deal this blog
@@ -13790,6 +13817,7 @@ doggy dan
 doggy-dan
 doggydan
 doing anything mistake
+doing good link
 doing so area
 dokumenta
 dokumento
@@ -14951,11 +14979,24 @@ essayswrite
 essaytyper
 essaywrite
 essential blog
+essential for girl
+essential for woman
+essential for women
 essential weblog
 essential webpage
 essential website
 essential-for-girl
+essential-for-woman
+essential-for-women
+essentials blog
+essentials for girl
+essentials for woman
+essentials for women
+essentials site
+essentials web
 essentials-for-girl
+essentials-for-woman
+essentials-for-women
 established blog
 established poker
 established-blog
@@ -16033,6 +16074,7 @@ film-x
 filmakinesi
 filmerotic
 filmizle
+filmmodu
 filmporn
 films enables
 films porn
@@ -16896,9 +16938,9 @@ fresh-weblog
 freshreview
 freshseo
 freshwaterpearl
-friday 2018
 friday 2019
 friday 2020
+friday 2021
 friday michael
 friday mlb
 friday moncler
@@ -16909,9 +16951,9 @@ friday nhl
 friday sale
 friday ugg
 friday watch
-friday-2018
 friday-2019
 friday-2020
+friday-2021
 friday-michael
 friday-mlb
 friday-moncler
@@ -16922,9 +16964,9 @@ friday-nhl
 friday-sale
 friday-ugg
 friday-watch
-friday2018
 friday2019
 friday2020
+friday2021
 fridaymlb
 fridaymoncler
 fridaynba
@@ -17464,15 +17506,15 @@ generatingmoney
 generatingprofit
 generation algorithm
 generation-algorithm
-generator 2018
 generator 2019
 generator 2020
-generator-2018
+generator 2021
 generator-2019
 generator-2020
-generator2018
+generator-2021
 generator2019
 generator2020
+generator2021
 generatorpro
 generic albendazole
 generic albenza
@@ -18748,9 +18790,9 @@ haarige-beichte
 habitof
 hack $
 hack 123
-hack 2018
 hack 2019
 hack 2020
+hack 2021
 hack android
 hack apk
 hack blog
@@ -18788,9 +18830,9 @@ hack unlimit
 hack web
 hack xyz
 hack-123
-hack-2018
 hack-2019
 hack-2020
+hack-2021
 hack-android
 hack-apk
 hack-blog
@@ -18837,9 +18879,9 @@ hack-zip
 hack.blog
 hack.web
 hack123
-hack2018
 hack2019
 hack2020
+hack2021
 hackandroid
 hackapk
 hackasphalt
@@ -19090,15 +19132,15 @@ hdwallss
 hdwallst
 heading out throughout
 headphone power cord
-headset 2018
 headset 2019
 headset 2020
-headset-2018
+headset 2021
 headset-2019
 headset-2020
-headset2018
+headset-2021
 headset2019
 headset2020
+headset2021
 healing-article
 healingindu
 health advis
@@ -19159,6 +19201,7 @@ heilhitler
 hellllo
 helllo
 hello admin
+hello bonus
 hello colleague
 hello dear
 hello dress
@@ -19189,6 +19232,7 @@ hello world please
 hello world you
 hello_world
 hello-admin
+hello-bonus
 hello-dress
 hello-people
 hello-please
@@ -19208,10 +19252,14 @@ hello, please suggest
 hello!my
 hello.this
 helloadmin
+hellobonus
 hellodress
 hellosex
 hellothat
 hellothis
+helo bonus
+helo-bonus
+helobonus
 help allow you
 help cry
 help essay
@@ -20228,9 +20276,9 @@ import game off
 import games off
 important be know
 important infos
-important-in-2018
 important-in-2019
 important-in-2020
+important-in-2021
 important-infos
 impregnacji
 impressive article
@@ -21143,39 +21191,39 @@ jacken-west
 jackenonline
 jackenwest
 jackeonline
-jacket 2018
 jacket 2019
 jacket 2020
+jacket 2021
 jacket canad
 jacket jap
 jacket jp
 jacket out
 jacket sale
 jacket sunglass
-jacket-2018
 jacket-2019
 jacket-2020
+jacket-2021
 jacket-canad
 jacket-jap
 jacket-jp
 jacket-out
 jacket-sale
 jacket-sunglass
-jacket2018
 jacket2019
 jacket2020
+jacket2021
 jacketcanad
 jacketout
-jackets 2018
 jackets 2019
 jackets 2020
+jackets 2021
 jackets jap
 jackets jp
 jackets out
 jackets sale
-jackets-2018
 jackets-2019
 jackets-2020
+jackets-2021
 jackets-for-kids
 jackets-for-men
 jackets-for-wom
@@ -21183,9 +21231,9 @@ jackets-jap
 jackets-jp
 jackets-out
 jackets-sale
-jackets2018
 jackets2019
 jackets2020
+jackets2021
 jacketsale
 jacketsforkids
 jacketsformen
@@ -22487,9 +22535,9 @@ leadsclub
 leagle porn
 leagle-porn
 leaked1
-leaks-2018
 leaks-2019
 leaks-2020
+leaks-2021
 learn about keto
 learn face
 learn help
@@ -22569,17 +22617,17 @@ legit graph
 legit pharm
 legit script
 legit way
-legit-2018
 legit-2019
 legit-2020
+legit-2021
 legit-drug
 legit-graph
 legit-pharm
 legit-script
 legit-way
-legit2018
 legit2019
 legit2020
+legit2021
 legitdrug
 legitgraph
 legitimate drug
@@ -22614,6 +22662,7 @@ lesbian porn
 lesbian school
 lesbian sex
 lesbian teen
+lesbian tube
 lesbian_
 lesbian-bdsm
 lesbian-fuck
@@ -22622,6 +22671,7 @@ lesbian-porn
 lesbian-school
 lesbian-sex
 lesbian-teen
+lesbian-tube
 lesbianbdsm
 lesbianfuck
 lesbianmilf
@@ -22630,6 +22680,7 @@ lesbians_
 lesbianschool
 lesbiansex
 lesbianteen
+lesbiantube
 lesbo bdsm
 lesbo fuck
 lesbo milf
@@ -23070,9 +23121,9 @@ long penis
 long-lasting-duration
 long-penis
 longafter
-longchamp 2018
 longchamp 2019
 longchamp 2020
+longchamp 2021
 longchamp aus
 longchamp bag
 longchamp doctor
@@ -23095,9 +23146,9 @@ longchamp tourne
 longchamp uk
 longchamp yama
 longchamp_
-longchamp-2018
 longchamp-2019
 longchamp-2020
+longchamp-2021
 longchamp-aus
 longchamp-doctor
 longchamp-fabric
@@ -23123,9 +23174,9 @@ longchamp.cfm
 longchamp.htm
 longchamp.jsp
 longchamp.php
-longchamp2018
 longchamp2019
 longchamp2020
+longchamp2021
 longchampaus
 longchampbag
 longchampdoctor
@@ -23860,6 +23911,8 @@ manteau karen
 manteau-karen
 manteaukaren
 many-utilizes
+manyy
+maqnage
 maquiagem para
 maquiagem profes
 maquiagem profis
@@ -24327,6 +24380,8 @@ mcqueen-silk
 mcqueenclub
 mcqueendress
 mcqueensilk
+me aand
+me aare
 me also comment
 me greatly
 me haha
@@ -24617,17 +24672,17 @@ mercantilism
 mercati di
 mercati-di
 mercenary.co
-mercurial 2018
 mercurial 2019
 mercurial 2020
+mercurial 2021
 mercurial vapo
-mercurial-2018
 mercurial-2019
 mercurial-2020
+mercurial-2021
 mercurial-vapo
-mercurial2018
 mercurial2019
 mercurial2020
+mercurial2021
 mercurialvapo
 merely extremely
 merely wanna
@@ -24980,9 +25035,9 @@ moncle sito
 moncle-site
 moncle-sito
 monclear
-moncler 2018
 moncler 2019
 moncler 2020
+moncler 2021
 moncler amster
 moncler andorra
 moncler barata
@@ -25037,9 +25092,9 @@ moncler vos
 moncler weste
 moncler westen
 moncler--
-moncler-2018
 moncler-2019
 moncler-2020
+moncler-2021
 moncler-amster
 moncler-andorra
 moncler-barata
@@ -25100,9 +25155,9 @@ moncler.htm
 moncler.jsp
 moncler.php
 moncler`
-moncler2018
 moncler2019
 moncler2020
+moncler2021
 moncleramster
 monclerandorra
 monclerbarata
@@ -26142,9 +26197,9 @@ newsletter-service
 newss.
 newvibram
 newwebsite
-newyear2018
 newyear2019
 newyear2020
+newyear2021
 nexopia
 next articles
 next post thank
@@ -26823,6 +26878,7 @@ of oof
 of or more product
 of rated film
 of several website
+of slme
 of tgese
 of the casino
 of the medical doctor
@@ -26835,6 +26891,7 @@ of tthis
 of web site
 of weblog
 of website
+of wriers
 of you develop
 of-certainly
 of-deemed
@@ -26847,6 +26904,7 @@ of-the-casino
 of-you-develop
 ofargument
 ofcourse
+off blog
 off topic but
 offer a great service
 offer out
@@ -27396,6 +27454,12 @@ our-blogroll
 our-link
 our-shapewear
 ourlink
+out about this blog
+out about this page
+out about this paragraph
+out about this site
+out about this topic
+out about this web
 out assim
 out my blog
 out seems to be
@@ -27656,6 +27720,7 @@ page is invaluable
 page is priceless
 page is truly
 page link
+page of search engine
 page on facebook
 page on instagram
 page on snapchat
@@ -27686,6 +27751,7 @@ page/view
 pageed
 pageeed
 pagelink
+pages of search engine
 pages phone
 pages scrape
 pages-phone
@@ -28533,12 +28599,12 @@ phpbb2
 phpinfo
 phpoakley
 phttp
-phuc 2018
-phục 2018
 phuc 2019
 phục 2019
 phuc 2020
 phục 2020
+phuc 2021
+phục 2021
 phục áo phông
 phuc ao thun
 phục áo thun
@@ -28546,17 +28612,17 @@ phuc bon mua
 phục bon mua
 phuc hot
 phuc trend
-phuc-2018
 phuc-2019
 phuc-2020
+phuc-2021
 phuc-ao-phong
 phuc-ao-thun
 phuc-bon-mua
 phuc-hot
 phuc-trend
-phuc2018
 phuc2019
 phuc2020
+phuc2021
 phucbonmua
 phuchot
 phuctrend
@@ -29805,9 +29871,9 @@ produtos natura
 produtos-natura
 profesjonal
 professianal
-professional 2018
 professional 2019
 professional 2020
+professional 2021
 professional blog
 professional cosmet
 professional essay
@@ -29815,18 +29881,18 @@ professional hypno
 professional poker
 professional top quality
 professional ugg
-professional-2018
 professional-2019
 professional-2020
+professional-2021
 professional-blog
 professional-cosmet
 professional-essay
 professional-hypno
 professional-poker
 professional-ugg
-professional2018
 professional2019
 professional2020
+professional2021
 professionalpoker
 professionals.co
 professionalugg
@@ -30530,6 +30596,10 @@ read-smaller
 readers-base
 readers' base
 readers’ base
+reading a blog
+reading a post
+reading a site
+reading a web
 reading poker
 reading taste
 reading this article
@@ -30550,21 +30620,27 @@ reading-taste
 ready and happy
 readyto
 reaing this
+real casino
 real excellent info
 real fantastic info
 real interesting info
+real lesbian
 real marvellous info
 real marvelous info
 real mastery
+real-casino
 real-estate-web
 real-estate.web
+real-lesbian
 real-mastery
+realcasino
 realestate.co
 realestate.web
 realestate.wordpress
 reality operate
 reality-operate
 realize not drop
+reallesbian
 reallky
 really a commonly
 really easy along
@@ -30739,8 +30815,11 @@ reebokital
 reebokscarpe
 reebokzig
 reegzniocd
+reel casino
+reel-casino
 reel-game
 reel-king-slot
+reelcasino
 reelgame
 reeview
 refer-open
@@ -31149,6 +31228,7 @@ revia med
 revia-med
 review best
 review bonus
+review discount
 review my blog
 review my page
 review my sire
@@ -31161,6 +31241,7 @@ review website
 review you tube
 review-best
 review-bonus
+review-discount
 review-on
 review-sale
 review-site
@@ -31177,6 +31258,7 @@ review.jsp
 review.php
 reviewbest
 reviewbonus
+reviewdiscount
 reviewon
 reviews best
 reviews online
@@ -31461,6 +31543,7 @@ rusztowania
 ruwordpress
 rx-pharm
 rxpharm
+rг
 rе
 rі
 rу
@@ -31818,7 +31901,12 @@ saved as a favorite
 saved as a favourite
 savor a movie
 sawfwaf
+say about this article
+say about this blog
+say about this page
 say about this paragraph
+say about this site
+say about this web
 say this blog
 say this page
 say this site
@@ -31827,7 +31915,6 @@ say your blog
 say your page
 say your site
 say your web
-say-about-this-paragraph
 sayt vizitk
 sayt-vizitk
 sɑ
@@ -32101,6 +32188,9 @@ sensual-intercourse
 sensual-massage
 sentence word
 sentence-word
+sential marketing
+sential-marketing
+sentialmarketing
 sentient-health
 sentienthealth
 senuke vps
@@ -32238,20 +32328,20 @@ serenity-online
 serenityfull
 serial numberul
 serial-numberul
-serie tv 2018
 serie tv 2019
 serie tv 2020
-serie-tv-2018
+serie tv 2021
 serie-tv-2019
 serie-tv-2020
+serie-tv-2021
 series erotic
-series tv 2018
 series tv 2019
 series tv 2020
+series tv 2021
 series-erotic
-series-tv-2018
 series-tv-2019
 series-tv-2020
+series-tv-2021
 serieserotic
 seriestv
 serious ad invest
@@ -32275,20 +32365,20 @@ serumbuy
 servantappear
 served bitch
 served-bitch
-server 2018
 server 2019
 server 2020
+server 2021
 server coaching
 server download
-server-2018
 server-2019
 server-2020
+server-2021
 server-coaching
 server-download
 server.download
-server2018
 server2019
 server2020
+server2021
 service now!
 service pencil
 service-ecommerce
@@ -32676,6 +32766,13 @@ sharing with men
 sharing with wom
 sharing-site
 sharing-your-home
+sharing, great article
+sharing, great blog
+sharing, great page
+sharing, great paragraph
+sharing, great site
+sharing, great web
+sharing, great writing
 sharingsite
 sharply-wrong
 shate thou
@@ -32824,9 +32921,9 @@ shoemizuno
 shoeonline
 shoeout
 shoepromo
-shoes 2018
 shoes 2019
 shoes 2020
+shoes 2021
 shoes america
 shoes announce
 shoes dior
@@ -32843,9 +32940,9 @@ shoes uk
 shoes web store
 shoes woman
 shoes women
-shoes-2018
 shoes-2019
 shoes-2020
+shoes-2021
 shoes-america
 shoes-cheap
 shoes-cloth
@@ -32868,9 +32965,9 @@ shoes.asp
 shoes.mobi
 shoes.name
 shoes+
-shoes2018
 shoes2019
 shoes2020
+shoes2021
 shoesale
 shoesamerica
 shoescloth
@@ -33368,6 +33465,7 @@ slipperkhaki
 slippers khaki
 slippers-khaki
 slipperskhaki
+slme genuine
 slongchamp
 slot machine
 slot-machine
@@ -33753,17 +33851,21 @@ spam issue
 spam link
 spam remark
 spam respon
+spam seek
 spam-issue
 spam-link
 spam-phone
 spam-remark
 spam-respon
+spam-seek
 spamlink
 spammer link
 spammer spam
 spammer-link
 spammer-spam
 spammerlink
+spammy seek
+spammy-seek
 spamphone
 spamrespon
 sparkle ugg
@@ -34508,6 +34610,7 @@ superb information
 superb page
 superb site
 superb subject matter
+superb thought
 superb web
 superb-blog
 superb-data
@@ -35479,6 +35582,7 @@ thingway
 thinking on many item
 thinking playing
 thinking-playing
+this article certain
 this article could
 this article fully
 this article together
@@ -35490,6 +35594,7 @@ this best page
 this best site
 this blog before
 this blog carr
+this blog certain
 this blog defin
 this blog give
 this blog is genuine
@@ -35525,11 +35630,13 @@ this internet site
 this landline
 this one subject
 this oout
+this page certain
 this page defin
 this page give
 this page is one
 this page really
 this page truly
+this paragraph certain
 this paragraph truly
 this posst
 this post give
@@ -35557,6 +35664,7 @@ this waas
 this web defin
 this web page
 this web site
+this weblog certain
 this weblog defin
 this weblog give
 this weblog is nice
@@ -35869,9 +35977,9 @@ tipo más habit
 tipo-mas-habit
 tips blog
 tips daily
-tips for 2018
 tips for 2019
 tips for 2020
+tips for 2021
 tips for a success
 tips for success
 tips on interest
@@ -37255,12 +37363,14 @@ valuable-useful
 valuable-web
 valuavle
 valuble
+value are king
 value blog
 value comment
 value page
 value post
 value server
 value site
+value tto
 value web
 value-blog
 value-comment
@@ -38282,6 +38392,8 @@ web ddress
 web design benefit
 web diaspora
 web dispora
+web dl
+web download
 web explore
 web farm
 web gives pleasant
@@ -38340,6 +38452,8 @@ web-content
 web-contract
 web-diaspora
 web-dispora
+web-dl
+web-download
 web-explore
 web-farm
 web-host
@@ -38387,6 +38501,8 @@ webcamchat
 webcamsite
 webcontent
 webdesign.co
+webdl
+webdownload
 webexplore
 webfarm
 webhostapp
@@ -39913,6 +40029,8 @@ your new invaluable
 your new stuff
 your next blog
 your next post
+your one stop shop
+your one-stop shop
 your online business
 your online degree
 your own stuffs
@@ -39999,6 +40117,7 @@ your-new-important
 your-new-stuff-regular
 your-next-blog
 your-next-post
+your-one-stop-shop
 your-online-degree
 your-penis
 your-personal
@@ -40554,6 +40673,7 @@ zyvox
 гa
 гe
 гo
+гr
 гy
 гадание online
 гадание-online
@@ -41288,6 +41408,14 @@ zyvox
 ոn
 ոo
 սa
+սc
+սh
+սl
+սm
+սn
+սr
+սs
+սt
 օd
 օf
 օm
@@ -41322,6 +41450,7 @@ zyvox
 ال جى
 الأندرويد
 الاستثمار
+التسويق الإلكتروني
 الديتوكس
 السياحة العلاجي
 العقاري
@@ -41345,8 +41474,12 @@ zyvox
 دايت
 دستگاه حضور
 دورات تدريب
+زواج المسيار
+زواج سعودية
+زواج,مسيار
 ساک
 سوپر
+سيو
 شبكه سنارة
 شبكه سناره
 شرط بندی
@@ -41354,6 +41487,7 @@ zyvox
 شركة نقل
 شوف سبور
 طارد الحمام
+فروشگاه کاکتوس
 فقدان الوزن
 فقدان-الوزن
 قم نجار
@@ -41371,10 +41505,12 @@ zyvox
 لرش المبيدات
 لمكافحه الحشر ات
 لمكافحه الحشرات
+محركات البحث
 مدونة
 مدونه سنارة
 مدونه سناره
 مراكز التدريب
+مسيار,زواج
 مشاهدة الافلام
 معاهد تدريب
 مقاله و بلاگ
