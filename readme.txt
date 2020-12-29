@@ -54,6 +54,7 @@ Toolbelt has a lot of features. The complete list is below.
 * [Heading Anchors](https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor)
 * [Iframe Privacy Shield](https://github.com/BinaryMoon/wp-toolbelt/wiki/Iframe-Privacy-Shield)
 * [Infinite Scroll](https://github.com/BinaryMoon/wp-toolbelt/wiki/Infinite-Scroll)
+* [Jetpack Dev Mode](https://github.com/BinaryMoon/wp-toolbelt/wiki/Jetpack-Dev-Mode)
 * [Lazy Loading](https://github.com/BinaryMoon/wp-toolbelt/wiki/Lazy-Loading)
 * [Layout Grid](https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid)
 * [Markdown](https://github.com/BinaryMoon/wp-toolbelt/wiki/Markdown)
@@ -146,6 +147,10 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 3.2.1 - 29th December 2020 =
+* Add 'Jetpack Dev Mode' module.
+* More spam blocker improvements.
 
 = 3.2 - 16th December 2020 =
 * New: Iframe Privacy Shield. Prevents iframes from post content, from being loaded without user consent.
