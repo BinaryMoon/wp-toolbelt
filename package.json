@@ -23,7 +23,7 @@
 		"@babel/plugin-proposal-object-rest-spread": "^7.12.1",
 		"@babel/preset-env": "^7.12.11",
 		"@babel/register": "^7.12.10",
-		"@wordpress/babel-preset-default": "^4.19.0",
+		"@wordpress/babel-preset-default": "^4.20.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.0",
 		"gulp-babel": "^8.0.0",
