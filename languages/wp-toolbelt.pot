@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Toolbelt
+# Copyright (C) 2021 Toolbelt
 # This file is distributed under the same license as the Toolbelt package.
 msgid ""
 msgstr ""
@@ -233,8 +233,8 @@ msgstr ""
 msgid "Iframe Privacy Shield"
 msgstr ""
 
-#: index.php:249, index.php:255
-msgid "A portfolio custom post type for your projects."
+#: index.php:249
+msgid "Replace iframe embeds (eg Youtube) with a button that loads the iframe. This improves privacy and speeds up your site."
 msgstr ""
 
 #: index.php:251
@@ -243,6 +243,10 @@ msgstr ""
 
 #: index.php:254, modules/projects/module.php:39, modules/sitemap/module.php:149
 msgid "Portfolio"
+msgstr ""
+
+#: index.php:255
+msgid "A portfolio custom post type for your projects."
 msgstr ""
 
 #: index.php:260
