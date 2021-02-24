@@ -148,6 +148,16 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
+= 3.2.4 - 24th February 2021 =
+* Set min height for iframe privacy shield to ensure it displays nicely.
+
+= 3.2.3 - 27th January 2021 =
+* Ensure posts with empty content don't cause errors with the header anchors module.
+
+= 3.2.2 - 7th January 2021 =
+* Correct Privacy Shield description.
+* Improve backwards compatability for spam blocklist changes.
+
 = 3.2.1 - 29th December 2020 =
 * Add 'Jetpack Dev Mode' module.
 * More spam blocker improvements.
