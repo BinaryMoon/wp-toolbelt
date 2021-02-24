@@ -7,13 +7,19 @@ button.toolbelt-embed-shield {
 
 	.wp-block-embed & {
 
+		height: 100%;
+		min-height: 10rem;
+		width: 100%;
+
+	}
+
+	.wp-block-embed.wp-has-aspect-ratio & {
+
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		height: 100%;
-		width: 100%;
 
 	}
 
@@ -28,6 +34,12 @@ button.toolbelt-embed-shield {
 
 		display: block;
 		pointer-events: none;
+
+	}
+
+	strong {
+
+		font-size: 1.5rem;
 
 	}
 
