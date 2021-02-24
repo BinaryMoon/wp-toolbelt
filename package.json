@@ -1,6 +1,6 @@
 {
 	"name": "toolbelt",
-	"version": "2.5.0",
+	"version": "3.2.4",
 	"description": "Stuff for WordPress",
 	"main": "index.php",
 	"repository": {
@@ -42,6 +42,5 @@
 		"gulp-zip": "^5.0.2",
 		"jshint": "^2.12.0",
 		"lodash.template": "^4.5.0"
-	},
-	"dependencies": {}
+	}
 }
