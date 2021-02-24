@@ -246,7 +246,7 @@ function toolbelt_get_modules() {
 		),
 		'private-embeds' => array(
 			'name' => esc_html__( 'Iframe Privacy Shield', 'wp-toolbelt' ),
-			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Replace iframe embeds (eg Youtube) with a button that loads the iframe. This improves privacy and speeds up your site.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Iframe-Privacy-Shield',
 			'weight' => esc_html__( '0.3kb of inline JS and 0.4kb of inline CSS,', 'wp-toolbelt' ),
 		),
