@@ -1643,6 +1643,7 @@ _zapat
 .bloguetrotter.
 .bluray-
 .bluray.
+.bluxeblog.
 .bodhidharma-
 .bodhidharma.
 .bodhidharma/
@@ -2823,6 +2824,7 @@ _zapat
 /bitcoin.
 /bitcoin/
 /bitly.co
+/biturl.top
 /biz-
 /biz.
 /biz/
@@ -4272,6 +4274,7 @@ _zapat
 /wirisi-
 /wirisi.
 /wirisi/
+/wmj.su
 /wntdco.mx
 /wo.
 /woolrich-
@@ -4570,6 +4573,7 @@ _zapat
 |year
 |yr
 |基測
+¦¦¦
 ¤¤
 ＄００
 ＄１０
@@ -4691,6 +4695,7 @@ $sixty
 1hand
 1health
 1hommes
+1mil email
 1minut
 1ping
 1purse
@@ -4750,6 +4755,7 @@ $sixty
 2k20 vc
 2k20-vc
 2k20vc
+2mil email
 2minut
 2ping
 2purse
@@ -4784,6 +4790,7 @@ $sixty
 3hand
 3health
 3j3j3
+3mil email
 3minut
 3ping
 3purse
@@ -4851,6 +4858,7 @@ $sixty
 4k polecacie
 4k-polecacie
 4less
+4mil email
 4minut
 4plus
 4purse
@@ -4887,6 +4895,7 @@ $sixty
 5generic
 5hand
 5health
+5mil email
 5minut
 5purse
 5test
@@ -5843,6 +5852,7 @@ adidaswing
 adidaz
 adipex
 adjust handbag
+adjust large tone
 adjust-handbag
 adlive
 admin of this site
@@ -6549,6 +6559,7 @@ andjourn
 andmerciful
 androbet
 android crack
+android dapps
 android hack
 android ios
 android spoof
@@ -6744,6 +6755,12 @@ apple-unlock
 apple-wedding
 appleunlock
 applewedding
+application , develop
+application, develop app
+application, developing app
+applications , develop
+applications, develop app
+applications, developing app
 apply visa uk
 appnana cydia
 appnana-code
@@ -7320,6 +7337,7 @@ avvessorie
 avvessory
 awakening hack
 awakening-hack
+away too do
 awersome
 awesome article
 awesome blog
@@ -7631,6 +7649,8 @@ ban barata
 ban barato
 ban handle
 ban händle
+ban hang don gian
+bán hàng đơn giản
 ban jack
 ban lage
 ban mirror
@@ -7647,6 +7667,7 @@ ban verspie
 ban wayfare
 ban-barata
 ban-barato
+ban-hang-don-gian
 ban-jack
 ban-mirror
 ban-occhiali
@@ -8171,6 +8192,7 @@ best-way-to
 best-web
 best-webmaster
 best-wordpress
+best,egy
 best.;
 best.:
 best4
@@ -8922,6 +8944,9 @@ boards sale
 boards-sale
 boardsale
 boardssale
+bobby maximus
+bobby-maximus
+bobbymaximus
 bobet link
 bobet-link
 bobetlink
@@ -9067,9 +9092,13 @@ bookmsrk
 boom-beach-hack
 boombeachhack
 boost lung work
-boost you
+boost our roi
+boost roi
+boost your roi
 boost-my-game
-boost-you
+boost-our-roi
+boost-roi
+boost-your-roi
 boosting lung work
 boostr
 boostyou
@@ -9439,6 +9468,7 @@ browse this blog
 browse this page
 browse this site
 browse this web
+browsing online more
 brrip
 brugte mulberry
 brugte-mulberry
@@ -9578,7 +9608,9 @@ bulk jewelry
 bulk-clock
 bulk-computer
 bulk-jewelry
+bulk-mail
 bulkjewelry
+bulkmail
 bulky for cumber
 bulky-for-cumber
 bulletproof merced
@@ -10786,7 +10818,12 @@ chanelreplique
 chanelsac
 chanelsale
 chanelspring
+change-counselling
+change-my-life
 change-your-life
+changecounselling
+changemylife
+changeyourlife
 channel obtain
 channel-operator
 channels obtain
@@ -11363,6 +11400,7 @@ checkwhocall
 cheeerd
 cheers a lot
 cheers alot
+cheers considerably
 cheesefruit
 chefk
 chemale movie
@@ -12506,6 +12544,9 @@ contactos mujeres
 contactos-chico
 contactos-mujeres
 contactus/contact
+content ,
+content !
+content .
 content content
 content download
 content material
@@ -13622,6 +13663,9 @@ desyrel
 detail though
 detail-though
 detail/www
+details ,
+details !
+details .
 details necessities
 details though
 details-necessities
@@ -14344,6 +14388,7 @@ drone-gun
 droneblast
 dronegun
 drop me a mail
+drop your premium
 drop,dehy
 drop.dehy
 dropshipping winning
@@ -14629,6 +14674,8 @@ effortlessly know it
 effotless
 egemtr
 egoodshop
+egy-best
+egybest
 egypt jers
 egypt-jers
 egyptjers
@@ -14732,12 +14779,14 @@ email advertis
 email advertiz
 email doa
 email extract
+email starter
 email vip
 email-academy
 email-advertis
 email-advertiz
 email-doa
 email-extract
+email-starter
 email-vip
 email.asp
 email.cfm
@@ -14747,8 +14796,10 @@ email.php
 email.tst
 emailacademy
 emails sometime
+emails starter
 emails vip
 emails-sometime
+emails-starter
 emails-vip
 emailsvip
 emailvip
@@ -15944,6 +15995,7 @@ fastidious answer
 fastidious art
 fastidious blog
 fastidious content
+fastidious conver
 fastidious data
 fastidious design
 fastidious dial
@@ -15970,6 +16022,7 @@ fastidious writ
 fastidious-answer
 fastidious-art
 fastidious-blog
+fastidious-conver
 fastidious-data
 fastidious-design
 fastidious-dial
@@ -15991,14 +16044,6 @@ fastidious-web
 fastidious-writ
 fastidious, my
 fastidious=
-fastidiousart
-fastidiousblog
-fastidiousdial
-fastidiouspage
-fastidiouspost
-fastidiousrepl
-fastidioussite
-fastidiousweb
 fastlink.run
 fastloan
 fastmoney
@@ -16055,7 +16100,6 @@ fave and share
 fave it
 fave the
 fave this
-fave this link
 fave to
 fave-it
 fave-the
@@ -16076,10 +16120,7 @@ favorable-single
 favorable-web
 favorite ear
 favorite just
-favorite this blog
-favorite this page
-favorite this site
-favorite this web
+favorite this
 favorite web
 favorite-ear
 favorite-just
@@ -16099,10 +16140,7 @@ favourable-single
 favourable-web
 favourite ear
 favourite just
-favourite this blog
-favourite this page
-favourite this site
-favourite this web
+favourite this
 favourite web
 favourite-ear
 favourite-just
@@ -16287,6 +16325,7 @@ ffor such
 ffor this
 fg xpress
 fg-xpress
+fgsfgs
 fgxpress
 fhttp
 fiasoni
@@ -17627,6 +17666,14 @@ game-money
 game-online
 game-torrent
 game-wiki
+game,arcad
+game,board
+game,driv
+game,fight
+game,puzzl
+game,shoot 
+game,sport
+game,strat
 gamebong
 gamecasino
 gamecopy
@@ -17652,6 +17699,14 @@ games reports
 games-casino
 games-especially-built
 games-reports
+games,arcad
+games,board
+games,driv
+games,fight
+games,puzzl
+games,shoot 
+games,sport
+games,strat
 games4king
 gamescasino
 gamesreports
@@ -18004,6 +18059,9 @@ giants-jers
 giants-shop
 giantsjers
 giantsshop
+giao dien don gian
+giao diện đơn giản
+giao-dien-don-gian
 gift click
 gift ideas list
 gift singapore
@@ -18420,6 +18478,7 @@ good site:
 good site!
 good site.
 good template
+good thorough idea
 good web:
 good web!
 good web.
@@ -18632,6 +18691,10 @@ got a webpage
 got a website
 got idea
 got much clear
+got this blog
+got this page
+got this site
+got this web
 got typed the
 got-idea
 gotcu ibne
@@ -18639,6 +18702,10 @@ götcü ibne
 gotcu-ibne
 gotowkowa
 gotowkowe
+gotta comment
+gotta fave
+gotta favorite
+gotta favourite
 gotten the therap
 gotten very good thing
 gowatchs
@@ -19250,10 +19317,12 @@ hai thiet
 hai thiệt
 hai-thiet
 hair complexion
+hair removal product
 hair transplant
 hair-again
 hair-grow
 hair-remov
+hair-removal-product
 hair-straight
 hair-transplant
 hairagain
@@ -19457,7 +19526,9 @@ hd-fuck
 hd-muscle
 hd-porn
 hd-sex
+hd-zfilm
 hd.hd
+hd.zfilm
 hderotic
 hdfilmc
 hdfuck
@@ -19470,6 +19541,7 @@ hdwallpaperst
 hdwallso
 hdwallss
 hdwallst
+hdzfilm
 heading out throughout
 headphone power cord
 headset 2019
@@ -20806,6 +20878,9 @@ infected-crash
 infinity-2
 infinity2
 influenza picture
+info ,
+info !
+info .
 info approximate
 info base
 info for my mission
@@ -20844,6 +20919,9 @@ informasjon.php
 informatica-libri
 informaticalibri
 informatik
+information ,
+information !
+information .
 information approximate
 information for my mission
 information is invaluable
@@ -20859,6 +20937,8 @@ informatique enligne
 informatique-enligne
 informative article
 informative blog
+informative content here
+informative content there
 informative looks great
 informative post
 informative site
@@ -21278,6 +21358,7 @@ investors.za
 invoice manker
 invoice-manker
 inzest
+ios dapps
 ios spoof
 ios-spoof
 ip.ideal
@@ -21626,6 +21707,12 @@ jacketssale
 jacketsunglass
 jacketswom
 jackewest
+jackpot bet
+jackpot bingo
+jackpot-bet
+jackpot-bingo
+jackpotbet
+jackpotbingo
 jackpotsa
 jacobs cartera
 jacobs geldb
@@ -22907,6 +22994,10 @@ lawyer-seo
 lawyer-sex
 lawyerfree
 layout look great
+layout of your blog
+layout of your page
+layout of your weblog
+layout of your website
 layout-look-great
 layout...?
 lɑ
@@ -23506,6 +23597,9 @@ lol-life
 lol-smurf
 lol. p.s.
 lol. ps
+loli girl
+loli-girl
+loligirl
 lolita clip
 lolita girl
 lolita sex
@@ -27462,6 +27556,8 @@ offizielle-bestatigt
 offizielle-web
 offizielleweb
 offiziellweb
+offline forum
+offline-forum
 ofhuman
 oficery
 oficialniy sayt
@@ -28868,6 +28964,7 @@ perfectionare makeup
 perfecționare makeup
 perfectionare-make-up
 perfectionare-makeup
+perfectly indited
 perfectly like
 perfectly written article
 perfectly written blog
@@ -28964,8 +29061,11 @@ pg/post
 pg/profil
 pg/view
 pgconcern
+phan mem quan
+phần mềm quản
 phan-mem
 phần-mềm
+phan-mem-quan
 pharm_
 pharm.
 pharma canad
@@ -29371,10 +29471,16 @@ poco-prezzo
 podarochnoy korobk
 podarochnoy-korobk
 pohudenie
+point ,
+point !
+point .
 point generat
 point-generat
 point|
 pointgenerat
+points ,
+points !
+points .
 points generat
 points in features also
 points-generat
@@ -29956,6 +30062,7 @@ powerball
 powerbank
 powerful scrape
 powerful-scrape
+powerfull-
 powerfulscrape
 powerlevel
 powfleul
@@ -30175,6 +30282,9 @@ presentation however
 presentation subsequent
 presentation-however
 presentation-subsequent
+presentations builder
+presentations-builder
+presentations.builder
 presented in your article
 presented in your blog
 presented in your post
@@ -30861,7 +30971,10 @@ quality.the
 qualuty
 quan lot nam
 quần lót nam
+quan ly ban hang
+quản lý bán hàng
 quan-lot-nam
+quan-ly-ban-hang
 quang cao
 quảng cáo
 quang-cao
@@ -32697,8 +32810,10 @@ sellnow
 sembol clan
 sembol-clan
 send earn
+send-bulk
 send-earn
 send.sohbet
+sendbulk
 sendflowers
 seni siteleri
 sense bravo
@@ -33778,7 +33893,10 @@ sistemas-bolsa
 sistemas-populare
 sistershit
 site -
+site ,
 site ::
+site !
+site .
 site (:
 site =)
 site amor
@@ -36098,6 +36216,7 @@ there-admin
 thereadmin
 therealest
 thereanta
+therefore blended
 therefore he/
 theresome
 thes good
@@ -36163,6 +36282,12 @@ thingway
 thinking on many item
 thinking playing
 thinking-playing
+this amazing article
+this amazing blog
+this amazing page
+this amazing post
+this amazing site
+this amazing web
 this article certain
 this article could
 this article fully
@@ -36324,6 +36449,8 @@ thornhillambassador
 thornhills ambassador
 thornhills-ambassador
 thornhillsambassador
+thorough idea here
+thorough ideas here
 thoroughgoing
 thos article
 those whoo
@@ -36538,6 +36665,7 @@ time only promo
 time video clip
 time-only-promo
 time-synchronisation.co
+timeforchange
 timeline cheat
 timeline hack
 timeline-cheat
@@ -36555,6 +36683,9 @@ tin-tuc-xe-hoi
 tinder gold free
 tinder-gold-free
 tingenieur
+tinh tien don gian
+tính tiền đơn giản
+tinh-tien-don-gian
 tinned baked
 tinned-baked
 tinnitus tin
@@ -36741,6 +36872,7 @@ tonic-scam
 tonicscam
 too big or too
 too business
+too do my
 too much real
 too small or too
 too thun
@@ -36751,6 +36883,7 @@ tooth tooth
 tooth-new
 toothnew
 top 10 best
+top 10 hair
 top advanture
 top article
 top available
@@ -38513,12 +38646,14 @@ vip dubai
 vip generat
 vip girl
 vip gyrl
+vip runescape
 vip девочк
 vip-box
 vip-dubai
 vip-generat
 vip-girl
 vip-league
+vip-runescape
 vip-девочк
 vip.co
 vipbox
@@ -38527,6 +38662,7 @@ vipgenerat
 vipgirl
 vipgyrl
 vipleague
+viprunescape
 viral adremus
 viral eas
 viral hit
@@ -38888,6 +39024,10 @@ wanelo.co
 wang bag
 wang-bag
 wangbag
+wanna comment
+wanna fave
+wanna favorite
+wanna favourite
 wanna say
 wanna state
 wanna tell
@@ -41065,6 +41205,9 @@ zero conhecim
 zero-calorie
 zero-conhecim
 zerocalorie
+zfilm-hd
+zfilm.hd
+zfilmhd
 zfymail
 zhavy
 žhavý
@@ -42113,9 +42256,13 @@ zyvox
 اخر اخبار
 ارائه ی تخصصی
 از وبلاگ
+ازواج حكاية
+ازواج,حكاية
 افراد ارزان
 افضل شركه
+افلام اونلاين
 اقل اسعار
+اكواد خصم
 ال جى
 الأندرويد
 الاستثمار
@@ -42128,8 +42275,13 @@ zyvox
 العقاري
 العلوم،ديالى
 القضيب
+اونلاين انمي
+اونلاين,انمي
+ايجي بست
 ايفون مجانية
 بازی انفجار
+بست افلام
+بست,افلام
 بهاء و کيفيت
 بهاء-و-کيفيت
 بهترین
@@ -42147,11 +42299,14 @@ zyvox
 جمال مكياج
 جمال, مكياج
 جمال,مكياج
+حبيبة كوميديا
+حبيبة,كوميديا
 حزينه حزينة
 حزينه, حزينة
 حزينه,حزينة
 خبر عن الرياضة
 خسارة الوزن
+خصم,كود
 خلاصه داستان - دانلود
 خلاصه داستان : دانلود
 خلاصه داستان-دانلود
@@ -42194,6 +42349,9 @@ zyvox
 كلية رقم
 كلية, رقم
 كلية,رقم
+كوبون
+كوبونات
+كود خصم
 كوفيد تمارين
 كوفيد, تمارين
 كوفيد,تمارين
@@ -42219,6 +42377,7 @@ zyvox
 مشاهدة الافلام
 معاهد تدريب
 مقاله و بلاگ
+منوعات حبيبة
 موقع سؤال
 موقع سنارة
 موقع سناره
