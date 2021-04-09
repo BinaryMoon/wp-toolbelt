@@ -243,9 +243,11 @@ function toolbelt_sitemap_portfolio() {
 		)
 	);
 
-	$html = '<ul>';
+	$html = '';
 
 	if ( $query->have_posts() ) {
+
+		$html = '<ul>';
 
 		while ( $query->have_posts() ) {
 

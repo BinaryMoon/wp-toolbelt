@@ -164,14 +164,14 @@ function toolbelt_avatar_email_hash( $id_or_email ) {
 /**
  * A Shortcode to display a specific users avatar.
  *
- * @param array $attrs The shortcode attributes.
+ * @param array<mixed> $attrs The shortcode attributes.
  * @return string
  */
 function toolbelt_avatar_shortcode( $attrs ) {
 
 	$attrs = shortcode_atts(
 		array(
-			'email'=>'',
+			'email' => '',
 		),
 		$attrs,
 		'avatar'
