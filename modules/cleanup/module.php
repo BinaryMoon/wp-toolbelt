@@ -158,7 +158,18 @@ add_filter(
 	}
 );
 
+/**
+ * Remove Jetpacks Just in Time messages.
+ */
 add_filter( 'jetpack_just_in_time_msgs', '__return_false' );
+
+/**
+ * Remove Jetpack's Feature Hints.
+ *
+ * @see https://jetpack.com/?p=59210
+ */
+add_filter( 'jetpack_psh_active', '__return_false' );
+
 
 // Remove noto editor font.
 add_action(
