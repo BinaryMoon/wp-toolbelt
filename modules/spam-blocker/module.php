@@ -169,8 +169,15 @@ function toolbelt_spam_check() {
 
 }
 
+// Add spam check support for...
+
+// Jetpack contact forms.
 add_filter( 'jetpack_contact_form_is_spam', 'toolbelt_spam_check' );
+
+// Gravity forms.
 add_filter( 'gform_entry_is_spam', 'toolbelt_spam_check' );
+
+// Toolbelt :).
 add_filter( 'toolbelt_contact_form_spam', 'toolbelt_spam_check' );
 
 
