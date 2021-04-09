@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -147,6 +147,9 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 3.2.5 - 9th April 2021 =
+* Add avatar shortcode `toolbelt-avatar` for displaying a users avatar on a post/ page.
 
 = 3.2.4 - 24th February 2021 =
 * Set min height for iframe privacy shield to ensure it displays nicely.
