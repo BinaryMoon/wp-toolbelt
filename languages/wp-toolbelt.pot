@@ -1142,15 +1142,15 @@ msgctxt "Email button label"
 msgid "Send this"
 msgstr ""
 
-#: modules/social-sharing/settings.php:27
+#: modules/social-sharing/settings.php:31
 msgid "Social Sharing"
 msgstr ""
 
-#: modules/social-sharing/settings.php:33
+#: modules/social-sharing/settings.php:37
 msgid "Buttons"
 msgstr ""
 
-#: modules/social-sharing/settings.php:69
+#: modules/social-sharing/settings.php:73
 msgid "Note: To hide all social buttons disable the module in the module settings."
 msgstr ""
 
