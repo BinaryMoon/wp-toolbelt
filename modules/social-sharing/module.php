@@ -331,6 +331,10 @@ function toolbelt_social_networks() {
 	// Get the plugin settings.
 	$settings = get_option( 'toolbelt_settings', array() );
 
+	if ( ! isset( $settings['social-sharing'] ) ) {
+		$settings['social-sharing'] = '';
+	}
+
 	// Turn the list of networks into an array.
 	$enabled_networks = explode( '|', $settings['social-sharing'] );
 
