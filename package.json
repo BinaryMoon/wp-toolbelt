@@ -1,7 +1,7 @@
 {
 	"name": "toolbelt",
-	"version": "3.2.4",
-	"description": "Stuff for WordPress",
+	"version": "3.2.6",
+	"description": "Useful Stuff for WordPress",
 	"main": "index.php",
 	"repository": {
 		"type": "git",

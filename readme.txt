@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -147,6 +147,9 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 3.2.6 - 13th April 2021 =
+* Fix possible undefined property error in social icons module.
 
 = 3.2.5 - 9th April 2021 =
 * Add avatar shortcode `toolbelt-avatar` for displaying a users avatar on a post/ page.
