@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 3.2.6
+ * Version: 3.2.7
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -182,6 +182,7 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Footnotes', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add footnotes to the bottom of the page.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes',
+			'supports' => array( 'css-properties' ),
 		),
 		'get-image' => array(
 			'name' => esc_html__( 'Fallback Featured Images', 'wp-toolbelt' ),
@@ -192,12 +193,14 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Gist Embed Block', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Easily embed Github Gists onto your site.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Gist',
+			'supports' => array( 'css-properties' ),
 		),
 		'heading-anchors' => array(
 			'name' => esc_html__( 'Heading Anchors', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Allow site visitors to link to individual sections of the page. Adds unique ids to each heading.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor',
 			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'infinite-scroll' => array(
 			'name' => esc_html__( 'Infinite Scroll', 'wp-toolbelt' ),
@@ -216,6 +219,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Display content in carefully curated columns.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid',
 			'weight' => esc_html__( '1.4kb of inline CSS plus 100bytes of CSS per layout used.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
@@ -243,12 +247,14 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Category summaries for magazine or newspaper style homepages.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Post-Category',
 			'weight' => esc_html__( '1kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'private-embeds' => array(
 			'name' => esc_html__( 'Iframe Privacy Shield', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Replace iframe embeds (eg Youtube) with a button that loads the iframe. This improves privacy and speeds up your site.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Iframe-Privacy-Shield',
 			'weight' => esc_html__( '0.3kb of inline JS and 0.4kb of inline CSS,', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
@@ -294,6 +300,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'An Accessible horizontal slider.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Slider',
 			'weight' => esc_html__( '1.8kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'social-menu' => array(
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
@@ -320,6 +327,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Rate movies, books, videos, difficulty, whatever.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Star-Ratings',
 			'weight' => esc_html__( '0.7kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'stats' => array(
 			'name' => esc_html__( 'Stats', 'wp-toolbelt' ),

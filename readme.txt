@@ -148,6 +148,9 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
+= 3.2.7 - 7th June 2021 =
+* Ensure CSS custom properties are loaded for all modules that need them.
+
 = 3.2.6 - 13th April 2021 =
 * Fix possible undefined property error in social icons module.
 
