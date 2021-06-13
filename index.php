@@ -173,11 +173,6 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Disable 404 pages for static files like images.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404',
 		),
-		'featured-attachment' => array(
-			'name' => esc_html__( 'Featured Attachment', 'wp-toolbelt' ),
-			'description' => esc_html__( 'If there is no featured image for a post then use the first image attachment instead.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment',
-		),
 		'footnotes' => array(
 			'name' => esc_html__( 'Footnotes', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add footnotes to the bottom of the page.', 'wp-toolbelt' ),
