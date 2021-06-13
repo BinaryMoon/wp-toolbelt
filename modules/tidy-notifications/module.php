@@ -1,6 +1,8 @@
 <?php
 /**
+ * Tidy plugin and theme notifications away into a sidebar that is hidden by default.
  *
+ * @package toolbelt
  */
 
 /**
