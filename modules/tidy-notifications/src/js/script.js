@@ -8,6 +8,9 @@
 	/**
 	 * List of the notification widgets to hide.
 	 * This may grow quite long.
+	 *
+	 * Note that .notice-success, and .notice-error are filtered out so that
+	 * errors and success messages can be seen like normal.
 	 */
 	const notice_selectors = [
 		'#wpwrap .notice',
@@ -17,6 +20,8 @@
 
 	/**
 	 * Add the notification container.
+	 *
+	 * @return {void}
 	 */
 	const addContainer = () => {
 
@@ -38,21 +43,35 @@
 
 	/**
 	 * Move the notices into the container.
+	 *
+	 * @return {void}
 	 */
 	const moveNotices = () => {
 
+		// Join the global selectors into a jQuery selector string.
 		const selectors = notice_selectors.join( ', ' );
 
+		/**
+		 * Grab the notices and exclude things users might want to see.
+		 */
 		$( selectors )
 			.not( '.notice-success' )
 			.not( '.notice-error' )
 			.not( '.notice-failure' )
 			.prependTo( $container );
 
+		/**
+		 * Could the notifications. We have to ignore hidden ones that it
+		 * appears some people use.
+		 */
 		const notification_count = $container.find( '> div' )
 			.filter( ':visible' )
 			.size();
 
+		/**
+		 * If there are notifications then display the admin bar toggle.
+		 * Otherwise there's no toggle. No point showing users an empty sidebar.
+		 */
 		if ( notification_count > 0 ) {
 
 			const $menu_item = $( '#wp-admin-bar-toolbelt-notifications-menu' );
@@ -72,7 +91,6 @@
 		}
 
 	};
-
 
 	$( document ).ready(
 		() => {
