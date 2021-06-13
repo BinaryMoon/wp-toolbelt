@@ -382,18 +382,26 @@ msgid "0.5kb of inline CSS."
 msgstr ""
 
 #: index.php:346
-msgid "Typographic Widows"
+msgid "Tidy Notifications"
 msgstr ""
 
 #: index.php:347
+msgid "Group all notification into a hidden panel that you can view/ ignore at your leisure."
+msgstr ""
+
+#: index.php:353
+msgid "Typographic Widows"
+msgstr ""
+
+#: index.php:354
 msgid "Fix typographic widows in titles and headings."
 msgstr ""
 
-#: index.php:351
+#: index.php:358
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:352
+#: index.php:359
 msgid "Control which pages widgets appear on."
 msgstr ""
 
