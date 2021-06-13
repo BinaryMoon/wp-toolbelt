@@ -343,8 +343,8 @@ function toolbelt_get_modules() {
 			'supports' => array( 'tools', 'css-properties' ),
 		),
 		'tidy-notifications' => array(
-			'name' => esc_html__( 'Tidy Notifications', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Group all notification into a hidden panel that you can view/ ignore at your leisure.', 'wp-toolbelt' ),
+			'name' => esc_html__( 'Tidy Plugin Notifications', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Group all plugin and theme notification into a hidden panel that you can view/ ignore at your leisure.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Tidy-Notifications',
 			'weight' => esc_html__( '0.6kb of admin JS, and 0.7kb of admin CSS.', 'wp-toolbelt' ),
 			'supports' => array( 'experimental' ),
