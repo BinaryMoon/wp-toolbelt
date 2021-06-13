@@ -14,6 +14,10 @@ function toolbelt_social_sharing_fields() {
 
 	$settings = get_option( 'toolbelt_settings', array() );
 
+	if ( ! isset( $settings['social-sharing'] ) ) {
+		$settings['social-sharing'] = '';
+	}
+
 	$enabled_networks = explode( '|', $settings['social-sharing'] );
 
 	$networks = toolbelt_social_networks_get();

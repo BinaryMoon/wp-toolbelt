@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 3.2
+ * Version: 3.2.7
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TOOLBELT_VERSION', '3.2' );
+define( 'TOOLBELT_VERSION', '3.2.6' );
 define( 'TOOLBELT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TOOLBELT_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'TOOLBELT_DIR', basename( TOOLBELT_PATH ) );
@@ -173,15 +173,11 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Disable 404 pages for static files like images.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404',
 		),
-		'featured-attachment' => array(
-			'name' => esc_html__( 'Featured Attachment', 'wp-toolbelt' ),
-			'description' => esc_html__( 'If there is no featured image for a post then use the first image attachment instead.', 'wp-toolbelt' ),
-			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Featured-Attachment',
-		),
 		'footnotes' => array(
 			'name' => esc_html__( 'Footnotes', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Add footnotes to the bottom of the page.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes',
+			'supports' => array( 'css-properties' ),
 		),
 		'get-image' => array(
 			'name' => esc_html__( 'Fallback Featured Images', 'wp-toolbelt' ),
@@ -192,12 +188,14 @@ function toolbelt_get_modules() {
 			'name' => esc_html__( 'Gist Embed Block', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Easily embed Github Gists onto your site.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Gist',
+			'supports' => array( 'css-properties' ),
 		),
 		'heading-anchors' => array(
 			'name' => esc_html__( 'Heading Anchors', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Allow site visitors to link to individual sections of the page. Adds unique ids to each heading.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Heading-Anchor',
 			'weight' => esc_html__( '0.2kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'infinite-scroll' => array(
 			'name' => esc_html__( 'Infinite Scroll', 'wp-toolbelt' ),
@@ -206,11 +204,17 @@ function toolbelt_get_modules() {
 			'weight' => esc_html__( '0.8kb of inline CSS and 1.3kb of inline JS.', 'wp-toolbelt' ),
 			'supports' => array( 'css-properties' ),
 		),
+		'jetpack-dev-mode' => array(
+			'name' => esc_html__( 'Jetpack Offline Mode', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Use Jetpack Offline mode so that you do not have to connect to wordpress.com. This disables features that rely on wordpress.com but allows everything else to work privately.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Jetpack-Dev-Mode',
+		),
 		'layout-grid' => array(
 			'name' => esc_html__( 'Layout Grid', 'wp-toolbelt' ),
 			'description' => esc_html__( 'Display content in carefully curated columns.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Layout-Grid',
 			'weight' => esc_html__( '1.4kb of inline CSS plus 100bytes of CSS per layout used.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'lazy-load' => array(
 			'name' => esc_html__( 'Lazy Load images', 'wp-toolbelt' ),
@@ -238,12 +242,14 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Category summaries for magazine or newspaper style homepages.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Post-Category',
 			'weight' => esc_html__( '1kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'private-embeds' => array(
 			'name' => esc_html__( 'Iframe Privacy Shield', 'wp-toolbelt' ),
-			'description' => esc_html__( 'A portfolio custom post type for your projects.', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Replace iframe embeds (eg Youtube) with a button that loads the iframe. This improves privacy and speeds up your site.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Iframe-Privacy-Shield',
 			'weight' => esc_html__( '0.3kb of inline JS and 0.4kb of inline CSS,', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'projects' => array(
 			'name' => esc_html__( 'Portfolio', 'wp-toolbelt' ),
@@ -289,6 +295,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'An Accessible horizontal slider.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Simple-Slider',
 			'weight' => esc_html__( '1.8kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'social-menu' => array(
 			'name' => esc_html__( 'Social Menu', 'wp-toolbelt' ),
@@ -315,6 +322,7 @@ function toolbelt_get_modules() {
 			'description' => esc_html__( 'Rate movies, books, videos, difficulty, whatever.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Star-Ratings',
 			'weight' => esc_html__( '0.7kb of inline CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'css-properties' ),
 		),
 		'stats' => array(
 			'name' => esc_html__( 'Stats', 'wp-toolbelt' ),
@@ -328,6 +336,13 @@ function toolbelt_get_modules() {
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Testimonials',
 			'weight' => esc_html__( '0.5kb of inline CSS.', 'wp-toolbelt' ),
 			'supports' => array( 'tools', 'css-properties' ),
+		),
+		'tidy-notifications' => array(
+			'name' => esc_html__( 'Tidy Plugin Notifications', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Group all plugin and theme notification into a hidden panel that you can view/ ignore at your leisure.', 'wp-toolbelt' ),
+			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Tidy-Notifications',
+			'weight' => esc_html__( '0.6kb of admin JS, and 0.7kb of admin CSS.', 'wp-toolbelt' ),
+			'supports' => array( 'experimental' ),
 		),
 		'widows' => array(
 			'name' => esc_html__( 'Typographic Widows', 'wp-toolbelt' ),
@@ -458,6 +473,10 @@ function toolbelt_styles_editor( $module, $file = 'block' ) {
 function toolbelt_global_styles( $module ) {
 
 	if ( defined( 'TOOLBELT_DISABLE_STYLES' ) ) {
+		return;
+	}
+
+	if ( toolbelt_is_rest_request() ) {
 		return;
 	}
 

@@ -169,8 +169,15 @@ function toolbelt_spam_check() {
 
 }
 
+// Add spam check support for...
+
+// Jetpack contact forms.
 add_filter( 'jetpack_contact_form_is_spam', 'toolbelt_spam_check' );
+
+// Gravity forms.
 add_filter( 'gform_entry_is_spam', 'toolbelt_spam_check' );
+
+// Toolbelt :).
 add_filter( 'toolbelt_contact_form_spam', 'toolbelt_spam_check' );
 
 
@@ -179,7 +186,7 @@ add_filter( 'toolbelt_contact_form_spam', 'toolbelt_spam_check' );
  *
  * This is largely lifted from the comment blocklist checker.
  *
- * @link https://developer.wordpress.org/reference/functions/wp_blacklist_check/
+ * @link https://developer.wordpress.org/reference/functions/wp_check_comment_disallowed_list/
  *
  * @param string $content The content to check.
  * @return bool
@@ -187,8 +194,11 @@ add_filter( 'toolbelt_contact_form_spam', 'toolbelt_spam_check' );
 function toolbelt_spam_blocklist_check( $content ) {
 
 	$mod_keys = '';
-	$mod_keys .= trim( get_option( 'blacklist_keys' ) );
-	$mod_keys .= trim( get_option( 'disallowed_keys' ) );
+	if ( version_compare( $GLOBALS['wp_version'], '5.5', '>=' ) ) {
+		$mod_keys .= trim( get_option( 'disallowed_keys' ) );
+	} else {
+		$mod_keys .= trim( get_option( 'blacklist_keys' ) );
+	}
 
 	if ( empty( $mod_keys ) ) {
 		return false;
@@ -241,6 +251,10 @@ add_filter( 'toolbelt_contact_form_spam_content', 'toolbelt_spam_blocklist_check
  */
 function toolbelt_spam_blocklist( $blocklist ) {
 
+	if ( is_admin() ) {
+		return $blocklist;
+	}
+
 	/**
 	 * Convert the built in blocklist into a big old list.
 	 */
@@ -254,10 +268,11 @@ function toolbelt_spam_blocklist( $blocklist ) {
 	/**
 	 * Get the local list of blocklist terms.
 	 */
-	$local = (array) file( plugin_dir_path( __FILE__ ) . 'blocklist.txt', FILE_IGNORE_NEW_LINES );
+	$blocklist_path = plugin_dir_path( __FILE__ ) . 'blocklist.txt';
+	$locallist = (array) file( $blocklist_path, FILE_IGNORE_NEW_LINES );
 
 	// Merge both lists into a single array.
-	$listmerge = array_merge( $local, $blocklist );
+	$listmerge = array_merge( $locallist, $blocklist );
 
 	// Filter out duplicates.
 	$listunique = array_unique( $listmerge );

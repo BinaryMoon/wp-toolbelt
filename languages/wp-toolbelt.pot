@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Toolbelt
+# Copyright (C) 2021 Toolbelt
 # This file is distributed under the same license as the Toolbelt package.
 msgid ""
 msgstr ""
@@ -109,279 +109,295 @@ msgstr ""
 msgid "Disable 404 pages for static files like images."
 msgstr ""
 
-#: index.php:177
-msgid "Featured Attachment"
-msgstr ""
-
-#: index.php:178
-msgid "If there is no featured image for a post then use the first image attachment instead."
-msgstr ""
-
-#: index.php:182, modules/footnotes/module.php:127
+#: index.php:177, modules/footnotes/module.php:127
 msgid "Footnotes"
 msgstr ""
 
-#: index.php:183
+#: index.php:178
 msgid "Add footnotes to the bottom of the page."
 msgstr ""
 
-#: index.php:187
+#: index.php:183
 msgid "Fallback Featured Images"
 msgstr ""
 
-#: index.php:188
+#: index.php:184
 msgid "Try to find a suitable image if no featured image is set."
 msgstr ""
 
-#: index.php:192
+#: index.php:188
 msgid "Gist Embed Block"
 msgstr ""
 
-#: index.php:193
+#: index.php:189
 msgid "Easily embed Github Gists onto your site."
 msgstr ""
 
-#: index.php:197
+#: index.php:194
 msgid "Heading Anchors"
 msgstr ""
 
-#: index.php:198
+#: index.php:195
 msgid "Allow site visitors to link to individual sections of the page. Adds unique ids to each heading."
 msgstr ""
 
-#: index.php:200, index.php:270
+#: index.php:197, index.php:276
 msgid "0.2kb of inline CSS."
 msgstr ""
 
-#: index.php:203
+#: index.php:201
 msgid "Infinite Scroll"
 msgstr ""
 
-#: index.php:204
+#: index.php:202
 msgid "Load new post content indefinitely. This may require some changes to your theme for it to work properly."
 msgstr ""
 
-#: index.php:206
+#: index.php:204
 msgid "0.8kb of inline CSS and 1.3kb of inline JS."
 msgstr ""
 
-#: index.php:210
-msgid "Layout Grid"
+#: index.php:208
+msgid "Jetpack Offline Mode"
 msgstr ""
 
-#: index.php:211
-msgid "Display content in carefully curated columns."
+#: index.php:209
+msgid "Use Jetpack Offline mode so that you do not have to connect to wordpress.com. This disables features that rely on wordpress.com but allows everything else to work privately."
 msgstr ""
 
 #: index.php:213
-msgid "1.4kb of inline CSS plus 100bytes of CSS per layout used."
+msgid "Layout Grid"
+msgstr ""
+
+#: index.php:214
+msgid "Display content in carefully curated columns."
 msgstr ""
 
 #: index.php:216
+msgid "1.4kb of inline CSS plus 100bytes of CSS per layout used."
+msgstr ""
+
+#: index.php:220
 msgid "Lazy Load images"
 msgstr ""
 
-#: index.php:217
+#: index.php:221
 msgid "Add native browser lazy loading to all images on your website. Currently this only works in Chrome, but hopefully it will be added to all browsers."
 msgstr ""
 
-#: index.php:221
+#: index.php:225
 msgid "Markdown"
 msgstr ""
 
-#: index.php:222
+#: index.php:226
 msgid "Render Markdown. Uses Github flavor Markdown."
 msgstr ""
 
-#: index.php:226
+#: index.php:230
 msgid "Web Monetization"
 msgstr ""
 
-#: index.php:227
+#: index.php:231
 msgid "Adds the web monetization meta tag. This allows you to get paid for your content. See docs for more information."
 msgstr ""
 
-#: index.php:232
+#: index.php:236
 msgid "Website Embeds"
 msgstr ""
 
-#: index.php:233
+#: index.php:237
 msgid "Add support for more OEmbed websites."
 msgstr ""
 
-#: index.php:237
+#: index.php:241
 msgid "Post Category"
 msgstr ""
 
-#: index.php:238
+#: index.php:242
 msgid "Category summaries for magazine or newspaper style homepages."
 msgstr ""
 
-#: index.php:240
+#: index.php:244
 msgid "1kb of inline CSS."
 msgstr ""
 
-#: index.php:243
+#: index.php:248
 msgid "Iframe Privacy Shield"
 msgstr ""
 
-#: index.php:244, index.php:250
-msgid "A portfolio custom post type for your projects."
+#: index.php:249
+msgid "Replace iframe embeds (eg Youtube) with a button that loads the iframe. This improves privacy and speeds up your site."
 msgstr ""
 
-#: index.php:246
+#: index.php:251
 msgid "0.3kb of inline JS and 0.4kb of inline CSS,"
 msgstr ""
 
-#: index.php:249, modules/projects/module.php:39, modules/sitemap/module.php:149
+#: index.php:255, modules/projects/module.php:39, modules/sitemap/module.php:149
 msgid "Portfolio"
 msgstr ""
 
-#: index.php:255
-msgid "Random Redirect"
-msgstr ""
-
 #: index.php:256
-msgid "Randomly Redirect to a blog post."
-msgstr ""
-
-#: index.php:260, modules/related-posts/module.php:159, modules/related-posts/tools.php:19
-msgid "Related Posts"
+msgid "A portfolio custom post type for your projects."
 msgstr ""
 
 #: index.php:261
-msgid "Speedy related posts."
+msgid "Random Redirect"
 msgstr ""
 
-#: index.php:263
-msgid "0.3kb of inline CSS, plus the HTML and images."
+#: index.php:262
+msgid "Randomly Redirect to a blog post."
+msgstr ""
+
+#: index.php:266, modules/related-posts/module.php:159, modules/related-posts/tools.php:19
+msgid "Related Posts"
 msgstr ""
 
 #: index.php:267
-msgid "Responsive Videos"
+msgid "Speedy related posts."
 msgstr ""
 
-#: index.php:268
-msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
+#: index.php:269
+msgid "0.3kb of inline CSS, plus the HTML and images."
 msgstr ""
 
 #: index.php:273
-msgid "Remove IP Addresses"
+msgid "Responsive Videos"
 msgstr ""
 
 #: index.php:274
-msgid "Stop WordPress from storing IP addresses for users who comment on your site."
-msgstr ""
-
-#: index.php:278
-msgid "Search Redirect"
+msgid "Ensure embedded videos maintain a 16:9 aspect ratio on all screen sizes. Ignores blocks with responsive videos."
 msgstr ""
 
 #: index.php:279
-msgid "If there is a single search result then redirect to the result, rather than displaying a list of results."
+msgid "Remove IP Addresses"
 msgstr ""
 
-#: index.php:283
-msgid "Sitemap"
+#: index.php:280
+msgid "Stop WordPress from storing IP addresses for users who comment on your site."
 msgstr ""
 
 #: index.php:284
-msgid "A simple sitemap to embed on your page."
+msgid "Search Redirect"
 msgstr ""
 
-#: index.php:288
-msgid "Simple Slider"
+#: index.php:285
+msgid "If there is a single search result then redirect to the result, rather than displaying a list of results."
 msgstr ""
 
 #: index.php:289
-msgid "An Accessible horizontal slider."
+msgid "Sitemap"
 msgstr ""
 
-#: index.php:291
-msgid "1.8kb of inline CSS."
+#: index.php:290
+msgid "A simple sitemap to embed on your page."
 msgstr ""
 
-#: index.php:294, modules/social-menu/module.php:16, modules/social-menu/module.php:35
-msgid "Social Menu"
+#: index.php:294
+msgid "Simple Slider"
 msgstr ""
 
 #: index.php:295
-msgid "Add a social icons menu. This must be integrated into the theme."
+msgid "An Accessible horizontal slider."
 msgstr ""
 
 #: index.php:297
+msgid "1.8kb of inline CSS."
+msgstr ""
+
+#: index.php:301, modules/social-menu/module.php:16, modules/social-menu/module.php:35
+msgid "Social Menu"
+msgstr ""
+
+#: index.php:302
+msgid "Add a social icons menu. This must be integrated into the theme."
+msgstr ""
+
+#: index.php:304
 msgid "0.2kb of inline CSS, plus the SVGs needed for the icons."
 msgstr ""
 
-#: index.php:300
+#: index.php:307
 msgid "Static Social Sharing"
 msgstr ""
 
-#: index.php:301
+#: index.php:308
 msgid "Add social sharing links that use the platforms native sharing system."
 msgstr ""
 
-#: index.php:303
+#: index.php:310
 msgid "1kb of inline CSS, and 0.4kb of inline JS. Plus roughly 0.6kb to 1kb per social network icon."
 msgstr ""
 
-#: index.php:307
+#: index.php:314
 msgid "Spam Blocker"
 msgstr ""
 
-#: index.php:308
+#: index.php:315
 msgid "Attempt to block spam."
 msgstr ""
 
-#: index.php:310
+#: index.php:317
 msgid "0.3kb of inline JS."
 msgstr ""
 
-#: index.php:314
+#: index.php:321
 msgid "Star Ratings"
 msgstr ""
 
-#: index.php:315
+#: index.php:322
 msgid "Rate movies, books, videos, difficulty, whatever."
 msgstr ""
 
-#: index.php:317
+#: index.php:324
 msgid "0.7kb of inline CSS."
 msgstr ""
 
-#: index.php:320, modules/stats/settings.php:40
+#: index.php:328, modules/stats/settings.php:40
 msgid "Stats"
 msgstr ""
 
-#: index.php:321
+#: index.php:329
 msgid "Website statistics and analytics."
 msgstr ""
 
-#: index.php:326, modules/testimonials/module.php:46
+#: index.php:334, modules/testimonials/module.php:46
 msgid "Testimonial"
 msgstr ""
 
-#: index.php:327
+#: index.php:335
 msgid "A testimonials custom post type."
 msgstr ""
 
-#: index.php:329
+#: index.php:337
 msgid "0.5kb of inline CSS."
 msgstr ""
 
-#: index.php:333
+#: index.php:341
+msgid "Tidy Plugin Notifications"
+msgstr ""
+
+#: index.php:342
+msgid "Group all plugin and theme notification into a hidden panel that you can view/ ignore at your leisure."
+msgstr ""
+
+#: index.php:344
+msgid "0.6kb of admin JS, and 0.7kb of admin CSS."
+msgstr ""
+
+#: index.php:348
 msgid "Typographic Widows"
 msgstr ""
 
-#: index.php:334
+#: index.php:349
 msgid "Fix typographic widows in titles and headings."
 msgstr ""
 
-#: index.php:338
+#: index.php:353
 msgid "Widget Display"
 msgstr ""
 
-#: index.php:339
+#: index.php:354
 msgid "Control which pages widgets appear on."
 msgstr ""
 
@@ -1130,15 +1146,15 @@ msgctxt "Email button label"
 msgid "Send this"
 msgstr ""
 
-#: modules/social-sharing/settings.php:27
+#: modules/social-sharing/settings.php:31
 msgid "Social Sharing"
 msgstr ""
 
-#: modules/social-sharing/settings.php:33
+#: modules/social-sharing/settings.php:37
 msgid "Buttons"
 msgstr ""
 
-#: modules/social-sharing/settings.php:69
+#: modules/social-sharing/settings.php:73
 msgid "Note: To hide all social buttons disable the module in the module settings."
 msgstr ""
 

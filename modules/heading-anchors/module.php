@@ -26,6 +26,14 @@ function toolbelt_heading_anchors( $content ) {
 
 	}
 
+	/**
+	 * There's no content, so return.
+	 * Could happen on pages with 100% html (image galleries perhaps).
+	 */
+	if ( ! $content ) {
+		return $content;
+	}
+
 	$doc = new DOMDocument();
 
 	/**
@@ -34,6 +42,7 @@ function toolbelt_heading_anchors( $content ) {
 	 * Uses libxml_use_internal_errors(true) to prevent HTML5 errors from being displayed.
 	 */
 	libxml_use_internal_errors( true );
+
 	$dom_content = $doc->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES' ) ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
 
 	if ( false === $dom_content ) {

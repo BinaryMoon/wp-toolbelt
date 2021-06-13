@@ -1,7 +1,7 @@
 {
 	"name": "toolbelt",
-	"version": "2.5.0",
-	"description": "Stuff for WordPress",
+	"version": "3.3.0",
+	"description": "Useful Stuff for WordPress",
 	"main": "index.php",
 	"repository": {
 		"type": "git",
@@ -23,9 +23,9 @@
 		"@babel/plugin-proposal-object-rest-spread": "^7.12.1",
 		"@babel/preset-env": "^7.12.11",
 		"@babel/register": "^7.12.10",
-		"@wordpress/babel-preset-default": "^4.19.0",
+		"@wordpress/babel-preset-default": "^6.0.0",
 		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^7.0.0",
+		"gulp-autoprefixer": "^8.0.0",
 		"gulp-babel": "^8.0.0",
 		"gulp-change": "^1.0.2",
 		"gulp-clean-css": "^4.3.0",
@@ -42,6 +42,5 @@
 		"gulp-zip": "^5.0.2",
 		"jshint": "^2.12.0",
 		"lodash.template": "^4.5.0"
-	},
-	"dependencies": {}
+	}
 }

@@ -1,0 +1,79 @@
+#wpwrap {
+
+	.woocommerce-message,
+	.notice {
+
+		&:not(.notice-success):not(.notice-error):not(.notice-failue) {
+
+			display: none;
+
+		}
+
+	}
+
+}
+
+#wpadminbar #wp-admin-bar-toolbelt-notifications-menu {
+
+	display: none;
+
+	&.toolbelt-display {
+
+		display: list-item;
+
+	}
+
+	.ab-icon:before {
+
+		content: "\f16d";
+		top: 3px;
+
+	}
+
+}
+
+.toolbelt-notication-container {
+
+	position: fixed;
+	top: var( --toolbelt-admin-bar-height );
+	right: 100vw;
+	bottom: 0;
+	overflow-y: auto;
+
+	&.toolbelt-display {
+
+		right: 0;
+
+	}
+
+	padding: 1rem 0.5rem;
+	z-index: 9999;
+	background: #333;
+	width: 100%;
+	max-width: 30rem;
+	min-height: 100px;
+
+	> * {
+
+		margin-top: 0;
+		margin-bottom: 1rem;
+
+	}
+
+	.toolbelt-report-notification {
+
+		color: white;
+		padding: 1rem;
+		text-align: center;
+		opacity: 0.6;
+		display: block;
+
+		&:hover {
+
+			opacity: 1;
+
+		}
+
+	}
+
+}

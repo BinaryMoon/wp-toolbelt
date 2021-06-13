@@ -13,7 +13,7 @@
  * @param array<mixed> $args Avatar properties.
  * @return string
  */
-function toolbelt_avatar_html( $html, $id_or_email, $args ) {
+function toolbelt_avatar_html( $html, $id_or_email, $args = array() ) {
 
 	if ( isset( $args['force_default'] ) && $args['force_default'] ) {
 		return $html;
@@ -23,18 +23,21 @@ function toolbelt_avatar_html( $html, $id_or_email, $args ) {
 	$email_hash = substr( $email_hash, 0, 15 );
 
 	$class = '';
-	if ( $args['class'] ) {
+	if ( isset( $args['class'] ) ) {
 		$class = $args['class'];
 	}
 
-	$html = sprintf(
+	$size = 80;
+	if ( isset( $args['size'] ) ) {
+		$size = $args['size'];
+	}
+
+	return sprintf(
 		'<canvas class="avatar toolbeltPixelAvatar %3$s" data-hash="%1$s"></canvas>',
 		esc_attr( $email_hash ),
-		(int) $args['size'],
+		(int) $size,
 		esc_attr( $class )
 	);
-
-	return $html;
 
 }
 
@@ -92,7 +95,7 @@ add_action( 'admin_footer', 'toolbelt_avatar_footer', 999999 );
 
 
 /**
- * Calculate the email has for the specified user.
+ * Calculate the email hash for the specified user.
  *
  * This code is lifted from get_avatar_data()
  *
@@ -156,3 +159,30 @@ function toolbelt_avatar_email_hash( $id_or_email ) {
 	return $email_hash;
 
 }
+
+
+/**
+ * A Shortcode to display a specific users avatar.
+ *
+ * @param array<mixed> $attrs The shortcode attributes.
+ * @return string
+ */
+function toolbelt_avatar_shortcode( $attrs ) {
+
+	$attrs = shortcode_atts(
+		array(
+			'email' => '',
+		),
+		$attrs,
+		'avatar'
+	);
+
+	if ( empty( $attrs['email'] ) ) {
+		return '';
+	}
+
+	return toolbelt_avatar_html( '', $attrs['email'] );
+
+}
+
+add_shortcode( 'toolbelt-avatar', 'toolbelt_avatar_shortcode' );
