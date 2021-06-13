@@ -474,6 +474,10 @@ function toolbelt_global_styles( $module ) {
 		return;
 	}
 
+	if ( toolbelt_is_rest_request() ) {
+		return;
+	}
+
 	$css_filter = sprintf( 'toolbelt_hide_%s_styles', $module );
 
 	if ( apply_filters( $css_filter, false ) ) {
