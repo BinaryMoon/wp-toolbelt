@@ -5,8 +5,8 @@ canvas.avatar {
 
 }
 
-#wpadminbar #wp-admin-bar-my-account.with-avatar>.ab-empty-item canvas,
-#wpadminbar #wp-admin-bar-my-account.with-avatar>a canvas {
+#wpadminbar #wp-admin-bar-my-account.with-avatar > .ab-empty-item canvas,
+#wpadminbar #wp-admin-bar-my-account.with-avatar > a canvas {
 
 	width: 16px;
 	height: 16px;
@@ -15,4 +15,15 @@ canvas.avatar {
 	float: none;
 	border-radius: 0;
 
+	@media screen and (max-width: 782px) {
+
+		position: absolute;
+		top: 13px;
+		right: 10px;
+		width: 26px;
+		height: 26px;
+
+	}
+
 }
+
