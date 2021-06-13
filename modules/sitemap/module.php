@@ -217,7 +217,9 @@ function toolbelt_sitemap_posts() {
 
 		}
 
-		$html .= '</ul>';
+		if ( $html ) {
+			$html .= '</ul>';
+		}
 
 	}
 
