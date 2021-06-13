@@ -148,6 +148,11 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
+= 3.3 - 11th June 2021 =
+* Add Notification Tidy module.
+* Fix adminbar avatar display on mobile.
+* Fix Jetpack disable code.
+
 = 3.2.7 - 7th June 2021 =
 * Ensure CSS custom properties are loaded for all modules that need them.
 
