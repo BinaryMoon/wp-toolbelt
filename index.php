@@ -210,8 +210,8 @@ function toolbelt_get_modules() {
 			'supports' => array( 'css-properties' ),
 		),
 		'jetpack-dev-mode' => array(
-			'name' => esc_html__( 'Jetpack Dev Mode', 'wp-toolbelt' ),
-			'description' => esc_html__( 'Use Jetpack Dev mode so that you do not have to connect to wordpress.com. This disables features that rely on wordpress.com but allows the rest.', 'wp-toolbelt' ),
+			'name' => esc_html__( 'Jetpack Offline Mode', 'wp-toolbelt' ),
+			'description' => esc_html__( 'Use Jetpack Offline mode so that you do not have to connect to wordpress.com. This disables features that rely on wordpress.com but allows everything else to work privately.', 'wp-toolbelt' ),
 			'docs' => 'https://github.com/BinaryMoon/wp-toolbelt/wiki/Jetpack-Dev-Mode',
 		),
 		'layout-grid' => array(
