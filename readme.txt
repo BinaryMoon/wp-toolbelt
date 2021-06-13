@@ -153,6 +153,7 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 * Add Notification Tidy module.
 * Fix adminbar avatar display on mobile.
 * Fix Jetpack disable code.
+* Remove Featured Attachment module since it's a duplicate of Get Image module.
 
 = 3.2.7 - 7th June 2021 =
 * Ensure CSS custom properties are loaded for all modules that need them.
