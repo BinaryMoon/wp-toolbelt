@@ -149,7 +149,10 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 
 == Changelog ==
 
-= 3.3 - 11th June 2021 =
+= 3.3.1 - 18th June 2021 =
+* Update deprecated `block_categories` filter with `block_categories_all`
+
+= 3.3.0 - 11th June 2021 =
 * Add Notification Tidy module.
 * Fix adminbar avatar display on mobile.
 * Fix Jetpack disable code.
