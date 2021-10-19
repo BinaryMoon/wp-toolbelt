@@ -3,7 +3,7 @@
  * Plugin Name: WP Toolbelt
  * Description: More features, with a focus on privacy and speed.
  * Author: Ben Gillbanks
- * Version: 3.2.7
+ * Version: 3.3.1
  * Author URI: https://prothemedesign.com
  * Text Domain: wp-toolbelt
  *
@@ -620,11 +620,11 @@ function toolbelt_block_category( $categories, $post ) {
  */
 function toolbelt_register_block_category() {
 
-	if ( has_filter( 'block_categories', 'toolbelt_block_category' ) ) {
+	if ( has_filter( 'block_categories_all', 'toolbelt_block_category' ) ) {
 		return;
 	}
 
-	add_filter( 'block_categories', 'toolbelt_block_category', 10, 2 );
+	add_filter( 'block_categories_all', 'toolbelt_block_category', 10, 2 );
 
 }
 
