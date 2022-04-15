@@ -2,7 +2,7 @@
 Contributors: BinaryMoon
 Tags: privacy, accessibility, related posts, social sharing, social menu, social-sharing, spam blocking, cookie banner, widget display, markdown, blocks
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 6.0
 Stable tag: trunk
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -148,6 +148,14 @@ I don't know. I'm open to suggestions (ping me on [Twitter](https://twitter.com/
 2. Done. Everything else is setup automatically.
 
 == Changelog ==
+
+= 3.5.0 - 16th April 2022 =
+* Tidy HTML formatting.
+* Add aria-hidden to thumbnail images that have links duplicated by headings. Simplifies things for screen-reader users.
+* Improve sanitization checks in contact form.
+
+= 3.4.0 - 27th January 2022 =
+* Add module to Enable the Customizer in all themes. Great for using the Additional CSS module in block themes.
 
 = 3.3.1 - 18th June 2021 =
 * Update deprecated `block_categories` filter with `block_categories_all`

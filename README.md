@@ -34,6 +34,7 @@ To ensure the plugin is as privacy focused as possible it:
 * [Cookie Banner](https://github.com/BinaryMoon/wp-toolbelt/wiki/Cookie-Banner)
 * [CSP Header](https://github.com/BinaryMoon/wp-toolbelt/wiki/CSP-Header)
 * [Disable Comment Urls](https://github.com/BinaryMoon/wp-toolbelt/wiki/Disable-Comment-Urls) - Removes comments urls from your site.
+* [Enable Customizer](https://github.com/BinaryMoon/wp-toolbelt/wiki/Enable-Customizer) - Make sure the Customizer is active so we can use the Additional CSS addon.
 * [Fast 404](https://github.com/BinaryMoon/wp-toolbelt/wiki/Fast-404) - Stops WordPress from loading the full 404 page for images and other content. Reduces server usage.
 * [Footnotes](https://github.com/BinaryMoon/wp-toolbelt/wiki/Footnotes)
 * [Get Image](https://github.com/BinaryMoon/wp-toolbelt/wiki/Get-Image) - Find a featured image for posts that do not have one assigned.
