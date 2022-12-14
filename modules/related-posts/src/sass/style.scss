@@ -4,9 +4,8 @@
 
 	article {
 
-		padding: 0 var( --toolbelt-spacing );
-		margin-bottom: calc( var( --toolbelt-spacing ) * 1.5 );
-		position: relative;
+		padding: 0 var(--toolbelt-spacing);
+		margin-bottom: calc(var(--toolbelt-spacing) * 1.5);
 
 	}
 
@@ -27,17 +26,6 @@
 	a {
 
 		display: block;
-
-		&:before {
-
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-
-		}
 
 	}
 

@@ -162,7 +162,12 @@ function toolbelt_related_posts_html( $related_posts ) {
 	foreach ( $related_posts as $related ) {
 
 		$html .= sprintf(
-			'<article><div class="toolbelt-featured-image">%2$s</div><h4 class="toolbelt-skip-anchor"><a itemprop="relatedLink" href="%1$s">%3$s</a></h4></article>',
+			'<article>
+				<div class="toolbelt-featured-image">
+					<a itemprop="relatedLink" aria-hidden="true" href="%1$s">%2$s</a>
+				</div>
+				<h4 class="toolbelt-skip-anchor"><a itemprop="relatedLink" href="%1$s">%3$s</a></h4>
+			</article>',
 			esc_url( $related['url'] ),
 			$related['image'],
 			esc_html( $related['title'] )

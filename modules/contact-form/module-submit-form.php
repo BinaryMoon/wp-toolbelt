@@ -89,13 +89,18 @@ function toolbelt_contact_submit() {
 	$is_spam = $is_spam_inputs || $is_spam_content;
 
 	/**
+	 * Check for legitimate email address.
+	 */
+	if ( ! is_email( $from_email_address ) ) {
+		$is_spam = true;
+	}
+
+	/**
 	 * If is spam then prepend a message on the front of the content subject
 	 * line.
 	 */
 	if ( $is_spam ) {
-
 		$subject = '**SPAM** ' . $subject;
-
 	}
 
 	/**
@@ -207,21 +212,25 @@ add_filter( 'toolbelt_contact_form_subject', 'toolbelt_contact_subject_modifiers
  */
 function toolbelt_contact_create_message( $fields ) {
 
-	$email = array();
+	$message = array();
 
 	/**
 	 * Loop through the fields and compare to the POST data.
 	 */
 	foreach ( $fields as $field => $data ) {
 
-		$email[] = '<strong>' . esc_html( $data['label'] ) . ' <em>(' . esc_html( $data['type'] ) . ')</em></strong>';
-		$email[] = toolbelt_contact_sanitize( $data );
+		$message[] = sprintf(
+			'<strong>%1$s <em>(%2$s)</em></strong>',
+			esc_html( $data['label'] ),
+			esc_html( $data['type'] )
+		);
+		$message[] = toolbelt_contact_sanitize( $data );
 		// Add a blank line separating the different fields.
-		$email[] = '';
+		$message[] = '';
 
 	}
 
-	return implode( '<br />' . "\r\n", $email );
+	return implode( '<br />' . "\r\n", $message );
 
 }
 
@@ -325,6 +334,10 @@ function toolbelt_contact_sanitize( $data ) {
 
 	$value = $data['value'];
 
+	// echo '<pre>';
+	// var_dump($data);
+	// echo '</pre>';
+
 	switch ( $data['type'] ) {
 
 		case 'text':
@@ -335,6 +348,11 @@ function toolbelt_contact_sanitize( $data ) {
 		case 'url':
 
 			$value = esc_url( $value );
+			break;
+
+		case 'email':
+
+			$value = sanitize_email( $value );
 			break;
 
 		case 'checkbox':
@@ -362,6 +380,9 @@ function toolbelt_contact_sanitize( $data ) {
 			 * checkboxes and display whether they were selected or not.
 			 */
 			$html = array();
+			if ( !is_array( $value ) ) {
+				$value = array( $value );
+			}
 			foreach ( $data['options'] as $option ) {
 				$html[] = sprintf(
 					'<strong>%1$s:</strong> %2$s',

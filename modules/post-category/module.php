@@ -164,7 +164,10 @@ function toolbelt_post_category_layout_list( $posts, $layout = '1' ) {
 				}
 
 				$html .= sprintf(
-					'<article class="%1$s">%2$s%5$s<h3 class="toolbelt-skip-anchor"><a href="%3$s" rel="bookmark">%4$s</a></h3><p>%6$s</p></article>',
+					'<article class="%1$s">%2$s%5$s
+						<h3 class="toolbelt-skip-anchor"><a href="%3$s" rel="bookmark">%4$s</a></h3>
+						<p>%6$s</p>
+					</article>',
 					esc_attr( $class ),
 					$image,
 					esc_url( $p['url'] ),
